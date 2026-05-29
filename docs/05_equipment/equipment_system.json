@@ -1,0 +1,53 @@
+{
+  "section_id": "06",
+  "section_name": "Sistema Equipaggiamento",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Gestione dell'inventario e meccaniche delle carte equipaggiamento con il sistema di Tapping.",
+  "inventory_speeds": {
+    "equipaggiamento_indossato": {
+      "description": "Armi, Armature, Scudi. Sempre accessibili.",
+      "access": "Immediato. Le carte sono in zona equipaggiamento, pronte per il tapping.",
+      "slots": "Limitato dal tipo di equipaggiamento (tipicamente 1 arma, 1 armatura, 1 scudo)."
+    },
+    "oggetti_rapidi": {
+      "description": "3 slot. Oggetti pronti all'uso: pozioni, bombe, strumenti.",
+      "access": "Usabili nell'ATB pagando il loro Costo Tempo.",
+      "example": "Pozione (Costo 1), Bomboletta accecante (Costo 2), Corda con uncino (Costo 2)."
+    },
+    "zaino": {
+      "description": "Massimo 10 oggetti coperti (faccia in giù, nascosti).",
+      "access_combat": "Costo Tempo 5 per usare un oggetto dallo zaino in combattimento. Simula il rovistare frenetico.",
+      "access_exploration": "Gratuito fuori dal combattimento. Si può cercare con calma.",
+      "tactical_choice": "Lo zaino è risorsa di emergenza. In combattimento, spendere 5 slot ATB per una pozione è una scelta disperata."
+    }
+  },
+  "tapping_mechanic": {
+    "description": "Le carte equipaggiamento si girano di 90 gradi (tap) per essere usate. Dopo l'uso devono essere 'riparate' (tempo/soldi) per essere rigirate (untap).",
+    "philosophy": "L'equipaggiamento si consuma. Usare la spada la smussa. Usare lo scudo lo ammaccia. Usare l'armatura la sfianca. Tra un combattimento e l'altro, serve manutenzione.",
+    "weapon_tapping": {
+      "rule": "Tappare un'arma RIDUCE il numero di carte Vitalità da scartare per pagare il Costo Tempo di un'azione.",
+      "critical_note": "IL DANNO RIMANE SEMPRE UGUALE AL COSTO TEMPO ORIGINARIO DELLA CARTA AZIONE.",
+      "effect": "L'arma massimizza il danno limitando la fatica. Il PG infligge lo stesso danno ma si stanca di meno.",
+      "example": "Attacco Costo 4 con spada tappata (riduzione 2). Danno inflitto: 4 (invariato). Carte scartate per fatica: 2 invece di 4.",
+      "design_intent": "Le armi non aumentano il danno (il danno è puramente temporale). Le armi rendono efficiente l'attacco, riducendo lo sforzo."
+    },
+    "shield_tapping": {
+      "rule": "Tappare uno scudo permette di 'slittare' una carta Opposizione già giocata nell'ATB di uno slot a sinistra o a destra.",
+      "effect": "Permette di reagire all'attacco rivelato di un nemico spostando la propria difesa nella posizione corretta.",
+      "timing": "Reattivo. Si usa DOPO aver visto dove il nemico attacca, ma richiede che si abbia già un'Opposizione in zona adiacente.",
+      "design_intent": "Lo scudo è informazione reattiva. Non crea difese dal nulla, ma permette di ricollocare quelle esistenti."
+    },
+    "armor_tapping": {
+      "rule": "Tappare un'armatura assorbe (riduce) una quota di danni subiti da un colpo andato a segno.",
+      "effect": "Riduzione fissa del danno. Es: Armatura con riduzione 2. Attacco nemico Costo 4 → 2 danni subiti invece di 4.",
+      "limitation": "Si può tappare l'armatura solo una volta per turno di risoluzione.",
+      "design_intent": "L'armatura è l'ultima linea di difesa passiva. Non previene, riduce."
+    }
+  },
+  "repair_and_maintenance": {
+    "method": "Tra un combattimento e l'altro, il PG deve spendere TEMPO o DENARO per riparare (untap) l'equipaggiamento.",
+    "cost_escalation": "Equipaggiamento migliore = riparazione più costosa.",
+    "narrative": "La manutenzione è parte della routine del viaggiatore. Un PG che trascura il proprio equipaggiamento si ritrova disarmato."
+  }
+}

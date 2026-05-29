@@ -1,0 +1,36 @@
+{
+  "game_metadata": {
+    "project_name": "Progetto GdR Cappa e Spada",
+    "version": "1.2 - CORE ENGINE COMPLETO",
+    "last_updated": "2026-05-29",
+    "core_emotion": "Crescita, cambiamento ed erosione dell'identità dei personaggi.",
+    "setting": "Fantasy Cappa e Spada (Magia potente, rara e pericolosa).",
+    "usps": [
+      "Linea del Tempo ATB fluida e asimmetrica.",
+      "Mazzo dei giocatori come unico indicatore di Stamina/Energia.",
+      "Nessuna scheda cartacea: Identità, Salute ed Equipaggiamento sono interamente carte.",
+      "Tempo = Danno (Zero calcoli, lentezza equivale a potenza)."
+    ]
+  },
+  "document_index": {
+    "00": "project_metadata.json",
+    "01": "card_anatomy.json",
+    "02": "vitality_engine.json",
+    "03": "atb_timeline.json",
+    "04": "combat_math.json",
+    "05": "character_sheet.json",
+    "06": "equipment_system.json",
+    "07": "enemy_system.json",
+    "08": "magic_system.json — DA DEFINIRE",
+    "09": "exploration_system.json — DA DEFINIRE",
+    "10": "social_system.json — DA DEFINIRE",
+    "11": "progression_system.json — DA DEFINIRE",
+    "12": "lore.json — DA DEFINIRE",
+    "13": "playtest_notes.json — DA DEFINIRE"
+  },
+  "backup_protocol": {
+    "method": "Auto-push su GitHub dopo ogni sezione completata",
+    "repository": "https://github.com/vastios/ATB",
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione"
+  }
+}

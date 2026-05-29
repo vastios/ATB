@@ -1,0 +1,34 @@
+{
+  "section_id": "03",
+  "section_name": "Linea del Tempo ATB",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Sistema di iniziativa e risoluzione delle azioni. La ATB è una 'cinghia di trasporto' fluida dove le azioni si posizionano nel tempo in modo assoluto.",
+  "core_concept": {
+    "name": "Continuità Temporale Assoluta",
+    "rule": "Le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra. È impossibile saltare slot.",
+    "implication": "Non esiste 'iniziare per primo'. Chi agisce più velocemente (costo tempo basso) finisce prima e può riposizionarsi. Chi agisce lentamente (costo tempo alto) occupa più spazio nella timeline ed è prevedibile."
+  },
+  "placement_rules": {
+    "sequential_placement": "Ogni carta gioccupa uno slot ATB. La prima carta va nello slot 1, la seconda nel primo slot libero successivo al suo costo, ecc.",
+    "visual_representation": "Una griglia orizzontale. Slot 1, 2, 3, 4, 5... Le carte occupano slot consecutivi pari al loro Costo Tempo.",
+    "example": "Una carta Costo 3 occupa 3 slot ATB (es. slot 1-2-3). La prossima carta inizierà dallo slot 4."
+  },
+  "forced_action_rule": {
+    "trigger": "Quando un PG non ha carte nell'ATB (ha finito di risolvere tutte le azioni).",
+    "requirement": "Deve giocare almeno 1 carta (fino a un massimo di 5) nel proprio turno di pianificazione.",
+    "minimum_commitment": "Il PG non può 'passare' indefinitamente. Deve sempre impegnarsi in almeno un'azione."
+  },
+  "resolution_logic": {
+    "method": "Risoluzione per colonna (da sinistra a destra).",
+    "step_1": "Si risolve lo Slot 1 di TUTTI i partecipanti (PG e nemici).",
+    "step_2": "Si risolve lo Slot 2 di tutti.",
+    "step_n": "Continua finché tutti gli slot sono risolti.",
+    "simultaneous_resolution": "Se più azioni condividono lo stesso slot, si risolvono simultaneamente. Se l'ordine conta, si usa il Costo Tempo come tiebreaker (più basso = più veloce)."
+  },
+  "asymmetry": {
+    "description": "La ATB è intrinsecamente asimmetrica. PG veloci e nemici lenti (o viceversa) occupano spazi diversi nella timeline.",
+    "tactical_depth": "Un PG con azioni Costo 1 agisce 5 volte nello spazio di un'azione Costo 5. Ma l'azione Costo 5 è devastante.",
+    "prediction": "Le azioni lente sono visibili per più tempo nella timeline, permettendo agli avversari di preparare contromosse."
+  }
+}

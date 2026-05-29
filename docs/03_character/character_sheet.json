@@ -1,0 +1,75 @@
+{
+  "section_id": "05",
+  "section_name": "Scheda Personaggio (Carte)",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Il personaggio è interamente composto da carte. Non esiste una scheda cartacea tradizionale. Identità, Salute ed Equipaggiamento sono tutti carte.",
+  "zone_layout": {
+    "zona_caratteristiche": "Carte allineate che rappresentano le statistiche del PG.",
+    "zona_cuori": "3 carte Cuore separate.",
+    "zona_equipaggiamento": "Carte equipaggiamento indossato.",
+    "zona_inventario": "Oggetti rapidi e zaino.",
+    "mazzo_vitalita": "Mazzo da 40-50 carte.",
+    "scarti": "Pila degli scarti."
+  },
+  "characteristics_cards": {
+    "mechanic": "Il valore di una statistica (da 1 a 5) equivale al NUMERO FISICO DI CARTE in zona.",
+    "example": "Forza 3 = 3 carte Forza fisicamente presenti nella zona.",
+    "characteristics_list": {
+      "Forza": "Potenza bruta, attacchi pesanti, sfondare, sollevare.",
+      "Agilita": "Velocità, destrezza, schiva, furtività, attacchi precisi.",
+      "Mente": "Intelletto, memoria, magia analitica, percezione razionale.",
+      "Volonta": "Determinazione, coraggio, resistenza mentale, magia istintiva."
+    },
+    "wounds": {
+      "ferita_cicatrice": {
+        "action": "La carta viene girata a faccia in giù (diventa una cicatrice).",
+        "mechanic": "Assorbe fino a 3 danni alla Stamina.",
+        "penalty": "Le azioni che usano il Tag associato a quella Caratteristica sono più costose o difficili finché la ferita non è guarita.",
+        "narrative": "La cicatrice è un promemoria fisico del costo pagato. Il PG è ancora functional ma compromesso."
+      },
+      "distrutta": {
+        "action": "La carta viene rimossa fisicamente dalla zona.",
+        "mechanic": "Il valore MASSIMO della statistica cala permanentemente.",
+        "narrative": "Perdita irreversibile. Il personaggio è cambiato per sempre. È il cuore tematico del gioco: l'erosione dell'identità."
+      }
+    },
+    "healing_wounds": {
+      "ferita": "Guaribile con pozioni guarigione o cure mediche (richiede giornate).",
+      "distrutta": "Irreversibile tramite mezzi normali. Solo magia estrema o rituali potrebbero (raramente) ripristinarla."
+    }
+  },
+  "damage_typing": {
+    "danno_fisico": "Bersaglia le Caratteristiche Forza e Agilità.",
+    "danno_magico": "Bersaglia le Caratteristiche Mente e Volontà.",
+    "design_intent": "Costringe a variare gli approcci. Un combattente puro soffrirà il danno magico sulle proprie difese deboli. Un mago crollerà sotto i colpi fisici."
+  },
+  "heart_cards": {
+    "quantity": 3,
+    "nature": "Le Carte Cuore rappresentano la VOLONTÀ DI VIVERE del personaggio, non la salute fisica.",
+    "cannot_be_sacrificed": "NON possono essere sacrificate volontariamente. Sono colpite SOLO da Danno Anatema o esaurimento della Vitalità.",
+    "effect_when_hit": {
+      "single_heart": "Un Cuore girato non dà penalità meccaniche. Il PG è ferito nell'anima ma ancora funzionale.",
+      "all_three_hearts": "Se tutti e 3 i Cuori sono girati, il PG muore.",
+      "narrative_weight": "La perdita di un Cuore dovrebbe essere un momento narrativo significativo, non solo un segno sulla scheda."
+    }
+  },
+  "healing_economy": {
+    "vitalita": {
+      "method": "Riposo (totale) o pozioni rivitalizzanti (parziale).",
+      "speed": "Veloce. La stamina è la risorsa più recuperabile.",
+      "philosophy": "La fatica è temporanea. Il corpo si riprende."
+    },
+    "caratteristiche": {
+      "method": "Pozioni guarigione, cure mediche, magia curativa.",
+      "speed": "Lenta (giornate). Le ferite richiedono tempo.",
+      "philosophy": "Le cicatrici guariscono, ma non subito. Il corpo ricorda."
+    },
+    "cuori": {
+      "method": "Solo rituali complessi/costosi o settimane di riposo assoluto.",
+      "speed": "Molto lenta. Quasi irreversibile in campagna normale.",
+      "philosophy": "Le ferite dell'anima sono le più profonde. La guarigione richiede sacrificio o tempo."
+    },
+    "escalation_pattern": "Vitalità → Caratteristiche → Cuori. Più profondo il danno, più difficile la guarigione. Questo crea un crescendo di conseguenze."
+  }
+}

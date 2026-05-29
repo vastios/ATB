@@ -1,0 +1,41 @@
+{
+  "section_id": "02",
+  "section_name": "Motore Vitalità",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Sistema STAMINA del gioco. Il mazzo Vitalità è l'unico indicatore di energia/stamina del personaggio. Non rappresenta salute fisica.",
+  "deck_properties": {
+    "deck_size": "40-50 carte",
+    "hand_size": 5,
+    "hand_refill": "Si pescano carte fino ad avere 5 carte in mano all'inizio del proprio turno di risoluzione ATB."
+  },
+  "fatigue_mechanic": {
+    "name": "Fatica",
+    "action": "Per pagare il Costo Tempo di un'azione nella Cintura ATB, il PG scarta carte coperte (faccia in giù) dalla mano.",
+    "resolution": "Tutte le carte giocate o scartate per pagare costi finiscono negli scarti (discard pile).",
+    "example": "Gioco una carta con Costo Tempo 3. Scarto 3 carte dalla mano coperte. La carta azione va negli scarti scoperta."
+  },
+  "exhaustion_condition": {
+    "name": "Esaurimento",
+    "trigger": "Il Mazzo Vitalità è vuoto e si deve pescare.",
+    "effect": "Il PG ferisce un Cuore E crolla svenuto (incapacitato fino a fine combattimento o cure).",
+    "narrative": "Il personaggio ha spinto il proprio corpo oltre il limite. Non è ferita fisica, ma collasso sistemico."
+  },
+  "damage_mechanic": {
+    "type": "Milling (Danno Acuto)",
+    "action": "Gli attacchi standard rimuovono carte dalla cima del mazzo Vitalità e le mettono negli scarti.",
+    "key_difference_from_fatigue": "La fatica è scartare dalla MANO per pagare costi. Il danno è milling dalla CIMA del MAZZO. Entrambi riducono le risorse ma con dinamiche diverse.",
+    "strategic_implication": "Subire danni riduce il mazzo ma NON la mano attuale. La mano si riduce solo al momento di pescare. Questo crea un effetto ritardato: un PG può sembrare in forma ma essere prossimo al collasso."
+  },
+  "sacrifice_mechanic": {
+    "name": "Sacrificio Caratteristica",
+    "description": "Il PG può evitare di subire danno alla Vitalità 'girando' (ferendo) le proprie Carte Caratteristica.",
+    "absorption": "Ogni Carta Caratteristica girata assorbe fino a 3 danni alla stamina.",
+    "cost": "La carta girata (cicatrice) rende più difficili/costose le azioni con quel Tag finché non guarita.",
+    "tactical_meaning": "Il PG sceglie: perdere stamina (mazzo) o compromettere le proprie capacità (caratteristiche). È la meccanica chiave dell'erosione dell'identità."
+  },
+  "rest_and_recovery": {
+    "short_rest": "Recupera carte dagli scarti al mazzo. Non guarisce ferite alle Caratteristiche.",
+    "long_rest": "Recupero totale della Vitalità. Possibilità di guarire ferite alle Caratteristiche con cure appropriate."
+  }
+}

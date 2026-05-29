@@ -1,0 +1,45 @@
+{
+  "section_id": "01",
+  "section_name": "Anatomia delle Carte",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Struttura di ogni carta del Mazzo Vitalità. Ogni carta rappresenta un'azione potenziale e un'unità di energia del personaggio.",
+  "fields": {
+    "name": {
+      "type": "String",
+      "description": "Nome evocativo della carta (es. 'Affondo Rapido', 'Parete di Ferro')."
+    },
+    "time_cost": {
+      "type": "Integer",
+      "range": [1, 5],
+      "description": "Costo Tempo della carta. Rappresenta sia la velocità dell'azione nella ATB sia il danno inflitto se usata come attacco. Più alto = più lento ma più devastante.",
+      "dual_function": "COSTO TEMPO = DANNO INFLITTO"
+    },
+    "type": {
+      "type": "Enum",
+      "options": ["Imposizione", "Opposizione", "Movimento", "Percezione"],
+      "descriptions": {
+        "Imposizione": "Azioni offensive proattive (attacchi, magie offensive, intimidazioni).",
+        "Opposizione": "Azioni reattive/difensive (parate, schivate, resistenze).",
+        "Movimento": "Spostamenti, riposizionamenti, ritirate.",
+        "Percezione": "Osservazione, analisi, intuizione, preparazione."
+      }
+    },
+    "tags": {
+      "action_tags": {
+        "options": ["Forza", "Finesse", "Movimento", "Percezione"],
+        "description": "Definisce l'approccio dell'azione. Determina quale Caratteristica del PG viene coinvolta e quale carta Equipaggiamento può ridurre il costo."
+      },
+      "modifier_tags": {
+        "options": ["Apertura", "Chiusura", "Sostegno"],
+        "description": "Modificatori tattici. Apertura prepara un attacco successivo, Chiusura sfrutta un'apertura, Sostegno potenzia un alleato."
+      }
+    },
+    "numeric_value": {
+      "type": "Integer",
+      "description": "Valore numerico usato per i Test di Sforzo Collettivo fuori dal combattimento. Non influisce sul combattimento.",
+      "usage": "Fuori combattimento — Sforzo Collettivo"
+    }
+  },
+  "design_notes": "Ogni carta è contemporaneamente: azione, risorsa (stamina), e potenziale danno. Questa trinità elimina la necessità di contatori separati e rende ogni scelta significativa."
+}

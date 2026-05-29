@@ -1,0 +1,55 @@
+{
+  "section_id": "04",
+  "section_name": "Matematica di Combattimento",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Regole per il calcolo del danno, il sistema combo e le meccaniche difensive.",
+  "damage_dealt": {
+    "core_rule": "TEMPO = DANNO. Un'azione con Costo Tempo 3 infligge esattamente 3 danni. Nessun dado, nessun calcolo aggiuntivo.",
+    "philosophy": "La lentezza è potenza. Un'azione lenta colpisce più forte ma è più prevedibile e lascia più tempo per reagire.",
+    "examples": {
+      "cost_1_attack": "1 danno. Veloce ma debole. Ideale per combo e finiture.",
+      "cost_3_attack": "3 danni. Equilibrio tra velocità e potenza.",
+      "cost_5_attack": "5 danni. Devastante ma occupa mezza timeline."
+    }
+  },
+  "combo_system": {
+    "trigger_rule": "Le combo si attivano SOLO impilando verticalmente nello stesso slot ATB una carta Azione (Attacco/Magia) SOTTO una carta Movimento/Difesa di Costo 1 con Tag complementare.",
+    "structure": {
+      "base_card": "Carta Azione (es. Attacco Costo 4 con tag [Chiusura])",
+      "trigger_card": "Carta Movimento/Opposizione Costo 1 con tag complementare (es. [Apertura])",
+      "placement": "La carta Azione va SOTTO, la carta Costo 1 va SOPRA nello stesso slot."
+    },
+    "combo_damage": "Il danno totale è la SOMMA dei Costi Tempo delle carte impilate. Es: Attacco 4 + Movimento 1 = 5 Danni.",
+    "tag_complementarity": {
+      "Apertura_sotto_Chiusura_sopra": "L'apertura crea l'occasione, la chiusura la sfrutta.",
+      "Sostegno_con_qualsiasi": "Il sostegno potenzia l'azione principale."
+    },
+    "design_note": "Le combo prevengono lo stack di azioni devastanti senza controllo. Richiedono l'uso tattico delle carte leggere da Costo 1 come 'innesco'. Questo dà valore alle carte deboli e crea deep tattico.",
+    "limitations": {
+      "max_stack": "2 carte per combo (1 azione + 1 trigger Costo 1).",
+      "no_double_actions": "Non si possono impilare due carte Azione. Serve sempre una carta Movimento/Opposizione come innesco."
+    }
+  },
+  "defense_mechanic": {
+    "perfect_block": {
+      "condition": "Opposizione giocata nello STESSO slot dell'attacco nemico.",
+      "effect": "0 danni subiti. L'attacco è completamente neutralizzato.",
+      "timing_requirement": "Richiede previsione perfetta o informazioni sulla posizione dell'attacco nemico."
+    },
+    "mitigated_block": {
+      "condition": "Opposizione giocata nello slot subito PRIMA o DOPO l'attacco nemico.",
+      "effect": "Riduzione danni. Il danno è ridotto del Costo Tempo della carta Opposizione.",
+      "example": "Attacco nemico Costo 4. Opposizione Costo 2 nello slot adiacente. Danni ridotti: 4 - 2 = 2 danni subiti."
+    },
+    "failed_defense": {
+      "condition": "Nessuna Opposizione nello stesso slot o in quelli adiacenti.",
+      "effect": "Danno pieno. L'attacco colpisce senza resistenza."
+    }
+  },
+  "strategic_layers": {
+    "information_warfare": "Posizionare le proprie difese richiede conoscenza (o previsione) di dove attaccherà il nemico. Le azioni Percezione servono a questo.",
+    "tempo_advantage": "Attacchi veloci (Costo 1-2) sono difficili da bloccare perché occupano poco spazio nella timeline. Attacchi lenti (Costo 4-5) sono facili da posizionare contro ma devastanti se non bloccati.",
+    "resource_tension": "Ogni carta Opposizione usata per difendere è una carta non usata per attaccare. La difesa ha sempre un costo opportunità."
+  }
+}

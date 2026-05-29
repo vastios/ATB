@@ -1,0 +1,56 @@
+{
+  "section_id": "07",
+  "section_name": "Sistema Nemici",
+  "version": "1.0",
+  "status": "COMPLETO",
+  "description": "Regole per la gestione dei nemici, divisi tra incontri base e boss epici.",
+  "basic_encounters": {
+    "swarm_logic": {
+      "description": "Nemici minori trattati come entità singola con PF moltiplicati.",
+      "mechanic": "Un gruppo di 5 banditi = 1 entità con PF ×5. Un attacco li colpisce tutti.",
+      "design_intent": "Eliminare il micromanagement. Lo swarm è un ostacolo, non un combat encounter tattico."
+    },
+    "bluff_mechanic": {
+      "description": "5 Token coperti posizionati sugli slot ATB. Si rivelano alla risoluzione.",
+      "tokens": {
+        "attack_token": "Attacco reale. Infligge danni come una carta azione nemica.",
+        "bluff_token": "Finta. Non infligge danni ma consuma la reazione del PG se questi ha dedicato difese a quello slot."
+      },
+      "ratio": "Il Master sceglie quanti token sono attacco e quanti bluff, creando un mini-gioco di deduzione.",
+      "design_intent": "I nemici minori sono imprevedibili. Il PG deve decidere se difendersi da ogni minaccia (costoso) o rischiare.",
+      "information_asymmetry": "Il PG non sa quali token sono reali. Le azioni Percezione possono rivelare token."
+    }
+  },
+  "epic_combat_bosses": {
+    "health": {
+      "type": "PF dedicati (Punti Ferita). Non usano il sistema di milling.",
+      "reason": "I boss sono figure narrative importanti. Il milling non cattura l'epicità dello scontro.",
+      "damage_tracking": "Segnapunti o dadi. Ogni punto di danno dal sistema Costo Tempo = 1 PF tolto."
+    },
+    "action_economy": {
+      "hand": "9 carte 'Livello Potere' (da 1 a 9).",
+      "selection": "Il Master SCEGLIE LIBERAMENTE quale carta usare. Non pesca. Ha pieno controllo.",
+      "design_intent": "Il Master non è limitato dal caso. Il boss è intelligente, tattico e letale. Usa l'azione perfetta per ogni situazione."
+    },
+    "timeline_integration": {
+      "method": "Il Boss gioca nella stessa linea del tempo fluida dei PG.",
+      "power_9_example": "Un attacco Potere 9 crea un 'trenino' di 8 slot coperti + 1 azione che sporge rispetto ai PG.",
+      "visual_impact": "Il boss domina visivamente la timeline. La sua presenza è schiacciante.",
+      "countertactic": "I PG possono vedere quanto è lungo l'attacco e posizionare difese. Ma l'azione del Boss può cambiare l'intera battlefield dynamics."
+    },
+    "defenses": {
+      "armatura": {
+        "type": "Riduzione fissa del danno (es. -1, -2, -3).",
+        "effect": "Rende inutili gli attacchi da Costo 1 (danno ridotto a 0).",
+        "tactical_implication": "I PG DEVONO usare attacchi più lenti/potenti o combo per superare l'armatura del Boss.",
+        "design_intent": "L'armatura del Boss costringe i PG a collaborare e usare le combo. Attacchi singoli deboli sono inutili."
+      },
+      "tipologia_resistenza": {
+        "type": "Immunità o riduzione severa se colpiti da azioni con Tag specifici.",
+        "example": "Immunità a [Forza] = gli attacchi di forza non gli fanno nulla.",
+        "effect": "Costringe il gruppo a variare gli approcci. Il tank puro non può vincere da solo.",
+        "design_intent": "I Boss richiedono collaborazione e diversità tattica. Ogni membro del gruppo deve contribuire con il proprio approccio unico."
+      }
+    }
+  }
+}
