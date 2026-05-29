@@ -1,14 +1,14 @@
 {
   "section_id": "05",
   "section_name": "Matematica di Combattimento e Risoluzione",
-  "version": "10.0",
+  "version": "11.0",
   "status": "AGGIORNATO — Due Categorie di Danno (Standard vs Diretto), Dilemma del Guerriero corretto, Soglia del Vuoto, Punti 4-6 formalizzati",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB. Il danno si divide in DUE CATEGORIE: Standard (il giocatore SCEGLIE tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta, gira un numero di carte pari al danno). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore. Le combo richiedono almeno 2 giocatori. Tre tipi di difesa: Perfect Block, Mitigato, Shield Sliding.",
   "point_4_power_and_damage": {
     "name": "Punto 4 — Potere e Danni",
     "core_rule": "Il danno inflitto è determinato dalla TABELLA POTERE dell'azione, che varia in base al valore della Caratteristica del PG incrociata col Costo Tempo.",
-    "philosophy": "La lentezza è potenza, MA solo se hai la Caratteristica per sfruttarla. Un PG debole con Forza 1 che usa un'azione lenta (Costo 5) fa solo 9 danni. Un PG forte con Forza 5 fa 30 danni devastanti.",
+    "philosophy": "La lentezza è potenza, MA solo se hai la Caratteristica per sfruttarla. Un PG debole con Risonanza 1 che usa un'azione lenta (Costo 5) fa solo 9 danni. Un PG forte con Risonanza 5 fa 30 danni devastanti.",
     "power_table_reference": "Vedi card_anatomy.json → power_table per i valori esatti.",
     "weapon_interaction": "Le armi riducono la FATICA (meno carte coperte da scartare). Il DANNO è determinato dalla Tabella Potere. L'arma rende efficiente l'azione, non la potenzia. Il danno deriva dall'utilizzo di armi e incantesimi — è danno fisico, non concetti astratti.",
     "characteristic_power_cap": "Se la Caratteristica è FERITA (girata), il PG non può giocare azioni con quel Tag sopra il valore attuale.",
@@ -29,8 +29,8 @@
       "absorption_options_legacy_note": "Le vecchie opzioni combinate (Mazzo + Caratteristica + Cuore) sono state sostituite dalle Due Categorie di Danno. I Cuori NON sono più un'opzione per il Danno Standard.",
       "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Caratteristiche/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità. Vedi 'Danno Diretto alla Caratteristica'.",
       "damage_typing": {
-        "fisico": "Bersaglia Agilità / Forza.",
-        "magico": "Bersaglia Volontà / Mente.",
+        "fisico": "Bersaglia Evasione / Risonanza.",
+        "magico": "Bersaglia Istinto / Analisi.",
         "anatema": "Bersaglio Cuori (prossimo Cuore nell'ordine). Nessuna scelta."
       },
       "due_categorie_danno": {
@@ -52,8 +52,8 @@
           "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare permanentemente un punto di un'abilità per salvare la propria riserva energetica."
         },
         "danno_diretto_caratteristica": {
-          "name": "2. Danno Diretto alla Caratteristica (La Forza Bruta)",
-          "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Mente: 2 Danni').",
+          "name": "2. Danno Diretto alla Caratteristica (La Risonanza Bruta)",
+          "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni').",
           "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Caratteristica è stata direttamente aggredita.",
           "azione_obbligatoria": "Il giocatore deve girare un numero di carte di QUELLA Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
           "soglia_vuoto": "Se la Caratteristica scende a 0, si innesca la Soglia del Vuoto: il giocatore è COSTRETTO a girare immediatamente un Cuore."
@@ -97,7 +97,7 @@
     },
     "combo_damage": {
       "rule": "Il danno di una combo è la SOMMA dei valori POTERE delle carte nella colonna.",
-      "example": "Guerriero gioca [Apertura] Forza Costo 3 (Forza 4, Potere = 9) + Mago gioca [Chiusura] Mente Costo 2 (Mente 3, Potere = 5) nella stessa colonna = Danno combo 14.",
+      "example": "Guerriero gioca [Apertura] Risonanza Costo 3 (Risonanza 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
       "culmine_bonus": "Se la Chiusura è un [Culmine], l'effetto viene amplificato drasticamente.",
       "combo_explanation": "Due personaggi uniscono gli sforzi: l'Apertura crea una distrazione/apertura, la Chiusura sfrutta il punto debole scoperto. Non è magia astratta — è tattica di squadra."
     },
@@ -161,9 +161,9 @@
     "tag_based_mitigation": {
       "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
       "examples": {
-        "immunity": "Fantasma immune a [Forza]: gli attacchi fisici non fanno nulla.",
-        "resistance": "Golem resistente a [Agilità]: gli attacchi di destrezza fanno danno ridotto.",
-        "vulnerability": "Non-morto vulnerabile a [Volontà]: la determinazione fa danno aumentato."
+        "immunity": "Fantasma immune a [Risonanza]: gli attacchi fisici non fanno nulla.",
+        "resistance": "Golem resistente a [Evasione]: gli attacchi di destrezza fanno danno ridotto.",
+        "vulnerability": "Non-morto vulnerabile a [Istinto]: la determinazione fa danno aumentato."
       },
       "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
     }
@@ -176,7 +176,7 @@
     "step_5": "Difesa PG: Perfect Block / Mitigato / Danno pieno. Scudo (con [Strumento]) può slittare.",
     "step_6": "Se danno pieno → identificare la categoria: Standard (PG SCEGLIE: Milling o Ferita a Caratteristica QUALSIASI) o Diretto (PG DEVE girare carte della Caratteristica bersagliata). I Cuori NON sono un'opzione per Danno Standard.",
     "step_7": "Combo: se carte di 2+ PG diversi convergono con Tag compatibili, la combo si attiva. Danno = somma valori Potere.",
-    "step_8": "PG senza carte nella riga DEVE rigiocare (Azione Forzata).",
+    "step_8": "PG senza carte nella riga DEVE rigiocare (Azione Risonanzata).",
     "step_9": "Ripetere fino a fine combattimento."
   },
   "design_evolution_notes": {

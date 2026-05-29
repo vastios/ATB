@@ -1,7 +1,7 @@
 {
   "section_id": "08",
   "section_name": "SKIN #1 — Cosmologia Cabalistica e Rivelazione Progressiva",
-  "version": "2.0",
+  "version": "3.0",
   "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: questo file è la SKIN #1 del Canale 3",
   "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
   "skin_metadata": {
@@ -135,7 +135,7 @@
     "mappings": [
       {
         "mechanical_term": "Caratteristica",
-        "material_level": "Capacità naturale (Forza, Agilità, Mente, Volontà)",
+        "material_level": "Capacità naturale (Risonanza, Evasione, Analisi, Istinto)",
         "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione)"
       },
       {

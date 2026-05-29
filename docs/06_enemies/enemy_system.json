@@ -1,7 +1,7 @@
 {
   "section_id": "07",
   "section_name": "Sistema Nemici — Classificazione a 3 Tier, Tratti, Attacchi Speciali e Ricompense",
-  "version": "9.0",
+  "version": "10.0",
   "status": "AGGIORNATO — Classificazione unificata a 3 Tier (Base/Elite/Epico), Scheda Unificata, Tratti, Attacchi Speciali, Ricompense Rev2, Distruzione Tratti tramite potere Arma Superiore",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Tutti i nemici condividono una struttura di scheda unificata. La differenza tra i livelli di minaccia non sta nelle regole base, ma nella complessità della loro scheda. Tre Tier: Base (solo PF e Attacchi Base), Elite (PF + Attacchi Base + Tratti), Epico (PF + Attacchi Base + Tratti multipli + Attacchi Speciali). I Tratti si distruggono attivando il potere di un'Arma Superiore. Le Ricompense includono Punti Impresa per evolvere armi e curare Caratteristiche (NON Cuori).",
@@ -63,7 +63,7 @@
       "resistenza_immunita_per_tag": {
         "name": "Resistenza/Immunità per Tag",
         "example": "Es. 'Immunità alla Materia'",
-        "mechanic": "Riduce o azzera i danni se l'attacco del giocatore possiede un Tag specifico (es. ignora tutti i danni da azioni con il tag [Forza]).",
+        "mechanic": "Riduce o azzera i danni se l'attacco del giocatore possiede un Tag specifico (es. ignora tutti i danni da azioni con il tag [Risonanza]).",
         "tactical_effect": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
       },
       "ritorsione": {
@@ -212,7 +212,7 @@
     "v3": "Token COPERTI, Boss come PG potenziato con mazzo generico + scheda.",
     "v4": "Boss nella Cintura ATB FLUIDA. Potere 9 compatibile senza griglia fissa.",
     "v5": "BOSS WOUND SYSTEM: Tabella Potere per danno PF. Difese mostro con riduzione fissa + mitigazione per Tag.",
-    "v6": "NOMI CARATTERISTICHE DEFINITIVI (Volontà/Mente/Agilità/Forza).",
+    "v6": "NOMI CARATTERISTICHE DEFINITIVI (Istinto/Analisi/Evasione/Risonanza).",
     "v7": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v8": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
     "v9": "CLASSIFICAZIONE UNIFICATA A 3 TIER: Base (solo PF + Attacchi Base), Elite (PF + Attacchi Base + Tratti), Epico (PF + Attacchi Base + Tratti multipli + Attacchi Speciali). Scheda Unificata per tutti i nemici. Tratti ridefiniti (Armatura Fissa, Immunità per Tag, Ritorsione, Condizione Sconfitta Alternativa). Distruzione Tratti tramite attivazione potere Arma Superiore (non sacrificio). Attacchi Speciali (solo Epici): Colpo Mirato, Squarcio dell'Anima, Distruzione Risorse, Modifica ATB. Ricompense Rev2: Risparmio dà ricompense, Punti Impresa NON curano Cuori, Equipaggiamento Prelevabile. Token/Bluff per Base e Elite."

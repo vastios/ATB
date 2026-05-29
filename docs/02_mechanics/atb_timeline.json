@@ -1,7 +1,7 @@
 {
   "section_id": "03",
   "section_name": "Cintura ATB — Sistema di Iniziativa e Risoluzione",
-  "version": "7.0",
+  "version": "8.0",
   "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Sistema di iniziativa e risoluzione basato su una Cintura di righe FLUIDE, non una griglia fissa. Ogni PG traccia la propria riga nella Cintura ATB. La risoluzione scorre da sinistra a destra. Le combo sono righe che convergono nello stesso slot.",
@@ -31,7 +31,7 @@
     "example": "Un PG con 3 carte Costo 5 e 2 carte Costo 3 potrebbe decidere di giocare coperte 2 carte da 5 per attivare una carta da 3, fermandosi a 1 azione da 3 con le altre 2 carte ancora in mano.",
     "asymmetry_result": "Chi gioca 1 carta lenta ha una riga corta ma potente. Chi gioca 5 carte veloci traccia una riga più lunga ma con impatto minore per posizione.",
     "forced_action": {
-      "name": "Azione Forzata",
+      "name": "Azione Risonanzata",
       "rule": "Quando un PG ha scartato l'ultima carta del suo Sentiero, PUÒ giocare altre carte (da 1 a 5). Non può restare senza carte nella Cintura ATB.",
       "refill_rule": "Ogni volta che giocano carte, i PG ne pescano altrettante dal Mazzo Vitalità per averne sempre 5 in mano.",
       "refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione."
@@ -70,6 +70,6 @@
     "v4": "LINEA DEL TEMPO FLUIDA (Cinghia di Trasporto). Niente griglia fissa. Continuità Temporale Assoluta.",
     "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori. [Strumento] per slittamento scudo.",
     "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Cintura ATB (non Fronte di Manifestazione), Righe (non Sentieri), Carte coperte (non Impalcature), Continuità Temporale (non Legge di Causalità), Azione Forzata (non Olam HaZman). Meccaniche invariate."
+    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Cintura ATB (non Fronte di Manifestazione), Righe (non Sentieri), Carte coperte (non Impalcature), Continuità Temporale (non Legge di Causalità), Azione Risonanzata (non Olam HaZman). Meccaniche invariate."
   }
 }

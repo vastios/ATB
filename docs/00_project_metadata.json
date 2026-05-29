@@ -39,10 +39,10 @@
     "terminology_neutral": {
       "note": "Tutti i file del Canale 1 usano TERMINOLOGIA NEUTRA. La terminologia lore-specifica è confinata nel Canale 3 (07_lore/).",
       "characteristics": {
-        "Volonta": { "colore": "Verde", "keyword": "Determinazione, magia istintiva, intuizione, fede" },
-        "Mente": { "colore": "Giallo", "keyword": "Intelletto, strategia, percezione, magia ragionata" },
-        "Agilita": { "colore": "Blu", "keyword": "Destrezza, schiva, furtivita, precisione" },
-        "Forza": { "colore": "Rosso", "keyword": "Potenza bruta, reazione viscerale, ferocia" }
+        "Istinto": { "colore": "Verde", "keyword": "Determinazione, magia istintiva, intuizione, fede" },
+        "Analisi": { "colore": "Giallo", "keyword": "Intelletto, strategia, percezione, magia ragionata" },
+        "Evasione": { "colore": "Blu", "keyword": "Destrezza, schiva, furtivita, precisione" },
+        "Risonanza": { "colore": "Rosso", "keyword": "Potenza bruta, reazione viscerale, ferocia" }
       },
       "vitality": "Mazzo Vitalità (60 carte azione)",
       "action_cards": "Carte Azione",

@@ -1,7 +1,7 @@
 {
   "section_id": "01",
   "section_name": "Anatomia delle Carte e Costituzione del Mazzo Vitalità",
-  "version": "9.0",
+  "version": "10.0",
   "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Struttura di ogni carta azione del Mazzo Vitalità e composizione del mazzo. Ogni carta ha un bordo colorato (Caratteristica), tag che scalano con la complessità secondo la REGOLA D'ORO, e una TABELLA POTERE artigianale. La Caratteristica INCIDE sul risultato. Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
@@ -10,10 +10,10 @@
     "border_color": {
       "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'azione.",
       "colors": {
-        "Verde": "Volontà — determinazione, magia istintiva, intuizione",
-        "Giallo": "Mente — intelletto, strategia, magia ragionata",
-        "Blu": "Agilità — destrezza, schiva, furtività",
-        "Rosso": "Forza — potenza bruta, reazione viscerale, ferocia"
+        "Verde": "Istinto — determinazione, magia istintiva, intuizione",
+        "Giallo": "Analisi — intelletto, strategia, magia ragionata",
+        "Blu": "Evasione — destrezza, schiva, furtività",
+        "Rosso": "Risonanza — potenza bruta, reazione viscerale, ferocia"
       },
       "purpose": "Permette di capire a colpo d'occhio quale Caratteristica l'azione utilizza."
     },
@@ -43,8 +43,8 @@
           "T1": "1 Tag — Solo [Imposizione] o [Opposizione]. Nessuna possibilità di combo o uso di oggetti. È un riflesso istintivo.",
           "T2": "2 Tag — Es. [Opposizione] + [Strumento]. Base, niente di complicato.",
           "T3": "3 Tag — Es. [Opposizione] + [Strumento] + [Sviluppo]. L'azione è pensata, non più istintiva.",
-          "T4": "4 Tag — Es. [Imposizione] + [Apertura] + [Mente] + [Ferita]. Complessa e versatile.",
-          "T5": "5 Tag — Es. [Imposizione] + [Apertura] + [Chiusura] + [Mente] + [Ferita]. Epica, un coltellino svizzero."
+          "T4": "4 Tag — Es. [Imposizione] + [Apertura] + [Analisi] + [Ferita]. Complessa e versatile.",
+          "T5": "5 Tag — Es. [Imposizione] + [Apertura] + [Chiusura] + [Analisi] + [Ferita]. Epica, un coltellino svizzero."
         },
         "design_intent": "Il sistema si AUTO-GOVERNA. Una carta T=1 può fare una cosa sola. Una carta T=5 può fare tutto contemporaneamente. La lentezza paga in versatilità e potenza."
       },
@@ -60,7 +60,7 @@
                 "contexts": {
                   "combat": "Attaccare, colpire, infliggere danno.",
                   "social": "Convincere, intimidire, imporre la propria volontà.",
-                  "exploration": "Forzare una porta, distruggere un ostacolo, spingere."
+                  "exploration": "Risonanzare una porta, distruggere un ostacolo, spingere."
                 }
               },
               "Opposizione": {
@@ -105,12 +105,12 @@
             "name": "Caratteristica Secondaria",
             "description": "Permette di usare l'azione sfruttando una Caratteristica diversa da quella indicata dal colore del bordo. Il tag assume il nome della Caratteristica alternativa.",
             "tags": {
-              "Volonta": "Usa il valore di Volontà al posto della Caratteristica del bordo.",
-              "Mente": "Usa il valore di Mente al posto della Caratteristica del bordo.",
-              "Agilita": "Usa il valore di Agilità al posto della Caratteristica del bordo.",
-              "Forza": "Usa il valore di Forza al posto della Caratteristica del bordo."
+              "Istinto": "Usa il valore di Istinto al posto della Caratteristica del bordo.",
+              "Analisi": "Usa il valore di Analisi al posto della Caratteristica del bordo.",
+              "Evasione": "Usa il valore di Evasione al posto della Caratteristica del bordo.",
+              "Risonanza": "Usa il valore di Risonanza al posto della Caratteristica del bordo."
             },
-            "example": "Una carta con bordo Rosso (Forza) che ha il tag [Mente] può essere usata calcolando il Potere dalla Caratteristica Mente anziché Forza. Il Guerriero con Forza 4 la usa per sfondare una porta. Il Saggio con Mente 4 la usa per un'intimidazione psicologica basata sulla violenza.",
+            "example": "Una carta con bordo Rosso (Risonanza) che ha il tag [Analisi] può essere usata calcolando il Potere dalla Caratteristica Analisi anziché Risonanza. Il Guerriero con Risonanza 4 la usa per sfondare una porta. Il Saggio con Analisi 4 la usa per un'intimidazione psicologica basata sulla violenza.",
             "design_intent": "Dà un ventaglio di utilizzi alla stessa carta. Le carte ad alto costo (T=4, T=5) possono avere questo tag, diventando coltellini svizzeri."
           },
           "4_STRUMENTO": {
@@ -180,7 +180,7 @@
     "proportional_composition": {
       "principle": "Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG. Ogni punto di Caratteristica = 6 carte azione di quel colore.",
       "formula": "Carte per Caratteristica = Valore Caratteristica × 6",
-      "example": "Guerriero: Forza 4 = 24 carte, Agilità 3 = 18 carte, Mente 1 = 6 carte, Volontà 2 = 12 carte. Totale: 24+18+6+12 = 60 carte."
+      "example": "Guerriero: Risonanza 4 = 24 carte, Evasione 3 = 18 carte, Analisi 1 = 6 carte, Istinto 2 = 12 carte. Totale: 24+18+6+12 = 60 carte."
     },
     "recipe_per_6": {
       "name": "La Ricetta del 6",
@@ -193,10 +193,10 @@
       },
       "example_warrior_forza_4": {
         "total_forza_cards": "24 (= 4 × 6)",
-        "T1": "8 carte Forza T=1",
-        "T2": "8 carte Forza T=2",
-        "T3": "4 carte Forza T=3",
-        "T4_T5": "4 carte Forza T=4 o T=5 (a scelta, es. 2 e 2)"
+        "T1": "8 carte Risonanza T=1",
+        "T2": "8 carte Risonanza T=2",
+        "T3": "4 carte Risonanza T=3",
+        "T4_T5": "4 carte Risonanza T=4 o T=5 (a scelta, es. 2 e 2)"
       },
       "why_perfect": "Poche carte complesse = quando ne peschi una è un EVENTO SPECIALE. Se la Caratteristica si ferisce, le azioni complesse peggiorano automaticamente senza blocchi aggiuntivi. Le combo sono RARE perché le carte con tag combo sono poche."
     },
@@ -204,7 +204,7 @@
       "name": "Il Catalogo delle Azioni",
       "description": "Non esistono mazzi preconfezionati per classe. Esiste un CATALOGO (mazzo Master) da cui i giocatori costruiscono il proprio Mazzo Vitalità.",
       "setup_process": "All'inizio della campagna, il giocatore prende il Catalogo e, in base alle sue Caratteristiche, seleziona le sue 60 carte seguendo la Ricetta del 6.",
-      "example": "'Io ho Forza 4, prendo 8 carte T=1 Forza, 8 T=2, 4 T=3, 4 T=4/T5 dal catalogo. Io ho Mente 1, prendo solo 2 T=1 e 2 T=2 Mente, più 1 T=3 e 1 T=4 a scelta.'",
+      "example": "'Io ho Risonanza 4, prendo 8 carte T=1 Risonanza, 8 T=2, 4 T=3, 4 T=4/T5 dal catalogo. Io ho Analisi 1, prendo solo 2 T=1 e 2 T=2 Analisi, più 1 T=3 e 1 T=4 a scelta.'",
       "customization": "I giocatori possono scegliere le carte che preferiscono esteticamente o narrativamente dal catalogo, sapendo che i numeri sono già bilanciati dalla Ricetta.",
       "evolution": "Il Mazzo Vitalità evolve sostituendo carte del catalogo base con carte trovate/acquistate, mantenendo la proporzione della Ricetta."
     }
@@ -212,28 +212,28 @@
   "card_examples_by_time_cost": {
     "T1_example": {
       "name": "Scatto Brusco",
-      "border": "Blu (Agilità)",
+      "border": "Blu (Evasione)",
       "time_cost": 1,
       "tags": ["[Imposizione]"],
       "note": "Un riflesso. Niente combo, niente strumenti, niente versatilità."
     },
     "T3_example": {
       "name": "Parata con Scudo",
-      "border": "Rosso (Forza)",
+      "border": "Rosso (Risonanza)",
       "time_cost": 3,
       "tags": ["[Opposizione]", "[Strumento]", "[Sviluppo]"],
       "note": "Una difesa che richiede lo scudo (Strumento) e che può essere usata a metà di una combo (Sviluppo)."
     },
     "T5_example": {
       "name": "Il Colpo dell'Eroe Caduto",
-      "border": "Rosso (Forza)",
+      "border": "Rosso (Risonanza)",
       "time_cost": 5,
-      "tags": ["[Imposizione]", "[Apertura]", "[Chiusura]", "[Mente]", "[Ferita]"],
-      "note": "Un'azione devastante che può iniziare O chiudere una combo, può essere calcolata con Mente al posto di Forza, e se il PG ha ferite si risveglia con potere terrificante. 5 tag = 5 costo tempo."
+      "tags": ["[Imposizione]", "[Apertura]", "[Chiusura]", "[Analisi]", "[Ferita]"],
+      "note": "Un'azione devastante che può iniziare O chiudere una combo, può essere calcolata con Analisi al posto di Risonanza, e se il PG ha ferite si risveglia con potere terrificante. 5 tag = 5 costo tempo."
     }
   },
   "context_penalty_forzatura": {
-    "name": "Forzatura — Usare un'azione fuori contesto",
+    "name": "Risonanzatura — Usare un'azione fuori contesto",
     "description": "Il PG può usare un'azione in un contesto non ideale, ma paga un prezzo.",
     "penalty_difficulty": "L'azione è considerata di difficoltà più alta dal Master.",
     "penalty_vitality": "Il PG deve scartare 1 carta aggiuntiva dal Mazzo Vitalità.",
@@ -249,12 +249,12 @@
   "design_evolution_notes": {
     "v1": "4 campi base: Nome, Costo Tempo, Tipo, Tags.",
     "v2": "Aggiunti Synergy Tags, Action Tags allineati a nuove Caratteristiche.",
-    "v3": "3 ELEMENTI FONDANTI. Dieta del Mazzo. Forzatura. Unificazione contesti.",
+    "v3": "3 ELEMENTI FONDANTI. Dieta del Mazzo. Risonanzatura. Unificazione contesti.",
     "v4": "COMBO ENABLER. Valore Numerico per test collettivi.",
     "v5": "Tabella Potere introdotta. Bordo colorato. Paradosso azioni veloci APERTO.",
     "v6": "TABELLA POTERE DEFINITIVA (artigianale, risolve il paradosso). MAZZO 60 CARTE proporzionale. RICETTA DEL 6. CATALOGO.",
-    "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Forza/Agilità/Mente/Volontà.",
+    "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Risonanza/Evasione/Analisi/Istinto.",
     "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Volontà/Mente/Agilità/Forza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion."
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion."
   }
 }
