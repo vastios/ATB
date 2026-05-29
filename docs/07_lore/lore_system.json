@@ -1,0 +1,266 @@
+{
+  "section_id": "08",
+  "section_name": "SKIN #1 — Cosmologia Cabalistica e Rivelazione Progressiva",
+  "version": "2.0",
+  "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: questo file è la SKIN #1 del Canale 3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "skin_metadata": {
+    "skin_name": "Cosmologia Cabalistica",
+    "applies_to": "Tutti i file del Canale 1 (meccaniche pure)",
+    "purpose": "Questa 'skin' veste le meccaniche pure con la terminologia e la cosmologia cabalistica. Le meccaniche NON cambiano: cambia solo la cornice narrativa e i nomi delle cose. Altra skin futura (Alchimia Ermetica, Taoismo, Fisica Quantistica) vestiranno le STESSE meccaniche con nomi e cornici diverse.",
+    "relationship_with_channel_1": "I file del Canale 1 (00-06) usano terminologia NEUTRA (Caratteristiche, Mazzo Vitalità, Cuori, Equipaggiamento, Conseguenze). Questa skin li rinomina: Caratteristiche → Connessioni ai Mondi, Mazzo Vitalità → Reshimu, Cuori → Anima Tripartita, Equipaggiamento → Kelim, Conseguenze → Qliphoth. LE REGOLE NON CAMBIANO."
+  },
+  "description": "La prima skin del gioco. La cosmologia cabalistica veste le meccaniche pure con una cornice narrativa profonda. La Rivelazione Progressiva fa sì che i giocatori SCOPRANO questa verità attraverso il gioco, non attraverso un manuale. Il gioco inizia come cappa e spada realistico e si svela come orrore cosmico cabalistico. Stesse regole, diversa cornice.",
+  "core_principle": {
+    "name": "Ludo-Narrative Harmony",
+    "definition": "La lore e le meccaniche sono la STESSA COSA. Non esiste una separazione tra 'regole di gioco' e 'storia del mondo'. Il Reshimu non è 'come si chiama il mazzo' — è COS'È il mazzo. La Shevirat HaKelim non è 'il nome figo per le ferite' — è PERCHÉ le ferite funzionano così. Ogni scelta meccanica è un atto cosmico, ogni atto cosmico ha una conseguenza meccanica.",
+    "design_philosophy": "Se togli la lore, le meccaniche non hanno senso. Se togli le meccaniche, la lore non ha peso. Sono inestricabili. Questo è il cuore del gioco.",
+    "practical_implication": "Il Master non deve 'spiegare la lore' separatamente dalle regole. Quando un PG gira una Connessione, IL GESTO STESSO è la Shevirat. Quando un Keli Superiore si spezza, IL QLIPHOTH STESSO è la conseguenza. La narrazione emerge dall'azione meccanica."
+  },
+  "cosmology": {
+    "name": "La Cosmologia dei Quattro Mondi",
+    "origin": {
+      "name": "Tzimtzum — La Contrazione Primordiale",
+      "description": "Prima della creazione, c'era solo l'Or Ein Sof — la Luce Infinita, che riempiva ogni cosa. Non c'era spazio per l'esistenza perché la Luce era OVUNQUE. Perché il mondo potesse esistere, l'Or Ein Sof dovette CONTRARSI, ritirarsi, creare uno spazio vuoto. Questo atto di auto-restrizione è il TZIMTZUM — la contrazione primordiale. La Luce si ritirò per fare spazio al mondo, e ciò che rimase nello spazio vuoto fu il RESHIMU — l'Impronta Luminosa, la traccia che la Luce aveva lasciato.",
+      "mechanical_parallel": "Il Reshimu (Mazzo Vitalità) è ESATTAMENTE questo: l'impronta che la Luce ha lasciato nel PG. Quando il Reshimu si esaurisce, è come se il Tzimtzum si fosse spinto troppo oltre — lo spazio vuoto è diventato troppo vuoto, e il Vaso collassa. La ferita volontaria a una Connessione o a un Cuore è un Tzimtzum volontario: il PG contrae la propria Luce per creare lo spazio per sopravvivere."
+    },
+    "the_four_worlds": {
+      "description": "Dopo il Tzimtzum, la Luce scese attraverso quattro stadi di Manifestazione — i Quattro Mondi. Ogni Mondo è un livello di densità della Luce: dal più sottile (Atziluth) al più denso (Assiah).",
+      "atziluth": {
+        "name": "Atziluth — Il Mondo dell'Emanazione",
+        "elemento": "Fuoco",
+        "connessione_pg": "Emanazione (Verde)",
+        "nature": "Il Mondo più vicino all'Or primordiale. Qui la Luce è ancora PURO FUOCO — volontà pura, senza forma, senza struttura. È il piano della determinazione assoluta, dell'intuizione che non ha bisogno di ragionamento, della fede che non ha bisogno di prova.",
+        "mechanical_expression": "I Segreti di Emanazione sono FUOCO che scorre attraverso il PG: attacchi istintivi, magia primordiale, intuizioni improvvise. La Tabella Potere per Emanazione scala con la profondità della Connessione al Fuoco."
+      },
+      "beriah": {
+        "name": "Beriah — Il Mondo della Creazione",
+        "elemento": "Acqua",
+        "connessione_pg": "Creazione (Giallo)",
+        "nature": "La Luce inizia a prendere FORMA INTELLETTUALE. Qui il Fuoco si raffredda in Acqua — la volontà diventa pensiero, l'impulso diventa piano, l'intuizione diventa strategia. È il piano dell'intelletto, delle emozioni profonde, della percezione razionale.",
+        "mechanical_expression": "I Segreti di Creazione sono ACQUA che fluisce: strategie, analisi, magia ragionata, intimidazioni psicologiche. La Tabella Potere per Creazione scala con la profondità della Connessione all'Acqua."
+      },
+      "yetzirah": {
+        "name": "Yetzirah — Il Mondo della Formazione",
+        "elemento": "Aria",
+        "connessione_pg": "Formazione (Blu)",
+        "nature": "La Luce viene PLASMATA. Qui l'Acqua diventa Aria — il pensiero si trasforma in azione fluida, il piano diventa movimento, la strategia diventa schiva. È il piano della destrezza, della furtività, del plasmarimento. L'aria riempie ogni spazio e si infila dove nessun altro elemento può.",
+        "mechanical_expression": "I Segreti di Formazione sono ARIA che si muove: schive, agilità, spostamenti fluidi, furtività, attacchi chirurgici. La Tabella Potere per Formazione scala con la profondità della Connessione all'Aria."
+      },
+      "assiah": {
+        "name": "Assiah — Il Mondo dell'Azione",
+        "elemento": "Terra",
+        "connessione_pg": "Azione (Rosso)",
+        "nature": "La Luce si SOLIDIFICA in materia. Qui l'Aria diventa TERRA — il movimento diventa impatto, la fluidità diventa forza bruta, l'idea diventa realtà fisica. È il piano della materia, della forza, dell'urto. La Terra è pesante, lenta, ma INARRESTABILE.",
+        "mechanical_expression": "I Segreti di Azione sono TERRA che si abbatte: attacchi bruti, sfondamenti, reazioni viscerie, forza fisica. La Tabella Potere per Azione scala con la profondità della Connessione alla Terra."
+      }
+    },
+    "descent_of_light": {
+      "name": "La Discesa della Luce",
+      "description": "La Luce scorre dall'alto verso il basso: Atziluth → Beriah → Yetzirah → Assiah. Ogni Mondo è un gradino nella Manifestazione. La Luce diventa sempre più densa, sempre più concreta, sempre più limitata. La Tabella Potere è questa legge: un Segreto complesso (Costo Tempo alto) è Luce che ha attraversato più livelli di Manifestazione — per questo è più potente, ma anche più lento.",
+      "atb_parallel": "La Cintura dei Sentieri è il Fronte di Manifestazione — l'espansione della Luce da sinistra a destra. La risoluzione da sinistra a destra è la discesa della Luce: prima il sottile, poi il denso.",
+      "death_reversal": "La morte procede NEL VERSO OPPOSTO: Assiah → Yetzirah → Beriah → Atziluth. L'Anima Tripartita si smonta dal basso verso l'alto: prima Nefesh (il corpo animale, più vicino ad Assiah), poi Ruach (lo spirito, più vicino a Yetzirah/Beriah), infine Neshamah (la scintilla divina, più vicina ad Atziluth). La Creazione si smonta nell'ordine inverso della sua costruzione."
+    }
+  },
+  "shevirat_hakelim": {
+    "name": "Shevirat HaKelim — La Frantumazione dei Vasi",
+    "description": "Quando la Luce scese nei Mondi, aveva bisogno di VASI per contenerla. Questi Vasi erano i KELIM — contenitori di ogni forma e dimensione. Ma la Luce era troppa. I Vasi più deboli non riuscirono a contenerla e SI FRANTUMARONO. Questa è la SHEVIRAT HAKELIM — la Frantumazione dei Vasi, il secondo atto cosmico dopo il Tzimtzum.",
+    "mechanical_parallel": "Ogni volta che una Connessione viene GIRATA, è una Shevirat in miniatura — il Vaso del PG non riesce più a contenere la Luce di quel Mondo e si incrina. Ogni volta che un Keli viene distrutto, è una Shevirat completa — il Vaso si è spezzato e la Luce si è corrotta. La ferita all'Anima è la Shevirat più profonda: il Vaso dell'anima stessa si incrina.",
+    "silver_lining": {
+      "name": "La Luce nella Frantumazione",
+      "description": "La Shevirat non è solo catastrofe. Quando un Vaso si rompe, la Luce che conteneva si LIBERA. È il principio del tag [Ferita]: i Segreti che attingono alla Shevirat sono più potenti perché la Luce liberata è disponibile. Ma è una Luce che si consuma in fretta — più ti affidi alla Shevirat, più ti avvicini al collasso.",
+      "mechanical_expression": "Il tag [Ferita] si risveglia quando il PG ha Connessioni o Cuori feriti. La frantumazione dà potere, ma il potere viene dalla perdita."
+    }
+  },
+  "qliphoth_cosmology": {
+    "name": "I Qliphoth — I Gusci Vuoti",
+    "description": "Quando i Vasi si frantumarono, la Luce che contenevano si disperse. Ma i FRAMMENTI DEI VASI rimasero. Questi frammenti sono i QLIPHOTH — Gusci Vuoti che hanno perso la loro Luce ma hanno conservato la FORMA. Sono parassiti cosmici: cercano Luce da rubare, riempirsi dell'Or altrui, tornare a essere Vasi pieni — ma non possono. La loro natura è il VUOTO.",
+    "mechanical_parallel": "I nemici del gioco sono tutti Qliphoth in diversa misura. I nemici basici sono frammenti minori. I Boss sono Qliphoth maggiori — Gusci così densi da aver sviluppato Tratti propri. I Qliphoth generati dalla distruzione di Kelim Superiori sono i più PERSONALI: sono i Gusci Vuoti degli oggetti che i PG hanno spezzato.",
+    "the_hunger": {
+      "name": "La Fame dei Qliphoth",
+      "description": "I Qliphoth attaccano i PG perché sono AFFAMATI DI LUCE. Il danno da milling è la Luce del PG che viene strappata e assorbita dal Qliphoth. Gli attacchi diretti alle Connessioni e all'Anima sono tentativi di FRANTUMARE i Vasi del PG per raggiungere la Luce più concentrata all'interno.",
+      "mechanical_expression": "I nemici attaccano per rubare Luce (milling), per frantumare Vasi (ferire Connessioni) o per divorare l'Anima (Anatema). Ogni tipo di attacco ha un movente cosmico."
+    },
+    "qliphoth_hierarchy": {
+      "minor": "Frammenti di Vasi deboli. Goblin, bestie corrotte, soldati senza anima. Attaccano in orde, muoiono facilmente, ma la loro fame è incessante.",
+      "maggiore": "Concentrazioni di Luce corrotta così dense da aver sviluppato volontà propria. Boss, entità nominali. Hanno Tratti propri — Kelim corrotti che usano come i PG usano il loro equipaggiamento.",
+      "generato": "Qliphoth nati dalla distruzione di Kelim Superiori dei PG. Sono i più pericolosi perché sono PERSONALI: conoscono la Luce che cercano, perché un tempo la contenevano."
+    }
+  },
+  "or_chozer_cosmology": {
+    "name": "Or Chozer — La Luce che Ritorna",
+    "description": "Non tutta la Luce dispersa dalla Shevirat è perduta. Parte di essa RITORNA alla fonte — è l'OR CHOZER, la Luce che Ritorna. Questo è il principio della speranza nel sistema: il danno non è mai definitivo al livello della Dispersione. La Luce può sempre tornare.",
+    "mechanical_parallel": "La Pila Scarti è l'Or Chozer. I Segreti che il PG ha usato o che gli sono stati strappati non sono andati distrutti — hanno compiuto il loro ciclo e ora riposano. Il riposo e le pozioni rivitalizzanti permettono alla Luce di rifluire dal deposito dell'Or Chozer al Reshimu.",
+    "sacred_nature": "L'Or Chozer è SACRO e INVIOLABILE. Nessun nemico può attaccarlo perché è Luce che ha già compiuto il suo scopo — non ha più forma che un Qliphoth possa divorare. È oltre la portata della violenza. Questo si traduce meccanicamente nella regola che la Pila Scarti non può essere bersagliata in combattimento."
+  },
+  "progressive_revelation": {
+    "name": "Rivelazione Progressiva — I Tre Livelli del Gioco",
+    "description": "Il gioco si svela in tre livelli. I giocatori NON sanno dall'inizio la vera natura della realtà. La scoprono attraverso il gioco. Le meccaniche rimangono LE STESSE — ma la comprensione dei giocatori cambia, e con essa il significato delle loro azioni.",
+    "design_intent": "La Rivelazione Progressiva non è un trucco narrativo — è l'ESPERIENZA DELLA DISCESA DELLA LUCE vista dall'interno. I PG, come i giocatori, iniziano nel mondo materiale (Assiah) e solo gradualmente scoprono che la realtà è molto più di ciò che sembra.",
+    "level_1": {
+      "name": "Livello 1 — Assiah (Il Mondo Materiale)",
+      "framing": "Cappa e Spada Realistico",
+      "what_players_see": "I PG sono avventurieri in un mondo di spade, intrighi e duelli. Le Connessioni sono 'capacità naturali' — forza, destrezza, intelligenza, determinazione. I Cuori sono 'punti vita speciali'. L'equipaggiamento è 'roba che indossi'. I nemici sono banditi, bestie, soldati nemici.",
+      "what_is_really_happening": "I PG stanno già operando nella struttura cabalistica, ma NON LO SANNO. Le Connessioni sono già connessioni ai Mondi. I Cuori sono già l'Anima Tripartita. I Kelim sono già Vasi. Ma la cornice narrativa è MATERIALISTA — tutto viene spiegato in termini fisici.",
+      "master_instructions": "Non menzionare MAI i termini cabalistici al Livello 1. 'Emanazione' è 'determinazione'. 'Shevirat HaKelim' è 'rimanere feriti'. 'Qliphoth' è 'mostro'. Le meccaniche funzionano ESATTAMENTE allo stesso modo, ma la narrazione le incornicia in termini mondani.",
+      "example_play": "Il Guerriero gira una carta Connessione per assorbire danni. Il Master dice: 'La ferita al braccio ti indebolisce — i tuoi colpi sono meno precisi.' NON dice: 'La tua Connessione ad Assiah subisce Shevirat HaKelim.'"
+    },
+    "level_2": {
+      "name": "Livello 2 — Yetzirah (Il Mondo della Formazione)",
+      "framing": "Il Soprannaturale si Rivela",
+      "trigger": "Iniziato quando i PG incontrano il primo indizio che la realtà non è ciò che sembra. Un cultista che parla di 'Luce' e 'Vasi'. Un oggetto che fa cose impossibili. Un nemico che non dovrebbe esistere.",
+      "what_players_see": "Il mondo è più strano di quanto sembrasse. Ci sono cultisti che adorano entità senza nome. Oggetti che pulsano di energia. Nemici che non sono del tutto reali. I PG iniziano a sospettare che le loro 'capacità naturali' siano qualcosa di più.",
+      "what_is_really_happening": "I PG stanno percependo la struttura di Yetzirah — il Mondo della Formazione, dove la Luce viene plasmata. Le loro Connessioni non sono solo 'capacità' — sono CANALI attraverso cui la Luce dei Mondi scorre. I loro oggetti non sono 'roba' — sono VASI. I nemici non sono 'mostri' — sono GUSCI VUOTI.",
+      "master_instructions": "Iniziare a INTRODURRE i termini cabalistici GRADUALMENTE. Un NPC dotto può spiegare che 'ciò che chiami determinazione è in realtà una Connessione al Fuoco primordiale'. Un oggetto trovato può essere descritto come 'un Vaso che attende la Luce'. Ma NON svelare tutto — lasciare che i giocatori colleghino i puntini.",
+      "example_play": "Il PG trova una spada antica. Il Master dice: 'La lama pulsa quando la impugni. Non è solo acciaio — è un Vaso che attende di essere riempito di Luce.' Il giocatore inizia a capire CHE I SUOI OGGETTI SONO KELIM."
+    },
+    "level_3": {
+      "name": "Livello 3 — Qliphoth (La Verità si Svela)",
+      "framing": "Orrore Cosmico Cabalistico",
+      "trigger": "Iniziato quando i PG affrontano il primo vero Qliphoth — un nemico generato dalla distruzione di un loro Keli Superiore, o un Boss che è palesemente un Guscio Vuoto cosmico.",
+      "what_players_see": "La realtà è una menzogna. Il mondo materiale è solo l'ultimo gradino di una discesa cosmica. I PG non sono avventurieri — sono VASI che incanalano la Luce di Mondi sovrannaturali. I loro nemici non sono mostri — sono GUSCI VUOTI affamati della loro Luce. Ogni ferita che hanno subito era SHEVIRAT HAKELIM. Ogni oggetto che hanno rotto ha GENERATO UN QLIPHOTH. Le conseguenze delle loro scelte hanno forma e volto.",
+      "what_is_really_happening": "I PG comprendono finalmente la struttura cosmica. Sanno che le loro Connessioni sono canali verso i Quattro Mondi, che la loro Anima è Tripartita, che i loro oggetti sono Kelim, che i loro nemici sono Qliphoth. La meccanica non è cambiata — ma ORA CAPISCONO PERCHÉ FUNZIONA COSÌ.",
+      "master_instructions": "Usare la PIENA terminologia cabalistica. La narrazione riflette la comprensione acquisita. Quando un PG ferisce una Connessione, il Master può dire: 'Senti il Vaso della tua Connessione ad Assiah incrinarsi — la Terra trema dentro di te.' Quando un Keli Superiore si spezza, il Master ANNUNCIA: 'La Luce prigioniera si corrompe. Un Qliphoth è nato. Lo incontrerete di nuovo.'",
+      "example_play": "Il Guerriero spezza la sua spada Superiore per ferire il Tratto del Boss. Il Master dice: 'La Lama dell'Alba si frantuma. La Luce che conteneva erompe, si corrompe, prende forma. Qualcosa sta nascendo dai frammenti — qualcosa che conosce la tua Luce, Guerriero, perché un tempo la conteneva. Lo incontrerai ancora.' I giocatori TREMANO perché ORA CAPISCONO COSA SIGNIFICA."
+    },
+    "transition_principles": {
+      "smooth_not_abrupt": "I passaggi tra i livelli sono GRADUALI. Non c'è un momento 'ecco, ora siete al Livello 2'. È un crepuscolo, non un interruttore.",
+      "same_mechanics": "Le meccaniche NON CAMBIANO MAI. Cambia solo la CORNICE NARRATIVA. Un PG al Livello 1 che gira una Connessione e un PG al Livello 3 che gira una Connessione stanno facendo la STESSA AZIONE MECCANICA. Ma il primo pensa 'mi sono ferito' e il secondo pensa 'ho subito Shevirat HaKelim'.",
+      "player_agency": "La transizione è guidata dalle AZIONI dei PG, non dal Master. Se i PG ignorano i cultisti e continuano a fare cappa e spada, rimangono al Livello 1. Se investigano, il Livello 2 si apre. Se distruggono un Keli Superiore, il Livello 3 bussa alla porta.",
+      "replayability": "Un gruppo che rigioca sapendo già la verità vivrà il Livello 1 in modo completamente diverso — ogni 'capacità naturale' sarà letta come 'Connessione al Mondo', ogni 'mostro' come 'Qliphoth'. Il gioco è PROGETTATO per questa rilettura."
+    }
+  },
+  "terminology_mapping": {
+    "description": "Mappatura completa tra termini meccanici e termini cabalistici. Al Livello 1 si usano i termini della colonna 'Aspetto Materiale'. Dal Livello 2 in poi si introducono gradualmente i termini della colonna 'Natura Cabalistica'. Al Livello 3 si usano pienamente i termini cabalistici.",
+    "mappings": [
+      {
+        "mechanical_term": "Caratteristica",
+        "material_level": "Capacità naturale (Forza, Agilità, Mente, Volontà)",
+        "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione)"
+      },
+      {
+        "mechanical_term": "Cuori",
+        "material_level": "Punti Vita Speciali",
+        "kabbalistic_nature": "Anima Tripartita (Nefesh, Ruach, Neshamah)"
+      },
+      {
+        "mechanical_term": "Mazzo Vitalità",
+        "material_level": "Energia / Stamina",
+        "kabbalistic_nature": "Reshimu — Impronta Luminosa"
+      },
+      {
+        "mechanical_term": "Carte Azione",
+        "material_level": "Mosse / Tecniche",
+        "kabbalistic_nature": "Segreti — frammenti di conoscenza cosmica"
+      },
+      {
+        "mechanical_term": "Pila Scarti",
+        "material_level": "Scarti",
+        "kabbalistic_nature": "Or Chozer — Luce che Ritorna"
+      },
+      {
+        "mechanical_term": "Equipaggiamento",
+        "material_level": "Oggetti / Armamento",
+        "kabbalistic_nature": "Kelim — Vasi che incanalano la Luce"
+      },
+      {
+        "mechanical_term": "Ferita (girare carta)",
+        "material_level": "Rimanere feriti / Danneggiati",
+        "kabbalistic_nature": "Shevirat HaKelim — Frantumazione dei Vasi"
+      },
+      {
+        "mechanical_term": "Nemici",
+        "material_level": "Mostri / Banditi / Bestie",
+        "kabbalistic_nature": "Qliphoth — Gusci Vuoti affamati di Luce"
+      },
+      {
+        "mechanical_term": "Boss",
+        "material_level": "Nemico potente",
+        "kabbalistic_nature": "Qliphoth Maggiore — concentrazione di Luce corrotta"
+      },
+      {
+        "mechanical_term": "Cintura ATB",
+        "material_level": "Linea temporale",
+        "kabbalistic_nature": "Fronte di Manifestazione — Luce che si espande"
+      },
+      {
+        "mechanical_term": "Combo",
+        "material_level": "Attacco combinato",
+        "kabbalistic_nature": "Sentieri Condivisi — flussi di Luce che convergono"
+      },
+      {
+        "mechanical_term": "Danno (milling)",
+        "material_level": "Perdita di energie",
+        "kabbalistic_nature": "Dispersione della Luce"
+      },
+      {
+        "mechanical_term": "Fatica (carte coperte)",
+        "material_level": "Sforzo / Stanchezza",
+        "kabbalistic_nature": "Tzimtzum in miniatura — Luce che si comprime"
+      },
+      {
+        "mechanical_term": "Danno Anatema",
+        "material_level": "Attacco soprannaturale",
+        "kabbalistic_nature": "Qliphoth allo stato puro — energia del vuoto"
+      },
+      {
+        "mechanical_term": "Cura Reshimu",
+        "material_level": "Riposo / Pozione energetica",
+        "kabbalistic_nature": "Riflusso dell'Or Chozer — la Luce ritorna"
+      },
+      {
+        "mechanical_term": "Cura Anima",
+        "material_level": "Cura rara / Miracolo",
+        "kabbalistic_nature": "Rituale cosmico — ricreare la scintilla"
+      }
+    ]
+  },
+  "the_paradox_of_sacrifice": {
+    "name": "Il Paradosso del Sacrificio — Il Cuore Tematico",
+    "description": "Il Dilemma del Vaso è il riflesso meccanico del più profondo paradosso cabalistico: la Creazione richiede il SACRIFICIO. Il Tzimtzum è il sacrificio dell'Infinito che si contrae per fare spazio al finito. La Shevirat è il sacrificio dei Vasi che si frantumano perché la Luce possa essere liberata. Il PG che ferisce una Connessione o un Cuore sta ripetendo questo atto primordiale: contrae se stesso per fare spazio alla sopravvivenza.",
+    "the_three_sacrifices": {
+      "reshimu_sacrifice": {
+        "name": "Sacrificare la Luce (Dispersione)",
+        "nature": "Lasci che la Luce venga strappata via. È il sacrificio più lieve — la Luce può tornare. Ma ogni Segreto disperso è un frammento di te che va nell'Or Chozer, e il Reshimu si assottiglia.",
+        "existential_weight": "Stai perdendo parti di te, ma temporaneamente. Come perdere ricordi che torneranno col riposo."
+      },
+      "connection_sacrifice": {
+        "name": "Sacrificare la Connessione (Shevirat Parziale)",
+        "nature": "Spezzo deliberatamente il mio canale verso un Mondo. Il Vaso si incrina, la Luce di quel Mondo scorre meno. Perdo potenza — ma sopravvivo.",
+        "existential_weight": "Stai tagliando una parte della tua connessione col cosmo. Come un musicista che perde l'udito in un orecchio — puoi ancora suonare, ma non senti più le armonie."
+      },
+      "soul_sacrifice": {
+        "name": "Sacrificare l'Anima (Shevirat Profonda)",
+        "nature": "La frantumazione raggiunge la mia essenza. Prima l'istinto (Nefesh), poi il sentimento (Ruach), infine la scintilla (Neshamah). Non perdo potenza — perdo ME STESSO.",
+        "existential_weight": "Stai morendo dall'interno. Il corpo combatte ancora, ma qualcosa dentro di te si è spento. Ogni Cuore ferito è un pezzo della tua anima che non c'è più. E Neshamah non torna."
+      }
+    },
+    "narrative_implication": "Il Dilemma del Vaso non è solo una scelta meccanica — è una domanda ESISTENZIALE che il gioco pone a ogni turno: cosa sei disposto a perdere per sopravvivere? E cosa diventi quando hai perso troppo?"
+  },
+  "master_guidelines": {
+    "name": "Linee Guida per il Master",
+    "principle": "Il Master è il guardiano della Rivelazione. Controlla il ritmo a cui i PG scoprono la vera natura della realtà. Deve bilanciare mistero e comprensione, orrore e meraviglia.",
+    "at_level_1": {
+      "tone": "Avventuroso, leggermente cuivo. Intrighi politici, duelli all'ultimo sangue, esplorazione di dungeon classici.",
+      "language": "Materiale e concreto. 'La tua forza ti abbandona', non 'La tua Connessione ad Assiah subisce Shevirat'.",
+      "foreshadowing": "SEMPLICI indizi. Un simbolo strano su una parete. Un nemico che non sanguina. Un oggetto che brilla nella penombra. Non spiegare, solo mostrare.",
+      "enemy_design": "Banditi, bestie, soldati. Nemici 'normali' con un dettaglio leggermente sbagliato (occhi vuoti, ferite che non sanguinano, sussurri incomprensibili)."
+    },
+    "at_level_2": {
+      "tone": "Inquietante. Il soprannaturale si insinua nella realtà. I PG iniziano a dubitare di ciò che sanno.",
+      "language": "Misto. Iniziare a usare termini come 'Luce', 'Vasi', 'Connessioni' gradualmente. Lasciare che i giocatori chiedano 'cosa significa?'",
+      "revelation_tools": "NPC che spiegano frammenti. Testi antichi. Visioni. Sogni. Oggetti che parlano. Il primo incontro con un cultista che dice 'La Luce deve scendere' e i PG capiscono che le loro 'capacità' sono qualcosa di più.",
+      "enemy_design": "Cultisti, creature deformi, oggetti animati. Nemici che usano meccaniche che i PG riconoscono come LE STESSE ma applicate in modo sbagliato (un cultista che 'incanala la Luce' in modo corrotto)."
+    },
+    "at_level_3": {
+      "tone": "Orrore cosmico. La realtà si svela come un velo su qualcosa di vasto e terrificante. I PG sono piccoli, ma la loro Luce è preziosa.",
+      "language": "Piena terminologia cabalistica. Ogni azione meccanica è descritta nel suo vero significato cosmico.",
+      "consequences_realized": "I PG vedono i Qliphoth che hanno generato. Le loro scelte passate hanno VOLTO. Il Guerriero incontra il nemico nato dalla sua spada. Il Mago incontra la maledizione nata dal suo bastone. È personale.",
+      "enemy_design": "Qliphoth in tutta la loro gloria orribile. Entità che non sono più 'mostri' ma GUSCI VUOTI affamati. Boss che sono concentrazioni di Luce corrotta con Tratti che i PG riconoscono — perché un tempo appartenevano a loro."
+    }
+  },
+  "design_evolution_notes": {
+    "v1.0": "CREAZIONE DEL FILE. Framework della cosmologia cabalistica, Shevirat HaKelim, Qliphoth, Or Chozer, Rivelazione Progressiva (3 livelli), mappatura terminologica completa, paradosso del sacrificizio, linee guida per il Master.",
+    "v2.0": "ARCHITETTURA 3 CANALI. Questo file diventa formalmente la SKIN #1 del Canale 3. Aggiunta sezione skin_metadata che definisce il rapporto con le meccaniche pure (Canale 1). Il contenuto narrativo è invariato — la cosmologia cabalistica rimane intatta come prima skin sviluppata. Le mappature terminologiche ora funzionano in DIREZIONE INVERSA: dai termini neutri del Canale 1 ai termini cabalistici di questa skin."
+  }
+}

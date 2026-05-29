@@ -1,34 +1,75 @@
 {
   "section_id": "03",
-  "section_name": "Linea del Tempo ATB",
-  "version": "1.0",
-  "status": "COMPLETO",
-  "description": "Sistema di iniziativa e risoluzione delle azioni. La ATB è una 'cinghia di trasporto' fluida dove le azioni si posizionano nel tempo in modo assoluto.",
+  "section_name": "Cintura ATB — Sistema di Iniziativa e Risoluzione",
+  "version": "7.0",
+  "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Sistema di iniziativa e risoluzione basato su una Cintura di righe FLUIDE, non una griglia fissa. Ogni PG traccia la propria riga nella Cintura ATB. La risoluzione scorre da sinistra a destra. Le combo sono righe che convergono nello stesso slot.",
   "core_concept": {
+    "name": "Cintura ATB Fluida",
+    "definition": "NON esiste una griglia fissa 5×5. Ogni PG traccia una riga orizzontale di lunghezza VARIABILE nella Cintura ATB. Il Ladro con 3 azioni Costo 1 ha una riga corta e veloce. Il Guerriero con 1 azione Costo 5 ha una riga lunga e lenta. Il Boss con Potere 9 ha una riga che sporge enormemente.",
+    "visual_metaphor": "Come la vera ATB di Final Fantasy: strisce di lunghezze diverse che scorrono. Non un quadrato, ma una serie di nastri trasportatori a velocità diverse.",
+    "asymmetry": "L'ATB è asimmetrica PER NATURA. Il Ladro agisce 3 volte prima che il Guerriero finisca il suo colpo. Il Boss con Potere 9 avanza lentamente ma inarrestabilmente."
+  },
+  "absolute_temporal_continuity": {
     "name": "Continuità Temporale Assoluta",
-    "rule": "Le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra. È impossibile saltare slot.",
-    "implication": "Non esiste 'iniziare per primo'. Chi agisce più velocemente (costo tempo basso) finisce prima e può riposizionarsi. Chi agisce lentamente (costo tempo alto) occupa più spazio nella timeline ed è prevedibile."
+    "rule": "Le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra. È IMPOSSIBILE saltare slot. Non ci sono 'buchi' nella Cintura ATB.",
+    "implication_for_combos": "Se il Mago ha un'azione nella posizione 4 e il Guerriero vuole convergere lì, DEVE riempire le posizioni 1, 2 e 3 prima di arrivare al 4. Non può 'teletrasportare' la sua riga.",
+    "combo_synchronization_cost": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago. È vulnerabile agli attacchi rapidi nel frattempo.",
+    "fast_vs_slow_combos": "Le combo veloci (posizione 1, Costo 1) sono scambi fulminei. Le combo devastanti (posizione 4-5) sono eventi che si preparano a destra del tavolo.",
+    "implication_for_defense": "Non puoi far apparire una difesa nella posizione 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella posizione."
   },
-  "placement_rules": {
-    "sequential_placement": "Ogni carta gioccupa uno slot ATB. La prima carta va nello slot 1, la seconda nel primo slot libero successivo al suo costo, ecc.",
-    "visual_representation": "Una griglia orizzontale. Slot 1, 2, 3, 4, 5... Le carte occupano slot consecutivi pari al loro Costo Tempo.",
-    "example": "Una carta Costo 3 occupa 3 slot ATB (es. slot 1-2-3). La prossima carta inizierà dallo slot 4."
+  "row_mechanics": {
+    "row_per_pg": "Ogni PG ha la propria riga orizzontale nella Cintura ATB.",
+    "row_per_enemy_basic": "1 riga per i token nemici basici (5 token coperti).",
+    "row_per_boss": "1 riga per il Boss (con azioni come i PG ma potere fino a 9).",
+    "variable_length": "La lunghezza di ogni riga dipende da quante carte il giocatore sceglie di giocare. Non esiste una lunghezza fissa.",
+    "corsie": "Ogni PG ha la propria 'Corsia' (striscia di tavolo). Le combo avvengono per CONVERGENZA delle righe nella stessa posizione."
   },
-  "forced_action_rule": {
-    "trigger": "Quando un PG non ha carte nell'ATB (ha finito di risolvere tutte le azioni).",
-    "requirement": "Deve giocare almeno 1 carta (fino a un massimo di 5) nel proprio turno di pianificazione.",
-    "minimum_commitment": "Il PG non può 'passare' indefinitamente. Deve sempre impegnarsi in almeno un'azione."
+  "how_many_cards_to_play": {
+    "rule": "Ogni giocatore sceglie quante carte giocare: da 1 a 5.",
+    "example": "Un PG con 3 carte Costo 5 e 2 carte Costo 3 potrebbe decidere di giocare coperte 2 carte da 5 per attivare una carta da 3, fermandosi a 1 azione da 3 con le altre 2 carte ancora in mano.",
+    "asymmetry_result": "Chi gioca 1 carta lenta ha una riga corta ma potente. Chi gioca 5 carte veloci traccia una riga più lunga ma con impatto minore per posizione.",
+    "forced_action": {
+      "name": "Azione Forzata",
+      "rule": "Quando un PG ha scartato l'ultima carta del suo Sentiero, PUÒ giocare altre carte (da 1 a 5). Non può restare senza carte nella Cintura ATB.",
+      "refill_rule": "Ogni volta che giocano carte, i PG ne pescano altrettante dal Mazzo Vitalità per averne sempre 5 in mano.",
+      "refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione."
+    }
   },
   "resolution_logic": {
-    "method": "Risoluzione per colonna (da sinistra a destra).",
-    "step_1": "Si risolve lo Slot 1 di TUTTI i partecipanti (PG e nemici).",
-    "step_2": "Si risolve lo Slot 2 di tutti.",
-    "step_n": "Continua finché tutti gli slot sono risolti.",
-    "simultaneous_resolution": "Se più azioni condividono lo stesso slot, si risolvono simultaneamente. Se l'ordine conta, si usa il Costo Tempo come tiebreaker (più basso = più veloce)."
+    "method": "Da sinistra a destra. Si risolve la colonna più a sinistra di TUTTI i partecipanti.",
+    "step_by_step": {
+      "tick_1": "Si risolve la prima carta di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → l'azione si risolve.",
+      "tick_2": "Si risolve la seconda carta di ogni riga.",
+      "tick_n": "Continua finché tutte le righe sono state risolte completamente."
+    },
+    "combo_check": "Ad ogni tick, se carte di ALMENO 2 PG DIVERSI sono nella STESSA POSIZIONE con Tag Combo compatibili, la combo si attiva.",
+    "defense_check": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le [Opposizioni] dei PG: stessa posizione = Perfect Block, adiacente = Mitigato, altrove = Danno pieno."
   },
-  "asymmetry": {
-    "description": "La ATB è intrinsecamente asimmetrica. PG veloci e nemici lenti (o viceversa) occupano spazi diversi nella timeline.",
-    "tactical_depth": "Un PG con azioni Costo 1 agisce 5 volte nello spazio di un'azione Costo 5. Ma l'azione Costo 5 è devastante.",
-    "prediction": "Le azioni lente sono visibili per più tempo nella timeline, permettendo agli avversari di preparare contromosse."
+  "turn_order": {
+    "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO.",
+    "subsequent_turns": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
+    "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo."
+  },
+  "boss_integration": {
+    "principle": "Il Boss traccia la propria riga nella stessa Cintura ATB dei PG.",
+    "power_9": "Il Boss può giocare Potere 9 = 8 carte coperte + 1 carta azione scoperta. Quella riga di 9 posizioni sporge enormemente rispetto alle righe dei PG.",
+    "no_grid_problem": "Nella Cintura FLUIDA, non c'è problema di spazio. Il Boss semplicemente ha una riga più lunga — un'azione più potente e lenta.",
+    "boss_freedom": "Il Master SCEGLIE LIBERAMENTE quale Livello di Potere giocare. Ha 9 carte 'Livello Potere' (da 1 a 9)."
+  },
+  "pacing_considerations": {
+    "natural_rhythm": "La fluidità delle righe crea un ritmo naturale. I PG veloci agiscono spesso, quelli lenti colpiscono forte ma raramente.",
+    "combo_timing": "Le combo richiedono pianificazione. Non sono mai gratuite: devi 'pagare' il tempo per far convergere la tua riga con quella del compagno."
+  },
+  "design_evolution_notes": {
+    "v1": "Cinghia di trasmissione base.",
+    "v2": "Action Queue a Risoluzione Sincrona.",
+    "v3": "Action Grid (griglia fissa 5×5) con token coperti.",
+    "v3.1": "Token coperti, Boss con riga dedicata.",
+    "v4": "LINEA DEL TEMPO FLUIDA (Cinghia di Trasporto). Niente griglia fissa. Continuità Temporale Assoluta.",
+    "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori. [Strumento] per slittamento scudo.",
+    "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Cintura ATB (non Fronte di Manifestazione), Righe (non Sentieri), Carte coperte (non Impalcature), Continuità Temporale (non Legge di Causalità), Azione Forzata (non Olam HaZman). Meccaniche invariate."
   }
 }

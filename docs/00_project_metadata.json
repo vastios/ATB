@@ -1,36 +1,157 @@
 {
   "game_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
-    "version": "1.2 - CORE ENGINE COMPLETO",
+    "version": "12.0 — Due Categorie Danno + Classificazione 3 Tier Nemici + Armi Alchemiche/Improvvisate + Soglia del Vuoto",
     "last_updated": "2026-05-29",
-    "core_emotion": "Crescita, cambiamento ed erosione dell'identità dei personaggi.",
-    "setting": "Fantasy Cappa e Spada (Magia potente, rara e pericolosa).",
+    "architecture": {
+      "name": "Architettura a Tre Canali",
+      "description": "Il progetto è diviso in tre canali indipendenti. Le meccaniche pure (Canale 1) sono COMPLETE prima di applicare qualsiasi lore. La lore (Canale 3) è una 'skin' che veste le meccaniche senza modificarle. Il Canale 2 contiene le regole avanzate per il Master.",
+      "channel_1_player_manual": {
+        "name": "Manuale del Giocatore",
+        "content": "Meccaniche pure. ZERO lore. Terminologia neutra e funzionale.",
+        "files": [
+          "01_core_engine/card_anatomy.json",
+          "01_core_engine/vitality_engine.json",
+          "02_mechanics/atb_timeline.json",
+          "03_character/character_sheet.json",
+          "04_combat/combat_math.json",
+          "05_equipment/equipment_system.json",
+          "06_enemies/enemy_system.json"
+        ]
+      },
+      "channel_2_master_guide": {
+        "name": "Guida del Master",
+        "content": "Regole avanzate, gestione sessione, bilanciamento, creazione nemici, consigli narrativi.",
+        "files": [
+          "08_master/master_guide.json — DA CREARE"
+        ]
+      },
+      "channel_3_setting_skins": {
+        "name": "Manuali Ambientazione (Skin)",
+        "content": "Lore che 'veste' le meccaniche senza alterarle. Ogni ambientazione ha la sua skin. La skin cabalistica è la prima sviluppata.",
+        "files": [
+          "07_lore/lore_system.json — SKIN CABALISTICA (prima skin)",
+          "Future skin: Alchimia Ermetica, Taoismo, Fisica Quantistica, ecc."
+        ]
+      }
+    },
+    "core_emotion": "Il Dilemma del Guerriero: assorbi il danno col Mazzo Vitalità (esaurendo le forze), ferisci una Caratteristica (perdendo potenza), o sacrifichi un Cuore (avvicinandoti alla morte). Ogni scelta ha un costo asimmetrico nella guarigione.",
+    "terminology_neutral": {
+      "note": "Tutti i file del Canale 1 usano TERMINOLOGIA NEUTRA. La terminologia lore-specifica è confinata nel Canale 3 (07_lore/).",
+      "characteristics": {
+        "Volonta": { "colore": "Verde", "keyword": "Determinazione, magia istintiva, intuizione, fede" },
+        "Mente": { "colore": "Giallo", "keyword": "Intelletto, strategia, percezione, magia ragionata" },
+        "Agilita": { "colore": "Blu", "keyword": "Destrezza, schiva, furtivita, precisione" },
+        "Forza": { "colore": "Rosso", "keyword": "Potenza bruta, reazione viscerale, ferocia" }
+      },
+      "vitality": "Mazzo Vitalità (60 carte azione)",
+      "action_cards": "Carte Azione",
+      "discard_pile": "Pila Scarti",
+      "hearts": "Cuori (3, ordine ferita obbligatorio: Cuore 1 → 2 → 3)",
+      "equipment": "Equipaggiamento (Normale / Superiore)",
+      "damage_milling": "Danno da Milling (esaustione del Mazzo Vitalità)",
+      "damage_wound": "Ferita (girare la carta — Caratteristica o Cuore)",
+      "timeline": "Cintura ATB",
+      "combo": "Combo Cooperativa (minimo 2 giocatori diversi)",
+      "enemy_consequence": "Conseguenza (generata dalla distruzione di equipaggiamento Superiore)"
+    },
     "usps": [
-      "Linea del Tempo ATB fluida e asimmetrica.",
-      "Mazzo dei giocatori come unico indicatore di Stamina/Energia.",
-      "Nessuna scheda cartacea: Identità, Salute ed Equipaggiamento sono interamente carte.",
-      "Tempo = Danno (Zero calcoli, lentezza equivale a potenza)."
-    ]
+      "MECCANICA FLIP UNIVERSALE: Tutte le carte (Caratteristiche, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'. Linguaggio visivo unificato.",
+      "TABELLA POTERE ARTIGIANALE: Il danno dipende dalla Caratteristica del PG incrociata col Costo Tempo. T=1 scala poco, T=5 scala MOLTO. Il forte preferisce il lento, il debole preferisce il veloce.",
+      "DANNO A DOPPIO STRATO: Esaustione (milling del Mazzo Vitalità) vs Ferita (Caratteristiche girate = perdita di potenza, Cuori girati = più vicino alla morte). Le cure sono asimmetriche: più profondo il danno, più difficile la guarigione.",
+      "IL DILEMMA DEL GUERRIERO: Quando subisci danni, SCEGLI: Mazzo Vitalità (milling, temporaneo), Caratteristica (fino a 3 danni assorbiti, perdi mosse forti), o Cuore (illimitato, più vicino alla morte). I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
+      "EQUIPAGGIAMENTO NORMALE vs SUPERIORE: Normale = solo potere base, al 2° utilizzo si distrugge. Superiore = può usare il potere Superiore anche al 1° utilizzo, e quando viene distrutto GENERA UNA CONSEGUENZA che il Master annota.",
+      "TAG SYSTEM v1.1: 5 categorie. REGOLA D'ORO: max Tag = Costo Tempo. [Imposizione]/[Opposizione], [Apertura]/[Sviluppo]/[Chiusura]/[Culmine], [Caratteristica Secondaria], [Strumento], [Ferita].",
+      "COMBO COOPERATIVE: Richiedono SEMPRE almeno 2 giocatori diversi. Danno combo = somma dei valori POTERE delle carte nella colonna.",
+      "CINTURA ATB FLUIDA: Non esiste griglia fissa. Ogni PG traccia la propria riga di lunghezza variabile. Continuità Temporale Assoluta: le carte si posizionano dalla prima posizione libera a sinistra.",
+      "SISTEMA NEMICI: Nemici minori (Swarm Logic + token bluff), Boss (Potere fino a 9, Tratti feribili), Conseguenze meccaniche dalla distruzione di equipaggiamento Superiore.",
+      "ARCHITETTURA 3 CANALI: Meccaniche pure separate dalla lore. Le ambientazioni sono 'skin' intercambiabili che vestono le stesse regole."
+    ],
+    "RESOLVED": {
+      "name": "PARADOSSO AZIONI VELOCI — RISOLTO",
+      "description": "La Tabella Potere artigianale risolve il paradosso. Azione 5 con 5 azioni veloci (T=1) = 10 danni base. Azione 5 con 1 azione lenta (T=5) = 30 danni base. Le azioni lente scalano drammaticamente con la Caratteristica, quelle veloci scalano poco.",
+      "status": "RISOLTO con Tabella Potere artigianale"
+    },
+    "OPEN_QUESTIONS": {
+      "ricordo_tag": "Il tag [Ricordo] è accantonato. Da riprendere quando si avrà un'ispirazione per meccanizzarlo.",
+      "boss_combo": "Il Boss può fare combo? Con i suoi minion?",
+      "boss_phases": "I Boss hanno fasi (sotto 50% PF cambiano abilità)?",
+      "progression": "Come evolve il PG? Come cambiano le carte nel mazzo nel lungo termine?",
+      "social_exploration": "Come funzionano le prove collettive fuori dal combattimento?",
+      "magic_system": "Sistema magico da definire.",
+      "point_9": "Cure, Risorse e Condizioni — da definire in meccaniche pure.",
+      "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare."
+    },
+    "POINTS_STATUS": {
+      "point_1_card_anatomy": "DEFINITO — Anatomia della carta azione",
+      "point_2_vitality_engine": "DEFINITO — Mazzo Vitalità, fatica, esaurimento, Pila Scarti",
+      "point_3_atb_timeline": "DEFINITO — Cintura ATB fluida, Continuità Temporale Assoluta",
+      "point_4_power_damage": "DEFINITO — Tabella Potere, Danni, Combo",
+      "point_5_two_layer_damage": "DEFINITO — Danno a doppio strato (Esaustione vs Ferita)",
+      "point_6_defense_shields": "DEFINITO — Perfect Block, Mitigato, Shield Sliding, Armatura",
+      "point_7_tags": "DEFINITO — Tag System v1.1 (5 categorie, Regola d'Oro)",
+      "point_8_enemies": "DEFINITO — 3 Tier (Base/Elite/Epico), Scheda Unificata, Tratti, Attacchi Speciali (Epici), Distruzione Tratti tramite potere Arma Superiore, Ricompense (Impresa NON cura Cuori, Risparmio dà ricompense)",
+      "point_9_healing_resources": "DA DEFINIRE — Cure, Risorse, Condizioni",
+      "point_10_magic": "DA DEFINIRE — Sistema magico",
+      "point_11_progression": "DA DEFINIRE — Evoluzione del PG",
+      "point_12_social": "DA DEFINIRE — Interazioni sociali",
+      "point_13_exploration": "DA DEFINIRE — Esplorazione"
+    }
   },
   "document_index": {
-    "00": "project_metadata.json",
-    "01": "card_anatomy.json",
-    "02": "vitality_engine.json",
-    "03": "atb_timeline.json",
-    "04": "combat_math.json",
-    "05": "character_sheet.json",
-    "06": "equipment_system.json",
-    "07": "enemy_system.json",
-    "08": "magic_system.json — DA DEFINIRE",
-    "09": "exploration_system.json — DA DEFINIRE",
-    "10": "social_system.json — DA DEFINIRE",
-    "11": "progression_system.json — DA DEFINIRE",
-    "12": "lore.json — DA DEFINIRE",
-    "13": "playtest_notes.json — DA DEFINIRE"
+    "00": "project_metadata.json — v12.0 DUE CATEGORIE DANNO + 3 TIER NEMICI",
+    "01": "card_anatomy.json — v9.0 (de-lore-izzato)",
+    "02": "vitality_engine.json — v8.0 (Due Categorie Danno, Soglia Vuoto)",
+    "03": "atb_timeline.json — v7.0 (de-lore-izzato)",
+    "04": "character_sheet.json — v12.0 (Linee Caratteristiche, Soglia Vuoto, Armi Improvvisate)",
+    "05": "combat_math.json — v10.0 (Due Categorie Danno, Soglia Vuoto)",
+    "06": "equipment_system.json — v8.0 (Armi Alchemiche/Improvvisate, Distruzione Tratti)",
+    "07": "enemy_system.json — v9.0 (3 Tier, Tratti, Attacchi Speciali, Ricompense Rev2)",
+    "08": "lore_system.json — SKIN CABALISTICA (Canale 3)",
+    "09": "master_guide.json — DA CREARE (Canale 2)",
+    "10": "magic_system.json — DA DEFINIRE",
+    "11": "exploration_system.json — DA DEFINIRE",
+    "12": "social_system.json — DA DEFINIRE",
+    "13": "progression_system.json — DA DEFINIRE",
+    "14": "playtest_notes.json — DA DEFINIRE"
+  },
+  "key_rules_summary": {
+    "power_table": "Tabella Potere artigianale. Il danno dipende dalla Caratteristica del PG incrociata col Costo Tempo. T=1 scala poco, T=5 scala MOLTO.",
+    "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag.",
+    "tag_utilizzo_obbligatorio": "Ogni carta ha [Imposizione] o [Opposizione]. Per T=1, è l'UNICO tag.",
+    "tag_combo_cooperativa": "Le combo richiedono MINIMO 2 GIOCATORI DIVERSI. Tag: [Apertura], [Sviluppo], [Chiusura], [Culmine].",
+    "tag_strumento_attivatore": "[Strumento] PERMETTE di attivare equipaggiamento. SENZA questo tag, l'equipaggiamento è inattivo.",
+    "tag_ferita": "Carta con [Ferita] ottiene bonus se il PG ha Caratteristiche o Cuori feriti.",
+    "tag_caratteristica_secondaria": "Permette di usare un'altra Caratteristica al posto di quella del bordo.",
+    "mandatory_matching_REVOKED": "REGOLA REVOCATA: Per il Danno Standard, il giocatore può scegliere QUALSIASI Caratteristica da ferire, indipendentemente dal tipo di danno subito. Per il Danno Diretto, la Caratteristica bersagliata è OBBLIGATORIA.",
+    "power_cap_wounded": "Caratteristica FERITA = non puoi giocare azioni con quel Tag sopra il valore attuale.",
+    "warriors_dilemma": "Due Categorie di Danno: Standard (SCEGLI tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) vs Diretto (NESSUNA scelta, gira carte pari al danno della Caratteristica bersagliata). I Cuori NON sono opzione per Danno Standard. I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
+    "temporal_continuity": "Le carte si posizionano SEMPRE dalla prima posizione libera a sinistra. Impossibile saltare slot.",
+    "combo_damage": "Danno combo = somma dei valori POTERE delle carte nella colonna.",
+    "equipment_normal_vs_superiore": "Equipaggiamento NORMALE: solo potere base, 2° utilizzo = distrutto. Equipaggiamento SUPERIORE: può usare potere Superiore anche al 1° utilizzo, e può DISTRUGGERE UN TRATTO NEMICO. Se l'arma era intatta → diventa usurata. Se era già usurata → viene distrutta (generando Conseguenza).",
+    "flip_universal": "TUTTE le carte usano la stessa meccanica: girare sul dorso per lo stato ferito/usurato. Stesso design ma colori sbiaditi/scala di grigi.",
+    "hearts_wound_order": "I Cuori si feriscono in ORDINE OBBLIGATORIO: prima Cuore 1, poi Cuore 2, infine Cuore 3. Non si può scegliere quale ferire.",
+    "exhaustion_heart_wound": "Esaurire il Mazzo Vitalità = 1 Ferita al prossimo Cuore disponibile + Svenimento.",
+    "healing_asymmetry": "Mazzo Vitalità (veloce), Caratteristiche (medio, anche Punti Impresa), Cuori (lento/narrativo, NON Impresa).",
+    "armi_improvvisate": "Senza Armi Alchemiche, il PG combatte con armi improvvisate (non carte). Solo attacchi base col Potere nudo. Ignorano COMPLETAMENTE tutti i Tag.",
+    "death_condition": "Cuore 1 + Cuore 2 + Cuore 3 tutti feriti = morte.",
+    "consequence_generation": "Equipaggiamento Superiore distrutto → Master annota la Conseguenza → diventerà nemico/evento futuro.",
+    "evolution_heroic": "Punti Impresa possono: (1) Evolvere Arma Alchemica Normale → Superiore, (2) Curare istantaneamente una Caratteristica ferita. NON curano Cuori.",
+    "discard_pile_passive": "La Pila Scarti è PASSIVA. Non può essere attaccata, interagita o bersagliata. Recuperabile SOLO con riposo/pozioni.",
+    "enemy_swarm": "Nemici Base multipli = 1 entità Orda con PF × N e attacchi × N.",
+    "enemy_3_tier": "Base (solo PF + Attacchi Base), Elite (+ Tratti), Epico (+ Tratti + Attacchi Speciali). Curva: colpisci → spezza difese → gestisci emergenze.",
+    "enemy_token_bluff": "5 token coperti. Il Master SCEGLIE quanti sono attacchi e quanti bluff. I PG non distinguono.",
+    "boss_power_9": "Il Boss può giocare Potere 9 nella Cintura ATB. 8 carte coperte + 1 azione scoperta.",
+    "boss_traits": "I nemici Elite/Epici hanno Tratti (Armatura Fissa, Immunità per Tag, Ritorsione, Condizione Sconfitta Alternativa) che si distruggono attivando il potere di un'Arma Superiore.",
+    "trait_destruction": "Tratto si distrugge attivando il potere di un'Arma Superiore. Se l'arma era intatta → diventa usurata. Se era già usurata → distrutta (genera Conseguenza). In alternativa: Soglia Combo (es. danno combo ≥ 15).",
+    "shield_sliding": "Girare lo scudo (con azione [Strumento]) = slittare carta Opposizione di 1 slot.",
+    "weapon_fatigue_reduction": "Girare l'arma (con azione [Strumento]) = ridurre carte coperte da scartare (fatica). Il POTERE non cambia.",
+    "inventory_three_speeds": "Equipaggiamento (sempre accessibile), Oggetti Rapidi (3 slot, in ATB), Zaino (10 oggetti, Costo 5 in combattimento)."
   },
   "backup_protocol": {
-    "method": "Auto-push su GitHub dopo ogni sezione completata",
+    "method": "Auto-push su GitHub",
     "repository": "https://github.com/vastios/ATB",
-    "commit_format": "[SEZIONE] Nome sezione — breve descrizione"
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione",
+    "note": "NO PUSH finché l'utente non dà l'ordine esplicito."
   }
 }

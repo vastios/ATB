@@ -1,45 +1,260 @@
 {
   "section_id": "01",
-  "section_name": "Anatomia delle Carte",
-  "version": "1.0",
-  "status": "COMPLETO",
-  "description": "Struttura di ogni carta del Mazzo Vitalità. Ogni carta rappresenta un'azione potenziale e un'unità di energia del personaggio.",
+  "section_name": "Anatomia delle Carte e Costituzione del Mazzo Vitalità",
+  "version": "9.0",
+  "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Struttura di ogni carta azione del Mazzo Vitalità e composizione del mazzo. Ogni carta ha un bordo colorato (Caratteristica), tag che scalano con la complessità secondo la REGOLA D'ORO, e una TABELLA POTERE artigianale. La Caratteristica INCIDE sul risultato. Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
+  "card_layout": {
+    "description": "La struttura visiva della carta azione.",
+    "border_color": {
+      "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'azione.",
+      "colors": {
+        "Verde": "Volontà — determinazione, magia istintiva, intuizione",
+        "Giallo": "Mente — intelletto, strategia, magia ragionata",
+        "Blu": "Agilità — destrezza, schiva, furtività",
+        "Rosso": "Forza — potenza bruta, reazione viscerale, ferocia"
+      },
+      "purpose": "Permette di capire a colpo d'occhio quale Caratteristica l'azione utilizza."
+    },
+    "top_tags": "In alto sulla carta sono riportati i TAG. Il numero di tag NON può mai superare il Costo Tempo della carta (REGOLA D'ORO). Più tempo costa un'azione, più tag ha e più è versatile.",
+    "center": "Nome dell'azione e eventuale immagine/illustrazione.",
+    "bottom_right": "Una CLESSIDRA vicino a un numero che indica il COSTO IN TEMPO (da 1 a 5).",
+    "bottom_left": "La TABELLA POTERE (2 colonne × 5 righe). Prima colonna: numeri da 1 a 5 (valore della Caratteristica). Seconda colonna: valore numerico del POTERE dell'azione in base al valore della Caratteristica."
+  },
   "fields": {
     "name": {
       "type": "String",
-      "description": "Nome evocativo della carta (es. 'Affondo Rapido', 'Parete di Ferro')."
+      "description": "Nome evocativo dell'azione. Dà sapore narrativo.",
+      "examples": ["Scatto Brusco", "Parata con Scudo", "Impeto", "Attenzione", "Respiro"]
     },
     "time_cost": {
       "type": "Integer",
       "range": [1, 5],
-      "description": "Costo Tempo della carta. Rappresenta sia la velocità dell'azione nella ATB sia il danno inflitto se usata come attacco. Più alto = più lento ma più devastante.",
-      "dual_function": "COSTO TEMPO = DANNO INFLITTO"
-    },
-    "type": {
-      "type": "Enum",
-      "options": ["Imposizione", "Opposizione", "Movimento", "Percezione"],
-      "descriptions": {
-        "Imposizione": "Azioni offensive proattive (attacchi, magie offensive, intimidazioni).",
-        "Opposizione": "Azioni reattive/difensive (parate, schivate, resistenze).",
-        "Movimento": "Spostamenti, riposizionamenti, ritirate.",
-        "Percezione": "Osservazione, analisi, intuizione, preparazione."
-      }
+      "description": "Costo Tempo dell'azione. Determina quante colonne occupa nella Cintura ATB e la complessità dell'azione.",
+      "dual_function": "COSTO TEMPO = complessità dell'azione = slot occupati nella Cintura ATB = numero MASSIMO di Tag sulla carta.",
+      "visual_in_grid": "Costo 3 = 2 slot coperti + 1 slot azione scoperta nella riga del PG."
     },
     "tags": {
-      "action_tags": {
-        "options": ["Forza", "Finesse", "Movimento", "Percezione"],
-        "description": "Definisce l'approccio dell'azione. Determina quale Caratteristica del PG viene coinvolta e quale carta Equipaggiamento può ridurre il costo."
+      "golden_rule": {
+        "name": "La Regola d'Oro dei Tag",
+        "rule": "Il numero massimo di Tag presenti su una singola carta non può MAI superare il suo Costo in Tempo.",
+        "examples": {
+          "T1": "1 Tag — Solo [Imposizione] o [Opposizione]. Nessuna possibilità di combo o uso di oggetti. È un riflesso istintivo.",
+          "T2": "2 Tag — Es. [Opposizione] + [Strumento]. Base, niente di complicato.",
+          "T3": "3 Tag — Es. [Opposizione] + [Strumento] + [Sviluppo]. L'azione è pensata, non più istintiva.",
+          "T4": "4 Tag — Es. [Imposizione] + [Apertura] + [Mente] + [Ferita]. Complessa e versatile.",
+          "T5": "5 Tag — Es. [Imposizione] + [Apertura] + [Chiusura] + [Mente] + [Ferita]. Epica, un coltellino svizzero."
+        },
+        "design_intent": "Il sistema si AUTO-GOVERNA. Una carta T=1 può fare una cosa sola. Una carta T=5 può fare tutto contemporaneamente. La lentezza paga in versatilità e potenza."
       },
-      "modifier_tags": {
-        "options": ["Apertura", "Chiusura", "Sostegno"],
-        "description": "Modificatori tattici. Apertura prepara un attacco successivo, Chiusura sfrutta un'apertura, Sostegno potenzia un alleato."
+      "catalog_v1_1": {
+        "name": "Catalogo Ufficiale dei Tag — Versione 1.1",
+        "categories": {
+          "1_UTILIZZO": {
+            "name": "Utilizzo (Obbligatorio)",
+            "description": "Identifica l'applicazione dell'azione. È l'UNICO tag obbligatorio: ogni carta ha esattamente uno di questi due tag. Per le carte a Costo 1, questo è l'UNICO tag presente.",
+            "tags": {
+              "Imposizione": {
+                "description": "L'azione impone un cambiamento. Attacco, offesa.",
+                "contexts": {
+                  "combat": "Attaccare, colpire, infliggere danno.",
+                  "social": "Convincere, intimidire, imporre la propria volontà.",
+                  "exploration": "Forzare una porta, distruggere un ostacolo, spingere."
+                }
+              },
+              "Opposizione": {
+                "description": "L'azione resiste al cambiamento imposto da altri. Difesa, resistenza.",
+                "contexts": {
+                  "combat": "Parare, schivare, ridurre i danni subiti.",
+                  "social": "Mentire, resistere psicologicamente, cambiare discorso.",
+                  "exploration": "Resistere a un veleno, non scivolare, resistere agli elementi."
+                }
+              }
+            }
+          },
+          "2_COMBO": {
+            "name": "Combo Cooperativa",
+            "description": "Definiscono il ruolo dell'azione all'interno di una combo nella Cintura ATB. Per attivare gli effetti di una combo, è OBBLIGATORIO impilare le carte di almeno 2 GIOCATORI DIVERSI nello stesso slot. Una combo non si può fare da soli.",
+            "tags": {
+              "Apertura": {
+                "description": "Il primo passo della combo. Senza questo tag, nessuna combo può iniziare.",
+                "mechanic": "Se questa carta è in fondo alla pila, permette alla carta sopra di esserne la Chiusura.",
+                "narrative": "La finta, la distrazione, il primo affondo che scopre la guardia."
+              },
+              "Sviluppo": {
+                "description": "Il passo intermedio. Permette di agganciarsi a una combo senza chiuderla. Allunga il percorso, modifica le condizioni.",
+                "mechanic": "Si inserisce tra un'Apertura e una Chiusura nella stessa colonna.",
+                "narrative": "Il gioco di gambe, il prolungare l'azione senza risolverla."
+              },
+              "Chiusura": {
+                "description": "Il colpo di grazia. Obbligatorio per finalizzare la combo e infliggere i danni/effetti calcolati.",
+                "mechanic": "Se questa carta è in cima alla pila sopra un'Apertura, la combo si completa.",
+                "narrative": "L'affondo finale, la parola che spezza la resistenza."
+              },
+              "Culmine": {
+                "description": "Una variante rara della Chiusura. Finalizza la combo ma ne amplifica DRAMMATICAMENTE l'effetto.",
+                "mechanic": "Come la Chiusura, ma l'effetto viene potenziato (es. danno raddoppiato, ignora difese, stordisce).",
+                "narrative": "Il colpo spettacolare, il gesto che chiude il duello in modo memorabile."
+              }
+            },
+            "flexibility_rule": "Se una carta ha sia [Apertura] che [Chiusura], chi la gioca SCEGLIE LIBERAMENTE quale ruolo assumere. NON significa che la carta fa combo da sola.",
+            "two_player_minimum": "Una combo richiede SEMPRE le carte di almeno 2 giocatori diversi."
+          },
+          "3_CARATTERISTICA_SECONDARIA": {
+            "name": "Caratteristica Secondaria",
+            "description": "Permette di usare l'azione sfruttando una Caratteristica diversa da quella indicata dal colore del bordo. Il tag assume il nome della Caratteristica alternativa.",
+            "tags": {
+              "Volonta": "Usa il valore di Volontà al posto della Caratteristica del bordo.",
+              "Mente": "Usa il valore di Mente al posto della Caratteristica del bordo.",
+              "Agilita": "Usa il valore di Agilità al posto della Caratteristica del bordo.",
+              "Forza": "Usa il valore di Forza al posto della Caratteristica del bordo."
+            },
+            "example": "Una carta con bordo Rosso (Forza) che ha il tag [Mente] può essere usata calcolando il Potere dalla Caratteristica Mente anziché Forza. Il Guerriero con Forza 4 la usa per sfondare una porta. Il Saggio con Mente 4 la usa per un'intimidazione psicologica basata sulla violenza.",
+            "design_intent": "Dà un ventaglio di utilizzi alla stessa carta. Le carte ad alto costo (T=4, T=5) possono avere questo tag, diventando coltellini svizzeri."
+          },
+          "4_STRUMENTO": {
+            "name": "Strumento (Attivatore Equipaggiamento)",
+            "description": "Il ponte tra le carte azione e l'equipaggiamento. Una carta con questo tag è L'UNICA che permette di attivare un equipaggiamento per il suo effetto.",
+            "critical_rule": "Senza questo tag su una carta azione, l'equipaggiamento NON PUÒ essere girato/usato per il suo effetto. L'equipaggiamento è 'inattivo' finché una carta azione non dice 'usa questo Strumento'.",
+            "clarification": "[Strumento] NON significa 'questa azione richiede un oggetto'. Significa l'esatto opposto: 'questa carta PERMETTE di attivare un equipaggiamento'. L'oggetto ha bisogno della carta, non viceversa.",
+            "tactical_implication": "Le carte con il tag [Strumento] sono preziosissime. Sono i 'ponti' tra il Mazzo Vitalità e la zona Equipaggiamento. I giocatori non potranno semplicemente attaccare e dire 'uso la spada'. Dovranno pescare carte che abbiano sia [Imposizione] sia [Strumento].",
+            "design_intent": "Le armi smettono di essere un bonus fisso e diventano una sinergia da ricercare nel mazzo."
+          },
+          "5_FERITA": {
+            "name": "Ferita (Potere dal Danno Subito)",
+            "description": "Riserva esclusiva delle carte a costo temporale alto (T=3+). Una carta con questo tag 'si risveglia' e ottiene un bonus meccanico SOLO se chi la gioca ha almeno una Caratteristica o un Cuore ferito (girato).",
+            "possible_bonuses": [
+              "Danni extra non sommabili alle combo",
+              "Ignora parzialmente l'armatura del nemico",
+              "Superamento automatico di una difficoltà",
+              "Effetti speciali attivati dallo stato ferito"
+            ],
+            "narrative": "Combatto come un ferito. Il danno subito mi rende più pericoloso.",
+            "contrasto": "Se il PG si fa curare e non ha più ferite, queste carte tornano a essere 'mute' o deboli. Spinge il giocatore a giocare d'azzardo trattenendo le cure."
+          }
+        },
+        "category_ACCANTONATA": {
+          "RICORDO": {
+            "status": "ACCANTONATA — In attesa di ispirazione",
+            "description": "L'idea del Ricordo era di legare l'aspetto narrativo delle ferite a una meccanica. Avrebbe permesso di attivare abilità speciali collegate a eventi traumatici subiti dal PG. La direzione narrativa era interessante, ma la meccanica non ha convinto. Da riprendere in futuro.",
+            "ideas_bank": [
+              "Ricordo come Tag personale scritto dal giocatore sulla carta ferita",
+              "Trigger situazionali basati sul tipo di trauma subito",
+              "Bonus passivi piccoli ma costanti vs sacrificio epico one-shot"
+            ]
+          }
+        }
       }
     },
-    "numeric_value": {
-      "type": "Integer",
-      "description": "Valore numerico usato per i Test di Sforzo Collettivo fuori dal combattimento. Non influisce sul combattimento.",
-      "usage": "Fuori combattimento — Sforzo Collettivo"
+    "power_table": {
+      "name": "Tabella Potere — L'Intersezione di Caratteristica e Costo Tempo",
+      "description": "Tabella artigianale che risolve il paradosso delle azioni veloci vs lente. Il POTERE è l'intersezione del valore della Caratteristica del PG con il Costo Tempo dell'azione. Le azioni lente scalano MOLTO con la Caratteristica, quelle veloci scalano poco.",
+      "table": {
+        "header": ["Caratteristica", "T=1 (Veloce)", "T=2", "T=3", "T=4", "T=5 (Lenta)"],
+        "stat_1_debole": [1, 1, 2, 4, 6, 9],
+        "stat_2": [2, 1, 3, 5, 9, 14],
+        "stat_3": [3, 2, 4, 7, 12, 19],
+        "stat_4": [4, 2, 5, 9, 15, 24],
+        "stat_5_fortissimo": [5, 2, 6, 11, 18, 30]
+      },
+      "function_in_combat": "In combattimento, il POTERE = DANNO inflitto al bersaglio.",
+      "function_outside_combat": "Nelle altre situazioni, il POTERE = valore usato per risolvere le prove (sociale, esplorazione).",
+      "proof_simulation": {
+        "situation_a": "PG Caratteristica 5 fa 5 azioni veloci (T=1) con combo (ogni combo = 2 + 3 supporto = 5). Totale: 5x5 = 25 danni.",
+        "situation_b": "PG Caratteristica 5 fa 1 azione lenta (T=5) con combo (30 + 3 supporto = 33). Totale: 33 danni.",
+        "result": "L'azione lenta (33) batte lo spam veloce (25). Il paradosso è risolto."
+      },
+      "emergent_behavior": {
+        "debole_caratteristica_1": "T=5 fa 9 danni, cinque T=1 fanno 10 (5x2). Al debole conviene colpire veloce. Il sistema gli DICE: 'La tua Caratteristica è troppo debole per sostenere un'azione complessa.'",
+        "medio_caratteristica_3": "T=5 fa 19, cinque T=1 fanno 10. L'azione complessa inizia a convenire, ma devi essere sicuro che il nemico non ti sposti.",
+        "forte_caratteristica_5": "T=5 fa 30, cinque T=1 fanno 10. Il sistema URLA: 'La tua Caratteristica è così alta che le azioni semplici sono spreco. Usa tutto il tuo potere!'"
+      },
+      "wounded_characteristic_scaling": "Se la Caratteristica è ferita (girata), il PG usa la riga corrispondente al valore attuale. La tabella fa tutto il lavoro: una Caratteristica ferita da 4 a 3 passa da 24 a 19 danni su T=5.",
+      "combo_not_easy_note": "Le combo non sono automatiche: richiedono Tag compatibili e un altro giocatore che sacrifica la sua azione. Questo rende la strategia 'burst' ancora più preziosa rispetto allo spam, perché il supporto ha un costo di opportunità reale."
     }
   },
-  "design_notes": "Ogni carta è contemporaneamente: azione, risorsa (stamina), e potenziale danno. Questa trinità elimina la necessità di contatori separati e rende ogni scelta significativa."
+  "deck_constitution": {
+    "name": "Costituzione del Mazzo Vitalità",
+    "deck_size": "60 CARTE AZIONE.",
+    "proportional_composition": {
+      "principle": "Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG. Ogni punto di Caratteristica = 6 carte azione di quel colore.",
+      "formula": "Carte per Caratteristica = Valore Caratteristica × 6",
+      "example": "Guerriero: Forza 4 = 24 carte, Agilità 3 = 18 carte, Mente 1 = 6 carte, Volontà 2 = 12 carte. Totale: 24+18+6+12 = 60 carte."
+    },
+    "recipe_per_6": {
+      "name": "La Ricetta del 6",
+      "description": "Ogni blocco di 6 carte azione della stessa Caratteristica segue questa distribuzione:",
+      "composition": {
+        "T1_veloci": "2 carte — Riflessi istintivi",
+        "T2_utilita": "2 carte — Tecniche base",
+        "T3_media": "1 carta — L'azione pensata",
+        "T4_T5_pesante": "1 carta — L'azione profonda, che richiede molto tempo"
+      },
+      "example_warrior_forza_4": {
+        "total_forza_cards": "24 (= 4 × 6)",
+        "T1": "8 carte Forza T=1",
+        "T2": "8 carte Forza T=2",
+        "T3": "4 carte Forza T=3",
+        "T4_T5": "4 carte Forza T=4 o T=5 (a scelta, es. 2 e 2)"
+      },
+      "why_perfect": "Poche carte complesse = quando ne peschi una è un EVENTO SPECIALE. Se la Caratteristica si ferisce, le azioni complesse peggiorano automaticamente senza blocchi aggiuntivi. Le combo sono RARE perché le carte con tag combo sono poche."
+    },
+    "catalog_system": {
+      "name": "Il Catalogo delle Azioni",
+      "description": "Non esistono mazzi preconfezionati per classe. Esiste un CATALOGO (mazzo Master) da cui i giocatori costruiscono il proprio Mazzo Vitalità.",
+      "setup_process": "All'inizio della campagna, il giocatore prende il Catalogo e, in base alle sue Caratteristiche, seleziona le sue 60 carte seguendo la Ricetta del 6.",
+      "example": "'Io ho Forza 4, prendo 8 carte T=1 Forza, 8 T=2, 4 T=3, 4 T=4/T5 dal catalogo. Io ho Mente 1, prendo solo 2 T=1 e 2 T=2 Mente, più 1 T=3 e 1 T=4 a scelta.'",
+      "customization": "I giocatori possono scegliere le carte che preferiscono esteticamente o narrativamente dal catalogo, sapendo che i numeri sono già bilanciati dalla Ricetta.",
+      "evolution": "Il Mazzo Vitalità evolve sostituendo carte del catalogo base con carte trovate/acquistate, mantenendo la proporzione della Ricetta."
+    }
+  },
+  "card_examples_by_time_cost": {
+    "T1_example": {
+      "name": "Scatto Brusco",
+      "border": "Blu (Agilità)",
+      "time_cost": 1,
+      "tags": ["[Imposizione]"],
+      "note": "Un riflesso. Niente combo, niente strumenti, niente versatilità."
+    },
+    "T3_example": {
+      "name": "Parata con Scudo",
+      "border": "Rosso (Forza)",
+      "time_cost": 3,
+      "tags": ["[Opposizione]", "[Strumento]", "[Sviluppo]"],
+      "note": "Una difesa che richiede lo scudo (Strumento) e che può essere usata a metà di una combo (Sviluppo)."
+    },
+    "T5_example": {
+      "name": "Il Colpo dell'Eroe Caduto",
+      "border": "Rosso (Forza)",
+      "time_cost": 5,
+      "tags": ["[Imposizione]", "[Apertura]", "[Chiusura]", "[Mente]", "[Ferita]"],
+      "note": "Un'azione devastante che può iniziare O chiudere una combo, può essere calcolata con Mente al posto di Forza, e se il PG ha ferite si risveglia con potere terrificante. 5 tag = 5 costo tempo."
+    }
+  },
+  "context_penalty_forzatura": {
+    "name": "Forzatura — Usare un'azione fuori contesto",
+    "description": "Il PG può usare un'azione in un contesto non ideale, ma paga un prezzo.",
+    "penalty_difficulty": "L'azione è considerata di difficoltà più alta dal Master.",
+    "penalty_vitality": "Il PG deve scartare 1 carta aggiuntiva dal Mazzo Vitalità.",
+    "design_intent": "Non chiude mai completamente la porta, ma rende l'adattamento costoso."
+  },
+  "card_design_requirements": {
+    "stacking_visibility": "Le carte devono essere leggibili anche nella griglia.",
+    "quick_read": "I tag importanti devono essere visibili anche quando la carta è parzialmente coperta.",
+    "power_table_readability": "La Tabella Potere in basso a sinistra deve essere leggibile a colpo d'occhio.",
+    "layout_example": "BORDO COLORATO | TAG IN ALTO | NOME+IMMAGINE AL CENTRO | TABELLA POTERE IN BASSO SX | CLESSIDRA+COSTO IN BASSO DX",
+    "flip_design": "Il DORSO della carta deve mostrare lo stesso design ma in scala di grigi / colori sbiaditi — lo stato 'ferito/usurato'. Questo vale per TUTTE le carte: Caratteristiche, Cuori, Equipaggiamento."
+  },
+  "design_evolution_notes": {
+    "v1": "4 campi base: Nome, Costo Tempo, Tipo, Tags.",
+    "v2": "Aggiunti Synergy Tags, Action Tags allineati a nuove Caratteristiche.",
+    "v3": "3 ELEMENTI FONDANTI. Dieta del Mazzo. Forzatura. Unificazione contesti.",
+    "v4": "COMBO ENABLER. Valore Numerico per test collettivi.",
+    "v5": "Tabella Potere introdotta. Bordo colorato. Paradosso azioni veloci APERTO.",
+    "v6": "TABELLA POTERE DEFINITIVA (artigianale, risolve il paradosso). MAZZO 60 CARTE proporzionale. RICETTA DEL 6. CATALOGO.",
+    "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Forza/Agilità/Mente/Volontà.",
+    "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Volontà/Mente/Agilità/Forza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion."
+  }
 }

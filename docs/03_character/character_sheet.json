@@ -1,75 +1,322 @@
 {
-  "section_id": "05",
-  "section_name": "Scheda Personaggio (Carte)",
-  "version": "1.0",
-  "status": "COMPLETO",
-  "description": "Il personaggio è interamente composto da carte. Non esiste una scheda cartacea tradizionale. Identità, Salute ed Equipaggiamento sono tutti carte.",
-  "zone_layout": {
-    "zona_caratteristiche": "Carte allineate che rappresentano le statistiche del PG.",
-    "zona_cuori": "3 carte Cuore separate.",
-    "zona_equipaggiamento": "Carte equipaggiamento indossato.",
-    "zona_inventario": "Oggetti rapidi e zaino.",
-    "mazzo_vitalita": "Mazzo da 40-50 carte.",
-    "scarti": "Pila degli scarti."
-  },
-  "characteristics_cards": {
-    "mechanic": "Il valore di una statistica (da 1 a 5) equivale al NUMERO FISICO DI CARTE in zona.",
-    "example": "Forza 3 = 3 carte Forza fisicamente presenti nella zona.",
-    "characteristics_list": {
-      "Forza": "Potenza bruta, attacchi pesanti, sfondare, sollevare.",
-      "Agilita": "Velocità, destrezza, schiva, furtività, attacchi precisi.",
-      "Mente": "Intelletto, memoria, magia analitica, percezione razionale.",
-      "Volonta": "Determinazione, coraggio, resistenza mentale, magia istintiva."
+  "section_id": "04",
+  "section_name": "Scheda Personaggio — Caratteristiche, Cuori, Equipaggiamento e Layout Area",
+  "version": "12.0",
+  "status": "AGGIORNATO — Meccaniche pure definitive: Caratteristiche in LINEE, Soglia del Vuoto, Danno Standard vs Diretto, Layout Area Giocatore a 4 Zone, Armi Alchemiche vs Improvvisate",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "NESSUNA scheda cartacea. Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Volontà, Mente, Agilità, Forza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. Il danno si divide in due categorie: Standard (il giocatore SCEGLIE tra Milling o Ferita a una Caratteristica qualsiasi) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore.",
+  "player_area_layout": {
+    "name": "L'Area del Giocatore (La 'Scheda' Fisica)",
+    "description": "L'area di ogni giocatore è divisa in quattro zone distinte, disposte davanti a lui per permettere una consultazione immediata.",
+    "zona_1_vitalita": {
+      "name": "ZONA 1: La Vitalità (Sinistra o Sotto)",
+      "content": "La riserva energetica del personaggio.",
+      "mazzo_vitalita": "Un mazzo composto esattamente da 60 carte.",
+      "pila_scarti": "Le carte usate o danneggiate vengono posizionate qui, in una pila capovolta.",
+      "nota": "Non vi sono segnalini numerici di salute. Lo stato di salute è dato dal numero di carte rimaste nel mazzo."
     },
-    "wounds": {
-      "ferita_cicatrice": {
-        "action": "La carta viene girata a faccia in giù (diventa una cicatrice).",
-        "mechanic": "Assorbe fino a 3 danni alla Stamina.",
-        "penalty": "Le azioni che usano il Tag associato a quella Caratteristica sono più costose o difficili finché la ferita non è guarita.",
-        "narrative": "La cicatrice è un promemoria fisico del costo pagato. Il PG è ancora functional ma compromesso."
+    "zona_2_personaggio": {
+      "name": "ZONA 2: La Zona Personaggio (Centro o In Alto)",
+      "content": "L'area che sostituisce la classica scheda cartacea. Contiene solo carte, disposte in modo chiaro e permanente per tutta la durata della sessione.",
+      "sezione_a_cuori": {
+        "name": "A. I Cuori",
+        "quantita": "3 carte.",
+        "stato_normale": "Posizionate scoperte.",
+        "stato_danneggiato": "Se subiscono un danno mortale, vengono girate sul dorso (lato in scala di grigi).",
+        "ordine_ferita": "Fisso: la prima ferita sul Cuore 1, la seconda sul Cuore 2, la terza sul Cuore 3 (Morte).",
+        "nota": "I Cuori non hanno un valore numerico stampato, sono solo indicatori di stato vitale."
       },
-      "distrutta": {
-        "action": "La carta viene rimossa fisicamente dalla zona.",
-        "mechanic": "Il valore MASSIMO della statistica cala permanentemente.",
-        "narrative": "Perdita irreversibile. Il personaggio è cambiato per sempre. È il cuore tematico del gioco: l'erosione dell'identità."
+      "sezione_b_caratteristiche": {
+        "name": "B. Le Caratteristiche (Le Linee)",
+        "quantita_variabile": "Il giocatore ha 4 LINEE orizzontali di carte, una per ogni caratteristica.",
+        "composizione": "Il numero di carte in una linea è uguale al valore attuale di quella statistica. Le carte sono disposte una accanto all'altra in modo che la faccia di TUTTE sia sempre visibile.",
+        "stato_normale": "Le carte sono scoperte e allineate orizzontalmente.",
+        "stato_danneggiato": "L'ultima carta a destra della linea viene girata sul dorso (scala di grigi), restando adiacente alla linea ma distinguibile.",
+        "effetto_ferita": "Il Valore Statistico si abbassa di 1 per ogni carta girata.",
+        "nota_visiva": "Una statistica non ha numeri scritti. La sua forza è determinata esclusivamente dalla quantità di carte scoperte nella linea."
+      },
+      "sezione_c_equipaggiamento_inventario": {
+        "name": "C. L'Equipaggiamento e l'Inventario",
+        "equipaggiamento_indossato": {
+          "description": "Le carte degli oggetti attivamente indossati (Armi Alchemiche, Armature, Scudi).",
+          "stato_normale": "Carta dritta.",
+          "stato_usurato": "Carta girata sul dorso.",
+          "nota_alchemiche": "Le armi che i PG possono equipaggiare sono ARMI ALCHEMICHE, non semplici armi. Questo spiega perché usarle e usurarle è una scelta da ponderare bene: non se ne trovano molte in giro perché costruirle non è facile. Questo spiega anche perché possono evolvere."
+        },
+        "slot_rapidi": "3 carte posizionate scoperte, rappresentanti oggetti pronti all'uso (pozioni, trappole).",
+        "zaino": "Una pila separata contenente un massimo di 10 carte coperte (oggetti non pronti all'uso istantaneo).",
+        "armi_improvvisate": {
+          "description": "Non sono rappresentate da carte. Se un giocatore perde o distrugge tutte le Armi Alchemiche, combatte con armi improvvisate.",
+          "meccanica": "Permettono solo attacchi base utilizzando il valore di Potere nudo della carta azione.",
+          "restrizioni": "Ignorano COMPLETAMENTE tutti i Tag sulla carta azione: non possono fare combo, non possono usare [Strumento], non beneficiano di Tag che aumentano il danno o l'effetto dell'attacco.",
+          "gestione": "Il giocatore prende nota su un foglietto esterno del tipo di arma improvvisata trovata (es. 'Sbarra di ferro arrugginita')."
+        }
       }
     },
-    "healing_wounds": {
-      "ferita": "Guaribile con pozioni guarigione o cure mediche (richiede giornate).",
-      "distrutta": "Irreversibile tramite mezzi normali. Solo magia estrema o rituali potrebbero (raramente) ripristinarla."
+    "zona_3_mano": {
+      "name": "ZONA 3: La Mano (Davanti al giocatore)",
+      "contenuto": "5 carte pescate dalla cima del Mazzo Vitalità.",
+      "funzione": "Qui il giocatore sceglie le azioni da compiere nel turno corrente."
+    },
+    "zona_4_atb": {
+      "name": "ZONA 4: La Linea del Tempo ATB (Al centro del tavolo)",
+      "contenuto": "Le carte giocate dalla mano vengono disposte orizzontalmente in questa area, formando la linea del tempo condivisa con gli altri giocatori e i nemici (tramite token).",
+      "natura": "Questa zona è temporanea: le carte qui posizionate verranno scartate nella Zona 1 alla fine della risoluzione di ogni colonna temporale."
+    },
+    "esempio_visivo_inizio": {
+      "statistiche": "Volontà 3, Mente 2, Agilità 1, Forza 4",
+      "layout": "[CUORE 1] [CUORE 2] [CUORE 3]\n[3 CARTE VOLONTÀ]  [2 CARTE MENTE]  [1 CARTA AGILITÀ]  [4 CARTE FORZA]\n[SPADA ALCHEMICA (Dritta)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Pozione] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+    },
+    "esempio_visivo_danno": {
+      "situazione": "Subita una ferita alla Mente e usura la spada",
+      "layout": "[CUORE 1] [CUORE 2 (GIRATA)] [CUORE 3]\n[3 CARTE VOLONTÀ]  [1 CARTA MENTE] [1 CARTA MENTE (GIRATA)]  [1 CARTA AGILITÀ]  [4 CARTE FORZA]\n[SPADA ALCHEMICA (GIRATA)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+    }
+  },
+  "character_creation": {
+    "point_buy": {
+      "total_points": 10,
+      "distribution": "Distribuire 10 punti tra le 4 Caratteristiche.",
+      "min_per_stat": 1,
+      "max_per_stat": 5,
+      "total_cards": "Sempre 10 carte Caratteristica totali. Es: Forza 3 = 3 carte fisiche 'Forza' sul tavolo."
+    },
+    "hearts_creation": {
+      "three_hearts": "3 carte Cuore. Non si distribuiscono punti: sono fisse.",
+      "optional_personalization": "DA VALUTARE: in fase di creazione, il giocatore potrebbe scrivere su ciascun Cuore qualcosa di inerente alla sua natura. Se il Cuore viene ferito, il gancio narrativo si attiva."
+    },
+    "deck_construction": {
+      "rule": "Ogni punto Caratteristica = 6 carte azione di quel colore. 10 punti × 6 = 60 carte.",
+      "composition": "Seguire la Ricetta del 6: per ogni blocco di 6 carte, 2 T=1, 2 T=2, 1 T=3, 1 T=4/T5.",
+      "catalog": "I giocatori scelgono dal Catalogo delle Azioni seguendo la Ricetta."
+    }
+  },
+  "characteristics_cards": {
+    "mechanic": "Il valore di una Caratteristica (1-5) equivale al NUMERO FISICO DI CARTE nella sua LINEA ORIZZONTALE. Assegnati i valori, il giocatore dispone tante carte della singola Caratteristica in linea quante è il valore. Es: Forza 3 = 3 carte fisiche 'Forza' in linea orizzontale sul tavolo.",
+    "characteristics_list": {
+      "Volonta": {
+        "border_color": "Verde",
+        "description": "Determinazione, connessione col sovrannaturale, magia istintiva, intuizione profonda.",
+        "keywords": ["magia_istintiva", "empatia", "intuizione", "volonta", "fede"],
+        "damage_type_alignment": "Danno Magico bersaglia Volontà e Mente."
+      },
+      "Mente": {
+        "border_color": "Giallo",
+        "description": "Intelletto, emozioni, strategia, percezione razionale, magia ragionata.",
+        "keywords": ["studio", "strategia", "conoscenza", "magia_analitica", "percezione"],
+        "damage_type_alignment": "Danno Magico bersaglia Volontà e Mente."
+      },
+      "Agilita": {
+        "border_color": "Blu",
+        "description": "Destrezza, schiva, furtività, spostamento fluido, precisione.",
+        "keywords": ["schiva", "agilita", "furtivita", "precisione", "evasione"],
+        "damage_type_alignment": "Danno Fisico bersaglia Agilità e Forza."
+      },
+      "Forza": {
+        "border_color": "Rosso",
+        "description": "Potenza bruta, reazione viscerale, impulso, ferocia, forza fisica.",
+        "keywords": ["attacco_bruto", "reativita", "coraggio", "ferocia", "forza_fisica"],
+        "damage_type_alignment": "Danno Fisico bersaglia Agilità e Forza."
+      }
+    },
+    "card_nature": {
+      "front": "Nome della Caratteristica + valore visibile. Stato ATTIVO (Intatto).",
+      "back_wounded": "Nome della Caratteristica + simbolo di danno/colori sbiaditi. Stato FERITO. Stesso design ma in scala di grigi/sbiadito — linguaggio visivo unificato con Cuori e Equipaggiamento.",
+      "evolution": "Si personalizzano con nomi ed effetti unici col progredire del PG."
+    },
+    "deck_composition_rule": {
+      "name": "La Regola Fondamentale del Mazzo",
+      "rule": "Il valore della caratteristica determina esattamente quante carte di quel colore sono presenti nel Mazzo Vitalità di 60 carte (Valore Statistico × 6 = Numero di Carte).",
+      "example": "Se un giocatore ha Volontà 3, avrà esattamente 18 carte Volontà nel suo mazzo di 60 carte.",
+      "immutabilita": "Durante un combattimento o una scena di tensione, il Mazzo Vitalità non viene mai modificato, né nel numero totale delle carte, né nella composizione dei colori. Le ferite che il personaggio subisce non rimuovono fisicamente le carte dal mazzo. Le carte rimangono nel mazzo, ma la loro efficienza viene alterata dalla Linea di Carte sul tavolo."
+    },
+    "linee_visualizzazione": {
+      "name": "Le Linee delle Caratteristiche (L'Indicatore Visivo)",
+      "meccanica": "Il giocatore prepara 4 LINEE orizzontali di carte scoperte, una per caratteristica. Il numero di carte in una linea è uguale al valore attuale di quella statistica. Le carte sono disposte una accanto all'altra in modo che la faccia di tutte sia sempre visibile.",
+      "esempio": "Se Formazione è 3, ci sarà una linea orizzontale composta da 3 carte scoperte.",
+      "perche_linee_non_pile": "La disposizione in LINEA (non in pila) rende immediatamente visibile a tutti il livello di 'erosione' del pg. Impilare le carte nasconderebbe lo stato del personaggio."
+    },
+    "wounding_system": {
+      "action": "Quando il giocatore subisce una Ferita a una caratteristica, prende l'ULTIMA CARTA A DESTRA della linea di quella caratteristica e la gira sul dorso (mettendola in scala di grigi, restando adiacente alla linea ma distinguibile).",
+      "effetto_riduzione": "Il Valore Statistico si abbassa di 1 per ogni carta girata.",
+      "impatto_sul_mazzo": "Il Mazzo Vitalità non cambia composizione. Ma quando il giocatore pesca una carta di quel colore e guarda la Tabella di Potere, deve incrociare il numero con il Valore Statistico ATTUALE (il numero di carte scoperte rimaste), non con quello di partenza.",
+      "ferite_multiple": "Una caratteristica può subire ferite multiple nel corso del gioco. Non c'è un limite massimo di carte girate per caratteristica, se non il raggiungimento del valore 0.",
+      "power_cap_when_wounded": {
+        "rule": "LIMITE DI POTENZA: Quando una Caratteristica è FERITA (ha almeno una carta girata), il PG NON PUÒ giocare azioni con quel Tag il cui Costo Tempo supera il valore ATTUALE (intatto) della Caratteristica.",
+        "when_intact": "Se la Caratteristica è INTATTA, NON c'è limite. Un Guerriero con Forza 3 può usare azioni [Forza] di Costo 4 o 5 pagando regolarmente il tempo.",
+        "when_wounded_example": "Guerriero con Forza 3, ma 1 carta girata (valore attuale = 2). NON può più giocare azioni [Forza] con Costo Tempo 3, 4 o 5. Può solo usare azioni [Forza] da Costo 1 o 2.",
+        "table_scaling_interaction": "La Tabella Potere scala automaticamente: un PG con Caratteristica ferita usa la riga corrispondente al valore attuale. Il Limite di Potenza agisce IN AGGIUNTA: non solo fai meno danno, ma non puoi proprio giocare le azioni più costose."
+      },
+      "visual_impact": "La Zona Caratteristiche si 'rovina' visivamente. A fine sessione, le ferite raccontano la storia del combattimento senza dire una parola.",
+      "recovery": "Guaribile con pozioni di guarigione, magia curativa, o giorni di riposo. La Caratteristica si risalda."
+    },
+    "soglia_del_vuoto": {
+      "name": "La Soglia del Vuoto (Caratteristica a Valore 0)",
+      "trigger": "Una caratteristica con una sola carta (Valore 1) subisce una Ferita.",
+      "azione_obbligatoria": {
+        "step_1": "Il giocatore gira l'ultima carta sul dorso. Il Valore Statistico scende a 0.",
+        "step_2": "CONTRACCOLPO OBBLIGATORIO: L'improvviso svuotarsi totale di quel collegamento forza l'intera struttura del personaggio. Il giocatore è COSTRETTO a girare (ferire) immediatamente un Cuore, senza possibilità di scelta o opposizione."
+      },
+      "stato_a_zero": {
+        "name": "Meccanica dello Stato a Valore 0",
+        "uso_passivo": "Le carte di quel colore nel mazzo possono ancora essere pescate. Possono essere giocate nella Linea del Tempo ma solo COPRITE per pagare il Costo in Tempo di altre azioni. Il personaggio può ancora muoversi, pararsi o creare 'impalcature' (carte coperte) usando il minimo di energia vitale grezza.",
+        "uso_attivo_annullato": "Se un giocatore gira una carta azione di quel colore per risolverla nello slot temporale, l'azione FALLISCE AUTOMATICAMENTE senza effetto. Non infligge danni, non supera prove, non attiva Tag di combo.",
+        "eccezione_caratteristica_secondaria": "Se una carta ha un Tag di Caratteristica Secondaria (es. una carta Forza con il tag [Mente]), il giocatore può usare quel Tag per calcolare il Potere basandosi sul valore di Mente (se è superiore a 0), aggirando lo stato di Vuoto della Forza."
+      },
+      "danni_oltre_lo_zero": "Se il personaggio subisce un danno mirato a una Caratteristica già a 0, non succede nulla di meccanico (non ci sono più carte da girare). Il collegamento è già annientato.",
+      "riepilogo_erosione": {
+        "inizio": "Volontà = [Carta 1] [Carta 2] [Carta 3] (Valore 3)",
+        "prima_ferita": "Volontà = [Carta 1] [Carta 2] [Carta 3 Girata] (Valore 2)",
+        "seconda_ferita": "Volontà = [Carta 1] [Carta 2 Girata] [Carta 3 Girata] (Valore 1)",
+        "soglia_del_vuoto": "Volontà = [Carta 1 Girata] [Carta 2 Girata] [Carta 3 Girata] (Valore 0). Il giocatore gira CONTEMPORANEAMENTE un Cuore."
+      }
+    },
+    "destruction": {
+      "action": "La carta viene RIMOSSA fisicamente dalla Zona Caratteristiche.",
+      "consequence": "Il valore MASSIMO della Caratteristica cala permanentemente. Es: Forza 3 con 1 carta distrutta → Forza 2.",
+      "when": "Solo per attacchi catastrofici specifici (Boss speciali, fallimenti critici narrativi, magia estrema). NON è il danno standard.",
+      "recovery": "Quasi irreversibile. Solo magia estrema o rituali potrebbero ripristinarla."
+    }
+  },
+  "damage_categories": {
+    "name": "Le Due Categorie di Danno",
+    "description": "Il danno in questo sistema si divide in due categorie meccaniche NETTAMENTE SEPARATE, con regole di assorbimento diverse.",
+    "danno_standard": {
+      "name": "1. Danno Standard (Erosione e Scelta)",
+      "trigger": "Danno normale inflitto da nemici base o da attacchi generici.",
+      "meccanica": "Il giocatore DEVE decidere come assorbire il danno, scegliendo una delle due opzioni:",
+      "opzione_a_milling": {
+        "name": "Opzione A — Milling (La Stanchezza)",
+        "azione": "Scarta carte dalla cima del Mazzo Vitalità verso gli scarti pari al danno subito.",
+        "costo": "Perde carte dal Mazzo Vitalità. Se il Mazzo finisce = 1 Ferita al prossimo Cuore + Svenimento.",
+        "quando_usarla": "Danni piccoli, Mazzo ancora pieno, vuoi conservare Caratteristiche e Cuori."
+      },
+      "opzione_b_ferita": {
+        "name": "Opzione B — Ferita (Il Sacrificio)",
+        "azione": "Il giocatore gira UNA carta di UNA QUALSIASI Caratteristica (a propria scelta, indipendentemente dal tipo di danno subito) sul dorso. Il danno viene completamente annullato (0 danni subiti al mazzo), ma il Valore Statistico di quella caratteristica si abbassa di 1.",
+        "costo": "Perdi permanentemente un punto di un'abilità per salvare la propria riserva energetica. Il Limite di Potenza si attiva per quella Caratteristica.",
+        "quando_usarla": "Danni medi-grandi, vuoi proteggere i Cuori e il Mazzo Vitalità ma puoi permetterti di perdere potenza temporaneamente."
+      },
+      "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o perdere permanentemente un punto di un'abilità per salvare la propria riserva energetica."
+    },
+    "danno_diretto_caratteristica": {
+      "name": "2. Danno Diretto alla Caratteristica (La Forza Bruta)",
+      "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Mente: 2 Danni'). NON rappresenta un colpo fisico generale, ma un colpo chirurgico all'anima del personaggio.",
+      "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. Il collegamento con quella Caratteristica è stato direttamente aggredito.",
+      "azione_obbligatoria": "Il giocatore deve girare un numero di carte di quella Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
+      "esempio_normale": "Mente è a 3. Subisce 2 danni diretti a Mente. Il giocatore gira 2 carte della linea Mente (Valore scende a 1).",
+      "esempio_soglia_vuoto": "Mente è a 1. Subisce 3 danni diretti a Mente. Il giocatore gira l'unica carta rimanente (scende a 0). La Soglia del Vuoto si innesca: il giocatore è costretto a girare immediatamente un Cuore."
+    },
+    "gerarchia_risoluzione": {
+      "step_1": "Token Nemico Scoperto: Il Master rivela il token nell'ATB.",
+      "step_2": "Identificazione del Danno: È un attacco standard? (es. '5 Danni') Il Master chiede al giocatore: 'Come assorbi? Mazzo o Caratteristica?' È un attacco mirato? (es. '2 Danni a Mente') Il Master dice: 'Colpo mirato a Mente. Devi girare 2 carte Mente (o subire gli effetti del Valore 0 se non ne hai abbastanza).'",
+      "step_3": "Risoluzione: Il giocatore subisce le carte scartate dal mazzo, oppure gira le carte caratteristica sul dorso nella sua Zona Personaggio."
+    },
+    "nota_cuori_nel_dilemma": "I Cuori NON sono un'opzione per il Danno Standard. I Cuori si feriscono SOLO in tre casi: (1) Esaurimento del Mazzo Vitalità, (2) Attacchi Anatema/Diretti ai Cuori, (3) Soglia del Vuoto (Caratteristica a 0). Questa regola rende i Cuori una risorsa INCOGNIABILE dal danno normale: non puoi 'scegliere' di ferire un Cuore per evitare il milling o la ferita alla Caratteristica."
+  },
+  "hearts_cards": {
+    "name": "I Cuori",
+    "quantity": 3,
+    "permanent": "Il PG ha SEMPRE 3 carte Cuore. Non si scartano, non si rimuovono. Si girano (feriscono) e si curano.",
+    "wound_order": {
+      "rule": "OBBLIGATORIO: i Cuori si feriscono in ORDINE PRECISO. PRIMA Cuore 1, POI Cuore 2, INFINE Cuore 3. Il giocatore NON può scegliere quale Cuore ferire.",
+      "mechanical_implication": "Sapere che Cuore 1 va per prima significa che il PG sacrifica sempre il 'livello più basso'. Ma quando Cuore 1 è già ferito, il prossimo colpo va a Cuore 2 — e quello fa male."
+    },
+    "the_three": {
+      "cuore_1": {
+        "order": 1,
+        "nature": "Vitalità istintiva, l'impulso di sopravvivenza, la forza vitale grezza.",
+        "healing_difficulty": "La più facile da curare. Il corpo vuole guarire. Pozioni, riposo, cure mediche funzionano."
+      },
+      "cuore_2": {
+        "order": 2,
+        "nature": "Spirito emotivo, i sentimenti, il coraggio morale, la passione.",
+        "healing_difficulty": "Difficile. Richiede rituali, confronti emotivi, esperienze che riaccendano la passione."
+      },
+      "cuore_3": {
+        "order": 3,
+        "nature": "Identità profonda, la connessione col trascendente, il senso di scopo.",
+        "healing_difficulty": "Quasi impossibile. Solo miracoli, interventi eccezionali, o sacrifici estremi."
+      }
+    },
+    "how_hearts_are_wounded": {
+      "esaurimento_mazzo": "Esaurire il Mazzo Vitalità ferisce AUTOMATICAMENTE il prossimo Cuore nell'ordine e il PG sviene.",
+      "anatema_damage": "Attacchi Anatema bersagliano i Cuori DIRETTAMENTE senza passare per Mazzo Vitalità o Caratteristiche. Il giocatore NON ha scelta.",
+      "soglia_del_vuoto": "Quando una Caratteristica scende a 0, il giocatore è COSTRETTO a girare immediatamente un Cuore.",
+      "attacchi_speciali_epici": "Gli Attacchi Speciali dei Nemici Epici (es. Squarcio dell'Anima) possono colpire i Cuori direttamente."
+    },
+    "no_combat_penalty": "Un Cuore ferito NON dà penalità meccaniche in combattimento. Il PG è ferito ma ancora pienamente funzionale.",
+    "death_condition": {
+      "trigger": "Il PG muore quando tutti e 3 i Cuori sono girati.",
+      "simplicity": "3 Cuori girati = morte. Pulito, definitivo, terrificante."
+    },
+    "personalization": {
+      "initial": "Carte bianche generiche con scritto solo 'Cuore 1', 'Cuore 2', 'Cuore 3'.",
+      "optional_creation_hook": "DA VALUTARE: in fase di creazione, il giocatore potrebbe scrivere su ciascun Cuore un gancio narrativo/emotivo.",
+      "evolution": "Diventano personalizzabili e narrative col tempo."
     }
   },
   "damage_typing": {
-    "danno_fisico": "Bersaglia le Caratteristiche Forza e Agilità.",
-    "danno_magico": "Bersaglia le Caratteristiche Mente e Volontà.",
-    "design_intent": "Costringe a variare gli approcci. Un combattente puro soffrirà il danno magico sulle proprie difese deboli. Un mago crollerà sotto i colpi fisici."
-  },
-  "heart_cards": {
-    "quantity": 3,
-    "nature": "Le Carte Cuore rappresentano la VOLONTÀ DI VIVERE del personaggio, non la salute fisica.",
-    "cannot_be_sacrificed": "NON possono essere sacrificate volontariamente. Sono colpite SOLO da Danno Anatema o esaurimento della Vitalità.",
-    "effect_when_hit": {
-      "single_heart": "Un Cuore girato non dà penalità meccaniche. Il PG è ferito nell'anima ma ancora funzionale.",
-      "all_three_hearts": "Se tutti e 3 i Cuori sono girati, il PG muore.",
-      "narrative_weight": "La perdita di un Cuore dovrebbe essere un momento narrativo significativo, non solo un segno sulla scheda."
+    "danno_fisico": {
+      "targets": ["Agilità", "Forza"],
+      "description": "Colpi, tagli, impatti.",
+      "effect": "Per Danno Standard: scelta Milling/Caratteristica. Per Danno Diretto: ferisce la Caratteristica bersagliata senza scelta."
+    },
+    "danno_magico": {
+      "targets": ["Volontà", "Mente"],
+      "description": "Maledizioni, folgori, assalti psichici.",
+      "effect": "Per Danno Standard: scelta Milling/Caratteristica. Per Danno Diretto: ferisce la Caratteristica bersagliata senza scelta."
+    },
+    "danno_anatema": {
+      "targets": ["Cuori"],
+      "description": "Attacchi sovrannaturali devastanti che bypassano Mazzo Vitalità e Caratteristiche, colpendo direttamente i Cuori.",
+      "effect": "Ferisce il prossimo Cuore nell'ordine. Il giocatore NON può scegliere di deviare il danno altrove. NESSUNA scelta."
     }
   },
   "healing_economy": {
-    "vitalita": {
-      "method": "Riposo (totale) o pozioni rivitalizzanti (parziale).",
-      "speed": "Veloce. La stamina è la risorsa più recuperabile.",
-      "philosophy": "La fatica è temporanea. Il corpo si riprende."
+    "principle": "Sistema a TRE VELOCITÀ. Più profondo il danno, più difficile la guarigione.",
+    "mazzo_vitalita": {
+      "method_riposo": "Riposo TOTALE: la Pila Scarti rimescola nel Mazzo Vitalità.",
+      "method_pozioni": "Pozioni rivitalizzanti / Incantesimi rivitalizzanti: recupero PARZIALE dalla Pila Scarti.",
+      "speed": "VELOCE."
     },
     "caratteristiche": {
-      "method": "Pozioni guarigione, cure mediche, magia curativa.",
-      "speed": "Lenta (giornate). Le ferite richiedono tempo.",
-      "philosophy": "Le cicatrici guariscono, ma non subito. Il corpo ricorda."
+      "method": "Pozioni di guarigione, magia curativa, o giorni di riposo assoluto + cure mediche.",
+      "method_impresa": "Punti Impresa (da nemici Elite/Epici sconfitti o risparmiati) possono curare istantaneamente una Caratteristica ferita.",
+      "speed": "MEDIO-LENTA (giornate).",
+      "ferita": "Guaribile con cure appropriate.",
+      "distrutta": "Irreversibile tramite mezzi normali. Solo magia estrema o rituali."
     },
     "cuori": {
-      "method": "Solo rituali complessi/costosi o settimane di riposo assoluto.",
-      "speed": "Molto lenta. Quasi irreversibile in campagna normale.",
-      "philosophy": "Le ferite dell'anima sono le più profonde. La guarigione richiede sacrificio o tempo."
+      "cuore_1": { "speed": "DIFFICILE ma possibile. Rituali + giorni di riposo." },
+      "cuore_2": { "speed": "MOLTO DIFFICILE. Richiede esperienze che riaccendano la passione, rituali complessi." },
+      "cuore_3": { "speed": "QUASI IMPOSSIBILE. Solo miracoli o sacrifici estremi." },
+      "impresa_non_cura_cuori": "I Punti Impresa NON possono essere utilizzati per curare le Carte Cuore. I Cuori richiedono sempre rituali, tempo narrativo o miracoli.",
+      "adventure_rhythm": "Un Cuore ferito è un arco narrativo. Genera automaticamente side-quest.",
+      "practical_implication": "Per la maggior parte di una campagna, un Cuore ferito è praticamente un danno permanente."
     },
-    "escalation_pattern": "Vitalità → Caratteristiche → Cuori. Più profondo il danno, più difficile la guarigione. Questo crea un crescendo di conseguenze."
+    "escalation_pattern": "Mazzo Vitalità → Caratteristiche → Cuori. Più profondo il danno, più difficile la riparazione.",
+    "potion_distinction": "CRUCIALE: Pozioni 'Rivitalizzanti' (Mazzo Vitalità) ≠ Pozioni 'Guarigione' (Caratteristiche). Niente pozione universale."
+  },
+  "deck_evolution": {
+    "name": "L'Evoluzione del Mazzo Vitalità",
+    "core_principle": "Il Mazzo Vitalità inizia uguale per tutti e SI TRASFORMA nel personaggio.",
+    "trauma_cards": "Il PG subisce ferite → diventa più cinico/violento → carte [Furia Cieca] entrano nel mazzo. Potenti ma pericolose.",
+    "growth_cards": "Il Saggio studia un tomo → carta [Teletrasporto] unica nel mazzo.",
+    "characteristic_evolution": "Le carte Caratteristica generiche si personalizzano con nomi ed effetti unici.",
+    "design_note": "Alla fine di una campagna, se scambi i mazzi di due PG, non sapranno più giocarci. Il Mazzo È il personaggio."
+  },
+  "design_evolution_notes": {
+    "v1": "Caratteristiche Forza/Agilità/Mente/Volontà, 3 Cuori non sacrificabili.",
+    "v2": "Caratteristiche Istinto/Analisi/Evasione/Risonanza, danno tipizzato.",
+    "v3": "Evoluzione mazzo, carte Trauma, mazzo base uguale.",
+    "v4": "Sistema danno a DOPPIO STRATO. Caratteristiche come scudo assorbente.",
+    "v5": "IL DILEMMA DEL GUERRIERO: Cuori sacrificabili volontariamente.",
+    "v6": "CORRISPONDENZA OBBLIGATORIA + LIMITE DI POTENZA.",
+    "v7": "NOMI DEFINITIVI: Forza/Agilità/Mente/Volontà.",
+    "v8": "Coerenza con TAG SYSTEM v1.1.",
+    "v9": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v10": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
+    "v11": "LAYOUT AREA GIOCATORE a 4 Zone. Caratteristiche in LINEE (non pile). SOGLIA DEL VUOTO: Caratteristica a 0 = ferita Cuore OBBLIGATORIA. DUE CATEGORIE DI DANNO: Standard (scelta Milling/Caratteristica) vs Diretto (nessuna scelta). Cuori NON sono opzione per Danno Standard.",
+    "v12": "ARMIMPROVVISATE formalizzate. ARMI ALCHEMICHE come unica fonte di potere equipaggiabile. RICOMPENSE riviste: Impresa NON cura Cuori. Esempi visivi del layout area giocatore."
   }
 }

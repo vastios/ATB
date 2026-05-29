@@ -1,55 +1,192 @@
 {
-  "section_id": "04",
-  "section_name": "Matematica di Combattimento",
-  "version": "1.0",
-  "status": "COMPLETO",
-  "description": "Regole per il calcolo del danno, il sistema combo e le meccaniche difensive.",
-  "damage_dealt": {
-    "core_rule": "TEMPO = DANNO. Un'azione con Costo Tempo 3 infligge esattamente 3 danni. Nessun dado, nessun calcolo aggiuntivo.",
-    "philosophy": "La lentezza è potenza. Un'azione lenta colpisce più forte ma è più prevedibile e lascia più tempo per reagire.",
-    "examples": {
-      "cost_1_attack": "1 danno. Veloce ma debole. Ideale per combo e finiture.",
-      "cost_3_attack": "3 danni. Equilibrio tra velocità e potenza.",
-      "cost_5_attack": "5 danni. Devastante ma occupa mezza timeline."
-    }
+  "section_id": "05",
+  "section_name": "Matematica di Combattimento e Risoluzione",
+  "version": "10.0",
+  "status": "AGGIORNATO — Due Categorie di Danno (Standard vs Diretto), Dilemma del Guerriero corretto, Soglia del Vuoto, Punti 4-6 formalizzati",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB. Il danno si divide in DUE CATEGORIE: Standard (il giocatore SCEGLIE tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta, gira un numero di carte pari al danno). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore. Le combo richiedono almeno 2 giocatori. Tre tipi di difesa: Perfect Block, Mitigato, Shield Sliding.",
+  "point_4_power_and_damage": {
+    "name": "Punto 4 — Potere e Danni",
+    "core_rule": "Il danno inflitto è determinato dalla TABELLA POTERE dell'azione, che varia in base al valore della Caratteristica del PG incrociata col Costo Tempo.",
+    "philosophy": "La lentezza è potenza, MA solo se hai la Caratteristica per sfruttarla. Un PG debole con Forza 1 che usa un'azione lenta (Costo 5) fa solo 9 danni. Un PG forte con Forza 5 fa 30 danni devastanti.",
+    "power_table_reference": "Vedi card_anatomy.json → power_table per i valori esatti.",
+    "weapon_interaction": "Le armi riducono la FATICA (meno carte coperte da scartare). Il DANNO è determinato dalla Tabella Potere. L'arma rende efficiente l'azione, non la potenzia. Il danno deriva dall'utilizzo di armi e incantesimi — è danno fisico, non concetti astratti.",
+    "characteristic_power_cap": "Se la Caratteristica è FERITA (girata), il PG non può giocare azioni con quel Tag sopra il valore attuale.",
+    "tag_ferita_interaction": "Se il PG ha almeno una Caratteristica o un Cuore ferito e gioca un'azione con il tag [Ferita], ottiene un bonus meccanico aggiuntivo."
+  },
+  "point_5_two_layer_damage": {
+    "name": "Punto 5 — Danno a Doppio Strato",
+    "layer_1_esaustione": {
+      "target": "Mazzo Vitalità.",
+      "mechanic": "Danno standard = milling dalla cima del Mazzo Vitalità verso la Pila Scarti.",
+      "recovery": "Recuperabile con riposo e pozioni rivitalizzanti.",
+      "consequence": "Mazzo vuoto = ferisci prossimo Cuore + Svenimento.",
+      "nature": "Danno temporaneo. Le carte possono tornare dalla Pila Scarti."
+    },
+    "layer_2_ferita": {
+      "target": "Caratteristiche e Cuori.",
+      "the_warriors_dilemma": "Il danno si divide in DUE CATEGORIE meccaniche NETTAMENTE SEPARATE, con regole di assorbimento diverse. Vedi sezione 'Due Categorie di Danno' sotto.",
+      "absorption_options_legacy_note": "Le vecchie opzioni combinate (Mazzo + Caratteristica + Cuore) sono state sostituite dalle Due Categorie di Danno. I Cuori NON sono più un'opzione per il Danno Standard.",
+      "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Caratteristiche/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità. Vedi 'Danno Diretto alla Caratteristica'.",
+      "damage_typing": {
+        "fisico": "Bersaglia Agilità / Forza.",
+        "magico": "Bersaglia Volontà / Mente.",
+        "anatema": "Bersaglio Cuori (prossimo Cuore nell'ordine). Nessuna scelta."
+      },
+      "due_categorie_danno": {
+        "name": "Le Due Categorie di Danno",
+        "danno_standard": {
+          "name": "1. Danno Standard (Erosione e Scelta)",
+          "trigger": "Danno normale inflitto da nemici base o da attacchi generici.",
+          "meccanica": "Il giocatore DEVE decidere come assorbire il danno, scegliendo una delle due opzioni:",
+          "opzione_a_milling": {
+            "name": "Opzione A — Milling (La Stanchezza)",
+            "azione": "Scarta carte dalla cima del Mazzo Vitalità verso gli scarti pari al danno subito.",
+            "costo": "Perde carte dal Mazzo Vitalità. Se il Mazzo finisce = 1 Ferita al prossimo Cuore + Svenimento."
+          },
+          "opzione_b_ferita": {
+            "name": "Opzione B — Ferita (Il Sacrificio)",
+            "azione": "Il giocatore gira UNA carta di UNA QUALSIASI Caratteristica (a propria scelta, indipendentemente dal tipo di danno subito) sul dorso. Il danno viene COMPLETAMENTE ANNULLATO (0 danni subiti al mazzo), ma il Valore Statistico di quella Caratteristica si abbassa di 1.",
+            "nota_critica": "Una singola Ferita a una Caratteristica assorbe TUTTO il danno di un attacco Standard, indipendentemente dalla quantità. La scelta della Caratteristica è LIBERA."
+          },
+          "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare permanentemente un punto di un'abilità per salvare la propria riserva energetica."
+        },
+        "danno_diretto_caratteristica": {
+          "name": "2. Danno Diretto alla Caratteristica (La Forza Bruta)",
+          "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Mente: 2 Danni').",
+          "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Caratteristica è stata direttamente aggredita.",
+          "azione_obbligatoria": "Il giocatore deve girare un numero di carte di QUELLA Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
+          "soglia_vuoto": "Se la Caratteristica scende a 0, si innesca la Soglia del Vuoto: il giocatore è COSTRETTO a girare immediatamente un Cuore."
+        },
+        "nota_cuori_nel_dilemma": "I Cuori NON sono un'opzione per il Danno Standard. I Cuori si feriscono SOLO in tre casi: (1) Esaurimento del Mazzo Vitalità, (2) Attacchi Anatema/Diretti ai Cuori, (3) Soglia del Vuoto (Caratteristica a 0). Questa regola rende i Cuori una risorsa INCOGNIABILE dal danno normale."
+      },
+      "recovery": {
+        "characteristic_ferita": "Guaribile con pozioni guarigione/magia curativa (giornate).",
+        "characteristic_distrutta": "Quasi irreversibile. Solo magia estrema.",
+        "hearts_ferita": "Difficile (Cuore 1) a quasi impossibile (Cuore 3). Solo rituali o miracoli."
+      }
+    },
+    "soglia_del_vuoto_in_combat": {
+      "name": "La Soglia del Vuoto (Caratteristica a Valore 0)",
+      "trigger": "Una Caratteristica scende a 0 a causa di ferite (Danno Diretto o scelte ripetute di Opzione B).",
+      "azione_obbligatoria": "Il giocatore è COSTRETTO a girare (ferire) immediatamente un Cuore, senza possibilità di scelta o opposizione.",
+      "stato_a_zero": "Quando una Caratteristica è a 0, le carte di quel colore possono essere giocate solo COPRITE per pagare il Costo in Tempo. Le azioni scoperte di quel colore FALLISCONO senza effetto.",
+      "eccezione_secondaria": "Se una carta ha un Tag di Caratteristica Secondaria, il giocatore può usare quel Tag per calcolare il Potere basandosi sull'altra Caratteristica (se superiore a 0)."
+    },
+    "design_intent": "Il Dilemma del Guerriero non si basa sulla matematica, ma sulla psicologia del giocatore. Per il Danno Standard: sacrifichi la tua Stamina (Milling) o la tua potenza (Ferita a Caratteristica)? Per il Danno Diretto: non hai scelta — il nemico ha rotto le tue difese e devi subire. Le cure asimmetriche e la Soglia del Vuoto rendono ogni perdita significativa."
   },
   "combo_system": {
-    "trigger_rule": "Le combo si attivano SOLO impilando verticalmente nello stesso slot ATB una carta Azione (Attacco/Magia) SOTTO una carta Movimento/Difesa di Costo 1 con Tag complementare.",
-    "structure": {
-      "base_card": "Carta Azione (es. Attacco Costo 4 con tag [Chiusura])",
-      "trigger_card": "Carta Movimento/Opposizione Costo 1 con tag complementare (es. [Apertura])",
-      "placement": "La carta Azione va SOTTO, la carta Costo 1 va SOPRA nello stesso slot."
+    "name": "Punto 4 — Combo Cooperative",
+    "activation_rule": "Le combo si attivano quando carte di PG diversi sono nella STESSA POSIZIONE TEMPORALE con Tag Combo compatibili.",
+    "two_player_minimum": {
+      "rule": "Per attivare una combo, è OBBLIGATORIO impilare le carte di almeno 2 GIOCATORI DIVERSI nello stesso slot.",
+      "narrative_reason": "La combo è SINERGIA tra compagni. Un solo PG non può fare combo con se stesso.",
+      "mechanical_reason": "Previene il 'Doppio Colpo Devastante' di un solo PG e valorizza la cooperazione."
     },
-    "combo_damage": "Il danno totale è la SOMMA dei Costi Tempo delle carte impilate. Es: Attacco 4 + Movimento 1 = 5 Danni.",
-    "tag_complementarity": {
-      "Apertura_sotto_Chiusura_sopra": "L'apertura crea l'occasione, la chiusura la sfrutta.",
-      "Sostegno_con_qualsiasi": "Il sostegno potenzia l'azione principale."
+    "combo_tags": {
+      "Apertura": "Il primo passo della combo. Apre la combinazione.",
+      "Sviluppo": "Il passo intermedio. Allunga la combo senza chiuderla.",
+      "Chiusura": "Il passo finale. La combo si completa e il danno si infligge.",
+      "Culmine": "Come la Chiusura ma l'effetto viene amplificato drasticamente.",
+      "flexibility_rule": "Se un'azione ha sia [Apertura] che [Chiusura], chi la gioca SCEGLIE LIBERAMENTE quale ruolo assumere. NON è una combo solista."
     },
-    "design_note": "Le combo prevengono lo stack di azioni devastanti senza controllo. Richiedono l'uso tattico delle carte leggere da Costo 1 come 'innesco'. Questo dà valore alle carte deboli e crea deep tattico.",
-    "limitations": {
-      "max_stack": "2 carte per combo (1 azione + 1 trigger Costo 1).",
-      "no_double_actions": "Non si possono impilare due carte Azione. Serve sempre una carta Movimento/Opposizione come innesco."
+    "combo_enabler": {
+      "rule": "Le combo richiedono che le carte siano nella STESSA POSIZIONE TEMPORALE con Tag compatibili.",
+      "synchronization_cost": "Continuità Temporale Assoluta: per convergere nella posizione 4, devi riempire le posizioni 1-3 prima.",
+      "design_intent": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Sei vulnerabile nel frattempo."
+    },
+    "combo_damage": {
+      "rule": "Il danno di una combo è la SOMMA dei valori POTERE delle carte nella colonna.",
+      "example": "Guerriero gioca [Apertura] Forza Costo 3 (Forza 4, Potere = 9) + Mago gioca [Chiusura] Mente Costo 2 (Mente 3, Potere = 5) nella stessa colonna = Danno combo 14.",
+      "culmine_bonus": "Se la Chiusura è un [Culmine], l'effetto viene amplificato drasticamente.",
+      "combo_explanation": "Due personaggi uniscono gli sforzi: l'Apertura crea una distrazione/apertura, la Chiusura sfrutta il punto debole scoperto. Non è magia astratta — è tattica di squadra."
+    },
+    "fast_vs_slow_combos": {
+      "fast": "Combo veloci (posizione 1-2) = scambi fulminei, danno modesto ma immediato.",
+      "slow": "Combo pesanti (posizione 4-5) = eventi devastanti che si preparano a destra del tavolo, vulnerabilità durante la preparazione."
+    },
+    "defense_offense_fusion": "Una [Opposizione] con tag [Sviluppo] può mitigare un attacco nemico E fare combo con un compagno. Difesa e Offesa NON sono mai in conflitto."
+  },
+  "point_6_defense_mechanic": {
+    "name": "Punto 6 — Sistema di Difesa",
+    "three_defense_types": {
+      "perfect_block": {
+        "name": "Perfect Block (Blocco Perfetto)",
+        "condition": "Opposizione nella STESSA POSIZIONE dell'attacco.",
+        "effect": "0 danni. L'attacco viene completamente deviato.",
+        "narrative": "Hai parato esattamente dove l'attacco arrivava."
+      },
+      "mitigated_block": {
+        "name": "Mitigated Block (Blocco Mitigato)",
+        "condition": "Opposizione nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
+        "effect": "Riduzione danni (parziale). L'attacco colpisce ma con meno forza.",
+        "narrative": "Hai parato in parte — la difesa era vicina ma non perfetta."
+      },
+      "full_damage": {
+        "name": "Danno Pieno",
+        "condition": "Nessuna Opposizione nella posizione o in quelle adiacenti.",
+        "effect": "Danno pieno al Mazzo Vitalità (o dove il PG sceglie di assorbirlo).",
+        "narrative": "Nessuna difesa. L'attacco colpisce senza ostacoli."
+      }
+    },
+    "shield_sliding": {
+      "name": "Shield Sliding (Slittamento Scudo)",
+      "mechanic": "Girare lo scudo (con azione [Strumento]) permette di 'slittare' una carta Opposizione già giocata di 1 slot a sinistra o a destra.",
+      "requires_strumento_tag": "L'azione deve avere il tag [Strumento] per permettere l'attivazione dello scudo.",
+      "timing": "Si dichiara DOPO che il Master rivela il token d'attacco, ma PRIMA del calcolo dei danni.",
+      "possible_outcomes": {
+        "upgrade_to_perfect": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → Perfect Block (0 danni).",
+        "upgrade_to_mitigated": "Slitta la difesa nella posizione adiacente → Mitigated Block.",
+        "no_help": "La difesa è troppo lontana anche dopo lo slittamento → nessun effetto."
+      },
+      "design_intent": "Lo scudo rompe la rigidità della Cintura ATB in modo reattivo e cinematografico. Violare la causalità della posizione con una reazione tattica.",
+      "shield_destruction": "Lo scudo segue le regole standard dell'equipaggiamento: Normale (potere base, 2° uso = distrutto) o Superiore (potere Superiore, distruzione genera Conseguenza)."
+    },
+    "armor_absorption": {
+      "name": "Assorbimento Armatura",
+      "mechanic": "Girare l'armatura (con azione [Strumento]) assorbe una quota di danni subiti da un colpo andato a segno.",
+      "requires_strumento_tag": "L'azione deve avere il tag [Strumento].",
+      "limitation": "Si può girare l'armatura solo una volta per turno di risoluzione.",
+      "interaction_with_sacrifice": "L'armatura riduce il danno PRIMA che il PG scelga come assorbire il resto.",
+      "armor_destruction": "L'armatura segue le regole standard: Normale (2° uso = distrutta) o Superiore (distruzione genera Conseguenza)."
+    },
+    "anti_spam": "La mitigazione funziona SOLO adiacente (±1 slot). Difese lontane = zero protezione. Non puoi difenderti ovunque."
+  },
+  "monster_defenses": {
+    "fixed_reduction_armatura": {
+      "rule": "Il mostro ha una Riduzione Fissa del danno.",
+      "effect": "Azioni deboli (Potere basso) possono essere completamente nullificate.",
+      "tactical_implication": "I PG DEVONO usare azioni lente/potenti o combo per penetrare l'armatura."
+    },
+    "tag_based_mitigation": {
+      "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
+      "examples": {
+        "immunity": "Fantasma immune a [Forza]: gli attacchi fisici non fanno nulla.",
+        "resistance": "Golem resistente a [Agilità]: gli attacchi di destrezza fanno danno ridotto.",
+        "vulnerability": "Non-morto vulnerabile a [Volontà]: la determinazione fa danno aumentato."
+      },
+      "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
     }
   },
-  "defense_mechanic": {
-    "perfect_block": {
-      "condition": "Opposizione giocata nello STESSO slot dell'attacco nemico.",
-      "effect": "0 danni subiti. L'attacco è completamente neutralizzato.",
-      "timing_requirement": "Richiede previsione perfetta o informazioni sulla posizione dell'attacco nemico."
-    },
-    "mitigated_block": {
-      "condition": "Opposizione giocata nello slot subito PRIMA o DOPO l'attacco nemico.",
-      "effect": "Riduzione danni. Il danno è ridotto del Costo Tempo della carta Opposizione.",
-      "example": "Attacco nemico Costo 4. Opposizione Costo 2 nello slot adiacente. Danni ridotti: 4 - 2 = 2 danni subiti."
-    },
-    "failed_defense": {
-      "condition": "Nessuna Opposizione nello stesso slot o in quelli adiacenti.",
-      "effect": "Danno pieno. L'attacco colpisce senza resistenza."
-    }
+  "combat_round_summary": {
+    "step_1": "I PG tracciano le loro righe nella Cintura ATB (1-5 carte).",
+    "step_2": "Il Master posiziona 5 token coperti (Round 1: per ultimo).",
+    "step_3": "Risoluzione da sinistra a destra.",
+    "step_4": "Si gira il token: Attacco o Bluff.",
+    "step_5": "Difesa PG: Perfect Block / Mitigato / Danno pieno. Scudo (con [Strumento]) può slittare.",
+    "step_6": "Se danno pieno → identificare la categoria: Standard (PG SCEGLIE: Milling o Ferita a Caratteristica QUALSIASI) o Diretto (PG DEVE girare carte della Caratteristica bersagliata). I Cuori NON sono un'opzione per Danno Standard.",
+    "step_7": "Combo: se carte di 2+ PG diversi convergono con Tag compatibili, la combo si attiva. Danno = somma valori Potere.",
+    "step_8": "PG senza carte nella riga DEVE rigiocare (Azione Forzata).",
+    "step_9": "Ripetere fino a fine combattimento."
   },
-  "strategic_layers": {
-    "information_warfare": "Posizionare le proprie difese richiede conoscenza (o previsione) di dove attaccherà il nemico. Le azioni Percezione servono a questo.",
-    "tempo_advantage": "Attacchi veloci (Costo 1-2) sono difficili da bloccare perché occupano poco spazio nella timeline. Attacchi lenti (Costo 4-5) sono facili da posizionare contro ma devastanti se non bloccati.",
-    "resource_tension": "Ogni carta Opposizione usata per difendere è una carta non usata per attaccare. La difesa ha sempre un costo opportunità."
+  "design_evolution_notes": {
+    "v4.0": "Token coperti, Perfect/Mitigated/Full, Fusione Difesa/Offesa.",
+    "v4.1": "Sistema danno a Doppio Strato. Danno tipizzato.",
+    "v5.0": "IL DILEMMA DEL GUERRIERO. Combo con carte Movimento. Difese mostri.",
+    "v6.0": "Tabella Potere. Corrispondenza obbligatoria. Limite di potenza.",
+    "v7.0": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Caratteristiche definitivi.",
+    "v8.0": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v9.0": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Punti 4-6 formalizzati in sezioni dedicate.",
+    "v10.0": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto (Caratteristica a 0 = Cuore ferito OBBLIGATORIO). Cuori NON sono opzione per Danno Standard. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite)."
   }
 }
