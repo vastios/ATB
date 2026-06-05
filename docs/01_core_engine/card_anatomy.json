@@ -10,10 +10,10 @@
     "border_color": {
       "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'azione.",
       "colors": {
-        "Verde": "Istinto — determinazione, magia istintiva, intuizione",
+        "Rosso": "Istinto — impulso non ragionato, sfondare, colpire senza riflettere",
         "Giallo": "Analisi — intelletto, strategia, magia ragionata",
         "Blu": "Evasione — destrezza, schiva, furtività",
-        "Rosso": "Risonanza — potenza bruta, reazione viscerale, ferocia"
+        "Verde": "Risonanza — empatia, connessione col mondo, comprendere attraverso il sentire"
       },
       "purpose": "Permette di capire a colpo d'occhio quale Caratteristica l'azione utilizza."
     },
@@ -110,7 +110,7 @@
               "Evasione": "Usa il valore di Evasione al posto della Caratteristica del bordo.",
               "Risonanza": "Usa il valore di Risonanza al posto della Caratteristica del bordo."
             },
-            "example": "Una carta con bordo Rosso (Risonanza) che ha il tag [Analisi] può essere usata calcolando il Potere dalla Caratteristica Analisi anziché Risonanza. Il Guerriero con Risonanza 4 la usa per sfondare una porta. Il Saggio con Analisi 4 la usa per un'intimidazione psicologica basata sulla violenza.",
+            "example": "Una carta con bordo Verde (Risonanza) che ha il tag [Analisi] può essere usata calcolando il Potere dalla Caratteristica Analisi anziché Risonanza. Il Empatico con Risonanza 4 la usa per sentire le emozioni di una folla. Il Saggio con Analisi 4 la usa per un'intimidazione psicologica basata sulla conoscenza.",
             "design_intent": "Dà un ventaglio di utilizzi alla stessa carta. Le carte ad alto costo (T=4, T=5) possono avere questo tag, diventando coltellini svizzeri."
           },
           "4_STRUMENTO": {
@@ -219,14 +219,14 @@
     },
     "T3_example": {
       "name": "Parata con Scudo",
-      "border": "Rosso (Risonanza)",
+      "border": "Verde (Risonanza)",
       "time_cost": 3,
       "tags": ["[Opposizione]", "[Strumento]", "[Sviluppo]"],
       "note": "Una difesa che richiede lo scudo (Strumento) e che può essere usata a metà di una combo (Sviluppo)."
     },
     "T5_example": {
       "name": "Il Colpo dell'Eroe Caduto",
-      "border": "Rosso (Risonanza)",
+      "border": "Verde (Risonanza)",
       "time_cost": 5,
       "tags": ["[Imposizione]", "[Apertura]", "[Chiusura]", "[Analisi]", "[Ferita]"],
       "note": "Un'azione devastante che può iniziare O chiudere una combo, può essere calcolata con Analisi al posto di Risonanza, e se il PG ha ferite si risveglia con potere terrificante. 5 tag = 5 costo tempo."

@@ -29,9 +29,9 @@
       "atziluth": {
         "name": "Atziluth — Il Mondo dell'Emanazione",
         "elemento": "Fuoco",
-        "connessione_pg": "Emanazione (Verde)",
-        "nature": "Il Mondo più vicino all'Or primordiale. Qui la Luce è ancora PURO FUOCO — volontà pura, senza forma, senza struttura. È il piano della determinazione assoluta, dell'intuizione che non ha bisogno di ragionamento, della fede che non ha bisogno di prova.",
-        "mechanical_expression": "I Segreti di Emanazione sono FUOCO che scorre attraverso il PG: attacchi istintivi, magia primordiale, intuizioni improvvise. La Tabella Potere per Emanazione scala con la profondità della Connessione al Fuoco."
+        "connessione_pg": "Emanazione (Rosso)",
+        "nature": "Il Mondo più vicino all'Or primordiale. Qui la Luce è ancora PURO FUOCO — impulso senza pensiero, irruenza senza calcolo, la fiamma che brucia prima che la mente possa fermarla. È il piano dell'azione non ragionata, dell'istinto che non ha bisogno di riflettere, della passione che scatta senza chiedere permesso.",
+        "mechanical_expression": "I Segreti di Emanazione sono FUOCO che esplode attraverso il PG: sfondare porte, urlare, colpire senza esitazione, l'irruenza che non aspetta. La Tabella Potere per Emanazione scala con la profondità della Connessione al Fuoco."
       },
       "beriah": {
         "name": "Beriah — Il Mondo della Creazione",
@@ -50,9 +50,9 @@
       "assiah": {
         "name": "Assiah — Il Mondo dell'Azione",
         "elemento": "Terra",
-        "connessione_pg": "Azione (Rosso)",
-        "nature": "La Luce si SOLIDIFICA in materia. Qui l'Aria diventa TERRA — il movimento diventa impatto, la fluidità diventa forza bruta, l'idea diventa realtà fisica. È il piano della materia, della forza, dell'urto. La Terra è pesante, lenta, ma INARRESTABILE.",
-        "mechanical_expression": "I Segreti di Azione sono TERRA che si abbatte: attacchi bruti, sfondamenti, reazioni viscerie, forza fisica. La Tabella Potere per Azione scala con la profondità della Connessione alla Terra."
+        "connessione_pg": "Azione (Verde)",
+        "nature": "La Luce entra in RISONANZA con la materia. Qui l'Aria diventa TERRA — l'azione isolata diventa connessione, il pensiero diventa empatia, il sé si apre al mondo. È il piano della comprensione attraverso il sentire, della voce della natura che parla a chi sa ascoltare, dell'empatia che unisce ogni cosa. La Terra è la base che connette: ogni radice tocca ogni altra radice.",
+        "mechanical_expression": "I Segreti di Azione sono TERRA che RISUONA: empatia con gli elementi, sentire la voce della natura e degli altri, comprendere senza studiare, la connessione che attraversa ogni cosa. La Tabella Potere per Azione scala con la profondità della Connessione alla Terra."
       }
     },
     "descent_of_light": {
@@ -120,7 +120,7 @@
       "trigger": "Iniziato quando i PG affrontano il primo vero Qliphoth — un nemico generato dalla distruzione di un loro Keli Superiore, o un Boss che è palesemente un Guscio Vuoto cosmico.",
       "what_players_see": "La realtà è una menzogna. Il mondo materiale è solo l'ultimo gradino di una discesa cosmica. I PG non sono avventurieri — sono VASI che incanalano la Luce di Mondi sovrannaturali. I loro nemici non sono mostri — sono GUSCI VUOTI affamati della loro Luce. Ogni ferita che hanno subito era SHEVIRAT HAKELIM. Ogni oggetto che hanno rotto ha GENERATO UN QLIPHOTH. Le conseguenze delle loro scelte hanno forma e volto.",
       "what_is_really_happening": "I PG comprendono finalmente la struttura cosmica. Sanno che le loro Connessioni sono canali verso i Quattro Mondi, che la loro Anima è Tripartita, che i loro oggetti sono Kelim, che i loro nemici sono Qliphoth. La meccanica non è cambiata — ma ORA CAPISCONO PERCHÉ FUNZIONA COSÌ.",
-      "master_instructions": "Usare la PIENA terminologia cabalistica. La narrazione riflette la comprensione acquisita. Quando un PG ferisce una Connessione, il Master può dire: 'Senti il Vaso della tua Connessione ad Assiah incrinarsi — la Terra trema dentro di te.' Quando un Keli Superiore si spezza, il Master ANNUNCIA: 'La Luce prigioniera si corrompe. Un Qliphoth è nato. Lo incontrerete di nuovo.'",
+      "master_instructions": "Usare la PIENA terminologia cabalistica. La narrazione riflette la comprensione acquisita. Quando un PG ferisce una Connessione, il Master può dire: 'Senti il Vaso della tua Connessione incrinarsi — il mondo dentro di te trema.' Quando un Keli Superiore si spezza, il Master ANNUNCIA: 'La Luce prigioniera si corrompe. Un Qliphoth è nato. Lo incontrerete di nuovo.'",
       "example_play": "Il Guerriero spezza la sua spada Superiore per ferire il Tratto del Boss. Il Master dice: 'La Lama dell'Alba si frantuma. La Luce che conteneva erompe, si corrompe, prende forma. Qualcosa sta nascendo dai frammenti — qualcosa che conosce la tua Luce, Guerriero, perché un tempo la conteneva. Lo incontrerai ancora.' I giocatori TREMANO perché ORA CAPISCONO COSA SIGNIFICA."
     },
     "transition_principles": {
@@ -136,7 +136,7 @@
       {
         "mechanical_term": "Caratteristica",
         "material_level": "Capacità naturale (Risonanza, Evasione, Analisi, Istinto)",
-        "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione)"
+        "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione). L'Asse Comprendere (Risonanza + Analisi) e l'Asse Agire (Istinto + Evasione) riflettono la discesa della Luce: dal Comprendere (mondi superiori) all'Agire (mondi inferiori)."
       },
       {
         "mechanical_term": "Cuori",
@@ -242,7 +242,7 @@
     "principle": "Il Master è il guardiano della Rivelazione. Controlla il ritmo a cui i PG scoprono la vera natura della realtà. Deve bilanciare mistero e comprensione, orrore e meraviglia.",
     "at_level_1": {
       "tone": "Avventuroso, leggermente cuivo. Intrighi politici, duelli all'ultimo sangue, esplorazione di dungeon classici.",
-      "language": "Materiale e concreto. 'La tua forza ti abbandona', non 'La tua Connessione ad Assiah subisce Shevirat'.",
+      "language": "Materiale e concreto. 'La tua rabbia ti abbandona', non 'La tua Connessione ad Atziluth subisce Shevirat'.",
       "foreshadowing": "SEMPLICI indizi. Un simbolo strano su una parete. Un nemico che non sanguina. Un oggetto che brilla nella penombra. Non spiegare, solo mostrare.",
       "enemy_design": "Banditi, bestie, soldati. Nemici 'normali' con un dettaglio leggermente sbagliato (occhi vuoti, ferite che non sanguinano, sussurri incomprensibili)."
     },

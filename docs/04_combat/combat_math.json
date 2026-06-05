@@ -29,8 +29,8 @@
       "absorption_options_legacy_note": "Le vecchie opzioni combinate (Mazzo + Caratteristica + Cuore) sono state sostituite dalle Due Categorie di Danno. I Cuori NON sono più un'opzione per il Danno Standard.",
       "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Caratteristiche/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità. Vedi 'Danno Diretto alla Caratteristica'.",
       "damage_typing": {
-        "fisico": "Bersaglia Evasione / Risonanza.",
-        "magico": "Bersaglia Istinto / Analisi.",
+        "fisico": "Bersaglia Istinto / Evasione. Colpi, tagli, impatti — chi AGISCE fisicamente.",
+        "magico": "Bersaglia Risonanza / Analisi. Maledizioni, folgori, assalti psichici — chi COMPRENDE.",
         "anatema": "Bersaglio Cuori (prossimo Cuore nell'ordine). Nessuna scelta."
       },
       "due_categorie_danno": {
@@ -52,7 +52,7 @@
           "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare permanentemente un punto di un'abilità per salvare la propria riserva energetica."
         },
         "danno_diretto_caratteristica": {
-          "name": "2. Danno Diretto alla Caratteristica (La Risonanza Bruta)",
+          "name": "2. Danno Diretto alla Caratteristica (Il Colpo Mirato)",
           "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni').",
           "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Caratteristica è stata direttamente aggredita.",
           "azione_obbligatoria": "Il giocatore deve girare un numero di carte di QUELLA Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
@@ -97,7 +97,7 @@
     },
     "combo_damage": {
       "rule": "Il danno di una combo è la SOMMA dei valori POTERE delle carte nella colonna.",
-      "example": "Guerriero gioca [Apertura] Risonanza Costo 3 (Risonanza 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
+      "example": "Guerriero gioca [Apertura] Istinto Costo 3 (Istinto 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
       "culmine_bonus": "Se la Chiusura è un [Culmine], l'effetto viene amplificato drasticamente.",
       "combo_explanation": "Due personaggi uniscono gli sforzi: l'Apertura crea una distrazione/apertura, la Chiusura sfrutta il punto debole scoperto. Non è magia astratta — è tattica di squadra."
     },
@@ -161,9 +161,9 @@
     "tag_based_mitigation": {
       "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
       "examples": {
-        "immunity": "Fantasma immune a [Risonanza]: gli attacchi fisici non fanno nulla.",
+        "immunity": "Fantasma immune a [Istinto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
         "resistance": "Golem resistente a [Evasione]: gli attacchi di destrezza fanno danno ridotto.",
-        "vulnerability": "Non-morto vulnerabile a [Istinto]: la determinazione fa danno aumentato."
+        "vulnerability": "Non-morto vulnerabile a [Risonanza]: l'empatia e la connessione col mondo dei viventi fa danno aumentato."
       },
       "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
     }

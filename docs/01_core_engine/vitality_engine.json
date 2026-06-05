@@ -78,8 +78,8 @@
       "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare un punto di un'abilità per salvare la propria riserva energetica."
     },
     "danno_diretto_caratteristica": {
-      "name": "2. Danno Diretto alla Caratteristica (La Risonanza Bruta)",
-      "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni'). NON rappresenta un colpo fisico generale, ma un colpo chirurgico.",
+      "name": "2. Danno Diretto alla Caratteristica (Il Colpo Mirato)",
+      "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni'). NON rappresenta un colpo generico, ma un'aggressione chirurgica a una Caratteristica specifica.",
       "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Caratteristica è stata direttamente aggredita.",
       "azione_obbligatoria": "Il giocatore deve girare un numero di carte di quella Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
       "soglia_vuoto": "Se la Caratteristica scende a 0, si innesca la Soglia del Vuoto: il giocatore è COSTRETTO a girare immediatamente un Cuore."

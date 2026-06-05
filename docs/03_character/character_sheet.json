@@ -65,11 +65,11 @@
     },
     "esempio_visivo_inizio": {
       "statistiche": "Istinto 3, Analisi 2, Evasione 1, Risonanza 4",
-      "layout": "[CUORE 1] [CUORE 2] [CUORE 3]\n[3 CARTE VOLONTÀ]  [2 CARTE MENTE]  [1 CARTA AGILITÀ]  [4 CARTE FORZA]\n[SPADA ALCHEMICA (Dritta)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Pozione] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+      "layout": "[CUORE 1] [CUORE 2] [CUORE 3]\n[3 CARTE ISTINTO (Rosso)]  [2 CARTE ANALISI (Giallo)]  [1 CARTA EVASIONE (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (Dritta)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Pozione] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
     },
     "esempio_visivo_danno": {
       "situazione": "Subita una ferita alla Analisi e usura la spada",
-      "layout": "[CUORE 1] [CUORE 2 (GIRATA)] [CUORE 3]\n[3 CARTE VOLONTÀ]  [1 CARTA MENTE] [1 CARTA MENTE (GIRATA)]  [1 CARTA AGILITÀ]  [4 CARTE FORZA]\n[SPADA ALCHEMICA (GIRATA)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+      "layout": "[CUORE 1] [CUORE 2 (GIRATA)] [CUORE 3]\n[3 CARTE ISTINTO (Rosso)]  [1 CARTA ANALISI (Giallo)] [1 CARTA ANALISI (GIRATA)]  [1 CARTA EVASIONE (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (GIRATA)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
     }
   },
   "character_creation": {
@@ -94,28 +94,28 @@
     "mechanic": "Il valore di una Caratteristica (1-5) equivale al NUMERO FISICO DI CARTE nella sua LINEA ORIZZONTALE. Assegnati i valori, il giocatore dispone tante carte della singola Caratteristica in linea quante è il valore. Es: Risonanza 3 = 3 carte fisiche 'Risonanza' in linea orizzontale sul tavolo.",
     "characteristics_list": {
       "Istinto": {
-        "border_color": "Verde",
-        "description": "Determinazione, connessione col sovrannaturale, magia istintiva, intuizione profonda.",
-        "keywords": ["magia_istintiva", "empatia", "intuizione", "istinto", "fede"],
-        "damage_type_alignment": "Danno Magico bersaglia Istinto e Analisi."
+        "border_color": "Rosso",
+        "description": "L'approccio non ragionato. Sfondare una porta chiusa, urlare in faccia a chi ci offende, colpire senza riflettere sulle conseguenze. Impulso primordiale, irruenza, reazione immediata.",
+        "keywords": ["impulso", "irruenza", "sfondare", "urlare", "reazione_immediata"],
+        "damage_type_alignment": "Danno Fisico bersaglia Istinto ed Evasione."
       },
       "Analisi": {
         "border_color": "Giallo",
         "description": "Intelletto, emozioni, strategia, percezione razionale, magia ragionata.",
         "keywords": ["studio", "strategia", "conoscenza", "magia_analitica", "percezione"],
-        "damage_type_alignment": "Danno Magico bersaglia Istinto e Analisi."
+        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi."
       },
       "Evasione": {
         "border_color": "Blu",
         "description": "Destrezza, schiva, furtività, spostamento fluido, precisione.",
         "keywords": ["schiva", "evasione", "furtivita", "precisione", "mobilita"],
-        "damage_type_alignment": "Danno Fisico bersaglia Evasione e Risonanza."
+        "damage_type_alignment": "Danno Fisico bersaglia Istinto ed Evasione."
       },
       "Risonanza": {
-        "border_color": "Rosso",
-        "description": "Potenza bruta, reazione viscerale, impulso, ferocia, risonanza fisica.",
-        "keywords": ["attacco_bruto", "reativita", "coraggio", "ferocia", "risonanza"],
-        "damage_type_alignment": "Danno Fisico bersaglia Evasione e Risonanza."
+        "border_color": "Verde",
+        "description": "La capacità di entrare in contatto col mondo circostante, capirlo non perché lo si è studiato ma perché se ne empatizza e se ne sente 'la voce'. Approccio empatico, comprensione attraverso il sentire, connessione con la natura e gli elementi.",
+        "keywords": ["empatia", "connessione", "sentire", "voce_del_mondo", "comprensione_empatica"],
+        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi."
       }
     },
     "card_nature": {
@@ -174,7 +174,7 @@
     "sostituzione": {
       "name": "Sostituzione (Il Cambiamento del PG)",
       "principio": "Le Caratteristiche NON possono essere distrutte. Il PG non perde mai capacità totali. Ma può CAMBIARE: rinunciare a parte di un approccio per abbracciarne un altro. È l'evoluzione del personaggio attraverso la storia.",
-      "meccanica": "Il PG sposta 1 punto da una Caratteristica a un'altra. Il totale dei punti resta sempre 10. Es: Risonanza 4 → Risonanza 3, Analisi 1 → Analisi 2. Il PG ha perso parte della sua ferocia per diventare più riflessivo.",
+      "meccanica": "Il PG sposta 1 punto da una Caratteristica a un'altra. Il totale dei punti resta sempre 10. Es: Istinto 4 → Istinto 3, Risonanza 1 → Risonanza 2. Il PG ha perso parte della sua irruenza per diventare più empatico.",
       "quando": "Solo per eventi narrativamente significativi: traumi che cambiano la prospettiva del PG, rivelazioni che trasformano il suo modo di agire, lunghi periodi di studio o addestramento. NON è una meccanica di combattimento.",
       "impatto_sul_mazzo": "La composizione del Mazzo Vitalità si aggiorna di conseguenza: 6 carte in meno del colore perso, 6 carte in più del colore guadagnato. Il totale resta 60.",
       "design_intent": "Il PG è un essere vivente che cambia. La sostituzione non è una perdita — è una trasformazione. Il Guerriero ferito che impara a pensare di più. Il Saggio che scopre la rabbia. La persona che cambia è più interessante di quella che si spezza."
@@ -202,7 +202,7 @@
       "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o perdere permanentemente un punto di un'abilità per salvare la propria riserva energetica."
     },
     "danno_diretto_caratteristica": {
-      "name": "2. Danno Diretto alla Caratteristica (La Risonanza Bruta)",
+      "name": "2. Danno Diretto alla Caratteristica (Il Colpo Mirato)",
       "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni'). NON rappresenta un colpo fisico generale, ma un colpo chirurgico all'anima del personaggio.",
       "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. Il collegamento con quella Caratteristica è stato direttamente aggredito.",
       "azione_obbligatoria": "Il giocatore deve girare un numero di carte di quella Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
@@ -260,13 +260,13 @@
   },
   "damage_typing": {
     "danno_fisico": {
-      "targets": ["Evasione", "Risonanza"],
-      "description": "Colpi, tagli, impatti.",
+      "targets": ["Istinto", "Evasione"],
+      "description": "Colpi, tagli, impatti. Bersaglia chi AGISCE: l'impulso (Istinto) e il corpo (Evasione).",
       "effect": "Per Danno Standard: scelta Milling/Caratteristica. Per Danno Diretto: ferisce la Caratteristica bersagliata senza scelta."
     },
     "danno_magico": {
-      "targets": ["Istinto", "Analisi"],
-      "description": "Maledizioni, folgori, assalti psichici.",
+      "targets": ["Risonanza", "Analisi"],
+      "description": "Maledizioni, folgori, assalti psichici. Bersaglia chi COMPRENDE: l'empatia (Risonanza) e l'intelletto (Analisi).",
       "effect": "Per Danno Standard: scelta Milling/Caratteristica. Per Danno Diretto: ferisce la Caratteristica bersagliata senza scelta."
     },
     "danno_anatema": {
@@ -287,7 +287,7 @@
       "method_impresa": "Punti Impresa (da nemici Elite/Epici sconfitti o risparmiati) possono curare istantaneamente una Caratteristica ferita.",
       "speed": "MEDIO-LENTA (giornate).",
       "ferita": "Guaribile con cure appropriate.",
-      "sostituzione": "Le Caratteristiche NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Caratteristiche) per eventi narrativi significativi. Il totale resta sempre 10."
+      "sostituzione": "Le Caratteristiche NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Caratteristiche) per eventi narrativi significativi. Il totale resta sempre 10. Sostituire non è perdere — è trasformarsi."
     },
     "cuori": {
       "cuore_1": { "speed": "DIFFICILE ma possibile. Rituali + giorni di riposo." },
