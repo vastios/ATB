@@ -61,8 +61,8 @@
         "nota_cuori_nel_dilemma": "I Cuori NON sono un'opzione per il Danno Standard. I Cuori si feriscono SOLO in tre casi: (1) Esaurimento del Mazzo Vitalità, (2) Attacchi Anatema/Diretti ai Cuori, (3) Soglia del Vuoto (Caratteristica a 0). Questa regola rende i Cuori una risorsa INCOGNIABILE dal danno normale."
       },
       "recovery": {
-        "characteristic_ferita": "Guaribile con pozioni guarigione/magia curativa (giornate).",
-        "characteristic_distrutta": "Quasi irreversibile. Solo magia estrema.",
+        "characteristic_ferita": "Guaribile con pozioni guarigione/magia curativa (giornate). Punti Impresa per cura istantanea.",
+        "characteristic_sostituzione": "Le Caratteristiche NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Caratteristiche) per eventi narrativi significativi. Il totale resta sempre 10.",
         "hearts_ferita": "Difficile (Cuore 1) a quasi impossibile (Cuore 3). Solo rituali o miracoli."
       }
     },

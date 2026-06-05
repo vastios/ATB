@@ -4,6 +4,7 @@
   "version": "9.0",
   "status": "AGGIORNATO — Armi Alchemiche vs Improvvisate formalizzate, Distruzione Tratti tramite potere Arma Superiore (non sacrificio), Punti Impresa non curano Cuori",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "DA_RIVEDERE": "INTERO SISTEMA EQUIPAGGIAMENTO DA RIVEDERE. Il game designer non è convinto della concezione attuale: Armi Alchemiche come unica fonte di equipaggiamento, rarità, obbligo del tag [Strumento] per attivare. L'idea che l'equipaggiamento sia inattivo senza [Strumento] non convince. Da ripensare.",
   "description": "Gli oggetti che i PG possono equipaggiare sono ARMI ALCHEMICHE — non semplici armi. Costruirle non è facile, per questo usarle e usurarle è una scelta da ponderare bene. Senza un'azione con [Strumento], l'equipaggiamento è INATTIVO. Esistono due categorie: NORMALE e SUPERIORE. Il potere Superiore può distruggere un Tratto nemico. Se un PG perde tutte le Armi Alchemiche, combatte con Armi Improvvisate (senza Tag). L'equipaggiamento Superiore distrutto GENERA UNA CONSEGUENZA. Le imprese eroiche possono far EVOLVERE oggetti Normali in Superiori.",
   "alchemiche_vs_improvvisate": {
     "name": "Armi Alchemiche vs Armi Improvvisate",

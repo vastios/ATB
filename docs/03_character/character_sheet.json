@@ -141,6 +141,7 @@
       "impatto_sul_mazzo": "Il Mazzo Vitalità non cambia composizione. Ma quando il giocatore pesca una carta di quel colore e guarda la Tabella di Potere, deve incrociare il numero con il Valore Statistico ATTUALE (il numero di carte scoperte rimaste), non con quello di partenza.",
       "ferite_multiple": "Una caratteristica può subire ferite multiple nel corso del gioco. Non c'è un limite massimo di carte girate per caratteristica, se non il raggiungimento del valore 0.",
       "power_cap_when_wounded": {
+        "DA_RIVEDERE": "QUESTA MECCANICA È IN FORSE. Il game designer non è convinto della doppia penalità (Tabella Potere che scala al ribasso + blocco delle azioni costose). Potrebbe essere troppo punitiva. Da rivalutare.",
         "rule": "LIMITE DI POTENZA: Quando una Caratteristica è FERITA (ha almeno una carta girata), il PG NON PUÒ giocare azioni con quel Tag il cui Costo Tempo supera il valore ATTUALE (intatto) della Caratteristica.",
         "when_intact": "Se la Caratteristica è INTATTA, NON c'è limite. Un Guerriero con Risonanza 3 può usare azioni [Risonanza] di Costo 4 o 5 pagando regolarmente il tempo.",
         "when_wounded_example": "Guerriero con Risonanza 3, ma 1 carta girata (valore attuale = 2). NON può più giocare azioni [Risonanza] con Costo Tempo 3, 4 o 5. Può solo usare azioni [Risonanza] da Costo 1 o 2.",
@@ -170,11 +171,13 @@
         "soglia_del_vuoto": "Istinto = [Carta 1 Girata] [Carta 2 Girata] [Carta 3 Girata] (Valore 0). Il giocatore gira CONTEMPORANEAMENTE un Cuore."
       }
     },
-    "destruction": {
-      "action": "La carta viene RIMOSSA fisicamente dalla Zona Caratteristiche.",
-      "consequence": "Il valore MASSIMO della Caratteristica cala permanentemente. Es: Risonanza 3 con 1 carta distrutta → Risonanza 2.",
-      "when": "Solo per attacchi catastrofici specifici (Boss speciali, fallimenti critici narrativi, magia estrema). NON è il danno standard.",
-      "recovery": "Quasi irreversibile. Solo magia estrema o rituali potrebbero ripristinarla."
+    "sostituzione": {
+      "name": "Sostituzione (Il Cambiamento del PG)",
+      "principio": "Le Caratteristiche NON possono essere distrutte. Il PG non perde mai capacità totali. Ma può CAMBIARE: rinunciare a parte di un approccio per abbracciarne un altro. È l'evoluzione del personaggio attraverso la storia.",
+      "meccanica": "Il PG sposta 1 punto da una Caratteristica a un'altra. Il totale dei punti resta sempre 10. Es: Risonanza 4 → Risonanza 3, Analisi 1 → Analisi 2. Il PG ha perso parte della sua ferocia per diventare più riflessivo.",
+      "quando": "Solo per eventi narrativamente significativi: traumi che cambiano la prospettiva del PG, rivelazioni che trasformano il suo modo di agire, lunghi periodi di studio o addestramento. NON è una meccanica di combattimento.",
+      "impatto_sul_mazzo": "La composizione del Mazzo Vitalità si aggiorna di conseguenza: 6 carte in meno del colore perso, 6 carte in più del colore guadagnato. Il totale resta 60.",
+      "design_intent": "Il PG è un essere vivente che cambia. La sostituzione non è una perdita — è una trasformazione. Il Guerriero ferito che impara a pensare di più. Il Saggio che scopre la rabbia. La persona che cambia è più interessante di quella che si spezza."
     }
   },
   "damage_categories": {
@@ -284,7 +287,7 @@
       "method_impresa": "Punti Impresa (da nemici Elite/Epici sconfitti o risparmiati) possono curare istantaneamente una Caratteristica ferita.",
       "speed": "MEDIO-LENTA (giornate).",
       "ferita": "Guaribile con cure appropriate.",
-      "distrutta": "Irreversibile tramite mezzi normali. Solo magia estrema o rituali."
+      "sostituzione": "Le Caratteristiche NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Caratteristiche) per eventi narrativi significativi. Il totale resta sempre 10."
     },
     "cuori": {
       "cuore_1": { "speed": "DIFFICILE ma possibile. Rituali + giorni di riposo." },
