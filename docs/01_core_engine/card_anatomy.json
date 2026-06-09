@@ -220,16 +220,16 @@
         "firma": "Più T4 di chiunque altro (2 a livello 5) + unico con T3 residuo. Lo stratega completo."
       },
       "evasione_blu": {
-        "name": "EVASIONE 🔵 — La Velocità",
-        "identita": "Ogni livello, qualcosa diventa più veloce. Tranne un'unica mossa suprema. Il maestro dell'Evasione non pensa: reagisce, e lo fa quattro volte su sei.",
+        "name": "EVASIONE 🔵 — La Fluidità",
+        "identita": "Prima la velocità pura, poi la tecnica la trasforma in eleganza. L'Evasione nasce come riflesso e matura in fluidità: il maestro non è più veloce, è più fluido.",
         "distribuzione": {
           "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
           "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
           "livello_3": {"T1": 3, "T2": 1, "T3": 1, "T4": 1, "T5": 0, "note": "T2→T1 — la valutazione diventa riflesso"},
-          "livello_4": {"T1": 3, "T2": 1, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la Sequenza Perfetta"},
-          "livello_5": {"T1": 4, "T2": 0, "T3": 0, "T4": 1, "T5": 1, "note": "T2→T1 — l'ultima esitazione diventa riflesso, velocità assoluta"}
+          "livello_4": {"T1": 1, "T2": 2, "T3": 2, "T4": 0, "T5": 1, "note": "La tecnica fluida emerge. T5 appare."},
+          "livello_5": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "note": "Versatilità elegante. Una sola mossa suprema."}
         },
-        "firma": "Più T1 di chiunque altro (4 a livello 5). Il maestro dei riflessi."
+        "firma": "Profilo equilibrato (T1=9, T2=9, T3=7 cumulative). La velocità c'è ma non domina — è la fluidità a definire il maestro."
       },
       "risonanza_verde": {
         "name": "RISONANZA 🟢 — La Connessione",
@@ -249,7 +249,7 @@
         "tabella": {
           "istinto": {"T1": 2, "T2": 0, "T3": 0, "T4": 1, "T5": 3, "possiede": "T5 (3, nessun altro ne ha più di 2)", "perde": "T2 e T3 — zero moderazione"},
           "analisi": {"T1": 1, "T2": 0, "T3": 1, "T4": 2, "T5": 2, "possiede": "T4 (2, tutti gli altri ne hanno 1) + unico con T3", "perde": "T2 — zero deliberazione superficiale"},
-          "evasione": {"T1": 4, "T2": 0, "T3": 0, "T4": 1, "T5": 1, "possiede": "T1 (4, nessun altro ne ha più di 2)", "perde": "T2 e T3 — zero azione normale"},
+          "evasione": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "possiede": "Versatilità completa — tutte le fasce coperte", "perde": "L'estremo — niente domina, ma niente manca"},
           "risonanza": {"T1": 2, "T2": 3, "T3": 0, "T4": 0, "T5": 1, "possiede": "T2 (3, nessun altro ne ha più di 1)", "perde": "T3 e T4 — zero connessione profonda prolungata"}
         },
         "pattern_emergente": "A livello 5, TUTTE le Caratteristiche perdono qualcosa — e quello che perdono le definisce quanto quello che mantengono. Il maestro non ha più bisogno di ciò che l'umano standard faceva naturalmente."
@@ -260,7 +260,7 @@
         "quantita_T5_livello_5": {
           "istinto": "3 T5 — la furia è il suo strumento principale",
           "analisi": "2 T5 — il piano supremo è un'opzione potente",
-          "evasione": "1 T5 — una sola Sequenza Perfetta, il resto è velocità",
+          "evasione": "1 T5 — una sola mossa suprema, il resto è tecnica fluida",
           "risonanza": "1 T5 — una sola Comunione Suprema, il resto è sintonia"
         }
       }
@@ -321,6 +321,7 @@
     "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Risonanza/Evasione/Analisi/Istinto.",
     "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion.",
-    "v10": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2: 2 T1, 2 T2, 2 T3 / 2 T1, 2 T2, 1 T3, 1 T4), specializzazione (livelli 3-5): Istinto estremo (T1+T5), Analisi completo (T3+T4+T5), Evasione veloce (T1 dominante), Risonanza centrato (T2 dominante). T5 accessibile dal livello 4 per tutte le Caratteristiche."
+    "v10": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2: 2 T1, 2 T2, 2 T3 / 2 T1, 2 T2, 1 T3, 1 T4), specializzazione (livelli 3-5): Istinto estremo (T1+T5), Analisi completo (T3+T4+T5), Evasione veloce (T1 dominante), Risonanza centrato (T2 dominante). T5 accessibile dal livello 4 per tutte le Caratteristiche.",
+    "v11": "EVASIONE RIVISTA: livelli 4-5 ridotti T1, spostati verso T2/T3. Da 'La Velocità' a 'La Fluidità'. Liv4: (1,2,2,0,1), Liv5: (1,2,1,1,1). Cumulativo: T1=9, T2=9, T3=7. Profilo equilibrato, non più estremo su T1."
   }
 }

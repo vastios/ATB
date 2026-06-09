@@ -1,7 +1,7 @@
 {
   "game_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
-    "version": "13.0 — Distribuzione Asimmetrica per Livello: profili temporali unici per Caratteristica e valore 1-5",
+    "version": "13.1 — Evasione rivista: da 'La Velocità' a 'La Fluidità', livelli 4-5 riequilibrati verso T2/T3",
     "last_updated": "2026-06-09",
     "architecture": {
       "name": "Architettura a Tre Canali",
@@ -99,8 +99,8 @@
     }
   },
   "document_index": {
-    "00": "project_metadata.json — v13.0 DISTRIBUZIONE ASIMMETRICA PER LIVELLO",
-    "01": "card_anatomy.json — v11.0 (Distribuzione Asimmetrica per Livello)",
+    "00": "project_metadata.json — v13.1 EVASIONE RIVISTA: LA FLUIDITÀ",
+    "01": "card_anatomy.json — v11.1 (Evasione rivista: La Fluidità)",
     "02": "vitality_engine.json — v8.0 (Due Categorie Danno, Soglia Vuoto)",
     "03": "atb_timeline.json — v7.0 (de-lore-izzato)",
     "04": "character_sheet.json — v14.0 (Distribuzione Asimmetrica per Livello)",
