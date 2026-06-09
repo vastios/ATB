@@ -1,8 +1,8 @@
 {
   "section_id": "01",
   "section_name": "Anatomia delle Carte e Costituzione del Mazzo Vitalità",
-  "version": "10.0",
-  "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
+  "version": "11.0",
+  "status": "AGGIORNATO — Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico che varia per valore 1-5. Base comune (livelli 1-2), specializzazione (livelli 3-5)",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Struttura di ogni carta azione del Mazzo Vitalità e composizione del mazzo. Ogni carta ha un bordo colorato (Caratteristica), tag che scalano con la complessità secondo la REGOLA D'ORO, e una TABELLA POTERE artigianale. La Caratteristica INCIDE sul risultato. Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
   "card_layout": {
@@ -182,31 +182,96 @@
       "formula": "Carte per Caratteristica = Valore Caratteristica × 6",
       "example": "Guerriero: Risonanza 4 = 24 carte, Evasione 3 = 18 carte, Analisi 1 = 6 carte, Istinto 2 = 12 carte. Totale: 24+18+6+12 = 60 carte."
     },
-    "recipe_per_6": {
-      "name": "La Ricetta del 6",
-      "description": "Ogni blocco di 6 carte azione della stessa Caratteristica segue questa distribuzione:",
-      "composition": {
-        "T1_veloci": "2 carte — Riflessi istintivi",
-        "T2_utilita": "2 carte — Tecniche base",
-        "T3_media": "1 carta — L'azione pensata",
-        "T4_T5_pesante": "1 carta — L'azione profonda, che richiede molto tempo"
+    "distribuzione_asimmetrica": {
+      "name": "La Distribuzione Asimmetrica per Livello",
+      "principio_fondante": "Il valore della Caratteristica (1-5) determina non solo QUANTE carte ha il PG di quel colore, ma anche la COMPOSIZIONE TEMPO di quelle carte. Una Caratteristica alta sblocca sia carte più veloci sia carte più potenti. Ogni Caratteristica ha un PROFILO TEMPORALE UNICO che si differenzia a partire dal livello 3.",
+      "base_comune": {
+        "name": "La Base Comune (Livelli 1-2)",
+        "principio": "I primi due livelli rappresentano l''umano standard'. Tutte le Caratteristiche condividono la stessa distribuzione di base: prevalentemente moderata, con riflessi presenti ma senza estremi.",
+        "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0, "note": "Riflessi e azioni moderate. Nessun estremo."},
+        "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0, "note": "Un primo barlume di profondità."}
       },
-      "example_warrior_forza_4": {
-        "total_forza_cards": "24 (= 4 × 6)",
-        "T1": "8 carte Risonanza T=1",
-        "T2": "8 carte Risonanza T=2",
-        "T3": "4 carte Risonanza T=3",
-        "T4_T5": "4 carte Risonanza T=4 o T=5 (a scelta, es. 2 e 2)"
+      "specializzazione": {
+        "name": "La Specializzazione (Livelli 3-5)",
+        "principio": "Dal livello 3, il PG è 'sopra la media' e le distribuzioni divergono. Ogni Caratteristica sviluppa la propria firma temporale: i profili diventano sempre più estremi e caratterizzanti a ogni livello."
       },
-      "why_perfect": "Poche carte complesse = quando ne peschi una è un EVENTO SPECIALE. Se la Caratteristica si ferisce, le azioni complesse peggiorano automaticamente senza blocchi aggiuntivi. Le combo sono RARE perché le carte con tag combo sono poche."
+      "istinto_rosso": {
+        "name": "ISTINTO 🔴 — La Furia",
+        "identita": "La moderazione muore. La furia cresce. L'Istinto non ha vie di mezzo: o reagisci all'istante (T1) o ti ci giochi tutto (T5). Zero T2, zero T3, sempre.",
+        "distribuzione": {
+          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
+          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
+          "livello_3": {"T1": 2, "T2": 2, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la moderazione scompare, la prima furia"},
+          "livello_4": {"T1": 2, "T2": 1, "T3": 0, "T4": 1, "T5": 2, "note": "T2→T5 — la valutazione diventa furia"},
+          "livello_5": {"T1": 2, "T2": 0, "T3": 0, "T4": 1, "T5": 3, "note": "T2→T5 — nessuna esitazione, tripla devastazione"}
+        },
+        "firma": "Più T5 di chiunque altro (3 a livello 5). Il berserker assoluto."
+      },
+      "analisi_giallo": {
+        "name": "ANALISI 🟡 — La Profondità",
+        "identita": "Il riflesso diventa piano. La valutazione diventa analisi. La deliberazione scompare. L'Analista perde il riflesso per guadagnare la profondità.",
+        "distribuzione": {
+          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
+          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
+          "livello_3": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "note": "T1→T5 — il riflesso diventa piano a lungo termine"},
+          "livello_4": {"T1": 1, "T2": 1, "T3": 1, "T4": 2, "T5": 1, "note": "T2→T4 — la valutazione diventa analisi profonda"},
+          "livello_5": {"T1": 1, "T2": 0, "T3": 1, "T4": 2, "T5": 2, "note": "T2→T5 — la deliberazione scompare, doppio piano supremo"}
+        },
+        "firma": "Più T4 di chiunque altro (2 a livello 5) + unico con T3 residuo. Lo stratega completo."
+      },
+      "evasione_blu": {
+        "name": "EVASIONE 🔵 — La Velocità",
+        "identita": "Ogni livello, qualcosa diventa più veloce. Tranne un'unica mossa suprema. Il maestro dell'Evasione non pensa: reagisce, e lo fa quattro volte su sei.",
+        "distribuzione": {
+          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
+          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
+          "livello_3": {"T1": 3, "T2": 1, "T3": 1, "T4": 1, "T5": 0, "note": "T2→T1 — la valutazione diventa riflesso"},
+          "livello_4": {"T1": 3, "T2": 1, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la Sequenza Perfetta"},
+          "livello_5": {"T1": 4, "T2": 0, "T3": 0, "T4": 1, "T5": 1, "note": "T2→T1 — l'ultima esitazione diventa riflesso, velocità assoluta"}
+        },
+        "firma": "Più T1 di chiunque altro (4 a livello 5). Il maestro dei riflessi."
+      },
+      "risonanza_verde": {
+        "name": "RISONANZA 🟢 — La Connessione",
+        "identita": "Prima senti invece di reagire. Poi la profondità diventa suprema. Poi diventa istantanea. L'empatico ha più connessioni rapide di chiunque altro.",
+        "distribuzione": {
+          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
+          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
+          "livello_3": {"T1": 1, "T2": 3, "T3": 1, "T4": 1, "T5": 0, "note": "T1→T2 — la reazione diventa sintonia"},
+          "livello_4": {"T1": 1, "T2": 3, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la Comunione Suprema"},
+          "livello_5": {"T1": 2, "T2": 3, "T3": 0, "T4": 0, "T5": 1, "note": "T4→T1 — la profondità diventa empatica istantanea"}
+        },
+        "firma": "Più T2 di chiunque altro (3 a livello 5). Il maestro delle sintonie rapide."
+      },
+      "confronto_livello_5": {
+        "name": "Confronto a Livello 5",
+        "descrizione": "Ogni Caratteristica 'possiede' un costo Tempo a livello 5, e perde qualcosa che la definisce quanto quello che mantiene.",
+        "tabella": {
+          "istinto": {"T1": 2, "T2": 0, "T3": 0, "T4": 1, "T5": 3, "possiede": "T5 (3, nessun altro ne ha più di 2)", "perde": "T2 e T3 — zero moderazione"},
+          "analisi": {"T1": 1, "T2": 0, "T3": 1, "T4": 2, "T5": 2, "possiede": "T4 (2, tutti gli altri ne hanno 1) + unico con T3", "perde": "T2 — zero deliberazione superficiale"},
+          "evasione": {"T1": 4, "T2": 0, "T3": 0, "T4": 1, "T5": 1, "possiede": "T1 (4, nessun altro ne ha più di 2)", "perde": "T2 e T3 — zero azione normale"},
+          "risonanza": {"T1": 2, "T2": 3, "T3": 0, "T4": 0, "T5": 1, "possiede": "T2 (3, nessun altro ne ha più di 1)", "perde": "T3 e T4 — zero connessione profonda prolungata"}
+        },
+        "pattern_emergente": "A livello 5, TUTTE le Caratteristiche perdono qualcosa — e quello che perdono le definisce quanto quello che mantengono. Il maestro non ha più bisogno di ciò che l'umano standard faceva naturalmente."
+      },
+      "accesso_T5": {
+        "name": "Accesso al Potere Massimo (T5)",
+        "principio": "Ogni Caratteristica ha accesso al potere massimo (T5) dal livello 4. Poiché il valore 4 è la scelta più comune per la Caratteristica principale, il T5 deve essere accessibile già da lì. La quantità di T5 racconta la differenza:",
+        "quantita_T5_livello_5": {
+          "istinto": "3 T5 — la furia è il suo strumento principale",
+          "analisi": "2 T5 — il piano supremo è un'opzione potente",
+          "evasione": "1 T5 — una sola Sequenza Perfetta, il resto è velocità",
+          "risonanza": "1 T5 — una sola Comunione Suprema, il resto è sintonia"
+        }
+      }
     },
     "catalog_system": {
       "name": "Il Catalogo delle Azioni",
       "description": "Non esistono mazzi preconfezionati per classe. Esiste un CATALOGO (mazzo Master) da cui i giocatori costruiscono il proprio Mazzo Vitalità.",
-      "setup_process": "All'inizio della campagna, il giocatore prende il Catalogo e, in base alle sue Caratteristiche, seleziona le sue 60 carte seguendo la Ricetta del 6.",
-      "example": "'Io ho Risonanza 4, prendo 8 carte T=1 Risonanza, 8 T=2, 4 T=3, 4 T=4/T5 dal catalogo. Io ho Analisi 1, prendo solo 2 T=1 e 2 T=2 Analisi, più 1 T=3 e 1 T=4 a scelta.'",
-      "customization": "I giocatori possono scegliere le carte che preferiscono esteticamente o narrativamente dal catalogo, sapendo che i numeri sono già bilanciati dalla Ricetta.",
-      "evolution": "Il Mazzo Vitalità evolve sostituendo carte del catalogo base con carte trovate/acquistate, mantenendo la proporzione della Ricetta."
+      "setup_process": "All'inizio della campagna, il giocatore prende il Catalogo e, in base alle sue Caratteristiche e ai loro valori, seleziona le sue 60 carte seguendo la Distribuzione Asimmetrica per Livello. Per ogni Caratteristica, consulta la tabella corrispondente al suo valore e seleziona le carte indicate per ogni fascia di Costo Tempo.",
+      "example": "'Io ho Istinto 4, guardo la tabella Istinto livello 4: 2 T1, 1 T2, 0 T3, 1 T4, 2 T5 × 6 = 12 T1, 6 T2, 0 T3, 6 T4, 12 T5. Io ho Analisi 2, guardo la tabella Analisi livello 2: 2 T1, 2 T2, 1 T3, 1 T4, 0 T5 × 6 = 12 T1, 12 T2, 6 T3, 6 T4, 0 T5 dal catalogo.'",
+      "customization": "I giocatori possono scegliere le carte che preferiscono esteticamente o narrativamente dal catalogo, sapendo che i numeri sono già bilanciati dalla Distribuzione Asimmetrica.",
+      "evolution": "Il Mazzo Vitalità evolve sostituendo carte del catalogo base con carte trovate/acquistate. Quando una Caratteristica cambia valore (Sostituzione), il giocatore aggiorna la composizione delle 6 carte di quel colore secondo la nuova tabella."
     }
   },
   "card_examples_by_time_cost": {
@@ -255,6 +320,7 @@
     "v6": "TABELLA POTERE DEFINITIVA (artigianale, risolve il paradosso). MAZZO 60 CARTE proporzionale. RICETTA DEL 6. CATALOGO.",
     "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Risonanza/Evasione/Analisi/Istinto.",
     "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion."
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion.",
+    "v10": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2: 2 T1, 2 T2, 2 T3 / 2 T1, 2 T2, 1 T3, 1 T4), specializzazione (livelli 3-5): Istinto estremo (T1+T5), Analisi completo (T3+T4+T5), Evasione veloce (T1 dominante), Risonanza centrato (T2 dominante). T5 accessibile dal livello 4 per tutte le Caratteristiche."
   }
 }

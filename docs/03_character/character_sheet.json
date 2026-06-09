@@ -1,8 +1,8 @@
 {
   "section_id": "04",
   "section_name": "Scheda Personaggio — Caratteristiche, Cuori, Equipaggiamento e Layout Area",
-  "version": "13.0",
-  "status": "AGGIORNATO — Meccaniche pure definitive: Caratteristiche in LINEE, Soglia del Vuoto, Danno Standard vs Diretto, Layout Area Giocatore a 4 Zone, Armi Alchemiche vs Improvvisate",
+  "version": "14.0",
+  "status": "AGGIORNATO — Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico per valore 1-5. Base comune livelli 1-2, specializzazione livelli 3-5",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "NESSUNA scheda cartacea. Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Istinto, Analisi, Evasione, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. Il danno si divide in due categorie: Standard (il giocatore SCEGLIE tra Milling o Ferita a una Caratteristica qualsiasi) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore.",
   "player_area_layout": {
@@ -86,8 +86,9 @@
     },
     "deck_construction": {
       "rule": "Ogni punto Caratteristica = 6 carte azione di quel colore. 10 punti × 6 = 60 carte.",
-      "composition": "Seguire la Ricetta del 6: per ogni blocco di 6 carte, 2 T=1, 2 T=2, 1 T=3, 1 T=4/T5.",
-      "catalog": "I giocatori scelgono dal Catalogo delle Azioni seguendo la Ricetta."
+      "composition": "Seguire la Distribuzione Asimmetrica per Livello: per ogni Caratteristica, consultare la tabella corrispondente al suo valore per determinare la composizione Tempo delle 6 carte. A livelli 1-2 tutte le Caratteristiche condividono la stessa distribuzione base. Dal livello 3, ogni Caratteristica sviluppa il proprio profilo temporale unico.",
+      "catalog": "I giocatori scelgono dal Catalogo delle Azioni seguendo la Distribuzione Asimmetrica per Livello.",
+      "reference": "Vedi card_anatomy.json → distribuzione_asimmetrica per le tabelle complete."
     }
   },
   "characteristics_cards": {
@@ -320,6 +321,7 @@
     "v9": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v10": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
     "v11": "LAYOUT AREA GIOCATORE a 4 Zone. Caratteristiche in LINEE (non pile). SOGLIA DEL VUOTO: Caratteristica a 0 = ferita Cuore OBBLIGATORIA. DUE CATEGORIE DI DANNO: Standard (scelta Milling/Caratteristica) vs Diretto (nessuna scelta). Cuori NON sono opzione per Danno Standard.",
-    "v12": "ARMIMPROVVISATE formalizzate. ARMI ALCHEMICHE come unica fonte di potere equipaggiabile. RICOMPENSE riviste: Impresa NON cura Cuori. Esempi visivi del layout area giocatore."
+    "v12": "ARMIMPROVVISATE formalizzate. ARMI ALCHEMICHE come unica fonte di potere equipaggiabile. RICOMPENSE riviste: Impresa NON cura Cuori. Esempi visivi del layout area giocatore.",
+    "v13": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2), specializzazione (livelli 3-5). Ogni Caratteristica ha un profilo temporale unico. T5 accessibile dal livello 4 per tutte le Caratteristiche."
   }
 }

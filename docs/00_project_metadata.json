@@ -1,8 +1,8 @@
 {
   "game_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
-    "version": "12.0 — Due Categorie Danno + Classificazione 3 Tier Nemici + Armi Alchemiche/Improvvisate + Soglia del Vuoto",
-    "last_updated": "2026-05-29",
+    "version": "13.0 — Distribuzione Asimmetrica per Livello: profili temporali unici per Caratteristica e valore 1-5",
+    "last_updated": "2026-06-09",
     "architecture": {
       "name": "Architettura a Tre Canali",
       "description": "Il progetto è diviso in tre canali indipendenti. Le meccaniche pure (Canale 1) sono COMPLETE prima di applicare qualsiasi lore. La lore (Canale 3) è una 'skin' che veste le meccaniche senza modificarle. Il Canale 2 contiene le regole avanzate per il Master.",
@@ -99,11 +99,11 @@
     }
   },
   "document_index": {
-    "00": "project_metadata.json — v12.0 DUE CATEGORIE DANNO + 3 TIER NEMICI",
-    "01": "card_anatomy.json — v9.0 (de-lore-izzato)",
+    "00": "project_metadata.json — v13.0 DISTRIBUZIONE ASIMMETRICA PER LIVELLO",
+    "01": "card_anatomy.json — v11.0 (Distribuzione Asimmetrica per Livello)",
     "02": "vitality_engine.json — v8.0 (Due Categorie Danno, Soglia Vuoto)",
     "03": "atb_timeline.json — v7.0 (de-lore-izzato)",
-    "04": "character_sheet.json — v12.0 (Linee Caratteristiche, Soglia Vuoto, Armi Improvvisate)",
+    "04": "character_sheet.json — v14.0 (Distribuzione Asimmetrica per Livello)",
     "05": "combat_math.json — v10.0 (Due Categorie Danno, Soglia Vuoto)",
     "06": "equipment_system.json — v8.0 (Armi Alchemiche/Improvvisate, Distruzione Tratti)",
     "07": "enemy_system.json — v9.0 (3 Tier, Tratti, Attacchi Speciali, Ricompense Rev2)",
@@ -125,6 +125,7 @@
     "tag_caratteristica_secondaria": "Permette di usare un'altra Caratteristica al posto di quella del bordo.",
     "mandatory_matching_REVOKED": "REGOLA REVOCATA: Per il Danno Standard, il giocatore può scegliere QUALSIASI Caratteristica da ferire, indipendentemente dal tipo di danno subito. Per il Danno Diretto, la Caratteristica bersagliata è OBBLIGATORIA.",
     "power_cap_wounded": "Caratteristica FERITA = non puoi giocare azioni con quel Tag sopra il valore attuale.",
+    "distribuzione_asimmetrica": "Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico che varia per valore 1-5. Base comune livelli 1-2, specializzazione livelli 3-5. T5 accessibile dal livello 4.",
     "warriors_dilemma": "Due Categorie di Danno: Standard (SCEGLI tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) vs Diretto (NESSUNA scelta, gira carte pari al danno della Caratteristica bersagliata). I Cuori NON sono opzione per Danno Standard. I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
     "temporal_continuity": "Le carte si posizionano SEMPRE dalla prima posizione libera a sinistra. Impossibile saltare slot.",
     "combo_damage": "Danno combo = somma dei valori POTERE delle carte nella colonna.",
