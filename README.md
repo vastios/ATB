@@ -27,5 +27,22 @@
 | `12_lore.json` | Lore e Setting | 🔲 Da definire |
 | `13_playtest_notes.json` | Note Playtest | 🔲 Da definire |
 
+## 🎮 Combat Simulator (App Web)
+
+L'applicazione di playtest è nella cartella `app/`. Permette di simulare incontri di combattimento per valutare le meccaniche.
+
+```bash
+cd app
+npm install
+npm run dev
+```
+
+**3 Sezioni:**
+1. **Creazione PG** — Distribuzione 10 punti tra le 4 Caratteristiche
+2. **Creazione Mostri** — 3 tier (Base, Elite, Epico) con attacchi e tratti
+3. **Tavolo di Gioco** — Cintura ATB, pesca automatica, posizionamento carte, risoluzione
+
+**⚠️ Importante:** Ogni modifica alle regole (docs/) deve essere integrata anche nell'app.
+
 ## 🔄 Protocollo di Backup
 Ogni sezione completata viene committata e pushata su GitHub automaticamente.
