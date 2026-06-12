@@ -1,8 +1,8 @@
 {
   "section_id": "01",
   "section_name": "Anatomia delle Carte e Costituzione del Mazzo Vitalità",
-  "version": "11.0",
-  "status": "AGGIORNATO — Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico che varia per valore 1-5. Base comune (livelli 1-2), specializzazione (livelli 3-5)",
+  "version": "12.0",
+  "status": "AGGIORNATO — Catalogo Tag v1.2: 10 categorie, 20 tag. Reazione (Blocco Perfetto), Protezione, Cura/Recupero, Alterazione (Haste/Slow/Scan), Economia ([Fulmineo]). Principio unificante: i tag sono OPZIONALI, non obbligatori.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Struttura di ogni carta azione del Mazzo Vitalità e composizione del mazzo. Ogni carta ha un bordo colorato (Caratteristica), tag che scalano con la complessità secondo la REGOLA D'ORO, e una TABELLA POTERE artigianale. La Caratteristica INCIDE sul risultato. Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
   "card_layout": {
@@ -48,8 +48,9 @@
         },
         "design_intent": "Il sistema si AUTO-GOVERNA. Una carta T=1 può fare una cosa sola. Una carta T=5 può fare tutto contemporaneamente. La lentezza paga in versatilità e potenza."
       },
-      "catalog_v1_1": {
-        "name": "Catalogo Ufficiale dei Tag — Versione 1.1",
+      "catalog_v1_2": {
+        "name": "Catalogo Ufficiale dei Tag — Versione 1.2",
+        "principio_unificante": "Solo [Imposizione]/[Opposizione] è OBBLIGATORIO. Tutti gli altri tag sono OPZIONALI — il giocatore SCEGLIE quali attivare in base alla situazione. Più tag hai, più opzioni hai, ma scegli TU cosa attivare. Ogni tag compete per gli stessi slot (Regola d'Oro: N tag ≤ Costo Tempo).",
         "categories": {
           "1_UTILIZZO": {
             "name": "Utilizzo (Obbligatorio)",
@@ -132,6 +133,107 @@
             ],
             "narrative": "Combatto come un ferito. Il danno subito mi rende più pericoloso.",
             "contrasto": "Se il PG si fa curare e non ha più ferite, queste carte tornano a essere 'mute' o deboli. Spinge il giocatore a giocare d'azzardo trattenendo le cure."
+          },
+          "6_REAZIONE": {
+            "name": "Reazione (Blocco Perfetto)",
+            "description": "Si attivano SOLO in caso di Blocco Perfetto: la carta [Opposizione] del PG è nello STESSO SLOT TEMPORALE dell'attacco nemico nella Cintura ATB. I nemici posizionano carte/token coperti che si rivelano man mano che la Cintura scorre. Il tempismo è TUTTO: se la difesa è nell'esatta posizione, si sbloccano le potenzialità extra.",
+            "blocco_perfetto": "La carta [Opposizione] del PG deve essere nello stesso slot temporale della carta attacco nemica. Se è in un altro slot, la difesa è solo base.",
+            "tags": {
+              "Contrattacco": {
+                "description": "Va con [Opposizione]. In caso di Blocco Perfetto: azzeri i danni subiti E infliggi danni al nemico (seguendo la Tabella Potere della carta). Arricchisce le carte difensive rendendole non solo difesa passiva ma anche fonte di danno.",
+                "tag_utilizzo": "[Opposizione] — il Contrattacco è solo difesa che colpisce, NON è [Imposizione].",
+                "narrative": "Non solo mi difendo — ti colpisco mentre ci provi."
+              },
+              "Intercettazione": {
+                "description": "Va con [Opposizione] + un tag Combo. In caso di Blocco Perfetto E combo realizzata (almeno 2 giocatori): ANNULLA completamente l'attacco nemico PER TUTTI i PG. L'attacco non avviene proprio.",
+                "requisito_combo": "OBBLIGATORIO avere anche un tag Combo ([Apertura], [Sviluppo], [Chiusura] o [Culmine]) e che la combo sia realizzata con almeno 2 giocatori diversi.",
+                "effetto_collettivo": "L'attacco viene annullato per TUTTI i PG, non solo per chi intercetta.",
+                "narrative": "Il piano perfetto che neutralizza la minaccia alla radice."
+              },
+              "Immolazione": {
+                "description": "Va con [Opposizione]. In caso di Blocco Perfetto (scelta del giocatore): il PG subisce il DOPPIO dei danni, ma TUTTI gli alleati subiscono 0 danni da quell'attacco. Il giocatore SCEGLIE se attivare o meno questo tag.",
+                "scelta": "Il giocatore che gioca la carta DECIDE se attivare [Immolazione]. Non è obbligatorio anche in caso di Blocco Perfetto.",
+                "narrative": "Prendetela con me. Prendo il vostro dolore su di me."
+              }
+            },
+            "design_intent": "Il Blocco Perfetto trasforma la difesa da passiva a tattica. Non scegli solo COME difenderti, ma QUANDO. Il tempismo nella Cintura ATB diventa la vera abilità difensiva."
+          },
+          "7_PROTEZIONE": {
+            "name": "Protezione (Difesa Espansa)",
+            "description": "Espande l'effetto di una carta [Opposizione] agli alleati. Come gli incantesimi Barrier/Reflex di Final Fantasy: la difesa non protegge solo te ma anche chi ti sta accanto.",
+            "tags": {
+              "Protezione": {
+                "description": "Quando giochi una carta [Opposizione] con [Protezione], l'effetto difensivo si espande a uno o più alleati. I compagni subiscono meno danni grazie alla tua difesa.",
+                "meccanica": "L'effetto riduttivo della [Opposizione] si applica anche agli alleati designati dal giocatore.",
+                "narrative": "Ti copro. La mia guardia protegge anche te."
+              }
+            },
+            "design_intent": "In un combattimento senza posizioni, la Protezione è l'unico modo per difendere gli alleati. Crea il ruolo del protettore senza bisogno di griglia o miniature."
+          },
+          "8_CURA": {
+            "name": "Cura (Recupero Vitalità)",
+            "description": "Permette di recuperare Vitalità durante il combattimento. NON cura Ferite a Caratteristiche o Cuori — quelli sono danni strutturali che richiedono tempo e narrazione fuori combattimento.",
+            "tags": {
+              "Cura": {
+                "description": "Recupera Vitalità a un altro PG o a più PG. Non può curare Ferite a Caratteristiche o Cuori.",
+                "meccanica": "Il PG che gioca questa carta sceglie uno o più alleati che recuperano Vitalità (carte dallo scarto al mazzo).",
+                "narrative": "Le tue ferite sono mie. Ti guarisco."
+              },
+              "Recupero": {
+                "description": "Recupera Vitalità SOLO al PG che gioca la carta. Auto-cura, più accessibile di [Cura] ma limitata a sé stessi.",
+                "meccanica": "Il PG recupera Vitalità per sé stesso. Non può curare Ferite a Caratteristiche o Cuori.",
+                "narrative": "Riprendo fiato. Mi ricompongo."
+              }
+            },
+            "design_intent": "[Cura] è il tag che raggiunge gli altri (più costoso, su carte T3+). [Recupero] è il tag che cura solo sé stessi (più accessibile, anche su T2). L'asimmetria nasce dal costo: chi cura gli altri paga più slot tag."
+          },
+          "9_ALTERAZIONE": {
+            "name": "Alterazione (Modifica il Combattimento)",
+            "description": "Modifica la timeline ATB o le informazioni disponibili. Ispirato agli status effect di Final Fantasy (Haste, Slow, Scan). Il campo di battaglia è il TEMPO, e questi tag lo modificano.",
+            "tags": {
+              "Accelerazione": {
+                "description": "Modifica POSITIVAMENTE la timeline tua o di un alleato. Ispirazione: Haste.",
+                "esempi": [
+                  "Su [Opposizione]: difenditi E sposta la tua prossima azione di 1 slot indietro (agisci prima)",
+                  "Su [Imposizione]: attacca E la tua prossima azione costa 1 Tempo in meno",
+                  "Su [Cura]: cura un alleato E lui agisce prima nel prossimo round"
+                ],
+                "narrative": "Il tempo è dalla mia parte. Mi muovo più veloce del previsto."
+              },
+              "Rallentamento": {
+                "description": "Modifica NEGATIVAMENTE la timeline del nemico. Ispirazione: Slow.",
+                "esempi": [
+                  "Su [Imposizione]: attacca E sposta la prossima azione nemica di 1 slot avanti",
+                  "Su [Opposizione]: difenditi E l'attacco nemico si risolve 1 slot più tardi"
+                ],
+                "narrative": "Sei lento. Il tempo ti sfugge."
+              },
+              "Rivelazione": {
+                "description": "Rivela 1 carta/token nemico coperto nella Cintura ATB. Ispirazione: Scan (versione limitata).",
+                "meccanica": "Il giocatore sceglie 1 carta/token nemico coperto nella Cintura e ne vede il contenuto prima che si risolva.",
+                "narrative": "Vedo cosa stai per fare. Uno dei tuoi segreti è scoperto."
+              },
+              "Premonizione": {
+                "description": "Rivela TUTTE le carte/token nemici coperti nella Cintura ATB. Ispirazione: Scan (versione totale). Molto più potente di [Rivelazione].",
+                "meccanica": "Tutte le carte/token nemici nella Cintura ATB vengono rivelati al giocatore. Il gruppo sa esattamente cosa sta per arrivare.",
+                "narrative": "Sento tutto. Ogni mossa, ogni intenzione. Non potete nascondervi."
+              }
+            },
+            "design_intent": "L'Alterazione rende la Cintura ATB un campo di battaglia MODIFICABILE. Chi controlla il tempo e l'informazione controlla il combattimento. [Rivelazione] e [Premonizione] legano i tag Alterazione ai tag Reazione: vedi dove attacca il nemico → sai dove mettere la difesa → Blocco Perfetto più probabile."
+          },
+          "10_ECONOMIA": {
+            "name": "Economia (Efficienza Temporale)",
+            "description": "L'unico tag che modifica l'economia azionale base. Normalmente ogni slot nella Cintura ATB o è 'pagamento' (carta coperta, si scarta senza effetto) o è 'azione' (carta scoperta, si risolve). [Fulmineo] rompe questa regola: la carta conta come pagamento E si attiva.",
+            "tags": {
+              "Fulmineo": {
+                "description": "Questa carta si ATTIVA anche se è usata come pagamento per un'altra azione. Normalmente le carte giocate coperte come 'costo tempo' si scartano senza effetto. [Fulmineo] permette di risolvere l'azione E contare come spesa in tempo per l'azione principale.",
+                "esempio": "Un PG gioca 3 carte coperte + 1 carta scoperta T4. La seconda carta coperta è in realtà una T2 con [Fulmineo]. Quando la Cintura scorre, quella carta SI ATTIVA (si gira e si risolve) ma conta comunque come 'spesa in tempo' per la T4.",
+                "potenza": "Molto potente. È l'unico modo per fare più di un'azione significativa per turno. Da usare con parsimonia.",
+                "vincolo_naturale": "Su una T2 con [Fulmineo], i 2 tag sono: 1 Utilizzo + [Fulmineo]. Zero spazio per altro. È un'azione semplice che si attiva 'gratis' — niente combo, niente reazione, niente strumenti.",
+                "narrative": "Troppo veloce per aspettare. Faccio due cose nello stesso istante."
+              }
+            },
+            "design_intent": "Trasforma uno 'spreco' (carte coperte come pagamento) in un'opportunità. Più l'azione principale è costosa, più slot pagamento hai, più [Fulmineo] diventa prezioso."
           }
         },
         "category_ACCANTONATA": {
@@ -322,6 +424,7 @@
     "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion.",
     "v10": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2: 2 T1, 2 T2, 2 T3 / 2 T1, 2 T2, 1 T3, 1 T4), specializzazione (livelli 3-5): Istinto estremo (T1+T5), Analisi completo (T3+T4+T5), Evasione veloce (T1 dominante), Risonanza centrato (T2 dominante). T5 accessibile dal livello 4 per tutte le Caratteristiche.",
-    "v11": "EVASIONE RIVISTA: livelli 4-5 ridotti T1, spostati verso T2/T3. Da 'La Velocità' a 'La Fluidità'. Liv4: (1,2,2,0,1), Liv5: (1,2,1,1,1). Cumulativo: T1=9, T2=9, T3=7. Profilo equilibrato, non più estremo su T1."
+    "v11": "EVASIONE RIVISTA: livelli 4-5 ridotti T1, spostati verso T2/T3. Da 'La Velocità' a 'La Fluidità'. Liv4: (1,2,2,0,1), Liv5: (1,2,1,1,1). Cumulativo: T1=9, T2=9, T3=7. Profilo equilibrato, non più estremo su T1.",
+    "v12": "CATALOGO TAG v1.2. Da 5 a 10 CATEGORIE, da 12 a 20 TAG. Nuove categorie: 6_Reazione (Blocco Perfetto: Contrattacco, Intercettazione, Immolazione), 7_Protezione (difesa espansa agli alleati), 8_Cura (Cura, Recupero — non cura Ferite), 9_Alterazione (Accelerazione/Haste, Rallentamento/Slow, Rivelazione/Scan, Premonizione), 10_Economia (Fulmineo — azione che si attiva anche come pagamento tempo). Principio unificante: i tag sono OPZIONALI, solo Imposizione/Opposizione è obbligatorio."
   }
 }

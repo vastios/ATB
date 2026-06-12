@@ -1,7 +1,7 @@
 {
   "game_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
-    "version": "13.1 — Evasione rivista: da 'La Velocità' a 'La Fluidità', livelli 4-5 riequilibrati verso T2/T3",
+    "version": "14.0 — Catalogo Tag v1.2: 10 categorie, 20 tag. Reazione, Protezione, Cura/Recupero, Alterazione (Haste/Slow/Scan), Economia (Fulmineo). Tag OPZIONALI.",
     "last_updated": "2026-06-09",
     "architecture": {
       "name": "Architettura a Tre Canali",
@@ -99,8 +99,8 @@
     }
   },
   "document_index": {
-    "00": "project_metadata.json — v13.1 EVASIONE RIVISTA: LA FLUIDITÀ",
-    "01": "card_anatomy.json — v11.1 (Evasione rivista: La Fluidità)",
+    "00": "project_metadata.json — v14.0 CATALOGO TAG v1.2",
+    "01": "card_anatomy.json — v12.0 (Catalogo Tag v1.2: 10 categorie, 20 tag)",
     "02": "vitality_engine.json — v8.0 (Due Categorie Danno, Soglia Vuoto)",
     "03": "atb_timeline.json — v7.0 (de-lore-izzato)",
     "04": "character_sheet.json — v14.0 (Distribuzione Asimmetrica per Livello)",
@@ -126,6 +126,13 @@
     "mandatory_matching_REVOKED": "REGOLA REVOCATA: Per il Danno Standard, il giocatore può scegliere QUALSIASI Caratteristica da ferire, indipendentemente dal tipo di danno subito. Per il Danno Diretto, la Caratteristica bersagliata è OBBLIGATORIA.",
     "power_cap_wounded": "Caratteristica FERITA = non puoi giocare azioni con quel Tag sopra il valore attuale.",
     "distribuzione_asimmetrica": "Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico che varia per valore 1-5. Base comune livelli 1-2, specializzazione livelli 3-5. T5 accessibile dal livello 4.",
+    "tag_opzionali": "REGOLA FONDAMENTALE: solo [Imposizione]/[Opposizione] è OBBLIGATORIO. Tutti gli altri tag sono OPZIONALI — il giocatore SCEGLIE quali attivare. I tag sono un MENÙ, non una checklist.",
+    "blocco_perfetto": "Blocco Perfetto: la carta [Opposizione] del PG è nello STESSO SLOT TEMPORALE dell'attacco nemico nella Cintura ATB. Sblocca i tag Reazione: [Contrattacco], [Intercettazione], [Immolazione].",
+    "tag_reazione": "Reazione (Cat. 6): [Contrattacco] = azzeri danni + colpisci, [Intercettazione] = annulla attacco per tutti (richiede combo), [Immolazione] = subisci doppio ma alleati a 0.",
+    "tag_protezione": "Protezione (Cat. 7): [Protezione] espande la difesa agli alleati. Come Barrier/Reflex di Final Fantasy.",
+    "tag_cura": "Cura (Cat. 8): [Cura] = recupera Vitalità ad altri, [Recupero] = recupera Vitalità solo a sé. NON curano Ferite a Caratteristiche o Cuori.",
+    "tag_alterazione": "Alterazione (Cat. 9): [Accelerazione]/Haste, [Rallentamento]/Slow, [Rivelazione]/Scan (1 carta), [Premonizione]/Scan totale. Modificano la timeline ATB o le informazioni.",
+    "tag_economia": "Economia (Cat. 10): [Fulmineo] = la carta si attiva anche se usata come pagamento tempo. Unico modo per fare più azioni per turno.",
     "warriors_dilemma": "Due Categorie di Danno: Standard (SCEGLI tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) vs Diretto (NESSUNA scelta, gira carte pari al danno della Caratteristica bersagliata). I Cuori NON sono opzione per Danno Standard. I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
     "temporal_continuity": "Le carte si posizionano SEMPRE dalla prima posizione libera a sinistra. Impossibile saltare slot.",
     "combo_damage": "Danno combo = somma dei valori POTERE delle carte nella colonna.",
