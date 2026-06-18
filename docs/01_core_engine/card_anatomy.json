@@ -1,430 +1,347 @@
 {
   "section_id": "01",
-  "section_name": "Anatomia delle Carte e Costituzione del Mazzo Vitalità",
-  "version": "12.0",
-  "status": "AGGIORNATO — Catalogo Tag v1.2: 10 categorie, 20 tag. Reazione (Blocco Perfetto), Protezione, Cura/Recupero, Alterazione (Haste/Slow/Scan), Economia ([Fulmineo]). Principio unificante: i tag sono OPZIONALI, non obbligatori.",
+  "section_name": "Anatomia delle Carte — Vitalità e Carte Lato Giocatore",
+  "version": "13.0",
+  "status": "AGGIORNATO v2 — Le Carte Vitalità non definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]). I loro TAG sono CHIAVI DI ATTIVAZIONE che permettono di agganciare Carte Lato Giocatore (Equipaggiamento, Strumenti Rapidi, Abilità, Magie). Le Magie seguono il modello Materie FF7: 5 livelli di potere + Esper al Liv 5.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Struttura di ogni carta azione del Mazzo Vitalità e composizione del mazzo. Ogni carta ha un bordo colorato (Caratteristica), tag che scalano con la complessità secondo la REGOLA D'ORO, e una TABELLA POTERE artigianale. La Caratteristica INCIDE sul risultato. Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
-  "card_layout": {
-    "description": "La struttura visiva della carta azione.",
+  "description": "Struttura di TUTTE le carte del gioco. La v2 divide le carte in DUE famiglie: (1) Carte Vitalità (riserva di energia), (2) Carte Lato Giocatore (catalogo delle mosse). Le Vitalità forniscono energia + chiavi di attivazione; le Carte Lato Giocatore forniscono gli effetti reali.",
+  "v2_paradigm_shift": {
+    "summary": "Nella v1, una Carta Vitalità era contemporaneamente risorsa (tempo) e azione (effetto). Nella v2, la Vitalità è SOLO risorsa. L'effetto è determinato dalla Carta Lato Giocatore agganciata in quel tick.",
+    "what_changed": [
+      "RIMOSSI i tag [Imposizione] e [Opposizione] dalle Vitalità",
+      "I tag rimanenti sulle Vitalità diventano CHIAVI DI ATTIVAZIONE",
+      "Le Carte Lato Giocatore (Equipaggiamento/Strumenti/Abilità/Magie) sono il catalogo delle mosse",
+      "Le Magie seguono il sistema Materie FF7 con 5 livelli + Esper",
+      "L'Equipaggiamento è feribile a 2 stadi (1° = potere speciale, 2° = distrutto)"
+    ],
+    "what_remains": [
+      "Bordo colorato per Caratteristica",
+      "Tabella Potere artigianale",
+      "Regola d'Oro: N tag ≤ Costo Tempo",
+      "Cintura ATB fluida",
+      "Danno a doppio strato (Milling / Ferita)",
+      "Soglia del Vuoto (Caratteristica a 0 = Cuore ferito)"
+    ]
+  },
+  "card_families": {
+    "family_1_vitality": {
+      "name": "Carte Vitalità",
+      "role": "RISERVA DI ENERGIA del PG",
+      "deck_size": "60 carte totali (proportionali alle Caratteristiche)",
+      "what_they_do": "Forniscono energia (Costo Tempo) e chiavi di attivazione (TAG) per agganciare Carte Lato Giocatore",
+      "what_they_dont_do": "NON definiscono l'azione. NON hanno [Imposizione]/[Opposizione]. NON hanno effetti propri.",
+      "play_modes": {
+        "face_up": "SCOPERTA — attiva una Carta Lato Giocatore compatibile (stessa caratteristica + almeno un tag richiesto)",
+        "face_down": "COPERTA — puro pagamento del Costo Tempo (riempie la Cintura ATB ma non attiva nulla)"
+      }
+    },
+    "family_2_player_cards": {
+      "name": "Carte Lato Giocatore",
+      "role": "CATALOGO DELLE MOSSE del PG",
+      "total_slots": 14,
+      "slot_breakdown": {
+        "equipment": "4 slot (1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio)",
+        "quick_items": "3 slot (Strumenti Rapidi, monouso)",
+        "abilities": "4 slot (mosse basate su caratteristica, valide anche fuori combattimento)",
+        "magic": "3 slot (Materie FF7 con 5 livelli di potere + Esper)"
+      },
+      "what_they_do": "Definiscono GLI EFFETTI che il PG può attivare. Ogni carta indica: caratteristica richiesta, tabella potere T1-T5, tag di attivazione richiesti, eventuali poteri speciali.",
+      "what_they_dont_do": "NON si attivano da sole. Richiedono SEMPRE una Vitalità compatibile per essere attivate."
+    }
+  },
+  "vitality_card_layout": {
+    "description": "Struttura visiva della Carta Vitalità (invariata dalla v1, eccetto rimozione tag Utilizzo).",
     "border_color": {
-      "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'azione.",
+      "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'energia.",
       "colors": {
         "Rosso": "Istinto — impulso non ragionato, sfondare, colpire senza riflettere",
         "Giallo": "Analisi — intelletto, strategia, magia ragionata",
         "Blu": "Evasione — destrezza, schiva, furtività",
         "Verde": "Risonanza — empatia, connessione col mondo, comprendere attraverso il sentire"
-      },
-      "purpose": "Permette di capire a colpo d'occhio quale Caratteristica l'azione utilizza."
+      }
     },
-    "top_tags": "In alto sulla carta sono riportati i TAG. Il numero di tag NON può mai superare il Costo Tempo della carta (REGOLA D'ORO). Più tempo costa un'azione, più tag ha e più è versatile.",
-    "center": "Nome dell'azione e eventuale immagine/illustrazione.",
+    "top_tags": "In alto sulla carta sono riportati i TAG DI ATTIVAZIONE. Il numero di tag NON può mai superare il Costo Tempo della carta (REGOLA D'ORO).",
+    "center": "Nome della carta (sapore narrativo) e eventuale illustrazione.",
     "bottom_right": "Una CLESSIDRA vicino a un numero che indica il COSTO IN TEMPO (da 1 a 5).",
-    "bottom_left": "La TABELLA POTERE (2 colonne × 5 righe). Prima colonna: numeri da 1 a 5 (valore della Caratteristica). Seconda colonna: valore numerico del POTERE dell'azione in base al valore della Caratteristica."
+    "bottom_left": "La TABELLA POTERE (2 colonne × 5 righe). Indica il POTERE base della carta in base al valore della Caratteristica del PG. NOTA: per le Armi, si usa la TABELLA POTERE dell'Arma; per le Magie, si usa la TABELLA POTERE della Magia. La tabella della Vitalità è usata per le Abilità senza propria tabella."
+  },
+  "player_card_layout": {
+    "description": "Struttura visiva delle Carte Lato Giocatore.",
+    "common_fields": {
+      "name": "Nome evocativo della carta (Spada Lunga, Palla di Fuoco, Intimidire, ecc.)",
+      "border_color": "Caratteristica richiesta (Rosso/Istinto, Giallo/Analisi, Blu/Evasione, Verde/Risonanza). Una carta può accettare più caratteristiche (bordo bicolore).",
+      "type": "Tipo di carta: Equipaggiamento / Strumento Rapido / Abilità / Magia",
+      "activation_tags_required": "Tag che la Vitalità deve avere per attivare questa carta. Es: [Strumento], [Abilità], [Magia], [Cura], ecc.",
+      "power_table": "Tabella T1-T5: per ogni livello, l'effetto specifico della carta a quel livello. Il PG può raggiungere solo i livelli ≤ al suo valore di Caratteristica."
+    },
+    "type_specific_fields": {
+      "equipment": {
+        "special_power": "Potere speciale attivato dal 1° ferimento (vedi Pilastro 7)",
+        "wound_slots": 2,
+        "destruction_effect": "Effetto (se presente) quando l'equipaggiamento viene distrutto"
+      },
+      "quick_items": {
+        "consumable": "true — si consuma quando usato",
+        "fixed_effect": "Spesso ha effetto fisso, non scala con T (es. Pozione cura sempre 5)"
+      },
+      "abilities": {
+        "context": "Valide anche FUORI dal combattimento (es. Intimidire, Persuadere, Analisi Tattica)",
+        "linked_characteristic": "Sempre legata a una caratteristica specifica (dà identità alle mosse)"
+      },
+      "magic": {
+        "materia_system": "FF7-style: ogni Magia è una Materia con 5 livelli di potere",
+        "level_effects": "I 5 livelli non sono solo graduazioni di potenza — ogni livello può avere EFFETTI DIVERSI (es. Fire: 1 bersaglio → 2 bersagli → Area → Burn persistente → Esper Ifrit)",
+        "esper": "Al livello 5, può essere evocato l'Esper collegato, con effetto molto più potente",
+        "max_level_cap": "Il PG raggiunge solo i livelli ≤ al suo valore di Caratteristica"
+      }
+    }
   },
   "fields": {
     "name": {
       "type": "String",
-      "description": "Nome evocativo dell'azione. Dà sapore narrativo.",
-      "examples": ["Scatto Brusco", "Parata con Scudo", "Impeto", "Attenzione", "Respiro"]
+      "description": "Nome evocativo della carta."
     },
     "time_cost": {
       "type": "Integer",
       "range": [1, 5],
-      "description": "Costo Tempo dell'azione. Determina quante colonne occupa nella Cintura ATB e la complessità dell'azione.",
-      "dual_function": "COSTO TEMPO = complessità dell'azione = slot occupati nella Cintura ATB = numero MASSIMO di Tag sulla carta.",
-      "visual_in_grid": "Costo 3 = 2 slot coperti + 1 slot azione scoperta nella riga del PG."
+      "description": "Costo Tempo della Vitalità. Determina lo slot occupato nella Cintura ATB e il livello di effetto massimo raggiungibile per la Carta Lato Giocatore agganciata.",
+      "dual_function_v2": "COSTO TEMPO = slot ATB = numero MASSIMO di Tag sulla Vitalità = LIVELLI DI EFFETTO selezionabili per la Carta Lato Giocatore agganciata (limitato dal valore di Caratteristica del PG)."
     },
     "tags": {
       "golden_rule": {
         "name": "La Regola d'Oro dei Tag",
-        "rule": "Il numero massimo di Tag presenti su una singola carta non può MAI superare il suo Costo in Tempo.",
-        "examples": {
-          "T1": "1 Tag — Solo [Imposizione] o [Opposizione]. Nessuna possibilità di combo o uso di oggetti. È un riflesso istintivo.",
-          "T2": "2 Tag — Es. [Opposizione] + [Strumento]. Base, niente di complicato.",
-          "T3": "3 Tag — Es. [Opposizione] + [Strumento] + [Sviluppo]. L'azione è pensata, non più istintiva.",
-          "T4": "4 Tag — Es. [Imposizione] + [Apertura] + [Analisi] + [Ferita]. Complessa e versatile.",
-          "T5": "5 Tag — Es. [Imposizione] + [Apertura] + [Chiusura] + [Analisi] + [Ferita]. Epica, un coltellino svizzero."
-        },
-        "design_intent": "Il sistema si AUTO-GOVERNA. Una carta T=1 può fare una cosa sola. Una carta T=5 può fare tutto contemporaneamente. La lentezza paga in versatilità e potenza."
-      },
-      "catalog_v1_2": {
-        "name": "Catalogo Ufficiale dei Tag — Versione 1.2",
-        "principio_unificante": "Solo [Imposizione]/[Opposizione] è OBBLIGATORIO. Tutti gli altri tag sono OPZIONALI — il giocatore SCEGLIE quali attivare in base alla situazione. Più tag hai, più opzioni hai, ma scegli TU cosa attivare. Ogni tag compete per gli stessi slot (Regola d'Oro: N tag ≤ Costo Tempo).",
-        "categories": {
-          "1_UTILIZZO": {
-            "name": "Utilizzo (Obbligatorio)",
-            "description": "Identifica l'applicazione dell'azione. È l'UNICO tag obbligatorio: ogni carta ha esattamente uno di questi due tag. Per le carte a Costo 1, questo è l'UNICO tag presente.",
-            "tags": {
-              "Imposizione": {
-                "description": "L'azione impone un cambiamento. Attacco, offesa.",
-                "contexts": {
-                  "combat": "Attaccare, colpire, infliggere danno.",
-                  "social": "Convincere, intimidire, imporre la propria volontà.",
-                  "exploration": "Risonanzare una porta, distruggere un ostacolo, spingere."
-                }
-              },
-              "Opposizione": {
-                "description": "L'azione resiste al cambiamento imposto da altri. Difesa, resistenza.",
-                "contexts": {
-                  "combat": "Parare, schivare, ridurre i danni subiti.",
-                  "social": "Mentire, resistere psicologicamente, cambiare discorso.",
-                  "exploration": "Resistere a un veleno, non scivolare, resistere agli elementi."
-                }
-              }
-            }
-          },
-          "2_COMBO": {
-            "name": "Combo Cooperativa",
-            "description": "Definiscono il ruolo dell'azione all'interno di una combo nella Cintura ATB. Per attivare gli effetti di una combo, è OBBLIGATORIO impilare le carte di almeno 2 GIOCATORI DIVERSI nello stesso slot. Una combo non si può fare da soli.",
-            "tags": {
-              "Apertura": {
-                "description": "Il primo passo della combo. Senza questo tag, nessuna combo può iniziare.",
-                "mechanic": "Se questa carta è in fondo alla pila, permette alla carta sopra di esserne la Chiusura.",
-                "narrative": "La finta, la distrazione, il primo affondo che scopre la guardia."
-              },
-              "Sviluppo": {
-                "description": "Il passo intermedio. Permette di agganciarsi a una combo senza chiuderla. Allunga il percorso, modifica le condizioni.",
-                "mechanic": "Si inserisce tra un'Apertura e una Chiusura nella stessa colonna.",
-                "narrative": "Il gioco di gambe, il prolungare l'azione senza risolverla."
-              },
-              "Chiusura": {
-                "description": "Il colpo di grazia. Obbligatorio per finalizzare la combo e infliggere i danni/effetti calcolati.",
-                "mechanic": "Se questa carta è in cima alla pila sopra un'Apertura, la combo si completa.",
-                "narrative": "L'affondo finale, la parola che spezza la resistenza."
-              },
-              "Culmine": {
-                "description": "Una variante rara della Chiusura. Finalizza la combo ma ne amplifica DRAMMATICAMENTE l'effetto.",
-                "mechanic": "Come la Chiusura, ma l'effetto viene potenziato (es. danno raddoppiato, ignora difese, stordisce).",
-                "narrative": "Il colpo spettacolare, il gesto che chiude il duello in modo memorabile."
-              }
-            },
-            "flexibility_rule": "Se una carta ha sia [Apertura] che [Chiusura], chi la gioca SCEGLIE LIBERAMENTE quale ruolo assumere. NON significa che la carta fa combo da sola.",
-            "two_player_minimum": "Una combo richiede SEMPRE le carte di almeno 2 giocatori diversi."
-          },
-          "3_CARATTERISTICA_SECONDARIA": {
-            "name": "Caratteristica Secondaria",
-            "description": "Permette di usare l'azione sfruttando una Caratteristica diversa da quella indicata dal colore del bordo. Il tag assume il nome della Caratteristica alternativa.",
-            "tags": {
-              "Istinto": "Usa il valore di Istinto al posto della Caratteristica del bordo.",
-              "Analisi": "Usa il valore di Analisi al posto della Caratteristica del bordo.",
-              "Evasione": "Usa il valore di Evasione al posto della Caratteristica del bordo.",
-              "Risonanza": "Usa il valore di Risonanza al posto della Caratteristica del bordo."
-            },
-            "example": "Una carta con bordo Verde (Risonanza) che ha il tag [Analisi] può essere usata calcolando il Potere dalla Caratteristica Analisi anziché Risonanza. Il Empatico con Risonanza 4 la usa per sentire le emozioni di una folla. Il Saggio con Analisi 4 la usa per un'intimidazione psicologica basata sulla conoscenza.",
-            "design_intent": "Dà un ventaglio di utilizzi alla stessa carta. Le carte ad alto costo (T=4, T=5) possono avere questo tag, diventando coltellini svizzeri."
-          },
-          "4_STRUMENTO": {
-            "name": "Strumento (Attivatore Equipaggiamento)",
-            "description": "Il ponte tra le carte azione e l'equipaggiamento. Una carta con questo tag è L'UNICA che permette di attivare un equipaggiamento per il suo effetto.",
-            "critical_rule": "Senza questo tag su una carta azione, l'equipaggiamento NON PUÒ essere girato/usato per il suo effetto. L'equipaggiamento è 'inattivo' finché una carta azione non dice 'usa questo Strumento'.",
-            "clarification": "[Strumento] NON significa 'questa azione richiede un oggetto'. Significa l'esatto opposto: 'questa carta PERMETTE di attivare un equipaggiamento'. L'oggetto ha bisogno della carta, non viceversa.",
-            "tactical_implication": "Le carte con il tag [Strumento] sono preziosissime. Sono i 'ponti' tra il Mazzo Vitalità e la zona Equipaggiamento. I giocatori non potranno semplicemente attaccare e dire 'uso la spada'. Dovranno pescare carte che abbiano sia [Imposizione] sia [Strumento].",
-            "design_intent": "Le armi smettono di essere un bonus fisso e diventano una sinergia da ricercare nel mazzo."
-          },
-          "5_FERITA": {
-            "name": "Ferita (Potere dal Danno Subito)",
-            "description": "Riserva esclusiva delle carte a costo temporale alto (T=3+). Una carta con questo tag 'si risveglia' e ottiene un bonus meccanico SOLO se chi la gioca ha almeno una Caratteristica o un Cuore ferito (girato).",
-            "possible_bonuses": [
-              "Danni extra non sommabili alle combo",
-              "Ignora parzialmente l'armatura del nemico",
-              "Superamento automatico di una difficoltà",
-              "Effetti speciali attivati dallo stato ferito"
-            ],
-            "narrative": "Combatto come un ferito. Il danno subito mi rende più pericoloso.",
-            "contrasto": "Se il PG si fa curare e non ha più ferite, queste carte tornano a essere 'mute' o deboli. Spinge il giocatore a giocare d'azzardo trattenendo le cure."
-          },
-          "6_REAZIONE": {
-            "name": "Reazione (Blocco Perfetto)",
-            "description": "Si attivano SOLO in caso di Blocco Perfetto: la carta [Opposizione] del PG è nello STESSO SLOT TEMPORALE dell'attacco nemico nella Cintura ATB. I nemici posizionano carte/token coperti che si rivelano man mano che la Cintura scorre. Il tempismo è TUTTO: se la difesa è nell'esatta posizione, si sbloccano le potenzialità extra.",
-            "blocco_perfetto": "La carta [Opposizione] del PG deve essere nello stesso slot temporale della carta attacco nemica. Se è in un altro slot, la difesa è solo base.",
-            "tags": {
-              "Contrattacco": {
-                "description": "Va con [Opposizione]. In caso di Blocco Perfetto: azzeri i danni subiti E infliggi danni al nemico (seguendo la Tabella Potere della carta). Arricchisce le carte difensive rendendole non solo difesa passiva ma anche fonte di danno.",
-                "tag_utilizzo": "[Opposizione] — il Contrattacco è solo difesa che colpisce, NON è [Imposizione].",
-                "narrative": "Non solo mi difendo — ti colpisco mentre ci provi."
-              },
-              "Intercettazione": {
-                "description": "Va con [Opposizione] + un tag Combo. In caso di Blocco Perfetto E combo realizzata (almeno 2 giocatori): ANNULLA completamente l'attacco nemico PER TUTTI i PG. L'attacco non avviene proprio.",
-                "requisito_combo": "OBBLIGATORIO avere anche un tag Combo ([Apertura], [Sviluppo], [Chiusura] o [Culmine]) e che la combo sia realizzata con almeno 2 giocatori diversi.",
-                "effetto_collettivo": "L'attacco viene annullato per TUTTI i PG, non solo per chi intercetta.",
-                "narrative": "Il piano perfetto che neutralizza la minaccia alla radice."
-              },
-              "Immolazione": {
-                "description": "Va con [Opposizione]. In caso di Blocco Perfetto (scelta del giocatore): il PG subisce il DOPPIO dei danni, ma TUTTI gli alleati subiscono 0 danni da quell'attacco. Il giocatore SCEGLIE se attivare o meno questo tag.",
-                "scelta": "Il giocatore che gioca la carta DECIDE se attivare [Immolazione]. Non è obbligatorio anche in caso di Blocco Perfetto.",
-                "narrative": "Prendetela con me. Prendo il vostro dolore su di me."
-              }
-            },
-            "design_intent": "Il Blocco Perfetto trasforma la difesa da passiva a tattica. Non scegli solo COME difenderti, ma QUANDO. Il tempismo nella Cintura ATB diventa la vera abilità difensiva."
-          },
-          "7_PROTEZIONE": {
-            "name": "Protezione (Difesa Espansa)",
-            "description": "Espande l'effetto di una carta [Opposizione] agli alleati. Come gli incantesimi Barrier/Reflex di Final Fantasy: la difesa non protegge solo te ma anche chi ti sta accanto.",
-            "tags": {
-              "Protezione": {
-                "description": "Quando giochi una carta [Opposizione] con [Protezione], l'effetto difensivo si espande a uno o più alleati. I compagni subiscono meno danni grazie alla tua difesa.",
-                "meccanica": "L'effetto riduttivo della [Opposizione] si applica anche agli alleati designati dal giocatore.",
-                "narrative": "Ti copro. La mia guardia protegge anche te."
-              }
-            },
-            "design_intent": "In un combattimento senza posizioni, la Protezione è l'unico modo per difendere gli alleati. Crea il ruolo del protettore senza bisogno di griglia o miniature."
-          },
-          "8_CURA": {
-            "name": "Cura (Recupero Vitalità)",
-            "description": "Permette di recuperare Vitalità durante il combattimento. NON cura Ferite a Caratteristiche o Cuori — quelli sono danni strutturali che richiedono tempo e narrazione fuori combattimento.",
-            "tags": {
-              "Cura": {
-                "description": "Recupera Vitalità a un altro PG o a più PG. Non può curare Ferite a Caratteristiche o Cuori.",
-                "meccanica": "Il PG che gioca questa carta sceglie uno o più alleati che recuperano Vitalità (carte dallo scarto al mazzo).",
-                "narrative": "Le tue ferite sono mie. Ti guarisco."
-              },
-              "Recupero": {
-                "description": "Recupera Vitalità SOLO al PG che gioca la carta. Auto-cura, più accessibile di [Cura] ma limitata a sé stessi.",
-                "meccanica": "Il PG recupera Vitalità per sé stesso. Non può curare Ferite a Caratteristiche o Cuori.",
-                "narrative": "Riprendo fiato. Mi ricompongo."
-              }
-            },
-            "design_intent": "[Cura] è il tag che raggiunge gli altri (più costoso, su carte T3+). [Recupero] è il tag che cura solo sé stessi (più accessibile, anche su T2). L'asimmetria nasce dal costo: chi cura gli altri paga più slot tag."
-          },
-          "9_ALTERAZIONE": {
-            "name": "Alterazione (Modifica il Combattimento)",
-            "description": "Modifica la timeline ATB o le informazioni disponibili. Ispirato agli status effect di Final Fantasy (Haste, Slow, Scan). Il campo di battaglia è il TEMPO, e questi tag lo modificano.",
-            "tags": {
-              "Accelerazione": {
-                "description": "Modifica POSITIVAMENTE la timeline tua o di un alleato. Ispirazione: Haste.",
-                "esempi": [
-                  "Su [Opposizione]: difenditi E sposta la tua prossima azione di 1 slot indietro (agisci prima)",
-                  "Su [Imposizione]: attacca E la tua prossima azione costa 1 Tempo in meno",
-                  "Su [Cura]: cura un alleato E lui agisce prima nel prossimo round"
-                ],
-                "narrative": "Il tempo è dalla mia parte. Mi muovo più veloce del previsto."
-              },
-              "Rallentamento": {
-                "description": "Modifica NEGATIVAMENTE la timeline del nemico. Ispirazione: Slow.",
-                "esempi": [
-                  "Su [Imposizione]: attacca E sposta la prossima azione nemica di 1 slot avanti",
-                  "Su [Opposizione]: difenditi E l'attacco nemico si risolve 1 slot più tardi"
-                ],
-                "narrative": "Sei lento. Il tempo ti sfugge."
-              },
-              "Rivelazione": {
-                "description": "Rivela 1 carta/token nemico coperto nella Cintura ATB. Ispirazione: Scan (versione limitata).",
-                "meccanica": "Il giocatore sceglie 1 carta/token nemico coperto nella Cintura e ne vede il contenuto prima che si risolva.",
-                "narrative": "Vedo cosa stai per fare. Uno dei tuoi segreti è scoperto."
-              },
-              "Premonizione": {
-                "description": "Rivela TUTTE le carte/token nemici coperti nella Cintura ATB. Ispirazione: Scan (versione totale). Molto più potente di [Rivelazione].",
-                "meccanica": "Tutte le carte/token nemici nella Cintura ATB vengono rivelati al giocatore. Il gruppo sa esattamente cosa sta per arrivare.",
-                "narrative": "Sento tutto. Ogni mossa, ogni intenzione. Non potete nascondervi."
-              }
-            },
-            "design_intent": "L'Alterazione rende la Cintura ATB un campo di battaglia MODIFICABILE. Chi controlla il tempo e l'informazione controlla il combattimento. [Rivelazione] e [Premonizione] legano i tag Alterazione ai tag Reazione: vedi dove attacca il nemico → sai dove mettere la difesa → Blocco Perfetto più probabile."
-          },
-          "10_ECONOMIA": {
-            "name": "Economia (Efficienza Temporale)",
-            "description": "L'unico tag che modifica l'economia azionale base. Normalmente ogni slot nella Cintura ATB o è 'pagamento' (carta coperta, si scarta senza effetto) o è 'azione' (carta scoperta, si risolve). [Fulmineo] rompe questa regola: la carta conta come pagamento E si attiva.",
-            "tags": {
-              "Fulmineo": {
-                "description": "Questa carta si ATTIVA anche se è usata come pagamento per un'altra azione. Normalmente le carte giocate coperte come 'costo tempo' si scartano senza effetto. [Fulmineo] permette di risolvere l'azione E contare come spesa in tempo per l'azione principale.",
-                "esempio": "Un PG gioca 3 carte coperte + 1 carta scoperta T4. La seconda carta coperta è in realtà una T2 con [Fulmineo]. Quando la Cintura scorre, quella carta SI ATTIVA (si gira e si risolve) ma conta comunque come 'spesa in tempo' per la T4.",
-                "potenza": "Molto potente. È l'unico modo per fare più di un'azione significativa per turno. Da usare con parsimonia.",
-                "vincolo_naturale": "Su una T2 con [Fulmineo], i 2 tag sono: 1 Utilizzo + [Fulmineo]. Zero spazio per altro. È un'azione semplice che si attiva 'gratis' — niente combo, niente reazione, niente strumenti.",
-                "narrative": "Troppo veloce per aspettare. Faccio due cose nello stesso istante."
-              }
-            },
-            "design_intent": "Trasforma uno 'spreco' (carte coperte come pagamento) in un'opportunità. Più l'azione principale è costosa, più slot pagamento hai, più [Fulmineo] diventa prezioso."
-          }
-        },
-        "category_ACCANTONATA": {
-          "RICORDO": {
-            "status": "ACCANTONATA — In attesa di ispirazione",
-            "description": "L'idea del Ricordo era di legare l'aspetto narrativo delle ferite a una meccanica. Avrebbe permesso di attivare abilità speciali collegate a eventi traumatici subiti dal PG. La direzione narrativa era interessante, ma la meccanica non ha convinto. Da riprendere in futuro.",
-            "ideas_bank": [
-              "Ricordo come Tag personale scritto dal giocatore sulla carta ferita",
-              "Trigger situazionali basati sul tipo di trauma subito",
-              "Bonus passivi piccoli ma costanti vs sacrificio epico one-shot"
-            ]
-          }
+        "rule": "Il numero massimo di Tag presenti su una singola Vitalità non può MAI superare il suo Costo in Tempo.",
+        "examples_v2": {
+          "T1": "1 Tag — Es. [Strumento]. Una sola chiave di attivazione.",
+          "T2": "2 Tag — Es. [Strumento] + [Ferita].",
+          "T3": "3 Tag — Es. [Abilità] + [Sviluppo] + [Ferita].",
+          "T4": "4 Tag — Es. [Magia] + [Apertura] + [Cura] + [Ferita].",
+          "T5": "5 Tag — Es. [Magia] + [Apertura] + [Chiusura] + [Cura] + [Fulmineo]."
         }
+      },
+      "v2_role": "I TAG sulle Vitalità sono CHIAVI DI ATTIVAZIONE. Dicono quali Carte Lato Giocatore puoi attivare in quel tick. Una Vitalità con [Strumento] può attivare un'Arma; una Vitalità con [Magia] può attivare una Magia; una Vitalità con [Abilità] può attivare un'Abilità.",
+      "v2_removed": [
+        {
+          "tag": "[Imposizione]",
+          "reason": "L'azione di attacco è ora determinata dall'Arma equipaggiata, non dalla Vitalità"
+        },
+        {
+          "tag": "[Opposizione]",
+          "reason": "L'azione di difesa è ora determinata dall'Abilità Difensiva equipaggiata, non dalla Vitalità"
+        }
+      ]
+    }
+  },
+  "tag_catalog_v2": {
+    "version": "v2.0",
+    "total_categories": 10,
+    "total_tags": 18,
+    "note": "Rispetto alla v1.2 (20 tag), sono stati RIMOSSI [Imposizione] e [Opposizione]. Gli altri 18 tag rimangono e funzionano come CHIAVI DI ATTIVAZIONE sulle Vitalità.",
+    "categories": [
+      {
+        "id": 1,
+        "name": "Utilizzo",
+        "v2_status": "RIMOSSO — i tag [Imposizione]/[Opposizione] non esistono più. L'azione è determinata dalla Carta Lato Giocatore agganciata."
+      },
+      {
+        "id": 2,
+        "name": "Combo",
+        "tags": ["[Apertura]", "[Sviluppo]", "[Chiusura]", "[Culmine]"],
+        "v2_role": "Permettono di partecipare a una combo cooperativa. Richiedono MINIMO 2 giocatori diversi. La combo si forma quando più PG hanno Vitalità scoperte con questi tag nello STESSO tick.",
+        "optional": true,
+        "rule": "Una combo valida richiede almeno [Apertura] + [Chiusura] (o [Culmine])."
+      },
+      {
+        "id": 3,
+        "name": "Caratteristica Secondaria",
+        "tags": ["[Istinto]", "[Analisi]", "[Evasione]", "[Risonanza]"],
+        "v2_role": "Permette alla Vitalità di attivare Carte Lato Giocatore di un'altra caratteristica (es. Vitalità Istinto con [Analisi] può attivare un'Abilità di Analisi).",
+        "optional": true
+      },
+      {
+        "id": 4,
+        "name": "Strumento",
+        "tags": ["[Strumento]"],
+        "v2_role": "Chiave per attivare Equipaggiamento (Armi, Scudi, Armature, Accessori) e Strumenti Rapidi. SENZA questo tag, le Armi sono inattive.",
+        "optional": true
+      },
+      {
+        "id": 5,
+        "name": "Ferita",
+        "tags": ["[Ferita]"],
+        "v2_role": "La Vitalità con [Ferita] ottiene bonus se il PG ha Caratteristiche o Cuori feriti. La Carta Lato Giocatore agganciata beneficia del bonus.",
+        "optional": true,
+        "rule": "T3+ per avere questo tag."
+      },
+      {
+        "id": 6,
+        "name": "Reazione",
+        "tags": ["[Contrattacco]", "[Intercettazione]", "[Immolazione]"],
+        "v2_role": "I tag Reazione sono ora PROPRIETÀ DELLE ABILITÀ DINENSIVE, non delle Vitalità. Tuttavia, una Vitalità con [Contrattacco] può attivare un'Abilità Difensiva con [Contrattacco] durante un Blocco Perfetto.",
+        "optional": true,
+        "rule": "Si attivano SOLO durante un Blocco Perfetto (Abilità Difensiva nello stesso slot del token nemico)."
+      },
+      {
+        "id": 7,
+        "name": "Protezione",
+        "tags": ["[Protezione]"],
+        "v2_role": "La Carta Lato Giocatore agganciata espande la difesa agli alleati. Come Barrier/Reflex di Final Fantasy.",
+        "optional": true
+      },
+      {
+        "id": 8,
+        "name": "Cura",
+        "tags": ["[Cura]", "[Recupero]"],
+        "v2_role": "Chiave per attivare Carte Lato Giocatore di cura. [Cura] = recupera Vitalità ad ALTRI. [Recupero] = recupera Vitalità solo a SÉ. NON curano Ferite a Caratteristiche o Cuori in combattimento.",
+        "optional": true
+      },
+      {
+        "id": 9,
+        "name": "Alterazione",
+        "tags": ["[Accelerazione]", "[Rallentamento]", "[Rivelazione]", "[Premonizione]"],
+        "v2_role": "Modificano la timeline ATB o le informazioni. [Accelerazione] = Haste (modifica positiva timeline per sé/alleato). [Rallentamento] = Slow (modifica negativa timeline nemico). [Rivelazione] = Scan (rivela 1 carta/token nemico). [Premonizione] = rivela TUTTI i token/carte nemiche.",
+        "optional": true
+      },
+      {
+        "id": 10,
+        "name": "Economia",
+        "tags": ["[Fulmineo]"],
+        "v2_role": "DA DEFINIRE — proposta: la Vitalità con [Fulmineo] si attiva anche quando è giocata COPERTA come costo tempo per un'altra. Unico modo per fare più azioni per turno.",
+        "optional": true
+      },
+      {
+        "id": 11,
+        "name": "Abilità (NUOVO v2)",
+        "tags": ["[Abilità]"],
+        "v2_role": "Chiave per attivare le carte Abilità (mosse basate su caratteristica, es. Intimidire, Persuadere, Analisi Tattica). Le Abilità sono valide anche FUORI dal combattimento.",
+        "optional": true
+      },
+      {
+        "id": 12,
+        "name": "Magia (NUOVO v2)",
+        "tags": ["[Magia]"],
+        "v2_role": "Chiave per attivare le carte Magia (sistema Materie FF7). Le Magie hanno 5 livelli di potere + Esper al Liv 5.",
+        "optional": true
       }
-    },
-    "power_table": {
-      "name": "Tabella Potere — L'Intersezione di Caratteristica e Costo Tempo",
-      "description": "Tabella artigianale che risolve il paradosso delle azioni veloci vs lente. Il POTERE è l'intersezione del valore della Caratteristica del PG con il Costo Tempo dell'azione. Le azioni lente scalano MOLTO con la Caratteristica, quelle veloci scalano poco.",
+    ]
+  },
+  "activation_rule_v2": {
+    "name": "Regola di Attivazione v2",
+    "description": "Per attivare una Carta Lato Giocatore in un tick, il PG deve giocare una Vitalità che soddisfi TUTTI i requisiti seguenti:",
+    "requirements": [
+      {
+        "id": 1,
+        "name": "Stessa Caratteristica",
+        "rule": "La Vitalità deve essere della STESSA caratteristica richiesta dalla Carta Lato Giocatore. Una Carta Lato Giocatore può accettare più caratteristiche (bordo bicolore).",
+        "exception": "Se la Vitalità ha un tag di Caratteristica Secondaria (es. [Analisi] su una Vitalità Istinto), può attivare Carte Lato Giocatore di Analisi."
+      },
+      {
+        "id": 2,
+        "name": "Almeno un Tag Richiesto",
+        "rule": "La Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. (DA DEFINIRE: se la Carta richiede 2+ tag, la Vitalità deve avere TUTTI o ALMENO UNO?)",
+        "open_question": "Vedi OPEN_QUESTIONS_V2.multi_tag_requirements in 00_project_metadata.json"
+      },
+      {
+        "id": 3,
+        "name": "Giocabile in quel tick",
+        "rule": "La Vitalità deve essere posizionata nella Cintura ATB in modo che si risolva nel tick desiderato (T1 = tick 1, T2 = tick 2, ecc.)."
+      }
+    ],
+    "level_of_effect": {
+      "rule": "Il T della Vitalità determina il LIVELLO DI EFFETTO selezionabile per la Carta Lato Giocatore agganciata.",
       "table": {
-        "header": ["Caratteristica", "T=1 (Veloce)", "T=2", "T=3", "T=4", "T=5 (Lenta)"],
-        "stat_1_debole": [1, 1, 2, 4, 6, 9],
-        "stat_2": [2, 1, 3, 5, 9, 14],
-        "stat_3": [3, 2, 4, 7, 12, 19],
-        "stat_4": [4, 2, 5, 9, 15, 24],
-        "stat_5_fortissimo": [5, 2, 6, 11, 18, 30]
+        "T1": "1° livello di effetto (solo livello base)",
+        "T2": "Scegli tra 1° o 2° livello",
+        "T3": "Scegli tra 1°, 2° o 3° livello",
+        "T4": "Scegli tra 1°, 2°, 3° o 4° livello",
+        "T5": "Scegli tra 1°, 2°, 3°, 4° o 5° livello"
       },
-      "function_in_combat": "In combattimento, il POTERE = DANNO inflitto al bersaglio.",
-      "function_outside_combat": "Nelle altre situazioni, il POTERE = valore usato per risolvere le prove (sociale, esplorazione).",
-      "proof_simulation": {
-        "situation_a": "PG Caratteristica 5 fa 5 azioni veloci (T=1) con combo (ogni combo = 2 + 3 supporto = 5). Totale: 5x5 = 25 danni.",
-        "situation_b": "PG Caratteristica 5 fa 1 azione lenta (T=5) con combo (30 + 3 supporto = 33). Totale: 33 danni.",
-        "result": "L'azione lenta (33) batte lo spam veloce (25). Il paradosso è risolto."
-      },
-      "emergent_behavior": {
-        "debole_caratteristica_1": "T=5 fa 9 danni, cinque T=1 fanno 10 (5x2). Al debole conviene colpire veloce. Il sistema gli DICE: 'La tua Caratteristica è troppo debole per sostenere un'azione complessa.'",
-        "medio_caratteristica_3": "T=5 fa 19, cinque T=1 fanno 10. L'azione complessa inizia a convenire, ma devi essere sicuro che il nemico non ti sposti.",
-        "forte_caratteristica_5": "T=5 fa 30, cinque T=1 fanno 10. Il sistema URLA: 'La tua Caratteristica è così alta che le azioni semplici sono spreco. Usa tutto il tuo potere!'"
-      },
-      "wounded_characteristic_scaling": "Se la Caratteristica è ferita (girata), il PG usa la riga corrispondente al valore attuale. La tabella fa tutto il lavoro: una Caratteristica ferita da 4 a 3 passa da 24 a 19 danni su T=5.",
-      "combo_not_easy_note": "Le combo non sono automatiche: richiedono Tag compatibili e un altro giocatore che sacrifica la sua azione. Questo rende la strategia 'burst' ancora più preziosa rispetto allo spam, perché il supporto ha un costo di opportunità reale."
+      "cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Istinto 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5).",
+      "magic_espers": "Per le Magie, il livello 5 permette di evocare l'Esper collegato. Richiede PG con Caratteristica 5 + Vitalità T5."
+    },
+    "example": {
+      "scenario": "PG con Istinto 3 ha equipaggiata la Spada Lunga (Arma, richiede [Strumento]).",
+      "vitality_played": "Istinto T3 con tag [Strumento] [Ferita]",
+      "activation": "La Vitalità ha caratteristica Istinto (corretta) e tag [Strumento] (richiesto dall'Arma). Attivazione valida.",
+      "level_of_effect": "T3 → può scegliere tra livello 1, 2 o 3 della Spada Lunga. Ma il PG ha Istinto 3, quindi massimo livello 3 → può scegliere 1, 2 o 3.",
+      "result": "Attiva la Spada Lunga al livello scelto. Danno = Potere Arma(livello scelto). [Ferita] dà bonus se il PG è ferito."
     }
   },
-  "deck_constitution": {
-    "name": "Costituzione del Mazzo Vitalità",
-    "deck_size": "60 CARTE AZIONE.",
-    "proportional_composition": {
-      "principle": "Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG. Ogni punto di Caratteristica = 6 carte azione di quel colore.",
-      "formula": "Carte per Caratteristica = Valore Caratteristica × 6",
-      "example": "Guerriero: Risonanza 4 = 24 carte, Evasione 3 = 18 carte, Analisi 1 = 6 carte, Istinto 2 = 12 carte. Totale: 24+18+6+12 = 60 carte."
+  "vitality_deck_composition": {
+    "description": "Composizione del Mazzo Vitalità (invariata dalla v1).",
+    "total_cards": 60,
+    "proportional_to_characteristics": "Il numero di carte per Caratteristica è PROPORZIONALE al valore della Caratteristica del PG (valore × 6 carte).",
+    "time_distribution": "Vedi 03_character/character_sheet.json per la Distribuzione Asimmetrica per Livello.",
+    "example": "PG con Istinto 3, Analisi 3, Evasione 2, Risonanza 2 = 18 carte Istinto + 18 Analisi + 12 Evasione + 12 Risonanza = 60 carte totali."
+  },
+  "player_card_examples_v2": {
+    "equipment": {
+      "name": "Spada Lunga",
+      "type": "Equipaggiamento (Arma)",
+      "characteristic": "Istinto",
+      "activation_tags_required": ["[Strumento]"],
+      "power_table": {
+        "1": "3 danno",
+        "2": "5 danno",
+        "3": "8 danno",
+        "4": "12 danno",
+        "5": "18 danno"
+      },
+      "special_power": "1° ferimento: Attacco Fendente — colpisci 2 nemici adiacenti per metà danno.",
+      "destruction_effect": "Nessuno (arma base distrutta = nessun effetto speciale)."
     },
-    "distribuzione_asimmetrica": {
-      "name": "La Distribuzione Asimmetrica per Livello",
-      "principio_fondante": "Il valore della Caratteristica (1-5) determina non solo QUANTE carte ha il PG di quel colore, ma anche la COMPOSIZIONE TEMPO di quelle carte. Una Caratteristica alta sblocca sia carte più veloci sia carte più potenti. Ogni Caratteristica ha un PROFILO TEMPORALE UNICO che si differenzia a partire dal livello 3.",
-      "base_comune": {
-        "name": "La Base Comune (Livelli 1-2)",
-        "principio": "I primi due livelli rappresentano l''umano standard'. Tutte le Caratteristiche condividono la stessa distribuzione di base: prevalentemente moderata, con riflessi presenti ma senza estremi.",
-        "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0, "note": "Riflessi e azioni moderate. Nessun estremo."},
-        "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0, "note": "Un primo barlume di profondità."}
-      },
-      "specializzazione": {
-        "name": "La Specializzazione (Livelli 3-5)",
-        "principio": "Dal livello 3, il PG è 'sopra la media' e le distribuzioni divergono. Ogni Caratteristica sviluppa la propria firma temporale: i profili diventano sempre più estremi e caratterizzanti a ogni livello."
-      },
-      "istinto_rosso": {
-        "name": "ISTINTO 🔴 — La Furia",
-        "identita": "La moderazione muore. La furia cresce. L'Istinto non ha vie di mezzo: o reagisci all'istante (T1) o ti ci giochi tutto (T5). Zero T2, zero T3, sempre.",
-        "distribuzione": {
-          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
-          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
-          "livello_3": {"T1": 2, "T2": 2, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la moderazione scompare, la prima furia"},
-          "livello_4": {"T1": 2, "T2": 1, "T3": 0, "T4": 1, "T5": 2, "note": "T2→T5 — la valutazione diventa furia"},
-          "livello_5": {"T1": 2, "T2": 0, "T3": 0, "T4": 1, "T5": 3, "note": "T2→T5 — nessuna esitazione, tripla devastazione"}
-        },
-        "firma": "Più T5 di chiunque altro (3 a livello 5). Il berserker assoluto."
-      },
-      "analisi_giallo": {
-        "name": "ANALISI 🟡 — La Profondità",
-        "identita": "Il riflesso diventa piano. La valutazione diventa analisi. La deliberazione scompare. L'Analista perde il riflesso per guadagnare la profondità.",
-        "distribuzione": {
-          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
-          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
-          "livello_3": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "note": "T1→T5 — il riflesso diventa piano a lungo termine"},
-          "livello_4": {"T1": 1, "T2": 1, "T3": 1, "T4": 2, "T5": 1, "note": "T2→T4 — la valutazione diventa analisi profonda"},
-          "livello_5": {"T1": 1, "T2": 0, "T3": 1, "T4": 2, "T5": 2, "note": "T2→T5 — la deliberazione scompare, doppio piano supremo"}
-        },
-        "firma": "Più T4 di chiunque altro (2 a livello 5) + unico con T3 residuo. Lo stratega completo."
-      },
-      "evasione_blu": {
-        "name": "EVASIONE 🔵 — La Fluidità",
-        "identita": "Prima la velocità pura, poi la tecnica la trasforma in eleganza. L'Evasione nasce come riflesso e matura in fluidità: il maestro non è più veloce, è più fluido.",
-        "distribuzione": {
-          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
-          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
-          "livello_3": {"T1": 3, "T2": 1, "T3": 1, "T4": 1, "T5": 0, "note": "T2→T1 — la valutazione diventa riflesso"},
-          "livello_4": {"T1": 1, "T2": 2, "T3": 2, "T4": 0, "T5": 1, "note": "La tecnica fluida emerge. T5 appare."},
-          "livello_5": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "note": "Versatilità elegante. Una sola mossa suprema."}
-        },
-        "firma": "Profilo equilibrato (T1=9, T2=9, T3=7 cumulative). La velocità c'è ma non domina — è la fluidità a definire il maestro."
-      },
-      "risonanza_verde": {
-        "name": "RISONANZA 🟢 — La Connessione",
-        "identita": "Prima senti invece di reagire. Poi la profondità diventa suprema. Poi diventa istantanea. L'empatico ha più connessioni rapide di chiunque altro.",
-        "distribuzione": {
-          "livello_1": {"T1": 2, "T2": 2, "T3": 2, "T4": 0, "T5": 0},
-          "livello_2": {"T1": 2, "T2": 2, "T3": 1, "T4": 1, "T5": 0},
-          "livello_3": {"T1": 1, "T2": 3, "T3": 1, "T4": 1, "T5": 0, "note": "T1→T2 — la reazione diventa sintonia"},
-          "livello_4": {"T1": 1, "T2": 3, "T3": 0, "T4": 1, "T5": 1, "note": "T3→T5 — la Comunione Suprema"},
-          "livello_5": {"T1": 2, "T2": 3, "T3": 0, "T4": 0, "T5": 1, "note": "T4→T1 — la profondità diventa empatica istantanea"}
-        },
-        "firma": "Più T2 di chiunque altro (3 a livello 5). Il maestro delle sintonie rapide."
-      },
-      "confronto_livello_5": {
-        "name": "Confronto a Livello 5",
-        "descrizione": "Ogni Caratteristica 'possiede' un costo Tempo a livello 5, e perde qualcosa che la definisce quanto quello che mantiene.",
-        "tabella": {
-          "istinto": {"T1": 2, "T2": 0, "T3": 0, "T4": 1, "T5": 3, "possiede": "T5 (3, nessun altro ne ha più di 2)", "perde": "T2 e T3 — zero moderazione"},
-          "analisi": {"T1": 1, "T2": 0, "T3": 1, "T4": 2, "T5": 2, "possiede": "T4 (2, tutti gli altri ne hanno 1) + unico con T3", "perde": "T2 — zero deliberazione superficiale"},
-          "evasione": {"T1": 1, "T2": 2, "T3": 1, "T4": 1, "T5": 1, "possiede": "Versatilità completa — tutte le fasce coperte", "perde": "L'estremo — niente domina, ma niente manca"},
-          "risonanza": {"T1": 2, "T2": 3, "T3": 0, "T4": 0, "T5": 1, "possiede": "T2 (3, nessun altro ne ha più di 1)", "perde": "T3 e T4 — zero connessione profonda prolungata"}
-        },
-        "pattern_emergente": "A livello 5, TUTTE le Caratteristiche perdono qualcosa — e quello che perdono le definisce quanto quello che mantengono. Il maestro non ha più bisogno di ciò che l'umano standard faceva naturalmente."
-      },
-      "accesso_T5": {
-        "name": "Accesso al Potere Massimo (T5)",
-        "principio": "Ogni Caratteristica ha accesso al potere massimo (T5) dal livello 4. Poiché il valore 4 è la scelta più comune per la Caratteristica principale, il T5 deve essere accessibile già da lì. La quantità di T5 racconta la differenza:",
-        "quantita_T5_livello_5": {
-          "istinto": "3 T5 — la furia è il suo strumento principale",
-          "analisi": "2 T5 — il piano supremo è un'opzione potente",
-          "evasione": "1 T5 — una sola mossa suprema, il resto è tecnica fluida",
-          "risonanza": "1 T5 — una sola Comunione Suprema, il resto è sintonia"
-        }
-      }
+    "quick_item": {
+      "name": "Pozione",
+      "type": "Strumento Rapido",
+      "characteristic": "qualsiasi",
+      "activation_tags_required": ["[Strumento]"],
+      "fixed_effect": "Cura 5 punti Vitalità a un PG (recupera 5 carte dalla Pila Scarti al Mazzo Vitalità). Effetto fisso, non scala con T.",
+      "consumable": true
     },
-    "catalog_system": {
-      "name": "Il Catalogo delle Azioni",
-      "description": "Non esistono mazzi preconfezionati per classe. Esiste un CATALOGO (mazzo Master) da cui i giocatori costruiscono il proprio Mazzo Vitalità.",
-      "setup_process": "All'inizio della campagna, il giocatore prende il Catalogo e, in base alle sue Caratteristiche e ai loro valori, seleziona le sue 60 carte seguendo la Distribuzione Asimmetrica per Livello. Per ogni Caratteristica, consulta la tabella corrispondente al suo valore e seleziona le carte indicate per ogni fascia di Costo Tempo.",
-      "example": "'Io ho Istinto 4, guardo la tabella Istinto livello 4: 2 T1, 1 T2, 0 T3, 1 T4, 2 T5 × 6 = 12 T1, 6 T2, 0 T3, 6 T4, 12 T5. Io ho Analisi 2, guardo la tabella Analisi livello 2: 2 T1, 2 T2, 1 T3, 1 T4, 0 T5 × 6 = 12 T1, 12 T2, 6 T3, 6 T4, 0 T5 dal catalogo.'",
-      "customization": "I giocatori possono scegliere le carte che preferiscono esteticamente o narrativamente dal catalogo, sapendo che i numeri sono già bilanciati dalla Distribuzione Asimmetrica.",
-      "evolution": "Il Mazzo Vitalità evolve sostituendo carte del catalogo base con carte trovate/acquistate. Quando una Caratteristica cambia valore (Sostituzione), il giocatore aggiorna la composizione delle 6 carte di quel colore secondo la nuova tabella."
+    "ability": {
+      "name": "Intimidire",
+      "type": "Abilità",
+      "characteristic": "Istinto",
+      "activation_tags_required": ["[Abilità]"],
+      "power_table": {
+        "1": "Malus -1 al prossimo tiro del bersaglio (1 turno)",
+        "2": "Malus -2 al prossimo tiro del bersaglio (1 turno)",
+        "3": "Il bersaglio è Scosso: -2 a tutti i tiri per 2 turni",
+        "4": "Il bersaglio è Terrorizzato: non può agire per 1 turno",
+        "5": "Il bersaglio si Arrende (se non è un Boss)"
+      },
+      "out_of_combat": "Valida in contesto Sociale — sostituisce una prova di Persuasione con minaccia."
+    },
+    "magic": {
+      "name": "Materia Fuoco",
+      "type": "Magia",
+      "characteristic": "Risonanza",
+      "activation_tags_required": ["[Magia]"],
+      "materia_system": "FF7-style: 5 livelli di potere",
+      "power_table": {
+        "1": "Spark — 1 danno a 1 bersaglio",
+        "2": "Fire — 3 danno a 1 bersaglio",
+        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
+        "4": "Firaga — 8 danno a tutti i nemici (Area)",
+        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)"
+      },
+      "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello ha un EFFETTO DIVERSO (1 bersaglio → 2 bersagli → Area → DoT → Esper)."
     }
   },
-  "card_examples_by_time_cost": {
-    "T1_example": {
-      "name": "Scatto Brusco",
-      "border": "Blu (Evasione)",
-      "time_cost": 1,
-      "tags": ["[Imposizione]"],
-      "note": "Un riflesso. Niente combo, niente strumenti, niente versatilità."
-    },
-    "T3_example": {
-      "name": "Parata con Scudo",
-      "border": "Verde (Risonanza)",
-      "time_cost": 3,
-      "tags": ["[Opposizione]", "[Strumento]", "[Sviluppo]"],
-      "note": "Una difesa che richiede lo scudo (Strumento) e che può essere usata a metà di una combo (Sviluppo)."
-    },
-    "T5_example": {
-      "name": "Il Colpo dell'Eroe Caduto",
-      "border": "Verde (Risonanza)",
-      "time_cost": 5,
-      "tags": ["[Imposizione]", "[Apertura]", "[Chiusura]", "[Analisi]", "[Ferita]"],
-      "note": "Un'azione devastante che può iniziare O chiudere una combo, può essere calcolata con Analisi al posto di Risonanza, e se il PG ha ferite si risveglia con potere terrificante. 5 tag = 5 costo tempo."
-    }
+  "design_principles_v2": {
+    "principle_1": "Le Vitalità sono ENERGIA, non azioni. Tutto il sapere tattico è nelle Carte Lato Giocatore.",
+    "principle_2": "I tag sono CHIAVI, non vincoli. Una Vitalità con più tag può attivare più tipi di Carte Lato Giocatore.",
+    "principle_3": "L'equipaggiamento è CENTRALE, non periferico. Definisce l'identità del PG.",
+    "principle_4": "Le Magie sono INTEGRATE, non separate. Stesso framework delle Abilità.",
+    "principle_5": "Lo stesso linguaggio si applica IN E FUORI dal combattimento. Una Vitalità con [Abilità] serve sia per Intimidire (Sociale) sia per Attacco Potente (Combattimento).",
+    "principle_6": "Le Carte Lato Giocatore feribili offrono scelte tattiche profonde: attivare il potere speciale = ferire l'Equipaggiamento, con rischio di distruzione."
   },
-  "context_penalty_forzatura": {
-    "name": "Risonanzatura — Usare un'azione fuori contesto",
-    "description": "Il PG può usare un'azione in un contesto non ideale, ma paga un prezzo.",
-    "penalty_difficulty": "L'azione è considerata di difficoltà più alta dal Master.",
-    "penalty_vitality": "Il PG deve scartare 1 carta aggiuntiva dal Mazzo Vitalità.",
-    "design_intent": "Non chiude mai completamente la porta, ma rende l'adattamento costoso."
-  },
-  "card_design_requirements": {
-    "stacking_visibility": "Le carte devono essere leggibili anche nella griglia.",
-    "quick_read": "I tag importanti devono essere visibili anche quando la carta è parzialmente coperta.",
-    "power_table_readability": "La Tabella Potere in basso a sinistra deve essere leggibile a colpo d'occhio.",
-    "layout_example": "BORDO COLORATO | TAG IN ALTO | NOME+IMMAGINE AL CENTRO | TABELLA POTERE IN BASSO SX | CLESSIDRA+COSTO IN BASSO DX",
-    "flip_design": "Il DORSO della carta deve mostrare lo stesso design ma in scala di grigi / colori sbiaditi — lo stato 'ferito/usurato'. Questo vale per TUTTE le carte: Caratteristiche, Cuori, Equipaggiamento."
-  },
-  "design_evolution_notes": {
-    "v1": "4 campi base: Nome, Costo Tempo, Tipo, Tags.",
-    "v2": "Aggiunti Synergy Tags, Action Tags allineati a nuove Caratteristiche.",
-    "v3": "3 ELEMENTI FONDANTI. Dieta del Mazzo. Risonanzatura. Unificazione contesti.",
-    "v4": "COMBO ENABLER. Valore Numerico per test collettivi.",
-    "v5": "Tabella Potere introdotta. Bordo colorato. Paradosso azioni veloci APERTO.",
-    "v6": "TABELLA POTERE DEFINITIVA (artigianale, risolve il paradosso). MAZZO 60 CARTE proporzionale. RICETTA DEL 6. CATALOGO.",
-    "v7": "TAG SYSTEM v1.1 DEFINITIVO. 5 CATEGORIE. REGOLA D'ORO. NOMI CARATTERISTICHE: Risonanza/Evasione/Analisi/Istinto.",
-    "v8": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Terminologia neutra: Caratteristiche (Istinto/Analisi/Evasione/Risonanza), Mazzo Vitalità, Carte Azione, Pila Scarti. Meccaniche invariate, solo terminologia ripulita. Nessuna sezione lore_fusion.",
-    "v10": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2: 2 T1, 2 T2, 2 T3 / 2 T1, 2 T2, 1 T3, 1 T4), specializzazione (livelli 3-5): Istinto estremo (T1+T5), Analisi completo (T3+T4+T5), Evasione veloce (T1 dominante), Risonanza centrato (T2 dominante). T5 accessibile dal livello 4 per tutte le Caratteristiche.",
-    "v11": "EVASIONE RIVISTA: livelli 4-5 ridotti T1, spostati verso T2/T3. Da 'La Velocità' a 'La Fluidità'. Liv4: (1,2,2,0,1), Liv5: (1,2,1,1,1). Cumulativo: T1=9, T2=9, T3=7. Profilo equilibrato, non più estremo su T1.",
-    "v12": "CATALOGO TAG v1.2. Da 5 a 10 CATEGORIE, da 12 a 20 TAG. Nuove categorie: 6_Reazione (Blocco Perfetto: Contrattacco, Intercettazione, Immolazione), 7_Protezione (difesa espansa agli alleati), 8_Cura (Cura, Recupero — non cura Ferite), 9_Alterazione (Accelerazione/Haste, Rallentamento/Slow, Rivelazione/Scan, Premonizione), 10_Economia (Fulmineo — azione che si attiva anche come pagamento tempo). Principio unificante: i tag sono OPZIONALI, solo Imposizione/Opposizione è obbligatorio."
+  "cross_references": {
+    "vitality_engine": "Vedi 01_core_engine/vitality_engine.json per il Motore Vitalità (danno, milling, esaurimento).",
+    "atb_timeline": "Vedi 02_mechanics/atb_timeline.json per la Cintura ATB.",
+    "character_sheet": "Vedi 03_character/character_sheet.json per la scheda PG e gli slot Lato Giocatore.",
+    "combat_math": "Vedi 04_combat/combat_math.json per la risoluzione del combattimento.",
+    "equipment_system": "Vedi 05_equipment/equipment_system.json per i dettagli sull'Equipaggiamento feribile.",
+    "enemy_system": "Vedi 06_enemies/enemy_system.json per i nemici."
   }
 }

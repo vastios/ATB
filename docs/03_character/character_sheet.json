@@ -1,10 +1,10 @@
 {
   "section_id": "04",
   "section_name": "Scheda Personaggio — Caratteristiche, Cuori, Equipaggiamento e Layout Area",
-  "version": "14.0",
-  "status": "AGGIORNATO — Distribuzione Asimmetrica per Livello: ogni Caratteristica ha un profilo temporale unico per valore 1-5. Base comune livelli 1-2, specializzazione livelli 3-5",
+  "version": "15.0",
+  "status": "AGGIORNATO v2 — 14 SLOT FISSI LATO GIOCATORE: 4 Equipaggiamento + 3 Strumenti Rapidi + 4 Abilità + 3 Magie. Le Carte Lato Giocatore sono il CATALOGO DELLE MOSSE del PG. Si attivano tramite Vitalità con tag compatibili.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "NESSUNA scheda cartacea. Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Istinto, Analisi, Evasione, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. Il danno si divide in due categorie: Standard (il giocatore SCEGLIE tra Milling o Ferita a una Caratteristica qualsiasi) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore.",
+  "description": "NESSUNA scheda cartacea (v2). Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Istinto, Analisi, Evasione, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. NOVITÀ v2: il PG ha 14 SLOT FISSI per Carte Lato Giocatore (4 Equipaggiamento + 3 Strumenti Rapidi + 4 Abilità + 3 Magie) che costituiscono il suo catalogo di mosse.",
   "player_area_layout": {
     "name": "L'Area del Giocatore (La 'Scheda' Fisica)",
     "description": "L'area di ogni giocatore è divisa in quattro zone distinte, disposte davanti a lui per permettere una consultazione immediata.",
@@ -35,21 +35,45 @@
         "effetto_ferita": "Il Valore Statistico si abbassa di 1 per ogni carta girata.",
         "nota_visiva": "Una statistica non ha numeri scritti. La sua forza è determinata esclusivamente dalla quantità di carte scoperte nella linea."
       },
-      "sezione_c_equipaggiamento_inventario": {
-        "name": "C. L'Equipaggiamento e l'Inventario",
-        "equipaggiamento_indossato": {
-          "description": "Le carte degli oggetti attivamente indossati (Armi Alchemiche, Armature, Scudi).",
-          "stato_normale": "Carta dritta.",
-          "stato_usurato": "Carta girata sul dorso.",
-          "nota_alchemiche": "Le armi che i PG possono equipaggiare sono ARMI ALCHEMICHE, non semplici armi. Questo spiega perché usarle e usurarle è una scelta da ponderare bene: non se ne trovano molte in giro perché costruirle non è facile. Questo spiega anche perché possono evolvere."
+      "sezione_c_equipaggiamento_inventario_v2": {
+        "name": "C. Carte Lato Giocatore (Catalogo delle Mosse) — v2",
+        "description": "Il PG ha 14 SLOT FISSI per Carte Lato Giocatore. Queste carte sono il CATALOGO DELLE MOSSE del PG: definiscono cosa può fare. Si attivano tramite Vitalità con tag compatibili (vedi 01_core_engine/card_anatomy.json).",
+        "slot_breakdown": {
+          "equipment": {
+            "slots": 4,
+            "composition": "1 Arma + 1 Scudo (o Doppia Arma) + 1 Armatura + 1 Accessorio",
+            "wound_system": "2 slot ferita per carta. 1° ferimento: attiva il potere speciale (uso continua). 2° ferimento: distrutto fino a fine combattimento.",
+            "wound_voluntary": "Ferire l'Equipaggiamento è una SCELTA VOLONTARIA del giocatore (per attivare il potere speciale), NON una deviazione di danno subito.",
+            "activation": "Richiede Vitalità con tag [Strumento]"
+          },
+          "quick_items": {
+            "slots": 3,
+            "nature": "Oggetti monouso (Pozioni, Grimaldelli, Bombe, ecc.)",
+            "consumable": true,
+            "fixed_effect": "Spesso hanno effetto fisso, non scala con T",
+            "activation": "Richiede Vitalità con tag [Strumento]"
+          },
+          "abilities": {
+            "slots": 4,
+            "nature": "Mosse basate su caratteristica (Intimidire, Persuadere, Analisi Tattica, Schivata, ecc.)",
+            "out_of_combat": "Valide ANCHE fuori dal combattimento (Sociale, Esplorazione, Conoscenze)",
+            "linked_characteristic": "Ogni Abilità è legata a una caratteristica specifica (dà identità alle mosse)",
+            "activation": "Richiede Vitalità con tag [Abilità] e caratteristica corrispondente"
+          },
+          "magic": {
+            "slots": 3,
+            "nature": "Sistema Materie FF7: ogni Magia è una Materia con 5 livelli di potere",
+            "level_effects": "I 5 livelli non sono solo graduazioni di potenza — ogni livello può avere EFFETTI DIVERSI",
+            "esper": "Al livello 5, può essere evocato l'Esper collegato (effetto molto più potente)",
+            "max_level_cap": "Il PG raggiunge solo i livelli ≤ al suo valore di Caratteristica",
+            "activation": "Richiede Vitalità con tag [Magia] e caratteristica corrispondente (solitamente Risonanza)"
+          }
         },
-        "slot_rapidi": "3 carte posizionate scoperte, rappresentanti oggetti pronti all'uso (pozioni, trappole).",
-        "zaino": "Una pila separata contenente un massimo di 10 carte coperte (oggetti non pronti all'uso istantaneo).",
+        "total_slots": 14,
         "armi_improvvisate": {
-          "description": "Non sono rappresentate da carte. Se un giocatore perde o distrugge tutte le Armi Alchemiche, combatte con armi improvvisate.",
-          "meccanica": "Permettono solo attacchi base utilizzando il valore di Potere nudo della carta azione.",
-          "restrizioni": "Ignorano COMPLETAMENTE tutti i Tag sulla carta azione: non possono fare combo, non possono usare [Strumento], non beneficiano di Tag che aumentano il danno o l'effetto dell'attacco.",
-          "gestione": "Il giocatore prende nota su un foglietto esterno del tipo di arma improvvisata trovata (es. 'Sbarra di ferro arrugginita')."
+          "description": "Se un PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvvisate come fallback.",
+          "meccanica": "Attacco base con Potere nudo della Vitalità (ignora tutti i tag).",
+          "restrizioni": "Niente combo, niente poteri speciali, niente tabella T1-T5 dell'arma."
         }
       }
     },

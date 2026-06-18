@@ -1,10 +1,10 @@
 {
   "section_id": "03",
   "section_name": "Cintura ATB — Sistema di Iniziativa e Risoluzione",
-  "version": "8.0",
-  "status": "AGGIORNATO — ARCHITETTURA 3 CANALI: meccaniche pure, terminologia neutra",
+  "version": "9.0",
+  "status": "AGGIORNATO v2 — La Cintura ATB è INVARIATA nella struttura. Le Carte Vitalità si posizionano come prima. Le SCOPERTE attivano Carte Lato Giocatore (anziché essere loro stesse l'azione). Le COPERTE pagano solo il tempo.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Sistema di iniziativa e risoluzione basato su una Cintura di righe FLUIDE, non una griglia fissa. Ogni PG traccia la propria riga nella Cintura ATB. La risoluzione scorre da sinistra a destra. Le combo sono righe che convergono nello stesso slot.",
+  "description": "Sistema di iniziativa e risoluzione basato su una Cintura di righe FLUIDE (v2 — invariata nella struttura). Ogni PG traccia la propria riga nella Cintura ATB. La risoluzione scorre da sinistra a destra. Le Vitalità SCOPERTE attivano Carte Lato Giocatore; le COPERTE pagano solo il tempo. Le combo sono righe che convergono nello stesso slot.",
   "core_concept": {
     "name": "Cintura ATB Fluida",
     "definition": "NON esiste una griglia fissa 5×5. Ogni PG traccia una riga orizzontale di lunghezza VARIABILE nella Cintura ATB. Il Ladro con 3 azioni Costo 1 ha una riga corta e veloce. Il Guerriero con 1 azione Costo 5 ha una riga lunga e lenta. Il Boss con Potere 9 ha una riga che sporge enormemente.",
@@ -39,13 +39,13 @@
   },
   "resolution_logic": {
     "method": "Da sinistra a destra. Si risolve la colonna più a sinistra di TUTTI i partecipanti.",
-    "step_by_step": {
-      "tick_1": "Si risolve la prima carta di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → l'azione si risolve.",
-      "tick_2": "Si risolve la seconda carta di ogni riga.",
+    "step_by_step_v2": {
+      "tick_1": "Si risolve la prima Vitalità di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → il PG SCEGLIE quale Carta Lato Giocatore agganciare e l'effetto si risolve al livello = T della Vitalità (limitato dal valore di Caratteristica del PG).",
+      "tick_2": "Si risolve la seconda Vitalità di ogni riga.",
       "tick_n": "Continua finché tutte le righe sono state risolte completamente."
     },
-    "combo_check": "Ad ogni tick, se carte di ALMENO 2 PG DIVERSI sono nella STESSA POSIZIONE con Tag Combo compatibili, la combo si attiva.",
-    "defense_check": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le [Opposizioni] dei PG: stessa posizione = Perfect Block, adiacente = Mitigato, altrove = Danno pieno."
+    "combo_check_v2": "Ad ogni tick, se Vitalità scoperte di ALMENO 2 PG DIVERSI sono nella STESSA POSIZIONE con Tag Combo compatibili ([Apertura]+[Chiusura]/[Culmine]), la combo si attiva. Il danno è la somma dei Poteri delle Carte Lato Giocatore agganciate.",
+    "defense_check_v2": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le Abilità Difensive dei PG agganciate a Vitalità in quella posizione: stessa posizione = Blocco Perfetto, adiacente = Mitigato, altrove = Danno pieno."
   },
   "turn_order": {
     "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO.",
@@ -70,6 +70,7 @@
     "v4": "LINEA DEL TEMPO FLUIDA (Cinghia di Trasporto). Niente griglia fissa. Continuità Temporale Assoluta.",
     "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori. [Strumento] per slittamento scudo.",
     "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Cintura ATB (non Fronte di Manifestazione), Righe (non Sentieri), Carte coperte (non Impalcature), Continuità Temporale (non Legge di Causalità), Azione Risonanzata (non Olam HaZman). Meccaniche invariate."
+    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
+    "v8": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo. La struttura della Cintura ATB è INVARIATA. Il Blocco Perfetto si basa sull'Abilità Difensiva agganciata, non più sul tag [Opposizione] della Vitalità."
   }
 }

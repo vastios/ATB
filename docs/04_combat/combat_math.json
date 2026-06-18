@@ -1,18 +1,18 @@
 {
   "section_id": "05",
   "section_name": "Matematica di Combattimento e Risoluzione",
-  "version": "11.0",
-  "status": "AGGIORNATO — Due Categorie di Danno (Standard vs Diretto), Dilemma del Guerriero corretto, Soglia del Vuoto, Punti 4-6 formalizzati",
+  "version": "12.0",
+  "status": "AGGIORNATO v2 — Le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper. Equipaggiamento feribile a 2 stadi.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB. Il danno si divide in DUE CATEGORIE: Standard (il giocatore SCEGLIE tra Milling o Ferita a Caratteristica QUALSIASI, che assorbe TUTTO il danno) e Diretto (colpisce la Caratteristica indicata, NESSUNA scelta, gira un numero di carte pari al danno). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore. Le combo richiedono almeno 2 giocatori. Tre tipi di difesa: Perfect Block, Mitigato, Shield Sliding.",
+  "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB (v2). NOVITÀ: le azioni di attacco/difesa non sono più predefinite. Un PG attacca solo se ha un'Arma equipaggiata e la attiva con una Vitalità [Strumento]. Un PG difende solo se ha un'Abilità Difensiva equipaggiata e la attiva con una Vitalità compatibile. Le Magie sono Carte Lato Giocatore con 5 livelli di potere + Esper al Liv 5. Il danno subito rimane invariato: Standard (Milling o Ferita Caratteristica) e Diretto.",
   "point_4_power_and_damage": {
-    "name": "Punto 4 — Potere e Danni",
-    "core_rule": "Il danno inflitto è determinato dalla TABELLA POTERE dell'azione, che varia in base al valore della Caratteristica del PG incrociata col Costo Tempo.",
-    "philosophy": "La lentezza è potenza, MA solo se hai la Caratteristica per sfruttarla. Un PG debole con Risonanza 1 che usa un'azione lenta (Costo 5) fa solo 9 danni. Un PG forte con Risonanza 5 fa 30 danni devastanti.",
-    "power_table_reference": "Vedi card_anatomy.json → power_table per i valori esatti.",
-    "weapon_interaction": "Le armi riducono la FATICA (meno carte coperte da scartare). Il DANNO è determinato dalla Tabella Potere. L'arma rende efficiente l'azione, non la potenzia. Il danno deriva dall'utilizzo di armi e incantesimi — è danno fisico, non concetti astratti.",
-    "characteristic_power_cap": "Se la Caratteristica è FERITA (girata), il PG non può giocare azioni con quel Tag sopra il valore attuale.",
-    "tag_ferita_interaction": "Se il PG ha almeno una Caratteristica o un Cuore ferito e gioca un'azione con il tag [Ferita], ottiene un bonus meccanico aggiuntivo."
+    "name": "Punto 4 — Potere e Danni (v2)",
+    "core_rule_v2": "Il danno inflitto è determinato dalla TABELLA POTERE DELLA CARTA LATO GIOCATORE attivata (Arma, Magia o Abilità), NON dalla Vitalità. La Vitalità fornisce solo il TEMPO e il LIVELLO DI EFFETTO selezionabile (T1=1° livello, T5=scegli tra 1-5). Il PG non può superare il livello della sua Caratteristica.",
+    "philosophy_v2": "Le Carte Lato Giocatore definiscono COSA fai. La Vitalità definisce QUANTO POTENTE è (tramite il T). Una Spada Lunga T3 con PG Istinto 3 fa 8 danni (livello 3 della tabella Spada Lunga).",
+    "power_table_reference": "Vedi 01_core_engine/card_anatomy.json → player_card_examples_v2 per esempi di tabelle.",
+    "weapon_damage_formula_OPEN": "DA DEFINIRE — quando un'Arma è attivata con Vitalità T3, il danno è: (a) solo Potere Arma(T3), (b) solo Potere Caratteristica(T3), (c) somma, (d) max?",
+    "characteristic_power_cap": "Il PG non può selezionare livelli di effetto superiori al suo valore di Caratteristica attuale. Una Caratteristica ferita riduce i livelli raggiungibili.",
+    "tag_ferita_interaction": "Se il PG ha almeno una Caratteristica o un Cuore ferito e attiva una Carta Lato Giocatore con una Vitalità che ha il tag [Ferita], ottiene un bonus meccanico aggiuntivo."
   },
   "point_5_two_layer_damage": {
     "name": "Punto 5 — Danno a Doppio Strato",
@@ -108,49 +108,44 @@
     "defense_offense_fusion": "Una [Opposizione] con tag [Sviluppo] può mitigare un attacco nemico E fare combo con un compagno. Difesa e Offesa NON sono mai in conflitto."
   },
   "point_6_defense_mechanic": {
-    "name": "Punto 6 — Sistema di Difesa",
-    "three_defense_types": {
+    "name": "Punto 6 — Sistema di Difesa (v2)",
+    "v2_change": "Il Blocco Perfetto non si basa più sul tag [Opposizione] della Vitalità (che è stato rimosso). Si basa sull'ABILITÀ DINENSIVA equipaggiata e attivata in quello stesso slot temporale.",
+    "three_defense_types_v2": {
       "perfect_block": {
-        "name": "Perfect Block (Blocco Perfetto)",
-        "condition": "Opposizione nella STESSA POSIZIONE dell'attacco.",
+        "name": "Blocco Perfetto (v2)",
+        "condition_v2": "Una ABILITÀ DINENSIVA del PG è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
         "effect": "0 danni. L'attacco viene completamente deviato.",
+        "unlocks_reaction_tags": "Sblocca i tag Reazione sull'Abilità Difensiva: [Contrattacco] (zeri danni + colpisci), [Intercettazione] (annulla attacco per tutti, richiede combo), [Immolazione] (subisci doppio, alleati a 0).",
         "narrative": "Hai parato esattamente dove l'attacco arrivava."
       },
       "mitigated_block": {
-        "name": "Mitigated Block (Blocco Mitigato)",
-        "condition": "Opposizione nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
-        "effect": "Riduzione danni (parziale). L'attacco colpisce ma con meno forza.",
-        "narrative": "Hai parato in parte — la difesa era vicina ma non perfetta."
+        "name": "Blocco Mitigato",
+        "condition_v2": "Abilità Difensiva attivata nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
+        "effect": "Riduzione danni (parziale)."
       },
       "full_damage": {
         "name": "Danno Pieno",
-        "condition": "Nessuna Opposizione nella posizione o in quelle adiacenti.",
-        "effect": "Danno pieno al Mazzo Vitalità (o dove il PG sceglie di assorbirlo).",
-        "narrative": "Nessuna difesa. L'attacco colpisce senza ostacoli."
+        "condition_v2": "Nessuna Abilità Difensiva attivata nella posizione o in quelle adiacenti. Un PG senza Abilità Difensiva equipaggiata subisce SEMPRE danno pieno.",
+        "effect": "Danno pieno (Milling o Ferita Caratteristica, a scelta del PG)."
       }
     },
-    "shield_sliding": {
+    "no_default_defense": "NOVITÀ v2: SENZA Abilità Difensiva equipaggiata, il PG NON può difendersi. Subisce sempre danno pieno. Questo rende le Abilità Difensive fondamentali quanto le Armi.",
+    "shield_sliding_v2": {
       "name": "Shield Sliding (Slittamento Scudo)",
-      "mechanic": "Girare lo scudo (con azione [Strumento]) permette di 'slittare' una carta Opposizione già giocata di 1 slot a sinistra o a destra.",
-      "requires_strumento_tag": "L'azione deve avere il tag [Strumento] per permettere l'attivazione dello scudo.",
+      "mechanic_v2": "Ferire lo Scudo (1° ferimento, attivazione volontaria) permette di 'slittare' una Vitalità già giocata di 1 slot a sinistra o a destra, spostando l'attivazione dell'Abilità Difensiva agganciata.",
       "timing": "Si dichiara DOPO che il Master rivela il token d'attacco, ma PRIMA del calcolo dei danni.",
       "possible_outcomes": {
-        "upgrade_to_perfect": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → Perfect Block (0 danni).",
-        "upgrade_to_mitigated": "Slitta la difesa nella posizione adiacente → Mitigated Block.",
-        "no_help": "La difesa è troppo lontana anche dopo lo slittamento → nessun effetto."
+        "upgrade_to_perfect": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → Blocco Perfetto.",
+        "upgrade_to_mitigated": "Slitta nella posizione adiacente → Mitigato.",
+        "no_help": "Troppo lontana → nessun effetto."
       },
-      "design_intent": "Lo scudo rompe la rigidità della Cintura ATB in modo reattivo e cinematografico. Violare la causalità della posizione con una reazione tattica.",
-      "shield_destruction": "Lo scudo segue le regole standard dell'equipaggiamento: Normale (potere base, 2° uso = distrutto) o Superiore (potere Superiore, distruzione genera Conseguenza)."
+      "shield_wound_note": "Ferire lo Scudo per lo slittamento è VOLONTARIO. Al 2° ferimento lo Scudo è DISTRUTTO (vedi 05_equipment/equipment_system.json)."
     },
-    "armor_absorption": {
-      "name": "Assorbimento Armatura",
-      "mechanic": "Girare l'armatura (con azione [Strumento]) assorbe una quota di danni subiti da un colpo andato a segno.",
-      "requires_strumento_tag": "L'azione deve avere il tag [Strumento].",
-      "limitation": "Si può girare l'armatura solo una volta per turno di risoluzione.",
-      "interaction_with_sacrifice": "L'armatura riduce il danno PRIMA che il PG scelga come assorbire il resto.",
-      "armor_destruction": "L'armatura segue le regole standard: Normale (2° uso = distrutta) o Superiore (distruzione genera Conseguenza)."
-    },
-    "anti_spam": "La mitigazione funziona SOLO adiacente (±1 slot). Difese lontane = zero protezione. Non puoi difenderti ovunque."
+    "armor_absorption_v2": {
+      "name": "Assorbimento Armatura (v2)",
+      "mechanic_v2": "Ferire l'Armatura (1° ferimento, attivazione volontaria) attiva il suo POTERE SPECIALE (spesso assorbimento danni).",
+      "wound_note": "Ferire l'Armatura è VOLONTARIO. Al 2° ferimento è DISTRUTTA."
+    }
   },
   "monster_defenses": {
     "fixed_reduction_armatura": {
@@ -187,6 +182,52 @@
     "v7.0": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Caratteristiche definitivi.",
     "v8.0": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v9.0": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Punti 4-6 formalizzati in sezioni dedicate.",
-    "v10.0": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto (Caratteristica a 0 = Cuore ferito OBBLIGATORIO). Cuori NON sono opzione per Danno Standard. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite)."
+    "v10.0": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto (Caratteristica a 0 = Cuore ferito OBBLIGATORIO). Cuori NON sono opzione per Danno Standard.",
+    "v11.0": "Danno Anatema e Danno Diretto Cuore formalizzati. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite).",
+    "v12.0": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper al Liv 5. Equipaggiamento feribile a 2 stadi (1° = potere speciale, 2° = distrutto). Senza Arma non si attacca; senza Abilità Difensiva non si difende. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento)."
+  },
+  "v2_magic_esper_system": {
+    "name": "Sistema Magie v2 — Materie FF7 + Esper",
+    "description": "Le Magie sono Carte Lato Giocatore (3 slot). Ogni Magia è una MATERIA con 5 livelli di potere. L'attivazione richiede una Vitalità con tag [Magia] della caratteristica corretta (solitamente Risonanza).",
+    "level_progression": {
+      "rule": "Il T della Vitalità determina quanti livelli di potere possono essere selezionati per quella Magia. T1 = solo livello 1, T2 = scegli tra 1-2, T3 = scegli tra 1-3, T4 = scegli tra 1-4, T5 = scegli tra 1-5.",
+      "characteristic_cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Risonanza 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5).",
+      "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit."
+    },
+    "esper_evocation": {
+      "trigger": "Livello 5 selezionato (richiede Vitalità T5 + Caratteristica 5 del PG).",
+      "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente.",
+      "esper_limits_OPEN": "DA DEFINIRE — l'Esper è disponibile ogni volta che si può attivare il livello 5, o ha un limite (es. 1 volta per combattimento)?",
+      "examples": {
+        "ifrit": "Materia Fuoco Liv 5 → Ifrit: 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
+        "shiva": "Materia Ghiaccio Liv 5 → Shiva: 12 danno + congelamento (i nemici saltano il prossimo tick)",
+        "ramuh": "Materia Fulmine Liv 5 → Ramuh: 10 danno a TUTTI i nemici + stun ai più deboli"
+      }
+    },
+    "example_materia_fire": {
+      "name": "Materia Fuoco",
+      "characteristic": "Risonanza",
+      "activation_tags_required": ["[Magia]"],
+      "power_table": {
+        "1": "Spark — 1 danno a 1 bersaglio",
+        "2": "Fire — 3 danno a 1 bersaglio",
+        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
+        "4": "Firaga — 8 danno a tutti i nemici (Area)",
+        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente"
+      }
+    }
+  },
+  "v2_equipment_wound_system": {
+    "name": "Sistema Ferita Equipaggiamento (v2)",
+    "description": "Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE (non deviazione di danno subito).",
+    "stage_1_first_wound": {
+      "trigger": "Il giocatore SCEGLIE di ferire l'Equipaggiamento (in qualsiasi momento in cui potrebbe attivarne il potere speciale).",
+      "effect": "Attiva il POTERE SPECIALE dell'Equipaggiamento. L'uso continua normalmente."
+    },
+    "stage_2_second_wound": {
+      "trigger": "Il giocatore SCEGLIE di ferire ulteriormente un Equipaggiamento già ferito.",
+      "effect": "L'Equipaggiamento è DISTRUTTO fino a fine combattimento. Non può più essere attivato. Si ripristina a fine combattimento (o con Cura apposita)."
+    },
+    "ferita_caratteristica_separation": "La Ferita Caratteristica (da danno subito) è SEMPRE sulla Caratteristica, NON trasferibile all'Equipaggiamento. Le ferite all'Equipaggiamento sono una scelta autonoma per attivare poteri speciali."
   }
 }

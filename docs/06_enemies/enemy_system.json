@@ -1,10 +1,10 @@
 {
   "section_id": "07",
   "section_name": "Sistema Nemici — Classificazione a 3 Tier, Tratti, Attacchi Speciali e Ricompense",
-  "version": "10.0",
-  "status": "AGGIORNATO — Classificazione unificata a 3 Tier (Base/Elite/Epico), Scheda Unificata, Tratti, Attacchi Speciali, Ricompense Rev2, Distruzione Tratti tramite potere Arma Superiore",
+  "version": "11.0",
+  "status": "AGGIORNATO v2 — Adattamento minori: la distruzione dei Tratti nemici avviene ora attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario, vedi 05_equipment/equipment_system.json). La struttura dei nemici è INVARIATA.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Tutti i nemici condividono una struttura di scheda unificata. La differenza tra i livelli di minaccia non sta nelle regole base, ma nella complessità della loro scheda. Tre Tier: Base (solo PF e Attacchi Base), Elite (PF + Attacchi Base + Tratti), Epico (PF + Attacchi Base + Tratti multipli + Attacchi Speciali). I Tratti si distruggono attivando il potere di un'Arma Superiore. Le Ricompense includono Punti Impresa per evolvere armi e curare Caratteristiche (NON Cuori).",
+  "description": "Tutti i nemici condividono una struttura di scheda unificata (v2 — invariata). La differenza tra i livelli di minaccia non sta nelle regole base, ma nella complessità della loro scheda. Tre Tier: Base (solo PF e Attacchi Base), Elite (PF + Attacchi Base + Tratti), Epico (PF + Attacchi Base + Tratti multipli + Attacchi Speciali). I Tratti si distruggono attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario). Le Ricompense includono Punti Impresa.",
   "point_8_enemy_system": {
     "name": "Punto 8 — Sistema Nemici (Meccaniche Pure — Versione 2.0)",
     "overview": "Il sistema nemici si divide in tre Tier di minaccia crescente, tutti con la stessa struttura di scheda ma complessità differente. I nemici Base sono progettati per essere abbattuti rapidamente. I nemici Elite richiedono pianificazione tattica per neutralizzare i loro Tratti. I nemici Epici richiedono la massima padronanza delle meccaniche di combo e distruzione di equipaggiamento."

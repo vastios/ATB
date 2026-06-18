@@ -1,237 +1,260 @@
 {
   "section_id": "06",
-  "section_name": "Sistema Equipaggiamento",
-  "version": "9.0",
-  "status": "AGGIORNATO — Armi Alchemiche vs Improvvisate formalizzate, Distruzione Tratti tramite potere Arma Superiore (non sacrificio), Punti Impresa non curano Cuori",
+  "section_name": "Sistema Equipaggiamento e Carte Lato Giocatore (v2)",
+  "version": "10.0",
+  "status": "AGGIORNATO v2 — L'Equipaggiamento è CENTRALE, non periferico. 4 slot fissi (1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio). Sistema ferita a 2 STADI: 1° ferimento attiva il POTERE SPECIALE (uso continua), 2° ferimento DISTRUGGE. Le ferite sono VOLONTARIE, non deviazione di danno subito. Aggiunti 3 slot Strumenti Rapidi, 4 slot Abilità, 3 slot Magie (Materie FF7).",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "DA_RIVEDERE": "INTERO SISTEMA EQUIPAGGIAMENTO DA RIVEDERE. Il game designer non è convinto della concezione attuale: Armi Alchemiche come unica fonte di equipaggiamento, rarità, obbligo del tag [Strumento] per attivare. L'idea che l'equipaggiamento sia inattivo senza [Strumento] non convince. Da ripensare.",
-  "description": "Gli oggetti che i PG possono equipaggiare sono ARMI ALCHEMICHE — non semplici armi. Costruirle non è facile, per questo usarle e usurarle è una scelta da ponderare bene. Senza un'azione con [Strumento], l'equipaggiamento è INATTIVO. Esistono due categorie: NORMALE e SUPERIORE. Il potere Superiore può distruggere un Tratto nemico. Se un PG perde tutte le Armi Alchemiche, combatte con Armi Improvvisate (senza Tag). L'equipaggiamento Superiore distrutto GENERA UNA CONSEGUENZA. Le imprese eroiche possono far EVOLVERE oggetti Normali in Superiori.",
-  "alchemiche_vs_improvvisate": {
-    "name": "Armi Alchemiche vs Armi Improvvisate",
-    "armi_alchemiche": {
-      "description": "Le armi che i PG possono equipaggiare sono ARMI ALCHEMICHE, non semplici armi.",
-      "rarita": "Costruire armi alchemiche non è facile. Non se ne trovano molte in giro. Questo spiega perché usarle e usurarle è una scelta da ponderare bene.",
-      "evoluzione_giustificata": "Questo spiega anche perché possono evolvere: assorbono l'energia del mondo e dei loro utilizzatori.",
-      "rappresentazione": "Sono rappresentate DA CARTE EQUIPAGGIAMENTO nel gioco."
-    },
-    "armi_improvvisate": {
-      "description": "Se un PG perde o distrugge tutte le Armi Alchemiche, continua a combattere con armi improvvisate.",
-      "fonti": "Armi normali trovate sul campo: sbarre di ferro arrugginite, spade di nemici sconfitti, bastoni raccolti da terra.",
-      "non_rappresentate_da_carte": "Le armi improvvisate NON sono rappresentate da carte. Il PG prende nota su un foglietto esterno del tipo di arma trovata.",
-      "meccanica": "Permettono solo attacchi base utilizzando il valore di Potere NUDO della carta azione (dalla Tabella Potere, senza modifiche).",
-      "restrizioni": "Ignorano COMPLETAMENTE tutti i Tag sulla carta azione: non possono fare combo, non possono usare [Strumento], non beneficiano di Tag che aumentano il danno o l'effetto dell'attacco. Si ignorano tutti i Tag combo delle proprie carte ed anche tutti i Tag che aumentano il danno o l'effetto dell'attacco.",
-      "design_intent": "Rende la distruzione di un'arma un evento drammatico ma non letale: il PG non resta a mani vuote, ma decade a uno stato di combattimento debole. Combattere con armi improvvisate è una situazione di svantaggio marcato che spinge il PG a procurarsi una nuova Arma Alchemica il prima possibile."
+  "description": "Sistema Equipaggiamento v2. L'Equipaggiamento è il CATALOGO DELLE MOSSE del PG. Definisce COSA può fare (attaccare, difendere, usare poteri speciali). Si attiva tramite Vitalità con tag compatibili (principalmente [Strumento]). Il sistema ferita a 2 stadi rende la scelta di attivare poteri speciali un dilemma tattico: 1° ferimento = potere speciale (uso continua), 2° ferimento = distrutto. Le ferite all'Equipaggiamento sono VOLONTARIE e separate dalla Ferita Caratteristica (che è sempre sulla Caratteristica).",
+  "v2_paradigm_shift": {
+    "summary": "Nella v1, l'Equipaggiamento era periferico: serviva solo per ridurre fatica o slittare difese. Nella v2, l'Equipaggiamento è CENTRALE: definisce le azioni del PG. Senza Arma non si attacca. Senza Abilità Difensiva non si difende. Le Magie sono Carte Lato Giocatore (sistema Materie FF7).",
+    "key_changes": [
+      "Equipaggiamento diventa CENTRALE (non periferico)",
+      "4 slot fissi: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio",
+      "Sistema ferita a 2 stadi: 1° = potere speciale (uso continua), 2° = distrutto",
+      "Ferite VOLONTARIE (scelta del giocatore per attivare poteri speciali)",
+      "Rimosso il sistema Normale/Superiore (sostituito dai 2 stadi di ferita)",
+      "Le Magie sono Carte Lato Giocatore (sistema Materie FF7)",
+      "Aggiunti slot per Strumenti Rapidi (3), Abilità (4), Magie (3)"
+    ]
+  },
+  "player_card_slots_v2": {
+    "total_slots": 14,
+    "breakdown": {
+      "equipment": {
+        "slots": 4,
+        "composition": ["1 Arma", "1 Scudo (o Doppia Arma)", "1 Armatura", "1 Accessorio"]
+      },
+      "quick_items": {
+        "slots": 3,
+        "nature": "Oggetti monouso (Pozioni, Grimaldelli, Bombe, ecc.)"
+      },
+      "abilities": {
+        "slots": 4,
+        "nature": "Mosse basate su caratteristica (Intimidire, Persuadere, Schivata, ecc.)"
+      },
+      "magic": {
+        "slots": 3,
+        "nature": "Sistema Materie FF7 (5 livelli di potere + Esper al Liv 5)"
+      }
     }
   },
-  "tag_strumento_rule": {
-    "name": "La Regola del Tag [Strumento]",
-    "critical_rule": "Un'azione con il tag [Strumento] è L'UNICA che permette di attivare un equipaggiamento per il suo effetto. Senza questo tag, l'equipaggiamento è INATTIVO — un oggetto comune inerte.",
-    "clarification": "[Strumento] NON significa 'questa azione richiede un oggetto'. Significa: 'questa azione PERMETTE di attivare un equipaggiamento'. L'oggetto ha bisogno dell'azione, non viceversa.",
-    "tactical_implication": "I giocatori non potranno semplicemente attaccare e dire 'uso la spada'. Dovranno pescare dal Mazzo Vitalità azioni che abbiano sia [Imposizione] sia [Strumento].",
-    "bridge_function": "Le azioni con [Strumento] sono i PONTI tra il Mazzo Vitalità e la zona Equipaggiamento. Senza di loro, l'equipaggiamento è inutile."
+  "equipment_categories_v2": {
+    "name": "Categorie di Equipaggiamento (v2)",
+    "description": "Le 4 slot di Equipaggiamento hanno ruoli distinti. Ogni categoria ha un potere base (sempre attivo quando attivata da una Vitalità) e un potere speciale (attivato dal 1° ferimento).",
+    "arma": {
+      "slot": 1,
+      "characteristic_typically": "Istinto",
+      "activation_tags_required": ["[Strumento]"],
+      "power_table": "Tabella T1-T5 specifica dell'arma (definisce il danno per ogni livello).",
+      "base_power": "Attacco fisico. Danno = Potere Arma(livello scelto in base al T della Vitalità, limitato dal valore di Caratteristica del PG).",
+      "special_power_examples": [
+        "Fendente — colpisci 2 nemici adiacenti per metà danno",
+        "Stordente — il prossimo attacco del bersaglio è a potenza dimezzata",
+        "Perforante — ignora Armatura nemica per questo attacco"
+      ],
+      "destruction_effect_OPEN": "DA DEFINIRE — effetti speciali quando un'arma viene distrutta?"
+    },
+    "scudo_o_doppia_arma": {
+      "slot": 1,
+      "options": "Scudo (difensivo) OPPURE Doppia Arma (offensivo, seconda Arma)",
+      "scudo": {
+        "characteristic_typically": "Evasione o Istinto",
+        "activation_tags_required": ["[Strumento]"],
+        "base_power": "Shield Sliding — slitta una Vitalità già giocata di 1 slot per riallineare la difesa",
+        "special_power_examples": [
+          "Riflesso — riflette 1 danno all'attaccante",
+          "Riparo — protegge anche un alleato adiacente per questo tick",
+          "Muraglia — raddoppia la riduzione del Blocco Mitigato"
+        ]
+      },
+      "doppia_arma": {
+        "characteristic_typically": "Istinto",
+        "base_power": "Attacco con entrambe le armi — danno = somma dei Poteri delle due armi al livello scelto",
+        "special_power_examples": [
+          "Tornado — colpisci tutti i nemici adiacenti",
+          "Doppio Colpo — colpisci due volte lo stesso bersaglio"
+        ]
+      }
+    },
+    "armatura": {
+      "slot": 1,
+      "characteristic_typically": "passiva (non richiede attivazione con Vitalità per il potere base)",
+      "base_power": "Riduzione Fissa del danno subito (es. -2 danno per attacco). SEMPRE attiva.",
+      "special_power_examples": [
+        "Ripresa — cura 3 Vitalità quando fermi un attacco con Blocco Perfetto",
+        "Scudo Elementale — riduzione aggiuntiva contro un tipo di danno",
+        "Riflesso — ritarda 1 danno al prossimo tick"
+      ]
+    },
+    "accessorio": {
+      "slot": 1,
+      "characteristic_typically": "passivo",
+      "base_power": "Bonus passivo (es. +1 a una Caratteristica per il calcolo del Potere, +1 slot Mano, ecc.)",
+      "special_power_examples": [
+        "Pozione Interna — cura automatica quando scendi sotto 10 Vitalità",
+        "Focus Magico — +1 livello di effetto per le Magie",
+        "Piede Leggero — +1 slot nella Cintura ATB"
+      ]
+    }
+  },
+  "wound_system_2_stages_v2": {
+    "name": "Sistema Ferita Equipaggiamento a 2 Stadi (v2)",
+    "description": "Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE: il giocatore sceglie quando ferire l'Equipaggiamento per attivare il suo potere speciale.",
+    "stage_1_first_wound": {
+      "name": "1° Ferimento — Attivazione Potere Speciale",
+      "trigger": "Il giocatore SCEGLIE di ferire l'Equipaggiamento (in qualsiasi momento in cui vorrebbe attivarne il potere speciale).",
+      "effect": "Attiva il POTERE SPECIALE dell'Equipaggiamento.",
+      "use_continues": "L'uso dell'Equipaggiamento CONTINUA. Può ancora essere attivato normalmente nelle mosse successive.",
+      "visual": "Carta girata sul dorso (scala di grigi), ancora in gioco.",
+      "recovery": "Ripristinata a fine combattimento (o con Cura apposita)."
+    },
+    "stage_2_second_wound": {
+      "name": "2° Ferimento — Distruzione",
+      "trigger": "Il giocatore SCEGLIE di ferire ulteriormente un Equipaggiamento già ferito. (Solo possibile se l'Equipaggiamento è già al 1° stadio.)",
+      "effect": "L'Equipaggiamento è DISTRUTTO. Non può più essere attivato per il resto del combattimento.",
+      "visual": "Carta rimossa dal tavolo (o messa in una zona 'distrutto').",
+      "recovery": "Ripristinata a fine combattimento (o con Cura speciale costosa)."
+    },
+    "wounds_are_voluntary": {
+      "principle": "Le ferite all'Equipaggiamento sono SEMPRE VOLONTARIE. NON sono una deviazione di danno subito. Il giocatore non è mai costretto a ferire il proprio Equipaggiamento.",
+      "tactical_meaning": "Il giocatore decide quando 'bruciare' il potere speciale del suo Equipaggiamento. È una risorsa tattica, non un danno subito."
+    },
+    "separation_from_ferita_caratteristica": {
+      "principle": "La Ferita Caratteristica (da danno subito in combattimento) è SEMPRE sulla Caratteristica. NON può essere trasferita all'Equipaggiamento.",
+      "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Caratteristiche (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti."
+    }
+  },
+  "activation_rule_v2": {
+    "name": "Regola di Attivazione Equipaggiamento (v2)",
+    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti.",
+    "requirements": [
+      "La Vitalità deve avere la caratteristica corretta (es. Istinto per la maggior parte delle Armi)",
+      "La Vitalità deve avere il tag [Strumento] (richiesto da quasi tutto l'Equipaggiamento)",
+      "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB)"
+    ],
+    "level_of_effect": "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=scegli tra 1-5). Limitato dal valore di Caratteristica del PG.",
+    "armi_improvissate_fallback": "Se il PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvissate: attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma)."
+  },
+  "quick_items_v2": {
+    "name": "Strumenti Rapidi (3 slot)",
+    "description": "Oggetti monouso. Si attivano con [Strumento]. Spesso hanno effetto fisso (non scala con T). Si consumano quando usati.",
+    "examples": [
+      "Pozione — cura 5 punti Vitalità (effetto fisso)",
+      "Grimaldello — apre una serratura (Esplorazione)",
+      "Bomba a Fumogeno — permette ritirata",
+      "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)"
+    ],
+    "wounds_open_question": "DA DEFINIRE — gli Strumenti Rapidi possono avere poteri feribili a 2 stadi, o sono solo usa-e-getta?",
+    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (non va in pila scarti, è consumato). Va riacquistato."
+  },
+  "magic_system_v2": {
+    "name": "Sistema Magie (Materie FF7) — v2",
+    "description": "3 slot per Magie. Ogni Magia è una MATERIA con 5 livelli di potere. Sistema derivato da Final Fantasy 7.",
+    "slots": 3,
+    "activation": "Richiede Vitalità con tag [Magia] e caratteristica corrispondente (solitamente Risonanza, ma alcune Magie possono richiedere Analisi).",
+    "level_progression": {
+      "rule": "Il T della Vitalità determina quanti livelli di potere possono essere selezionati.",
+      "table": {
+        "T1": "Solo livello 1 (effetto base)",
+        "T2": "Scegli tra livello 1 o 2",
+        "T3": "Scegli tra livello 1, 2 o 3",
+        "T4": "Scegli tra livello 1, 2, 3 o 4",
+        "T5": "Scegli tra livello 1, 2, 3, 4 o 5"
+      },
+      "characteristic_cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Risonanza 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3."
+    },
+    "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit. Questo rende la scelta del livello strategica.",
+    "esper_system": {
+      "trigger": "Livello 5 selezionato (richiede Vitalità T5 + Caratteristica 5 del PG).",
+      "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente del livello 4.",
+      "esper_limits_OPEN": "DA DEFINIRE — l'Esper è disponibile ogni volta che si può attivare il livello 5, o ha un limite (es. 1 volta per combattimento)?",
+      "examples": [
+        "Ifrit (Fuoco) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
+        "Shiva (Ghiaccio) — 12 danno + congelamento (nemici saltano il prossimo tick)",
+        "Ramuh (Fulmine) — 10 danno a TUTTI i nemici + stun ai più deboli",
+        "Carbuncle (Luce) — cura tutta la festa + riflesso danni per 2 tick",
+        "Diabolos (Ombra) — 20 danno a un bersaglio + drenaggio Vitalità"
+      ]
+    },
+    "example_materia_fire": {
+      "name": "Materia Fuoco",
+      "characteristic": "Risonanza",
+      "activation_tags_required": ["[Magia]"],
+      "power_table": {
+        "1": "Spark — 1 danno a 1 bersaglio",
+        "2": "Fire — 3 danno a 1 bersaglio",
+        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
+        "4": "Firaga — 8 danno a tutti i nemici (Area)",
+        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente"
+      }
+    }
+  },
+  "abilities_v2": {
+    "name": "Abilità (4 slot) — v2",
+    "description": "Mosse basate su Caratteristica. Valide ANCHE fuori dal combattimento (Sociale, Esplorazione, Conoscenze).",
+    "slots": 4,
+    "activation": "Richiede Vitalità con tag [Abilità] e caratteristica corrispondente.",
+    "linked_characteristic": "Ogni Abilità è legata a una caratteristica specifica (dà identità alle mosse).",
+    "examples": [
+      {
+        "name": "Intimidire",
+        "characteristic": "Istinto",
+        "activation_tags_required": ["[Abilità]"],
+        "power_table": {
+          "1": "Malus -1 al prossimo tiro del bersaglio",
+          "2": "Malus -2 al prossimo tiro",
+          "3": "Bersaglio Scosso: -2 a tutti i tiri per 2 turni",
+          "4": "Bersaglio Terrorizzato: non agisce per 1 turno",
+          "5": "Bersaglio si Arrende (se non Boss)"
+        },
+        "out_of_combat": "Sostituisce prova di Persuasione con minaccia"
+      },
+      {
+        "name": "Analisi Tattica",
+        "characteristic": "Analisi",
+        "activation_tags_required": ["[Abilità]"],
+        "power_table": {
+          "1": "Rivela 1 token nemico",
+          "2": "Rivela 2 token nemici",
+          "3": "Rivela tutti i token nemici +1 punto debole",
+          "4": "Tutti i PG ottengono +1 al prossimo attacco",
+          "5": "Identifica TUTTE le debolezze del nemico"
+        },
+        "out_of_combat": "Permette deduzioni e analisi di situazioni complesse"
+      },
+      {
+        "name": "Schivata",
+        "characteristic": "Evasione",
+        "activation_tags_required": ["[Abilità]"],
+        "power_table": {
+          "1": "Mitiga 1 danno (Breve Schivata)",
+          "2": "Mitiga 2 danni",
+          "3": "Mitiga 3 danni + sposta di 1 slot",
+          "4": "Blocco Perfetto (0 danno)",
+          "5": "Blocco Perfetto + Contrattacco gratuito"
+        },
+        "out_of_combat": "Permette di schivare trappole e pericoli"
+      }
+    ]
   },
   "universal_flip_mechanic": {
-    "name": "Meccanica Flip Universale",
+    "name": "Meccanica Flip Universale (invariata)",
     "principle": "TUTTE le carte (Caratteristiche, Cuori, Equipaggiamento) usano la STESSA meccanica: GIRARE LA CARTA sul dorso per indicare lo stato 'ferito/usurato'.",
     "visual_design": {
-      "front_intatto": "La carta mostra l'equipaggiamento nel suo stato PRISTINO. Colori vivi, illustrazione intatta.",
-      "back_usurato": "Lo STESSO DESIGN ma in SCALA DI GRIGI / COLORI SBIADITI. Non un dorso diverso — la stessa immagine 'svanita'. Linguaggio visivo unificato con Caratteristiche e Cuori."
-    },
-    "design_intent": "Unificazione visiva totale. Quando qualsiasi carta viene girata, tutti sanno: qualcosa si è incrinato. Non serve ricordare regole diverse per tipi diversi di carte."
-  },
-  "equipment_categories": {
-    "normale": {
-      "name": "Equipaggiamento NORMALE",
-      "description": "Oggetti comuni con un potere base limitato.",
-      "potere_base": "Ogni oggetto Normale ha un POTERE BASE che si attiva quando l'equipaggiamento viene girato (usurato) tramite un'azione con [Strumento].",
-      "lifecycle": {
-        "stato_1_pristine": {
-          "name": "Intatto",
-          "visual": "Carta dritta, faccia vivida.",
-          "status": "Pronto per l'uso. Può essere attivato da un'azione con [Strumento]."
-        },
-        "stato_2_worn": {
-          "name": "Usurato (Girato)",
-          "trigger": "Primo utilizzo — il PG usa il potere base tramite un'azione con [Strumento].",
-          "visual": "Carta GIRATA, mostrando il dorso sbiadito.",
-          "effect": "Il potere base si è attivato.",
-          "can_use_base_again": "PUÒ usare il potere base UN'ALTRA VOLTA — ma al secondo utilizzo l'equipaggiamento viene DISTRUTTO.",
-          "recovery": "RIPARABILE tra un combattimento e l'altro. Basso costo e poco tempo."
-        },
-        "stato_3_destroyed": {
-          "name": "Distrutto",
-          "trigger": "Secondo utilizzo del potere base mentre l'equipaggiamento è già usurato.",
-          "visual": "Carta FISICAMENTE SCARTATA e rimossa dal tavolo.",
-          "effect": "L'equipaggiamento è ANDATO.",
-          "consequence": "Il PG rimane SENZA quell'equipaggiamento. Va acquistato o trovato nuovamente.",
-          "consequence_generation": "NESSUNA Conseguenza. Un oggetto comune che si spezza si riduce in rottami senza conseguenze future.",
-          "recovery": "COSTOSISSIMO. Acquistare un oggetto nuovo costa molto."
-        }
-      },
-      "design_intent": "L'equipaggiamento Normale è CONSUMABILE. Usarlo due volte è disperazione. La manutenzione è la routine del viaggiatore."
-    },
-    "superiore": {
-      "name": "Equipaggiamento SUPERIORE",
-      "description": "Oggetti rari e potenti. Più pericolosi quando si spezzano.",
-      "how_obtained": {
-        "trovati": "Rinvenuti in luoghi antichi o speciali.",
-        "acquistati": "Costosi, disponibili solo in città speciali o da artigiani rari.",
-        "evoluti": "Un oggetto Normale diventa Superiore attraverso un'IMPRESA EROICA (vedi sezione Evoluzione)."
-      },
-      "same_card_rule": "Gli oggetti Superiori NON hanno carte diverse. La carta è la STESSA dell'oggetto Normale. Si aggiunge un POST-IT o si SCRIVE sopra il nuovo nome e che è un oggetto Superiore. L'evoluzione è narrativa, non grafica.",
-      "potere_superiore": {
-        "description": "L'oggetto Superiore ha un POTERE SUPERIORE oltre al potere base.",
-        "activation": "PUÒ essere attivato ANCHE DALLO STATO PRISTINO. Il PG sceglie: usare il potere base OPPURE il potere Superiore. Entrambi usurano l'equipaggiamento (lo girano).",
-        "example": "Spada Normale: potere base = riduzione fatica 2. Spada Superiore: potere base = riduzione fatica 2, potere Superiore = ferire un Tratto offensivo del Boss."
-      },
-      "lifecycle": {
-        "stato_1_pristine": {
-          "name": "Intatto",
-          "visual": "Carta dritta, faccia vivida. Post-it o scritta indicano 'Superiore'.",
-          "options": "PUÒ usare: (A) il potere base, o (B) il potere Superiore. Entrambe le opzioni USURANO l'equipaggiamento (lo girano)."
-        },
-        "stato_2_worn": {
-          "name": "Usurato (Girato)",
-          "trigger": "Primo utilizzo — base o Superiore.",
-          "visual": "Carta GIRATA, dorso sbiadito.",
-          "options": "PUÒ usare: (A) il potere base (l'equipaggiamento si DISTRUGGE), oppure (B) il potere Superiore ANCHE UNA SECONDA VOLTA (l'equipaggiamento si DISTRUGGE). Entrambe le opzioni distruggono l'equipaggiamento.",
-          "critical_choice": "Il PG sceglie: finire con il potere base (più sicuro) o con il potere Superiore (più devastante). Entrambe le scelte sono FINALI."
-        },
-        "stato_3_destroyed": {
-          "name": "Distrutto (Conseguenza!)",
-          "trigger": "Secondo utilizzo — base o Superiore — mentre l'equipaggiamento è già usurato.",
-          "visual": "Carta FISICAMENTE SCARTATA e rimossa dal tavolo.",
-          "effect": "L'equipaggiamento è ANDATO. E NON diventa semplicemente rottame.",
-          "consequence_generation": "IL MASTER ANNOTA LA CONSEGUENZA GENERATA. Vedi sezione Conseguenze.",
-          "recovery": "IMPOSSIBILE. L'oggetto è distrutto e la Conseguenza è stata generata. Serve un oggetto NUOVO."
-        }
-      },
-      "superior_abilities_by_type": {
-        "arma_superiore": {
-          "potere_base": "Riduce la fatica necessaria per un'azione.",
-          "potere_superiore": "Può DISTRUGGERE UN TRATTO DEL NEMICO attivando il potere Superiore. L'arma non colpisce i PF — colpisce il Tratto e lo rimuove. Se l'arma era intatta, diventa usurata. Se era già usurata, viene distrutta."
-        },
-        "scudo_superiore": {
-          "potere_base": "Slitta una carta Opposizione di 1 slot (reazione).",
-          "potere_superiore": "Può DISTRUGGERE UN TRATTO DEL NEMICO attivando il potere Superiore. Lo scudo non blocca — spezza la difesa del nemico. Se lo scudo era intatto, diventa usurato. Se era già usurato, viene distrutto."
-        },
-        "armatura_superiore": {
-          "potere_base": "Assorbe (riduce) una quota di danni da un colpo andato a segno.",
-          "potere_superiore": "Può ASSORBIRE UN COLPO CHE FERIREBBE UNA CARATTERISTICA O UN CUORE. L'armatura prende la ferita al posto del PG."
-        }
-      },
-      "design_intent": "L'equipaggiamento Superiore è un RISCHIO. Più potente, ma la sua distruzione ha conseguenze future. I PG devono decidere: vale la pena usare il potere Superiore sapendo che se l'oggetto si spezza, una Conseguenza nascerà?"
-    }
-  },
-  "consequence_system": {
-    "name": "Sistema Conseguenze",
-    "principle": "Quando un equipaggiamento Superiore viene DISTRUTTO, il Master annota le circostanze e genera una Conseguenza che tornerà nel futuro come nemico, evento o maledizione.",
-    "what_to_record": {
-      "oggetto": "Che tipo di equipaggiamento era (spada, scudo, armatura, ecc.)",
-      "possessore": "Chi lo usava",
-      "circostanze": "Come si è spezzato (in quale combattimento, contro chi, con quale potere)",
-      "potere_superiore": "Quale potere Superiore conteneva"
-    },
-    "how_consequence_manifests": {
-      "nemico": "Un nemico con tratti che ricalcano il potere Superiore dell'equipaggiamento distrutto. Es: una spada Superiore che feriva Tratti offensivi genera un nemico che TOGLIE Caratteristiche ai PG.",
-      "evento": "Un evento che ricalca la natura dell'equipaggiamento. Es: un'armatura Superiore che assorbiva ferite genera una zona dove le cure non funzionano.",
-      "maledizione": "Una maledizione legata al possesso originale. Es: lo spirito dell'oggetto perseguita chi lo ha spezzato."
-    },
-    "design_intent": "Le Conseguenze sono CONSEGUENZE MECCANICHE delle scelte dei PG. Non sono fluff narrativo — sono nemici ed eventi reali che il Master crea basandosi su cosa i PG hanno distrutto.",
-    "narrative_depth": "Le Conseguenze generate sono PERSONALI. Non sono mostri generici — sono il riflesso delle azioni dei PG. Il Guerriero che ha spezzato la sua spada Superiore per sconfiggere il Boss incontrerà, tre sessioni dopo, un nemico che combatte con la STESSA TECNICA della sua spada perduta."
-  },
-  "evolution_system": {
-    "name": "Evoluzione per Imprese Eroiche",
-    "principle": "Le imprese eroiche possono far EVOLVERE oggetti Normali in Superiori o CURARE Caratteristiche/Cuori GRATUITAMENTE.",
-    "trigger": "Un atto narrativamente significativo: salvare un villaggio, sconfiggere un nemico importante, compiere un sacrificio eroico, scoprire una verità importante.",
-    "mechanic_normal_to_superiore": {
-      "action": "L'equipaggiamento Normale diventa Superiore. Il PG aggiunge un post-it o scrive sulla carta il nuovo nome e il potere Superiore.",
-      "same_card": "LA CARTA NON CAMBIA. Non servono carte diverse per oggetti Superiori. L'evoluzione è narrativa.",
-      "potere_superiore": "Il Master assegna un potere Superiore coerente con l'impresa compiuta."
-    },
-    "mechanic_free_healing": {
-      "action": "Il PG guarisce gratuitamente una Caratteristica ferita. I Punti Impresa NON possono curare i Cuori."
-    },
-    "design_intent": "L'evoluzione non è un sistema di 'crafting' o 'level up'. È NARRATIVO. I PG non scelgono quando evolvere — lo meritano attraverso le loro azioni. Questo rende ogni oggetto Superiore UNICO e CARICO DI STORIA."
-  },
-  "inventory_speeds": {
-    "equipaggiamento_indossato": {
-      "description": "Equipaggiamento indossato (armi, armature, scudi). Sempre accessibili nella zona Equipaggiamento.",
-      "access": "Immediato. Ma richiedono il tag [Strumento] su un'azione per essere attivati (girati).",
-      "slots": "Limitato dal tipo (tipicamente 1 arma, 1 armatura, 1 scudo).",
-      "repair": "Dopo l'usura, l'equipaggiamento va RIPARATO per tornare intatto.",
-      "narrative": "La manutenzione è parte della routine del viaggiatore."
-    },
-    "oggetti_rapidi": {
-      "description": "3 slot ESATTI. Oggetti pronti all'uso: pozioni, bombe, strumenti, chiavi.",
-      "access": "Si muovono dagli slot rapidi alla Cintura ATB, pagando il loro Costo Tempo.",
-      "consumables": "Gli oggetti a consumo singolo vengono SCARTATI dopo l'uso.",
-      "tactical_swap": "Fuori dal combattimento, i PG possono scambiare oggetti tra zaino e slot rapidi."
-    },
-    "zaino": {
-      "description": "Massimo 10 oggetti coperti (faccia in giù, nascosti).",
-      "access_combat": "Costo Tempo 5 per usare un oggetto dallo zaino in combattimento. Rovistare frenetico.",
-      "access_exploration": "Gratuito fuori dal combattimento.",
-      "tactical_choice": "Lo zaino è risorsa di emergenza. In combattimento, spendere 5 posizioni per un oggetto è una scelta disperata."
-    }
-  },
-  "weapon_mechanic": {
-    "rule": "Girare un'arma (con azione [Strumento]) RIDUCE il numero di carte da scartare per pagare il Costo Tempo di un'azione.",
-    "critical_note": "IL DANNO RIMANE DETERMINATO DALLA TABELLA POTERE dell'azione, non dall'arma.",
-    "effect": "L'arma massimizza l'efficienza dell'azione riducendo la fatica necessaria. Il PG infligge lo stesso danno ma si stanca di meno.",
-    "example": "Azione Costo 4 con spada usata (riduzione 2). Danno: valore dalla Tabella Potere (invariato). Carte scartate per fatica: 2 invece di 4.",
-    "minimum_cost": "Un'azione, grazie all'arma, non può scendere mai sotto un Costo di 1.",
-    "design_intent": "Le armi non aumentano il danno. Rendono efficiente l'attacco, riducendo lo sforzo."
-  },
-  "shield_mechanic": {
-    "rule": "Girare lo scudo (con azione [Strumento]) permette di SLITTARE una carta Opposizione già giocata di 1 slot a sinistra o a destra.",
-    "requires_strumento": "L'azione Opposizione deve avere il tag [Strumento].",
-    "effect": "Permette di reagire all'attacco rivelato di un nemico spostando la propria difesa nella posizione corretta.",
-    "timing": "Reattivo. Si dichiara DOPO che il Master rivela il token d'attacco, ma PRIMA del calcolo dei danni.",
-    "possible_outcomes": {
-      "perfect_block": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → 0 danni.",
-      "adjacent_mitigation": "Slitta la difesa nella posizione adiacente → riduzione danni.",
-      "no_help": "La difesa è troppo lontana anche dopo lo slittamento → nessun effetto."
-    },
-    "design_intent": "Lo scudo è informazione reattiva. Rompe la rigidità della Cintura ATB."
-  },
-  "armor_mechanic": {
-    "rule": "Girare l'armatura (con azione [Strumento]) ASSORBE (riduce) una quota di danni subiti da un colpo andato a segno.",
-    "requires_strumento": "L'azione deve avere il tag [Strumento].",
-    "effect": "Riduzione fissa del danno entrante. Es: Armatura con riduzione 2. Attacco Potere 7 → 5 danni subiti.",
-    "limitation": "Si può girare l'armatura solo una volta per turno di risoluzione.",
-    "interaction_with_sacrifice": "L'armatura riduce il danno PRIMA che il PG scelga come assorbire il resto.",
-    "design_intent": "L'armatura è l'ultima linea di difesa passiva prima del Dilemma del Guerriero."
-  },
-  "repair_and_maintenance": {
-    "method": "Tra un combattimento e l'altro, il PG deve spendere TEMPO o DENARO per riparare l'equipaggiamento usurato.",
-    "options": {
-      "pay_someone": "Pagare un fabbro/artigiano. Veloce ma costa denaro.",
-      "use_own_skill": "Usare un'abilità propria. Gratuito ma richiede tempo e competenza."
-    },
-    "cost_escalation": "Equipaggiamento Superiore = riparazione più costosa e difficile.",
-    "narrative": "La manutenzione è parte della routine del viaggiatore. Dà profondità all'economia del gioco."
-  },
-  "equipment_in_atb": {
-    "quick_items_in_atb": {
-      "rule": "Gli oggetti usabili in combattimento si muovono dagli slot rapidi alla Cintura ATB.",
-      "mechanic": "Il PG paga il Costo Tempo dell'oggetto con carte (fatica), come per qualsiasi azione. L'azione accompagnatrice deve avere [Strumento].",
-      "resolution": "Quando la posizione dell'oggetto viene risolta nella Cintura ATB, l'effetto si attiva.",
-      "consumable_discard": "Gli oggetti a consumo singolo vengono scartati dopo l'uso."
-    },
-    "equipped_items_stay": {
-      "rule": "L'equipaggiamento indossato (armi, armature, scudi) NON si muove nella Cintura. Restano nella Zona Personaggio.",
-      "interaction": "Si attivano tramite GIRAMENTO innescato da un'azione con [Strumento]. Non occupano posizioni nella Cintura ATB."
+      "front_intatto": "La carta mostra l'equipaggiamento nel suo stato PRISTINO. Colori vivi.",
+      "back_usurato": "La STESSA immagine ma in SCALA DI GRIGI / COLORI SBIADITI. Linguaggio visivo unificato."
     }
   },
   "design_evolution_notes": {
-    "v1": "Tapping base, tre categorie di inventario.",
-    "v2": "Oggetti rapidi (3 slot), Zaino (10 oggetti, Costo 5). Armi/Shield/Armor tapping definiti.",
-    "v3": "Equipaggiamento NON si muove in ATB. Oggetti rapidi SI muovono in ATB. Scudo slittamento.",
-    "v4": "SISTEMA A DUE STATI: Intatto → Danneggiato → Distrutto. Linguaggio visivo unificato.",
-    "v5": "TAG [STRUMENTO] come ATTIVATORE. Armi, scudi e armature richiedono [Strumento] per essere attivati.",
-    "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
-    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
-    "v8": "ARMIMPROVVISATE formalizzate (non rappresentate da carte, ignorano tutti i Tag). ARMI ALCHEMICHE come unica fonte di equipaggiamento armato. Distruzione Tratti tramite attivazione potere Arma Superiore (non più sacrificio dell'arma). Se arma intatta → diventa usurata. Se già usurata → distrutta. Punti Impresa NON curano Cuori. Equipaggiamento Prelevabile da nemici sconfitti."
+    "v1": "Equipaggiamento periferico, solo riduzione fatica/slittamento.",
+    "v2": "Armi Alchemiche vs Improvissate. Tag [Strumento] obbligatorio.",
+    "v3": "Equipaggiamento Normale vs Superiore. Conseguenze dalla distruzione di Superiori.",
+    "v4": "FUSIONE LORE CABALISTICA.",
+    "v5": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
+    "v6": "Distruzione Tratti tramite potere Arma Superiore.",
+    "v7": "Rimozione 'assorbe fino a 3 danni'. Rimosso obbligo caratteristiche per Ferita Standard.",
+    "v8": "Aggiornamento minori.",
+    "v9": "Sistema Equipaggiamento da RIVEDERE (note del designer).",
+    "v10": "ARCHITETTURA v2: Equipaggiamento CENTRALE. 4 slot fissi. Sistema ferita 2 stadi (1° = potere speciale, 2° = distrutto). Ferite VOLONTARIE. Rimosso sistema Normale/Superiore. Aggiunti slot Strumenti Rapidi (3), Abilità (4), Magie (3 — Materie FF7). Ferita Caratteristica separata da Ferita Equipaggiamento."
   }
 }
