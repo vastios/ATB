@@ -1,8 +1,8 @@
 {
   "section_id": "06",
   "section_name": "Sistema Equipaggiamento e Carte Lato Giocatore (v2)",
-  "version": "10.0",
-  "status": "AGGIORNATO v2 — L'Equipaggiamento è CENTRALE, non periferico. 4 slot fissi (1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio). Sistema ferita a 2 STADI: 1° ferimento attiva il POTERE SPECIALE (uso continua), 2° ferimento DISTRUGGE. Le ferite sono VOLONTARIE, non deviazione di danno subito. Aggiunti 3 slot Strumenti Rapidi, 4 slot Abilità, 3 slot Magie (Materie FF7).",
+  "version": "11.0",
+  "status": "AGGIORNATO v2.1 — L'Equipaggiamento è CENTRALE, non periferico. 4 slot fissi (1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio). Sistema ferita a 2 STADI (solo Equipaggiamento): 1° ferimento attiva il POTERE SPECIALE (uso continua), 2° ferimento DISTRUGGE. Le ferite sono VOLONTARIE. Strumenti Rapidi (3 slot) SOLO usa-e-getta (NESSUNA ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità + Bonus opzionale Arma. Esper richiede T5 + Caratteristica 5.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Sistema Equipaggiamento v2. L'Equipaggiamento è il CATALOGO DELLE MOSSE del PG. Definisce COSA può fare (attaccare, difendere, usare poteri speciali). Si attiva tramite Vitalità con tag compatibili (principalmente [Strumento]). Il sistema ferita a 2 stadi rende la scelta di attivare poteri speciali un dilemma tattico: 1° ferimento = potere speciale (uso continua), 2° ferimento = distrutto. Le ferite all'Equipaggiamento sono VOLONTARIE e separate dalla Ferita Caratteristica (che è sempre sulla Caratteristica).",
   "v2_paradigm_shift": {
@@ -45,14 +45,15 @@
       "slot": 1,
       "characteristic_typically": "Istinto",
       "activation_tags_required": ["[Strumento]"],
-      "power_table": "Tabella T1-T5 specifica dell'arma (definisce il danno per ogni livello).",
-      "base_power": "Attacco fisico. Danno = Potere Arma(livello scelto in base al T della Vitalità, limitato dal valore di Caratteristica del PG).",
+      "damage_formula_v2_1": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto).",
+      "base_power": "Attacco fisico. Danno base dalla Tabella Potere della Vitalità. L'Arma fornisce ABILITÀ EXTRA (effetti speciali per livello) ed eventuale BONUS DI DANNO che si SOMMA alla tabella.",
+      "example_calculation": "PG Istinto 3 gioca Vitalità Istinto T3. Tabella Potere(3 × T3) = 8 danno base. Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
       "special_power_examples": [
         "Fendente — colpisci 2 nemici adiacenti per metà danno",
         "Stordente — il prossimo attacco del bersaglio è a potenza dimezzata",
         "Perforante — ignora Armatura nemica per questo attacco"
       ],
-      "destruction_effect_OPEN": "DA DEFINIRE — effetti speciali quando un'arma viene distrutta?"
+      "destruction_effect": "Quando un'arma viene DISTRUTTA (2° ferimento), non può più essere attivata per il resto del combattimento. Si ripristina a fine combattimento. Effetti speciali alla distruzione: opzionali e specifici per Arma (es. esplosione finale che infligge 2 danno a tutti i nemici adiacenti)."
     },
     "scudo_o_doppia_arma": {
       "slot": 1,
@@ -136,16 +137,19 @@
     "armi_improvissate_fallback": "Se il PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvissate: attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma)."
   },
   "quick_items_v2": {
-    "name": "Strumenti Rapidi (3 slot)",
-    "description": "Oggetti monouso. Si attivano con [Strumento]. Spesso hanno effetto fisso (non scala con T). Si consumano quando usati.",
+    "name": "Strumenti Rapidi (3 slot) — v2.1 CONFERMATO",
+    "description": "Oggetti usa-e-getta. Si attivano con [Strumento]. Spesso hanno effetto fisso (non scala con T). Si consumano quando usati.",
+    "v2_1_confirmed": "CONFERMATO v2.1: gli Strumenti Rapidi sono SOLO usa-e-getta. NON hanno sistema di ferite a 2 stadi. Principalmente usati IN combattimento.",
     "examples": [
       "Pozione — cura 5 punti Vitalità (effetto fisso)",
       "Grimaldello — apre una serratura (Esplorazione)",
       "Bomba a Fumogeno — permette ritirata",
-      "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)"
+      "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)",
+      "Pergamena di Fuoco — infligge 4 danno a un bersaglio (effetto fisso)",
+      "Bomba Acida — infligge 2 danno + riduce Armatura nemica di 1"
     ],
-    "wounds_open_question": "DA DEFINIRE — gli Strumenti Rapidi possono avere poteri feribili a 2 stadi, o sono solo usa-e-getta?",
-    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (non va in pila scarti, è consumato). Va riacquistato."
+    "wound_system": "NESSUNO — v2.1 CONFERMATO. Gli Strumenti Rapidi NON hanno ferite a 2 stadi (a differenza dell'Equipaggiamento). Si consumano all'uso e vanno riacquistati/ritrovati.",
+    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (consumato, non va in pila scarti). Va riacquistato o ritrovato. In combattimento, lo slot resta vuoto fino alla fine del combattimento (o fino a ricarica con Abilità apposita)."
   },
   "magic_system_v2": {
     "name": "Sistema Magie (Materie FF7) — v2",
@@ -165,9 +169,9 @@
     },
     "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit. Questo rende la scelta del livello strategica.",
     "esper_system": {
-      "trigger": "Livello 5 selezionato (richiede Vitalità T5 + Caratteristica 5 del PG).",
+      "trigger": "Livello 5 selezionato (richiede Vitalità T5 E Caratteristica PG = 5 — CONDIZIONE DOPPIA v2.1).",
       "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente del livello 4.",
-      "esper_limits_OPEN": "DA DEFINIRE — l'Esper è disponibile ogni volta che si può attivare il livello 5, o ha un limite (es. 1 volta per combattimento)?",
+      "esper_limits_v2_1": "RISOLTO v2.1 — NESSUN limite di utilizzo per combattimento. L'Esper può essere evocato ogni volta che le condizioni sono soddisfatte. La condizione DOPPIA (T5 + Caratteristica 5) è MOLTO RESTRITTIVA: (1) richiede PG con Caratteristica 5 (massimo possibile, 1/10 dei punti creazione), (2) pescare una Vitalità T5 della caratteristica corretta, (3) giocare la Vitalità T5 come azione principale nel tick 5. La rarità intrinseca bilancia la potenza dell'Esper.",
       "examples": [
         "Ifrit (Fuoco) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
         "Shiva (Ghiaccio) — 12 danno + congelamento (nemici saltano il prossimo tick)",
@@ -255,6 +259,7 @@
     "v7": "Rimozione 'assorbe fino a 3 danni'. Rimosso obbligo caratteristiche per Ferita Standard.",
     "v8": "Aggiornamento minori.",
     "v9": "Sistema Equipaggiamento da RIVEDERE (note del designer).",
-    "v10": "ARCHITETTURA v2: Equipaggiamento CENTRALE. 4 slot fissi. Sistema ferita 2 stadi (1° = potere speciale, 2° = distrutto). Ferite VOLONTARIE. Rimosso sistema Normale/Superiore. Aggiunti slot Strumenti Rapidi (3), Abilità (4), Magie (3 — Materie FF7). Ferita Caratteristica separata da Ferita Equipaggiamento."
+    "v10": "ARCHITETTURA v2: Equipaggiamento CENTRALE. 4 slot fissi. Sistema ferita 2 stadi (1° = potere speciale, 2° = distrutto). Ferite VOLONTARIE. Rimosso sistema Normale/Superiore. Aggiunti slot Strumenti Rapidi (3), Abilità (4), Magie (3 — Materie FF7). Ferita Caratteristica separata da Ferita Equipaggiamento.",
+    "v11": "ARCHITETTURA v2.1: Strumenti Rapidi CONFERMATI SOLO usa-e-getta (nessuna ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). Effetti di distruzione Arma opzionali (es. esplosione finale)."
   }
 }

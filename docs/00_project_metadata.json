@@ -1,8 +1,8 @@
 {
   "game_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
-    "version": "15.0 — ARCHITETTURA v2: Vitalità come Chiavi di Attivazione. Le Carte Vitalità non definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]), ma forniscono i TAG che permettono di attivare le Carte Lato Giocatore (Equipaggiamento, Strumenti Rapidi, Abilità, Magie). Le Magie seguono il modello Materie FF7: 5 livelli di potere + Esper al Liv 5.",
-    "last_updated": "2026-06-18",
+    "version": "16.0 — ARCHITETTURA v2 COMPLETATA: 5 domande aperte risolte. [Fulmineo] = carta pagante che si attiva nel suo slot. Danno Arma = Tabella Potere Vitalità + bonus opzionali dell'Arma. Strumenti Rapidi = solo usa-e-getta. Esper = attivabile solo con T5 + Caratteristica 5. Multi-tag = almeno UNO dei tag richiesti (default, da raffinare prossima sessione).",
+    "last_updated": "2026-06-19",
     "architecture": {
       "name": "Architettura a Tre Canali",
       "description": "Il progetto è diviso in tre canali indipendenti. Le meccaniche pure (Canale 1) sono COMPLETE prima di applicare qualsiasi lore. La lore (Canale 3) è una 'skin' che veste le meccaniche senza modificarle. Il Canale 2 contiene le regole avanzate per il Master.",
@@ -93,16 +93,23 @@
       "status": "RISOLTO con Architettura v2"
     },
     "OPEN_QUESTIONS_V2": {
-      "fulmineo": "DA DEFINIRE — confermare significato esatto: 'questa Vitalità si attiva anche quando è giocata coperta come costo tempo per un'altra'?",
-      "multi_tag_requirements": "DA DEFINIRE — se una Carta Lato Giocatore richiede 2+ tag, la Vitalità deve avere TUTTI i tag richiesti o ALMENO UNO?",
-      "weapon_damage_formula": "DA DEFINIRE — quando un'Arma viene attivata con Vitalità T3, il danno è: (a) solo Potere Arma(T3), (b) solo Potere Caratteristica(T3), (c) somma, (d) max?",
-      "quick_items_wounds": "DA DEFINIRE — gli Strumenti Rapidi possono avere poteri feribili a 2 stadi, o sono solo usa-e-getta?",
-      "esper_limits": "DA DEFINIRE — l'Esper è disponibile ogni volta che si può attivare il livello 5, o ha un limite (es. 1 volta per combattimento)?",
+      "fulmineo": "RISOLTO (16.0) — [Fulmineo] permette di giocare una Vitalità SCOPERTA (attivandola nel suo turno) mentre CONTA ANCHE COME COSTO TEMPO per la prossima carta attiva. Esempio: per giocare una T4 scoperta servono 3 carte coperte come pagamento; se una di queste 3 ha [Fulmineo], può essere giocata SCOPERTA e si attiva nel proprio slot. La carta [Fulmineo] va nello slot del proprio Costo Tempo. Sequenza T4: COPERTA — SCOPERTA(Fulmineo,T2) — COPERTA — SCOPERTA(T4).",
+      "multi_tag_requirements": "DEFAULT ADOTTATO (16.0) — La Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. (L'utente non ha compreso la domanda nella sua forma originale; default 'almeno uno' adottato in attesa di clarificazione specifica prossima sessione.)",
+      "weapon_damage_formula": "RISOLTO (16.0) — Il danno è determinato dalla TABELLA POTERE DELLA VITALITÀ (caratteristica × T), come già confermato in precedenza. La carta Arma riporta ABILITÀ EXTRA ed eventuale BONUS DI DANNO che si SOMMANO alla tabella della Vitalità. Esempio: Vitalità Istinto T3 con PG Istinto 3 = 8 danno (tabella); Spada Lunga con +2 danno = 8 + 2 = 10 danno totale.",
+      "quick_items_wounds": "RISOLTO (16.0) — Gli Strumenti Rapidi sono SOLO usa-e-getta, principalmente in combattimento (pozioni, pergamene, bombe, ecc.). NON hanno sistema di ferite a 2 stadi.",
+      "esper_limits": "RISOLTO (16.0) — NESSUN limite di utilizzo per l'Esper, MA si attiva SOLO con Vitalità T5 E Caratteristica del PG = 5. Doppia condizione restrittiva rende l'utilizzo MOLTO DIFFICILE (richiede PG con Caratteristica 5 + pescare e giocare una Vitalità T5).",
       "ricordo_tag": "Accantonato. Da riprendere quando si avrà un'ispirazione per meccanizzarlo.",
       "boss_combo": "Il Boss può fare combo? Con i suoi minion?",
       "boss_phases": "I Boss hanno fasi (sotto 50% PF cambiano abilità)?",
       "progression": "Come evolve il PG? Come cambiano le carte nel mazzo nel lungo termine?",
       "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare."
+    },
+    "v2_FINALIZED_ANSWERS_v16": {
+      "fulmineo_mechanic": "Una Vitalità con [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. La carta [Fulmineo] va nello slot del suo Costo Tempo. Esempio T4: COPERTA — SCOPERTA(Fulmineo,T2) — COPERTA — SCOPERTA(T4). Le 4 carte totali pagano il costo T4 (3+1? no: conta come pagamento) e la Fulmineo si attiva nel suo turno.",
+      "weapon_damage": "Danno = Tabella Potere della Vitalità (Caratteristica × T) + Bonus opzionale della carta Arma. La Tabella Potere della Vitalità resta la base numerica. L'Arma aggiunge ABILITÀ EXTRA (tag speciali, effetti condizionali) e può aggiungere BONUS DI DANNO che si sommano alla tabella.",
+      "quick_items_nature": "Solo usa-e-getta. Principalmente in combattimento (pozioni, pergamene, bombe, bendaggi, ecc.). Si consumano all'uso. Nessuna ferita a 2 stadi.",
+      "esper_activation": "Condizione DOPPIA necessaria: Vitalità T5 + Caratteristica PG = 5. Senza l'una o l'altra, l'Esper NON si evoca. NESSUN limite di utilizzo per combattimento (può essere evocato ogni volta che le condizioni sono soddisfatte), ma la rarità delle condizioni lo rende MOLTO DIFFICILE da attivare.",
+      "multi_tag_default": "DEFAULT: la Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. Da raffinare con l'utente nella prossima sessione (la domanda non è stata compresa nella sua forma originale)."
     },
     "POINTS_STATUS": {
       "point_1_card_anatomy": "DEFINITO v2 — Anatomia: Vitalità (energia) + Carte Lato Giocatore (azioni)",
@@ -121,13 +128,13 @@
     }
   },
   "document_index": {
-    "00": "project_metadata.json — v15.0 ARCHITETTURA v2",
-    "01": "card_anatomy.json — v13.0 (v2: Vitalità come chiavi, Carte Lato Giocatore)",
-    "02": "vitality_engine.json — v9.0 (v2: adattamento a chiavi di attivazione)",
-    "03": "atb_timeline.json — v8.0 (v2: invariato)",
-    "04": "character_sheet.json — v15.0 (v2: 14 slot Lato Giocatore: 4 Eq + 3 Strum + 4 Ab + 3 Mag)",
-    "05": "combat_math.json — v12.0 (v2: Attivazione, Equip feribile 2 stadi, Esper)",
-    "06": "equipment_system.json — v10.0 (v2: centrale, 4 slot, 2 stadi ferita)",
+    "00": "project_metadata.json — v16.0 ARCHITETTURA v2 + 5 RISPOSTE FINALI",
+    "01": "card_anatomy.json — v14.0 (v2.1: Fulmineo, Danno Arma, Esper T5+Car5)",
+    "02": "vitality_engine.json — v10.0 (v2.1: invariato meccanicamente)",
+    "03": "atb_timeline.json — v9.0 (v2.1: Fulmineo meccanica slot)",
+    "04": "character_sheet.json — v16.0 (v2.1: Quick Tools usa-e-getta confermato)",
+    "05": "combat_math.json — v13.0 (v2.1: Danno Arma = Vitalità + Bonus, Esper T5+Car5)",
+    "06": "equipment_system.json — v11.0 (v2.1: Quick Tools usa-e-getta, Arma bonus sommato)",
     "07": "enemy_system.json — v9.0 (invariato)",
     "08": "lore_system.json — SKIN CABALISTICA (invariata)",
     "09": "master_guide.json — DA CREARE",

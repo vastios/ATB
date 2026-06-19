@@ -1,8 +1,8 @@
 {
   "section_id": "04",
   "section_name": "Scheda Personaggio — Caratteristiche, Cuori, Equipaggiamento e Layout Area",
-  "version": "15.0",
-  "status": "AGGIORNATO v2 — 14 SLOT FISSI LATO GIOCATORE: 4 Equipaggiamento + 3 Strumenti Rapidi + 4 Abilità + 3 Magie. Le Carte Lato Giocatore sono il CATALOGO DELLE MOSSE del PG. Si attivano tramite Vitalità con tag compatibili.",
+  "version": "16.0",
+  "status": "AGGIORNATO v2.1 — 14 SLOT FISSI LATO GIOCATORE: 4 Equipaggiamento + 3 Strumenti Rapidi (SOLO usa-e-getta, confermato v2.1) + 4 Abilità + 3 Magie. Le Carte Lato Giocatore sono il CATALOGO DELLE MOSSE del PG. Si attivano tramite Vitalità con tag compatibili.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "NESSUNA scheda cartacea (v2). Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Istinto, Analisi, Evasione, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. NOVITÀ v2: il PG ha 14 SLOT FISSI per Carte Lato Giocatore (4 Equipaggiamento + 3 Strumenti Rapidi + 4 Abilità + 3 Magie) che costituiscono il suo catalogo di mosse.",
   "player_area_layout": {
@@ -48,8 +48,10 @@
           },
           "quick_items": {
             "slots": 3,
-            "nature": "Oggetti monouso (Pozioni, Grimaldelli, Bombe, ecc.)",
+            "nature": "Oggetti usa-e-getta (Pozioni, Grimaldelli, Bombe, Pergamene, Bendaggi, ecc.) — CONFERMATO v2.1: SOLO usa-e-getta",
             "consumable": true,
+            "wound_system": "NESSUNO — gli Strumenti Rapidi NON hanno sistema di ferite a 2 stadi. Si consumano all'uso e vanno riacquistati.",
+            "context": "Principalmente usati IN combattimento (pozioni, pergamene, bombe, bendaggi, ecc.)",
             "fixed_effect": "Spesso hanno effetto fisso, non scala con T",
             "activation": "Richiede Vitalità con tag [Strumento]"
           },
@@ -64,7 +66,7 @@
             "slots": 3,
             "nature": "Sistema Materie FF7: ogni Magia è una Materia con 5 livelli di potere",
             "level_effects": "I 5 livelli non sono solo graduazioni di potenza — ogni livello può avere EFFETTI DIVERSI",
-            "esper": "Al livello 5, può essere evocato l'Esper collegato (effetto molto più potente)",
+            "esper": "Al livello 5, può essere evocato l'Esper collegato (effetto molto più potente). CONDIZIONE DOPPIA v2.1: richiede Vitalità T5 E Caratteristica PG = 5. NESSUN limite di utilizzo, ma rarità delle condizioni rende l'attivazione MOLTO DIFFICILE.",
             "max_level_cap": "Il PG raggiunge solo i livelli ≤ al suo valore di Caratteristica",
             "activation": "Richiede Vitalità con tag [Magia] e caratteristica corrispondente (solitamente Risonanza)"
           }
@@ -346,6 +348,9 @@
     "v10": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
     "v11": "LAYOUT AREA GIOCATORE a 4 Zone. Caratteristiche in LINEE (non pile). SOGLIA DEL VUOTO: Caratteristica a 0 = ferita Cuore OBBLIGATORIA. DUE CATEGORIE DI DANNO: Standard (scelta Milling/Caratteristica) vs Diretto (nessuna scelta). Cuori NON sono opzione per Danno Standard.",
     "v12": "ARMIMPROVVISATE formalizzate. ARMI ALCHEMICHE come unica fonte di potere equipaggiabile. RICOMPENSE riviste: Impresa NON cura Cuori. Esempi visivi del layout area giocatore.",
-    "v13": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2), specializzazione (livelli 3-5). Ogni Caratteristica ha un profilo temporale unico. T5 accessibile dal livello 4 per tutte le Caratteristiche."
+    "v13": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2), specializzazione (livelli 3-5). Ogni Caratteristica ha un profilo temporale unico. T5 accessibile dal livello 4 per tutte le Caratteristiche.",
+    "v14": "ARCHITETTURA v2: 14 slot Lato Giocatore (4 Eq + 3 Strum + 4 Ab + 3 Mag). Vitalità come chiavi di attivazione. Scomparsi [Imposizione]/[Opposizione].",
+    "v15": "ARCHITETTURA v2.0: aggiunte slot dettagli per Strumenti Rapidi (3), Abilità (4), Magie (3). Magie FF7 Materie con 5 livelli + Esper al Liv 5.",
+    "v16": "ARCHITETTURA v2.1: Strumenti Rapidi confermati SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA, rarità elevata)."
   }
 }

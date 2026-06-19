@@ -1,8 +1,8 @@
 {
   "section_id": "01",
   "section_name": "Anatomia delle Carte — Vitalità e Carte Lato Giocatore",
-  "version": "13.0",
-  "status": "AGGIORNATO v2 — Le Carte Vitalità non definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]). I loro TAG sono CHIAVI DI ATTIVAZIONE che permettono di agganciare Carte Lato Giocatore (Equipaggiamento, Strumenti Rapidi, Abilità, Magie). Le Magie seguono il modello Materie FF7: 5 livelli di potere + Esper al Liv 5.",
+  "version": "14.0",
+  "status": "AGGIORNATO v2.1 — Le Carte Vitalità non definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]). I loro TAG sono CHIAVI DI ATTIVAZIONE che permettono di agganciare Carte Lato Giocatore (Equipaggiamento, Strumenti Rapidi, Abilità, Magie). Le Magie seguono il modello Materie FF7: 5 livelli di potere + Esper al Liv 5 (richiede T5 + Caratteristica 5). [Fulmineo] = carta pagante che si attiva nel suo slot. Danno Arma = Tabella Potere Vitalità + bonus opzionali dell'Arma.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Struttura di TUTTE le carte del gioco. La v2 divide le carte in DUE famiglie: (1) Carte Vitalità (riserva di energia), (2) Carte Lato Giocatore (catalogo delle mosse). Le Vitalità forniscono energia + chiavi di attivazione; le Carte Lato Giocatore forniscono gli effetti reali.",
   "v2_paradigm_shift": {
@@ -206,7 +206,9 @@
         "id": 10,
         "name": "Economia",
         "tags": ["[Fulmineo]"],
-        "v2_role": "DA DEFINIRE — proposta: la Vitalità con [Fulmineo] si attiva anche quando è giocata COPERTA come costo tempo per un'altra. Unico modo per fare più azioni per turno.",
+        "v2_role": "RISOLTO v2.1 — Una Vitalità con [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. La carta [Fulmineo] va nello slot del suo Costo Tempo.",
+        "example": "Per giocare una T4 SCOPERTA servono 3 carte paganti. Se una delle 3 ha [Fulmineo], può essere giocata SCOPERTA e si attiva nel proprio slot. Sequenza: COPERTA — SCOPERTA([Fulmineo], T2) — COPERTA — SCOPERTA(T4). La carta Fulmineo attiva la sua Carta Lato Giocatore nel tick 2 E conta come pagamento per la T4 che si attiverà nel tick 4.",
+        "strategic_value": "Unico modo per fare più azioni per turno. Permette di combinare un'azione preparatoria (es. buf o posizionamento) con l'azione principale, sfruttando lo stesso pagamento di costo.",
         "optional": true
       },
       {
@@ -238,8 +240,8 @@
       {
         "id": 2,
         "name": "Almeno un Tag Richiesto",
-        "rule": "La Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. (DA DEFINIRE: se la Carta richiede 2+ tag, la Vitalità deve avere TUTTI o ALMENO UNO?)",
-        "open_question": "Vedi OPEN_QUESTIONS_V2.multi_tag_requirements in 00_project_metadata.json"
+        "rule": "La Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. DEFAULT ADOTTATO v2.1 (da raffinare prossima sessione): se la Carta richiede 2+ tag, basta che la Vitalità ne abbia ALMENO UNO.",
+        "note": "Il principio è che ogni tag è una CHIAVE separata. Una Carta Lato Giocatore può elencare più chiavi alternative (es. Arma con [Strumento] OR [Ferita]) — basta che la Vitalità ne abbia una per attivarla."
       },
       {
         "id": 3,
@@ -257,14 +259,15 @@
         "T5": "Scegli tra 1°, 2°, 3°, 4° o 5° livello"
       },
       "cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Istinto 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5).",
-      "magic_espers": "Per le Magie, il livello 5 permette di evocare l'Esper collegato. Richiede PG con Caratteristica 5 + Vitalità T5."
+      "magic_espers_v2_1": "Per le Magie, l'Esper si attiva SOLO con Vitalità T5 E Caratteristica PG = 5 (condizione DOPPIA). Nessun limite di utilizzo per combattimento, ma la rarità delle condizioni lo rende MOLTO DIFFICILE da attivare."
     },
     "example": {
       "scenario": "PG con Istinto 3 ha equipaggiata la Spada Lunga (Arma, richiede [Strumento]).",
       "vitality_played": "Istinto T3 con tag [Strumento] [Ferita]",
       "activation": "La Vitalità ha caratteristica Istinto (corretta) e tag [Strumento] (richiesto dall'Arma). Attivazione valida.",
+      "damage_calculation_v2_1": "DANNO = Tabella Potere Vitalità(Istinto 3 × T3 = 8) + Bonus Opzionale Arma(Spada Lunga +2 danno) = 10 danno totale. [Ferita] dà bonus aggiuntivo se il PG è ferito.",
       "level_of_effect": "T3 → può scegliere tra livello 1, 2 o 3 della Spada Lunga. Ma il PG ha Istinto 3, quindi massimo livello 3 → può scegliere 1, 2 o 3.",
-      "result": "Attiva la Spada Lunga al livello scelto. Danno = Potere Arma(livello scelto). [Ferita] dà bonus se il PG è ferito."
+      "result": "Attiva la Spada Lunga al livello scelto. Il danno base è quello della Tabella Potere della Vitalità; l'Arma aggiunge eventuali bonus ed effetti speciali del livello scelto."
     }
   },
   "vitality_deck_composition": {
@@ -280,23 +283,26 @@
       "type": "Equipaggiamento (Arma)",
       "characteristic": "Istinto",
       "activation_tags_required": ["[Strumento]"],
-      "power_table": {
-        "1": "3 danno",
-        "2": "5 danno",
-        "3": "8 danno",
-        "4": "12 danno",
-        "5": "18 danno"
+      "damage_bonus": "+2 (si SOMMA alla Tabella Potere della Vitalità)",
+      "level_effects_table": {
+        "1": "Nessun effetto aggiuntivo oltre al danno base",
+        "2": "Nessun effetto aggiuntivo",
+        "3": "Colpo Potente — bersaglio subisce -1 al prossimo attacco",
+        "4": "Colpo Devastante — bersaglio perde 1 tick di iniziativa",
+        "5": "Colpo Mortale — se il bersaglio è sotto 5 PF, doubling del danno"
       },
       "special_power": "1° ferimento: Attacco Fendente — colpisci 2 nemici adiacenti per metà danno.",
       "destruction_effect": "Nessuno (arma base distrutta = nessun effetto speciale)."
     },
     "quick_item": {
       "name": "Pozione",
-      "type": "Strumento Rapido",
+      "type": "Strumento Rapido (usa-e-getta)",
       "characteristic": "qualsiasi",
       "activation_tags_required": ["[Strumento]"],
       "fixed_effect": "Cura 5 punti Vitalità a un PG (recupera 5 carte dalla Pila Scarti al Mazzo Vitalità). Effetto fisso, non scala con T.",
-      "consumable": true
+      "consumable": true,
+      "wound_system": "NESSUNO — gli Strumenti Rapidi sono SOLO usa-e-getta (v2.1 confermato). Si consumano quando usati. Nessun sistema di ferite a 2 stadi.",
+      "context": "Principalmente usati IN combattimento (pozioni, pergamene, bombe, bendaggi, ecc.)"
     },
     "ability": {
       "name": "Intimidire",
@@ -325,6 +331,7 @@
         "4": "Firaga — 8 danno a tutti i nemici (Area)",
         "5": "Ifrit (Esper) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)"
       },
+      "esper_activation_v2_1": "L'Esper (Liv 5) si attiva SOLO con Vitalità T5 E Caratteristica PG = 5 (CONDIZIONE DOPPIA). NESSUN limite di utilizzo per combattimento, ma la rarità delle condizioni lo rende MOLTO DIFFICILE da attivare.",
       "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello ha un EFFETTO DIVERSO (1 bersaglio → 2 bersagli → Area → DoT → Esper)."
     }
   },

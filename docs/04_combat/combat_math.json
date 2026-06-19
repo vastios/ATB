@@ -1,16 +1,17 @@
 {
   "section_id": "05",
   "section_name": "Matematica di Combattimento e Risoluzione",
-  "version": "12.0",
-  "status": "AGGIORNATO v2 — Le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper. Equipaggiamento feribile a 2 stadi.",
+  "version": "13.0",
+  "status": "AGGIORNATO v2.1 — Le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper (richiede T5 + Caratteristica 5). Equipaggiamento feribile a 2 stadi. Danno Arma = Tabella Potere Vitalità + bonus opzionale dell'Arma. Strumenti Rapidi SOLO usa-e-getta.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB (v2). NOVITÀ: le azioni di attacco/difesa non sono più predefinite. Un PG attacca solo se ha un'Arma equipaggiata e la attiva con una Vitalità [Strumento]. Un PG difende solo se ha un'Abilità Difensiva equipaggiata e la attiva con una Vitalità compatibile. Le Magie sono Carte Lato Giocatore con 5 livelli di potere + Esper al Liv 5. Il danno subito rimane invariato: Standard (Milling o Ferita Caratteristica) e Diretto.",
   "point_4_power_and_damage": {
-    "name": "Punto 4 — Potere e Danni (v2)",
-    "core_rule_v2": "Il danno inflitto è determinato dalla TABELLA POTERE DELLA CARTA LATO GIOCATORE attivata (Arma, Magia o Abilità), NON dalla Vitalità. La Vitalità fornisce solo il TEMPO e il LIVELLO DI EFFETTO selezionabile (T1=1° livello, T5=scegli tra 1-5). Il PG non può superare il livello della sua Caratteristica.",
-    "philosophy_v2": "Le Carte Lato Giocatore definiscono COSA fai. La Vitalità definisce QUANTO POTENTE è (tramite il T). Una Spada Lunga T3 con PG Istinto 3 fa 8 danni (livello 3 della tabella Spada Lunga).",
+    "name": "Punto 4 — Potere e Danni (v2.1)",
+    "core_rule_v2_1": "Il danno base è determinato dalla TABELLA POTERE DELLA VITALITÀ (Caratteristica del PG × T della carta giocata). La Carta Lato Giocatore attivata (Arma, Magia o Abilità) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
+    "formula_v2_1": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Carta Lato Giocatore(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "example_v2_1": "PG con Istinto 3 gioca Vitalità Istinto T3 con tag [Strumento]. Tabella Potere Istinto(3) × T3 = 8 danno base. La Spada Lunga (Arma) ha +2 danno bonus = 8 + 2 = 10 danno totale. Se il PG è ferito e la Vitalità ha [Ferita], +1 ulteriore.",
+    "philosophy_v2_1": "La Tabella Potere della Vitalità (già esistente e confermata) resta la base numerica del danno. Le Carte Lato Giocatore aggiungono personalità (effetti speciali per livello) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale senza invalidare la tabella già scritta.",
     "power_table_reference": "Vedi 01_core_engine/card_anatomy.json → player_card_examples_v2 per esempi di tabelle.",
-    "weapon_damage_formula_OPEN": "DA DEFINIRE — quando un'Arma è attivata con Vitalità T3, il danno è: (a) solo Potere Arma(T3), (b) solo Potere Caratteristica(T3), (c) somma, (d) max?",
     "characteristic_power_cap": "Il PG non può selezionare livelli di effetto superiori al suo valore di Caratteristica attuale. Una Caratteristica ferita riduce i livelli raggiungibili.",
     "tag_ferita_interaction": "Se il PG ha almeno una Caratteristica o un Cuore ferito e attiva una Carta Lato Giocatore con una Vitalità che ha il tag [Ferita], ottiene un bonus meccanico aggiuntivo."
   },
@@ -184,7 +185,8 @@
     "v9.0": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa. Punti 4-6 formalizzati in sezioni dedicate.",
     "v10.0": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto (Caratteristica a 0 = Cuore ferito OBBLIGATORIO). Cuori NON sono opzione per Danno Standard.",
     "v11.0": "Danno Anatema e Danno Diretto Cuore formalizzati. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite).",
-    "v12.0": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper al Liv 5. Equipaggiamento feribile a 2 stadi (1° = potere speciale, 2° = distrutto). Senza Arma non si attacca; senza Abilità Difensiva non si difende. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento)."
+    "v12.0": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper al Liv 5. Equipaggiamento feribile a 2 stadi (1° = potere speciale, 2° = distrutto). Senza Arma non si attacca; senza Abilità Difensiva non si difende. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento).",
+    "v13.0": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma. Strumenti Rapidi SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). [Fulmineo] chiarito: carta pagante che si attiva nel proprio slot."
   },
   "v2_magic_esper_system": {
     "name": "Sistema Magie v2 — Materie FF7 + Esper",
@@ -195,9 +197,9 @@
       "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit."
     },
     "esper_evocation": {
-      "trigger": "Livello 5 selezionato (richiede Vitalità T5 + Caratteristica 5 del PG).",
+      "trigger": "Livello 5 selezionato (richiede Vitalità T5 E Caratteristica PG = 5 — CONDIZIONE DOPPIA v2.1).",
       "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente.",
-      "esper_limits_OPEN": "DA DEFINIRE — l'Esper è disponibile ogni volta che si può attivare il livello 5, o ha un limite (es. 1 volta per combattimento)?",
+      "esper_limits_v2_1": "RISOLTO v2.1 — NESSUN limite di utilizzo per combattimento. L'Esper può essere evocato ogni volta che le condizioni sono soddisfatte. TUTTAVIA, la condizione DOPPIA (T5 + Caratteristica 5) è MOLTO RESTRITTIVA: richiede (1) PG con Caratteristica 5 (massimo possibile, 1/10 dei punti creazione), (2) pescare una Vitalità T5 della caratteristica corretta, (3) giocare la Vitalità T5 come azione principale nel tick 5. La rarità intrinseca delle condizioni bilancia la potenza dell'Esper.",
       "examples": {
         "ifrit": "Materia Fuoco Liv 5 → Ifrit: 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
         "shiva": "Materia Ghiaccio Liv 5 → Shiva: 12 danno + congelamento (i nemici saltano il prossimo tick)",
