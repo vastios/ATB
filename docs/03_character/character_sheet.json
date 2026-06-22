@@ -1,10 +1,10 @@
 {
   "section_id": "04",
   "section_name": "Scheda Personaggio — Caratteristiche, Cuori, Equipaggiamento e Layout Area",
-  "version": "16.0",
-  "status": "AGGIORNATO v2.1 — 14 SLOT FISSI LATO GIOCATORE: 4 Equipaggiamento + 3 Strumenti Rapidi (SOLO usa-e-getta, confermato v2.1) + 4 Abilità + 3 Magie. Le Carte Lato Giocatore sono il CATALOGO DELLE MOSSE del PG. Si attivano tramite Vitalità con tag compatibili.",
+  "version": "17.0",
+  "status": "AGGIORNATO v3 — 9 SLOT FISSI LATO GIOCATORE fisici: 4 Equipaggiamento + 5 Strumenti Rapidi (usa-e-getta + talismani craftati da Analisi). Le vecchie Carte Abilità e Carte Magia separate sono RIMOSSE come oggetti fisici — assorbite dalle CARTE CARATTERISTICA NOMINATED (10 carte totali, misto nominated/bianche). Rinomini: Istinto→IMPETO, Evasione→ISTINTO (meccaniche invariate).",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "NESSUNA scheda cartacea (v2). Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (Istinto, Analisi, Evasione, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte scoperte. Ha 3 CUORI che si feriscono in ordine obbligatorio. NOVITÀ v2: il PG ha 14 SLOT FISSI per Carte Lato Giocatore (4 Equipaggiamento + 3 Strumenti Rapidi + 4 Abilità + 3 Magie) che costituiscono il suo catalogo di mosse.",
+  "description": "NESSUNA scheda cartacea (v3). Tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone. Il PG ha 4 CARATTERISTICHE (IMPETO, Analisi, ISTINTO, Risonanza) con valori 1-5, rappresentate da LINEE orizzontali di carte (10 carte Caratteristica totali = somma valori point buy, MISTO nominated/bianche). Ha 3 CUORI che si feriscono in ordine obbligatorio. NOVITÀ v3: il PG ha 9 SLOT FISSI per Carte Lato Giocatore fisiche (4 Equipaggiamento + 5 Strumenti Rapidi) + un POOL DI CARTE CARATTERISTICA NOMINATED che ospitano abilità e magie (sostituiscono le vecchie Carte Abilità e Carte Magia separate).",
   "player_area_layout": {
     "name": "L'Area del Giocatore (La 'Scheda' Fisica)",
     "description": "L'area di ogni giocatore è divisa in quattro zone distinte, disposte davanti a lui per permettere una consultazione immediata.",
@@ -35,10 +35,10 @@
         "effetto_ferita": "Il Valore Statistico si abbassa di 1 per ogni carta girata.",
         "nota_visiva": "Una statistica non ha numeri scritti. La sua forza è determinata esclusivamente dalla quantità di carte scoperte nella linea."
       },
-      "sezione_c_equipaggiamento_inventario_v2": {
-        "name": "C. Carte Lato Giocatore (Catalogo delle Mosse) — v2",
-        "description": "Il PG ha 14 SLOT FISSI per Carte Lato Giocatore. Queste carte sono il CATALOGO DELLE MOSSE del PG: definiscono cosa può fare. Si attivano tramite Vitalità con tag compatibili (vedi 01_core_engine/card_anatomy.json).",
-        "slot_breakdown": {
+      "sezione_c_equipaggiamento_inventario_v3": {
+        "name": "C. Carte Lato Giocatore fisiche + Pool Carte Caratteristica Nominated — v3",
+        "description": "Il PG ha 9 SLOT FISSI per Carte Lato Giocatore fisiche (4 Equipaggiamento + 5 Strumenti Rapidi) + un POOL DI 10 CARTE CARATTERISTICA NOMINATED che ospitano abilità e magie. Le nominated sostituiscono le vecchie Carte Abilità e Carte Magia separate (rimosse in v3). Tutti i poteri si attivano tramite Vitalità con tag compatibili (vedi 01_core_engine/card_anatomy.json).",
+        "slot_breakdown_physical_cards": {
           "equipment": {
             "slots": 4,
             "composition": "1 Arma + 1 Scudo (o Doppia Arma) + 1 Armatura + 1 Accessorio",
@@ -47,31 +47,31 @@
             "activation": "Richiede Vitalità con tag [Strumento]"
           },
           "quick_items": {
-            "slots": 3,
-            "nature": "Oggetti usa-e-getta (Pozioni, Grimaldelli, Bombe, Pergamene, Bendaggi, ecc.) — CONFERMATO v2.1: SOLO usa-e-getta",
+            "slots": 5,
+            "nature": "Oggetti usa-e-getta (Pozioni, Grimaldelli, Bombe, Pergamene, Bendaggi, ecc.) + TALISMANI craftati da Analisi (pergamene offensive monouso)",
             "consumable": true,
-            "wound_system": "NESSUNO — gli Strumenti Rapidi NON hanno sistema di ferite a 2 stadi. Si consumano all'uso e vanno riacquistati.",
-            "context": "Principalmente usati IN combattimento (pozioni, pergamene, bombe, bendaggi, ecc.)",
+            "wound_system": "NESSUNO — gli Strumenti Rapidi NON hanno sistema di ferite a 2 stadi. Si consumano all'uso e vanno riacquistati o ricraftati.",
+            "context": "Principalmente usati IN combattimento (pozioni, pergamene, bombe, bendaggi, talismani Analisi, ecc.)",
             "fixed_effect": "Spesso hanno effetto fisso, non scala con T",
             "activation": "Richiede Vitalità con tag [Strumento]"
-          },
-          "abilities": {
-            "slots": 4,
-            "nature": "Mosse basate su caratteristica (Intimidire, Persuadere, Analisi Tattica, Schivata, ecc.)",
-            "out_of_combat": "Valide ANCHE fuori dal combattimento (Sociale, Esplorazione, Conoscenze)",
-            "linked_characteristic": "Ogni Abilità è legata a una caratteristica specifica (dà identità alle mosse)",
-            "activation": "Richiede Vitalità con tag [Abilità] e caratteristica corrispondente"
-          },
-          "magic": {
-            "slots": 3,
-            "nature": "Sistema Materie FF7: ogni Magia è una Materia con 5 livelli di potere",
-            "level_effects": "I 5 livelli non sono solo graduazioni di potenza — ogni livello può avere EFFETTI DIVERSI",
-            "esper": "Al livello 5, può essere evocato l'Esper collegato (effetto molto più potente). CONDIZIONE DOPPIA v2.1: richiede Vitalità T5 E Caratteristica PG = 5. NESSUN limite di utilizzo, ma rarità delle condizioni rende l'attivazione MOLTO DIFFICILE.",
-            "max_level_cap": "Il PG raggiunge solo i livelli ≤ al suo valore di Caratteristica",
-            "activation": "Richiede Vitalità con tag [Magia] e caratteristica corrispondente (solitamente Risonanza)"
           }
         },
-        "total_slots": 14,
+        "characteristic_cards_pool_v3": {
+          "name": "Pool Carte Caratteristica Nominated",
+          "total_cards": 10,
+          "composition_rule": "10 carte Caratteristica totali = somma dei valori point buy (es: Impeto 3 + Analisi 2 + Istinto 1 + Risonanza 4 = 10 carte).",
+          "mixed_pool": "Il pool è MISTO: alcune nominated (con nome + abilità/magie collegate), altre bianche (segnaposto, nessuna abilità).",
+          "creation_choice": "Alla creazione il giocatore SCEGLIE quali carte sono nominated e quali bianche. Le nominated si possono cambiare con scelte narrative (tra sessioni).",
+          "progression": "Le carte bianche vengono sostituite da nominated durante la progressione (narrativa di crescita del PG).",
+          "specialized_vs_generic": {
+            "specialized": "3 abilità in TEMA (potenza crescente sbloccata dal livello di Caratteristica). Es: Impeto 'Berserker' con Colpo Forsennato T1, Furia Distruttrice T3, Massacro T5.",
+            "generic": "3 abilità DIVERSE (tutte disponibili a livello basso, più deboli ma versatili). Es: Impeto 'Combattente di Strada' con Testata, Calcio Basso, Spintonata.",
+            "no_level_requirement": "Nessun livello minimo richiesto — la Tabella Potere Vitalità scala automaticamente l'effetto."
+          },
+          "wound_effect": "Una Carta Caratteristica nominated FERITA disattiva TUTTE le sue abilità. Il tag [Ferita] sulle Vitalità permette di RIATTIVARE le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata (scelta del giocatore se più carte dello stesso tipo sono ferite).",
+          "magic_hosting": "Le nominated Risonanza ospitano incantesimi elementali e di cura. Le nominated Analisi ospitano utility (scassinare, riparare, reveal debolezze) + crafting di talismani monouso (vedi 05_equipment/equipment_system.json)."
+        },
+        "total_slots": 9,
         "armi_improvvisate": {
           "description": "Se un PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvvisate come fallback.",
           "meccanica": "Attacco base con Potere nudo della Vitalità (ignora tutti i tag).",
@@ -90,12 +90,12 @@
       "natura": "Questa zona è temporanea: le carte qui posizionate verranno scartate nella Zona 1 alla fine della risoluzione di ogni colonna temporale."
     },
     "esempio_visivo_inizio": {
-      "statistiche": "Istinto 3, Analisi 2, Evasione 1, Risonanza 4",
-      "layout": "[CUORE 1] [CUORE 2] [CUORE 3]\n[3 CARTE ISTINTO (Rosso)]  [2 CARTE ANALISI (Giallo)]  [1 CARTA EVASIONE (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (Dritta)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Pozione] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+      "statistiche": "Impeto 3, Analisi 2, Istinto 1, Risonanza 4",
+      "layout": "[CUORE 1] [CUORE 2] [CUORE 3]\n[3 CARTE IMPETO (Rosso)]  [2 CARTE ANALISI (Giallo)]  [1 CARTA ISTINTO (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (Dritta)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Pozione] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Talismano Fuoco] [SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
     },
     "esempio_visivo_danno": {
       "situazione": "Subita una ferita alla Analisi e usura la spada",
-      "layout": "[CUORE 1] [CUORE 2 (GIRATA)] [CUORE 3]\n[3 CARTE ISTINTO (Rosso)]  [1 CARTA ANALISI (Giallo)] [1 CARTA ANALISI (GIRATA)]  [1 CARTA EVASIONE (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (GIRATA)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
+      "layout": "[CUORE 1] [CUORE 2 (GIRATA)] [CUORE 3]\n[3 CARTE IMPETO (Rosso)]  [1 CARTA ANALISI (Giallo)] [1 CARTA ANALISI (GIRATA)]  [1 CARTA ISTINTO (Blu)]  [4 CARTE RISONANZA (Verde)]\n[SPADA ALCHEMICA (GIRATA)]  [ARMATURA (Dritta)]\n[SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Bomba] [SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Vuoto] [SLOT RAPIDO: Vuoto]\n[ZAINO: 6 carte coperte]"
     }
   },
   "character_creation": {
@@ -120,29 +120,33 @@
   "characteristics_cards": {
     "mechanic": "Il valore di una Caratteristica (1-5) equivale al NUMERO FISICO DI CARTE nella sua LINEA ORIZZONTALE. Assegnati i valori, il giocatore dispone tante carte della singola Caratteristica in linea quante è il valore. Es: Risonanza 3 = 3 carte fisiche 'Risonanza' in linea orizzontale sul tavolo.",
     "characteristics_list": {
-      "Istinto": {
+      "Impeto": {
         "border_color": "Rosso",
         "description": "L'approccio non ragionato. Sfondare una porta chiusa, urlare in faccia a chi ci offende, colpire senza riflettere sulle conseguenze. Impulso primordiale, irruenza, reazione immediata.",
         "keywords": ["impulso", "irruenza", "sfondare", "urlare", "reazione_immediata"],
-        "damage_type_alignment": "Danno Fisico bersaglia Istinto ed Evasione."
+        "damage_type_alignment": "Danno Fisico bersaglia Impeto e Istinto.",
+        "v3_rename_note": "Ex 'Istinto' (v2). Meccanica invariata, solo rename per chiarezza semantica."
       },
       "Analisi": {
         "border_color": "Giallo",
-        "description": "Intelletto, emozioni, strategia, percezione razionale, magia ragionata.",
-        "keywords": ["studio", "strategia", "conoscenza", "magia_analitica", "percezione"],
-        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi."
+        "description": "Intelletto, emozioni, strategia, percezione razionale, magia ragionata + crafting di talismani monouso offensivi.",
+        "keywords": ["studio", "strategia", "conoscenza", "magia_analitica", "percezione", "crafting_talismani"],
+        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi.",
+        "v3_path": "Magia utility (scassinare, riparare, reveal debolezze) + crafting talismani offensivi monouso."
       },
-      "Evasione": {
+      "Istinto": {
         "border_color": "Blu",
-        "description": "Destrezza, schiva, furtività, spostamento fluido, precisione.",
-        "keywords": ["schiva", "evasione", "furtivita", "precisione", "mobilita"],
-        "damage_type_alignment": "Danno Fisico bersaglia Istinto ed Evasione."
+        "description": "Destrezza, schiva, furtività, spostamento fluido, precisione, riflessi.",
+        "keywords": ["schiva", "istinto", "furtivita", "precisione", "mobilita", "riflessi"],
+        "damage_type_alignment": "Danno Fisico bersaglia Impeto e Istinto.",
+        "v3_rename_note": "Ex 'Evasione' (v2). Meccanica invariata, solo rename per chiarezza semantica."
       },
       "Risonanza": {
         "border_color": "Verde",
-        "description": "La capacità di entrare in contatto col mondo circostante, capirlo non perché lo si è studiato ma perché se ne empatizza e se ne sente 'la voce'. Approccio empatico, comprensione attraverso il sentire, connessione con la natura e gli elementi.",
-        "keywords": ["empatia", "connessione", "sentire", "voce_del_mondo", "comprensione_empatica"],
-        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi."
+        "description": "La capacità di entrare in contatto col mondo circostante, capirlo non perché lo si è studiato ma perché se ne empatizza e se ne sente 'la voce'. Approccio empatico, comprensione attraverso il sentire, connessione con la natura e gli elementi. Magia elementale e di cura.",
+        "keywords": ["empatia", "connessione", "sentire", "voce_del_mondo", "comprensione_empatica", "magia_elementale"],
+        "damage_type_alignment": "Danno Magico bersaglia Risonanza e Analisi.",
+        "v3_path": "Magia diretta: incantesimi elementali (fuoco, ghiaccio, fulmine) + cura."
       }
     },
     "card_nature": {
@@ -153,7 +157,7 @@
     "deck_composition_rule": {
       "name": "La Regola Fondamentale del Mazzo",
       "rule": "Il valore della caratteristica determina esattamente quante carte di quel colore sono presenti nel Mazzo Vitalità di 60 carte (Valore Statistico × 6 = Numero di Carte).",
-      "example": "Se un giocatore ha Istinto 3, avrà esattamente 18 carte Istinto nel suo mazzo di 60 carte.",
+      "example": "Se un giocatore ha Impeto 3, avrà esattamente 18 carte Impeto nel suo mazzo di 60 carte.",
       "immutabilita": "Durante un combattimento o una scena di tensione, il Mazzo Vitalità non viene mai modificato, né nel numero totale delle carte, né nella composizione dei colori. Le ferite che il personaggio subisce non rimuovono fisicamente le carte dal mazzo. Le carte rimangono nel mazzo, ma la loro efficienza viene alterata dalla Linea di Carte sul tavolo."
     },
     "linee_visualizzazione": {
@@ -192,16 +196,16 @@
       },
       "danni_oltre_lo_zero": "Se il personaggio subisce un danno mirato a una Caratteristica già a 0, non succede nulla di meccanico (non ci sono più carte da girare). Il collegamento è già annientato.",
       "riepilogo_erosione": {
-        "inizio": "Istinto = [Carta 1] [Carta 2] [Carta 3] (Valore 3)",
-        "prima_ferita": "Istinto = [Carta 1] [Carta 2] [Carta 3 Girata] (Valore 2)",
-        "seconda_ferita": "Istinto = [Carta 1] [Carta 2 Girata] [Carta 3 Girata] (Valore 1)",
-        "soglia_del_vuoto": "Istinto = [Carta 1 Girata] [Carta 2 Girata] [Carta 3 Girata] (Valore 0). Il giocatore gira CONTEMPORANEAMENTE un Cuore."
+        "inizio": "Impeto = [Carta 1] [Carta 2] [Carta 3] (Valore 3)",
+        "prima_ferita": "Impeto = [Carta 1] [Carta 2] [Carta 3 Girata] (Valore 2)",
+        "seconda_ferita": "Impeto = [Carta 1] [Carta 2 Girata] [Carta 3 Girata] (Valore 1)",
+        "soglia_del_vuoto": "Impeto = [Carta 1 Girata] [Carta 2 Girata] [Carta 3 Girata] (Valore 0). Il giocatore gira CONTEMPORANEAMENTE un Cuore."
       }
     },
     "sostituzione": {
       "name": "Sostituzione (Il Cambiamento del PG)",
       "principio": "Le Caratteristiche NON possono essere distrutte. Il PG non perde mai capacità totali. Ma può CAMBIARE: rinunciare a parte di un approccio per abbracciarne un altro. È l'evoluzione del personaggio attraverso la storia.",
-      "meccanica": "Il PG sposta 1 punto da una Caratteristica a un'altra. Il totale dei punti resta sempre 10. Es: Istinto 4 → Istinto 3, Risonanza 1 → Risonanza 2. Il PG ha perso parte della sua irruenza per diventare più empatico.",
+      "meccanica": "Il PG sposta 1 punto da una Caratteristica a un'altra. Il totale dei punti resta sempre 10. Es: Impeto 4 → Impeto 3, Risonanza 1 → Risonanza 2. Il PG ha perso parte della sua irruenza per diventare più empatico.",
       "quando": "Solo per eventi narrativamente significativi: traumi che cambiano la prospettiva del PG, rivelazioni che trasformano il suo modo di agire, lunghi periodi di studio o addestramento. NON è una meccanica di combattimento.",
       "impatto_sul_mazzo": "La composizione del Mazzo Vitalità si aggiorna di conseguenza: 6 carte in meno del colore perso, 6 carte in più del colore guadagnato. Il totale resta 60.",
       "design_intent": "Il PG è un essere vivente che cambia. La sostituzione non è una perdita — è una trasformazione. Il Guerriero ferito che impara a pensare di più. Il Saggio che scopre la rabbia. La persona che cambia è più interessante di quella che si spezza."
@@ -287,8 +291,8 @@
   },
   "damage_typing": {
     "danno_fisico": {
-      "targets": ["Istinto", "Evasione"],
-      "description": "Colpi, tagli, impatti. Bersaglia chi AGISCE: l'impulso (Istinto) e il corpo (Evasione).",
+      "targets": ["Impeto", "Istinto"],
+      "description": "Colpi, tagli, impatti. Bersaglia chi AGISCE: l'impulso (Impeto) e il corpo (Istinto).",
       "effect": "Per Danno Standard: scelta Milling/Caratteristica. Per Danno Diretto: ferisce la Caratteristica bersagliata senza scelta."
     },
     "danno_magico": {
@@ -351,6 +355,7 @@
     "v13": "DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La 'Ricetta del 6' uniforme viene sostituita da tabelle per livello (1-5) e per Caratteristica. Base comune (livelli 1-2), specializzazione (livelli 3-5). Ogni Caratteristica ha un profilo temporale unico. T5 accessibile dal livello 4 per tutte le Caratteristiche.",
     "v14": "ARCHITETTURA v2: 14 slot Lato Giocatore (4 Eq + 3 Strum + 4 Ab + 3 Mag). Vitalità come chiavi di attivazione. Scomparsi [Imposizione]/[Opposizione].",
     "v15": "ARCHITETTURA v2.0: aggiunte slot dettagli per Strumenti Rapidi (3), Abilità (4), Magie (3). Magie FF7 Materie con 5 livelli + Esper al Liv 5.",
-    "v16": "ARCHITETTURA v2.1: Strumenti Rapidi confermati SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA, rarità elevata)."
+    "v16": "ARCHITETTURA v2.1: Strumenti Rapidi confermati SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA, rarità elevata).",
+    "v17": "ARCHITETTURA v3: Carte Caratteristica diventano NOMINATED (10 carte totali, misto nominated/bianche) — assorbono le vecchie Carte Abilità e Carte Magia separate. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5 (ospitano anche talismani craftati da Analisi). Slot totali Lato Giocatore fisici ridotti da 14 a 9 (4 Eq + 5 Strum). Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO. Magia a due vie: Risonanza (elementale+cura) e Analisi (utility+crafting talismani)."
   }
 }

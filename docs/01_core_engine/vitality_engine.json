@@ -1,23 +1,23 @@
 {
   "section_id": "02",
   "section_name": "Motore Vitalità",
-  "version": "10.0",
-  "status": "AGGIORNATO v2 — Il Mazzo Vitalità è la RISERVA DI ENERGIA del PG. Le sue carte forniscono TEMPO + TAG DI ATTIVAZIONE per agganciare Carte Lato Giocatore. Rimangono invariati: Danno a Doppio Strato, Dilemma del Guerriero, Soglia del Vuoto, Cure Asimmetriche. La Ferita Caratteristica è SEMPRE sulla Caratteristica (NON trasferibile all'Equipaggiamento).",
+  "version": "11.0",
+  "status": "AGGIORNATO v3 — Rinomini caratteristiche (Istinto→IMPETO, Evasione→ISTINTO). Meccanica invariata. Il Mazzo Vitalità è la RISERVA DI ENERGIA del PG. Le sue carte forniscono TEMPO + TAG DI ATTIVAZIONE per attivare poteri dalle Carte Caratteristica nominated o dalle Carte Lato Giocatore fisiche. Rimangono invariati: Danno a Doppio Strato, Dilemma del Guerriero, Soglia del Vuoto, Cure Asimmetriche. La Ferita Caratteristica è SEMPRE sulla Caratteristica (NON trasferibile all'Equipaggiamento).",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Il sistema STAMINA del gioco (v2). Il Mazzo Vitalità è la RISERVA DI ENERGIA del PG. Le carte forniscono: (1) TEMPO per la Cintura ATB, (2) TAG DI ATTIVAZIONE per agganciare Carte Lato Giocatore. Le Vitalità NON definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]). Si giocano SCOPERTA (attivano una Carta Lato Giocatore) o COPERTA (puro costo tempo). Il mazzo si esaurisce e NON si rimescola: quando finisce, il PG collassa (svenimento + ferita al Cuore). Il danno si divide in DUE CATEGORIE: Standard (scelta tra Milling o Ferita Caratteristica) e Diretto (nessuna scelta). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore.",
+  "description": "Il sistema STAMINA del gioco (v3). Il Mazzo Vitalità è la RISERVA DI ENERGIA del PG. Le carte forniscono: (1) TEMPO per la Cintura ATB, (2) TAG DI ATTIVAZIONE per attivare poteri dalle Carte Caratteristica nominated o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Vitalità NON definiscono l'azione: i loro TAG sono chiavi. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo si esaurisce e NON si rimescola: quando finisce, il PG collassa (svenimento + ferita al Cuore). Il danno si divide in DUE CATEGORIE: Standard (scelta tra Milling o Ferita Caratteristica) e Diretto (nessuna scelta). La Soglia del Vuoto (Caratteristica a 0) forza la ferita di un Cuore.",
   "deck_properties": {
     "deck_size": "60 carte Vitalità (10 Punti Caratteristica × 6 carte per punto). Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG.",
     "hand_size": "5",
     "hand_refill": "Il PG pesca SUBITO dopo aver giocato carte nella Cintura ATB per tornare a 5. La mano è SEMPRE piena.",
     "hand_refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione.",
     "hand_refill_design_intent": "Il giocatore ha sempre opzioni. L'unico vero costo è lungo termine (Mazzo Vitalità che si assottiglia).",
-    "v2_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per le Carte Lato Giocatore (vedi 01_core_engine/card_anatomy.json)."
+    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi). Vedi 01_core_engine/card_anatomy.json."
   },
   "fatigue_mechanic": {
     "name": "Fatica",
-    "action_v2": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento. Le Vitalità SCOPERTE attivano una Carta Lato Giocatore compatibile.",
+    "action_v3": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento. Le Vitalità SCOPERTE attivano un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG.",
     "resolution": "Tutte le carte (coperte e scoperte) finiscono nella Pila Scarti alla risoluzione della colonna.",
-    "example_v2": "Gioco una Vitalità T3 SCOPERTA con [Strumento]: attiva la mia Spada Lunga (Arma) al livello 3. Gioco 2 Vitalità COPERTE per pagare il Costo Tempo complessivo. Pesco per tornare a 5.",
+    "example_v3": "Gioco una Vitalità T3 SCOPERTA con [Strumento]: attiva la mia Spada Lunga (Arma) al livello 3. Gioco 2 Vitalità COPERTE per pagare il Costo Tempo complessivo. Pesco per tornare a 5.",
     "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione."
   },
   "exhaustion_condition": {
@@ -126,6 +126,7 @@
     "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
     "v8": "DUE CATEGORIE DI DANNO formalizzate nel Dilemma del Guerriero: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO) vs Diretto (nessuna scelta, gira carte pari al danno). Soglia del Vuoto: Caratteristica a 0 = Cuore ferito OBBLIGATORIO. Cuori NON sono opzione per Danno Standard. Punti Impresa NON curano Cuori. Sparing dà ricompense.",
-    "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE per le Carte Lato Giocatore. Rimossi [Imposizione]/[Opposizione]. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento). Equipaggiamento ha ferite proprie volontarie (vedi 05_equipment/equipment_system.json)."
+    "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE per le Carte Lato Giocatore. Rimossi [Imposizione]/[Opposizione]. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento). Equipaggiamento ha ferite proprie volontarie (vedi 05_equipment/equipment_system.json).",
+    "v10": "ARCHITETTURA v3: rinomini caratteristiche (Istinto→IMPETO, Evasione→ISTINTO). Le Carte Vitalità ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE — assorbite nelle nominated. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5."
   }
 }

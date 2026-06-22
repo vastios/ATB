@@ -1,8 +1,8 @@
 {
   "section_id": "08",
   "section_name": "SKIN #1 — Cosmologia Cabalistica e Rivelazione Progressiva",
-  "version": "4.0",
-  "status": "AGGIORNATO v2 — INVARIATA NELLA SOSTANZA. La skin cabalistica continua a vestire le meccaniche pure. Le Carte Lato Giocatore (Equipaggiamento, Strumenti, Abilità, Magie) della v2 possono essere vestite con la terminologia cabalistica: Armi Alchemiche, Sigilli, Sephiroth, ecc.",
+  "version": "5.0",
+  "status": "AGGIORNATO v3 — INVARIATA NELLA SOSTANZA. La skin cabalistica continua a vestire le meccaniche pure. In v3, le Carte Caratteristica NOMINATED (che assorbono le vecchie Carte Abilità e Carte Magia) possono essere vestite con la terminologia cabalistica: nomi di Sephiroth, Sigilli, Virtù delle Sefirot, ecc. Le Carte Lato Giocatore fisiche (Equipaggiamento + 5 Strumenti Rapidi) mantengono la vestizione: Armi Alchemiche, Sigilli, Talismani (craftati da Analisi → pergamene con Nomi di Potere). Rinomini caratteristiche v3: Istinto→IMPETO (Gevurah), Evasione→ISTINTO (Hod).",
   "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
   "skin_metadata": {
     "skin_name": "Cosmologia Cabalistica",
@@ -135,8 +135,8 @@
     "mappings": [
       {
         "mechanical_term": "Caratteristica",
-        "material_level": "Capacità naturale (Risonanza, Evasione, Analisi, Istinto)",
-        "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione). L'Asse Comprendere (Risonanza + Analisi) e l'Asse Agire (Istinto + Evasione) riflettono la discesa della Luce: dal Comprendere (mondi superiori) all'Agire (mondi inferiori)."
+        "material_level": "Capacità naturale (Risonanza, Istinto, Analisi, Impeto)",
+        "kabbalistic_nature": "Connessione a un Mondo (Emanazione, Creazione, Formazione, Azione). L'Asse Comprendere (Risonanza + Analisi) e l'Asse Agire (Impeto + Istinto) riflettono la discesa della Luce: dal Comprendere (mondi superiori) all'Agire (mondi inferiori). Rinomini v3: Istinto→IMPETO (irruenza), Evasione→ISTINTO (riflessi)."
       },
       {
         "mechanical_term": "Cuori",

@@ -1,98 +1,143 @@
 {
   "section_id": "01",
-  "section_name": "Anatomia delle Carte — Vitalità e Carte Lato Giocatore",
-  "version": "14.0",
-  "status": "AGGIORNATO v2.1 — Le Carte Vitalità non definiscono più l'azione (scomparsi [Imposizione]/[Opposizione]). I loro TAG sono CHIAVI DI ATTIVAZIONE che permettono di agganciare Carte Lato Giocatore (Equipaggiamento, Strumenti Rapidi, Abilità, Magie). Le Magie seguono il modello Materie FF7: 5 livelli di potere + Esper al Liv 5 (richiede T5 + Caratteristica 5). [Fulmineo] = carta pagante che si attiva nel suo slot. Danno Arma = Tabella Potere Vitalità + bonus opzionali dell'Arma.",
+  "section_name": "Anatomia delle Carte — Vitalità, Caratteristiche Nominated, Equipaggiamento, Strumenti Rapidi",
+  "version": "15.0",
+  "status": "AGGIORNATO v3 — Le Carte Vitalità sono RISERVA DI ENERGIA con TAG come CHIAVI DI ATTIVAZIONE. Le CARTE CARATTERISTICA diventano NOMINATED: hanno nome + abilità/magie collegate, assorbendo le vecchie Carte Abilità e Carte Magia. Pool misto nominated + bianche per narrare la progressione. Rimosse Carte Abilità e Carte Magia come oggetti fisici separati. Rimosso sistema Materie FF7 ed Esper. Magia a DUE VIE: RISONANZA (elementale+cura) + ANALISI (utility+crafting talismani). Slot Lato Giocatore = 9 (4 Equip + 5 Strumenti Rapidi). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. [Fulmineo] invariato.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Struttura di TUTTE le carte del gioco. La v2 divide le carte in DUE famiglie: (1) Carte Vitalità (riserva di energia), (2) Carte Lato Giocatore (catalogo delle mosse). Le Vitalità forniscono energia + chiavi di attivazione; le Carte Lato Giocatore forniscono gli effetti reali.",
-  "v2_paradigm_shift": {
-    "summary": "Nella v1, una Carta Vitalità era contemporaneamente risorsa (tempo) e azione (effetto). Nella v2, la Vitalità è SOLO risorsa. L'effetto è determinato dalla Carta Lato Giocatore agganciata in quel tick.",
-    "what_changed": [
-      "RIMOSSI i tag [Imposizione] e [Opposizione] dalle Vitalità",
-      "I tag rimanenti sulle Vitalità diventano CHIAVI DI ATTIVAZIONE",
-      "Le Carte Lato Giocatore (Equipaggiamento/Strumenti/Abilità/Magie) sono il catalogo delle mosse",
-      "Le Magie seguono il sistema Materie FF7 con 5 livelli + Esper",
-      "L'Equipaggiamento è feribile a 2 stadi (1° = potere speciale, 2° = distrutto)"
+  "description": "Struttura di TUTTE le carte del gioco (v3). Tre famiglie: (1) Carte Vitalità (riserva di energia con tag-chiave), (2) Carte Caratteristica nominated/bianche (abilità/magie ospitate dentro le caratteristiche), (3) Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Vitalità forniscono energia + chiavi; le Carte Caratteristica nominated ospitano i poteri; le Carte Lato Giocatore fisiche forniscono Equipaggiamento e Strumenti.",
+  "v3_paradigm_shift": {
+    "summary": "v3 vs v2: le Carte Caratteristica diventano il CATALOGO DELLE MOSSE del PG (assorbendo le vecchie Carte Abilità e Carte Magia). Le Carte Lato Giocatore fisiche sono solo Equipaggiamento + Strumenti Rapidi. La personalità del PG è definita dalle Carte Caratteristica nominated scelte.",
+    "what_changed_from_v2_to_v3": [
+      "RIMOSSE le Carte Abilità come oggetti fisici separati (4 slot) — assorbite nelle Carte Caratteristica nominated",
+      "RIMOSSE le Carte Magia Materie FF7 come oggetti fisici separati (3 slot) — assorbite nelle Carte Caratteristica nominated",
+      "RIMOSSO il sistema Materie FF7 con 5 livelli di potere Materie",
+      "RIMOSSO il sistema Esper (creature evocate al Liv 5)",
+      "Le Carte Caratteristica non sono più segnaposto passivi — diventano NOMINATE con nome + abilità/magie",
+      "Pool di 10 Carte Caratteristica MISTO (nominated + bianche) — le bianche vengono sostituite da nominated durante la progressione",
+      "Slot Strumenti Rapidi aumentati da 3 a 5 (ospitano anche talismani craftati da Analisi)",
+      "TAG [Ferita] ridefinito: riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo della Vitalità giocata",
+      "Magia a DUE VIE: RISONANZA (elementale+cura diretta) + ANALISI (utility+crafting talismani monouso offensivi)",
+      "RINOMINI: Istinto→IMPETO (Rosso), Evasione→ISTINTO (Blu) — meccaniche invariate"
     ],
-    "what_remains": [
+    "what_remains_from_v2": [
       "Bordo colorato per Caratteristica",
       "Tabella Potere artigianale",
-      "Regola d'Oro: N tag ≤ Costo Tempo",
+      "Regola d'Oro: N tag ≤ Costo Tempo (i tag stanno SOLO sulle Vitalità)",
       "Cintura ATB fluida",
       "Danno a doppio strato (Milling / Ferita)",
-      "Soglia del Vuoto (Caratteristica a 0 = Cuore ferito)"
+      "Soglia del Vuoto (Caratteristica a 0 = Cuore ferito)",
+      "Sistema Ferita Equipaggiamento a 2 stadi (volontario)",
+      "Meccanica [Fulmineo] (carta pagante che si attiva nel proprio slot)"
     ]
   },
-  "card_families": {
+  "card_families_v3": {
     "family_1_vitality": {
       "name": "Carte Vitalità",
-      "role": "RISERVA DI ENERGIA del PG",
-      "deck_size": "60 carte totali (proportionali alle Caratteristiche)",
-      "what_they_do": "Forniscono energia (Costo Tempo) e chiavi di attivazione (TAG) per agganciare Carte Lato Giocatore",
+      "role": "RISERVA DI ENERGIA del PG + CHIAVI DI ATTIVAZIONE",
+      "deck_size": "60 carte totali (proporzionali alle Caratteristiche — 6 carte per punto)",
+      "what_they_do": "Forniscono energia (Costo Tempo T1-T5) e chiavi di attivazione (TAG) per attivare poteri dalle Carte Caratteristica nominated o dalle Carte Lato Giocatore fisiche",
       "what_they_dont_do": "NON definiscono l'azione. NON hanno [Imposizione]/[Opposizione]. NON hanno effetti propri.",
       "play_modes": {
-        "face_up": "SCOPERTA — attiva una Carta Lato Giocatore compatibile (stessa caratteristica + almeno un tag richiesto)",
+        "face_up": "SCOPERTA — attiva un potere (abilità nominated, magia, equipaggiamento o strumento rapido) compatibile tramite i TAG della Vitalità",
         "face_down": "COPERTA — puro pagamento del Costo Tempo (riempie la Cintura ATB ma non attiva nulla)"
       }
     },
-    "family_2_player_cards": {
-      "name": "Carte Lato Giocatore",
-      "role": "CATALOGO DELLE MOSSE del PG",
-      "total_slots": 14,
+    "family_2_characteristic_cards_v3": {
+      "name": "Carte Caratteristica Nominated/Bianche",
+      "role": "CATALOGO DELLE MOSSE DEL PG (abilità + magie) — assorbe le vecchie Carte Abilità e Carte Magia",
+      "total_cards": 10,
+      "pool_composition": "MISTO: alcune nominated (con nome + abilità/magie), altre bianche (segnaposto). La proporzione dipende dalla fase di progressione del PG.",
+      "value_rule": "Il VALORE della Caratteristica = NUMERO di Carte Caratteristica fisiche per quella caratteristica. Es: Impeto 3 = 3 carte Impeto (nominated o bianche) sul tavolo.",
+      "nominated_card_structure": {
+        "name": "Nome evocativo della carta (es. 'Furia Cieca', 'Compassione', 'Mente Analitica')",
+        "characteristic": "Una delle 4 caratteristiche (Impeto, Istinto, Analisi, Risonanza)",
+        "abilities_combat": "1+ abilità utilizzabili IN combattimento (mosse speciali, difese, contrattacchi)",
+        "abilities_out_of_combat": "1+ abilità utilizzabili FUORI dal combattimento (persuadere, intimidire, scassinare, decifrare, ecc.)",
+        "spells_risonanza": "Per RISONANZA: lista di incantesimi elementali/cura accessibili dalla carta",
+        "utility_analisi": "Per ANALISI: utility magica (scassinare, riparare, rivelare debolezze, distruggere tratti base)",
+        "crafting_analisi": "Per ANALISI: eventuale crafting bonus (es. +1 talismano/giorno)",
+        "level_requirements": "Alcune abilità si sbloccano a livelli di Caratteristica crescenti (es. livello 1+, 3+, 5). La Tabella Potere scala automaticamente.",
+        "design_typologies": {
+          "specializzata": "3 abilità in tema, di potere crescente, sbloccate per livello Caratteristica. Premia build verticali.",
+          "generica": "3 abilità diverse, tutte a basso livello, più deboli ma versatili. Ottima per build bilanciate."
+        },
+        "tags_unlocked_note": "LE CARTE CARATTERISTICA NON HANNO TAG. I tag stanno SOLO sulle Vitalità. Le abilità nominated si attivano con i TAG delle Vitalità (es. [Abilità], [Magia], [Cura], [Contrattacco])."
+      },
+      "white_card_structure": {
+        "purpose": "Segnaposto. Indica che il PG ha quella 'slot' di Caratteristica ma non l'ha ancora sviluppata.",
+        "function": "Conta per il valore di Caratteristica (influenza Tabella Potere e Mazzo Vitalità) ma non fornisce abilità/magie.",
+        "progression": "Viene sostituita da una nominated durante la progressione del PG (scelte narrative: traumi, rivelazioni, addestramento, ecc.)."
+      },
+      "what_they_do": "Definiscono L'IDENTITÀ DEL PG. Due PG con stesso punteggio caratteristiche possono essere completamente diversi per carte nominated scelte.",
+      "what_they_dont_do": "NON si attivano da sole. Richiedono SEMPRE una Vitalità con TAG compatibili per essere attivate."
+    },
+    "family_3_player_cards_v3": {
+      "name": "Carte Lato Giocatore Fisiche",
+      "role": "Equipaggiamento e Strumenti Rapidi",
+      "total_slots": 9,
       "slot_breakdown": {
         "equipment": "4 slot (1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio)",
-        "quick_items": "3 slot (Strumenti Rapidi, monouso)",
-        "abilities": "4 slot (mosse basate su caratteristica, valide anche fuori combattimento)",
-        "magic": "3 slot (Materie FF7 con 5 livelli di potere + Esper)"
+        "quick_items": "5 slot (oggetti trovati usa-e-getta + talismani craftati da Analisi)"
       },
-      "what_they_do": "Definiscono GLI EFFETTI che il PG può attivare. Ogni carta indica: caratteristica richiesta, tabella potere T1-T5, tag di attivazione richiesti, eventuali poteri speciali.",
-      "what_they_dont_do": "NON si attivano da sole. Richiedono SEMPRE una Vitalità compatibile per essere attivate."
+      "what_they_do": "Forniscono Equipaggiamento fisico (armi, scudi, armature, accessori) e Strumenti Rapidi monouso (pozioni, pergamene, talismani Analisi).",
+      "what_they_dont_do": "NON contengono abilità o incantesimi come voci separate (questi sono nelle Carte Caratteristica nominated)."
     }
   },
   "vitality_card_layout": {
-    "description": "Struttura visiva della Carta Vitalità (invariata dalla v1, eccetto rimozione tag Utilizzo).",
+    "description": "Struttura visiva della Carta Vitalità (invariata dalla v2, eccetto rinomini caratteristiche).",
     "border_color": {
       "description": "Il bordo della carta è COLORATO e corrisponde alla CARATTERISTICA dell'energia.",
-      "colors": {
-        "Rosso": "Istinto — impulso non ragionato, sfondare, colpire senza riflettere",
-        "Giallo": "Analisi — intelletto, strategia, magia ragionata",
-        "Blu": "Evasione — destrezza, schiva, furtività",
-        "Verde": "Risonanza — empatia, connessione col mondo, comprendere attraverso il sentire"
+      "colors_v3": {
+        "Rosso": "IMPETO (ex-Istinto) — impulso non ragionato, sfondare, colpire senza riflettere, irruenza",
+        "Giallo": "ANALISI — intelletto, strategia, magia ragionata, crafting talismani",
+        "Blu": "ISTINTO (ex-Evasione) — destrezza, schiva, furtività, riflessi",
+        "Verde": "RISONANZA — empatia, connessione col mondo, magia elementale e cura"
       }
     },
-    "top_tags": "In alto sulla carta sono riportati i TAG DI ATTIVAZIONE. Il numero di tag NON può mai superare il Costo Tempo della carta (REGOLA D'ORO).",
+    "top_tags": "In alto sulla carta sono riportati i TAG DI ATTIVAZIONE. Il numero di tag NON può mai superare il Costo Tempo della carta (REGOLA D'ORO). I tag stanno SOLO sulle Vitalità.",
     "center": "Nome della carta (sapore narrativo) e eventuale illustrazione.",
     "bottom_right": "Una CLESSIDRA vicino a un numero che indica il COSTO IN TEMPO (da 1 a 5).",
-    "bottom_left": "La TABELLA POTERE (2 colonne × 5 righe). Indica il POTERE base della carta in base al valore della Caratteristica del PG. NOTA: per le Armi, si usa la TABELLA POTERE dell'Arma; per le Magie, si usa la TABELLA POTERE della Magia. La tabella della Vitalità è usata per le Abilità senza propria tabella."
+    "bottom_left": "La TABELLA POTERE (2 colonne × 5 righe). Indica il POTERE base della carta in base al valore della Caratteristica del PG. Per le Armi, si usa la TABELLA POTERE dell'Arma (con eventuale Bonus); per le magie nominated, si usa la TABELLA POTERE della Vitalità giocata; per le abilità nominated senza tabella propria, si usa la TABELLA POTERE della Vitalità."
   },
-  "player_card_layout": {
-    "description": "Struttura visiva delle Carte Lato Giocatore.",
+  "characteristic_card_layout_v3": {
+    "description": "Struttura visiva delle Carte Caratteristica nominated (NUOVO v3).",
+    "nominated_card_layout": {
+      "top": "Bordo colorato (Rosso=Impeto, Giallo=Analisi, Blu=Istinto, Verde=Risonanza) + eventuale simbolo della caratteristica",
+      "header": "NOME evocativo della carta (es. 'Furia Cieca', 'Compassione', 'Mente Analitica', 'Grifone del Vento')",
+      "subtitle": "Tipologia: 'Specializzata' o 'Generica'",
+      "body_combat_abilities": "Sezione ABILITÀ IN COMBATTIMENTO — elenco delle mosse speciali con relativo livello di sblocco (Livello 1+, 3+, 5)",
+      "body_out_of_combat_abilities": "Sezione ABILITÀ FUORI COMBATTIMENTO — elenco delle abilità sociali/esplorative",
+      "body_spells": "Per RISONANZA: sezione INCANTESIMI (lista elementali/cura accessibili)",
+      "body_utility_crafting": "Per ANALISI: sezione UTILITY (scassinare, riparare, ecc.) + CRAFTING (bonus talismani/giorno, se presente)",
+      "bottom": "Indicatore di stato: INTATTA / FERITA (casella da barrare)"
+    },
+    "white_card_layout": {
+      "top": "Bordo colorato della caratteristica",
+      "header": "'Carta Bianca' o nome generico (es. 'Impeto Latente')",
+      "body": "Spazio vuoto per personalizzazione futura. Indica che questa slot di Caratteristica non è ancora sviluppata.",
+      "bottom": "Indicatore di stato: INTATTA / FERITA"
+    },
+    "card_back_wounded": "Lo stesso design ma in SCALA DI GRIGI / COLORI SBIADITI. Linguaggio visivo unificato con Cuori e Equipaggiamento.",
+    "no_tags_on_characteristic_cards": "LE CARTE CARATTERISTICA NON HANNO TAG. I tag stanno SOLO sulle Vitalità e indicano cosa può essere attivato in quel turno."
+  },
+  "player_card_layout_v3": {
+    "description": "Struttura visiva delle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi).",
     "common_fields": {
-      "name": "Nome evocativo della carta (Spada Lunga, Palla di Fuoco, Intimidire, ecc.)",
-      "border_color": "Caratteristica richiesta (Rosso/Istinto, Giallo/Analisi, Blu/Evasione, Verde/Risonanza). Una carta può accettare più caratteristiche (bordo bicolore).",
-      "type": "Tipo di carta: Equipaggiamento / Strumento Rapido / Abilità / Magia",
-      "activation_tags_required": "Tag che la Vitalità deve avere per attivare questa carta. Es: [Strumento], [Abilità], [Magia], [Cura], ecc.",
-      "power_table": "Tabella T1-T5: per ogni livello, l'effetto specifico della carta a quel livello. Il PG può raggiungere solo i livelli ≤ al suo valore di Caratteristica."
+      "name": "Nome evocativo (Spada Lunga, Pozione, Talismano di Fuoco, ecc.)",
+      "border_color": "Caratteristica tipicamente richiesta (Rosso/Impeto, Giallo/Analisi, Blu/Istinto, Verde/Risonanza). Una carta può accettare più caratteristiche (bordo bicolore).",
+      "type": "Tipo di carta: Equipaggiamento (Arma/Scudo/Armatura/Accessorio) o Strumento Rapido",
+      "activation_tags_required": "Tag che la Vitalità deve avere per attivare questa carta. Es: [Strumento] per quasi tutto l'Equipaggiamento e gli Strumenti Rapidi."
     },
     "type_specific_fields": {
       "equipment": {
-        "special_power": "Potere speciale attivato dal 1° ferimento (vedi Pilastro 7)",
+        "special_power": "Potere speciale attivato dal 1° ferimento volontario (vedi Pilastro 8)",
         "wound_slots": 2,
-        "destruction_effect": "Effetto (se presente) quando l'equipaggiamento viene distrutto"
+        "destruction_effect": "Effetto (se presente) quando l'equipaggiamento viene distrutto al 2° ferimento"
       },
       "quick_items": {
         "consumable": "true — si consuma quando usato",
-        "fixed_effect": "Spesso ha effetto fisso, non scala con T (es. Pozione cura sempre 5)"
-      },
-      "abilities": {
-        "context": "Valide anche FUORI dal combattimento (es. Intimidire, Persuadere, Analisi Tattica)",
-        "linked_characteristic": "Sempre legata a una caratteristica specifica (dà identità alle mosse)"
-      },
-      "magic": {
-        "materia_system": "FF7-style: ogni Magia è una Materia con 5 livelli di potere",
-        "level_effects": "I 5 livelli non sono solo graduazioni di potenza — ogni livello può avere EFFETTI DIVERSI (es. Fire: 1 bersaglio → 2 bersagli → Area → Burn persistente → Esper Ifrit)",
-        "esper": "Al livello 5, può essere evocato l'Esper collegato, con effetto molto più potente",
-        "max_level_cap": "Il PG raggiunge solo i livelli ≤ al suo valore di Caratteristica"
+        "fixed_effect": "Spesso ha effetto fisso, non scala con T (es. Pozione cura sempre 5)",
+        "talismani_analisi": "I talismani craftati da Analisi SONO Strumenti Rapidi. Si attivano con [Strumento]. Potenza = Tabella Potere Vitalità giocata (NON effetto fisso — scalano col T)."
       }
     }
   },
@@ -104,14 +149,14 @@
     "time_cost": {
       "type": "Integer",
       "range": [1, 5],
-      "description": "Costo Tempo della Vitalità. Determina lo slot occupato nella Cintura ATB e il livello di effetto massimo raggiungibile per la Carta Lato Giocatore agganciata.",
-      "dual_function_v2": "COSTO TEMPO = slot ATB = numero MASSIMO di Tag sulla Vitalità = LIVELLI DI EFFETTO selezionabili per la Carta Lato Giocatore agganciata (limitato dal valore di Caratteristica del PG)."
+      "description": "Costo Tempo della Vitalità. Determina lo slot occupato nella Cintura ATB e il livello di effetto massimo raggiungibile per il potere attivato.",
+      "dual_function_v3": "COSTO TEMPO = slot ATB = numero MASSIMO di Tag sulla Vitalità = LIVELLI DI EFFETTO selezionabili per il potere attivato (limitato dal valore attuale di Caratteristica del PG)."
     },
     "tags": {
       "golden_rule": {
         "name": "La Regola d'Oro dei Tag",
-        "rule": "Il numero massimo di Tag presenti su una singola Vitalità non può MAI superare il suo Costo in Tempo.",
-        "examples_v2": {
+        "rule": "Il numero massimo di Tag presenti su una singola Vitalità non può MAI superare il suo Costo in Tempo. I tag stanno SOLO sulle Vitalità.",
+        "examples_v3": {
           "T1": "1 Tag — Es. [Strumento]. Una sola chiave di attivazione.",
           "T2": "2 Tag — Es. [Strumento] + [Ferita].",
           "T3": "3 Tag — Es. [Abilità] + [Sviluppo] + [Ferita].",
@@ -119,57 +164,58 @@
           "T5": "5 Tag — Es. [Magia] + [Apertura] + [Chiusura] + [Cura] + [Fulmineo]."
         }
       },
-      "v2_role": "I TAG sulle Vitalità sono CHIAVI DI ATTIVAZIONE. Dicono quali Carte Lato Giocatore puoi attivare in quel tick. Una Vitalità con [Strumento] può attivare un'Arma; una Vitalità con [Magia] può attivare una Magia; una Vitalità con [Abilità] può attivare un'Abilità.",
-      "v2_removed": [
+      "v3_role": "I TAG sulle Vitalità sono CHIAVI DI ATTIVAZIONE. Indicano QUALI poteri il PG può usare in quel turno: abilità nominated (con [Abilità] o tag specifici come [Contrattacco]), magie nominated (con [Magia] o tag specifici come [Cura]), Equipaggiamento (con [Strumento]), Strumenti Rapidi (con [Strumento]).",
+      "v3_removed": [
         {
           "tag": "[Imposizione]",
           "reason": "L'azione di attacco è ora determinata dall'Arma equipaggiata, non dalla Vitalità"
         },
         {
           "tag": "[Opposizione]",
-          "reason": "L'azione di difesa è ora determinata dall'Abilità Difensiva equipaggiata, non dalla Vitalità"
+          "reason": "L'azione di difesa è ora determinata dall'Abilità Difensiva nominated (es. Istinto 'Schivata Acrobatica'), non dalla Vitalità"
         }
-      ]
+      ],
+      "v3_ferita_tag_role": "TAG [Ferita]: permette di usare le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. Se il PG ha 2 carte Impeto ferite e gioca una Vitalità Impeto con [Ferita], SCEGLIE quale delle due riattivare per quel turno. Le abilità nominated della carta ferita tornano utilizzabili solo per quel turno."
     }
   },
-  "tag_catalog_v2": {
-    "version": "v2.0",
-    "total_categories": 10,
+  "tag_catalog_v3": {
+    "version": "v3.0",
+    "total_categories": 12,
     "total_tags": 18,
-    "note": "Rispetto alla v1.2 (20 tag), sono stati RIMOSSI [Imposizione] e [Opposizione]. Gli altri 18 tag rimangono e funzionano come CHIAVI DI ATTIVAZIONE sulle Vitalità.",
+    "note": "Rispetto alla v2.1, i tag sono INVARIATI (stessi 18 tag). Le Carte Caratteristica nominated NON hanno tag propri. I tag sulle Vitalità indicano cosa può essere attivato: abilità nominated, magie nominated, Equipaggiamento o Strumenti Rapidi.",
     "categories": [
       {
         "id": 1,
         "name": "Utilizzo",
-        "v2_status": "RIMOSSO — i tag [Imposizione]/[Opposizione] non esistono più. L'azione è determinata dalla Carta Lato Giocatore agganciata."
+        "v3_status": "RIMOSSO — i tag [Imposizione]/[Opposizione] non esistono più. L'azione è determinata dal potere attivato (abilità nominated, Arma, ecc.)."
       },
       {
         "id": 2,
         "name": "Combo",
         "tags": ["[Apertura]", "[Sviluppo]", "[Chiusura]", "[Culmine]"],
-        "v2_role": "Permettono di partecipare a una combo cooperativa. Richiedono MINIMO 2 giocatori diversi. La combo si forma quando più PG hanno Vitalità scoperte con questi tag nello STESSO tick.",
+        "v3_role": "Permettono di partecipare a una combo cooperativa. Richiedono MINIMO 2 giocatori diversi. La combo si forma quando più PG hanno Vitalità scoperte con questi tag nello STESSO tick.",
         "optional": true,
         "rule": "Una combo valida richiede almeno [Apertura] + [Chiusura] (o [Culmine])."
       },
       {
         "id": 3,
         "name": "Caratteristica Secondaria",
-        "tags": ["[Istinto]", "[Analisi]", "[Evasione]", "[Risonanza]"],
-        "v2_role": "Permette alla Vitalità di attivare Carte Lato Giocatore di un'altra caratteristica (es. Vitalità Istinto con [Analisi] può attivare un'Abilità di Analisi).",
+        "tags": ["[Impeto]", "[Analisi]", "[Istinto]", "[Risonanza]"],
+        "v3_role": "Permette alla Vitalità di attivare poteri di UN'ALTRA caratteristica. Es. una Vitalità Impeto con [Analisi] può attivare un'abilità nominated di Analisi.",
         "optional": true
       },
       {
         "id": 4,
         "name": "Strumento",
         "tags": ["[Strumento]"],
-        "v2_role": "Chiave per attivare Equipaggiamento (Armi, Scudi, Armature, Accessori) e Strumenti Rapidi. SENZA questo tag, le Armi sono inattive.",
+        "v3_role": "Chiave per attivare Equipaggiamento (Armi, Scudi, Armature, Accessori) e Strumenti Rapidi (inclusi talismani craftati da Analisi). SENZA questo tag, le Armi e gli Strumenti Rapidi sono inattivi.",
         "optional": true
       },
       {
         "id": 5,
         "name": "Ferita",
         "tags": ["[Ferita]"],
-        "v2_role": "La Vitalità con [Ferita] ottiene bonus se il PG ha Caratteristiche o Cuori feriti. La Carta Lato Giocatore agganciata beneficia del bonus.",
+        "v3_role": "PERMETTE di usare le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. Se ho 2 carte Impeto ferite e gioco una Vitalità Impeto con [Ferita], scelgo quale delle due riattivare per quel turno. Le abilità nominated della carta ferita tornano utilizzabili SOLO per quel turno.",
         "optional": true,
         "rule": "T3+ per avere questo tag."
       },
@@ -177,71 +223,71 @@
         "id": 6,
         "name": "Reazione",
         "tags": ["[Contrattacco]", "[Intercettazione]", "[Immolazione]"],
-        "v2_role": "I tag Reazione sono ora PROPRIETÀ DELLE ABILITÀ DINENSIVE, non delle Vitalità. Tuttavia, una Vitalità con [Contrattacco] può attivare un'Abilità Difensiva con [Contrattacco] durante un Blocco Perfetto.",
+        "v3_role": "Specificatori di timing/natura dell'abilità nominated attivata. Una Vitalità con [Abilità] + [Contrattacco] attiva un'abilità nominated che contiene 'Contrattacco' nella sua descrizione. Si attivano SOLO durante un Blocco Perfetto (Abilità Difensiva nominated nello stesso slot del token nemico).",
         "optional": true,
-        "rule": "Si attivano SOLO durante un Blocco Perfetto (Abilità Difensiva nello stesso slot del token nemico)."
+        "rule": "Si attivano SOLO durante un Blocco Perfetto."
       },
       {
         "id": 7,
         "name": "Protezione",
         "tags": ["[Protezione]"],
-        "v2_role": "La Carta Lato Giocatore agganciata espande la difesa agli alleati. Come Barrier/Reflex di Final Fantasy.",
+        "v3_role": "Il potere attivato espande la difesa agli alleati. Come Barrier/Reflex di Final Fantasy.",
         "optional": true
       },
       {
         "id": 8,
         "name": "Cura",
         "tags": ["[Cura]", "[Recupero]"],
-        "v2_role": "Chiave per attivare Carte Lato Giocatore di cura. [Cura] = recupera Vitalità ad ALTRI. [Recupero] = recupera Vitalità solo a SÉ. NON curano Ferite a Caratteristiche o Cuori in combattimento.",
+        "v3_role": "Chiave per attivare incantesimi/abilità di cura nominated (solitamente Risonanza). [Cura] = recupera Vitalità ad ALTRI. [Recupero] = recupera Vitalità solo a SÉ. NON curano Ferite a Caratteristiche o Cuori in combattimento.",
         "optional": true
       },
       {
         "id": 9,
         "name": "Alterazione",
         "tags": ["[Accelerazione]", "[Rallentamento]", "[Rivelazione]", "[Premonizione]"],
-        "v2_role": "Modificano la timeline ATB o le informazioni. [Accelerazione] = Haste (modifica positiva timeline per sé/alleato). [Rallentamento] = Slow (modifica negativa timeline nemico). [Rivelazione] = Scan (rivela 1 carta/token nemico). [Premonizione] = rivela TUTTI i token/carte nemiche.",
+        "v3_role": "Modificano la timeline ATB o le informazioni. [Accelerazione] = Haste (modifica positiva timeline per sé/alleato). [Rallentamento] = Slow (modifica negativa timeline nemico). [Rivelazione] = Scan (rivela 1 carta/token nemico). [Premonizione] = rivela TUTTI i token/carte nemiche.",
         "optional": true
       },
       {
         "id": 10,
         "name": "Economia",
         "tags": ["[Fulmineo]"],
-        "v2_role": "RISOLTO v2.1 — Una Vitalità con [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. La carta [Fulmineo] va nello slot del suo Costo Tempo.",
-        "example": "Per giocare una T4 SCOPERTA servono 3 carte paganti. Se una delle 3 ha [Fulmineo], può essere giocata SCOPERTA e si attiva nel proprio slot. Sequenza: COPERTA — SCOPERTA([Fulmineo], T2) — COPERTA — SCOPERTA(T4). La carta Fulmineo attiva la sua Carta Lato Giocatore nel tick 2 E conta come pagamento per la T4 che si attiverà nel tick 4.",
-        "strategic_value": "Unico modo per fare più azioni per turno. Permette di combinare un'azione preparatoria (es. buf o posizionamento) con l'azione principale, sfruttando lo stesso pagamento di costo.",
+        "v3_role": "Una Vitalità con [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. La carta [Fulmineo] va nello slot del suo Costo Tempo.",
+        "example": "Sequenza T4: COPERTA — SCOPERTA([Fulmineo], T2) — COPERTA — SCOPERTA(T4). La Fulmineo attiva il suo potere al tick 2 E conta come pagamento per la T4 che si attiverà al tick 4.",
+        "strategic_value": "Unico modo per fare più azioni per turno.",
         "optional": true
       },
       {
         "id": 11,
-        "name": "Abilità (NUOVO v2)",
+        "name": "Abilità",
         "tags": ["[Abilità]"],
-        "v2_role": "Chiave per attivare le carte Abilità (mosse basate su caratteristica, es. Intimidire, Persuadere, Analisi Tattica). Le Abilità sono valide anche FUORI dal combattimento.",
+        "v3_role": "Chiave universale per attivare UN'abilità qualsiasi dalla Carta Caratteristica nominated (di qualsiasi caratteristica). Es: Vitalità Impeto con [Abilità] può attivare un'abilità nominated di Impeto, Istinto, Analisi o Risonanza (a patto che la nominated scelta abbia un'abilità compatibile).",
         "optional": true
       },
       {
         "id": 12,
-        "name": "Magia (NUOVO v2)",
+        "name": "Magia",
         "tags": ["[Magia]"],
-        "v2_role": "Chiave per attivare le carte Magia (sistema Materie FF7). Le Magie hanno 5 livelli di potere + Esper al Liv 5.",
+        "v3_role": "Chiave per attivare incantesimi nominated. Per RISONANZA: incantesimi elementali/cura. Per ANALISI: utility magica (scassinare, riparare, rivelare debolezze, distruggere tratti base). NON si attiva con [Strumento] — i talismani craftati da Analisi si attivano con [Strumento] perché sono oggetti fisici negli slot Rapidi.",
         "optional": true
       }
     ]
   },
-  "activation_rule_v2": {
-    "name": "Regola di Attivazione v2",
-    "description": "Per attivare una Carta Lato Giocatore in un tick, il PG deve giocare una Vitalità che soddisfi TUTTI i requisiti seguenti:",
+  "activation_rule_v3": {
+    "name": "Regola di Attivazione v3",
+    "description": "Per attivare un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) in un tick, il PG deve giocare una Vitalità che soddisfi TUTTI i requisiti seguenti:",
     "requirements": [
       {
         "id": 1,
-        "name": "Stessa Caratteristica",
-        "rule": "La Vitalità deve essere della STESSA caratteristica richiesta dalla Carta Lato Giocatore. Una Carta Lato Giocatore può accettare più caratteristiche (bordo bicolore).",
-        "exception": "Se la Vitalità ha un tag di Caratteristica Secondaria (es. [Analisi] su una Vitalità Istinto), può attivare Carte Lato Giocatore di Analisi."
+        "name": "TAG compatibili",
+        "rule": "La Vitalità deve avere i TAG richiesti dal potere che si vuole attivare. La Vitalità NON deve essere della stessa caratteristica del potere — basta che abbia i tag giusti.",
+        "exception": "Il TAG di Caratteristica Secondaria ([Impeto], [Analisi], [Istinto], [Risonanza]) permette alla Vitalità di una caratteristica di attivare poteri di un'altra."
       },
       {
         "id": 2,
-        "name": "Almeno un Tag Richiesto",
-        "rule": "La Vitalità deve avere ALMENO UNO dei tag richiesti dalla Carta Lato Giocatore. DEFAULT ADOTTATO v2.1 (da raffinare prossima sessione): se la Carta richiede 2+ tag, basta che la Vitalità ne abbia ALMENO UNO.",
-        "note": "Il principio è che ogni tag è una CHIAVE separata. Una Carta Lato Giocatore può elencare più chiavi alternative (es. Arma con [Strumento] OR [Ferita]) — basta che la Vitalità ne abbia una per attivarla."
+        "name": "Almeno un Tag Richiesto (per poteri con multipli tag)",
+        "rule": "Se il potere richiede 2+ tag, basta che la Vitalità ne abbia ALMENO UNO (DEFAULT ADOTTATO — da raffinare).",
+        "note": "Il principio è che ogni tag è una CHIAVE separata. Un potere può elencare più chiavi alternative — basta che la Vitalità ne abbia una per attivarlo."
       },
       {
         "id": 3,
@@ -250,7 +296,7 @@
       }
     ],
     "level_of_effect": {
-      "rule": "Il T della Vitalità determina il LIVELLO DI EFFETTO selezionabile per la Carta Lato Giocatore agganciata.",
+      "rule": "Il T della Vitalità determina il LIVELLO DI EFFETTO selezionabile per il potere attivato.",
       "table": {
         "T1": "1° livello di effetto (solo livello base)",
         "T2": "Scegli tra 1° o 2° livello",
@@ -258,30 +304,71 @@
         "T4": "Scegli tra 1°, 2°, 3° o 4° livello",
         "T5": "Scegli tra 1°, 2°, 3°, 4° o 5° livello"
       },
-      "cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Istinto 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5).",
-      "magic_espers_v2_1": "Per le Magie, l'Esper si attiva SOLO con Vitalità T5 E Caratteristica PG = 5 (condizione DOPPIA). Nessun limite di utilizzo per combattimento, ma la rarità delle condizioni lo rende MOLTO DIFFICILE da attivare."
+      "cap": "Il PG NON può superare il livello della sua Caratteristica ATTUALE (intatta). Un PG con Impeto 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5). Se la Caratteristica è ferita, il valore attuale si riduce.",
+      "v3_no_espers": "RIMOSSO v3: il sistema Esper con condizione DOPPIA T5+Caratteristica 5 non esiste più. La massima potenza si raggiunge con Vitalità T5 + Caratteristica 5, ma non evoca Esper — attiva semplicemente il livello 5 del potere (il massimo)."
     },
-    "example": {
-      "scenario": "PG con Istinto 3 ha equipaggiata la Spada Lunga (Arma, richiede [Strumento]).",
-      "vitality_played": "Istinto T3 con tag [Strumento] [Ferita]",
-      "activation": "La Vitalità ha caratteristica Istinto (corretta) e tag [Strumento] (richiesto dall'Arma). Attivazione valida.",
-      "damage_calculation_v2_1": "DANNO = Tabella Potere Vitalità(Istinto 3 × T3 = 8) + Bonus Opzionale Arma(Spada Lunga +2 danno) = 10 danno totale. [Ferita] dà bonus aggiuntivo se il PG è ferito.",
-      "level_of_effect": "T3 → può scegliere tra livello 1, 2 o 3 della Spada Lunga. Ma il PG ha Istinto 3, quindi massimo livello 3 → può scegliere 1, 2 o 3.",
-      "result": "Attiva la Spada Lunga al livello scelto. Il danno base è quello della Tabella Potere della Vitalità; l'Arma aggiunge eventuali bonus ed effetti speciali del livello scelto."
+    "example_v3": {
+      "scenario": "PG con Impeto 3 ha la Carta Caratteristica nominated 'Furia Cieca' (con abilità 'Berserker') + Spada Lunga (Arma, richiede [Strumento]).",
+      "vitality_played": "Impeto T3 con tag [Strumento] [Ferita]",
+      "activation": "La Vitalità ha tag [Strumento] → attiva la Spada Lunga. Il danno base = Tabella Potere(Impeto 3 × T3 = 8) + Bonus Spada Lunga (+2) = 10. [Ferita] dà bonus aggiuntivo se il PG è ferito, OPPURE riattiva abilità di una Carta Caratteristica ferita dello stesso tipo (Impeto).",
+      "level_of_effect": "T3 → può scegliere tra livello 1, 2 o 3 della Spada Lunga. Ma il PG ha Impeto 3, quindi massimo livello 3 → può scegliere 1, 2 o 3.",
+      "result": "Attiva la Spada Lunga al livello scelto. Danno base dalla Tabella Potere Vitalità; l'Arma aggiunge eventuali bonus ed effetti speciali del livello scelto."
     }
   },
   "vitality_deck_composition": {
-    "description": "Composizione del Mazzo Vitalità (invariata dalla v1).",
+    "description": "Composizione del Mazzo Vitalità (invariata).",
     "total_cards": 60,
     "proportional_to_characteristics": "Il numero di carte per Caratteristica è PROPORZIONALE al valore della Caratteristica del PG (valore × 6 carte).",
     "time_distribution": "Vedi 03_character/character_sheet.json per la Distribuzione Asimmetrica per Livello.",
-    "example": "PG con Istinto 3, Analisi 3, Evasione 2, Risonanza 2 = 18 carte Istinto + 18 Analisi + 12 Evasione + 12 Risonanza = 60 carte totali."
+    "example_v3": "PG con Impeto 3, Analisi 3, Istinto 2, Risonanza 2 = 18 carte Impeto + 18 Analisi + 12 Istinto + 12 Risonanza = 60 carte totali."
   },
-  "player_card_examples_v2": {
+  "v3_magic_two_ways": {
+    "name": "Sistema Magia a Due Vie (v3 — SOSTITUISCE Materie FF7)",
+    "description": "La magia è ospitata nelle Carte Caratteristica nominated. Due approcci completamente diversi, legati alle due caratteristiche 'COMPRENDERE' (Risonanza + Analisi).",
+    "risonanza_magic": {
+      "name": "Magia di RISONANZA (in sintonia col mondo)",
+      "nature": "Incantesimi elementali (fuoco, ghiaccio, fulmine, ecc.) e di cura. Il PG entra in sintonia con la natura e gli elementi.",
+      "hosting": "Ogni Carta Caratteristica nominated di RISONANZA ospita una LISTA di incantesimi accessibili (più o meno ampia, a seconda della carta).",
+      "activation": "Vitalità con tag [Magia] + scelta dell'incantesimo dalla Carta Caratteristica nominated di Risonanza.",
+      "power": "Scalata con T della Vitalità giocata (Tabella Potere). T1 = incantesimo debole, T5 = incantesimo potente.",
+      "examples": [
+        "'Compassione' → Cura Minore (T1-T2), Cura Maggiore (T3-T4), Risana Gruppo (T5)",
+        "'Furia del Fuoco' → Dardo Infuocato (T1-T2), Palla di Fuoco (T3-T4), Tempesta di Fuoco (T5)",
+        "'Voce del Ghiaccio' → Dardo di Ghiaccio (T1-T2), Parete di Ghiaccio (T3-T4), Era Glaciale (T5)"
+      ]
+    },
+    "analisi_magic": {
+      "name": "Magia di ANALISI (utility + crafting)",
+      "nature": "Incantesimi di UTILITY (rivelare debolezze, scassinare, riparare, danneggiare tratti nemici base) + CRAFTING di talismani/pergamene monouso offensivi.",
+      "hosting": "Ogni Carta Caratteristica nominated di ANALISI ospita utility magiche + eventuale bonus al crafting.",
+      "activation_utility": "Vitalità con tag [Magia] + scelta dell'utility dalla Carta Caratteristica nominated di Analisi. Utility scalano con T della Vitalità.",
+      "activation_crafting": "I talismani craftati sono oggetti fisici negli slot Strumenti Rapidi. Si attivano con tag [Strumento] (NON [Magia]). Potenza = Tabella Potere Vitalità giocata (scalano col T).",
+      "crafting_rules": {
+        "limit_daily": "Limite giornaliero = valore di Analisi del PG (es. Analisi 3 = 3 talismani/giorno).",
+        "limit_increase": "Aumentabile con carte nominated specifiche (es. 'Artigiano' = +1/giorno, 'Mago Erudito' = +2/giorno).",
+        "creation_time": "Si creano durante situazioni di riposo, mai in combattimento. Tempo puramente narrativo (~30 min per 4-5 oggetti).",
+        "materials": "Limite puro giornaliero. Materiali astratti/narrativi — non richiedono tracciamento di polveri/pergamene vuote.",
+        "slot_restriction": "SOLO i talismani equipaggiati nei 5 slot Strumenti Rapidi sono utilizzabili. Se voglio 3 talismani + 2 pozioni, creo solo 3 talismani.",
+        "consumable": "Talismani sono usa-e-getta. Si consumano all'uso. Vanno ricreati al prossimo riposo.",
+        "offense_only": "I talismani Analisi sono SOLO OFFENSIVI (replicano incantesimi di attacco). La cura resta dominio di Risonanza. L'utility resta dominio di Analisi (ma è in-combat/utility, non crafting)."
+      },
+      "examples": [
+        "'Mente Analitica' → Scassinare (utility), Riparare (utility), Rivelare Debolezze (utility, +50% danno prossimo attacco)",
+        "'Artigiano' → Crafting talismani (+1/giorno rispetto al limite base), Distruggere Tratti base nemici (utility con [Magia] T3+)",
+        "'Mago Erudito' → Crafting talismani (+2/giorno), Decifrare (utility), Identificare Oggetti (utility)"
+      ]
+    },
+    "removed_in_v3": {
+      "materie_ff7": "RIMOSSO — Le Magie non sono più Materie FF7 con 5 livelli di potere Materie.",
+      "esper": "RIMOSSO — Il sistema Esper (creature evocate) è eliminato. La massima potenza magica = livello 5 dell'incantesimo nominated, attivato con Vitalità T5 + Caratteristica 5 (nessuna condizione DOPPIA speciale, nessun Esper).",
+      "magic_slots_dedicated": "RIMOSSO — I 3 slot Magia Lato Giocatore dedicati sono eliminati. Le magie sono ospitate nelle Carte Caratteristica nominated di Risonanza/Analisi."
+    }
+  },
+  "player_card_examples_v3": {
     "equipment": {
       "name": "Spada Lunga",
       "type": "Equipaggiamento (Arma)",
-      "characteristic": "Istinto",
+      "characteristic_typically": "Impeto",
       "activation_tags_required": ["[Strumento]"],
       "damage_bonus": "+2 (si SOMMA alla Tabella Potere della Vitalità)",
       "level_effects_table": {
@@ -289,66 +376,95 @@
         "2": "Nessun effetto aggiuntivo",
         "3": "Colpo Potente — bersaglio subisce -1 al prossimo attacco",
         "4": "Colpo Devastante — bersaglio perde 1 tick di iniziativa",
-        "5": "Colpo Mortale — se il bersaglio è sotto 5 PF, doubling del danno"
+        "5": "Colpo Mortale — se il bersaglio è sotto 5 PF, raddoppio del danno"
       },
-      "special_power": "1° ferimento: Attacco Fendente — colpisci 2 nemici adiacenti per metà danno.",
+      "special_power": "1° ferimento (volontario): Attacco Fendente — colpisci 2 nemici adiacenti per metà danno.",
       "destruction_effect": "Nessuno (arma base distrutta = nessun effetto speciale)."
     },
-    "quick_item": {
+    "quick_item_potion": {
       "name": "Pozione",
-      "type": "Strumento Rapido (usa-e-getta)",
+      "type": "Strumento Rapido (usa-e-getta) — oggetto trovato",
       "characteristic": "qualsiasi",
       "activation_tags_required": ["[Strumento]"],
       "fixed_effect": "Cura 5 punti Vitalità a un PG (recupera 5 carte dalla Pila Scarti al Mazzo Vitalità). Effetto fisso, non scala con T.",
       "consumable": true,
-      "wound_system": "NESSUNO — gli Strumenti Rapidi sono SOLO usa-e-getta (v2.1 confermato). Si consumano quando usati. Nessun sistema di ferite a 2 stadi.",
-      "context": "Principalmente usati IN combattimento (pozioni, pergamene, bombe, bendaggi, ecc.)"
+      "wound_system": "NESSUNO — usa-e-getta. Si consuma quando usato."
     },
-    "ability": {
-      "name": "Intimidire",
-      "type": "Abilità",
-      "characteristic": "Istinto",
-      "activation_tags_required": ["[Abilità]"],
-      "power_table": {
-        "1": "Malus -1 al prossimo tiro del bersaglio (1 turno)",
-        "2": "Malus -2 al prossimo tiro del bersaglio (1 turno)",
-        "3": "Il bersaglio è Scosso: -2 a tutti i tiri per 2 turni",
-        "4": "Il bersaglio è Terrorizzato: non può agire per 1 turno",
-        "5": "Il bersaglio si Arrende (se non è un Boss)"
-      },
-      "out_of_combat": "Valida in contesto Sociale — sostituisce una prova di Persuasione con minaccia."
+    "quick_item_talismano_analisi": {
+      "name": "Talismano di Fuoco (craftato da Analisi)",
+      "type": "Strumento Rapido (usa-e-getta) — talismano craftato",
+      "creator_characteristic": "Analisi",
+      "activation_tags_required": ["[Strumento]"],
+      "effect": "Replica un incantesimo di attacco di Fuoco. POTENZA = Tabella Potere della Vitalità giocata (NON effetto fisso — scalano col T).",
+      "consumable": true,
+      "wound_system": "NESSUNO — usa-e-getta. Si consuma quando usato. Va ricreato al prossimo riposo.",
+      "crafting_limit": "Conta verso il limite giornaliero di crafting Analisi (= valore Analisi + bonus nominated)."
     },
-    "magic": {
-      "name": "Materia Fuoco",
-      "type": "Magia",
+    "nominated_impeto_card": {
+      "name": "Furia Cieca",
+      "type": "Carta Caratteristica Nominated (Impeto, Specializzata)",
+      "characteristic": "Impeto",
+      "typology": "Specializzata — 3 abilità in tema, di potere crescente",
+      "abilities_combat": [
+        { "name": "Spaccatutto", "level_required": "1+", "effect": "Sfonda porte, rompe oggetti non magici, sfonda cancelli. In combat: distrugge tratti base 'Armatura Fissa' con Vitalità [Abilità] T2+." },
+        { "name": "Berserker", "level_required": "3+", "effect": "Se il tuo attacco è nello stesso tick dell'attacco nemico, ignori metà del danno subito. Si attiva con Vitalità [Abilità]." },
+        { "name": "Furia Definitiva", "level_required": "5", "effect": "Combo automatica [Apertura] + [Chiusura] anche senza compagno. Una volta/sessione." }
+      ],
+      "abilities_out_of_combat": [
+        { "name": "Intimidire con Furia", "effect": "Sostituisce prova di Persuasione con minaccia visiva" }
+      ],
+      "tags_needed_to_activate": "[Abilità] per tutte le abilità. Nessun tag sulla carta stessa."
+    },
+    "nominated_risonanza_card": {
+      "name": "Compassione",
+      "type": "Carta Caratteristica Nominated (Risonanza, Generica)",
       "characteristic": "Risonanza",
-      "activation_tags_required": ["[Magia]"],
-      "materia_system": "FF7-style: 5 livelli di potere",
-      "power_table": {
-        "1": "Spark — 1 danno a 1 bersaglio",
-        "2": "Fire — 3 danno a 1 bersaglio",
-        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
-        "4": "Firaga — 8 danno a tutti i nemici (Area)",
-        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)"
-      },
-      "esper_activation_v2_1": "L'Esper (Liv 5) si attiva SOLO con Vitalità T5 E Caratteristica PG = 5 (CONDIZIONE DOPPIA). NESSUN limite di utilizzo per combattimento, ma la rarità delle condizioni lo rende MOLTO DIFFICILE da attivare.",
-      "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello ha un EFFETTO DIVERSO (1 bersaglio → 2 bersagli → Area → DoT → Esper)."
+      "typology": "Generica — 3 abilità diverse, tutte a basso livello",
+      "abilities_combat": [
+        { "name": "Cura Minore", "level_required": "1+", "effect": "Recupera 3 Vitalità a un alleato. Si attiva con Vitalità [Magia] + [Cura]." }
+      ],
+      "abilities_out_of_combat": [
+        { "name": "Empatia", "effect": "Percepisci emozioni di creature e PNG" },
+        { "name": "Persuasione", "effect": "Ottieni vantaggio in prove sociali di convincimento" }
+      ],
+      "spells": ["Cura Minore (T1-T2)", "Cura Maggiore (T3-T4)", "Risana Gruppo (T5)", "Purificazione (utility, T2+)"],
+      "tags_needed_to_activate": "[Magia] per incantesimi, [Abilità] per Empatia/Persuasione."
+    },
+    "nominated_analisi_card": {
+      "name": "Mente Analitica",
+      "type": "Carta Caratteristica Nominated (Analisi, Generica)",
+      "characteristic": "Analisi",
+      "typology": "Generica — utility + crafting base",
+      "abilities_combat": [
+        { "name": "Rivelare Debolezze", "level_required": "1+", "effect": "Con Vitalità [Magia] su un nemico → prossimo attacco contro di esso ha +50% danno. T2+ rivele anche 1 punto debole specifico." },
+        { "name": "Distruggere Tratti Base", "level_required": "3+", "effect": "Con Vitalità [Magia] T3+ su un nemico con tratto 'Armatura Fissa' base → distrugge il tratto." }
+      ],
+      "abilities_out_of_combat": [
+        { "name": "Scassinare", "effect": "Apre serrature non magiche" },
+        { "name": "Riparare", "effect": "Ripristina oggetti danneggiati" },
+        { "name": "Decifrare", "effect": "Legge linguaggi arcani/cifrati" }
+      ],
+      "crafting": "Talismani base: 0 bonus (limite = valore Analisi). Crafting talismani offensivi monouso.",
+      "tags_needed_to_activate": "[Magia] per utility, [Strumento] per talismani craftati."
     }
   },
-  "design_principles_v2": {
-    "principle_1": "Le Vitalità sono ENERGIA, non azioni. Tutto il sapere tattico è nelle Carte Lato Giocatore.",
-    "principle_2": "I tag sono CHIAVI, non vincoli. Una Vitalità con più tag può attivare più tipi di Carte Lato Giocatore.",
-    "principle_3": "L'equipaggiamento è CENTRALE, non periferico. Definisce l'identità del PG.",
-    "principle_4": "Le Magie sono INTEGRATE, non separate. Stesso framework delle Abilità.",
-    "principle_5": "Lo stesso linguaggio si applica IN E FUORI dal combattimento. Una Vitalità con [Abilità] serve sia per Intimidire (Sociale) sia per Attacco Potente (Combattimento).",
-    "principle_6": "Le Carte Lato Giocatore feribili offrono scelte tattiche profonde: attivare il potere speciale = ferire l'Equipaggiamento, con rischio di distruzione."
+  "design_principles_v3": {
+    "principle_1": "Le Vitalità sono ENERGIA, non azioni. Tutto il sapere tattico è nelle Carte Caratteristica nominated + Equipaggiamento + Strumenti Rapidi.",
+    "principle_2": "I tag sono CHIAVI, non vincoli. Una Vitalità con più tag può attivare più tipi di poteri.",
+    "principle_3": "Le Carte Caratteristica nominated definiscono L'IDENTITÀ del PG. Due PG con stesso punteggio possono essere completamente diversi per nominated scelte.",
+    "principle_4": "Il pool misto nominated + bianche narrano la PROGRESSIONE del PG. Le bianche sono slot non ancora sviluppati.",
+    "principle_5": "La Magia è a DUE VIE: Risonanza per potenza diretta (elementali + cura), Analisi per utility + crafting. Bilanciamento elegante.",
+    "principle_6": "Lo stesso framework si applica IN E FUORI dal combattimento. Le abilità nominated servono sia per Intimidire (Sociale) sia per Attacco Speciale (Combattimento).",
+    "principle_7": "Le Carte Lato Giocatore feribili offrono scelte tattiche profonde: attivare il potere speciale = ferire l'Equipaggiamento, con rischio di distruzione.",
+    "principle_8": "I tag [Ferita] danno significato tattico alle Carte Caratteristica ferite: anche disabilitate, possono essere temporaneamente riattivate tramite la giusta Vitalità."
   },
   "cross_references": {
     "vitality_engine": "Vedi 01_core_engine/vitality_engine.json per il Motore Vitalità (danno, milling, esaurimento).",
     "atb_timeline": "Vedi 02_mechanics/atb_timeline.json per la Cintura ATB.",
-    "character_sheet": "Vedi 03_character/character_sheet.json per la scheda PG e gli slot Lato Giocatore.",
+    "character_sheet": "Vedi 03_character/character_sheet.json per la scheda PG, le Carte Caratteristica nominated e gli slot Lato Giocatore.",
     "combat_math": "Vedi 04_combat/combat_math.json per la risoluzione del combattimento.",
-    "equipment_system": "Vedi 05_equipment/equipment_system.json per i dettagli sull'Equipaggiamento feribile.",
-    "enemy_system": "Vedi 06_enemies/enemy_system.json per i nemici."
+    "equipment_system": "Vedi 05_equipment/equipment_system.json per i dettagli sull'Equipaggiamento feribile + Strumenti Rapidi + crafting Analisi.",
+    "enemy_system": "Vedi 06_enemies/enemy_system.json per i nemici.",
+    "character_cards_catalog": "DA CREARE: 08_character_cards_catalog.json — catalogo delle Carte Caratteristica nominated."
   }
 }

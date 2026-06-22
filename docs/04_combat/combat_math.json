@@ -1,19 +1,19 @@
 {
   "section_id": "05",
   "section_name": "Matematica di Combattimento e Risoluzione",
-  "version": "13.0",
-  "status": "AGGIORNATO v2.1 — Le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper (richiede T5 + Caratteristica 5). Equipaggiamento feribile a 2 stadi. Danno Arma = Tabella Potere Vitalità + bonus opzionale dell'Arma. Strumenti Rapidi SOLO usa-e-getta.",
+  "version": "14.0",
+  "status": "AGGIORNATO v3 — Le azioni di attacco/difesa sono determinate dai POTERI ospitati sulle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle CARTE LATO GIOCATORE fisiche (Equipaggiamento + Strumenti Rapidi) attivati tramite Vitalità. RIMOSSO sistema Materie FF7 ed Esper. Magia a due vie: Risonanza (elementale+cura) e Analisi (utility+crafting talismani offensivi). Difesa = abilità difensiva ospitata su Carta Caratteristica nominated. Danno Arma = Tabella Potere Vitalità + bonus opzionale dell'Arma. Strumenti Rapidi = 5 slot, usa-e-getta + talismani craftati.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB (v2). NOVITÀ: le azioni di attacco/difesa non sono più predefinite. Un PG attacca solo se ha un'Arma equipaggiata e la attiva con una Vitalità [Strumento]. Un PG difende solo se ha un'Abilità Difensiva equipaggiata e la attiva con una Vitalità compatibile. Le Magie sono Carte Lato Giocatore con 5 livelli di potere + Esper al Liv 5. Il danno subito rimane invariato: Standard (Milling o Ferita Caratteristica) e Diretto.",
+  "description": "Regole per danno, combo, difesa e risoluzione nella Cintura ATB (v3). Le azioni di attacco/difesa non sono predefinite. Un PG attacca solo se ha un'Arma equipaggiata (o un'abilità offensiva nominated) attivata con una Vitalità [Strumento] o [Abilità]. Un PG difende solo se ha un'Abilità Difensiva ospitata su una Carta Caratteristica nominated e la attiva con una Vitalità compatibile. Magia a due vie: Risonanza (incantesimi elementali + cura) e Analisi (utility + crafting talismani monouso). Il danno subito rimane invariato: Standard (Milling o Ferita Caratteristica) e Diretto.",
   "point_4_power_and_damage": {
-    "name": "Punto 4 — Potere e Danni (v2.1)",
-    "core_rule_v2_1": "Il danno base è determinato dalla TABELLA POTERE DELLA VITALITÀ (Caratteristica del PG × T della carta giocata). La Carta Lato Giocatore attivata (Arma, Magia o Abilità) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
-    "formula_v2_1": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Carta Lato Giocatore(livello scelto) + Modificatori (tag [Ferita], ecc.)",
-    "example_v2_1": "PG con Istinto 3 gioca Vitalità Istinto T3 con tag [Strumento]. Tabella Potere Istinto(3) × T3 = 8 danno base. La Spada Lunga (Arma) ha +2 danno bonus = 8 + 2 = 10 danno totale. Se il PG è ferito e la Vitalità ha [Ferita], +1 ulteriore.",
-    "philosophy_v2_1": "La Tabella Potere della Vitalità (già esistente e confermata) resta la base numerica del danno. Le Carte Lato Giocatore aggiungono personalità (effetti speciali per livello) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale senza invalidare la tabella già scritta.",
-    "power_table_reference": "Vedi 01_core_engine/card_anatomy.json → player_card_examples_v2 per esempi di tabelle.",
+    "name": "Punto 4 — Potere e Danni (v3)",
+    "core_rule_v3": "Il danno base è determinato dalla TABELLA POTERE DELLA VITALITÀ (Caratteristica del PG × T della carta giocata). Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
+    "formula_v3": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "example_v3": "PG con Impeto 3 gioca Vitalità Impeto T3 con tag [Strumento]. Tabella Potere Impeto(3) × T3 = 8 danno base. La Spada Lunga (Arma) ha +2 danno bonus = 8 + 2 = 10 danno totale. Se il PG ha una Carta Caratteristica Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
+    "philosophy_v3": "La Tabella Potere della Vitalità resta la base numerica del danno. I poteri attivati (dalle nominated o dalle Carte Lato Giocatore fisiche) aggiungono personalità (effetti speciali per livello) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale senza invalidare la tabella già scritta.",
+    "power_table_reference": "Vedi 01_core_engine/card_anatomy.json → player_card_examples_v3 per esempi di tabelle.",
     "characteristic_power_cap": "Il PG non può selezionare livelli di effetto superiori al suo valore di Caratteristica attuale. Una Caratteristica ferita riduce i livelli raggiungibili.",
-    "tag_ferita_interaction": "Se il PG ha almeno una Caratteristica o un Cuore ferito e attiva una Carta Lato Giocatore con una Vitalità che ha il tag [Ferita], ottiene un bonus meccanico aggiuntivo."
+    "tag_ferita_v3": "TAG [Ferita] sulle Vitalità: permette di RIATTIVARE le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. Se ho 2 carte Impeto ferite e gioco una Vitalità Impeto con [Ferita], scelgo quale delle due riattivare per quel turno. Senza [Ferita], le carte ferite sono inattive."
   },
   "point_5_two_layer_damage": {
     "name": "Punto 5 — Danno a Doppio Strato",
@@ -30,7 +30,7 @@
       "absorption_options_legacy_note": "Le vecchie opzioni combinate (Mazzo + Caratteristica + Cuore) sono state sostituite dalle Due Categorie di Danno. I Cuori NON sono più un'opzione per il Danno Standard.",
       "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Caratteristiche/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità. Vedi 'Danno Diretto alla Caratteristica'.",
       "damage_typing": {
-        "fisico": "Bersaglia Istinto / Evasione. Colpi, tagli, impatti — chi AGISCE fisicamente.",
+        "fisico": "Bersaglia Impeto / Istinto. Colpi, tagli, impatti — chi AGISCE fisicamente.",
         "magico": "Bersaglia Risonanza / Analisi. Maledizioni, folgori, assalti psichici — chi COMPRENDE.",
         "anatema": "Bersaglio Cuori (prossimo Cuore nell'ordine). Nessuna scelta."
       },
@@ -98,7 +98,7 @@
     },
     "combo_damage": {
       "rule": "Il danno di una combo è la SOMMA dei valori POTERE delle carte nella colonna.",
-      "example": "Guerriero gioca [Apertura] Istinto Costo 3 (Istinto 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
+      "example": "Guerriero gioca [Apertura] Impeto Costo 3 (Impeto 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
       "culmine_bonus": "Se la Chiusura è un [Culmine], l'effetto viene amplificato drasticamente.",
       "combo_explanation": "Due personaggi uniscono gli sforzi: l'Apertura crea una distrazione/apertura, la Chiusura sfrutta il punto debole scoperto. Non è magia astratta — è tattica di squadra."
     },
@@ -109,31 +109,31 @@
     "defense_offense_fusion": "Una [Opposizione] con tag [Sviluppo] può mitigare un attacco nemico E fare combo con un compagno. Difesa e Offesa NON sono mai in conflitto."
   },
   "point_6_defense_mechanic": {
-    "name": "Punto 6 — Sistema di Difesa (v2)",
-    "v2_change": "Il Blocco Perfetto non si basa più sul tag [Opposizione] della Vitalità (che è stato rimosso). Si basa sull'ABILITÀ DINENSIVA equipaggiata e attivata in quello stesso slot temporale.",
-    "three_defense_types_v2": {
+    "name": "Punto 6 — Sistema di Difesa (v3)",
+    "v3_change": "Il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Caratteristica NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE (v3).",
+    "three_defense_types_v3": {
       "perfect_block": {
-        "name": "Blocco Perfetto (v2)",
-        "condition_v2": "Una ABILITÀ DINENSIVA del PG è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
+        "name": "Blocco Perfetto (v3)",
+        "condition_v3": "Una ABILITÀ DINENSIVA (ospitata su una Carta Caratteristica nominated, es. Istinto 'Schivata Acrobatica') è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
         "effect": "0 danni. L'attacco viene completamente deviato.",
-        "unlocks_reaction_tags": "Sblocca i tag Reazione sull'Abilità Difensiva: [Contrattacco] (zeri danni + colpisci), [Intercettazione] (annulla attacco per tutti, richiede combo), [Immolazione] (subisci doppio, alleati a 0).",
+        "unlocks_reaction_tags": "Sblocca i tag Reazione sull'abilità difensiva nominated: [Contrattacco] (zeri danni + colpisci), [Intercettazione] (annulla attacco per tutti, richiede combo), [Immolazione] (subisci doppio, alleati a 0).",
         "narrative": "Hai parato esattamente dove l'attacco arrivava."
       },
       "mitigated_block": {
         "name": "Blocco Mitigato",
-        "condition_v2": "Abilità Difensiva attivata nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
+        "condition_v3": "Abilità Difensiva (nominated) attivata nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
         "effect": "Riduzione danni (parziale)."
       },
       "full_damage": {
         "name": "Danno Pieno",
-        "condition_v2": "Nessuna Abilità Difensiva attivata nella posizione o in quelle adiacenti. Un PG senza Abilità Difensiva equipaggiata subisce SEMPRE danno pieno.",
+        "condition_v3": "Nessuna Abilità Difensiva attivata nella posizione o in quelle adiacenti. Un PG senza Abilità Difensiva nominated subisce SEMPRE danno pieno.",
         "effect": "Danno pieno (Milling o Ferita Caratteristica, a scelta del PG)."
       }
     },
-    "no_default_defense": "NOVITÀ v2: SENZA Abilità Difensiva equipaggiata, il PG NON può difendersi. Subisce sempre danno pieno. Questo rende le Abilità Difensive fondamentali quanto le Armi.",
-    "shield_sliding_v2": {
+    "no_default_defense": "NOVITÀ v3: SENZA Abilità Difensiva nominated (su una Carta Caratteristica), il PG NON può difendersi. Subisce sempre danno pieno. Questo rende le nominated difensive fondamentali quanto le Armi.",
+    "shield_sliding_v3": {
       "name": "Shield Sliding (Slittamento Scudo)",
-      "mechanic_v2": "Ferire lo Scudo (1° ferimento, attivazione volontaria) permette di 'slittare' una Vitalità già giocata di 1 slot a sinistra o a destra, spostando l'attivazione dell'Abilità Difensiva agganciata.",
+      "mechanic_v3": "Ferire lo Scudo (1° ferimento, attivazione volontaria) permette di 'slittare' una Vitalità già giocata di 1 slot a sinistra o a destra, spostando l'attivazione dell'Abilità Difensiva nominated agganciata.",
       "timing": "Si dichiara DOPO che il Master rivela il token d'attacco, ma PRIMA del calcolo dei danni.",
       "possible_outcomes": {
         "upgrade_to_perfect": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → Blocco Perfetto.",
@@ -142,9 +142,9 @@
       },
       "shield_wound_note": "Ferire lo Scudo per lo slittamento è VOLONTARIO. Al 2° ferimento lo Scudo è DISTRUTTO (vedi 05_equipment/equipment_system.json)."
     },
-    "armor_absorption_v2": {
-      "name": "Assorbimento Armatura (v2)",
-      "mechanic_v2": "Ferire l'Armatura (1° ferimento, attivazione volontaria) attiva il suo POTERE SPECIALE (spesso assorbimento danni).",
+    "armor_absorption_v3": {
+      "name": "Assorbimento Armatura (v3)",
+      "mechanic_v3": "Ferire l'Armatura (1° ferimento, attivazione volontaria) attiva il suo POTERE SPECIALE (spesso assorbimento danni).",
       "wound_note": "Ferire l'Armatura è VOLONTARIO. Al 2° ferimento è DISTRUTTA."
     }
   },
@@ -157,8 +157,8 @@
     "tag_based_mitigation": {
       "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
       "examples": {
-        "immunity": "Fantasma immune a [Istinto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
-        "resistance": "Golem resistente a [Evasione]: gli attacchi di destrezza fanno danno ridotto.",
+        "immunity": "Fantasma immune a [Impeto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
+        "resistance": "Golem resistente a [Istinto]: gli attacchi di destrezza fanno danno ridotto.",
         "vulnerability": "Non-morto vulnerabile a [Risonanza]: l'empatia e la connessione col mondo dei viventi fa danno aumentato."
       },
       "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
@@ -186,38 +186,28 @@
     "v10.0": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto (Caratteristica a 0 = Cuore ferito OBBLIGATORIO). Cuori NON sono opzione per Danno Standard.",
     "v11.0": "Danno Anatema e Danno Diretto Cuore formalizzati. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite).",
     "v12.0": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità. Le Magie seguono il modello Materie FF7 con 5 livelli + Esper al Liv 5. Equipaggiamento feribile a 2 stadi (1° = potere speciale, 2° = distrutto). Senza Arma non si attacca; senza Abilità Difensiva non si difende. Ferita Caratteristica SEMPRE sulla Caratteristica (NON trasferibile a Equipaggiamento).",
-    "v13.0": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma. Strumenti Rapidi SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). [Fulmineo] chiarito: carta pagante che si attiva nel proprio slot."
+    "v13.0": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma. Strumenti Rapidi SOLO usa-e-getta (nessuna ferita a 2 stadi). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). [Fulmineo] chiarito: carta pagante che si attiva nel proprio slot.",
+    "v14.0": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Caratteristica nominated. Magia a due vie: Risonanza (elementale + cura) + Analisi (utility + crafting talismani offensivi monouso). Le Abilità Difensive sono ospitate su Carte Caratteristica nominated (non più Carte Abilità fisiche separate). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. Slot Strumenti Rapidi = 5 (con talismani Analisi). Tag [Ferita] = riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo della Vitalità giocata."
   },
-  "v2_magic_esper_system": {
-    "name": "Sistema Magie v2 — Materie FF7 + Esper",
-    "description": "Le Magie sono Carte Lato Giocatore (3 slot). Ogni Magia è una MATERIA con 5 livelli di potere. L'attivazione richiede una Vitalità con tag [Magia] della caratteristica corretta (solitamente Risonanza).",
-    "level_progression": {
-      "rule": "Il T della Vitalità determina quanti livelli di potere possono essere selezionati per quella Magia. T1 = solo livello 1, T2 = scegli tra 1-2, T3 = scegli tra 1-3, T4 = scegli tra 1-4, T5 = scegli tra 1-5.",
-      "characteristic_cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Risonanza 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3 (non 4-5).",
-      "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit."
+  "v3_magic_two_ways": {
+    "name": "Sistema Magie v3 — Due Vie",
+    "description": "La magia è a DUE VIE, ognuna associata a una Caratteristica diversa. RIMOSSO il sistema Materie FF7 ed Esper.",
+    "risonanza_direct_magic": {
+      "name": "Via 1 — Risonanza (Magia Diretta)",
+      "nature": "Magia in sintonia col mondo. Incantesimi elementali (fuoco, ghiaccio, fulmine) + cura.",
+      "activation": "Vitalità con tag [Magia] + scelta dell'incantesimo dalla Carta Caratteristica nominated Risonanza.",
+      "power_scaling": "Potenza scala col T della Vitalità (Tabella Potere Vitalità). Livello effetto limitato dal valore attuale di Risonanza del PG.",
+      "hosting": "Gli incantesimi sono ospitati su Carte Caratteristica nominated Risonanza (specializzate o generiche)."
     },
-    "esper_evocation": {
-      "trigger": "Livello 5 selezionato (richiede Vitalità T5 E Caratteristica PG = 5 — CONDIZIONE DOPPIA v2.1).",
-      "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente.",
-      "esper_limits_v2_1": "RISOLTO v2.1 — NESSUN limite di utilizzo per combattimento. L'Esper può essere evocato ogni volta che le condizioni sono soddisfatte. TUTTAVIA, la condizione DOPPIA (T5 + Caratteristica 5) è MOLTO RESTRITTIVA: richiede (1) PG con Caratteristica 5 (massimo possibile, 1/10 dei punti creazione), (2) pescare una Vitalità T5 della caratteristica corretta, (3) giocare la Vitalità T5 come azione principale nel tick 5. La rarità intrinseca delle condizioni bilancia la potenza dell'Esper.",
-      "examples": {
-        "ifrit": "Materia Fuoco Liv 5 → Ifrit: 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
-        "shiva": "Materia Ghiaccio Liv 5 → Shiva: 12 danno + congelamento (i nemici saltano il prossimo tick)",
-        "ramuh": "Materia Fulmine Liv 5 → Ramuh: 10 danno a TUTTI i nemici + stun ai più deboli"
-      }
+    "analisi_utility_and_crafting": {
+      "name": "Via 2 — Analisi (Magia Utility + Crafting)",
+      "nature": "Magia ragionata: utility (rivelare debolezze, scassinare, riparare, danneggiare tratti nemici base come armatura fissa) + crafting di talismani/pergamene monouso OFFENSIVI.",
+      "utility_activation": "Vitalità con tag [Abilità] o [Magia] + scelta dell'utility dalla Carta Caratteristica nominated Analisi.",
+      "crafting_rule": "Creazione durante riposo. Limite crafting = valore Analisi (es: Analisi 3 = 3 talismani/giorno). Aumentabile con nominated specifiche ('Artigiano', 'Mago Erudito').",
+      "talisman_hosting": "I talismani craftati vengono EQUIPAGGIATI negli slot Strumenti Rapidi (5 slot). Solo i talismani equipaggiati sono utilizzabili in combattimento.",
+      "talisman_activation": "Si attivano con tag [Strumento] sulle Vitalità. Scale con Tabella Potere Vitalità. Solo OFFENSIVI (la cura resta dominio di Risonanza)."
     },
-    "example_materia_fire": {
-      "name": "Materia Fuoco",
-      "characteristic": "Risonanza",
-      "activation_tags_required": ["[Magia]"],
-      "power_table": {
-        "1": "Spark — 1 danno a 1 bersaglio",
-        "2": "Fire — 3 danno a 1 bersaglio",
-        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
-        "4": "Firaga — 8 danno a tutti i nemici (Area)",
-        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente"
-      }
-    }
+    "design_intent": "Le due vie riflettono due approcci alla magia: Risonanza è intuitiva/empatica (diretta), Analisi è razionale/studiata (utility + preparazione). Un PG può specializzarsi in una o avere both nominated in entrambe le Caratteristiche."
   },
   "v2_equipment_wound_system": {
     "name": "Sistema Ferita Equipaggiamento (v2)",

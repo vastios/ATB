@@ -1,67 +1,61 @@
 {
   "section_id": "06",
-  "section_name": "Sistema Equipaggiamento e Carte Lato Giocatore (v2)",
-  "version": "11.0",
-  "status": "AGGIORNATO v2.1 — L'Equipaggiamento è CENTRALE, non periferico. 4 slot fissi (1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio). Sistema ferita a 2 STADI (solo Equipaggiamento): 1° ferimento attiva il POTERE SPECIALE (uso continua), 2° ferimento DISTRUGGE. Le ferite sono VOLONTARIE. Strumenti Rapidi (3 slot) SOLO usa-e-getta (NESSUNA ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità + Bonus opzionale Arma. Esper richiede T5 + Caratteristica 5.",
+  "section_name": "Sistema Equipaggiamento e Carte Lato Giocatore (v3)",
+  "version": "12.0",
+  "status": "AGGIORNATO v3 — 9 SLOT FISSI LATO GIOCATORE fisici: 4 Equipaggiamento + 5 Strumenti Rapidi (usa-e-getta + talismani craftati da Analisi). RIMOSSE Carte Abilità e Carte Magia come slot fisici separati — assorbite dalle CARTE CARATTERISTICA NOMINATED. RIMOSSO sistema Materie FF7 ed Esper. Magia a due vie: Risonanza (diretta) + Analisi (utility + crafting). Equipaggiamento confermato CENTRALE, sistema ferita a 2 stadi VOLONTARIO invariato. Danno Arma = Tabella Potere Vitalità + Bonus opzionale Arma.",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Sistema Equipaggiamento v2. L'Equipaggiamento è il CATALOGO DELLE MOSSE del PG. Definisce COSA può fare (attaccare, difendere, usare poteri speciali). Si attiva tramite Vitalità con tag compatibili (principalmente [Strumento]). Il sistema ferita a 2 stadi rende la scelta di attivare poteri speciali un dilemma tattico: 1° ferimento = potere speciale (uso continua), 2° ferimento = distrutto. Le ferite all'Equipaggiamento sono VOLONTARIE e separate dalla Ferita Caratteristica (che è sempre sulla Caratteristica).",
-  "v2_paradigm_shift": {
-    "summary": "Nella v1, l'Equipaggiamento era periferico: serviva solo per ridurre fatica o slittare difese. Nella v2, l'Equipaggiamento è CENTRALE: definisce le azioni del PG. Senza Arma non si attacca. Senza Abilità Difensiva non si difende. Le Magie sono Carte Lato Giocatore (sistema Materie FF7).",
-    "key_changes": [
-      "Equipaggiamento diventa CENTRALE (non periferico)",
-      "4 slot fissi: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio",
-      "Sistema ferita a 2 stadi: 1° = potere speciale (uso continua), 2° = distrutto",
-      "Ferite VOLONTARIE (scelta del giocatore per attivare poteri speciali)",
-      "Rimosso il sistema Normale/Superiore (sostituito dai 2 stadi di ferita)",
-      "Le Magie sono Carte Lato Giocatore (sistema Materie FF7)",
-      "Aggiunti slot per Strumenti Rapidi (3), Abilità (4), Magie (3)"
+  "description": "Sistema Equipaggiamento v3. L'Equipaggiamento fisico (4 slot) è il CATALOGO DEI POTERI FISICI del PG: attacchi con Arma, difese con Scudo, assorbimento con Armatura, bonus con Accessorio. I poteri basati su caratteristica (abilità) e gli incantesimi sono ospitati sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 03_character/character_sheet.json). Si attivano tramite Vitalità con tag compatibili. Il sistema ferita a 2 stadi (Equipaggiamento) resta invariato: 1° ferimento = potere speciale, 2° ferimento = distrutto, ferite VOLONTARIE. Strumenti Rapidi aumentati a 5 slot, ospitano sia oggetti trovati sia talismani craftati da Analisi (offensivi, monouso).",
+  "v3_paradigm_shift": {
+    "summary": "Nella v2, le Carte Lato Giocatore (Eq + Strumenti + Abilità + Magie) erano tutti slot fisici separati. Nella v3, le Carte Abilità e Carte Magia sono state RIMOSSE come slot fisici: i loro poteri sono assorbiti dalle CARTE CARATTERISTICA NOMINATED. Restano fisici solo: 4 Equipaggiamento + 5 Strumenti Rapidi. Il sistema Materie FF7 ed Esper è RIMOSSO. La magia è a DUE VIE: Risonanza (diretta) e Analisi (utility + crafting talismani).",
+    "key_changes_v3": [
+      "RIMOSSO slot Abilità fisiche (4) — assorbite da nominated",
+      "RIMOSSO slot Magie fisiche (3) — assorbite da nominated",
+      "RIMOSSO sistema Materie FF7 ed Esper",
+      "Slot Strumenti Rapidi aumentati da 3 a 5",
+      "Strumenti Rapidi ospitano anche talismani craftati da Analisi (offensivi, monouso)",
+      "Equipaggiamento (4 slot) invariato: sistema ferita 2 stadi VOLONTARIO",
+      "Magia a due vie: Risonanza (elementale + cura) + Analisi (utility + crafting)",
+      "Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO"
     ]
   },
-  "player_card_slots_v2": {
-    "total_slots": 14,
+  "player_card_slots_v3": {
+    "total_slots": 9,
     "breakdown": {
       "equipment": {
         "slots": 4,
         "composition": ["1 Arma", "1 Scudo (o Doppia Arma)", "1 Armatura", "1 Accessorio"]
       },
       "quick_items": {
-        "slots": 3,
-        "nature": "Oggetti monouso (Pozioni, Grimaldelli, Bombe, ecc.)"
-      },
-      "abilities": {
-        "slots": 4,
-        "nature": "Mosse basate su caratteristica (Intimidire, Persuadere, Schivata, ecc.)"
-      },
-      "magic": {
-        "slots": 3,
-        "nature": "Sistema Materie FF7 (5 livelli di potere + Esper al Liv 5)"
+        "slots": 5,
+        "nature": "Oggetti monouso trovati (Pozioni, Grimaldelli, Bombe, ecc.) + TALISMANI craftati da Analisi (pergamene offensive monouso)"
       }
-    }
+    },
+    "note_pooled_powers": "I poteri basati su caratteristica (Abilità) e gli incantesimi (Magie) NON sono più slot fisici separati. Sono ospitati sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 03_character/character_sheet.json)."
   },
-  "equipment_categories_v2": {
-    "name": "Categorie di Equipaggiamento (v2)",
-    "description": "Le 4 slot di Equipaggiamento hanno ruoli distinti. Ogni categoria ha un potere base (sempre attivo quando attivata da una Vitalità) e un potere speciale (attivato dal 1° ferimento).",
+  "equipment_categories_v3": {
+    "name": "Categorie di Equipaggiamento (v3 — invariato nella sostanza)",
+    "description": "Le 4 slot di Equipaggiamento hanno ruoli distinti. Ogni categoria ha un potere base (sempre attivo quando attivata da una Vitalità) e un potere speciale (attivato dal 1° ferimento). Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO.",
     "arma": {
       "slot": 1,
-      "characteristic_typically": "Istinto",
+      "characteristic_typically": "Impeto",
       "activation_tags_required": ["[Strumento]"],
-      "damage_formula_v2_1": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto).",
+      "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto).",
       "base_power": "Attacco fisico. Danno base dalla Tabella Potere della Vitalità. L'Arma fornisce ABILITÀ EXTRA (effetti speciali per livello) ed eventuale BONUS DI DANNO che si SOMMA alla tabella.",
-      "example_calculation": "PG Istinto 3 gioca Vitalità Istinto T3. Tabella Potere(3 × T3) = 8 danno base. Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
+      "example_calculation": "PG Impeto 3 gioca Vitalità Impeto T3. Tabella Potere(3 × T3) = 8 danno base. Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
       "special_power_examples": [
         "Fendente — colpisci 2 nemici adiacenti per metà danno",
         "Stordente — il prossimo attacco del bersaglio è a potenza dimezzata",
         "Perforante — ignora Armatura nemica per questo attacco"
       ],
-      "destruction_effect": "Quando un'arma viene DISTRUTTA (2° ferimento), non può più essere attivata per il resto del combattimento. Si ripristina a fine combattimento. Effetti speciali alla distruzione: opzionali e specifici per Arma (es. esplosione finale che infligge 2 danno a tutti i nemici adiacenti)."
+      "destruction_effect": "Quando un'arma viene DISTRUTTA (2° ferimento), non può più essere attivata per il resto del combattimento. Si ripristina a fine combattimento. Effetti speciali alla distruzione: opzionali e specifici per Arma."
     },
     "scudo_o_doppia_arma": {
       "slot": 1,
       "options": "Scudo (difensivo) OPPURE Doppia Arma (offensivo, seconda Arma)",
       "scudo": {
-        "characteristic_typically": "Evasione o Istinto",
+        "characteristic_typically": "Istinto o Impeto",
         "activation_tags_required": ["[Strumento]"],
-        "base_power": "Shield Sliding — slitta una Vitalità già giocata di 1 slot per riallineare la difesa",
+        "base_power": "Shield Sliding — slitta una Vitalità già giocata di 1 slot per riallineare la difesa (agganciata a un'Abilità Difensiva nominated)",
         "special_power_examples": [
           "Riflesso — riflette 1 danno all'attaccante",
           "Riparo — protegge anche un alleato adiacente per questo tick",
@@ -69,7 +63,7 @@
         ]
       },
       "doppia_arma": {
-        "characteristic_typically": "Istinto",
+        "characteristic_typically": "Impeto",
         "base_power": "Attacco con entrambe le armi — danno = somma dei Poteri delle due armi al livello scelto",
         "special_power_examples": [
           "Tornado — colpisci tutti i nemici adiacenti",
@@ -93,14 +87,14 @@
       "base_power": "Bonus passivo (es. +1 a una Caratteristica per il calcolo del Potere, +1 slot Mano, ecc.)",
       "special_power_examples": [
         "Pozione Interna — cura automatica quando scendi sotto 10 Vitalità",
-        "Focus Magico — +1 livello di effetto per le Magie",
+        "Focus Magico — +1 livello di effetto per i poteri nominated",
         "Piede Leggero — +1 slot nella Cintura ATB"
       ]
     }
   },
-  "wound_system_2_stages_v2": {
-    "name": "Sistema Ferita Equipaggiamento a 2 Stadi (v2)",
-    "description": "Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE: il giocatore sceglie quando ferire l'Equipaggiamento per attivare il suo potere speciale.",
+  "wound_system_2_stages_v3": {
+    "name": "Sistema Ferita Equipaggiamento a 2 Stadi (v3 — INVARIATO)",
+    "description": "Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE: il giocatore sceglie quando ferire l'Equipaggiamento per attivare il suo potere speciale. Invariato dalla v2.",
     "stage_1_first_wound": {
       "name": "1° Ferimento — Attivazione Potere Speciale",
       "trigger": "Il giocatore SCEGLIE di ferire l'Equipaggiamento (in qualsiasi momento in cui vorrebbe attivarne il potere speciale).",
@@ -125,121 +119,77 @@
       "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Caratteristiche (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti."
     }
   },
-  "activation_rule_v2": {
-    "name": "Regola di Attivazione Equipaggiamento (v2)",
-    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti.",
+  "activation_rule_v3": {
+    "name": "Regola di Attivazione Equipaggiamento (v3)",
+    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti di TAG (principalmente [Strumento]). La Vitalità NON deve essere della stessa caratteristica dell'Equipaggiamento: i TAG indicano cosa si può attivare.",
     "requirements": [
-      "La Vitalità deve avere la caratteristica corretta (es. Istinto per la maggior parte delle Armi)",
-      "La Vitalità deve avere il tag [Strumento] (richiesto da quasi tutto l'Equipaggiamento)",
-      "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB)"
+      "La Vitalità deve avere i TAG richiesti dall'Equipaggiamento (principalmente [Strumento])",
+      "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB)",
+      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Caratteristica del PG"
     ],
     "level_of_effect": "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=scegli tra 1-5). Limitato dal valore di Caratteristica del PG.",
     "armi_improvissate_fallback": "Se il PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvissate: attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma)."
   },
-  "quick_items_v2": {
-    "name": "Strumenti Rapidi (3 slot) — v2.1 CONFERMATO",
-    "description": "Oggetti usa-e-getta. Si attivano con [Strumento]. Spesso hanno effetto fisso (non scala con T). Si consumano quando usati.",
-    "v2_1_confirmed": "CONFERMATO v2.1: gli Strumenti Rapidi sono SOLO usa-e-getta. NON hanno sistema di ferite a 2 stadi. Principalmente usati IN combattimento.",
-    "examples": [
+  "quick_items_v3": {
+    "name": "Strumenti Rapidi (5 slot) — v3",
+    "description": "5 slot per Strumenti Rapidi. Ospitano sia oggetti trovati (usa-e-getta) sia TALISMANI craftati da Analisi (pergamene offensive monouso). Si attivano con [Strumento]. Spesso hanno effetto fisso (non scala con T). Si consumano quando usati.",
+    "slots": 5,
+    "v3_increase": "Aumentati da 3 (v2) a 5 (v3) per ospitare anche i talismani craftati da Analisi.",
+    "examples_found_items": [
       "Pozione — cura 5 punti Vitalità (effetto fisso)",
       "Grimaldello — apre una serratura (Esplorazione)",
       "Bomba a Fumogeno — permette ritirata",
       "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)",
-      "Pergamena di Fuoco — infligge 4 danno a un bersaglio (effetto fisso)",
+      "Pergamena di Fuoco (trovata) — infligge 4 danno a un bersaglio (effetto fisso)",
       "Bomba Acida — infligge 2 danno + riduce Armatura nemica di 1"
     ],
-    "wound_system": "NESSUNO — v2.1 CONFERMATO. Gli Strumenti Rapidi NON hanno ferite a 2 stadi (a differenza dell'Equipaggiamento). Si consumano all'uso e vanno riacquistati/ritrovati.",
-    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (consumato, non va in pila scarti). Va riacquistato o ritrovato. In combattimento, lo slot resta vuoto fino alla fine del combattimento (o fino a ricarica con Abilità apposita)."
-  },
-  "magic_system_v2": {
-    "name": "Sistema Magie (Materie FF7) — v2",
-    "description": "3 slot per Magie. Ogni Magia è una MATERIA con 5 livelli di potere. Sistema derivato da Final Fantasy 7.",
-    "slots": 3,
-    "activation": "Richiede Vitalità con tag [Magia] e caratteristica corrispondente (solitamente Risonanza, ma alcune Magie possono richiedere Analisi).",
-    "level_progression": {
-      "rule": "Il T della Vitalità determina quanti livelli di potere possono essere selezionati.",
-      "table": {
-        "T1": "Solo livello 1 (effetto base)",
-        "T2": "Scegli tra livello 1 o 2",
-        "T3": "Scegli tra livello 1, 2 o 3",
-        "T4": "Scegli tra livello 1, 2, 3 o 4",
-        "T5": "Scegli tra livello 1, 2, 3, 4 o 5"
-      },
-      "characteristic_cap": "Il PG NON può superare il livello della sua Caratteristica. Un PG con Risonanza 3 che gioca una Vitalità T5 può scegliere solo tra i livelli 1-3."
+    "analisi_crafting_system": {
+      "name": "Crafting Analisi — Talismani Offensivi",
+      "creator": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Caratteristica nominated Analisi con il talento crafting).",
+      "creation_time": "Durante il RIPOSO (non in combattimento).",
+      "daily_limit": "Limite crafting = valore Analisi del PG (es: Analisi 3 = 3 talismani/giorno).",
+      "upgradeable": "Aumentabile con nominated specifiche (es. 'Artigiano', 'Mago Erudito') che raddoppiano o aggiungono slot crafting.",
+      "talisman_nature": "Talismani = pergamene offensive monouso che replicano incantesimi di attacco. Solo OFFENSIVI (la cura resta dominio di Risonanza).",
+      "talisman_activation": "Si attivano con tag [Strumento] sulle Vitalità. Scale con Tabella Potere Vitalità. Si consumano all'uso.",
+      "talisman_examples": [
+        "Talismano Fuoco — replica l'incantesimo Risonanza 'Fire' al livello del T della Vitalità giocata",
+        "Talismano Fulmine — replica 'Thunder' (offerta offensiva Analisi)",
+        "Talismano Acido — infligge danno + riduzione Armatura nemica"
+      ],
+      "equip_requirement": "Solo i talismani EQUIPAGGIATI negli slot Strumenti Rapidi sono utilizzabili in combattimento. Il limite di 5 slot crea un dilemma tattico: quanti slot dedicare a cure/difesa vs talismani offensivi."
     },
-    "level_diversity": "I 5 livelli non sono solo graduazioni di potenza: ogni livello può avere EFFETTI DIVERSI. Es. Fire: 1 bersaglio → 2 bersagli → Area → DoT → Esper Ifrit. Questo rende la scelta del livello strategica.",
-    "esper_system": {
-      "trigger": "Livello 5 selezionato (richiede Vitalità T5 E Caratteristica PG = 5 — CONDIZIONE DOPPIA v2.1).",
-      "effect": "Evoca l'Esper collegato alla Materia, con effetto molto più potente del livello 4.",
-      "esper_limits_v2_1": "RISOLTO v2.1 — NESSUN limite di utilizzo per combattimento. L'Esper può essere evocato ogni volta che le condizioni sono soddisfatte. La condizione DOPPIA (T5 + Caratteristica 5) è MOLTO RESTRITTIVA: (1) richiede PG con Caratteristica 5 (massimo possibile, 1/10 dei punti creazione), (2) pescare una Vitalità T5 della caratteristica corretta, (3) giocare la Vitalità T5 come azione principale nel tick 5. La rarità intrinseca bilancia la potenza dell'Esper.",
-      "examples": [
-        "Ifrit (Fuoco) — 15 danno + bruciatura persistente (3 danno/turno per 3 turni)",
-        "Shiva (Ghiaccio) — 12 danno + congelamento (nemici saltano il prossimo tick)",
-        "Ramuh (Fulmine) — 10 danno a TUTTI i nemici + stun ai più deboli",
-        "Carbuncle (Luce) — cura tutta la festa + riflesso danni per 2 tick",
-        "Diabolos (Ombra) — 20 danno a un bersaglio + drenaggio Vitalità"
-      ]
-    },
-    "example_materia_fire": {
-      "name": "Materia Fuoco",
-      "characteristic": "Risonanza",
-      "activation_tags_required": ["[Magia]"],
-      "power_table": {
-        "1": "Spark — 1 danno a 1 bersaglio",
-        "2": "Fire — 3 danno a 1 bersaglio",
-        "3": "Fira — 5 danno a 1 bersaglio + 2 a un secondo bersaglio",
-        "4": "Firaga — 8 danno a tutti i nemici (Area)",
-        "5": "Ifrit (Esper) — 15 danno + bruciatura persistente"
-      }
-    }
+    "wound_system": "NESSUNO — gli Strumenti Rapidi NON hanno ferite a 2 stadi (a differenza dell'Equipaggiamento). Si consumano all'uso e vanno riacquistati/ritrovati/ricraftati.",
+    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (consumato, non va in pila scarti). Va riacquistato, ritrovato o ricraftato. In combattimento, lo slot resta vuoto fino alla fine del combattimento (o fino a ricarica con Abilità nominated apposita)."
   },
-  "abilities_v2": {
-    "name": "Abilità (4 slot) — v2",
-    "description": "Mosse basate su Caratteristica. Valide ANCHE fuori dal combattimento (Sociale, Esplorazione, Conoscenze).",
-    "slots": 4,
-    "activation": "Richiede Vitalità con tag [Abilità] e caratteristica corrispondente.",
-    "linked_characteristic": "Ogni Abilità è legata a una caratteristica specifica (dà identità alle mosse).",
-    "examples": [
-      {
-        "name": "Intimidire",
-        "characteristic": "Istinto",
-        "activation_tags_required": ["[Abilità]"],
-        "power_table": {
-          "1": "Malus -1 al prossimo tiro del bersaglio",
-          "2": "Malus -2 al prossimo tiro",
-          "3": "Bersaglio Scosso: -2 a tutti i tiri per 2 turni",
-          "4": "Bersaglio Terrorizzato: non agisce per 1 turno",
-          "5": "Bersaglio si Arrende (se non Boss)"
-        },
-        "out_of_combat": "Sostituisce prova di Persuasione con minaccia"
-      },
-      {
-        "name": "Analisi Tattica",
-        "characteristic": "Analisi",
-        "activation_tags_required": ["[Abilità]"],
-        "power_table": {
-          "1": "Rivela 1 token nemico",
-          "2": "Rivela 2 token nemici",
-          "3": "Rivela tutti i token nemici +1 punto debole",
-          "4": "Tutti i PG ottengono +1 al prossimo attacco",
-          "5": "Identifica TUTTE le debolezze del nemico"
-        },
-        "out_of_combat": "Permette deduzioni e analisi di situazioni complesse"
-      },
-      {
-        "name": "Schivata",
-        "characteristic": "Evasione",
-        "activation_tags_required": ["[Abilità]"],
-        "power_table": {
-          "1": "Mitiga 1 danno (Breve Schivata)",
-          "2": "Mitiga 2 danni",
-          "3": "Mitiga 3 danni + sposta di 1 slot",
-          "4": "Blocco Perfetto (0 danno)",
-          "5": "Blocco Perfetto + Contrattacco gratuito"
-        },
-        "out_of_combat": "Permette di schivare trappole e pericoli"
-      }
-    ]
+  "v3_magic_two_ways_summary": {
+    "name": "Magia a Due Vie (v3) — RIMOSSO Materie FF7 ed Esper",
+    "description": "Il sistema Materie FF7 ed Esper è stato RIMOSSO in v3. La magia è ora a DUE VIE, ognuna ospitata su Carte Caratteristica nominated della caratteristica corrispondente. Per dettagli completi vedi 04_combat/combat_math.json → v3_magic_two_ways.",
+    "risonanza_path": {
+      "nature": "Magia diretta — incantesimi elementali (fuoco, ghiaccio, fulmine) + cura.",
+      "host": "Carte Caratteristica nominated Risonanza (specializzate o generiche).",
+      "activation": "Vitalità con tag [Magia] + scelta dell'incantesimo dalla nominated."
+    },
+    "analisi_path": {
+      "nature": "Magia utility + crafting talismani offensivi monouso.",
+      "host": "Carte Caratteristica nominated Analisi.",
+      "utility_activation": "Vitalità con tag [Abilità] o [Magia] + scelta dell'utility dalla nominated.",
+      "crafting_rule": "Limite = valore Analisi. Creazione in riposo. Talismani equipaggiati in slot Strumenti Rapidi (5 slot). Solo OFFENSIVI."
+    },
+    "esper_removed": "Il sistema Esper è RIMOSSO. La sua funzione (potere molto superiore al Liv 5) è assorbita dalle nominated specializzate di livello massimo della Caratteristica."
+  },
+  "abilities_v3_pooled_in_nominated": {
+    "name": "Abilità (v3) — ospitate su Carte Caratteristica Nominated",
+    "description": "Le vecchie Carte Abilità fisiche (4 slot, v2) sono RIMOSSE. Le abilità sono ora ospitate sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 03_character/character_sheet.json).",
+    "hosting_rule": "Ogni Carta Caratteristica nominated ospita 3 abilità (specializzate in tema, oppure generiche e versatili).",
+    "no_level_requirement": "Nessun livello minimo richiesto — la Tabella Potere Vitalità scala automaticamente l'effetto.",
+    "activation": "Vitalità con tag [Abilità] (o altro tag richiesto dall'abilità specifica) + scelta dell'abilità dalla nominated. La Vitalità NON deve essere della stessa caratteristica della nominated: i TAG indicano cosa si può attivare.",
+    "wound_effect": "Una Carta Caratteristica nominated FERITA disattiva TUTTE le sue abilità. Il tag [Ferita] sulle Vitalità permette di RIATTIVARE le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata.",
+    "examples_for_reference": [
+      {"name": "Intimidire", "host": "nominated Impeto", "nature": "Specializzata o generica"},
+      {"name": "Analisi Tattica", "host": "nominated Analisi", "nature": "Utility, rivela token/debolezze"},
+      {"name": "Schivata Acrobatica", "host": "nominated Istinto", "nature": "Difensiva, abilità Difensiva ospitata qui"}
+    ],
+    "out_of_combat": "Le abilità nominated sono valide ANCHE fuori dal combattimento (Sociale, Esplorazione, Conoscenze)."
   },
   "universal_flip_mechanic": {
     "name": "Meccanica Flip Universale (invariata)",
@@ -260,6 +210,7 @@
     "v8": "Aggiornamento minori.",
     "v9": "Sistema Equipaggiamento da RIVEDERE (note del designer).",
     "v10": "ARCHITETTURA v2: Equipaggiamento CENTRALE. 4 slot fissi. Sistema ferita 2 stadi (1° = potere speciale, 2° = distrutto). Ferite VOLONTARIE. Rimosso sistema Normale/Superiore. Aggiunti slot Strumenti Rapidi (3), Abilità (4), Magie (3 — Materie FF7). Ferita Caratteristica separata da Ferita Equipaggiamento.",
-    "v11": "ARCHITETTURA v2.1: Strumenti Rapidi CONFERMATI SOLO usa-e-getta (nessuna ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). Effetti di distruzione Arma opzionali (es. esplosione finale)."
+    "v11": "ARCHITETTURA v2.1: Strumenti Rapidi CONFERMATI SOLO usa-e-getta (nessuna ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). Effetti di distruzione Arma opzionali (es. esplosione finale).",
+    "v12": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. RIMOSSE slot Abilità (4) e Magie (3) fisiche separate — assorbite dalle CARTE CARATTERISTICA NOMINATED. Slot Strumenti Rapidi aumentati da 3 a 5 (ospitano anche talismani craftati da Analisi). Slot totali Lato Giocatore fisici ridotti da 14 a 9 (4 Eq + 5 Strum). Magia a due vie: Risonanza (diretta) + Analisi (utility + crafting). Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO. Sistema ferita 2 stadi Equipaggiamento INVARIATO."
   }
 }
