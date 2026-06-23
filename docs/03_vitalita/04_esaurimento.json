@@ -1,0 +1,43 @@
+{
+  "section_id": "03-04",
+  "section_name": "Collasso del Mazzo Vitalità — Esaurimento, Svenimento, Ferita Cuore",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce cosa succede quando il Mazzo Vitalità si esaurisce. È l'evento di tensione massima del combattimento. Il mazzo NON si rimescola: quando finisce, il PG ferisce un Cuore e crolla svenuto. Questo file è la CASA UNICA per la regola di esaurimento del mazzo.",
+  "exhaustion_condition": {
+    "name": "Condizione di Collasso",
+    "trigger": "Il Mazzo Vitalità è vuoto e si deve pescare (per il refill della mano o per milling subito).",
+    "effect": "Il PG ferisce il prossimo Cuore disponibile nell'ordine (1 → 2 → 3) E crolla svenuto (incapacitato fino a fine combattimento).",
+    "no_shuffle_rule": "Il mazzo NON si rimescola MAI. La Pila Scarti NON ritorna nel mazzo durante il combattimento. L'unico modo per recuperare è fuori dal combattimento (riposo o pozioni rivitalizzanti).",
+    "cross_reference_cuori": "Vedi 02_personaggio/04_cuori.json per l'ordine di ferita dei Cuori"
+  },
+  "tension_element": {
+    "name": "L'Elemento di Tensione",
+    "principle": "I giocatori vedono fisicamente il Mazzo Vitalità assottigliarsi. È il ticchettio dell'orologio.",
+    "narrative_weight": "Ogni carta persa è un passo verso il collasso. I giocatori sentono l'urgenza di concludere il combattimento PRIMA che il mazzo finisca.",
+    "tactical_implication": "Il PG deve bilanciare azioni costose (più carte = più impatto ma mazzo più veloce) vs azioni economiche (meno carte = più durata ma meno impatto per turno)."
+  },
+  "what_happens_after_collapse": {
+    "in_combat": {
+      "svenimento": "Il PG è SVENUTO. Incapacitato: non gioca carte, non attiva poteri, non difende. Subisce danno pieno da ogni attacco.",
+      "cuore_ferito": "Il prossimo Cuore disponibile è ferito. Vedi 02_personaggio/04_cuori.json",
+      "can_be_healed": "Un compagno può usare una Pozione Rivitalizzante o un incantesimo di cura per far tornare alcune carte nel mazzo. A quel punto il PG si riprende dallo svenimento (ma il Cuore ferito resta ferito).",
+      "death_check": "Se il collasso ferisce l'ULTIMO Cuore sano (Cuore 3), il PG MUORE. Vedi 02_personaggio/04_cuori.json → death_condition"
+    },
+    "out_of_combat": {
+      "riposo_totale": "Recupero completo. La Pila Scarti viene rimescolata nel Mazzo Vitalità.",
+      "pozioni_rivitalizzanti": "Recupero parziale.",
+      "speed": "VELOCE — nel dungeon, tra un combattimento e l'altro.",
+      "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json"
+    }
+  },
+  "relationship_with_dilemma": {
+    "principle": "L'esaurimento del mazzo è una delle 3 cause di Ferita Cuore (le altre due sono Anatema e Soglia del Vuoto).",
+    "cross_reference_full": "Vedi 02_personaggio/04_cuori.json → when_hearts_get_wounded e 05_combattimento/02_danno.json per il Dilemma del Guerriero completo"
+  },
+  "design_intent": {
+    "principle": "L'esaurimento del mazzo crea un TIMER FISICO per ogni combattimento. Non puoi combattere all'infinito — devi vincere prima di crollare. Questo rende ogni combattimento teso anche contro nemici deboli: la domanda non è 'se vinco' ma 'quanto mi costa vincere'.",
+    "comparison_with_other_systems": "A differenza di D&D ( dove i PF si rigenerano facilmente), qui l'esaustione è un COSTO REALE che lascia il segno (ferita Cuore)."
+  }
+}

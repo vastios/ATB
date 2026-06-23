@@ -1,0 +1,37 @@
+{
+  "section_id": "10-02",
+  "section_name": "Shevirat HaKelim — La Frantumazione dei Vasi",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "description": "Definisce il concetto cabalistico di Shevirat HaKelim (Frantumazione dei Vasi) e il suo parallelismo meccanico con la Ferita di Caratteristiche, Cuori e Equipaggiamento. Questo file è la CASA UNICA per il concetto di Shevirat HaKelim.",
+  "shevirat_hakelim_concept": {
+    "name": "Shevirat HaKelim — La Frantumazione dei Vasi",
+    "description": "Quando la Luce scese nei Mondi, aveva bisogno di VASI per contenerla. Questi Vasi erano i KELIM — contenitori di ogni forma e dimensione. Ma la Luce era troppa. I Vasi più deboli non riuscirono a contenerla e SI FRANTUMARONO. Questa è la SHEVIRAT HAKELIM — la Frantumazione dei Vasi, il secondo atto cosmico dopo il Tzimtzum.",
+    "cross_reference_tzimtzum": "Vedi 10_lore_cabalistica/01_cosmologia.json → origin_tzimtzum"
+  },
+  "mechanical_parallel": {
+    "principle": "Ogni volta che una Connessione viene GIRATA, è una Shevirat in miniatura — il Vaso del PG non riesce più a contenere la Luce di quel Mondo e si incrina. Ogni volta che un Keli viene distrutto, è una Shevirat completa — il Vaso si è spezzato e la Luce si è corrotta. La ferita all'Anima è la Shevirat più profonda: il Vaso dell'anima stessa si incrina.",
+    "three_levels_of_shevirat": {
+      "characteristic_wound": "Ferita a una Carta Caratteristica = Shevirat minore. Il canale verso un Mondo si incrina. Vedi 05_combattimento/02_danno.json",
+      "equipment_destruction": "Distruzione di un Equipaggiamento (2° ferimento volontario) = Shevirat di un Keli. Il Vaso fisico si spezza. Vedi 06_equipaggiamento/03_ferita_2_stadi.json",
+      "heart_wound": "Ferita a un Cuore = Shevirat profonda. Il Vaso dell'anima si incrina. Vedi 02_personaggio/04_cuori.json"
+    }
+  },
+  "silver_lining": {
+    "name": "La Luce nella Frantumazione",
+    "description": "La Shevirat non è solo catastrofe. Quando un Vaso si rompe, la Luce che conteneva si LIBERA. È il principio del tag [Ferita]: i Segreti che attingono alla Shevirat sono più potenti perché la Luce liberata è disponibile. Ma è una Luce che si consuma in fretta — più ti affidi alla Shevirat, più ti avvicini al collasso.",
+    "mechanical_expression": "Il tag [Ferita] si risveglia quando il PG ha Connessioni o Cuori feriti. La frantumazione dà potere, ma il potere viene dalla perdita.",
+    "cross_reference_ferita_tag": "Vedi 05_combattimento/02_danno.json → ferita_tag_v3"
+  },
+  "v3_clarification_voluntary_shevirat": {
+    "name": "Chiarimento v3: Shevirat Volontaria dell'Equipaggiamento",
+    "principle": "In v3, la Shevirat dell'Equipaggiamento (1° e 2° ferimento) è VOLONTARIA. Il PG SCEGLIE quando frantumare i propri Vasi fisici per ottenere il potere speciale o l'effetto di distruzione.",
+    "narrative_implication": "Questo riflette il principio cabalistico del Tzimtzum volontario: il PG contrae se stesso (frantuma un Vaso) per fare spazio a un potere superiore. NON è una sconfitta subita — è una scelta consapevole con peso cosmico.",
+    "cross_reference_mechanic": "Vedi 06_equipaggiamento/03_ferita_2_stadi.json → wounds_are_voluntary"
+  },
+  "design_intent": {
+    "principle": "La Shevirat HaKelim è il riflesso cosmico di ogni Ferita nel gioco. Quando il PG ferisce una Caratteristica o un Cuore, NON sta solo 'perdendo punti' — sta compiendo un atto cosmico di frantumazione. La Luce liberata è il potere che può essere riattivato con [Ferita].",
+    "narrative_weight": "Ogni Ferita è SIGNIFICATIVA. Non è un numero che si resetta, è un atto cosmico con conseguenze eterne. La cura non è 'ripristino di punti', è 'ricreazione di un Vaso frantumato' — per questo è lenta e difficile."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "section_id": "08-02",
+  "section_name": "I Tre Tier di Minaccia — Base, Elite, Epico",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce i tre Tier di minaccia crescente: Base (solo PF e Attacchi Base), Elite (PF + Attacchi Base + Tratti), Epico (PF + Attacchi Base + Tratti multipli + Attacchi Speciali). Questo file è la CASA UNICA per la classificazione dei Tier.",
+  "overview": {
+    "principle": "Il sistema nemici si divide in tre Tier di minaccia crescente, tutti con la stessa struttura di scheda ma complessità differente. I nemici Base sono progettati per essere abbattuti rapidamente. I nemici Elite richiedono pianificazione tattica per neutralizzare i loro Tratti. I nemici Epici richiedono la massima padronanza delle meccaniche di combo e distruzione di equipaggiamento."
+  },
+  "nemici_base": {
+    "name": "Nemici Base",
+    "contenuto": "Solo PF e Attacchi Base.",
+    "no_tratti": "NON hanno Tratti difensivi.",
+    "no_attacchi_speciali": "NON hanno Attacchi Speciali.",
+    "token_bluff": "Possono usare il sistema Token/Bluff (5 token coperti nella Cintura ATB). Vedi 08_nemici/05_token_bluff.json",
+    "progettazione": "Progettati per essere abbattuti rapidamente tramite il puro Potere delle carte dei giocatori o tramite combo base. Colpisci fino a uccidere.",
+    "swarm_applicable": "Il Swarm Logic si applica principalmente ai Nemici Base. Vedi 08_nemici/01_scheda_universale.json"
+  },
+  "nemici_elite": {
+    "name": "Nemici Elite",
+    "contenuto": "PF, Attacchi Base e 1 o più Tratti.",
+    "no_attacchi_speciali": "NON hanno Attacchi Speciali.",
+    "progettazione": "Richiedono ai giocatori una pianificazione tattica per neutralizzare i loro Tratti difensivi prima di potergli infliggere danni sostanziali. Spezza le difese per poter colpire.",
+    "token_bluff": "Possono usare il sistema Token/Bluff."
+  },
+  "nemici_epici": {
+    "name": "Nemici Epici (Boss)",
+    "contenuto": "PF, Attacchi Base, Tratti multipli e 1 o più Attacchi Speciali.",
+    "progettazione": "Richiedono la massima padronanza delle meccaniche di combo e distruzione di equipaggiamento da parte del gruppo. Gestisci emergenze critiche ai Cuori/Equipaggiamento mentre spegni le difese.",
+    "boss_atb": "Il Boss Epico traccia la propria riga nella Cintura ATB con Potere fino a 9 (8 carte coperte + 1 azione scoperta). Vedi 08_nemici/06_boss_atb.json",
+    "physical_overflow": "Se lo spazio sul tavolo è limitato, le carte del Boss possono 'traboccare' fisicamente. L'effetto visivo è deliberato: il Boss è così potente che NON STA nella griglia.",
+    "boss_deck": "Mazzo Boss dedicato, GENERICO nella struttura. Le carte riportano solo il Livello di Potere (1-9). Il Master ha 9 carte 'Livello Potere' e SCEGLIE LIBERAMENTE quale usare. Gli attacchi specifici sono riportati nella SCHEDA del singolo Boss."
+  },
+  "curva_apprendimento": {
+    "name": "Curva di Apprendimento",
+    "principle": "La classificazione a 3 Tier dà ai giocatori una curva di apprendimento chiara:",
+    "progression": [
+      "Base: colpisci fino a uccidere",
+      "Elite: spezza le difese per poter colpire",
+      "Epico: gestisci emergenze critiche ai tuoi Cuori/Equipaggiamento mentre spegni le difese"
+    ],
+    "design_intent": "Ogni Tier introduce una nuova complessità tattica. I giocatori imparano gradualmente le meccaniche avanzate (Tratti, Attacchi Speciali, Combo, Distruzione Equipaggiamento) affrontando Tier crescenti."
+  }
+}

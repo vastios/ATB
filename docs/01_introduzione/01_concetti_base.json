@@ -1,0 +1,111 @@
+{
+  "section_id": "01-01",
+  "section_name": "Concetti Base — I Tre Canali, i Pilastri v3, le USP",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Questo file introduce il manuale. Definisce l'architettura a tre canali che separa le meccaniche pure dalla lore, riassume i 12 pilastri dell'architettura v3, e presenta le Unique Selling Propositions (USP) del gioco. È il punto di partenza obbligato per chiunque si avvicini al sistema.",
+  "three_channels_architecture": {
+    "name": "Architettura a Tre Canali",
+    "principle": "Le meccaniche pure sono COMPLETE e GIOCABILI senza alcuna lore. La lore è una 'skin' che veste le meccaniche senza modificarle. Questo garantisce che il sistema sia riproducibile con qualsiasi ambientazione.",
+    "channel_1": {
+      "name": "Manuale del Giocatore",
+      "scope": "Meccaniche pure. ZERO lore. Terminologia neutra e funzionale.",
+      "files": "Capitoli 01-09 di questo manuale"
+    },
+    "channel_2": {
+      "name": "Guida del Master",
+      "scope": "Regole avanzate, gestione sessione, bilanciamento, creazione nemici, consigli narrativi.",
+      "files": "Capitolo 11 — DA CREARE"
+    },
+    "channel_3": {
+      "name": "Manuali Ambientazione (Skin)",
+      "scope": "Lore che 'veste' le meccaniche senza alterarle. Ogni ambientazione ha la sua skin. La skin cabalistica è la prima sviluppata.",
+      "files": "Capitolo 10 (Skin Cabalistica). Future skin: Alchimia Ermetica, Taoismo, Fisica Quantistica."
+    },
+    "design_intent": "L'architettura a 3 canali rende il gioco MODULARE. Un gruppo può giocare lo stesso sistema di regole con 5 cornici narrative diverse senza riscrivere una riga di meccaniche. È il principio del 'motore' (Canale 1) separato dalla 'carrozzeria' (Canale 3)."
+  },
+  "core_emotion": {
+    "name": "Il Dilemma del Guerriero",
+    "definition": "Quando subisci danni, SCEGLI: Mazzo Vitalità (milling, temporaneo), Caratteristica (perdi potenza), o Cuore (più vicino alla morte). I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
+    "cross_reference": "Vedi 05_combattimento/02_danno.json per la definizione formale delle Due Categorie di Danno."
+  },
+  "v3_pillars_quick_reference": {
+    "summary": "Le Carte Vitalità sono la RISERVA DI ENERGIA del PG. I loro TAG sono CHIAVI DI ATTIVAZIONE. I poteri sono ospitati dalle CARTE CARATTERISTICA NOMINATE. Le Carte Lato Giocatore fisiche sono solo Equipaggiamento (4 slot) + Strumenti Rapidi (5 slot).",
+    "cross_reference_full": "Per la versione estesa dei 12 pilastri, vedi 00_indice.json → v3_pillars_summary."
+  },
+  "usps": {
+    "name": "Unique Selling Propositions",
+    "intro": "Cosa rende questo gioco differente da qualsiasi altro GdR sul mercato.",
+    "list": [
+      {
+        "name": "Meccanica Flip Universale",
+        "description": "Tutte le carte (Caratteristiche, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'. Un'unica azione fisica per segnalare stati diversi."
+      },
+      {
+        "name": "Vitalità come Chiavi",
+        "description": "Le Carte Vitalità non definiscono l'azione. I loro TAG sono chiavi di attivazione che permettono di attivare poteri dalle Carte Caratteristica nominated, dall'Equipaggiamento o dagli Strumenti Rapidi."
+      },
+      {
+        "name": "Caratteristiche Nominated",
+        "description": "Le Carte Caratteristica non sono segnaposto passivi. Hanno NOME + ABILITÀ + INCANTESIMI. Il valore = numero di carte fisiche. Pool misto nominated + bianche per narrare la progressione."
+      },
+      {
+        "name": "Magia a Due Vie",
+        "description": "RISONANZA = magia elementale + cura in sintonia col mondo. ANALISI = utility + crafting talismani monouso offensivi. Niente più Materie FF7, niente più Esper."
+      },
+      {
+        "name": "9 Slot Lato Giocatore",
+        "description": "4 Equipaggiamento + 5 Strumenti Rapidi. Slot Carte Abilità e Carte Magia rimossi (assorbiti nelle nominated). Tavolo più snello."
+      },
+      {
+        "name": "Tag [Ferita] Tattico",
+        "description": "Una Vitalità con [Ferita] riattiva le abilità di UNA Carta Caratteristica ferita dello stesso tipo. Persistenza attraverso il dolore."
+      },
+      {
+        "name": "Crafting Analisi",
+        "description": "Talismani offensivi monouso creati durante riposo, limite = valore Analisi (aumentabile con nominated specifiche). Equipaggiati negli slot Strumenti Rapidi."
+      },
+      {
+        "name": "Equipaggiamento Feribile a 2 Stadi",
+        "description": "1° ferimento attiva il potere speciale (uso continua), 2° ferimento distrugge. Ferita volontaria, non deviazione di danno."
+      },
+      {
+        "name": "Tabella Potere Artigianale",
+        "description": "Il danno dipende dalla Caratteristica del PG incrociata col Costo Tempo. T=1 scala poco, T=5 scala MOLTO."
+      },
+      {
+        "name": "Danno a Doppio Strato",
+        "description": "Esaustione (milling del Mazzo Vitalità) vs Ferita (Caratteristiche girate = perdita di potenza, Cuori girati = più vicino alla morte)."
+      },
+      {
+        "name": "Combo Cooperative",
+        "description": "Richiedono SEMPRE almeno 2 giocatori diversi. Danno combo = somma dei valori POTERE delle carte nella colonna."
+      },
+      {
+        "name": "Cintura ATB Fluida",
+        "description": "Non esiste griglia fissa. Ogni PG traccia la propria riga di lunghezza variabile."
+      },
+      {
+        "name": "Sistema Nemici a 3 Tier",
+        "description": "Base/Elite/Epico, token bluff, Boss con Potere fino a 9, Tratti feribili."
+      },
+      {
+        "name": "Architettura 3 Canali",
+        "description": "Meccaniche pure separate dalla lore. Le ambientazioni sono 'skin' intercambiabili."
+      }
+    ]
+  },
+  "how_to_use_this_manual": {
+    "reading_order_for_new_player": [
+      "01_introduzione/01_concetti_base.json (questo file)",
+      "01_introduzione/02_anatomia_carte.json",
+      "02_personaggio/01_area_gioco.json",
+      "02_personaggio/02_caratteristiche.json",
+      "03_vitalita/01_mazzo_vitalita.json",
+      "04_cintura_atb/01_struttura.json",
+      "05_combattimento/06_round_combattimento.json"
+    ],
+    "cross_reference_rule": "1 concetto = 1 sola casa. Ogni regola vive in UN file. Gli altri file usano il campo 'vedi' per puntare al file originale. NON duplicare il contenuto."
+  }
+}

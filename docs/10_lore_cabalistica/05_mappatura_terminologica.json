@@ -1,0 +1,138 @@
+{
+  "section_id": "10-05",
+  "section_name": "Mappatura Terminologica — Meccanico → Cabalistico",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "description": "Mappatura completa tra termini meccanici (Canale 1) e termini cabalistici (questa skin). Al Livello 1 si usano i termini della colonna 'Aspetto Materiale'. Dal Livello 2 in poi si introducono gradualmente i termini della colonna 'Natura Cabalistica'. Al Livello 3 si usano pienamente i termini cabalistici. Questo file è la CASA UNICA per la mappatura terminologica.",
+  "description_extended": "Questa mappatura funziona in DIREZIONE INVERSA: dai termini neutri del Canale 1 ai termini cabalistici di questa skin. Permette al Master di 'tradurre' qualsiasi regola meccanica nella cornice cabalistica.",
+  "mappings": [
+    {
+      "mechanical_term": "Caratteristica",
+      "material_level": "Capacità naturale (Impeto, Analisi, Istinto, Risonanza)",
+      "kabbalistic_nature": "Connessione a un Mondo (Atziluth, Beriah, Yetzirah, Assiah). L'Asse Comprendere (Analisi + Risonanza) e l'Asse Agire (Impeto + Istinto) riflettono la discesa della Luce: dal Comprendere (mondi superiori) all'Agire (mondi inferiori). v3 rinomini: Istinto→IMPETO (Atziluth/Fuoco), Evasione→ISTINTO (Yetzirah/Aria).",
+      "cross_reference": "Vedi 02_personaggio/02_caratteristiche.json e 10_lore_cabalistica/01_cosmologia.json → the_four_worlds"
+    },
+    {
+      "mechanical_term": "Cuori",
+      "material_level": "Punti Vita Speciali",
+      "kabbalistic_nature": "Anima Tripartita (Nefesh, Ruach, Neshamah)",
+      "cross_reference": "Vedi 02_personaggio/04_cuori.json"
+    },
+    {
+      "mechanical_term": "Mazzo Vitalità",
+      "material_level": "Energia / Stamina",
+      "kabbalistic_nature": "Reshimu — Impronta Luminosa",
+      "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json"
+    },
+    {
+      "mechanical_term": "Carte Vitalità (giocate)",
+      "material_level": "Mosse / Tecniche",
+      "kabbalistic_nature": "Segreti — frammenti di conoscenza cosmica",
+      "cross_reference": "Vedi 03_vitalita/02_giocare_vitalita.json"
+    },
+    {
+      "mechanical_term": "Pila Scarti",
+      "material_level": "Scarti",
+      "kabbalistic_nature": "Or Chozer — Luce che Ritorna",
+      "cross_reference": "Vedi 03_vitalita/03_pila_scarti.json"
+    },
+    {
+      "mechanical_term": "Equipaggiamento",
+      "material_level": "Oggetti / Armamento",
+      "kabbalistic_nature": "Kelim — Vasi che incanalano la Luce",
+      "cross_reference": "Vedi 06_equipaggiamento/02_categorie.json"
+    },
+    {
+      "mechanical_term": "Equipaggiamento con potere speciale (attivato dal 1° ferimento)",
+      "material_level": "Oggetto magico / Oggetto raro",
+      "kabbalistic_nature": "Keli con Luce concentrata — Vaso che contiene potere cosmico",
+      "v3_note": "v3: sostituisce il vecchio sistema 'Arma Superiore Alchemica' (rimosso).",
+      "cross_reference": "Vedi 06_equipaggiamento/03_ferita_2_stadi.json"
+    },
+    {
+      "mechanical_term": "Ferita (girare carta)",
+      "material_level": "Rimanere feriti / Danneggiati",
+      "kabbalistic_nature": "Shevirat HaKelim — Frantumazione dei Vasi",
+      "cross_reference": "Vedi 10_lore_cabalistica/02_shevirat_hakelim.json"
+    },
+    {
+      "mechanical_term": "Nemici",
+      "material_level": "Mostri / Banditi / Bestie",
+      "kabbalistic_nature": "Qliphoth — Gusci Vuoti affamati di Luce",
+      "cross_reference": "Vedi 10_lore_cabalistica/03_qliphoth.json e 08_nemici/01_scheda_universale.json"
+    },
+    {
+      "mechanical_term": "Boss Epico",
+      "material_level": "Nemico potente",
+      "kabbalistic_nature": "Qliphoth Maggiore — concentrazione di Luce corrotta",
+      "cross_reference": "Vedi 08_nemici/02_tre_tier.json → nemici_epici"
+    },
+    {
+      "mechanical_term": "Cintura ATB",
+      "material_level": "Linea temporale",
+      "kabbalistic_nature": "Fronte di Manifestazione — Luce che si espande",
+      "cross_reference": "Vedi 04_cintura_atb/01_struttura.json"
+    },
+    {
+      "mechanical_term": "Combo",
+      "material_level": "Attacco combinato",
+      "kabbalistic_nature": "Sentieri Condivisi — flussi di Luce che convergono",
+      "cross_reference": "Vedi 05_combattimento/05_combo.json"
+    },
+    {
+      "mechanical_term": "Danno (milling)",
+      "material_level": "Perdita di energie",
+      "kabbalistic_nature": "Dispersione della Luce",
+      "cross_reference": "Vedi 05_combattimento/02_danno.json"
+    },
+    {
+      "mechanical_term": "Fatica (carte coperte)",
+      "material_level": "Sforzo / Stanchezza",
+      "kabbalistic_nature": "Tzimtzum in miniatura — Luce che si comprime",
+      "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json → fatigue_mechanic"
+    },
+    {
+      "mechanical_term": "Danno Anatema",
+      "material_level": "Attacco soprannaturale",
+      "kabbalistic_nature": "Qliphoth allo stato puro — energia del vuoto",
+      "cross_reference": "Vedi 05_combattimento/02_danno.json e 08_nemici/04_attacchi_speciali.json"
+    },
+    {
+      "mechanical_term": "Cura Reshimu (Mazzo Vitalità)",
+      "material_level": "Riposo / Pozione energetica",
+      "kabbalistic_nature": "Riflusso dell'Or Chozer — la Luce ritorna",
+      "cross_reference": "Vedi 09_riposo_cura/01_cure_asimmetriche.json"
+    },
+    {
+      "mechanical_term": "Cura Anima (Cuori)",
+      "material_level": "Cura rara / Miracolo",
+      "kabbalistic_nature": "Rituale cosmico — ricreare la scintilla",
+      "cross_reference": "Vedi 02_personaggio/04_cuori.json → healing_asymmetry"
+    },
+    {
+      "mechanical_term": "Tag [Ferita]",
+      "material_level": "Persistenza attraverso il dolore",
+      "kabbalistic_nature": "Attingere alla Luce liberata dalla Shevirat — il potere che nasce dalla frantumazione",
+      "cross_reference": "Vedi 05_combattimento/02_danno.json → ferita_tag_v3 e 10_lore_cabalistica/02_shevirat_hakelim.json → silver_lining"
+    },
+    {
+      "mechanical_term": "Carte Caratteristica Nominated",
+      "material_level": "Capacità appresa / Tecnica",
+      "kabbalistic_nature": "Segreto Manifesto — conoscenza cosmica che il PG ha fatto sua e incarna in un Canale verso un Mondo",
+      "cross_reference": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json"
+    },
+    {
+      "mechanical_term": "Talismani Analisi (craftati)",
+      "material_level": "Pergamene magiche monouso",
+      "kabbalistic_nature": "Frammenti di Segreto racchiusi in un Keli minore — il PG crea piccoli Vasi che contengono Luce offensiva",
+      "cross_reference": "Vedi 07_magia/03_analisi_crafting.json"
+    },
+    {
+      "mechanical_term": "Conseguenze (dalla distruzione di Equipaggiamento)",
+      "material_level": "Nemico generato da oggetto perso",
+      "kabbalistic_nature": "Qliphoth Personale — Guscio Vuoto nato dal Keli spezzato, affamato della Luce che un tempo conteneva",
+      "cross_reference": "Vedi 10_lore_cabalistica/03_qliphoth.json → consequence_system_lore"
+    }
+  ]
+}

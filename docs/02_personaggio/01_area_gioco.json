@@ -1,0 +1,57 @@
+{
+  "section_id": "02-01",
+  "section_name": "L'Area del Giocatore — Layout Fisico del Tavolo",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce come è fatta l'area di gioco di ciascun PG. NON esiste una scheda cartacea: tutto ciò che definisce il PG sono carte fisiche nella sua Area di Gioco, divisa in 4 Zone distinte disposte davanti a lui per permettere una consultazione immediata.",
+  "no_paper_sheet_principle": {
+    "name": "Principio: Niente Scheda Cartacea",
+    "definition": "Tutto il personaggio è rappresentato da carte fisiche sul tavolo. Non ci sono fogli da compilare, salvo per annotazioni narrative opzionali (background, nomi dei Cuori per gancio narrativo).",
+    "design_intent": "L'informazione è SEMPRE visibile a tutti. Il Master vede esattamente cosa ha il PG. I compagni vedono a colpo d'occhio lo stato dei loro alleati. La gestione del PG è tattica e spaziale, non burocratica."
+  },
+  "four_zones": {
+    "zona_1_vitalita": {
+      "name": "ZONA 1: La Vitalità (Sinistra o Sotto)",
+      "position": "Tipicamente a sinistra del PG, oppure sotto la Zona 2 se il tavolo è stretto.",
+      "content": "La riserva energetica del personaggio.",
+      "components": {
+        "mazzo_vitalita": "Un mazzo composto esattamente da 60 carte. Vedi 03_vitalita/01_mazzo_vitalita.json",
+        "pila_scarti": "Le carte usate o danneggiate vengono posizionate qui, in una pila capovolta. Vedi 03_vitalita/03_pila_scarti.json",
+        "mano": "Le 5 carte attualmente in mano al PG, tenute nascoste agli avversari (ma visibili ai compagni di squadra in co-op)."
+      }
+    },
+    "zona_2_caratteristiche_e_cuori": {
+      "name": "ZONA 2: Caratteristiche e Cuori (Centro)",
+      "position": "Al centro dell'area del PG, davanti a lui. La zona più importante e visibile.",
+      "content": "L'identità profonda del personaggio: cosa sa fare e quanto può sopportare.",
+      "components": {
+        "caratteristiche": "Quattro LINEE orizzontali di carte, una per Caratteristica (Impeto, Analisi, Istinto, Risonanza). La lunghezza di ogni linea = valore della Caratteristica. Vedi 02_personaggio/02_caratteristiche.json",
+        "cuori": "Tre carte Cuore disposte in fila. Si feriscono in ORDINE OBBLIGATORIO: Cuore 1, poi 2, infine 3. Vedi 02_personaggio/04_cuori.json"
+      }
+    },
+    "zona_3_lato_giocatore_fisico": {
+      "name": "ZONA 3: Equipaggiamento + Strumenti Rapidi (Destra)",
+      "position": "A destra del PG. La zona delle risorse fisiche.",
+      "content": "Le carte fisiche che il PG possiede e può attivare durante il combattimento.",
+      "components": {
+        "equipaggiamento": "4 slot fissi: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio. Vedi 06_equipaggiamento/02_categorie.json",
+        "strumenti_rapidi": "5 slot per oggetti monouso. Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
+      },
+      "v3_change": "Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE. I loro poteri sono ospitati nelle Carte Caratteristica nominated. Vedi 02_personaggio/03_carte_caratteristica_nominated.json"
+    },
+    "zona_4_cintura_atb": {
+      "name": "ZONA 4: La Cintura ATB (in Condivisione)",
+      "position": "Non è davanti al singolo PG, ma al CENTRO del tavolo, condivisa da tutti i partecipanti (PG e nemici).",
+      "content": "La timeline fluida dove ogni PG traccia la propria riga orizzontale di carte giocate. Vedi 04_cintura_atb/01_struttura.json"
+    }
+  },
+  "visual_metaphor": {
+    "name": "Metafora Visiva dell'Area",
+    "description": "L'Area del Giocatore è come una piccola fortezza: a sinistra/sotto le scorte (Vitalità), al centro le difese (Caratteristiche + Cuori), a destra l'arsenale (Equipaggiamento + Strumenti), e davanti a tutti il campo di battaglia condiviso (Cintura ATB).",
+    "design_intent": "La disposizione spaziale segue una LOGICA di consultazione: il PG guarda a sinistra per valutare le proprie risorse energetiche, al centro per conoscere il proprio stato, a destra per scegliere l'arma, e davanti per leggere la battaglia."
+  },
+  "open_question": {
+    "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  }
+}

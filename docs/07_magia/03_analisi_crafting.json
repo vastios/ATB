@@ -1,0 +1,86 @@
+{
+  "section_id": "07-03",
+  "section_name": "Analisi — Magia Utility + Crafting Talismani Offensivi",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la Via 2 della Magia: ANALISI. Magia ragionata con due funzioni: (1) UTILITY — rivelare debolezze, scassinare, riparare, danneggiare tratti nemici base; (2) CRAFTING — talismani/pergamene monouso OFFENSIVI creati durante riposo. Questo file è la CASA UNICA per il sistema Analisi.",
+  "nature_of_analisi": {
+    "name": "Natura dell'Analisi",
+    "principle": "Magia ragionata. Il PG STUDIA la realtà, ne capisce le regole, e le sfrutta. A differenza di Risonanza (intuitiva/empatica), Analisi è razionale/studiata.",
+    "characteristic": "Analisi (Giallo, Asse Comprendere). Vedi 02_personaggio/02_caratteristiche.json",
+    "element_associated_skin": "Acqua (vedi 10_lore_cabalistica/01_cosmologia.json)"
+  },
+  "two_functions_of_analisi": {
+    "name": "Le Due Funzioni dell'Analisi",
+    "function_1_utility": {
+      "name": "Funzione 1 — Utility (Magia non-offensiva)",
+      "description": "Magia utility per esplorazione, investigazione, identificazione, riparazione. ATTIVATA IN COMBATTIMENTO tramite Vitalità con tag [Abilità] o [Magia] + scelta dell'utility dalla nominated Analisi.",
+      "examples": [
+        "Rivelare Debolezze — identifica il punto debole di un nemico (Tag debole, Armatura Fissa valore, ecc.)",
+        "Scassinare — apre serrature magiche o complesse (Esplorazione)",
+        "Riparare — ripara Equipaggiamento ferito durante il combattimento",
+        "Identificare — identifica la natura di oggetti, creature, incantesimi",
+        "Decifrare — traduce testi antichi o codici",
+        "Danneggiare Tratti Base — riduce Armatura Fissa nemica di 1 (utility offensiva)"
+      ],
+      "scaling": "Effetto fisso o scaling lieve con T della Vitalità."
+    },
+    "function_2_crafting": {
+      "name": "Funzione 2 — Crafting Talismani Offensivi",
+      "description": "Creazione di talismani/pergamene monouso OFFENSIVI durante il RIPOSO. I talismani replicano incantesimi di attacco. Equipaggiati negli slot Strumenti Rapidi. ATTIVATI IN COMBATTIMENTO con tag [Strumento].",
+      "creator_requirement": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Caratteristica nominated Analisi con il talento crafting).",
+      "creation_time": "Durante il RIPOSO (non in combattimento).",
+      "daily_limit": "Limite crafting = valore Analisi del PG (es: Analisi 3 = 3 talismani/giorno).",
+      "upgradeable": "Aumentabile con nominated specifiche (es. 'Artigiano', 'Mago Erudito') che raddoppiano o aggiungono slot crafting.",
+      "talisman_nature": "Talismani = pergamene offensive monouso che replicano incantesimi di attacco. Solo OFFENSIVI (la cura resta dominio di Risonanza).",
+      "talisman_activation": "Si attivano con tag [Strumento] sulle Vitalità. Scale con Tabella Potere Vitalità. Si consumano all'uso.",
+      "talisman_examples": [
+        "Talismano Fuoco — replica l'incantesimo Risonanza 'Fire' al livello del T della Vitalità giocata",
+        "Talismano Fulmine — replica 'Thunder'",
+        "Talismano Acido — infligge danno + riduzione Armatura nemica"
+      ],
+      "equip_requirement": "Solo i talismani EQUIPAGGIATI negli slot Strumenti Rapidi sono utilizzabili in combattimento. Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
+    }
+  },
+  "why_crafting_instead_of_direct": {
+    "name": "Perché Crafting invece di Magia Diretta?",
+    "principle": "Analisi NON può lanciare incantesimi offensivi DIRETTAMENTE. Deve prima CRAFTARE un talismano durante il riposo, poi equipaggiarlo, poi attivarlo in combattimento.",
+    "narrative_reason": "Analisi è razionale/studiata. Un PG Analisi non 'sente' gli elementi come un PG Risonanza — deve STUDIARLI, capirne le regole, e INCORPORARLE in un oggetto fisico (il talismano).",
+    "mechanical_reason": "Crea una differenza tattica tra le due vie: Risonanza è immediata ma limitata dalla mano Vitalità; Analisi è preparata ma limitata dal numero di talismani craftati e dagli slot Strumenti Rapidi.",
+    "tradeoff": "Il PG Analisi deve PREPARARSI in anticipo. Sa che affronterà un Boss resistente al fuoco? Crafta talismani fulmine. Sa che affronterà un Orda di non-morti? Crafta talismani fuoco. La preparazione è il suo superpotere."
+  },
+  "tactical_dilemma_5_slots_for_analisi": {
+    "name": "Il Dilemma dei 5 Slot per un PG Analisi",
+    "principle": "Un PG Analisi deve bilanciare i 5 slot Strumenti Rapidi tra:",
+    "options": [
+      "Talismani offensivi craftati (per il burst damage in combattimento)",
+      "Pozioni/Bendaggi (per cure di emergenza, visto che Analisi non può curare)",
+      "Utility trovati (Grimaldelli, Fumogeni — per esplorazione)"
+    ],
+    "design_intent": "Il PG Analisi ha una TENSIONE costante tra offensive (talismani) e sustain (cure). Un PG Risonanza può curarsi direttamente; un PG Analisi deve dedicare slot Strumenti Rapidi alle cure, riducendo lo spazio per i talismani."
+  },
+  "activation_mechanic_for_utility": {
+    "name": "Attivazione Utility Analisi",
+    "principle": "Per attivare un'utility Analisi:",
+    "requirements": [
+      "Il PG deve avere una Carta Caratteristica nominated Analisi con l'utility desiderata (non ferita, oppure riattivata con [Ferita] tag).",
+      "La Vitalità giocata SCOPERTA deve avere il tag [Abilità] o [Magia].",
+      "Il T della Vitalità determina il livello di effetto (per utility che scalano)."
+    ],
+    "cross_reference_activation_rule": "Vedi 03_vitalita/02_giocare_vitalita.json → activation_rule_full"
+  },
+  "wound_effect_on_analisi_nominated": {
+    "principle": "Una nominated Analisi FERITA disattiva TUTTE le sue utility E il suo talento crafting (per quel giorno). Il PG perde accesso a quelle utility finché la carta non è guarita.",
+    "ferita_tag_bypass": "Una Vitalità Analisi con tag [Ferita] può riattivare le utility di UNA sola nominated Analisi ferita per quel turno. Vedi 05_combattimento/02_danno.json → ferita_tag_v3"
+  },
+  "out_of_combat_use": {
+    "name": "Uso Fuori dal Combattimento",
+    "principle": "Le utility Analisi sono PARTICOLARMENTE utili fuori dal combattimento: scassinare, identificare, decifrare, riparare. Sono il pane del ladro/investigatore/artigiano.",
+    "cross_reference": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json → out_of_combat_use"
+  },
+  "design_intent": {
+    "principle": "Analisi è la via RAZIONALE della magia. Più versatile di Risonanza in utility (scasso, riparazione, identificazione, crafting), ma meno potente in combattimento diretto (deve preparare talismani in anticipo). È la via del ladro/investigatore/artigiano/mago erudito.",
+    "comparison_with_risonanza": "Risonanza = magia intuitiva, diretta, curativa. Analisi = magia studiata, preparata, utility. Sono COMPLEMENTARI, non in competizione. Un gruppo ideale ha entrambi."
+  }
+}

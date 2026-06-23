@@ -1,0 +1,58 @@
+{
+  "section_id": "05-05",
+  "section_name": "Combo Cooperative — Apertura, Sviluppo, Chiusura, Culmine",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema Combo Cooperative. Le combo si attivano quando carte di PG diversi sono nella STESSA POSIZIONE TEMPORALE con Tag Combo compatibili. Richiedono OBBLIGATORIAMENTE almeno 2 giocatori diversi. Il danno combo = somma dei valori POTERE delle carte nella colonna. Questo file è la CASA UNICA per il sistema combo.",
+  "activation_rule": {
+    "name": "Regola di Attivazione",
+    "principle": "Le combo si attivano quando carte di PG diversi sono nella STESSA POSIZIONE TEMPORALE con Tag Combo compatibili.",
+    "position_requirement": "La CONVERGENZA nella stessa posizione è obbligatoria. Vedi 04_cintura_atb/01_struttura.json → absolute_temporal_continuity",
+    "tag_compatibility": "I Tag Combo devono essere compatibili: [Apertura]+[Chiusura] o [Apertura]+[Culmine] funzionano. [Apertura]+[Apertura] NON funziona (manca la chiusura)."
+  },
+  "two_player_minimum": {
+    "name": "Minimo 2 Giocatori Diversi",
+    "rule": "Per attivare una combo, è OBBLIGATORIO impilare le carte di almeno 2 GIOCATORI DIVERSI nello stesso slot.",
+    "narrative_reason": "La combo è SINERGIA tra compagni. Un solo PG non può fare combo con se stesso.",
+    "mechanical_reason": "Previene il 'Doppio Colpo Devastante' di un solo PG e valorizza la cooperazione.",
+    "fulmineo_exception_clarification": "Anche con [Fulmineo] (che permette più azioni attive per un singolo PG), NON si può fare combo da soli. Fulmineo attiva più poteri, ma la combo richiede sempre 2 PG diversi."
+  },
+  "combo_tags": {
+    "name": "I Quattro Tag Combo",
+    "Apertura": "Il primo passo della combo. Apre la combinazione.",
+    "Sviluppo": "Il passo intermedio. Allunga la combo senza chiuderla.",
+    "Chiusura": "Il passo finale. La combo si completa e il danno si infligge.",
+    "Culmine": "Come la Chiusura ma l'effetto viene amplificato drasticamente.",
+    "flexibility_rule": "Se un'azione ha sia [Apertura] che [Chiusura], chi la gioca SCEGLIE LIBERAMENTE quale ruolo assumere. NON è una combo solista."
+  },
+  "combo_enabler": {
+    "name": "Requisiti di Sincronizzazione",
+    "rule": "Le combo richiedono che le carte siano nella STESSA POSIZIONE TEMPORALE con Tag compatibili.",
+    "synchronization_cost": "Continuità Temporale Assoluta: per convergere nella posizione 4, devi riempire le posizioni 1-3 prima. Vedi 04_cintura_atb/01_struttura.json",
+    "design_intent": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Sei vulnerabile nel frattempo."
+  },
+  "combo_damage": {
+    "name": "Calcolo Danno Combo",
+    "rule": "Il danno di una combo è la SOMMA dei valori POTERE delle carte nella colonna.",
+    "example": "Guerriero gioca [Apertura] Impeto Costo 3 (Impeto 4, Potere = 9) + Mago gioca [Chiusura] Analisi Costo 2 (Analisi 3, Potere = 5) nella stessa colonna = Danno combo 14.",
+    "culmine_bonus": "Se la Chiusura è un [Culmine], l'effetto viene amplificato drasticamente (es. +50% danno, o effetto speciale aggiuntivo).",
+    "combo_explanation": "Due personaggi uniscono gli sforzi: l'Apertura crea una distrazione/apertura, la Chiusura sfrutta il punto debole scoperto. Non è magia astratta — è tattica di squadra."
+  },
+  "fast_vs_slow_combos": {
+    "name": "Combo Veloci vs Lente",
+    "fast": "Combo veloci (posizione 1-2) = scambi fulminei, danno modesto ma immediato. Ideali per finire nemici deboli o creare pressione.",
+    "slow": "Combo pesanti (posizione 4-5) = eventi devastanti che si preparano a destra del tavolo, vulnerabilità durante la preparazione. Ideali per Boss o Elite con armatura."
+  },
+  "defense_offense_fusion": {
+    "name": "Fusione Difesa/Offesa",
+    "principle": "Una Vitalità con [Sviluppo] può MITIGARE un attacco nemico (se ospita un'Abilità Difensiva nominated) E fare combo con un compagno. Difesa e Offesa NON sono mai in conflitto.",
+    "design_intent": "Le difese non sono 'turni persi'. Una buona difesa è anche un'apertura per un contrattacco o una combo."
+  },
+  "design_evolution_notes": {
+    "v5": "IL DILEMMA DEL GUERRIERO. Combo con carte Movimento.",
+    "v7": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Caratteristiche definitivi.",
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
+    "v10_v3": "Le combo possono ora includere poteri dalle nominated (abilità/magie) oltre alle Carte Lato Giocatore fisiche. La regola del minimo 2 PG diversi è INVARIATA."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "section_id": "08-06",
+  "section_name": "Boss nella Cintura ATB — Potere 9 e Integrazione",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce come il Boss Epico si integra nella Cintura ATB. Il Boss ha la sua riga come i PG, ma può giocare Potere fino a 9 (8 carte coperte + 1 carta azione scoperta). Questo file è la CASA UNICA per l'integrazione del Boss nella Cintura ATB.",
+  "integration_principle": {
+    "method": "Il Boss Epico ha la sua riga nella Cintura ATB, come i PG.",
+    "same_rules": "Segue le stesse regole di posizionamento e risoluzione. Continuità Temporale Assoluta vale anche per il Boss. Vedi 04_cintura_atb/01_struttura.json",
+    "no_grid_problem": "Nella Cintura FLUIDA, non c'è problema di spazio. Il Boss semplicemente ha una riga più lunga — un'azione più potente e lenta.",
+    "boss_freedom": "Il Master SCEGLIE LIBERAMENTE quale Livello di Potere giocare. Ha 9 carte 'Livello Potere' (da 1 a 9)."
+  },
+  "power_9_rule": {
+    "name": "Regola del Potere 9",
+    "principle": "Il Boss può giocare Potere 9 = 8 carte coperte + 1 carta azione scoperta. Quella riga di 9 posizioni sporge enormemente rispetto alle righe dei PG (che vanno da 1 a 5).",
+    "visual_impact": "Il 'trenino' di 9 carte del Boss è una presenza fisica imponente sul tavolo. I PG vedono l'attacco arrivare per 8 tick di tempo.",
+    "tactical_meaning": "L'azione è potentissima ma lentissima. I PG hanno 8 tick di tempo per preparare difese, curarsi, tentare di distruggere i Tratti del Boss, o ucciderlo prima che il colpo arrivi."
+  },
+  "counter_tactic_for_pg": {
+    "principle": "I PG vedono il 'trenino' che si avvicina. Hanno tempo per reagire.",
+    "options": [
+      "Preparare difese specifiche nella posizione 9 (Blocco Perfetto richiede un'Abilità Difensiva nominated nella stessa posizione)",
+      "Curarsi e curare i compagni prima del colpo",
+      "Distruggere i Tratti del Boss nel frattempo",
+      "Concentrare tutto il danno per uccidere il Boss prima che il colpo arrivi"
+    ]
+  },
+  "risk_for_boss": {
+    "principle": "L'azione è potentissima ma lentissima. I PG hanno molto tempo per reagire. Il Master deve valutare se il payoff vale l'attesa.",
+    "vulnerability_during_charge": "Mentre il Boss sta caricando il Potere 9, la sua riga è occupata. Non può giocare altre azioni contemporanee (a meno di non usare [Fulmineo] come i PG)."
+  },
+  "information_asymmetry": {
+    "principle": "I PG vedono il Livello di Potere giocato (es. '7') ma NON sanno quale abilità specifica sarà usata. Solo al tick della risoluzione l'attacco si rivela.",
+    "effect": "Genera l'ansia giusta. I PG sanno che qualcosa di potente arriverà, ma non sanno esattamente cosa. Devono prepararsi al peggio."
+  },
+  "boss_deck_structure": {
+    "principle": "Mazzo Boss dedicato, GENERICO nella struttura. Le carte riportano solo il Livello di Potere (1-9).",
+    "cross_reference": "Vedi 08_nemici/02_tre_tier.json → nemici_epici → boss_deck"
+  },
+  "open_questions": {
+    "boss_combo": "Il Boss può fare combo? Con i suoi minion?",
+    "boss_phases": "I Boss hanno fasi (sotto 50% PF cambiano abilità/Tratti)?",
+    "boss_multiple_actions": "Il Boss può giocare più di una carta per turno?",
+    "cross_reference": "Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  }
+}

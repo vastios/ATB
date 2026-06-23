@@ -1,0 +1,86 @@
+{
+  "section_id": "05-06",
+  "section_name": "Round di Combattimento — Step-by-Step",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la sequenza esatta di un round di combattimento. È la sintesi operativa di tutti i sistemi precedenti (Cintura ATB, Vitalità, Danno, Difesa, Combo). Questo file è la CASA UNICA per la sequenza del round.",
+  "round_summary": {
+    "name": "Sintesi del Round",
+    "principle": "Un round di combattimento è composto da 9 step sequenziali. Si ripetono fino alla fine del combattimento (tutti i nemici sconfitti o tutti i PG svenuti/morti).",
+    "target_duration": "3-5 round per combattimento standard."
+  },
+  "step_by_step": {
+    "step_1_pg_plan": {
+      "name": "Step 1 — PG tracciano le loro righe",
+      "action": "I PG scelgono quante carte giocare (da 1 a 5) e le posizionano nella Cintura ATB. Le carte SCOPERTE attivano poteri; le COPERTE pagano solo il tempo.",
+      "cross_reference": "Vedi 04_cintura_atb/01_struttura.json → how_many_cards_to_play"
+    },
+    "step_2_master_tokens": {
+      "name": "Step 2 — Master posiziona i token",
+      "action": "Il Master posiziona 5 token coperti per i nemici. NEL PRIMO ROUND, il Master posiziona PER ULTIMO (dopo i PG). Nei round successivi segue la regola standard.",
+      "cross_reference": "Vedi 08_nemici/05_token_bluff.json"
+    },
+    "step_3_resolution_left_to_right": {
+      "name": "Step 3 — Risoluzione da sinistra a destra",
+      "action": "Si risolve la colonna più a sinistra di TUTTI i partecipanti (PG + nemici) prima di passare alla successiva.",
+      "cross_reference": "Vedi 04_cintura_atb/02_risoluzione.json"
+    },
+    "step_4_reveal_token": {
+      "name": "Step 4 — Si gira il token",
+      "action": "Per ogni token nemico nella colonna corrente, si gira: ATTACCO (infligge danno come da scheda) o BLUFF (nessun danno, il nemico ha solo 'perso tempo').",
+      "cross_reference": "Vedi 08_nemici/05_token_bluff.json"
+    },
+    "step_5_defense": {
+      "name": "Step 5 — Difesa PG",
+      "action": "Si calcola la difesa: Blocco Perfetto / Mitigato / Danno Pieno, in base alla posizione dell'Abilità Difensiva nominated rispetto al token nemico. Lo Scudo può slittare (con [Strumento] + ferita volontaria).",
+      "cross_reference": "Vedi 05_combattimento/04_difesa.json"
+    },
+    "step_6_damage_resolution": {
+      "name": "Step 6 — Risoluzione del danno subito",
+      "action": "Se danno pieno → identificare la categoria: Standard (PG SCEGLIE: Milling o Ferita a Caratteristica QUALSIASI) o Diretto (PG DEVE girare carte della Caratteristica bersagliata). I Cuori NON sono un'opzione per Danno Standard.",
+      "cross_reference": "Vedi 05_combattimento/02_danno.json"
+    },
+    "step_7_combo": {
+      "name": "Step 7 — Controllo Combo",
+      "action": "Se carte di 2+ PG diversi convergono con Tag compatibili nella stessa posizione, la combo si attiva. Danno = somma valori Potere.",
+      "cross_reference": "Vedi 05_combattimento/05_combo.json"
+    },
+    "step_8_refill": {
+      "name": "Step 8 — refill e Azione Risonanzata",
+      "action": "PG senza carte nella riga DEVE rigiocare (Azione Risonanzata). Ogni PG pesca per tornare a 5 carte in mano.",
+      "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json → hand_mechanics"
+    },
+    "step_9_repeat": {
+      "name": "Step 9 — Ripetere",
+      "action": "Ripetere gli step 1-8 fino a fine combattimento (tutti i nemici sconfitti o tutti i PG svenuti/morti)."
+    }
+  },
+  "end_conditions": {
+    "victory": "Tutti i nemici sconfitti (PF a 0) o resisi. Vedi 08_nemici/07_ricompense.json",
+    "defeat": "Tutti i PG svenuti (Mazzo Vitalità vuoto per tutti) o morti (Cuore 3 ferito per tutti).",
+    "retreat": "I PG possono tentare la ritirata (con Strumenti Rapidi appositi, es. Bomba a Fumogeno). La ritirata NON concede ricompense meccaniche. Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
+  },
+  "first_turn_special_rule": {
+    "principle": "Nel PRIMO round di combattimento, il Master posiziona i token PER ULTIMO (dopo che i PG hanno tracciato le loro righe). Questo dà un leggero vantaggio informativo ai PG all'inizio del combattimento.",
+    "subsequent_rounds": "Nei round successivi, il Master segue la regola standard (posiziona quando i PG hanno scartato l'ultima carta della loro riga)."
+  },
+  "quick_reference_table": {
+    "headers": ["Step", "Azione", "File di riferimento"],
+    "rows": [
+      ["1", "PG tracciano righe (1-5 carte)", "04_cintura_atb/01_struttura.json"],
+      ["2", "Master posiziona 5 token coperti", "08_nemici/05_token_bluff.json"],
+      ["3", "Risoluzione colonna più a sinistra", "04_cintura_atb/02_risoluzione.json"],
+      ["4", "Si gira il token (Attacco/Bluff)", "08_nemici/05_token_bluff.json"],
+      ["5", "Calcolo difesa (Perfetto/Mitigato/Pieno)", "05_combattimento/04_difesa.json"],
+      ["6", "Risoluzione danno (Standard/Diretto)", "05_combattimento/02_danno.json"],
+      ["7", "Controllo combo (2+ PG, Tag compatibili)", "05_combattimento/05_combo.json"],
+      ["8", "Refill mano + Azione Risonanzata", "03_vitalita/01_mazzo_vitalita.json"],
+      ["9", "Ripetere fino a fine combattimento", "Questo file"]
+    ]
+  },
+  "design_intent": {
+    "principle": "La sequenza di 9 step è LINEARE e PREVEDIBILE. Non ci sono fasi complesse o interruzioni. Questo permette al gruppo di concentrarsi sulla TATTICA (quali carte giocare, come difendersi, quando convergere per una combo) anziché sulla procedura.",
+    "comparison_with_other_systems": "A differenza di D&D (che ha initiative → action → bonus action → reaction → legendary actions), qui TUTTO si risolve in un'unica scansione da sinistra a destra. Più fluido, meno burocratico."
+  }
+}

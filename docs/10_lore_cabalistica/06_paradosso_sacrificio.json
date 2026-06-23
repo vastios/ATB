@@ -1,0 +1,66 @@
+{
+  "section_id": "10-06",
+  "section_name": "Il Paradosso del Sacrificio — Cuore Tematico e Linee Guida Master",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "description": "Definisce il cuore tematico del gioco: il Paradosso del Sacrificio. Il Dilemma del Guerriero è il riflesso meccanico del più profondo paradosso cabalistico. Include le linee guida per il Master su come gestire la Rivelazione Progressiva nei tre Livelli. Questo file è la CASA UNICA per il Paradosso del Sacrificio e le linee guida Master.",
+  "the_paradox_of_sacrifice": {
+    "name": "Il Paradosso del Sacrificio — Il Cuore Tematico",
+    "description": "Il Dilemma del Guerriero è il riflesso meccanico del più profondo paradosso cabalistico: la Creazione richiede il SACRIFICIO. Il Tzimtzum è il sacrificio dell'Infinito che si contrae per fare spazio al finito. La Shevirat è il sacrificio dei Vasi che si frantumano perché la Luce possa essere liberata. Il PG che ferisce una Connessione o un Cuore sta ripetendo questo atto primordiale: contrae se stesso per fare spazio alla sopravvivenza.",
+    "cross_reference_dilemma": "Vedi 05_combattimento/02_danno.json → due_categorie_danno"
+  },
+  "the_three_sacrifices": {
+    "name": "I Tre Sacrifici",
+    "reshimu_sacrifice": {
+      "name": "Sacrificare la Luce (Dispersione)",
+      "mechanical_correspondent": "Opzione A — Milling nel Dilemma del Guerriero",
+      "nature": "Lasci che la Luce venga strappata via. È il sacrificio più lieve — la Luce può tornare. Ma ogni Segreto disperso è un frammento di te che va nell'Or Chozer, e il Reshimu si assottiglia.",
+      "existential_weight": "Stai perdendo parti di te, ma temporaneamente. Come perdere ricordi che torneranno col riposo."
+    },
+    "connection_sacrifice": {
+      "name": "Sacrificare la Connessione (Shevirat Parziale)",
+      "mechanical_correspondent": "Opzione B — Ferita a Caratteristica nel Dilemma del Guerriero",
+      "nature": "Spezzo deliberatamente il mio canale verso un Mondo. Il Vaso si incrina, la Luce di quel Mondo scorre meno. Perdo potenza — ma sopravvivo.",
+      "existential_weight": "Stai tagliando una parte della tua connessione col cosmo. Come un musicista che perde l'udito in un orecchio — puoi ancora suonare, ma non senti più le armonie."
+    },
+    "soul_sacrifice": {
+      "name": "Sacrificare l'Anima (Shevirat Profonda)",
+      "mechanical_correspondent": "Ferita a Cuore (solo nei 3 casi previsti: esaurimento, Anatema, Soglia del Vuoto)",
+      "nature": "La frantumazione raggiunge la mia essenza. Prima l'istinto (Nefesh), poi il sentimento (Ruach), infine la scintilla (Neshamah). Non perdo potenza — perdo ME STESSO.",
+      "existential_weight": "Stai morendo dall'interno. Il corpo combatte ancora, ma qualcosa dentro di te si è spento. Ogni Cuore ferito è un pezzo della tua anima che non c'è più. E Neshamah non torna."
+    }
+  },
+  "narrative_implication": {
+    "principle": "Il Dilemma del Guerriero non è solo una scelta meccanica — è una domanda ESISTENZIALE che il gioco pone a ogni turno: cosa sei disposto a perdere per sopravvivere? E cosa diventi quando hai perso troppo?",
+    "design_intent": "Il gioco non è un power fantasy. È un'indagine su cosa significa sopravvivere. Ogni vittoria ha un costo. Ogni costo lascia un segno. Il PG che vince tutti i combattimenti ma finisce con 2 Cuori feriti e 3 Caratteristiche ferite NON è un eroe trionfante — è un sopravvissuto menomato, più vicino al Qliphoth che al Vaso luminoso."
+  },
+  "master_guidelines": {
+    "name": "Linee Guida per il Master",
+    "principle": "Il Master è il guardiano della Rivelazione. Controlla il ritmo a cui i PG scoprono la vera natura della realtà. Deve bilanciare mistero e comprensione, orrore e meraviglia.",
+    "at_level_1": {
+      "tone": "Avventuroso, leggermente cuivo. Intrighi politici, duelli all'ultimo sangue, esplorazione di dungeon classici.",
+      "language": "Materiale e concreto. 'La tua rabbia ti abbandona', non 'La tua Connessione ad Atziluth subisce Shevirat'.",
+      "foreshadowing": "SEMPLICI indizi. Un simbolo strano su una parete. Un nemico che non sanguina. Un oggetto che brilla nella penombra. Non spiegare, solo mostrare.",
+      "enemy_design": "Banditi, bestie, soldati. Nemici 'normali' con un dettaglio leggermente sbagliato (occhi vuoti, ferite che non sanguinano, sussurri incomprensibili)."
+    },
+    "at_level_2": {
+      "tone": "Inquietante. Il soprannaturale si insinua nella realtà. I PG iniziano a dubitare di ciò che sanno.",
+      "language": "Misto. Iniziare a usare termini come 'Luce', 'Vasi', 'Connessioni' gradualmente. Lasciare che i giocatori chiedano 'cosa significa?'",
+      "revelation_tools": "NPC che spiegano frammenti. Testi antichi. Visioni. Sogni. Oggetti che parlano. Il primo incontro con un cultista che dice 'La Luce deve scendere' e i PG capiscono che le loro 'capacità' sono qualcosa di più.",
+      "enemy_design": "Cultisti, creature deformi, oggetti animati. Nemici che usano meccaniche che i PG riconoscono come LE STESSE ma applicate in modo sbagliato (un cultista che 'incanala la Luce' in modo corrotto)."
+    },
+    "at_level_3": {
+      "tone": "Orrore cosmico. La realtà si svela come un velo su qualcosa di vasto e terrificante. I PG sono piccoli, ma la loro Luce è preziosa.",
+      "language": "Piena terminologia cabalistica. Ogni azione meccanica è descritta nel suo vero significato cosmico.",
+      "consequences_realized": "I PG vedono i Qliphoth che hanno generato. Le loro scelte passate hanno VOLTO. Il Guerriero incontra il nemico nato dalla sua spada. Il Mago incontra la maledizione nata dal suo bastone. È personale.",
+      "enemy_design": "Qliphoth in tutta la loro gloria orribile. Entità che non sono più 'mostri' ma GUSCI VUOTI affamati. Boss che sono concentrazioni di Luce corrotta con Tratti che i PG riconoscono — perché un tempo appartenevano a loro."
+    },
+    "cross_reference_rivelazione": "Vedi 10_lore_cabalistica/04_rivelazione_progressiva.json per i dettagli dei tre Livelli"
+  },
+  "v3_alignment_notes": {
+    "principle": "v3 ha allineato il sistema Conseguenze (Qliphoth generati dalla distruzione di Equipaggiamento) con il fatto che la distruzione di Equipaggiamento è VOLONTARIA in v3.",
+    "implication_for_master": "Quando un PG SCEGLIE di distruggere un Keli (2° ferimento volontario), il Master deve preparare una Conseguenza narrativa. NON è una penalità per il PG — è la conseguenza cosmica della sua scelta. Il Qliphoth che nasce è PERSONALE: conosce la Luce del PG perché un tempo la conteneva.",
+    "narrative_weight": "La scelta di distruggere un Equipaggiamento con potere speciale non è mai 'gratis'. Anche se meccanicamente l'Equipaggiamento si ripristina a fine combattimento, la Conseguenza narrativa (il Qliphoth generato) rimane per sempre."
+  }
+}

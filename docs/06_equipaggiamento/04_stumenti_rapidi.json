@@ -1,0 +1,71 @@
+{
+  "section_id": "06-04",
+  "section_name": "Strumenti Rapidi — 5 Slot, Usa-e-Getta, Talismani Analisi",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema Strumenti Rapidi: 5 slot per oggetti monouso. Ospitano sia oggetti trovati (usa-e-getta) sia TALISMANI craftati da Analisi (pergamene offensive monouso). Si attivano con [Strumento]. Si consumano all'uso. Questo file è la CASA UNICA per il sistema Strumenti Rapidi.",
+  "quick_items_overview_v3": {
+    "name": "Panoramica Strumenti Rapidi (v3)",
+    "slots": 5,
+    "v3_increase": "Aumentati da 3 (v2) a 5 (v3) per ospitare anche i talismani craftati da Analisi.",
+    "nature": "Oggetti monouso. Ospitano sia oggetti trovati (usa-e-getta) sia TALISMANI craftati da Analisi (pergamene offensive monouso).",
+    "activation": "Si attivano con [Strumento] sulle Vitalità.",
+    "scaling": "Spesso hanno effetto FISSO (non scala con T). Alcuni (i talismani Analisi) scalano con Tabella Potere Vitalità.",
+    "consumable_rule": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (consumato, non va in pila scarti). Va riacquistato, ritrovato o ricraftato."
+  },
+  "examples_found_items": {
+    "name": "Esempi di Oggetti Trovati",
+    "list": [
+      "Pozione — cura 5 punti Vitalità (effetto fisso)",
+      "Grimaldello — apre una serratura (Esplorazione)",
+      "Bomba a Fumogeno — permette ritirata",
+      "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)",
+      "Pergamena di Fuoco (trovata) — infligge 4 danno a un bersaglio (effetto fisso)",
+      "Bomba Acida — infligge 2 danno + riduce Armatura nemica di 1"
+    ]
+  },
+  "analisi_crafting_system": {
+    "name": "Crafting Analisi — Talismani Offensivi",
+    "creator": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Caratteristica nominated Analisi con il talento crafting).",
+    "creation_time": "Durante il RIPOSO (non in combattimento).",
+    "daily_limit": "Limite crafting = valore Analisi del PG (es: Analisi 3 = 3 talismani/giorno).",
+    "upgradeable": "Aumentabile con nominated specifiche (es. 'Artigiano', 'Mago Erudito') che raddoppiano o aggiungono slot crafting.",
+    "talisman_nature": "Talismani = pergamene offensive monouso che replicano incantesimi di attacco. Solo OFFENSIVI (la cura resta dominio di Risonanza).",
+    "talisman_activation": "Si attivano con tag [Strumento] sulle Vitalità. Scale con Tabella Potere Vitalità. Si consumano all'uso.",
+    "talisman_examples": [
+      "Talismano Fuoco — replica l'incantesimo Risonanza 'Fire' al livello del T della Vitalità giocata",
+      "Talismano Fulmine — replica 'Thunder' (offerta offensiva Analisi)",
+      "Talismano Acido — infligge danno + riduzione Armatura nemica"
+    ],
+    "equip_requirement": "Solo i talismani EQUIPAGGIATI negli slot Strumenti Rapidi sono utilizzabili in combattimento. Il limite di 5 slot crea un dilemma tattico: quanti slot dedicare a cure/difesa vs talismani offensivi.",
+    "cross_reference_magia_analisi": "Vedi 07_magia/03_analisi_crafting.json per il sistema completo della magia Analisi"
+  },
+  "wound_system": {
+    "name": "Sistema Ferita Strumenti Rapidi",
+    "principle": "NESSUNO — gli Strumenti Rapidi NON hanno ferite a 2 stadi (a differenza dell'Equipaggiamento).",
+    "reason": "Sono monouso. Si consumano all'uso e vanno riacquistati/ritrovati/ricraftati.",
+    "contrast_with_equipment": "L'Equipaggiamento ha 2 slot ferita per attivare poteri speciali VOLONTARIAMENTE. Gli Strumenti Rapidi si consumano e basta — niente ferite, niente poteri speciali, solo effetto diretto."
+  },
+  "consumable_rule_full": {
+    "principle": "Ogni Strumento Rapido è monouso. Quando attivato, viene SCARTATO (consumato, non va in pila scarti). Va riacquistato, ritrovato o ricraftato.",
+    "in_combat": "Lo slot resta vuoto fino alla fine del combattimento (o fino a ricarica con Abilità nominated apposita).",
+    "out_of_combat": "Tra un combattimento e l'altro, il PG può riempire gli slot vuoti con nuovi oggetti trovati/acquistati o talismani craftati."
+  },
+  "tactical_dilemma_5_slots": {
+    "name": "Il Dilemma dei 5 Slot",
+    "principle": "Con 5 slot e una varietà di oggetti possibili, il PG deve bilanciare:",
+    "options": [
+      "Cure (Pozioni, Bendaggi) — per emergenze",
+      "Utility (Grimaldelli, Fumogeni) — per esplorazione/ritirata",
+      "Offensivi (Bombe, Talismani Analisi) — per burst damage",
+      "Difensivi (Scudi monouso, Pozioni difensive) — per emergenze"
+    ],
+    "design_intent": "Il PG non può avere TUTTO. Deve scegliere il mix in base alla situazione prevista. Questo rende la preparazione tra un combattimento e l'altro significativa: quali oggetti equipaggiare?"
+  },
+  "design_evolution_notes": {
+    "v10_v2": "Aggiunti slot Strumenti Rapidi (3) in v2. Solo usa-e-getta.",
+    "v11_v2_1": "Strumenti Rapidi CONFERMATI SOLO usa-e-getta (nessuna ferita a 2 stadi).",
+    "v12_v3": "Slot Strumenti Rapidi aumentati da 3 a 5 (ospitano anche talismani craftati da Analisi). Gli Strumenti Rapidi rimangono monouso. Nessuna ferita a 2 stadi."
+  }
+}

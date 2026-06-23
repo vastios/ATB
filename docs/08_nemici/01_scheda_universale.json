@@ -1,0 +1,37 @@
+{
+  "section_id": "08-01",
+  "section_name": "Scheda Universale del Nemico — Campi e Swarm Logic",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la struttura universale della scheda nemico. Ogni nemico, dal ratto al dio caduto, condivide la stessa struttura di scheda. La differenza tra i livelli di minaccia non sta nelle regole base, ma nella complessità della loro scheda. Questo file è la CASA UNICA per la struttura della scheda nemico.",
+  "universal_enemy_sheet": {
+    "name": "Struttura Universale della Scheda Nemico",
+    "description": "Ogni scheda, dal ratto al dio caduto, contiene i seguenti campi:",
+    "fields": {
+      "1_nome_e_tier": "Nome del nemico e Tier (Base, Elite, Epico). Vedi 08_nemici/02_tre_tier.json",
+      "2_punti_ferita": "La soglia di danno per sconfiggerlo. Il danno inflitto ai PF è determinato dalla Tabella Potere dei PG. Vedi 05_combattimento/01_tabella_potere.json",
+      "3_attacchi_base": "Una lista di azioni offensive standard, ognuna definita da un Livello di Potere (da 1 a 9) che determina in quale slot della Cintura ATB il Master posiziona il token, e il danno/effetto prodotto.",
+      "4_tratti": "Regole statiche che alterano l'economia del danno. Vedi 08_nemici/03_tratti.json. (Nemici Base: nessun tratto. Elite: 1+. Epico: multipli.)",
+      "5_attacchi_speciali": "Azioni alternative che colpiscono la struttura profonda del PG. Vedi 08_nemici/04_attacchi_speciali.json. (Solo Epici.)",
+      "6_ricompense": "Benefici ottenuti alla sconfitta o resa del nemico. Vedi 08_nemici/07_ricompense.json"
+    }
+  },
+  "swarm_logic": {
+    "name": "Swarm Logic — Orde di Nemici Base",
+    "principle": "Questa regola si applica generalmente ai Nemici Base. Se i PG affrontano 4 goblin Base, il Master usa una singola scheda Goblin moltiplicando i PF, ma tenendo gli attacchi base invariati.",
+    "how_it_works": "Il gruppo sferra un attacco per ogni token scoperto nel turno. Se ci sono 4 goblin e il Master scopre 3 token come attacchi, sono 3 attacchi goblin risolti indipendentemente.",
+    "design_intent": "Permette di gestire orde senza dover tracciare PF individuali per ogni nemico minore. Semplifica la gestione del Master e accelera il combattimento contro gruppi numerosi.",
+    "applicability": "Principalmente per Nemici Base. Per Elite ed Epici, ogni nemico ha la sua scheda individuale."
+  },
+  "v3_changes_summary": {
+    "rinomini_caratteristiche": "Istinto→IMPETO, Evasione→ISTINTO. Le difese nemiche per Tag usano i nuovi nomi.",
+    "struttura_invariata": "La struttura della scheda nemico è INVARIATA rispetto a v2/v2.1.",
+    "distruzione_tratti_allineata": "La distruzione dei Tratti nemici avviene attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario). Vedi 08_nemici/03_tratti.json. NON si parla più di 'Arma Superiore' (sistema rimosso) — si parla di 'Arma con potere speciale attivato'."
+  },
+  "design_evolution_notes": {
+    "v9": "CLASSIFICAZIONE UNIFICATA A 3 TIER. Scheda Unificata per tutti i nemici.",
+    "v10_v11": "ARCHITETTURA v2/v2.1: adattamento minori.",
+    "v12": "ARCHITETTURA v3: rinomini caratteristiche. Struttura nemici invariata. Le difese nemiche per Tag ora usano i nuovi nomi (Impeto/Istinto/Analisi/Risonanza)."
+  }
+}

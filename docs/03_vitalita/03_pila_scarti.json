@@ -1,0 +1,41 @@
+{
+  "section_id": "03-03",
+  "section_name": "La Pila Scarti — Passiva e Inviolabile",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la Pila Scarti: il deposito passivo delle carte Vitalità usate o danneggiate. È una zona di gioco NON ATTIVA — non si può interagire con essa durante il combattimento. L'unico modo per recuperare carte dalla Pila Scarti è attraverso il riposo e le pozioni rivitalizzanti. Questo file è la CASA UNICA per le regole della Pila Scarti.",
+  "nature_of_discard_pile": {
+    "name": "Natura della Pila Scarti",
+    "principle": "La Pila Scarti è PASSIVA e INVIOLABILE. Non è una zona di gioco attiva — è uno spazio di deposito per le carte che hanno svolto il loro compito.",
+    "visual": "La Pila Scarti va posizionata separatamente e visibilmente, ma senza interazione. Serve solo per sapere quante carte sono potenzialmente recuperabili."
+  },
+  "rules": {
+    "cannot_be_attacked": "NESSUN nemico, abilità o effetto può bersagliare la Pila Scarti. Non si può attaccare, saccheggiare, manipolare o interagire con essa in alcun modo durante il combattimento.",
+    "cannot_be_interacted": "La Pila Scarti non è una zona di gioco attiva. È uno spazio di deposito per le carte che hanno svolto il loro compito.",
+    "recovery_only": "L'unico modo per recuperare carte dalla Pila Scarti è attraverso il RIPOSO e le POZIONI RIVITALIZZANTI. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
+    "no_combat_interaction": "In combattimento, la Pila Scarti è completamente irrilevante. Non si guarda, non si conta, non si tocca."
+  },
+  "design_intent": {
+    "principle": "Rimuove complessità inutile. La Pila Scarti non è una risorsa tattica, è un deposito passivo. Il danno va sempre dalla cima del Mazzo Vitalità (milling) — non c'è altro bersaglio.",
+    "lore_connection": "Nella skin cabalistica, la Pila Scarti è l'Or Chozer — la Luce che Ritorna. È SACRA e INVIOLABILE perché è Luce che ha già compiuto il suo scopo. Vedi 10_lore_cabalistica/03_qliphoth.json"
+  },
+  "what_goes_into_discard_pile": {
+    "fatica": "Carte Vitalità giocate COPERTA per pagare il Costo Tempo.",
+    "azioni_risolte": "Carte Vitalità giocate SCOPERTA dopo che il loro potere è stato risolto.",
+    "milling_damage": "Carte Vitalità strappate dalla cima del Mazzo per danno subito."
+  },
+  "recovery_mechanics": {
+    "riposo_totale": "Recupero completo. La Pila Scarti viene rimescolata nel Mazzo Vitalità.",
+    "pozioni_rivitalizzanti": "Recupero parziale. Carte dalla Pila Scarti tornano nel Mazzo Vitalità.",
+    "incantesimi_rivitalizzanti": "Come pozioni ma più efficaci.",
+    "speed": "VELOCE — nel dungeon, tra un combattimento e l'altro.",
+    "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json"
+  },
+  "potion_distinction": {
+    "rule": "CRUCIALE: POZIONE RIVITALIZZANTE (Mazzo Vitalità) ≠ POZIONE DI GUARIGIONE (Caratteristiche). Niente pozione universale.",
+    "revitalizing_potion": "Cura il Mazzo Vitalità (recupera carte dalla Pila Scarti).",
+    "healing_potion": "Cura le Carte Caratteristica ferite (le rigira sul lato sano).",
+    "no_universal_potion": "Non esiste una pozione che curi entrambi. Le due risorse sono DISTINTE per evitare scelte banali."
+  }
+}

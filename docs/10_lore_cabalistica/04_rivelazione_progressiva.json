@@ -1,0 +1,43 @@
+{
+  "section_id": "10-04",
+  "section_name": "Rivelazione Progressiva — I Tre Livelli del Gioco",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "description": "Definisce il principio della Rivelazione Progressiva: il gioco si svela in tre livelli. I giocatori NON sanno dall'inizio la vera natura della realtà. La scoprono attraverso il gioco. Le meccaniche rimangono LE STESSE — ma la comprensione dei giocatori cambia, e con essa il significato delle loro azioni. Questo file è la CASA UNICA per il sistema di Rivelazione Progressiva.",
+  "design_intent": {
+    "principle": "La Rivelazione Progressiva non è un trucco narrativo — è l'ESPERIENZA DELLA DISCESA DELLA LUCE vista dall'interno. I PG, come i giocatori, iniziano nel mondo materiale (Assiah) e solo gradualmente scoprono che la realtà è molto più di ciò che sembra."
+  },
+  "level_1_assiah": {
+    "name": "Livello 1 — Assiah (Il Mondo Materiale)",
+    "framing": "Cappa e Spada Realistico",
+    "what_players_see": "I PG sono avventurieri in un mondo di spade, intrighi e duelli. Le Connessioni sono 'capacità naturali' — forza, destrezza, intelligenza, determinazione. I Cuori sono 'punti vita speciali'. L'equipaggiamento è 'roba che indossi'. I nemici sono banditi, bestie, soldati nemici.",
+    "what_is_really_happening": "I PG stanno già operando nella struttura cabalistica, ma NON LO SANNO. Le Connessioni sono già connessioni ai Mondi. I Cuori sono già l'Anima Tripartita. I Kelim sono già Vasi. Ma la cornice narrativa è MATERIALISTA — tutto viene spiegato in termini fisici.",
+    "master_instructions": "Non menzionare MAI i termini cabalistici al Livello 1. 'Emanazione' è 'determinazione'. 'Shevirat HaKelim' è 'rimanere feriti'. 'Qliphoth' è 'mostro'. Le meccaniche funzionano ESATTAMENTE allo stesso modo, ma la narrazione le incornicia in termini mondani.",
+    "example_play": "Il Guerriero gira una carta Connessione per assorbire danni. Il Master dice: 'La ferita al braccio ti indebolisce — i tuoi colpi sono meno precisi.' NON dice: 'La tua Connessione ad Assiah subisce Shevirat HaKelim.'"
+  },
+  "level_2_yetzirah": {
+    "name": "Livello 2 — Yetzirah (Il Mondo della Formazione)",
+    "framing": "Il Soprannaturale si Rivela",
+    "trigger": "Iniziato quando i PG incontrano il primo indizio che la realtà non è ciò che sembra. Un cultista che parla di 'Luce' e 'Vasi'. Un oggetto che fa cose impossibili. Un nemico che non dovrebbe esistere.",
+    "what_players_see": "Il mondo è più strano di quanto sembrasse. Ci sono cultisti che adorano entità senza nome. Oggetti che pulsano di energia. Nemici che non sono del tutto reali. I PG iniziano a sospettare che le loro 'capacità naturali' siano qualcosa di più.",
+    "what_is_really_happening": "I PG stanno percependo la struttura di Yetzirah — il Mondo della Formazione, dove la Luce viene plasmata. Le loro Connessioni non sono solo 'capacità' — sono CANALI attraverso cui la Luce dei Mondi scorre. I loro oggetti non sono 'roba' — sono VASI. I nemici non sono 'mostri' — sono GUSCI VUOTI.",
+    "master_instructions": "Iniziare a INTRODURRE i termini cabalistici GRADUALMENTE. Un NPC dotto può spiegare che 'ciò che chiami determinazione è in realtà una Connessione al Fuoco primordiale'. Un oggetto trovato può essere descritto come 'un Vaso che attende la Luce'. Ma NON svelare tutto — lasciare che i giocatori colleghino i puntini.",
+    "example_play": "Il PG trova una spada antica. Il Master dice: 'La lama pulsa quando la impugni. Non è solo acciaio — è un Vaso che attende di essere riempito di Luce.' Il giocatore inizia a capire CHE I SUOI OGGETTI SONO KELIM."
+  },
+  "level_3_qliphoth_revelation": {
+    "name": "Livello 3 — Qliphoth (La Verità si Svela)",
+    "framing": "Orrore Cosmico Cabalistico",
+    "trigger": "Iniziato quando i PG affrontano il primo vero Qliphoth — un nemico generato dalla distruzione di un loro Keli, o un Boss che è palesemente un Guscio Vuoto cosmico.",
+    "what_players_see": "La realtà è una menzogna. Il mondo materiale è solo l'ultimo gradino di una discesa cosmica. I PG non sono avventurieri — sono VASI che incanalano la Luce di Mondi sovrannaturali. I loro nemici non sono mostri — sono GUSCI VUOTI affamati della loro Luce. Ogni ferita che hanno subito era SHEVIRAT HAKELIM. Ogni oggetto che hanno rotto ha GENERATO UN QLIPHOTH. Le conseguenze delle loro scelte hanno forma e volto.",
+    "what_is_really_happening": "I PG comprendono finalmente la struttura cosmica. Sanno che le loro Connessioni sono canali verso i Quattro Mondi, che la loro Anima è Tripartita, che i loro oggetti sono Kelim, che i loro nemici sono Qliphoth. La meccanica non è cambiata — ma ORA CAPISCONO PERCHÉ FUNZIONA COSÌ.",
+    "master_instructions": "Usare la PIENA terminologia cabalistica. La narrazione riflette la comprensione acquisita. Quando un PG ferisce una Connessione, il Master può dire: 'Senti il Vaso della tua Connessione incrinarsi — il mondo dentro di te trema.' Quando un Keli si spezza, il Master ANNUNCIA: 'La Luce prigioniera si corrompe. Un Qliphoth è nato. Lo incontrerete di nuovo.'",
+    "example_play": "Il Guerriero spezza la sua spada (con potere speciale) per ferire il Tratto del Boss. Il Master dice: 'La Lama dell'Alba si frantuma. La Luce che conteneva erompe, si corrompe, prende forma. Qualcosa sta nascendo dai frammenti — qualcosa che conosce la tua Luce, Guerriero, perché un tempo la conteneva. Lo incontrerai ancora.' I giocatori TREMANO perché ORA CAPISCONO COSA SIGNIFICA."
+  },
+  "transition_principles": {
+    "smooth_not_abrupt": "I passaggi tra i livelli sono GRADUALI. Non c'è un momento 'ecco, ora siete al Livello 2'. È un crepuscolo, non un interruttore.",
+    "same_mechanics": "Le meccaniche NON CAMBIANO MAI. Cambia solo la CORNICE NARRATIVA. Un PG al Livello 1 che gira una Connessione e un PG al Livello 3 che gira una Connessione stanno facendo la STESSA AZIONE MECCANICA. Ma il primo pensa 'mi sono ferito' e il secondo pensa 'ho subito Shevirat HaKelim'.",
+    "player_agency": "La transizione è guidata dalle AZIONI dei PG, non dal Master. Se i PG ignorano i cultisti e continuano a fare cappa e spada, rimangono al Livello 1. Se investigano, il Livello 2 si apre. Se distruggono un Keli, il Livello 3 bussa alla porta.",
+    "replayability": "Un gruppo che rigioca sapendo già la verità vivrà il Livello 1 in modo completamente diverso — ogni 'capacità naturale' sarà letta come 'Connessione al Mondo', ogni 'mostro' come 'Qliphoth'. Il gioco è PROGETTATO per questa rilettura."
+  }
+}

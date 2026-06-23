@@ -1,0 +1,60 @@
+{
+  "section_id": "05-01",
+  "section_name": "Tabella Potere — Caratteristica × Costo Tempo",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la TABELLA POTERE: il cuore matematico del sistema di danno. Il danno base di un'azione è determinato dalla Caratteristica del PG incrociata col Costo Tempo (T) della Vitalità giocata. T=1 scala poco, T=5 scala MOLTO. Questo file è la CASA UNICA per la Tabella Potere.",
+  "core_rule": {
+    "name": "Regola Centrale della Tabella Potere",
+    "principle": "Il danno base è determinato dalla TABELLA POTERE DELLA VITALITÀ (Caratteristica del PG × T della carta giocata). Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
+    "formula_v3": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "philosophy_v3": "La Tabella Potere della Vitalità resta la base numerica del danno. I poteri attivati (dalle nominated o dalle Carte Lato Giocatore fisiche) aggiungono personalità (effetti speciali per livello) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale."
+  },
+  "the_table_conceptual": {
+    "name": "Tabella Potere (Schema Concettuale)",
+    "axes": {
+      "rows": "Valore Caratteristica del PG (da 1 a 5)",
+      "columns": "Costo Tempo T della Vitalità (da T1 a T5)"
+    },
+    "scaling_principle": "T=1 scala poco (la Caratteristica influisce marginalmente). T=5 scala MOLTO (la Caratteristica moltiplica il danno base). Questo crea il dilemma: azioni veloci ma deboli, oppure azioni lente ma devastanti.",
+    "table_values_note": "I valori precisi della Tabella sono in fase di playtest. Lo schema concettuale: una matrice 5×5 dove il valore cella(1,1) è basso (es. 2) e cella(5,5) è molto alto (es. 20-25). La crescita è NON lineare: cella(5,1) è poco più di cella(1,1), ma cella(1,5) è molto più di cella(5,1).",
+    "open_question_table_values": "Da finalizzare i valori precisi della Tabella Potere 5×5. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  },
+  "level_of_effect_rule": {
+    "name": "Regola del Livello di Effetto",
+    "principle": "Il T della Vitalità determina il livello di effetto del potere attivato. T1=1° livello, T5=5° livello.",
+    "characteristic_power_cap": "Il PG non può selezionare livelli di effetto superiori al suo valore di Caratteristica attuale. Una Caratteristica ferita riduce i livelli raggiungibili.",
+    "example": "PG con Impeto 3 gioca Vitalità T5 con [Strumento] per attivare la Spada. Il livello di effetto è 3 (limitato dal valore di Caratteristica), NON 5. La Tabella Potere viene consultata a Caratteristica 3 × T5, non a 5×5."
+  },
+  "characteristic_power_cap_wounded": {
+    "name": "Cap di Potere con Caratteristica Ferita",
+    "principle": "Caratteristica FERITA = non puoi giocare azioni con quel Tag sopra il valore attuale. Le abilità della Carta Caratteristica nominated ferita sono disabilitate.",
+    "ferita_tag_bypass": "Una Vitalità con [Ferita] le riattiva per quel turno. Vedi 05_combattimento/02_danno.json"
+  },
+  "worked_example": {
+    "name": "Esempio Completo di Calcolo Danno",
+    "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento].",
+    "step_1_base": "Tabella Potere Impeto(3) × T3 = 8 danno base.",
+    "step_2_weapon_bonus": "La Spada Lunga (Arma) ha +2 danno bonus al livello 3 = 8 + 2 = 10 danno totale.",
+    "step_3_ferita_modifier": "Se il PG ha una Carta Caratteristica Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
+    "step_4_combo": "Se un compagno ha [Apertura] nella stessa posizione con Potere 5, e questo PG ha [Chiusura], combo = 10 + 5 = 15 danno. Vedi 05_combattimento/05_combo.json"
+  },
+  "armor_and_damage_bonus_interaction": {
+    "name": "Interazione con Armatura Nemica e Bonus Arma",
+    "principle": "Il danno totale viene confrontato con le difese nemiche. Vedi 08_nemici/03_tratti.json per Armatura Fissa e resistenze per Tag.",
+    "armor_subtraction": "Armatura Fissa nemica sottrae un valore fisso dal danno totale. Es. 10 danno - 2 armatura = 8 danno effettivo.",
+    "tag_resistance": "Resistenza/Immunità per Tag riduce o azzera il danno se l'attacco ha un tag specifico. Vedi 08_nemici/03_tratti.json"
+  },
+  "design_evolution_notes": {
+    "v6": "Tabella Potere introdotta. Corrispondenza obbligatoria (Caratteristica della Vitalità = Caratteristica del potere).",
+    "v7": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Caratteristiche definitivi.",
+    "v8": "FUSIONE LORE CABALISTICA.",
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
+    "v10": "DUE CATEGORIE DI DANNO formalizzate.",
+    "v11": "Danno Anatema e Danno Diretto Cuore formalizzati.",
+    "v12": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità.",
+    "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base).",
+    "v14": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Caratteristica nominated. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated (non più Carte Abilità fisiche separate). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. Slot Strumenti Rapidi = 5. Tag [Ferita] = riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo."
+  }
+}

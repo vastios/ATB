@@ -1,0 +1,67 @@
+{
+  "section_id": "10-01",
+  "section_name": "Cosmologia Cabalistica — Tzimtzum, Quattro Mondi, Discesa della Luce",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "skin_metadata": {
+    "skin_name": "Cosmologia Cabalistica",
+    "applies_to": "Tutti i file del Canale 1 (meccaniche pure)",
+    "purpose": "Questa 'skin' veste le meccaniche pure con la terminologia e la cosmologia cabalistica. Le meccaniche NON cambiano: cambia solo la cornice narrativa e i nomi delle cose. Altra skin futura (Alchimia Ermetica, Taoismo, Fisica Quantistica) vestiranno le STESSE meccaniche con nomi e cornici diverse.",
+    "relationship_with_channel_1": "I file del Canale 1 (00-09) usano terminologia NEUTRA. Questa skin li rinomina: Caratteristiche → Connessioni ai Mondi, Mazzo Vitalità → Reshimu, Cuori → Anima Tripartita, Equipaggiamento → Kelim, Conseguenze → Qliphoth. LE REGOLE NON CAMBIANO."
+  },
+  "description": "La prima skin del gioco. La cosmologia cabalistica veste le meccaniche pure con una cornice narrativa profonda. La Rivelazione Progressiva fa sì che i giocatori SCOPRANO questa verità attraverso il gioco, non attraverso un manuale. Il gioco inizia come cappa e spada realistico e si svela come orrore cosmico cabalistico. Stesse regole, diversa cornice.",
+  "core_principle_ludo_narrative_harmony": {
+    "name": "Ludo-Narrative Harmony",
+    "definition": "La lore e le meccaniche sono la STESSA COSA. Non esiste una separazione tra 'regole di gioco' e 'storia del mondo'. Il Reshimu non è 'come si chiama il mazzo' — è COS'È il mazzo. La Shevirat HaKelim non è 'il nome figo per le ferite' — è PERCHÉ le ferite funzionano così. Ogni scelta meccanica è un atto cosmico, ogni atto cosmico ha una conseguenza meccanica.",
+    "design_philosophy": "Se togli la lore, le meccaniche non hanno senso. Se togli le meccaniche, la lore non ha peso. Sono inestricabili. Questo è il cuore del gioco.",
+    "practical_implication": "Il Master non deve 'spiegare la lore' separatamente dalle regole. Quando un PG gira una Connessione, IL GESTO STESSO è la Shevirat. Quando un Keli Superiore si spezza, IL QLIPHOTH STESSO è la conseguenza. La narrazione emerge dall'azione meccanica."
+  },
+  "origin_tzimtzum": {
+    "name": "Tzimtzum — La Contrazione Primordiale",
+    "description": "Prima della creazione, c'era solo l'Or Ein Sof — la Luce Infinita, che riempiva ogni cosa. Non c'era spazio per l'esistenza perché la Luce era OVUNQUE. Perché il mondo potesse esistere, l'Or Ein Sof dovette CONTRARSI, ritirarsi, creare uno spazio vuoto. Questo atto di auto-restrizione è il TZIMTZUM — la contrazione primordiale. La Luce si ritirò per fare spazio al mondo, e ciò che rimase nello spazio vuoto fu il RESHIMU — l'Impronta Luminosa, la traccia che la Luce aveva lasciato.",
+    "mechanical_parallel": "Il Reshimu (Mazzo Vitalità) è ESATTAMENTE questo: l'impronta che la Luce ha lasciato nel PG. Quando il Reshimu si esaurisce, è come se il Tzimtzum si fosse spinto troppo oltre — lo spazio vuoto è diventato troppo vuoto, e il Vaso collassa. La ferita volontaria a una Connessione o a un Cuore è un Tzimtzum volontario: il PG contrae la propria Luce per creare lo spazio per sopravvivere.",
+    "cross_reference_mechanic": "Vedi 03_vitalita/01_mazzo_vitalita.json (Reshimu = Mazzo Vitalità) e 03_vitalita/04_esaurimento.json (collasso del Reshimu)"
+  },
+  "the_four_worlds": {
+    "name": "La Cosmologia dei Quattro Mondi",
+    "description": "Dopo il Tzimtzum, la Luce scese attraverso quattro stadi di Manifestazione — i Quattro Mondi. Ogni Mondo è un livello di densità della Luce: dal più sottile (Atziluth) al più denso (Assiah).",
+    "atziluth": {
+      "name": "Atziluth — Il Mondo dell'Emanazione",
+      "elemento": "Fuoco",
+      "connessione_pg": "Impeto (Rosso) — Emanazione",
+      "nature": "Il Mondo più vicino all'Or primordiale. Qui la Luce è ancora PURO FUOCO — impulso senza pensiero, irruenza senza calcolo, la fiamma che brucia prima che la mente possa fermarla. È il piano dell'azione non ragionata, dell'istinto che non ha bisogno di riflettere, della passione che scatta senza chiedere permesso.",
+      "mechanical_expression": "I Segreti di Emanazione sono FUOCO che esplode attraverso il PG: sfondare porte, urlare, colpire senza esitazione, l'irruenza che non aspetta. La Tabella Potere per Emanazione scala con la profondità della Connessione al Fuoco.",
+      "v3_rename_note": "v3: rinominato da 'Istinto' a 'Impeto'. In skin cabalistica: 'Emanazione' (Atziluth)."
+    },
+    "beriah": {
+      "name": "Beriah — Il Mondo della Creazione",
+      "elemento": "Acqua",
+      "connessione_pg": "Analisi (Giallo) — Creazione",
+      "nature": "La Luce inizia a prendere FORMA INTELLETTUALE. Qui il Fuoco si raffredda in Acqua — la volontà diventa pensiero, l'impulso diventa piano, l'intuizione diventa strategia. È il piano dell'intelletto, delle emozioni profonde, della percezione razionale.",
+      "mechanical_expression": "I Segreti di Creazione sono ACQUA che fluisce: strategie, analisi, magia ragionata, intimidizioni psicologiche. La Tabella Potere per Creazione scala con la profondità della Connessione all'Acqua."
+    },
+    "yetzirah": {
+      "name": "Yetzirah — Il Mondo della Formazione",
+      "elemento": "Aria",
+      "connessione_pg": "Istinto (Blu) — Formazione",
+      "nature": "La Luce viene PLASMATA. Qui l'Acqua diventa Aria — il pensiero si trasforma in azione fluida, il piano diventa movimento, la strategia diventa schiva. È il piano della destrezza, della furtività, del plasmarimento. L'aria riempie ogni spazio e si infila dove nessun altro elemento può.",
+      "mechanical_expression": "I Segreti di Formazione sono ARIA che si muove: schive, agilità, spostamenti fluidi, furtività, attacchi chirurgici. La Tabella Potere per Formazione scala con la profondità della Connessione all'Aria.",
+      "v3_rename_note": "v3: rinominato da 'Evasione' a 'Istinto'. In skin cabalistica: 'Formazione' (Yetzirah)."
+    },
+    "assiah": {
+      "name": "Assiah — Il Mondo dell'Azione",
+      "elemento": "Terra",
+      "connessione_pg": "Risonanza (Verde) — Azione",
+      "nature": "La Luce entra in RISONANZA con la materia. Qui l'Aria diventa TERRA — l'azione isolata diventa connessione, il pensiero diventa empatia, il sé si apre al mondo. È il piano della comprensione attraverso il sentire, della voce della natura che parla a chi sa ascoltare, dell'empatia che unisce ogni cosa. La Terra è la base che connette: ogni radice tocca ogni altra radice.",
+      "mechanical_expression": "I Segreti di Azione sono TERRA che RISUONA: empatia con gli elementi, sentire la voce della natura e degli altri, comprendere senza studiare, la connessione che attraversa ogni cosa. La Tabella Potere per Azione scala con la profondità della Connessione alla Terra."
+    }
+  },
+  "descent_of_light": {
+    "name": "La Discesa della Luce",
+    "description": "La Luce scorre dall'alto verso il basso: Atziluth → Beriah → Yetzirah → Assiah. Ogni Mondo è un gradino nella Manifestazione. La Luce diventa sempre più densa, sempre più concreta, sempre più limitata. La Tabella Potere è questa legge: un Segreto complesso (Costo Tempo alto) è Luce che ha attraversato più livelli di Manifestazione — per questo è più potente, ma anche più lento.",
+    "atb_parallel": "La Cintura dei Sentieri è il Fronte di Manifestazione — l'espansione della Luce da sinistra a destra. La risoluzione da sinistra a destra è la discesa della Luce: prima il sottile, poi il denso.",
+    "death_reversal": "La morte procede NEL VERSO OPPOSTO: Assiah → Yetzirah → Beriah → Atziluth. L'Anima Tripartita si smonta dal basso verso l'alto: prima Nefesh (il corpo animale, più vicino ad Assiah), poi Ruach (lo spirito, più vicino a Yetzirah/Beriah), infine Neshamah (la scintilla divina, più vicina ad Atziluth). La Creazione si smonta nell'ordine inverso della sua costruzione.",
+    "cross_reference_cuori": "Vedi 02_personaggio/04_cuori.json (Anima Tripartita = Cuori)"
+  }
+}

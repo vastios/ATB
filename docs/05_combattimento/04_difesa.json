@@ -1,0 +1,83 @@
+{
+  "section_id": "05-04",
+  "section_name": "Sistema di Difesa — Blocco Perfetto, Mitigato, Shield Sliding",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema di difesa. In v3, il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Caratteristica NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE. Lo Shield Sliding e l'Assorbimento Armatura sono mantessi. Questo file è la CASA UNICA per il sistema di difesa.",
+  "v3_change_summary": {
+    "principle": "Il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Caratteristica NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE (v3).",
+    "what_changed": [
+      "Le Abilità Difensive non sono più carte fisiche separate (4 slot v2). Sono ospitate su Carte Caratteristica nominated.",
+      "Le nominated difensive sono tipicamente Istinto (Schivata Acrobatica) o Impeto (Parata).",
+      "Lo Shield Sliding (slittamento scudo) continua a funzionare, ma l'Abilità Difensiva a cui si aggancia è ospitata su una nominated.",
+      "L'Assorbimento Armatura resta invariato: Armatura feribile a 2 stadi volontariamente."
+    ]
+  },
+  "three_defense_types_v3": {
+    "name": "I Tre Esiti della Difesa",
+    "perfect_block": {
+      "name": "Blocco Perfetto (v3)",
+      "condition_v3": "Una ABILITÀ DINENSIVA (ospitata su una Carta Caratteristica nominated, es. Istinto 'Schivata Acrobatica') è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
+      "effect": "0 danni. L'attacco viene completamente deviato.",
+      "unlocks_reaction_tags": "Sblocca i tag Reazione sull'abilità difensiva nominated: [Contrattacco] (zeri danni + colpisci), [Intercettazione] (annulla attacco per tutti, richiede combo), [Immolazione] (subisci doppio, alleati a 0).",
+      "narrative": "Hai parato esattamente dove l'attacco arrivava."
+    },
+    "mitigated_block": {
+      "name": "Blocco Mitigato",
+      "condition_v3": "Abilità Difensiva (nominated) attivata nella posizione IMMEDIATAMENTE PRIMA o DOPO l'attacco (±1 slot).",
+      "effect": "Riduzione danni (parziale). La quantità esatta di riduzione dipende dall'abilità difensiva specifica e dal suo livello di effetto."
+    },
+    "full_damage": {
+      "name": "Danno Pieno",
+      "condition_v3": "Nessuna Abilità Difensiva attivata nella posizione o in quelle adiacenti. Un PG senza Abilità Difensiva nominated subisce SEMPRE danno pieno.",
+      "effect": "Danno pieno (Milling o Ferita Caratteristica, a scelta del PG tramite Dilemma del Guerriero). Vedi 05_combattimento/02_danno.json"
+    }
+  },
+  "no_default_defense_rule": {
+    "name": "Regola: Nessuna Difesa Predefinita",
+    "principle": "NOVITÀ v3: SENZA Abilità Difensiva nominated (su una Carta Caratteristica), il PG NON può difendersi. Subisce sempre danno pieno.",
+    "design_intent": "Questo rende le nominated difensive fondamentali quanto le Armi. Un PG puramente offusivo senza nominated difensiva è fragile. Costringe a bilanciare il pool di Carte Caratteristica nominated tra offesa e difesa.",
+    "exception_improvised": "Armi improvissate e difese improvvisate possono esistere come fallback narrativo, ma sono molto deboli. Vedi 06_equipaggiamento/01_slot_attivazione.json"
+  },
+  "shield_sliding_v3": {
+    "name": "Shield Sliding (Slittamento Scudo)",
+    "mechanic_v3": "Ferire lo Scudo (1° ferimento, attivazione volontaria) permette di 'slittare' una Vitalità già giocata di 1 slot a sinistra o a destra, spostando l'attivazione dell'Abilità Difensiva nominated agganciata.",
+    "timing": "Si dichiara DOPO che il Master rivela il token d'attacco, ma PRIMA del calcolo dei danni.",
+    "possible_outcomes": {
+      "upgrade_to_perfect": "Slitta la difesa ESATTAMENTE nella posizione dell'attacco → Blocco Perfetto.",
+      "upgrade_to_mitigated": "Slitta nella posizione adiacente → Mitigato.",
+      "no_help": "Troppo lontana → nessun effetto."
+    },
+    "shield_wound_note": "Ferire lo Scudo per lo slittamento è VOLONTARIO. Al 2° ferimento lo Scudo è DISTRUTTO. Vedi 06_equipaggiamento/03_ferita_2_stadi.json"
+  },
+  "armor_absorption_v3": {
+    "name": "Assorbimento Armatura (v3)",
+    "mechanic_v3": "Ferire l'Armatura (1° ferimento, attivazione volontaria) attiva il suo POTERE SPECIALE (spesso assorbimento danni).",
+    "wound_note": "Ferire l'Armatura è VOLONTARIO. Al 2° ferimento è DISTRUTTA. Vedi 06_equipaggiamento/03_ferita_2_stadi.json",
+    "base_power_passive": "L'Armatura ha una Riduzione Fissa del danno subito SEMPRE attiva (non richiede attivazione con Vitalità). Vedi 06_equipaggiamento/02_categorie.json"
+  },
+  "monster_defenses_quick_reference": {
+    "name": "Difese dei Nemici (Riferimento)",
+    "fixed_reduction_armatura": {
+      "rule": "Il mostro ha una Riduzione Fissa del danno.",
+      "effect": "Azioni deboli (Potere basso) possono essere completamente nullificate.",
+      "tactical_implication": "I PG DEVONO usare azioni lente/potenti o combo per penetrare l'armatura."
+    },
+    "tag_based_mitigation": {
+      "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
+      "examples": {
+        "immunity": "Fantasma immune a [Impeto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
+        "resistance": "Golem resistente a [Istinto]: gli attacchi di destrezza fanno danno ridotto.",
+        "vulnerability": "Non-morto vulnerabile a [Risonanza]: l'empatia e la connessione col mondo dei viventi fa danno aumentato."
+      },
+      "cross_reference_full": "Vedi 08_nemici/03_tratti.json per il sistema completo dei Tratti nemici"
+    },
+    "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
+  },
+  "defense_offense_fusion": {
+    "name": "Fusione Difesa/Offesa",
+    "principle": "Una Vitalità con [Apertura] o [Sviluppo] può MITIGARE un attacco nemico (se ospita un'Abilità Difensiva nominated) E fare combo con un compagno. Difesa e Offesa NON sono mai in conflitto.",
+    "design_intent": "Le difese non sono 'turni persi'. Una buona difesa è anche un'apertura per un contrattacco o una combo."
+  }
+}

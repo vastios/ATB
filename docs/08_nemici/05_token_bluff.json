@@ -1,0 +1,36 @@
+{
+  "section_id": "08-05",
+  "section_name": "Sistema Token/Bluff — 5 Token Coperti",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema Token/Bluff: il Master posiziona 5 token coperti lungo la riga del nemico nella Cintura ATB. Il Master SCEGLIE quanti token sono attacco e quanti bluff. Mini-gioco di deduzione per i PG. Questo file è la CASA UNICA per il sistema Token/Bluff.",
+  "applicability": {
+    "principle": "Applicabile a Nemici Base ed Elite. I Boss Epici usano la loro riga ATB dedicata (vedi 08_nemici/06_boss_atb.json)."
+  },
+  "token_anatomy": {
+    "front_attack": "ATTACCO. Infligge danno come indicato nella scheda.",
+    "front_bluff": "BLUFF/FINTA. Nessun danno. Il nemico ha solo 'perso tempo'.",
+    "back": "Tutti identici. I PG non distinguono attacchi da finte finché non vengono rivelati al tick corrispondente."
+  },
+  "placement_rules": {
+    "round_1": "Master posiziona PER ULTIMO, dopo i PG. Questo dà un leggero vantaggio informativo ai PG al primo turno.",
+    "subsequent_rounds": "Quando tutti i token sono risolti, il Master riposiziona seguendo la regola standard."
+  },
+  "master_choice": {
+    "principle": "Il Master SCEGLIE LIBERAMENTE quanti token sono attacco e quanti bluff. Può fare 5 attacchi e 0 bluff (massimo danno), oppure 0 attacchi e 5 bluff (nessun danno ma il nemico ha 'perso tempo'), o qualsiasi combinazione intermedia.",
+    "design_intent": "Crea un mini-gioco di deduzione per i PG: devono leggere il comportamento del Master, valutare il rischio, e posizionare le difese in modo intelligente. Non sanno mai con certezza dove arriveranno gli attacchi."
+  },
+  "perception_counter": {
+    "principle": "Azioni con funzione di percezione (utility Analisi 'Rivelare Debolezze', alcuni Strumenti Rapidi) possono RIVELARE uno o più token coperti.",
+    "effect": "Il PG che attiva una percezione può girare 1 token (o più, in base al livello di effetto) per vedere se è Attacco o Bluff. Il token viene poi rimesso coperto.",
+    "tactical_value": "Permette ai PG di preparare difese mirate. Costo: l'azione di percezione non fa danno, quindi è un'azione 'persa' in termini di offesa."
+  },
+  "tactical_implications": {
+    "for_pg": "I PG devono decidere: diffondere le difese (per coprire tutti i 5 slot) o concentrarle (per bloccare perfettamente gli slot più probabili)?",
+    "for_master": "Il Master deve bilanciare: troppi attacchi = i PG imparano a diffondere le difese; troppi bluff = i PG imparano a ignorare i token. La variazione è la chiave."
+  },
+  "design_intent": {
+    "principle": "Il sistema Token/Bluff aggiunge UNCIDINITÀ al combattimento. I PG non sanno mai con certezza dove arriveranno gli attacchi. Questo li costringe a gestire il RISCHIO, non solo la certezza. È la meccanica che più di tutte crea tensione al tavolo."
+  }
+}

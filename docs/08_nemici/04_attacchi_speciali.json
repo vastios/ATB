@@ -1,0 +1,47 @@
+{
+  "section_id": "08-04",
+  "section_name": "Attacchi Speciali — Colpo Mirato, Squarcio, Distruzione, ATB",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce gli Attacchi Speciali: azioni alternative che il Master può far compiere al nemico Epico (Boss) usando le sue carte 'Livello di Potere' nella Cintura ATB, al posto di un attacco base. Non puntano a infliggere danni diretti (Milling), ma a colpire la struttura profonda del giocatore. Questo file è la CASA UNICA per il sistema Attacchi Speciali.",
+  "availability": {
+    "principle": "SOLO per i Nemici Epici (Boss). I Nemici Base ed Elite NON hanno Attacchi Speciali."
+  },
+  "what_they_are": {
+    "description": "Sono azioni alternative che il Master può far compiere al nemico usando le sue carte 'Livello di Potere' nella Cintura ATB, al posto di un attacco base. Non puntano a infliggere danni diretti (Milling), ma a colpire la struttura profonda del giocatore."
+  },
+  "attack_types": {
+    "colpo_mirato": {
+      "name": "Colpo Mirato (Targeting)",
+      "mechanic": "Invece di far scaricare carte vitalità ai giocatori, questo attacco costringe un giocatore specifico a subire una Ferita a una Caratteristica a scelta del Master (o a una scelta limitata del giocatore).",
+      "damage_category": "Questo è DANNO DIRETTO ALLA CARATTERISTICA. Il giocatore NON può scegliere di pagare con il Mazzo Vitalità. Deve girare carte della Caratteristica bersagliata. Vedi 05_combattimento/02_danno.json → danno_diretto_caratteristica"
+    },
+    "squarcio_anima": {
+      "name": "Squarcio dell'Anima",
+      "mechanic": "Invece di scaricare carte vitalità, se questo attacco va a segno, costringe il giocatore a GIRARE (ferire) un Cuore.",
+      "damage_category": "Questo è DANNO ANATEMA. Il giocatore NON ha scelta. Il prossimo Cuore nell'ordine viene ferito. Vedi 02_personaggio/04_cuori.json → when_hearts_get_wounded"
+    },
+    "distruzione_risorse": {
+      "name": "Distruzione di Risorse",
+      "mechanic": "Invece di danneggiare il giocatore, questo attacco mira alle sue carte equipaggiamento o agli oggetti rapidi.",
+      "example": "Es. 'Se questo attacco colpisce, il giocatore deve scartare un oggetto rapido a caso o girare un'arma equipaggiata, usurandola o distruggendola.'",
+      "v3_clarification": "In v3, l'usuramento di un'Equipaggiamento per attacco nemico è un'ECCEZIONE alla regola 'ferite volontarie'. Solo gli Attacchi Speciali 'Distruzione Risorse' possono ferire l'Equipaggiamento senza il consenso del giocatore. Vedi 06_equipaggiamento/03_ferita_2_stadi.json"
+    },
+    "modifica_atb": {
+      "name": "Modifica dell'ATB",
+      "mechanic": "Attacchi che alterano la Cintura ATB stessa.",
+      "example": "Es. 'Il nemico copre uno slot ATB dei giocatori con un Token Zona Proibita: le carte in quello slot non possono essere risolte e vengono scartate senza effetto.'"
+    }
+  },
+  "design_intent": {
+    "principle": "Gli Attacchi Speciali dei Boss bypassano il normale flusso di danno (Milling → scelta del PG) e colpiscono direttamente le risorse più preziose: Caratteristiche, Cuori, Equipaggiamento e la Cintura ATB stessa. Creano emergenze che richiedono risposte immediate.",
+    "tactical_implication": "I PG DEVONO bilanciare offesa e difesa quando affrontano un Boss. Se ignorano gli Attacchi Speciali, perderanno Caratteristiche e Cuori troppo in fretta. Se solo si difendono, non infliggeranno mai danno al Boss."
+  },
+  "open_questions": {
+    "boss_combo": "Il Boss può fare combo? Con i suoi minion?",
+    "boss_phases": "I Boss hanno fasi (es. sotto 50% PF cambiano abilità/Tratti)?",
+    "boss_multiple_actions": "Il Boss può giocare più di una carta per turno?",
+    "cross_reference": "Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  }
+}

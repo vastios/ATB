@@ -1,0 +1,61 @@
+{
+  "section_id": "04-02",
+  "section_name": "Risoluzione della Cintura ATB — Tick-per-Tick e Ordine Turni",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce COME si risolve la Cintura ATB dopo che tutti hanno posizionato le loro carte. La risoluzione scorre da sinistra a destra (tick-per-tick). Ad ogni tick si risolve la colonna più a sinistra di TUTTI i partecipanti. Le combo si attivano se le condizioni sono soddisfatte. Le difese si calcolano in base alla posizione. Questo file è la CASA UNICA per la risoluzione della Cintura ATB.",
+  "resolution_logic": {
+    "name": "Logica di Risoluzione",
+    "method": "Da sinistra a destra. Si risolve la colonna più a sinistra di TUTTI i partecipanti prima di passare alla successiva.",
+    "step_by_step_v3": {
+      "tick_1": "Si risolve la prima Vitalità di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → il PG SCEGLIE quale potere attivare (abilità/magia da una Carta Caratteristica nominated, oppure Equipaggiamento o Strumento Rapido) e l'effetto si risolve al livello = T della Vitalità (limitato dal valore attuale di Caratteristica del PG).",
+      "tick_2": "Si risolve la seconda Vitalità di ogni riga.",
+      "tick_n": "Continua finché tutte le righe sono state risolte completamente."
+    },
+    "cross_reference_activation": "Vedi 03_vitalita/02_giocare_vitalita.json per la regola di attivazione completa"
+  },
+  "combo_check_per_tick": {
+    "name": "Controllo Combo ad Ogni Tick",
+    "rule": "Ad ogni tick, se Vitalità scoperte di ALMENO 2 PG DIVERSI sono nella STESSA POSIZIONE con Tag Combo compatibili ([Apertura]+[Chiusura]/[Culmine]), la combo si attiva.",
+    "damage_calculation": "Il danno è la SOMMA dei valori POTERE dei poteri attivati (abilità nominated, Equipaggiamento o Strumento Rapido).",
+    "cross_reference_full": "Vedi 05_combattimento/05_combo.json per il sistema combo completo"
+  },
+  "defense_check_per_tick": {
+    "name": "Controllo Difesa ad Ogni Tick",
+    "rule": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le Abilità Difensive dei PG (ospitate su Carte Caratteristica nominated) agganciate a Vitalità in quella posizione.",
+    "outcomes": {
+      "same_position": "Stessa posizione = Blocco Perfetto. 0 danni.",
+      "adjacent_position": "Posizione adiacente (±1 slot) = Blocco Mitigato. Danno ridotto.",
+      "elsewhere": "Altrove = Danno Pieno."
+    },
+    "cross_reference_full": "Vedi 05_combattimento/04_difesa.json per il sistema difesa completo"
+  },
+  "boss_atb_resolution": {
+    "principle": "Il Boss segue le STESSE regole di risoluzione dei PG. La sua riga è solo più lunga (fino a 9 posizioni).",
+    "cross_reference_full": "Vedi 08_nemici/06_boss_atb.json"
+  },
+  "turn_order_rules": {
+    "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo turno.",
+    "subsequent_turns": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
+    "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo. Si compensa col fatto che gli altri hanno già 'pagato' il loro tempo.",
+    "refill_rule": "Ogni volta che un PG gioca carte nella Cintura ATB, ne pesca altrettante dal Mazzo Vitalità per tornare a 5 in mano. Vedi 03_vitalita/01_mazzo_vitalita.json"
+  },
+  "visual_example": {
+    "name": "Esempio di Risoluzione",
+    "scenario": "Tre PG (Guerriero, Mago, Ladro) e un Boss affrontano un round. Il Master posiziona 5 token coperti per i nemici.",
+    "setup": [
+      "Guerriero (Impeto 4): riga = [T1 COPERTA] [T2 COPERTA] [T3 SCOPERTA (Spada)] [T4 COPERTA]",
+      "Mago (Risonanza 4): riga = [T1 SCOPERTA (utility)] [T2 COPERTA] [T3 SCOPERTA (Fireball)]",
+      "Ladro (Istinto 5): riga = [T1 SCOPERTA (Schivata)] [T2 SCOPERTA (Pugnalata)]",
+      "Nemici: riga = [token 1] [token 2] [token 3] [token 4] [token 5]"
+    ],
+    "tick_1_resolution": "Si risolve la colonna 1: Guerriero COPERTA (scartata), Mago SCOPERTA (utility risolta), Ladro SCOPERTA (Schivata — si prepara a difendere), Nemico token 1 (girato: ATTACCO o BLUFF).",
+    "tick_2_resolution": "Colonna 2: Guerriero COPERTA, Mago COPERTA, Ladro SCOPERTA (Pugnalata — danno al nemico), Nemico token 2.",
+    "tick_3_resolution": "Colonna 3: Guerriero SCOPERTA (Spada — attiva al livello 3), Mago SCOPERTA (Fireball — attiva al livello 3). COMBO: Guerriero e Mago sono nella stessa posizione con Tag [Apertura]+[Chiusura]? Se sì, combo si attiva con danno = somma Poteri.",
+    "tick_4_5_resolution": "Continua fino a risolvere tutte le colonne."
+  },
+  "design_evolution_notes": {
+    "principle": "La risoluzione da sinistra a destra è INVARIATA dalla v1. Le uniche differenze nelle versioni successive riguardano COSA attivano le carte scoperte (in v3: poteri nominated o Carte Lato Giocatore fisiche)."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "section_id": "06-01",
+  "section_name": "Slot Equipaggiamento e Regola di Attivazione",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema degli slot Equipaggiamento: 4 slot fissi (Arma, Scudo/Doppia, Armatura, Accessorio) e la regola di attivazione tramite Vitalità con tag. Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE come slot fisici separati in v3 — assorbite dalle Carte Caratteristica nominated. Questo file è la CASA UNICA per il sistema degli slot e la regola di attivazione.",
+  "v3_paradigm_shift": {
+    "summary": "Nella v2, le Carte Lato Giocatore (Eq + Strumenti + Abilità + Magie) erano tutti slot fisici separati. Nella v3, le Carte Abilità e Carte Magia sono state RIMOSSE come slot fisici: i loro poteri sono assorbiti dalle CARTE CARATTERISTICA NOMINATED. Restano fisici solo: 4 Equipaggiamento + 5 Strumenti Rapidi.",
+    "key_changes_v3": [
+      "RIMOSSO slot Abilità fisiche (4) — assorbite da nominated",
+      "RIMOSSO slot Magie fisiche (3) — assorbite da nominated",
+      "RIMOSSO sistema Materie FF7 ed Esper",
+      "Slot Strumenti Rapidi aumentati da 3 a 5",
+      "Strumenti Rapidi ospitano anche talismani craftati da Analisi (offensivi, monouso)",
+      "Equipaggiamento (4 slot) invariato: sistema ferita 2 stadi VOLONTARIO",
+      "Magia a due vie: Risonanza (elementale + cura) + Analisi (utility + crafting)",
+      "Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO"
+    ]
+  },
+  "player_card_slots_v3": {
+    "total_slots": 9,
+    "breakdown": {
+      "equipment": {
+        "slots": 4,
+        "composition": ["1 Arma", "1 Scudo (o Doppia Arma)", "1 Armatura", "1 Accessorio"]
+      },
+      "quick_items": {
+        "slots": 5,
+        "nature": "Oggetti monouso trovati (Pozioni, Grimaldelli, Bombe, ecc.) + TALISMANI craftati da Analisi (pergamene offensive monouso)",
+        "cross_reference": "Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
+      }
+    },
+    "note_pooled_powers": "I poteri basati su caratteristica (Abilità) e gli incantesimi (Magie) NON sono più slot fisici separati. Sono ospitati sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 02_personaggio/03_carte_caratteristica_nominated.json)."
+  },
+  "activation_rule_v3": {
+    "name": "Regola di Attivazione Equipaggiamento (v3)",
+    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti di TAG (principalmente [Strumento]). La Vitalità NON deve essere della stessa caratteristica dell'Equipaggiamento: i TAG indicano cosa si può attivare.",
+    "requirements": [
+      "La Vitalità deve avere i TAG richiesti dall'Equipaggiamento (principalmente [Strumento])",
+      "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB)",
+      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Caratteristica del PG"
+    ],
+    "level_of_effect": "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=scegli tra 1-5). Limitato dal valore di Caratteristica del PG.",
+    "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto). Vedi 05_combattimento/01_tabella_potere.json"
+  },
+  "armi_improvissate_fallback": {
+    "name": "Armi Improvissate (Fallback)",
+    "principle": "Se il PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvissate.",
+    "mechanic": "Attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma). Sostanzialmente una Vitalità T1 con danno = Tabella Potere(Caratteristica × 1).",
+    "design_intent": "Un PG senza Arma è gravemente penalizzato. Costringe a mantenere sempre un'Arma equipaggiata e a non farla distruggere troppo facilmente. Vedi 05_combattimento/04_difesa.json → no_default_defense_rule"
+  },
+  "universal_flip_mechanic_reminder": {
+    "principle": "TUTTE le carte (Caratteristiche, Cuori, Equipaggiamento) usano la STESSA meccanica: GIRARE LA CARTA sul dorso per indicare lo stato 'ferito/usurato'.",
+    "cross_reference": "Vedi 01_introduzione/02_anatomia_carte.json → universal_flip_mechanic"
+  },
+  "design_evolution_notes": {
+    "v1": "Equipaggiamento periferico, solo riduzione fatica/slittamento.",
+    "v2": "Armi Alchemiche vs Improvissate. Tag [Strumento] obbligatorio.",
+    "v3": "Equipaggiamento Normale vs Superiore. Conseguenze dalla distruzione di Superiori.",
+    "v4": "FUSIONE LORE CABALISTICA.",
+    "v5": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
+    "v6": "Distruzione Tratti tramite potere Arma Superiore.",
+    "v7": "Rimozione 'assorbe fino a 3 danni'. Rimosso obbligo caratteristiche per Ferita Standard.",
+    "v8": "Aggiornamento minori.",
+    "v9": "Sistema Equipaggiamento da RIVEDERE (note del designer).",
+    "v10": "ARCHITETTURA v2: Equipaggiamento CENTRALE. 4 slot fissi. Sistema ferita 2 stadi (1° = potere speciale, 2° = distrutto). Ferite VOLONTARIE. Rimosso sistema Normale/Superiore. Aggiunti slot Strumenti Rapidi (3), Abilità (4), Magie (3 — Materie FF7). Ferita Caratteristica separata da Ferita Equipaggiamento.",
+    "v11": "ARCHITETTURA v2.1: Strumenti Rapidi CONFERMATI SOLO usa-e-getta (nessuna ferita a 2 stadi). Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base). Esper richiede T5 + Caratteristica 5 (condizione DOPPIA). Effetti di distruzione Arma opzionali (es. esplosione finale).",
+    "v12": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. RIMOSSE slot Abilità (4) e Magie (3) fisiche separate — assorbite dalle CARTE CARATTERISTICA NOMINATED. Slot Strumenti Rapidi aumentati da 3 a 5 (ospitano anche talismani craftati da Analisi). Slot totali Lato Giocatore fisici ridotti da 14 a 9 (4 Eq + 5 Strum). Magia a due vie: Risonanza (diretta) + Analisi (utility + crafting). Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO. Sistema ferita 2 stadi Equipaggiamento INVARIATO."
+  }
+}

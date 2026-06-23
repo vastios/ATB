@@ -1,0 +1,67 @@
+{
+  "section_id": "04-01",
+  "section_name": "Struttura della Cintura ATB — Riga Fluida e Continuità Temporale",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la struttura fisica della Cintura ATB: il sistema di iniziativa e risoluzione basato su righe FLUIDE (non griglia fissa). Ogni PG traccia la propria riga di lunghezza variabile. La Cintura ATB è INVARIATA nella struttura tra v2 e v3 — le uniche differenze sono COSA attivano le carte scoperte (in v3: poteri nominated o Carte Lato Giocatore fisiche). Questo file è la CASA UNICA per la struttura fisica della Cintura.",
+  "core_concept": {
+    "name": "Cintura ATB Fluida",
+    "definition": "NON esiste una griglia fissa 5×5. Ogni PG traccia una riga orizzontale di lunghezza VARIABILE nella Cintura ATB. Il Ladro con 3 azioni Costo 1 ha una riga corta e veloce. Il Guerriero con 1 azione Costo 5 ha una riga lunga e lenta. Il Boss con Potere 9 ha una riga che sporge enormemente.",
+    "visual_metaphor": "Come la vera ATB di Final Fantasy: strisce di lunghezze diverse che scorrono. Non un quadrato, ma una serie di nastri trasportatori a velocità diverse.",
+    "asymmetry": "L'ATB è asimmetrica PER NATURA. Il Ladro agisce 3 volte prima che il Guerriero finisca il suo colpo. Il Boss con Potere 9 avanza lentamente ma inarrestabilmente."
+  },
+  "absolute_temporal_continuity": {
+    "name": "Continuità Temporale Assoluta",
+    "rule": "Le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra. È IMPOSSIBILE saltare slot. Non ci sono 'buchi' nella Cintura ATB.",
+    "implication_for_combos": "Se il Mago ha un'azione nella posizione 4 e il Guerriero vuole convergere lì, DEVE riempire le posizioni 1, 2 e 3 prima di arrivare al 4. Non può 'teletrasportare' la sua riga.",
+    "combo_synchronization_cost": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago. È vulnerabile agli attacchi rapidi nel frattempo.",
+    "fast_vs_slow_combos": "Le combo veloci (posizione 1, Costo 1) sono scambi fulminei. Le combo devastanti (posizione 4-5) sono eventi che si preparano a destra del tavolo.",
+    "implication_for_defense": "Non puoi far apparire una difesa nella posizione 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella posizione."
+  },
+  "row_mechanics": {
+    "row_per_pg": "Ogni PG ha la propria riga orizzontale nella Cintura ATB.",
+    "row_per_enemy_basic": "1 riga per i token nemici basici (5 token coperti).",
+    "row_per_boss": "1 riga per il Boss (con azioni come i PG ma potere fino a 9).",
+    "variable_length": "La lunghezza di ogni riga dipende da quante carte il giocatore sceglie di giocare. Non esiste una lunghezza fissa.",
+    "corsie": "Ogni PG ha la propria 'Corsia' (striscia di tavolo). Le combo avvengono per CONVERGENZA delle righe nella stessa posizione."
+  },
+  "how_many_cards_to_play": {
+    "rule": "Ogni giocatore sceglie quante carte giocare: da 1 a 5.",
+    "example": "Un PG con 3 carte Costo 5 e 2 carte Costo 3 potrebbe decidere di giocare coperte 2 carte da 5 per attivare una carta da 3, fermandosi a 1 azione da 3 con le altre 2 carte ancora in mano.",
+    "asymmetry_result": "Chi gioca 1 carta lenta ha una riga corta ma potente. Chi gioca 5 carte veloci traccia una riga più lunga ma con impatto minore per posizione.",
+    "forced_action": {
+      "name": "Azione Risonanzata",
+      "rule": "Quando un PG ha scartato l'ultima carta del suo Sentiero, PUÒ giocare altre carte (da 1 a 5). Non può restare senza carte nella Cintura ATB.",
+      "refill_rule": "Ogni volta che giocano carte, i PG ne pescano altrettante dal Mazzo Vitalità per averne sempre 5 in mano.",
+      "refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione."
+    }
+  },
+  "turn_order": {
+    "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO.",
+    "subsequent_turns": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
+    "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo."
+  },
+  "boss_integration_quick_reference": {
+    "principle": "Il Boss traccia la propria riga nella stessa Cintura ATB dei PG.",
+    "power_9": "Il Boss può giocare Potere 9 = 8 carte coperte + 1 carta azione scoperta. Quella riga di 9 posizioni sporge enormemente rispetto alle righe dei PG.",
+    "cross_reference_full": "Vedi 04_cintura_atb/03_fulmineo.json per Fulmineo e 08_nemici/06_boss_atb.json per i dettagli sul Boss"
+  },
+  "pacing_considerations": {
+    "natural_rhythm": "La fluidità delle righe crea un ritmo naturale. I PG veloci agiscono spesso, quelli lenti colpiscono forte ma raramente.",
+    "combo_timing": "Le combo richiedono pianificazione. Non sono mai gratuite: devi 'pagare' il tempo per far convergere la tua riga con quella del compagno."
+  },
+  "design_evolution_notes": {
+    "v1": "Cinghia di trasmissione base.",
+    "v2": "Action Queue a Risoluzione Sincrona.",
+    "v3": "Action Grid (griglia fissa 5×5) con token coperti.",
+    "v3.1": "Token coperti, Boss con riga dedicata.",
+    "v4": "LINEA DEL TEMPO FLUIDA (Cinghia di Trasporto). Niente griglia fissa. Continuità Temporale Assoluta.",
+    "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori. [Strumento] per slittamento scudo.",
+    "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
+    "v8": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo. La struttura della Cintura ATB è INVARIATA.",
+    "v9": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA. Vedi 04_cintura_atb/03_fulmineo.json",
+    "v10": "ARCHITETTURA v3: le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated. Struttura Cintura ATB INVARIATA."
+  }
+}

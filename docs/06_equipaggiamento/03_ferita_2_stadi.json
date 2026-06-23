@@ -1,0 +1,58 @@
+{
+  "section_id": "06-03",
+  "section_name": "Sistema Ferita Equipaggiamento a 2 Stadi — Volontaria, Potere Speciale, Distruzione",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il sistema di Ferita Equipaggiamento a 2 stadi. Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE: il giocatore sceglie quando ferire l'Equipaggiamento per attivare il suo potere speciale. Questo file è la CASA UNICA per il sistema di Ferita Equipaggiamento (in v3 è INVARIATO dalla v2).",
+  "wound_system_overview": {
+    "name": "Panoramica del Sistema",
+    "description": "Ogni Equipaggiamento ha 2 SLOT FERITA. Le ferite sono VOLONTARIE: il giocatore sceglie quando ferire l'Equipaggiamento per attivare il suo potere speciale.",
+    "principle": "Ferire l'Equipaggiamento NON è una deviazione di danno subito. È una scelta tattica del giocatore per ottenere un vantaggio (potere speciale) al costo di avvicinarsi alla distruzione dell'oggetto."
+  },
+  "stage_1_first_wound": {
+    "name": "1° Ferimento — Attivazione Potere Speciale",
+    "trigger": "Il giocatore SCEGLIE di ferire l'Equipaggiamento (in qualsiasi momento in cui vorrebbe attivarne il potere speciale).",
+    "effect": "Attiva il POTERE SPECIALE dell'Equipaggiamento.",
+    "use_continues": "L'uso dell'Equipaggiamento CONTINUA. Può ancora essere attivato normalmente nelle mosse successive.",
+    "visual": "Carta girata sul dorso (scala di grigi), ancora in gioco.",
+    "recovery": "Ripristinata a fine combattimento (o con Cura apposita)."
+  },
+  "stage_2_second_wound": {
+    "name": "2° Ferimento — Distruzione",
+    "trigger": "Il giocatore SCEGLIE di ferire ulteriormente un Equipaggiamento già ferito. (Solo possibile se l'Equipaggiamento è già al 1° stadio.)",
+    "effect": "L'Equipaggiamento è DISTRUTTO. Non può più essere attivato per il resto del combattimento.",
+    "visual": "Carta rimossa dal tavolo (o messa in una zona 'distrutto').",
+    "recovery": "Ripristinata a fine combattimento (o con Cura speciale costosa)."
+  },
+  "wounds_are_voluntary": {
+    "name": "Principio: Ferite VOLONTARIE",
+    "principle": "Le ferite all'Equipaggiamento sono SEMPRE VOLONTARIE. NON sono una deviazione di danno subito. Il giocatore non è mai costretto a ferire il proprio Equipaggiamento.",
+    "tactical_meaning": "Il giocatore decide quando 'bruciare' il potere speciale del suo Equipaggiamento. È una risorsa tattica, non un danno subito."
+  },
+  "separation_from_ferita_caratteristica": {
+    "name": "Separazione dalla Ferita Caratteristica",
+    "principle": "La Ferita Caratteristica (da danno subito in combattimento) è SEMPRE sulla Caratteristica. NON può essere trasferita all'Equipaggiamento.",
+    "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Caratteristiche (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti.",
+    "cross_reference_ferita_caratteristica": "Vedi 05_combattimento/02_danno.json → ferita_caratteristica_separation_from_equipment"
+  },
+  "use_cases": {
+    "tactical_opening": "All'inizio del combattimento, ferisci l'Arma per ottenere subito un potere speciale (es. Fendente per colpire 2 nemici). Hai tutto il combattimento per riutilizzarla.",
+    "emergency_save": "A metà combattimento, ferisci lo Scudo per slittare una difesa e ottenere un Blocco Perfetto cruciale.",
+    "final_sacrifice": "Alla fine del combattimento, ferisci 2 volte l'Arma per distruggerla e ottenere un effetto di distruzione (es. esplosione finale che colpisce tutti i nemici).",
+    "narrative_weight": "Nella skin cabalistica, distruggere un Equipaggiamento Superiore genera un Qliphoth personale. Vedi 10_lore_cabalistica/02_shevirat_hakelim.json"
+  },
+  "recovery_after_combat": {
+    "principle": "Le ferite all'Equipaggiamento si ripristinano a fine combattimento. L'Equipaggiamento non è PERMANENTEMENTE danneggiato.",
+    "exception": "In caso di distruzione narrativamente significativa (es. per generare una Conseguenza Qliphoth), il Master può decidere che l'Equipaggiamento è permanentemente perduto. Vedi 10_lore_cabalistica/03_qliphoth.json"
+  },
+  "design_intent": {
+    "principle": "Il sistema a 2 stadi VOLONTARIO rende l'Equipaggiamento una RISORSA TATTICA, non un malus. Il giocatore sceglie quando 'sfruttare' il potere speciale del suo Equipaggiamento, sapendo che ogni uso lo avvicina alla distruzione. Crea dilemmi continui: 'uso il potere speciale adesso o lo tengo per dopo?'",
+    "comparison_with_other_systems": "A differenza di D&D (dove l'equipaggiamento è passivo), qui l'Equipaggiamento è ATTIVO e feribile. È più simile ai 'charges' di un oggetto magico, ma con un limite di 2 usi totali per combattimento."
+  },
+  "design_evolution_notes": {
+    "v10_v2": "Sistema ferita 2 stadi introdotto. 1° = potere speciale, 2° = distrutto. Ferite VOLONTARIE.",
+    "v11_v2_1": "CONFERMATO invariato.",
+    "v12_v3": "INVARIATO in v3. Il sistema ferita 2 stadi Equipaggiamento resta identico. L'unica differenza è che il vecchio sistema Normale/Superiore è RIMOSSO — tutte le Armi possono ora avere poteri speciali attivati dal 1° ferimento, non solo le 'Superiori'."
+  }
+}

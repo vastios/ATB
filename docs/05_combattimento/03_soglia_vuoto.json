@@ -1,0 +1,43 @@
+{
+  "section_id": "05-03",
+  "section_name": "Soglia del Vuoto — Caratteristica a 0 e Ferita Cuore Obbligatoria",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la Soglia del Vuoto: cosa succede quando una Caratteristica scende a valore 0 per ferite accumulate. È una regola di emergenza che connette il danno alle Caratteristiche con il danno ai Cuori. Questo file è la CASA UNICA per la Soglia del Vuoto.",
+  "trigger_condition": {
+    "name": "Condizione di Attivazione",
+    "trigger": "Una Caratteristica scende a 0 a causa di ferite (Danno Diretto o scelte ripetute di Opzione B nel Dilemma del Guerriero).",
+    "cross_reference_danno": "Vedi 05_combattimento/02_danno.json per le Due Categorie di Danno"
+  },
+  "azione_obbligatoria": {
+    "name": "Azione Obbligatoria — Ferita Cuore Immediata",
+    "rule": "Il giocatore è COSTRETTO a girare (ferire) immediatamente un Cuore, senza possibilità di scelta o opposizione.",
+    "no_alternative": "NON può scegliere di pagare con il Mazzo Vitalità. NON può scegliere un'altra Caratteristica. NON può evitare in alcun modo.",
+    "cross_reference_cuori": "Vedi 02_personaggio/04_cuori.json → wound_order_rule"
+  },
+  "stato_a_zero_rule": {
+    "name": "Stato di una Caratteristica a 0",
+    "principle": "Quando una Caratteristica è a 0, le carte di quel colore possono essere giocate SOLO COPRITE per pagare il Costo in Tempo.",
+    "azioni_scoperte": "Le azioni SCOPERTE di quel colore FALLISCONO senza effetto. La Caratteristica è 'cesionata' — il canale verso quel Mondo è completamente chiuso.",
+    "narrative": "Il PG ha perso l'accesso a un'intera dimensione della sua capacità. Deve guarire quella Caratteristica prima di poterla usare di nuovo per azioni attive."
+  },
+  "eccezione_tag_secondaria": {
+    "name": "Eccezione — Tag di Caratteristica Secondaria",
+    "rule": "Se una carta ha un Tag di Caratteristica Secondaria, il giocatore può usare quel Tag per calcolare il Potere basandosi sull'altra Caratteristica (se superiore a 0).",
+    "example": "Una Vitalità primariamente Impeto con tag secondario Istinto può essere giocata SCOPERTA usando Istinto come Caratteristica di riferimento, se Impeto è a 0 ma Istinto > 0.",
+    "open_question_tag_secondaria": "Da dettagliare come funzionano esattamente i tag secondari sulle Vitalità. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  },
+  "design_intent": {
+    "principle": "La Soglia del Vuoto garantisce che NON si possa 'stagnare' a Caratteristica 0. Se perdi completamente un canale, l'anima stessa viene ferita. Questo rende la scelta 'Opzione B — Ferita Caratteristica' nel Dilemma del Guerriero una scelta che ha un LIMITE: non puoi sacrificarla all'infinito, prima o poi collassa in una ferita Cuore.",
+    "tactical_implication": "Il PG deve gestire le ferite alle Caratteristiche in modo distribuito — non concentrarle tutte su una sola, altrimenti scatta la Soglia del Vuoto."
+  },
+  "recovery_from_zero": {
+    "principle": "Una Caratteristica a 0 può essere guarita come qualsiasi Caratteristica ferita: pozioni guarigione, magia curativa, Punti Impresa. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
+    "narrative": "Rigirare una carta Caratteristica = riaprire il canale verso quel Mondo. Il PG può tornare a usare azioni scoperte di quel colore."
+  },
+  "relationship_with_death_condition": {
+    "principle": "Se la Ferita Cuore causata dalla Soglia del Vuoto è l'ULTIMO Cuore sano (Cuore 3), il PG MUORE. Vedi 02_personaggio/04_cuori.json → death_condition",
+    "rare_case": "Caso raro ma possibile: un PG accumula ferite tali che tutte e 3 le Caratteristiche di un Asse scendono a 0, innescando 3 Soglie del Vuoto in sequenza = 3 Ferite Cuore = morte."
+  }
+}

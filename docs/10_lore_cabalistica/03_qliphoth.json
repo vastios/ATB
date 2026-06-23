@@ -1,0 +1,61 @@
+{
+  "section_id": "10-03",
+  "section_name": "Qliphoth e Or Chozer — Gusci Vuoti e Luce che Ritorna",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 3 — Manuale Ambientazione (Skin Cabalistica)",
+  "description": "Definisce i Qliphoth (Gusci Vuoti = nemici) e l'Or Chozer (Luce che Ritorna = Pila Scarti). Spiega perché i nemici attaccano i PG e perché la Pila Scarti è inviolabile. Questo file è la CASA UNICA per i concetti di Qliphoth e Or Chozer.",
+  "qliphoth_cosmology": {
+    "name": "I Qliphoth — I Gusci Vuoti",
+    "description": "Quando i Vasi si frantumarono, la Luce che contenevano si disperse. Ma i FRAMMENTI DEI VASI rimasero. Questi frammenti sono i QLIPHOTH — Gusci Vuoti che hanno perso la loro Luce ma hanno conservato la FORMA. Sono parassiti cosmici: cercano Luce da rubare, riempirsi dell'Or altrui, tornare a essere Vasi pieni — ma non possono. La loro natura è il VUOTO.",
+    "mechanical_parallel": "I nemici del gioco sono tutti Qliphoth in diversa misura. I nemici basici sono frammenti minori. I Boss sono Qliphoth maggiori — Gusci così densi da aver sviluppato Tratti propri. I Qliphoth generati dalla distruzione di Kelim (Equipaggiamento) sono i più PERSONALI: sono i Gusci Vuoti degli oggetti che i PG hanno spezzati.",
+    "cross_reference_enemies": "Vedi 08_nemici/01_scheda_universale.json e 08_nemici/02_tre_tier.json"
+  },
+  "the_hunger": {
+    "name": "La Fame dei Qliphoth",
+    "description": "I Qliphoth attaccano i PG perché sono AFFAMATI DI LUCE. Il danno da milling è la Luce del PG che viene strappata e assorbita dal Qliphoth. Gli attacchi diretti alle Connessioni e all'Anima sono tentativi di FRANTUMARE i Vasi del PG per raggiungere la Luce più concentrata all'interno.",
+    "mechanical_expression": "I nemici attaccano per rubare Luce (milling), per frantumare Vasi (ferire Connessioni) o per divorare l'Anima (Anatema). Ogni tipo di attacco ha un movente cosmico.",
+    "three_attack_types": {
+      "milling": "Danno Standard (Milling) = il Qliphoth ruba Luce dal Reshimu del PG.",
+      "direct_characteristic": "Danno Diretto Caratteristica = il Qliphoth cerca di frantumare un Vaso specifico per raggiungere la Luce concentrata lì dentro.",
+      "anatema": "Danno Anatema = il Qliphoth colpisce direttamente l'Anima, il luogo più concentrato di Luce del PG."
+    },
+    "cross_reference_damage": "Vedi 05_combattimento/02_danno.json"
+  },
+  "qliphoth_hierarchy": {
+    "name": "Gerarchia dei Qliphoth",
+    "minor": "Frammenti di Vasi deboli. Goblin, bestie corrotte, soldati senza anima. Attaccano in orde, muoiono facilmente, ma la loro fame è incessante. (Nemici Base)",
+    "maggiore": "Concentrazioni di Luce corrotta così dense da aver sviluppato volontà propria. Boss, entità nominali. Hanno Tratti propri — Kelim corrotti che usano come i PG usano il loro equipaggiamento. (Nemici Epici)",
+    "generato": "Qliphoth nati dalla distruzione di Kelim (Equipaggiamento) Superiori dei PG. Sono i più pericolosi perché sono PERSONALI: conoscono la Luce che cercano, perché un tempo la contenevano. (Conseguenze narrative)",
+    "cross_reference_tiers": "Vedi 08_nemici/02_tre_tier.json"
+  },
+  "or_chozer_cosmology": {
+    "name": "Or Chozer — La Luce che Ritorna",
+    "description": "Non tutta la Luce dispersa dalla Shevirat è perduta. Parte di essa RITORNA alla fonte — è l'OR CHOZER, la Luce che Ritorna. Questo è il principio della speranza nel sistema: il danno non è mai definitivo al livello della Dispersione. La Luce può sempre tornare.",
+    "mechanical_parallel": "La Pila Scarti è l'Or Chozer. I Segreti che il PG ha usato o che gli sono stati strappati non sono andati distrutti — hanno compiuto il loro ciclo e ora riposano. Il riposo e le pozioni rivitalizzanti permettono alla Luce di rifluire dal deposito dell'Or Chozer al Reshimu.",
+    "cross_reference_pila_scarti": "Vedi 03_vitalita/03_pila_scarti.json"
+  },
+  "sacred_nature_of_or_chozer": {
+    "principle": "L'Or Chozer è SACRO e INVIOLABILE. Nessun nemico può attaccarlo perché è Luce che ha già compiuto il suo scopo — non ha più forma che un Qliphoth possa divorare. È oltre la portata della violenza. Questo si traduce meccanicamente nella regola che la Pila Scarti non può essere bersagliata in combattimento.",
+    "cross_reference_mechanic": "Vedi 03_vitalita/03_pila_scarti.json → rules → cannot_be_attacked"
+  },
+  "consequence_system_lore": {
+    "name": "Sistema Conseguenze — Qliphoth Personali",
+    "principle": "Quando un Equipaggiamento con potere speciale (ex 'Keli Superiore') viene DISTRUTTO (2° ferimento volontario in v3), il Master annota le circostanze e genera una Conseguenza che tornerà nel futuro come nemico, evento o maledizione.",
+    "v3_clarification": "In v3, la distruzione di Equipaggiamento è VOLONTARIA. La Conseguenza si genera quando il PG SCEGLIE di distruggere il proprio Equipaggiamento per ottenere un effetto di distruzione. È una scelta con peso narrativo.",
+    "what_to_record": {
+      "oggetto": "Che tipo di equipaggiamento era (spada, scudo, armatura, ecc.)",
+      "possessore": "Chi lo usava",
+      "circostanze": "Come si è spezzato (in quale combattimento, contro chi, con quale potere)",
+      "potere_speciale": "Quale potere speciale conteneva"
+    },
+    "how_consequence_manifests": {
+      "nemico": "Un nemico con tratti che ricalcano il potere speciale dell'equipaggiamento distrutto.",
+      "evento": "Un evento che ricalca la natura dell'equipaggiamento.",
+      "maledizione": "Una maledizione legata al possesso originale."
+    },
+    "design_intent": "Le Conseguenze sono CONSEGUENZE MECCANICHE delle scelte dei PG. Non sono fluff narrativo — sono nemici ed eventi reali che il Master crea basandosi su cosa i PG hanno distrutto.",
+    "personal_nemesis": "Le Conseguenze generate sono PERSONALI. Il Guerriero che ha spezzato la sua spada Superiore incontrerà, tre sessioni dopo, un nemico che combatte con la STESSA TECNICA della sua spada perduta.",
+    "cross_reference_mechanic": "Vedi 06_equipaggiamento/03_ferita_2_stadi.json e 08_nemici/07_ricompense.json → consequence_system_cross_reference"
+  }
+}

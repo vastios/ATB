@@ -1,0 +1,78 @@
+{
+  "section_id": "08-03",
+  "section_name": "Tratti Nemici — Tipi e Distruzione (Allineato v3)",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce i Tratti nemici: regole statiche della scheda nemico che alterano l'economia del danno. I Tratti NON sono 'abbattuti' tramite il danno cumulativo normale. Si distruggono attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario) o tramite combo sopra soglia. ALLINEATO v3: rimosso il riferimento al vecchio sistema 'Arma Superiore' (sistema Normale/Superiore eliminato in v3). Questo file è la CASA UNICA per il sistema Tratti.",
+  "v3_alignment_fix": {
+    "name": "Allineamento v3",
+    "problem_in_v2": "Il file enemy_system.json v12 faceva ancora riferimento a 'Arma Superiore' e 'Armi Alchemiche' per distruggere i Tratti. Quel sistema è stato RIMOSSO in v2 (v10 di equipment: 'Rimosso sistema Normale/Superiore').",
+    "fix_in_v3_manual": "Le Armi Superiori sono ora le Armi con POTERE SPECIALE attivato dal 1° ferimento volontario. Tutte le Armi possono avere poteri speciali, non solo le 'Superiori'. Vedi 06_equipaggiamento/03_ferita_2_stadi.json",
+    "distruzione_tratti_v3": "I Tratti si distruggono attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario). NON è necessario che l'Arma sia 'Superiore' — basta che abbia un potere speciale con effetto 'distruggi Tratto'."
+  },
+  "what_is_a_trait": {
+    "name": "Definizione Meccanica: Il Tratto",
+    "description": "Un Tratto è una regola statica della scheda nemico che altera l'economia del danno in arrivo o impone condizioni ai giocatori. I Tratti NON sono 'abbattuti' tramite il danno cumulativo normale.",
+    "availability": "Nemici Base: nessun tratto. Elite: 1+. Epico: multipli."
+  },
+  "trait_types": {
+    "armatura_fissa": {
+      "name": "Armatura Fissa",
+      "example": "Es. 'Scaglie Resistenti'",
+      "mechanic": "Sottrae un valore fisso (es. -2) ai danni di OGNI SINGOLO ATTACCO ricevuto. Un attacco che infligge 3 danni ne infliggerà solo 1.",
+      "tactical_effect": "Respinge efficacemente gli attacchi a Basso Tempo/Potere. I PG DEVONO usare azioni lente/potenti o combo per penetrare l'armatura."
+    },
+    "resistenza_immunita_per_tag": {
+      "name": "Resistenza/Immunità per Tag",
+      "example": "Es. 'Immunità alla Materia' (deprecato — ora si usa 'Immunità a [Risonanza]')",
+      "mechanic": "Riduce o azzera i danni se l'attacco del giocatore possiede un Tag specifico.",
+      "v3_examples": {
+        "immunity": "Fantasma immune a [Impeto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
+        "resistance": "Golem resistente a [Istinto]: gli attacchi di destrezza fanno danno ridotto.",
+        "vulnerability": "Non-morto vulnerabile a [Risonanza]: l'empatia e la connessione col mondo dei viventi fa danno aumentato."
+      },
+      "tactical_effect": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
+    },
+    "ritorsione": {
+      "name": "Ritorsione",
+      "example": "Es. 'Spine Velate'",
+      "mechanic": "Infligge un effetto negativo automatico al giocatore che lo colpisce in un modo specifico.",
+      "example_detail": "Es. 'Ogni volta che un giocatore fallisce un Blocco Perfetto contro questo nemico, subisce 1 danno alla sua Vitalità (Milling).'"
+    },
+    "condizione_sconfitta_alternativa": {
+      "name": "Condizione di Sconfitta Alternativa",
+      "mechanic": "Rari Tratti che impongono di distruggere quel Tratto specifico per poter iniziare a sottrarre PF al nemico.",
+      "example": "Es. 'Invulnerabile: Questo nemico non perde PF finché il Tratto Nucleo Esterno non è distrutto.'"
+    }
+  },
+  "trait_destruction": {
+    "name": "Come Distruggere un Tratto",
+    "principle": "I Tratti NON sono abbattuti tramite il danno cumulativo normale. Un Tratto viene distrutto (e rimosso dal combattimento) in due modi:",
+    "method_1_activating_weapon_special_power": {
+      "name": "Metodo 1 — Attivare il Potere Speciale di un'Arma",
+      "description": "Il potere speciale di un'Arma (attivato dal 1° ferimento volontario) può essere usato per distruggere il Tratto. Vedi 06_equipaggiamento/03_ferita_2_stadi.json",
+      "tolerance_note": "NON è necessario distruggere l'arma. Il potere speciale di un'Arma può essere attivato indipendentemente dallo stato in cui si trova l'arma.",
+      "first_use_intact": "Se l'Arma era INTATTA e il potere viene usato per distruggere il Tratto, l'arma diventa semplicemente USURATA (girata sul dorso).",
+      "second_use_worn": "Se l'Arma era già USURATA e viene usata per questo scopo, l'arma arriva al limite di usura e viene DISTRUTTA (scartata) al termine dell'azione.",
+      "design_intent": "Distruggere un Tratto costa l'uso di un potere speciale Arma. Se l'arma era intatta, sopravvive usurata. Se era già usurata, si spezza. Il giocatore valuta il rischio."
+    },
+    "method_2_combo_threshold": {
+      "name": "Metodo 2 — Soglia Combo (Alternativa)",
+      "mechanic": "Se una combo raggiunge una SOGLIA DI DANNO specificata nella scheda del nemico, il Tratto bersagliato viene DISTRUTTO automaticamente.",
+      "example": "Soglia 15: una combo che infligge ≥ 15 danni in una colonna con tag [Apertura]+[Chiusura] distrugge il Tratto.",
+      "design_intent": "Premia la cooperazione e la pianificazione. Una combo ben coordinata può abbattere un Tratto in un colpo solo. Vedi 05_combattimento/05_combo.json"
+    },
+    "when_destroyed": "Quando un Tratto viene distrutto, il Master lo segna sulla scheda (es. lo depenna o lo copre) e quell'effetto CESA per il resto del combattimento."
+  },
+  "trait_card_design": {
+    "format": "I Tratti sono rappresentati come indicatore sulla scheda del nemico (non carte fisiche separate). Il Master li depenna o copre quando distrutti.",
+    "note": "A differenza dei Tratti Boss del sistema precedente, i Tratti non sono più carte fisiche da girare. Sono indicazioni sulla scheda del nemico che vengono rimosse quando distrutte."
+  },
+  "design_evolution_notes": {
+    "v9": "CLASSIFICAZIONE UNIFICATA A 3 TIER. Tratti ridefiniti (Armatura Fissa, Immunità per Tag, Ritorsione, Condizione Sconfitta Alternativa). Distruzione Tratti tramite attivazione potere Arma Superiore (non sacrificio).",
+    "v10_v2": "La distruzione dei Tratti nemici avviene attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario).",
+    "v11_v2_1": "conferma invarianza. Difese nemiche per Tag usano i vecchi nomi delle caratteristiche.",
+    "v12_v3": "rinomini caratteristiche (Istinto→IMPETO, Evasione→ISTINTO). Struttura nemici invariata. Le difese nemiche per Tag ora usano i nuovi nomi (Impeto/Istinto/Analisi/Risonanza). ALLINEAMENTO FIX: rimosso riferimento al vecchio sistema 'Arma Superiore' (sistema Normale/Superiore eliminato). Le Armi con potere speciale (qualunque Arma, non solo 'Superiori') possono distruggere i Tratti."
+  }
+}

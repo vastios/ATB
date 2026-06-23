@@ -1,0 +1,77 @@
+{
+  "section_id": "03-02",
+  "section_name": "Giocare le Carte Vitalità — Scoperta/Coperta, Tag-Chiave, Attivazione",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce COME si giocano le Carte Vitalità nella Cintura ATB e COME attivano i poteri. Le Vitalità si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). I TAG sono CHIAVI di attivazione che indicano quali poteri possono essere attivati. Questo file è la CASA UNICA per la regola di attivazione tramite Vitalità.",
+  "two_play_modes": {
+    "name": "I Due Modi di Giocare una Vitalità",
+    "scoperta": {
+      "name": "SCOPERTA (Attiva un Potere)",
+      "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) un'abilità/magia ospitata su una Carta Caratteristica nominated, (2) un Equipaggiamento, (3) uno Strumento Rapido.",
+      "level_of_effect": "Il livello di effetto è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Caratteristica del PG.",
+      "placement_in_atb": "Posizionata nella Cintura ATB nello slot del suo Costo Tempo.",
+      "resolution": "Si risolve al proprio tick (da sinistra a destra). Vedi 04_cintura_atb/02_risoluzione.json"
+    },
+    "coperta": {
+      "name": "COPERTA (Puro Costo Tempo)",
+      "what_it_does": "La Vitalità paga solo il Costo Tempo. NON attiva nulla. È energia di sostenimento per permettere azioni successive più costose.",
+      "placement_in_atb": "Posizionata NELLO STESSO SLOT della Vitalità scoperta che sta pagando (occupa lo slot del suo T).",
+      "resolution": "Si risolve al proprio tick come puro costo — scartata senza effetto.",
+      "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione."
+    },
+    "key_principle": "La scelta SCOPERTA vs COPERTA è la SCELTA TATTICA FONDAMENTALE di ogni turno. Scoperta = impatto immediato ma meno energie per azioni successive. Coperta = accumulare tempo per un'azione più potente."
+  },
+  "tag_as_activation_keys": {
+    "name": "I Tag come Chiavi di Attivazione",
+    "principle": "I TAG sulle Vitalità sono CHIAVI che indicano quali poteri il PG può attivare in quel turno. La Vitalità NON definisce l'azione: indica SOLO cosa si può attivare.",
+    "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità.",
+    "important_clarification": "La Vitalità NON deve essere della stessa Caratteristica del potere attivato. Basta che abbia i TAG giusti. Una Vitalità Impeto con tag [Magia] può attivare un incantesimo Risonanza da una nominated Risonanza.",
+    "main_tags": {
+      "[Strumento]": "Attiva un Equipaggiamento (Arma, Scudo, ecc.) o uno Strumento Rapido (Pozione, Talismano).",
+      "[Abilità]": "Attiva un'abilità da una Carta Caratteristica nominated (Impeto, Istinto, o utility Analisi).",
+      "[Magia]": "Attiva un incantesimo da una nominated Risonanza (elementale/cura) o utility Analisi.",
+      "[Ferita]": "PERMETTE di usare le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. Vedi 05_combattimento/02_danno.json",
+      "[Fulmineo]": "Meccanica di pagamento attivo. Vedi 04_cintura_atb/03_fulmineo.json",
+      "[Apertura]": "Apre una combo cooperativa. Vedi 05_combattimento/05_combo.json",
+      "[Sviluppo]": "Allunga una combo.",
+      "[Chiusura]": "Chiude una combo (danno finale).",
+      "[Culmine]": "Chiude una combo con effetto amplificato."
+    }
+  },
+  "activation_rule_full": {
+    "name": "Regola di Attivazione Completa",
+    "principle": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità, limitato dal valore attuale della Caratteristica del PG.",
+    "requirements": [
+      "La Vitalità deve avere i TAG richiesti dal potere specifico",
+      "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB disponibile)",
+      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Caratteristica del PG",
+      "Se la Carta Caratteristica nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]"
+    ],
+    "formula_danno": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "example_full": {
+      "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento] nella posizione 3 della Cintura ATB.",
+      "activation": "Attiva la sua Spada Lunga (Arma) al livello 3.",
+      "damage_calculation": "Tabella Potere Impeto(3) × T3 = 8 danno base. La Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
+      "ferita_variant": "Se il PG ha una Carta Caratteristica Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico."
+    },
+    "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la Tabella Potere completa"
+  },
+  "perfect_block_via_vitality": {
+    "name": "Attivazione di Abilità Difensive",
+    "principle": "Una Vitalità con il tag richiesto dall'Abilità Difensiva nominata può attivarla. Il Blocco Perfetto richiede che l'abilità sia attivata NELLO STESSO SLOT temporale del token nemico.",
+    "cross_reference_full": "Vedi 05_combattimento/04_difesa.json"
+  },
+  "fatigue_vs_action": {
+    "name": "Fatica vs Azione (Sintesi)",
+    "fatica": "Carta COPERTA = paga solo il Costo Tempo. Energia di sostenimento.",
+    "azione": "Carta SCOPERTA = attiva un potere compatibile tramite i TAG.",
+    "resolution": "Tutte le carte (coperte e scoperte) finiscono nella Pila Scarti alla risoluzione della colonna. Vedi 03_vitalita/03_pila_scarti.json"
+  },
+  "design_evolution_notes": {
+    "v1_v8": "Le Vitalità erano SIA costo SIA azione. Il tag indicava l'azione stessa.",
+    "v9_v2": "Le Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE per Carte Lato Giocatore. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo.",
+    "v10_v3": "Le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "section_id": "01-02",
+  "section_name": "Anatomia delle Carte — Le Tre Famiglie",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la struttura di TUTTE le carte del gioco (v3). Esistono TRE famiglie di carte, ognuna con una funzione distinta: (1) Carte Vitalità — la riserva di energia con tag-chiave; (2) Carte Caratteristica — il catalogo delle mosse del PG (nominated + bianche); (3) Carte Lato Giocatore fisiche — Equipaggiamento + Strumenti Rapidi. Le Vitalità forniscono energia + chiavi; le Caratteristiche nominated ospitano i poteri; le Carte Lato Giocatore fisiche forniscono Equipaggiamento e Strumenti.",
+  "v3_paradigm_shift": {
+    "summary": "v3 vs v2: le Carte Caratteristica diventano il CATALOGO DELLE MOSSE del PG (assorbendo le vecchie Carte Abilità e Carte Magia). Le Carte Lato Giocatore fisiche sono solo Equipaggiamento + Strumenti Rapidi. La personalità del PG è definita dalle Carte Caratteristica nominated scelte.",
+    "what_changed_from_v2_to_v3": [
+      "RIMOSSE le Carte Abilità come oggetti fisici separati (4 slot) — assorbite nelle Carte Caratteristica nominated",
+      "RIMOSSE le Carte Magia come oggetti fisici separati (3 slot) — assorbite nelle Carte Caratteristica nominated",
+      "RIMOSSO sistema Materie FF7 con 5 livelli di potere",
+      "RIMOSSO sistema Esper (creature evocate)",
+      "Slot Strumenti Rapidi aumentati da 3 a 5 (ospitano anche talismani craftati da Analisi)",
+      "Slot totali Lato Giocatore fisici ridotti da 14 a 9 (4 Eq + 5 Strum)",
+      "Rinomini caratteristiche: Istinto→IMPETO (Rosso), Evasione→ISTINTO (Blu)"
+    ]
+  },
+  "three_card_families": {
+    "family_1_vitality": {
+      "name": "Famiglia 1 — Carte Vitalità",
+      "role": "RISERVA DI ENERGIA + CHIAVI DI ATTIVAZIONE",
+      "what_they_do": "Le Vitalità forniscono: (1) TEMPO per la Cintura ATB, (2) TAG DI ATTIVAZIONE per attivare poteri dalle Carte Caratteristica nominated o dalle Carte Lato Giocatore fisiche.",
+      "what_they_do_NOT_do": "Le Vitalità NON definiscono l'azione. I loro TAG sono CHIAVI che indicano cosa si può attivare, ma l'azione vera e propria è ospitata altrove (nominated, Equipaggiamento, Strumenti Rapidi).",
+      "play_modes": {
+        "scoperta": "Attiva un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG.",
+        "coperta": "Puro costo tempo. Non attiva nulla — è solo energia di sostenimento."
+      },
+      "deck_properties": "60 carte totali. 10 Punti Caratteristica × 6 carte per punto. Il mazzo è PROPORZIONALE alle Caratteristiche del PG.",
+      "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Caratteristica).",
+      "cross_reference_full": "Vedi 03_vitalita/01_mazzo_vitalita.json e 03_vitalita/02_giocare_vitalita.json"
+    },
+    "family_2_characteristic_cards": {
+      "name": "Famiglia 2 — Carte Caratteristica (Nominated + Bianche)",
+      "role": "CATALOGO DELLE MOSSE del PG",
+      "what_they_do": "Ospitano le ABILITÀ e gli INCANTESIMI del PG. Sostituiscono le vecchie Carte Abilità e Carte Magia fisiche separate.",
+      "pool_structure": {
+        "total_at_creation": "10 carte totali (somma dei valori point buy). Vedi 02_personaggio/05_creazione_pg.json",
+        "mixed_pool": "Il pool è MISTO: alcune carte sono NOMINATED (con nome + abilità/magie), altre sono BIANCHE (segnaposto senza abilità).",
+        "progression": "Le carte bianche vengono sostituite da nominated durante la progressione (narrativa di crescita del PG)."
+      },
+      "two_nominated_types": {
+        "specializzate": "3 abilità in TEMA (potenza crescente sbloccata dal valore di Caratteristica). Più potenti ma meno versatili.",
+        "generiche": "3 abilità DIVERSE (tutte disponibili a basso livello). Più deboli ma versatili."
+      },
+      "wound_effect": "Una Carta Caratteristica nominated FERITA disattiva TUTTE le sue abilità. Il tag [Ferita] sulle Vitalità permette di RIATTIVARE le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata.",
+      "no_level_requirement": "Nessun livello minimo richiesto — la Tabella Potere Vitalità scala automaticamente l'effetto. Vedi 05_combattimento/01_tabella_potere.json",
+      "cross_reference_full": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json"
+    },
+    "family_3_player_cards_physical": {
+      "name": "Famiglia 3 — Carte Lato Giocatore Fisiche (Equipaggiamento + Strumenti Rapidi)",
+      "role": "POTERI FISICI del PG: attacchi con Arma, difese con Scudo, assorbimento con Armatura, bonus con Accessorio, oggetti monouso",
+      "slot_breakdown": {
+        "total_slots": 9,
+        "equipment": "4 slot: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio",
+        "quick_items": "5 slot: oggetti trovati (usa-e-getta) + talismani craftati da Analisi (offensivi, monouso)"
+      },
+      "removed_slots_v3": [
+        "4 slot Carte Abilità fisiche — assorbiti nelle nominated",
+        "3 slot Carte Magia fisiche — assorbiti nelle nominated",
+        "Sistema Materie FF7 — sostituito dal livello di effetto basato su T della Vitalità"
+      ],
+      "cross_reference_full": "Vedi 06_equipaggiamento/ per il sistema completo"
+    }
+  },
+  "universal_flip_mechanic": {
+    "name": "Meccanica Flip Universale",
+    "principle": "TUTTE le carte (Caratteristiche, Cuori, Equipaggiamento) usano la STESSA meccanica: GIRARE LA CARTA sul dorso per indicare lo stato 'ferito/usurato'.",
+    "visual_design": {
+      "front_intatto": "La carta mostra l'oggetto/personaggio nel suo stato PRISTINO. Colori vivi.",
+      "back_usurato": "La STESSA immagine ma in SCALA DI GRIGI / COLORI SBIADITI. Linguaggio visivo unificato."
+    },
+    "what_flip_means_per_card_type": {
+      "characteristic_card": "La Caratteristica è FERITA. Il valore si abbassa di 1. Le abilità della carta nominated sono disabilitate (eccetto con tag [Ferita]).",
+      "heart_card": "Il Cuore è FERITO. Più vicino alla morte. Ordine obbligatorio: 1 → 2 → 3.",
+      "equipment_card": "L'Equipaggiamento è USURATO (1° ferimento). Attiva il potere speciale. Se già usurato: DISTRUTTO (2° ferimento)."
+    }
+  },
+  "visual_summary_table": {
+    "headers": ["Famiglia", "Cosa è", "Cosa fa", "Dove sta"],
+    "rows": [
+      ["Vitalità", "60 carte nel mazzo del PG", "Energia + chiavi di attivazione", "Zona 1 — Area Gioco PG"],
+      ["Caratteristica", "10 carte fisiche (nominated+bianche)", "Ospita abilità e magie del PG", "Zona 2 — Area Gioco PG"],
+      ["Equipaggiamento", "4 carte fisiche (Arma/Scudo/Armatura/Accessorio)", "Poteri fisici con ferita 2 stadi volontaria", "Zona 3 — Area Gioco PG"],
+      ["Strumenti Rapidi", "5 carte fisiche usa-e-getta", "Pozioni, grimaldelli, talismani Analisi", "Zona 3 — Area Gioco PG"],
+      ["Cuori", "3 carte fisiche (Nefesh/Ruach/Neshamah solo in skin)", "Punti vitali profondi, ordine ferita 1→2→3", "Zona 2 — Area Gioco PG"],
+      ["Cintura ATB", "Riga di carte giocate nel turno", "Cronologia temporale, risoluzione L→R", "Centro del tavolo"]
+    ]
+  }
+}

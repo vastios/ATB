@@ -1,0 +1,82 @@
+{
+  "section_id": "07-02",
+  "section_name": "Risonanza — Magia Diretta (Elementale + Cura)",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la Via 1 della Magia: RISONANZA. Magia diretta in sintonia col mondo. Incantesimi elementali (fuoco, ghiaccio, fulmine) + cura. Attivata tramite Vitalità con tag [Magia] + scelta dell'incantesimo dalla nominated Risonanza. Questo file è la CASA UNICA per il sistema Risonanza.",
+  "nature_of_risonanza": {
+    "name": "Natura della Risonanza",
+    "principle": "Magia in sintonia col mondo. Il PG non 'impone' la sua volontà sulla realtà — si ALLINEA con le forze elementali del mondo e le lascia fluire attraverso di sé.",
+    "characteristic": "Risonanza (Verde, Asse Comprendere). Vedi 02_personaggio/02_caratteristiche.json",
+    "element_associated_skin": "Terra (vedi 10_lore_cabalistica/01_cosmologia.json)"
+  },
+  "what_risonanza_does": {
+    "elemental_spells": {
+      "name": "Incantesimi Elementali (Offensivi)",
+      "description": "Attacchi magici basati su elementi: fuoco, ghiaccio, fulmine, terra, aria, acqua. Ogni elemento ha proprietà distinte (fuoco = danno over time, ghiaccio = rallenta, fulmine = catena, ecc.).",
+      "examples": [
+        "Fire — danno fuoco al bersaglio, possibile danno over time",
+        "Thunder — danno fulmine, può colpire più bersagli adiacenti",
+        "Blizzard — danno ghiaccio, rallenta il bersaglio",
+        "Stone — danno terra, ignora armatura leggera"
+      ]
+    },
+    "healing_spells": {
+      "name": "Incantesimi di Cura",
+      "description": "Risonanza è il DOMINIO della cura. Nessun'altra Caratteristica può curare (Analisi non può, eccetto utility molto limitate).",
+      "examples": [
+        "Cura Minore — rigira 1 carta Caratteristica ferita o cura 5 Vitalità",
+        "Cura — rigira 2 carte Caratteristica ferite o cura 10 Vitalità",
+        "Cura Maggiore — rigira 3 carte Caratteristica ferite o cura 15 Vitalità"
+      ],
+      "no_heart_healing": "La cura Risonanza NON può curare i Cuori. I Cuori richiedono rituali specifici. Vedi 02_personaggio/04_cuori.json → healing_asymmetry"
+    },
+    "empathy_spells": {
+      "name": "Incantesimi di Empatia (Utility non-combattimento)",
+      "description": "Utility basata sulla connessione empatica con creature e ambiente.",
+      "examples": [
+        "Parlare con Animali — comunicazione con creature naturali",
+        "Senso del Pericolo — percepire minacce nelle vicinanze",
+        "Calmare — placare creature ostili (out-of-combat)",
+        "Comunione Naturale — percepire informazioni dall'ambiente"
+      ]
+    }
+  },
+  "activation_mechanic": {
+    "name": "Meccanica di Attivazione",
+    "principle": "Per attivare un incantesimo Risonanza:",
+    "requirements": [
+      "Il PG deve avere una Carta Caratteristica nominated Risonanza con l'incantesimo desiderato (non ferita, oppure riattivata con [Ferita] tag).",
+      "La Vitalità giocata SCOPERTA deve avere il tag [Magia].",
+      "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=5° livello), limitato dal valore attuale di Risonanza del PG."
+    ],
+    "level_of_effect_examples": {
+      "T1_Fire": "Fire livello 1 — 3 danno fuoco a un bersaglio",
+      "T3_Fire": "Fire livello 3 — 8 danno fuoco + 2 danno over time per 2 tick",
+      "T5_Fire": "Fire livello 5 — 15 danno fuoco + 4 danno over time per 3 tick + possibile propagazione adiacente"
+    },
+    "cross_reference_activation_rule": "Vedi 03_vitalita/02_giocare_vitalita.json → activation_rule_full"
+  },
+  "hosting_on_nominated": {
+    "name": "Ospitare Incantesimi sulle Nominated",
+    "principle": "Gli incantesimi Risonanza sono ospitati su Carte Caratteristica nominated Risonanza. Ogni nominated ospita 3 incantesimi.",
+    "two_nominated_types": {
+      "specializzata_esempio": "Specializzata Risonanza 'Piròmante': (1) Spark, (3) Fire, (5) Inferno — tutti fuoco, gerarchici",
+      "generica_esempio": "Generica Risonanza 'Druido': (1) Piccolo Fuoco, (1) Piccola Cura, (1) Parlare con Animali — diverse, tutte livello 1"
+    },
+    "cross_reference_nominated": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json → two_nominated_types"
+  },
+  "wound_effect_on_risonanza_nominated": {
+    "principle": "Una nominated Risonanza FERITA disattiva TUTTI i suoi incantesimi. Il PG perde accesso a quegli incantesimi finché la carta non è guarita.",
+    "ferita_tag_bypass": "Una Vitalità Risonanza con tag [Ferita] può riattivare gli incantesimi di UNA sola nominated Risonanza ferita per quel turno. Vedi 05_combattimento/02_danno.json → ferita_tag_v3"
+  },
+  "no_curing_hearts_rule": {
+    "principle": "La cura Risonanza NON può curare i Cuori. Questa è una restrizione ASSOLUTA per mantenere i Cuori come risorsa preziosa e rara.",
+    "cross_reference": "Vedi 02_personaggio/04_cuori.json → healing_asymmetry e 09_riposo_cura/01_cure_asimmetriche.json"
+  },
+  "design_intent": {
+    "principle": "Risonanza è la via INTUITIVA della magia. È potente in combattimento (incantesimi elementali) ed è l'UNICA via che può curare. È la via del guaritore/elementalista classico.",
+    "comparison_with_analisi": "A differenza di Analisi (che richiede preparazione — crafting talismani), Risonanza è DIRETTA: il PG lancia l'incantesimo al momento, senza preparazione. Più semplice, più immediata, ma meno versatile in utility."
+  }
+}

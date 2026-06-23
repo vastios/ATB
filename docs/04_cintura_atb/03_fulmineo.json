@@ -1,0 +1,49 @@
+{
+  "section_id": "04-03",
+  "section_name": "Meccanica [Fulmineo] — Pagamento Attivo",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce la meccanica [Fulmineo]: l'unico modo per eseguire più di un'azione attiva per turno. Una Vitalità con [Fulmineo] può essere giocata SCOPERTA nel proprio slot ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. Questo file è la CASA UNICA per la meccanica Fulmineo.",
+  "fulmineo_mechanic": {
+    "name": "Meccanica [Fulmineo] — Pagamento Attivo",
+    "description": "Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. È l'unico modo per eseguire più di un'azione attiva per turno.",
+    "rule": "La carta [Fulmineo] va posizionata nello slot del suo Costo Tempo (NON nello slot della carta che sta pagando). Si attiva nel proprio tick E conta come pagamento per le Vitalità scoperte successive nella stessa riga."
+  },
+  "concrete_example": {
+    "name": "Esempio T4",
+    "scenario": "PG vuole giocare una Vitalità T4 SCOPERTA (per attivare un'Arma T4). Servono 3 carte paganti.",
+    "normal_sequence": {
+      "composition": "COPERTA — COPERTA — COPERTA — SCOPERTA(T4)",
+      "result": "1 sola azione attiva al tick 4."
+    },
+    "fulmineo_sequence": {
+      "composition": "COPERTA — SCOPERTA([Fulmineo], T2) — COPERTA — SCOPERTA(T4)",
+      "result": "La Fulmineo attiva il suo potere (abilità nominated o Carta Lato Giocatore) al tick 2 E conta come pagamento. Risultato: 2 azioni attive (tick 2 e tick 4) con lo stesso numero di carte.",
+      "note": "La Fulmineo è una T2: occupa lo slot 2. Le altre due T1/T1 pagano gli slot 1 e 3. La T4 nello slot 4."
+    }
+  },
+  "strategic_value": {
+    "principle": "Permette di combinare un'azione preparatoria (es. buff, posizionamento, reveal informazioni) con l'azione principale nello stesso turno.",
+    "cost": "La carta Fulmineo è solitamente più debole di un'azione scoperta pura, e occupa uno slot che poteva essere una T più alta.",
+    "tactical_use": "Ideale per: (1) buffare prima di un colpo potente, (2) rivelare un token nemico prima di attaccare, (3) posizionarsi difensivamente prima di un'azione offusiva."
+  },
+  "multiple_fulmineo": {
+    "rule": "Più carte [Fulmineo] possono essere giocate nella stessa riga, ciascuna attivandosi nel proprio slot e pagando per le successive.",
+    "maximum": "Una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in un turno.",
+    "rare_case": "Configurazione rara ma potente. Spesso richiede carte Fulmineo specifiche e una carta terminale molto costosa."
+  },
+  "relationship_with_other_tags": {
+    "ferita": "Una carta [Fulmineo] può avere ANCHE [Ferita] o altri tag. Cumula gli effetti.",
+    "combo_tags": "Una carta [Fulmineo] con [Apertura] può iniziare una combo nel suo slot mentre paga per una [Chiusura] successiva.",
+    "strumento": "Una carta [Fulmineo] con [Strumento] può attivare un Equipaggiamento o Strumento Rapido nel suo slot."
+  },
+  "design_intent": {
+    "principle": "Fulmineo è la meccanica per i PG VERSATILI che vogliono fare più cose per turno. Senza Fulmineo, ogni turno è 1 sola azione attiva. Con Fulmineo, puoi combinare azioni — ma paghi in potenza (la carta Fulmineo è più debole).",
+    "comparison_with_other_systems": "Simile al 'Quick Action' di D&D 5e, ma più flessibile — puoi avere quante Fulmineo vuoi, finché hai carte."
+  },
+  "design_evolution_notes": {
+    "v9_v2_1": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA. Una Vitalità con [Fulmineo] può essere giocata SCOPERTA nel proprio slot E conteggiata come costo tempo per una Vitalità successiva più costosa. Unico modo per avere più azioni attive per turno.",
+    "v10_v3": "INVARIATA. La meccanica Fulmineo resta identica in v3. Le carte [Fulmineo] possono attivare poteri dalle nominated o dalle Carte Lato Giocatore fisiche come qualsiasi altra scoperta."
+  }
+}

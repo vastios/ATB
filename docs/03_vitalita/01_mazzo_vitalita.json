@@ -1,0 +1,77 @@
+{
+  "section_id": "03-01",
+  "section_name": "Il Mazzo Vitalità — Riserva di Energia del PG",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali, proporzionali alle Caratteristiche. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. Questo file è la CASA UNICA per le proprietà strutturali del mazzo.",
+  "deck_properties": {
+    "name": "Proprietà Strutturali del Mazzo",
+    "deck_size": "60 carte Vitalità totali.",
+    "proportionality_rule": "Il mazzo è PROPORZIONALE alle Caratteristiche del PG: 10 Punti Caratteristica × 6 carte per punto. Un PG con valori diversi ma somma 10 ha lo stesso mazzo di 60 carte.",
+    "composition": "Il mazzo ha una distribuzione fissa di Costo Tempo (T1-T5) e Tag. NON si 'costruisce' manualmente. È un mazzo predefinito per tutti i PG.",
+    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi)."
+  },
+  "hand_mechanics": {
+    "name": "La Mano del PG",
+    "hand_size": "5 carte in mano.",
+    "hand_refill": "Il PG pesca SUBITO dopo aver giocato carte nella Cintura ATB per tornare a 5. La mano è SEMPRE piena.",
+    "hand_refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione. Vedi 04_cintura_atb/02_risoluzione.json",
+    "design_intent": "Il giocatore ha sempre opzioni. L'unico vero costo è lungo termine (Mazzo Vitalità che si assottiglia).",
+    "hidden_from_opponents": "La mano è nascosta agli avversari (in PvP) ma VISIBILE ai compagni di squadra in co-op. La cooperazione richiede informazione condivisa."
+  },
+  "card_anatomy_vitality": {
+    "name": "Anatomia di una Carta Vitalità",
+    "components": [
+      "Costo Tempo (T1-T5): indica in quale slot della Cintura ATB la carta va posizionata e il livello di effetto dell'azione attivata.",
+      "Caratteristica di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione. I TAG indicano cosa si può attivare, non la Caratteristica della carta.",
+      "Tag di Attivazione: chiavi che indicano quali poteri possono essere attivati. T=1 ha 1 tag, T=5 ha 5 tag (regola d'oro)."
+    ],
+    "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Caratteristica).",
+    "tag_examples": ["[Strumento]", "[Abilità]", "[Magia]", "[Ferita]", "[Fulmineo]", "[Apertura]", "[Sviluppo]", "[Chiusura]", "[Culmine]"],
+    "cross_reference_full": "Vedi 03_vitalita/02_giocare_vitalita.json per come si usano i tag"
+  },
+  "fatigue_mechanic": {
+    "name": "Fatica (giocare carte COPERTE)",
+    "action_v3": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento.",
+    "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione.",
+    "difference_from_damage": "Fatica = scartare dalla MANO (scelta, per pagare il Costo Tempo). Danno = milling dalla CIMA del MAZZO VITALITÀ (imprevisto, inflitto dal nemico).",
+    "cross_reference_damage": "Vedi 05_combattimento/02_danno.json"
+  },
+  "two_damage_types_to_vitality": {
+    "name": "Due Tipi di Danno al Mazzo Vitalità",
+    "danno_acuto_milling": {
+      "name": "Danno Acuto (Milling/Esaustione)",
+      "action": "Gli attacchi standard strappano carte dalla cima del Mazzo Vitalità e le spingono nella Pila Scarti.",
+      "speed": "Veloce. Non si sceglie cosa perdere.",
+      "recovery": "Le carte vanno nella Pila Scarti, recuperabili con riposo e pozioni rivitalizzanti. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
+      "tension_element": "Non sai quale carta hai perso finché non peschi. Ansia palpabile.",
+      "key_difference_from_fatigue": "Fatica = scartare dalla MANO (scelta). Danno = milling dalla CIMA del MAZZO (imprevisto)."
+    },
+    "danno_cronico_trauma": {
+      "name": "Danno Cronico (Traumi/Status)",
+      "sources": ["Maledizioni", "Veleni", "Malattie"],
+      "action": "Carte rimosse dal gioco o messe nella pila Traumi separata.",
+      "effect": "Riducono permanentemente la taglia del Mazzo Vitalità o la mano massima finché non si trova una cura.",
+      "recovery": "Molto difficile. Cure specifiche, rituali, lunghi periodi.",
+      "design_intent": "Separa Esaustione (recuperabile) da Trauma (permanente). Il bruto ti sfinisce, lo stregone ti traumaticizza."
+    }
+  },
+  "combat_pacing": {
+    "target_duration": "3-5 round al massimo per combattimento standard.",
+    "reasoning": "Con Mazzo 60 e ~5 carte per round, 12 round è il massimo teorico. Ma i combattimenti dovrebbero risolversi molto prima. L'equipaggiamento con [Strumento] riduce la fatica e allunga la resistenza.",
+    "equipment_role": "L'equipaggiamento è fondamentale per risparmiare Mazzo Vitalità. Armi riducono la fatica necessaria, scudi slittano difese, armature assorbono danni."
+  },
+  "design_evolution_notes": {
+    "v1": "Base — danno milling, fatica dalla mano, esaurimento.",
+    "v2": "Aggiunto Danno Acuto vs Cronico, mano sempre piena.",
+    "v3": "Aggiunto vincolo: non si aggiunge finché la coda non scorre. Contestualizzato nella Action Grid.",
+    "v4": "IL DILEMMA DEL GUERRIERO integrato. Tre opzioni di assorbimento combinabili. Esaurimento = ferita Cuore + svenimento. Cure asimmetriche.",
+    "v5": "MAZZO 60 CARTE (10 Punti × 6). Equipaggiamento riduce fatica. Limite di Potenza.",
+    "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
+    "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
+    "v8": "DUE CATEGORIE DI DANNO formalizzate. Soglia del Vuoto. Cuori NON sono opzione per Danno Standard. Punti Impresa NON curano Cuori.",
+    "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE. Ferita Caratteristica SEMPRE sulla Caratteristica.",
+    "v10": "ARCHITETTURA v3: rinomini caratteristiche. Le Carte Vitalità ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5."
+  }
+}

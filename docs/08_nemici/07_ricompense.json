@@ -1,0 +1,55 @@
+{
+  "section_id": "08-07",
+  "section_name": "Ricompense — Materiali, Equipaggiamento, Punti Impresa",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce le Ricompense meccaniche ottenibili dai nemici. Le ricompense si ottengono sconfiggendo il nemico (PF a 0) o risparmiandolo (resa/sottomissione). Fuggire NON concede ricompense. Questo file è la CASA UNICA per il sistema Ricompense.",
+  "obtaining_principle": {
+    "principle": "Le ricompense meccaniche si ottengono portando i PF del nemico a 0 (sconfiggendolo in combattimento) O risparmiando il nemico (costringendolo alla resa o sottomissione senza ucciderlo, se narrativamente utile ai fini della storia).",
+    "no_reward_for_fleeing": "Fuggire dal combattimento NON concede ricompense meccaniche.",
+    "design_intent": "Premia la conclusione del combattimento (vittoria o risparmio) e penalizza la ritirata. Costringe i PG a portare a termine gli scontri, anche a costo di risorse."
+  },
+  "reward_types": {
+    "risorse_materiali": {
+      "name": "Risorse Materiali",
+      "description": "Oggetti di scarto (erbe, minerali, pezzi di metallo) che possono essere venduti o usati come 'materia prima' per riparare o costruire Equipaggiamento.",
+      "use_case": "Vendita per denaro, crafting di Strumenti Rapidi, riparazione Equipaggiamento tra un combattimento e l'altro."
+    },
+    "equipaggiamento_prelevabile": {
+      "name": "Equipaggiamento Prelevabile",
+      "description": "Se il nemico impiegava un Tratto basato su un equipaggiamento visibile (es. uno scudo magico), i giocatori possono recuperarlo alla fine del combattimento come nuovo Equipaggiamento.",
+      "v3_clarification": "In v3, NON si parla più di 'Arma Alchemica Base o Superiore' (sistema rimosso). Si parla semplicemente di Equipaggiamento con potere speciale (attivato dal 1° ferimento volontario). Vedi 06_equipaggiamento/03_ferita_2_stadi.json",
+      "master_discretion": "Il Master decide se l'Equipaggiamento è prelevabile e quali poteri speciali ha, in base alla natura del nemico sconfitto."
+    },
+    "punti_impresa": {
+      "name": "Punti Impresa (Il Meta-Buff)",
+      "trigger": "Sconfitta o Risparmio di un nemico Elite o Epico. NON per Nemici Base.",
+      "quantity": "1 o più punti, a discrezione del Master.",
+      "spending_options": {
+        "evoluzione_equipaggiamento": {
+          "description": "Evolvere un Equipaggiamento aggiungendo o migliorando il suo potere speciale (scrivendo i nuovi poteri sulla carta esistente tramite post-it o segnalini).",
+          "note": "LA CARTA NON CAMBIA. Non servono carte diverse per oggetti con poteri speciali. L'evoluzione è narrativa.",
+          "v3_clarification": "Sostituisce la vecchia 'evoluzione Arma Normale in Arma Superiore' (sistema rimosso)."
+        },
+        "cura_caratteristica": {
+          "description": "Curare istantaneamente una Carta Caratteristica ferita (girandola sul lato sano) senza bisogno di ricorrere a pozioni, cure mediche o tempi di riposo.",
+          "speed": "ISTANTANEO."
+        },
+        "sostituzione_bianca_con_nominated": {
+          "description": "v3: Sostituire una Carta Caratteristica BIANCA con una NOMINATED. Vedi 02_personaggio/03_carte_caratteristica_nominated.json → progression_mechanics",
+          "note": "Le carte bianche vengono sostituite da nominated durante la progressione. I Punti Impresa sono uno dei trigger per questa sostituzione."
+        }
+      },
+      "explicit_restriction": "I Punti Impresa NON possono essere utilizzati per curare le Carte Cuore. I Cuori richiedono sempre rituali, tempo narrativo o miracoli, in conformità con le regole di cura avanzata. Vedi 02_personaggio/04_cuori.json → healing_asymmetry"
+    }
+  },
+  "design_intent": {
+    "principle": "Le Ricompense sono PROPORZIONATE alla minaccia. Nemici Base danno solo Risorse Materiali (poco). Nemici Elite danno Risorse + Punti Impresa. Nemici Epici danno tutto + Equipaggiamento prelevabile + più Punti Impresa.",
+    "narrative_weight": "Sconfiggere un Boss Epico è un evento SIGNIFICATIVO. I Punti Impresa permettono al PG di crescere (sostituire bianche con nominated) o di riparare i danni subiti (curare Caratteristiche)."
+  },
+  "consequence_system_cross_reference": {
+    "principle": "Nella skin cabalistica, la distruzione di Equipaggiamento durante il combattimento genera Conseguenze narrative (Qliphoth personali). Vedi 10_lore_cabalistica/03_qliphoth.json",
+    "v3_clarification": "In v3, la distruzione di Equipaggiamento è VOLONTARIA (vedi 06_equipaggiamento/03_ferita_2_stadi.json). La Conseguenza si genera quindi quando il PG SCEGLIE di distruggere il proprio Equipaggiamento (2° ferimento) per ottenere un effetto di distruzione. È una scelta con peso narrativo."
+  }
+}

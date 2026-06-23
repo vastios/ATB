@@ -1,0 +1,56 @@
+{
+  "section_id": "02-04",
+  "section_name": "I Cuori — Punti Vitali Profondi e Condizione di Morte",
+  "version": "1.0",
+  "architecture_version": "v3",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce le 3 Carte Cuore del PG. I Cuori sono la risorsa vitale PIÙ PROFONDA: sono l'ultima linea di difesa prima della morte. Si feriscono in ORDINE OBBLIGATORIO (1 → 2 → 3) e sono DIFFICILI da curare. Questo file è la CASA UNICA per le regole dei Cuori: gli altri file usano cross-riferimenti qui.",
+  "what_are_hearts": {
+    "name": "Cosa Sono i Cuori",
+    "definition": "Tre carte fisiche disposte in fila nella Zona 2 dell'Area Gioco (vedi 02_personaggio/01_area_gioco.json). Rappresentano la vitalità profonda del PG — oltre la stamina (Vitalità) e oltre la potenza (Caratteristiche).",
+    "narrative_identity_skin_only": "Nella skin cabalistica, i 3 Cuori corrispondono all'Anima Tripartita (Nefesh, Ruach, Neshamah). Vedi 10_lore_cabalistica/01_cosmologia.json — nel Canale 1 sono semplicemente 'Cuore 1, Cuore 2, Cuore 3'."
+  },
+  "wound_order_rule": {
+    "name": "Regola dell'Ordine di Ferita",
+    "principle": "I Cuori si feriscono in ORDINE OBBLIGATORIO: Cuore 1 PRIMA, poi Cuore 2, infine Cuore 3.",
+    "no_skipping": "NON è possibile ferire Cuore 2 se Cuore 1 è sano. NON è possibile ferire Cuore 3 se Cuore 2 è sano.",
+    "visual": "Le 3 carte Cuore sono in fila. Si girano da sinistra (Cuore 1) verso destra (Cuore 3). Il PG vede fisicamente la morte avvicinarsi."
+  },
+  "when_hearts_get_wounded": {
+    "name": "Quando si Ferisce un Cuore",
+    "three_cases_only": "I Cuori si feriscono SOLO in questi tre casi. NON sono mai un'opzione per assorbire Danno Standard.",
+    "case_1_deck_exhaustion": {
+      "trigger": "Il Mazzo Vitalità è vuoto e si deve pescare. Vedi 03_vitalita/04_esaurimento.json",
+      "effect": "Il PG ferisce il prossimo Cuore disponibile E crolla svenuto (incapacitato fino a fine combattimento).",
+      "narrative": "L'energia del PG è esaurita. Il collasso colpisce la sua essenza più profonda."
+    },
+    "case_2_anatema_direct_heart_attack": {
+      "trigger": "Attacchi Anatema (solo da nemici Epici). Vedi 08_nemici/04_attacchi_speciali.json",
+      "effect": "Il PG ferisce il prossimo Cuore disponibile. NESSUNA scelta.",
+      "narrative": "L'attacco colpisce direttamente l'anima, ignorando ogni difesa materiale."
+    },
+    "case_3_soglia_del_vuoto": {
+      "trigger": "Una Caratteristica scende a 0. Vedi 05_combattimento/03_soglia_vuoto.json",
+      "effect": "Il PG è COSTRETTO a girare immediatamente un Cuore. NESSUNA scelta o opposizione.",
+      "narrative": "La frantumazione di un canale verso un Mondo destabilizza l'anima stessa."
+    },
+    "explicit_restriction": "I Cuori NON sono un'opzione per il Danno Standard (vedi 05_combattimento/02_danno.json). Il Danno Standard può essere assorbito SOLO con Milling (Mazzo Vitalità) o Ferita a Caratteristica."
+  },
+  "death_condition": {
+    "name": "Condizione di Morte",
+    "rule": "Cuore 1 + Cuore 2 + Cuore 3 TUTTI feriti = MORTE del PG.",
+    "narrative": "L'anima tripartita è completamente frantumata. Il PG non può più essere rianimato se non con miracoli narrativi eccezionali."
+  },
+  "healing_asymmetry": {
+    "name": "Cura Asimmetrica dei Cuori",
+    "principle": "I Cuori sono la risorsa PIÙ DIFFICILE da curare. Rispetto al Mazzo Vitalità (veloce) e alle Caratteristiche (medio), i Cuori richiedono TEMPO NARRATIVO LUNGO o risorse rare.",
+    "cuore_1_easier": "Il Cuore 1 è il più facile da curare — è legato al corpo, e il corpo vuole guarire. Richiede comunque rituali o cure mediche serie.",
+    "cuore_2_medium": "Il Cuore 2 è difficile. Richiede rituali complessi o settimane di riposo assoluto.",
+    "cuore_3_hardest": "Il Cuore 3 è quasi impossibile da curare — è la parte più profonda dell'identità. Richiede miracoli, side-quest narrative, o magia eccezionale.",
+    "no_impresa_healing": "I Punti Impresa NON possono curare le Carte Cuore. Vedi 08_nemici/07_ricompense.json",
+    "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json per la tabella completa delle cure"
+  },
+  "open_questions": {
+    "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  }
+}
