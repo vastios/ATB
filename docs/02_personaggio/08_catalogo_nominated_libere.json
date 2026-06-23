@@ -1,0 +1,719 @@
+{
+  "section_id": "02-08",
+  "section_name": "Catalogo Nominated Libere — 40 carte (10 per Approccio), mix Specializzate/Generiche",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Catalogo delle Carte Approccio NOMINATED LIBERE. Le nominated libere sono scelte dal giocatore alla CREAZIONE (Step 4: 1-2 nominated libere oltre le 3 Heart-linked) e durante la PROGRESSIONE (Maturation: una bianca → nominated libera; Riallineamento: nominated libera sostituita con un'altra nominated libera del nuovo Approccio). Sono distinte dalle nominated HEART-LINKED, che sono imposte dai Cuori e NON appaiono in questo catalogo. Il catalogo contiene 10 nominated per ciascun Approccio (Impeto, Analisi, Istinto, Risonanza) = 40 totali. Per ciascun Approccio, il mix è ~6 Specializzate (3 abilità in tema gerarchiche, sblocco 1/3/5) + ~4 Generiche (3 abilità diverse tutte livello 1).",
+  "v3_1_role_in_pipeline": {
+    "creation": "Alla creazione, il PG sceglie 1-2 nominated LIBERE da questo catalogo, da collocare negli slot nominated rimanenti oltre le 3 Heart-linked. Vedi 02_personaggio/05_creazione_pg.json → step_4_choose_free_nominated",
+    "maturation": "Durante la Maturation, una carta BIANCA viene sostituita da una nominated LIBERA di questo catalogo (stesso Approccio). Vedi 02_personaggio/06_riallineamento_approcci.json → maturation_full",
+    "realignment_swap": "Durante il Riallineamento, se una nominated libera viene rimossa dall'Approccio A, una nuova nominated libera dello stesso tipo viene scelta da questo catalogo per l'Approccio B. Vedi 02_personaggio/06_riallineamento_approcci.json → swap_rule_critical",
+    "heart_linked_exclusion": "Le nominated HEART-LINKED (imposte dai Cuori) NON appaiono in questo catalogo. Sono elencate nelle liste sbloccate dai Cuori. Vedi 02_personaggio/07_catalogo_cuori.json (Fase 3)"
+  },
+  "nominated_structure_quick_reference": {
+    "specializzata": "3 abilità in TEMA (stesso filone). Potenza crescente sbloccata dal valore di Approccio: abilità 1 disponibile con Approccio ≥ 1, abilità 2 con Approccio ≥ 3, abilità 3 con Approccio ≥ 5. Più POTENTE a livelli alti, meno VERSATILE.",
+    "generica": "3 abilità DIVERSE (non in tema). Tutte disponibili con Approccio ≥ 1. Più VERSATILE, meno POTENTE.",
+    "tag_activation_rule": "Per attivare un'abilità, il PG deve giocare una Vitalità SCOPERTA con tag compatibili. Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=5° livello), limitato dal valore attuale dell'Approccio. Vedi 03_vitalita/02_giocare_vitalita.json",
+    "cross_reference": "Vedi 02_personaggio/03_carte_approccio_nominated.json per la struttura completa delle nominated"
+  },
+  "catalog": {
+    "Impeto": {
+      "approccio_metadata": {
+        "colore": "Rosso",
+        "asse": "AGIRE",
+        "keyword": "Irruenza, sfondare, agire senza riflettere, buttarsi, irrompere",
+        "typical_actions": "Attacchi con Arma nel corpo-a-corpo diretto, sfondare porte, intimidire con la sola presenza, resistere a danni fisici diretti, attaccare più nemici con un colpo solo",
+        "hosting": "Abilità fisiche offensive e difensive (corpo-a-corpo, intimidizione, resistenza)",
+        "count_in_catalog": 10,
+        "mix_specializzate_generiche": "6 Specializzate + 4 Generiche"
+      },
+      "nominated": [
+        {
+          "nome": "Furia del Berserker",
+          "tipo": "Specializzata",
+          "tema": "Carica devastante e furia crescente nel corpo-a-corpo",
+          "abilita": [
+            {
+              "nome": "Carica",
+              "livello_sblocco": 1,
+              "effetto": "Il PG si lancia verso un nemico a portata, guadagnando slancio. Il prossimo attacco corpo-a-corpo questo turno ottiene +1 al Potere (vedi Tabella Potere)."
+            },
+            {
+              "nome": "Attacco Multiplo",
+              "livello_sblocco": 3,
+              "effetto": "Con una sola azione, il PG colpisce fino a 2 nemici adiacenti con la stessa Arma. Il danno viene calcolato separatamente per ciascun bersaglio, applicando la Tabella Potere a ciascuno."
+            },
+            {
+              "nome": "Devastazione Totale",
+              "livello_sblocco": 5,
+              "effetto": "Il PG entra in trance berserker: fino alla fine del combattimento, ogni attacco corpo-a-corpo genera +2 al Potere e colpisce TUTTI i nemici adiacenti (danno pieno a ciascuno). Tuttavia, il PG non può più difendersi (nessun Blocco Perfetto, nessuna Schivata) finché dura la trance. La trance si chiude solo a combattimento o svenimento."
+            }
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "Il PG ha imparato a scatenare una furia primordiale. Non è rabbia cieca — è una decisione cosciente di buttarsi nel cuore della mischia senza risparmio.",
+          "adatto_a": "Guerrieri d'assalto, barbari, battitori di prima linea"
+        },
+        {
+          "nome": "Fendente Devastante",
+          "tipo": "Specializzata",
+          "tema": "Tecnica di taglio progressiva con arma a una/due mani",
+          "abilita": [
+            {
+              "nome": "Fendente",
+              "livello_sblocco": 1,
+              "effetto": "Un colpo di taglio ampio e potente. Danno Standard (Tabella Potere × T). Si attiva con qualsiasi Arma da taglio."
+            },
+            {
+              "nome": "Fendente Potente",
+              "livello_sblocco": 3,
+              "effetto": "Il PG carica il colpo per un istante, poi lo cala con forza doppia. Il danno è +2 al Potere (vedi Tabella Potere). Richiede Arma a Due Mani o postura solida."
+            },
+            {
+              "nome": "Fendente a Due Mani",
+              "livello_sblocco": 5,
+              "effetto": "Il PG impugna l'arma a due mani (anche se sarebbe a una mano) e cala un fendente che ignora 1 punto di difesa del nemico (Mitigato diventa Perfetto, Pieno diventa Mitigato). Danno +3 al Potere. Costringe il PG a riposizionarsi (perde il prossimo tick)."
+            }
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "La scuola del taglio perfetto. Ogni colpo è studiato per massimizzare la forza impressa alla lama.",
+          "adatto_a": "Spadaccini pesanti, guerrieri con ascia/martello, battitori"
+        },
+        {
+          "nome": "Muro di Ferro",
+          "tipo": "Specializzata",
+          "tema": "Resistenza e postura difensiva inamovibile",
+          "abilita": [
+            {
+              "nome": "Resistenza",
+              "livello_sblocco": 1,
+              "effetto": "Il PG rafforza la postura. Una volta per round, può ridurre di 1 il danno di un singolo colpo subito (dopo la risoluzione della difesa)."
+            },
+            {
+              "nome": "Postura di Ferro",
+              "livello_sblocco": 3,
+              "effetto": "Il PG si piazza come un muro. Fino al prossimo tick, tutti gli attacchi nemici che lo colpiscono subiscono -1 al Potere (la sua presenza fisica devia i colpi). Cumulabile con Scudo."
+            },
+            {
+              "nome": "Inarrestabile",
+              "livello_sblocco": 5,
+              "effetto": "Il PG è così radicato a terra che NESSUN effetto di spinta, spostamento o knockdown lo può muovere per il resto del combattimento (a meno che non sia causato da danno Anatema). Inoltre, una volta per combattimento, può ANNULLARE completamente un singolo attacco subito (negato, non mitigato)."
+            }
+          ],
+          "tag_attivazione": ["[Difesa]"],
+          "narrative": "Il PG ha imparato a fare del proprio corpo una fortezza. Non è agilità — è presenza inamovibile.",
+          "adatto_a": "Serbatoi, difensori, guardie del corpo"
+        },
+        {
+          "nome": "Carica da Belva",
+          "tipo": "Specializzata",
+          "tema": "Balzo improvviso e assalto bestiale",
+          "abilita": [
+            {
+              "nome": "Balzo",
+              "livello_sblocco": 1,
+              "effetto": "Il PG copre la distanza fino a un nemico in un solo tick (anche 2 zone), terminando la mossa adiacente al bersaglio. Non provoca attacchi opportunistici durante il balzo."
+            },
+            {
+              "nome": "Assalto",
+              "livello_sblocco": 3,
+              "effetto": "Dopo un Balzo, il PG esegue immediatamente un attacco con +1 al Potere. Il nemico è sbilanciato: -1 alla sua prossima azione difensiva."
+            },
+            {
+              "nome": "Furia Selvaggia",
+              "livello_sblocco": 5,
+              "effetto": "Il PG carica una catena di colpi bestiali. Fino a 3 attacchi consecutivi nello stesso tick (T5 richiesto), ognuno contro un nemico diverso o lo stesso. Ogni colpo successivo ha +1 al Potere (1°: base, 2°: +1, 3°: +2). Al termine, il PG è esausto: -1 al Potere per il prossimo tick."
+            }
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "Una scuola di combattimento ispirata ai predatori. Appostamento, scatto, abbattimento.",
+          "adatto_a": "Cacciatori, guerrieri selvaggi, esploratori d'assalto"
+        },
+        {
+          "nome": "Spacca Scudi",
+          "tipo": "Specializzata",
+          "tema": "Tecnica specifica per rompere difese nemiche",
+          "abilita": [
+            {
+              "nome": "Colpo",
+              "livello_sblocco": 1,
+              "effetto": "Attacco mirato a colpire il centro della difesa nemica (scudo o guardia). Se il nemico usa Scudo, riduce di 1 il bonus difensivo del suo prossimo Blocco."
+            },
+            {
+              "nome": "Spaccata",
+              "livello_sblocco": 3,
+              "effetto": "Il PG colpisce con violenza mirata a frantumare la guardia. Il prossimo attacco nemico contro il PG avrà +1 al Potere (perché la sua guardia è stata rotta), MA se il nemico aveva uno Scudo, questo subisce 1 Ferita Equipaggiamento (vedi 06_equipaggiamento/03_ferita_2_stadi.json)."
+            },
+            {
+              "nome": "Frantumazione",
+              "livello_sblocco": 5,
+              "effetto": "Il PG concentra tutta la forza in un colpo che ignora completamente la difesa del nemico per questo attacco (nemmeno un Blocco Perfetto può bloccarlo). Se il nemico ha Scudo o Armatura, subiscono immediatamente 1 Ferita Equipaggiamento. Danno +2 al Potere."
+            }
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "Una scuola sviluppata per affrontare formazioni militari. Colpire dove il nemico è più forte per spezzarlo.",
+          "adatto_a": "Guerrieri anti-formazione, duellanti anti-scudo"
+        },
+        {
+          "nome": "Difensore del Fratello",
+          "tipo": "Specializzata",
+          "tema": "Tecnica protettiva dedicata a un alleato",
+          "abilita": [
+            {
+              "nome": "Copertura",
+              "livello_sblocco": 1,
+              "effetto": "Il PG si interpone tra un alleato e un nemico. Una volta per round, può DEVIAIRE un attacco diretto a un alleato adiacente verso se stesso (l'attacco lo colpisce invece)."
+            },
+            {
+              "nome": "Barriera Umana",
+              "livello_sblocco": 3,
+              "effetto": "Il PG si consacra come scudo vivente di un alleato designato (dichiarato all'attivazione). Fino al prossimo tick, TUTTI gli attacchi contro quell'alleato sono invece diretti al PG. Il PG ottiene +1 al Potere difensivo contro questi attacchi."
+            },
+            {
+              "nome": "Sacrificio",
+              "livello_sblocco": 5,
+              "effetto": "Quando un alleato entro portata subirebbe un danno che lo ucciderebbe o ferirebbe un Cuore, il PG può SCEGLIERE di assorbire quel danno al posto suo. Il PG subisce il danno PIENO (nessuna difesa possibile) — ma l'alleato è illeso. Una volta per combattimento."
+            }
+          ],
+          "tag_attivazione": ["[Difesa]"],
+          "narrative": "Il PG ha fatto della protezione degli altri la propria scuola. Non è eroismo romantico — è una tecnica studiata per essere efficace.",
+          "adatto_a": "Guardie del corpo, paladini, fratelli d'arme"
+        },
+        {
+          "nome": "Atleta Nato",
+          "tipo": "Generica",
+          "tema": "Versatilità fisica di base",
+          "abilita": [
+            {"nome": "Salto", "livello_sblocco": 1, "effetto": "Il PG può saltare distanze e altezze normali senza tiro, e guadagna +1 al Potere in attacchi acrobatici (es. cadere su un nemico dall'alto)."},
+            {"nome": "Forza", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere in prove di forza pura (sollevare, spingere, sfondare porte, disarmare)."},
+            {"nome": "Resistenza", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 PF virtuale (non cumulabile con cura) — rappresenta fiato e resistenza. Una volta per riposo, può ignorare 1 stanchezza."}
+          ],
+          "tag_attivazione": ["[Fisico]"],
+          "narrative": "Un'educazione fisica completa. Niente di eccezionale, ma tutto solido.",
+          "adatto_a": "Avventurieri generalisti, atleti, sportivi"
+        },
+        {
+          "nome": "Intimiditore",
+          "tipo": "Generica",
+          "tema": "Capacità sociali basate sulla presenza fisica",
+          "abilita": [
+            {"nome": "Sguardo Truce", "livello_sblocco": 1, "effetto": "Il PG fissa un bersaglio. Il bersaglio subisce -1 al prossimo tiro di Iniziativa o -1 alla prossima azione sociale."},
+            {"nome": "Voce Tonante", "livello_sblocco": 1, "effetto": "Il PG può farsi sentire in tutto il campo di battaglia. Una volta per combattimento, può intimorire un gruppo di nemici deboli (Tier Base, PF ≤ 5) inducendoli a FUGGIRE (test morale del Master)."},
+            {"nome": "Presenza", "livello_sblocco": 1, "effetto": "Il PG occupa più spazio psicologicamente. Una volta per round, un nemico adiacente che lo attacca subisce -1 al Potere perché il PG 'pesa' su di lui."}
+          ],
+          "tag_attivazione": ["[Sociale]"],
+          "narrative": "Il PG ha imparato a usare la propria presenza come arma sociale.",
+          "adatto_a": "Guardie, buttafuori, mercenari veterani"
+        },
+        {
+          "nome": "Pugno del Gigante",
+          "tipo": "Generica",
+          "tema": "Combattimento a mani nude e prese",
+          "abilita": [
+            {"nome": "Pugno", "livello_sblocco": 1, "effetto": "Il PG può attaccare a mani nude con danno = Tabella Potere (senza bonus arma). Non considera [Arma] ma conta come [Fisico]."},
+            {"nome": "Presa", "livello_sblocco": 1, "effetto": "Il PG può afferrare e trattenere un nemico (test di forza: se vince, il nemico è bloccato per 1 tick, non può muoversi o attaccare)."},
+            {"nome": "Lancio", "livello_sblocco": 1, "effetto": "Se il PG ha una Presa attiva su un nemico, può lanciarlo fino a 2 zone distanti. Il nemico atterra stordito: -1 al Potere per 1 tick."}
+          ],
+          "tag_attivazione": ["[Fisico]"],
+          "narrative": "Una scuola di lotta e pugilato. Il corpo stesso diventa arma.",
+          "adatto_a": "Lottatori, monaci, pugili da taverna"
+        },
+        {
+          "nome": "Sfonda Porte",
+          "tipo": "Generica",
+          "tema": "Irruzione e sfondamento di barriere fisiche",
+          "abilita": [
+            {"nome": "Calcio", "livello_sblocco": 1, "effetto": "Il PG assesta un calcio potente. Danno = Tabella Potere (tag [Fisico]). Può essere usato per sfondare porte leggere, rompere assi, ecc."},
+            {"nome": "Spallata", "livello_sblocco": 1, "effetto": "Il PG si lancia con la spalla. Può sfondare porte rinforzate, rovesciare mobili, spingere nemici di 1 zona indietro (se falliscono una prova di forza)."},
+            {"nome": "Irruzione", "livello_sblocco": 1, "effetto": "Il PG carica attraverso una barriera (porta, finestra, parete fragile) e attacca immediatamente chi è oltre, con +1 al Potere (effetto sorpresa)."}
+          ],
+          "tag_attivazione": ["[Fisico]"],
+          "narrative": "Una tecnica appresa da chi fa irruzione per vivere — soldati, fuorilegge, vigilanti.",
+          "adatto_a": "Irrutori, soldati d'assalto, criminali"
+        }
+      ]
+    },
+
+    "Analisi": {
+      "approccio_metadata": {
+        "colore": "Giallo",
+        "asse": "COMPRENDERE",
+        "keyword": "Studio, osservazione, metodo, deduzione, magia ragionata, crafting",
+        "typical_actions": "Utility magica (scassinare, riparare, rivelare debolezze), crafting talismani offensivi, identificare nemici/trappole, decifrare rune",
+        "hosting": "Utility, crafting talismani, identificazione, scasso, decifrazione",
+        "count_in_catalog": 10,
+        "mix_specializzate_generiche": "6 Specializzate + 4 Generiche"
+      },
+      "nominated": [
+        {
+          "nome": "Mago Erudito",
+          "tipo": "Specializzata",
+          "tema": "Comprensione magica e decifrazione di testi/sigilli antichi",
+          "abilita": [
+            {"nome": "Decifra", "livello_sblocco": 1, "effetto": "Il PG comprende testi in lingue antiche o oscure, sigilli, rune. Sufficiente per leggere iscrizioni base e attivare/disattivare sigilli minori."},
+            {"nome": "Rivela", "livello_sblocco": 3, "effetto": "Il PG lancia un incantesimo di rilevazione: rivela la presenza di magie, trappole, illusioni o creature nascoste entro 3 zone. Le informazioni sono precise ma non rivelano la natura esatta."},
+            {"nome": "Comprende", "livello_sblocco": 5, "effetto": "Il PG analizza una creatura o un oggetto magico e ne COMPRENDE la natura. Per una creatura: rivela le difese, le debolezze, i tag di vulnerabilità. Per un oggetto: rivela funzioni, maledizioni, attivazioni. Una volta per creatura/oggetto."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "Lo studioso del sapere antico. Ha passato la vita tra biblioteche e laboratori, e questa familiarità col sapere gli permette di vedere ciò che altri non vedono.",
+          "adatto_a": "Maghi studiosi, archeologi, eruditi di corte"
+        },
+        {
+          "nome": "Artefice dei Talismani",
+          "tipo": "Specializzata",
+          "tema": "Crafting di talismani magici offensivi monouso",
+          "abilita": [
+            {"nome": "Schizzo", "livello_sblocco": 1, "effetto": "Durante un riposo, il PG può disegnare lo schema di un talismano semplice. Lo schema costa materiali base. Lo schema può essere 'attivato' in un riposo successivo per creare un talismano minore (vedi Crafting in 07_magia/03_analisi_crafting.json)."},
+            {"nome": "Talismano Minore", "livello_sblocco": 3, "effetto": "Il PG crea un talismano offensivo monouso con potere limitato: 1 uso, danno = T3 della Tabella Potere, tag [Strumento]. Sostanza: piccola esplosione elementale, dardo acido, scarica elettrica."},
+            {"nome": "Talismano Superiore", "livello_sblocco": 5, "effetto": "Il PG crea un talismano offensivo monouso con potere elevato: 1 uso, danno = T5 della Tabella Potere, tag [Strumento]. Sostanza: palla di fuoco, fulmine diretto, onda d'urto. Spesso ha effetti collaterali (area, danno secondario)."}
+          ],
+          "tag_attivazione": ["[Crafting]"],
+          "narrative": "Il crafting dei talismani è il cuore della magia analitica. Costruire strumenti di potere, non lanciare incantesimi spontanei.",
+          "adatto_a": "Artificieri, alchimisti da campo, ingegneri magici",
+          "cross_reference": "Vedi 07_magia/03_analisi_crafting.json per il sistema completo di crafting"
+        },
+        {
+          "nome": "Mago dello Scasso",
+          "tipo": "Specializzata",
+          "tema": "Apertura di serrature progressive e disattivazione di meccanismi",
+          "abilita": [
+            {"nome": "Grimaldello", "livello_sblocco": 1, "effetto": "Il PG apre serrature meccaniche standard. Sufficiente per porte, forzieri, lucchetti comuni. Richiede strumenti da scasso e tempo (1 tick)."},
+            {"nome": "Serratura Complessa", "livello_sblocco": 3, "effetto": "Il PG apre serrature con meccanismi avanzati: a combinazione, a trappola, magicamente sigillate (di livello base). Tempo: 1-3 tick a seconda della complessità."},
+            {"nome": "Cassaforte", "livello_sblocco": 5, "effetto": "Il PG apre qualsiasi serratura meccanica o magica di livello non-epico. Cassaforti in titanio, porte blinda-te magicamente, forzieri sigillati da arconti. Tempo: variabile, ma sempre possibile (se la cassaforte NON è protetta da un artefatto)."}
+          ],
+          "tag_attivazione": ["[Strumento]"],
+          "narrative": "La scienza del scasso. Ogni serratura è un puzzle, e il PG ha imparato a leggerli tutti.",
+          "adatto_a": "Ladri specialisti, investigatori privati, spie"
+        },
+        {
+          "nome": "Stratega Tattico",
+          "tipo": "Specializzata",
+          "tema": "Analisi del campo di battaglia e identificazione dei punti deboli",
+          "abilita": [
+            {"nome": "Valutazione", "livello_sblocco": 1, "effetto": "Il PG osserva un nemico per 1 tick e ne STIMA i PF, le difese approssimative e il comportamento tipico. Le stime hanno un margine di errore (Master)."},
+            {"nome": "Punto Debole", "livello_sblocco": 3, "effetto": "Il PG identifica un punto debole specifico in un nemico (es. 'collo scoperto dopo l'attacco', 'gamba offesa', 'armatura crepata'). Il prossimo attacco alleato contro quel punto debole ottiene +2 al Potere."},
+            {"nome": "Piano Perfetto", "livello_sblocco": 5, "effetto": "Il PG elabora un piano tattico che assegna RUOLI specifici agli alleati (dichiarato al Master). Se tutti gli alleati seguono il piano nei prossimi 3 tick, il gruppo ottiene +1 al Potere su TUTTI gli attacchi e +1 a TUTTE le difese. Sirompe se qualcuno devia."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "La mente tattica che vede il campo di battaglia come una scacchiera. Non è un guerriero — è un direttore d'orchestra.",
+          "adatto_a": "Comandanti, strateghi, capitani di milizia"
+        },
+        {
+          "nome": "Alchimista da Campo",
+          "tipo": "Specializzata",
+          "tema": "Estrazione e miscelazione di sostanze in loco",
+          "abilita": [
+            {"nome": "Miscela", "livello_sblocco": 1, "effetto": "Durante un riposo, il PG può miscelare ingredienti comuni (raccolti sul campo) in pozioni base: cura minore (1 PF), antitossico, stimolante (+1 tick di azione)."},
+            {"nome": "Estrazione", "livello_sblocco": 3, "effetto": "Il PG estrae componenti attivi da creature morte o piante rare. Questi componenti possono essere usati per talismani (vedi Artefice dei Talismani) o venduti."},
+            {"nome": "Distillazione Avanzata", "livello_sblocco": 5, "effetto": "Il PG prepara pozioni avanzate: cura maggiore (3 PF), invisibilità (1 minuto), forza da gigante (+2 al Potere per 1 combattimento), resistenza elementale. Richiede ingredienti rari + tempo (1 ora di riposo)."}
+          ],
+          "tag_attivazione": ["[Crafting]"],
+          "narrative": "La scienza delle sostanze. Laddove l'Artefice crea oggetti, l'Alchimista crea miscele.",
+          "adatto_a": "Erbalisti, alchimisti, medici da campo"
+        },
+        {
+          "nome": "Maestra dei Sigilli",
+          "tipo": "Specializzata",
+          "tema": "Magia analitica dei sigilli protettivi e vincolanti",
+          "abilita": [
+            {"nome": "Sigillo", "livello_sblocco": 1, "effetto": "Il PG traccia un sigillo minore su una superficie. Può essere: allarme (suona se varcato), protezione (1 punto assorbe 1 danno), identificazione (rivela chi lo ha toccato). Dura 1 giorno."},
+            {"nome": "Sigillo Complesso", "livello_sblocco": 3, "effetto": "Il PG traccia un sigillo con effetti complessi: trappola (esplode per 1d6 danno a chi lo attiva), barriera (impedisce a creature specifiche di passare), comunicazione (messaggio lasciato per il prossimo lettore). Dura 1 settimana."},
+            {"nome": "Sigillo Maggiore", "livello_sblocco": 5, "effetto": "Il PG traccia un sigillo potente: vincolo (intrappola una creatura di livello fino a T5), santuario (crea una zona inviolabile per 1 ora), marchio (segnala un nemico per la caccia — gli alleati ottengono +2 al Potere contro di lui a prescindere dalla distanza). Dura permanente fino a dispersio."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "I sigilli sono la firma della magia analitica. Tracciati, non lanciati — pensati, non improvvisati.",
+          "adatto_a": "Eseloristi, cacciatori di demoni, protettori"
+        },
+        {
+          "nome": "Investigatore",
+          "tipo": "Generica",
+          "tema": "Versatilità investigativa e deduttiva",
+          "abilita": [
+            {"nome": "Percezione", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere in prove di osservazione. Rileva dettagli che altri perdono: tracce fresche, segni di scasso, micro-espressioni."},
+            {"nome": "Deduzione", "livello_sblocco": 1, "effetto": "Il PG può collegare indizi per dedurre conclusioni. Una volta per sessione, può chiedere al Master una 'deduzione' su un mistero — il Master deve fornire un indizio reale."},
+            {"nome": "Scasso", "livello_sblocco": 1, "effetto": "Il PG può scassinare serrature base (come Mago dello Scasso livello 1, ma senza bonus avanzati). Sufficiente per la maggior parte degli scenari comuni."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "L'investigatore polivalente. Non è specialista in nulla, ma competente in tutto ciò che serve a risolvere un mistero.",
+          "adatto_a": "Detective, esploratori urbani, agenti segreti"
+        },
+        {
+          "nome": "Cacciatrice di Trappole",
+          "tipo": "Generica",
+          "tema": "Identificazione, disarmo e riposizionamento di trappole",
+          "abilita": [
+            {"nome": "Individua", "livello_sblocco": 1, "effetto": "Il PG rileva automaticamente trappole entro 1 zona (test di Percezione +2). Riconosce il tipo (meccanica, magica,illusione) ma non i dettagli."},
+            {"nome": "Disarma", "livello_sblocco": 1, "effetto": "Il PG disarma trappole meccaniche base. Tempo: 1-3 tick. Le trappole disarmate possono essere riattivate dal PG (con 1 tick di lavoro) o distrutte."},
+            {"nome": "Riposiziona", "livello_sblocco": 1, "effetto": "Il PG può SPOSTARE una trappola disarmata e riarmarla in una nuova posizione. Questo trasforma la trappola nemica in una trappola amica (potenza equivalente)."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "Una specialista di trappole. Vederle, smontarle, voltarle contro chi le ha poste.",
+          "adatto_a": "Esploratori di dungeon, ladri, cacciatori"
+        },
+        {
+          "nome": "Erudita di Biblioteca",
+          "tipo": "Generica",
+          "tema": "Saggezza accumulata da anni di studio",
+          "abilita": [
+            {"nome": "Traduci", "livello_sblocco": 1, "effetto": "Il PG traduce testi in qualsiasi lingua conosciuta del setting. Per lingue morte o oscure, test di Analisi (Master)."},
+            {"nome": "Cataloga", "livello_sblocco": 1, "effetto": "Il PG organizza informazioni e ne trae benefici. Una volta per sessione, può 'ricordare' un fatto rilevante riguardante la situazione corrente (Master deve fornire)."},
+            {"nome": "Ricorda", "livello_sblocco": 1, "effetto": "Il PG ha una memoria enciclopedica. Una volta per sessione, può chiedere al Master una informazione che ha 'letto da qualche parte' — il Master decide se è pertinente e quanta precisione fornire."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "Non tutti gli eroi sono d'azione. Alcuni portano la loro biblioteca dentro la testa.",
+          "adatto_a": "Studiosi, archivisti, sacerdoti del sapere"
+        },
+        {
+          "nome": "Cartografa Esploratrice",
+          "tipo": "Generica",
+          "tema": "Orientamento e mappatura del territorio",
+          "abilita": [
+            {"nome": "Mappa", "livello_sblocco": 1, "effetto": "Il PG disegna mappe precise mentre esplora. Le mappe sono utilizzabili dal gruppo per navigare (nessun rischio di perdersi se il PG è attivo)."},
+            {"nome": "Bussola", "livello_sblocco": 1, "effetto": "Il PG ha un senso direzionale infallibile. Anche in Dungeons o luoghi magici, sa sempre dov'è il nord e l'uscita più vicina (se l'ha già vista)."},
+            {"nome": "Territorio", "livello_sblocco": 1, "effetto": "Il PG analizza il territorio: identifica punti di imboscata, risorse (acqua, cibo, riparo), pericoli naturali (crepacci, sabbie mobili). Una volta per regione."}
+          ],
+          "tag_attivazione": ["[Utility]"],
+          "narrative": "Chi ha attraversato terre sconosciute sa che la mappa è vita. Questa nominated è per chi è nato per viaggiare.",
+          "adatto_a": "Esploratori, ranger, mercanti itineranti"
+        }
+      ]
+    },
+
+    "Istinto": {
+      "approccio_metadata": {
+        "colore": "Blu",
+        "asse": "AGIRE",
+        "keyword": "Riflessi, destrezza, reazione, agire nel momento, furtività, precisione",
+        "typical_actions": "Attacchi di precisione, schivate, furtività, attacchi chirurgici, abilità difensive (Blocco Perfetto, Schivata Acrobatica)",
+        "hosting": "Abilità difensive (Schivata, Parata), attacchi di precisione, furtività, scasso rapido",
+        "count_in_catalog": 10,
+        "mix_specializzate_generiche": "6 Specializzate + 4 Generiche"
+      },
+      "nominated": [
+        {
+          "nome": "Maestro di Scherma",
+          "tipo": "Specializzata",
+          "tema": "Arte della spada: stoccata, combo, colpo mortale",
+          "abilita": [
+            {"nome": "Stoccata", "livello_sblocco": 1, "effetto": "Un affondo veloce e preciso. Danno = Tabella Potere, ma guadagna +1 al Potere se il bersaglio è in postura aperta (non ha scudo, non è in formazione)."},
+            {"nome": "Combo", "livello_sblocco": 3, "effetto": "Dopo una Stoccata, il PG esegue immediatamente un secondo attacco (1 tick aggiuntivo). Il secondo attacco ha +1 al Potere (il bersaglio è sbilanciato dal primo)."},
+            {"nome": "Colpo Mortale", "livello_sblocco": 5, "effetto": "Una stoccata mirata al punto vitale. Se il nemico ha PF ≤ Tabella Potere × T, è ucciso istantaneamente (decapitazione, colpo al cuore). Altrimenti, danno pieno + effetto 'sanguinamento' (perde 1 PF per tick fino a cura)."}
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "La scuola classica della spada. Stile, precisione, eleganza letale.",
+          "adatto_a": "Duellanti, spadaccini di corte, maestri d'arme"
+        },
+        {
+          "nome": "Ombra Silenziosa",
+          "tipo": "Specializzata",
+          "tema": "Furtività progressiva fino all'invisibilità",
+          "abilita": [
+            {"nome": "Furtività", "livello_sblocco": 1, "effetto": "Il PG si muove senza farsi sentire. Test di Istinto per evitare di essere rilevato. Sufficiente per scenari comuni (guardie non allerta, ambienti rumorosi)."},
+            {"nome": "Invisibilità", "livello_sblocco": 3, "effetto": "Il PG sfrutta ombre, distrazioni e silenzi per diventare praticamente invisibile per 1 minuto (10 tick). Le guardie non lo notano a meno che non lo cerchino attivamente o che faccia rumore."},
+            {"nome": "Passo delle Ombre", "livello_sblocco": 5, "effetto": "Il PG 'si sposta tra le ombre': può teletrasportarsi tra due punti in ombra entro 3 zone. Il movimento è istantaneo e silenzioso. Una volta per combattimento."}
+          ],
+          "tag_attivazione": ["[Furtivo]"],
+          "narrative": "La scuola dei ladri, assassini, esploratori notturni. Dove l'ombra diventa via.",
+          "adatto_a": "Ladri, assassini, spie"
+        },
+        {
+          "nome": "Cecchino",
+          "tipo": "Specializzata",
+          "tema": "Tiro di precisione con arma a distanza",
+          "abilita": [
+            {"nome": "Mira", "livello_sblocco": 1, "effetto": "Il PG spende 1 tick extra per MIRARE. Il prossimo tiro a distanza ottiene +1 al Potere. Cumulabile fino a +3 (3 tick di mira)."},
+            {"nome": "Colpo Critico", "livello_sblocco": 3, "effetto": "Se la Mira è stata usata per almeno 2 tick, il prossimo tiro ha +2 al Potere E ignora 1 livello di difesa (Mitigato diventa Perfetto, Pieno diventa Mitigato). Richiede arma a distanza."},
+            {"nome": "Tiro Letale", "livello_sblocco": 5, "effetto": "Dopo 3 tick di Mira, il prossimo tiro è un Tiro Letale: danno ×2 (doppio del normale) e, se il bersaglio ha PF ≤ Tabella Potere × T × 2, è ucciso. Non funziona contro nemici Epici senza prima ferirli."}
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "La scuola del tiro perfetto. Calma, pazienza, un colpo solo.",
+          "adatto_a": "Arcieri, balestrieri, cacciatori"
+        },
+        {
+          "nome": "Pugnale Veloce",
+          "tipo": "Specializzata",
+          "tema": "Combattimento con pugnali e lame corte",
+          "abilita": [
+            {"nome": "Stoccata Rapida", "livello_sblocco": 1, "effetto": "Un colpo velocissimo con pugnale. Danno = Tabella Potere, ma si esegue in 0 tick (NON consuma il tick ATB del PG, solo 1 Vitalità). Massimo 1 per round."},
+            {"nome": "Combo di Pugnali", "livello_sblocco": 3, "effetto": "Il PG colpisce due volte nello stesso tick con pugnali (uno per mano). Il secondo colpo ha -1 al Potere ma ha uguali probabilità di colpire."},
+            {"nome": "Tempesta di Lame", "livello_sblocco": 5, "effetto": "Il PG esegue 3 attacchi consecutivi con pugnali nello stesso tick. Ognuno contro un bersaglio diverso o lo stesso. Ogni attacco ha -1 al Potere rispetto al precedente (1°: base, 2°: -1, 3°: -2)."}
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "La scuola del combattimento ravvicinato con lame corte. Velocità, non forza.",
+          "adatto_a": "Ladri combattivi, sicari, duellanti da taverna"
+        },
+        {
+          "nome": "Danzatore di Lame",
+          "tipo": "Specializzata",
+          "tema": "Stile di combattimento acrobatico con arma leggera",
+          "abilita": [
+            {"nome": "Schivata Acrobatica", "livello_sblocco": 1, "effetto": "Una volta per round, contro un attacco melee diretto, il PG può SCHIVARE: si muove di 1 zona AND risponde con un attacco di opportunità con +1 al Potere. Sostituisce la difesa normale."},
+            {"nome": "Danza delle Lame", "livello_sblocco": 3, "effetto": "Il PG entra in una 'danza' difensiva: fino al prossimo tick, ogni attacco nemico contro di lui subisce -2 al Potere (le lame lo proteggono). Inoltre, ogniqualvolta schiva con Schivata Acrobatica, ottiene +1 al Potere per il contrattacco."},
+            {"nome": "Vortice di Lame", "livello_sblocco": 5, "effetto": "Il PG ruota su se stesso colpendo TUTTI i nemici adiacenti (fino a 4). Danno = Tabella Potere a ciascuno. Inoltre, il PG si sposta di 1 zona in qualsiasi direzione dopo il vortice (posizionamento tattico)."}
+          ],
+          "tag_attivazione": ["[Arma]", "[Difesa]"],
+          "narrative": "Una scuola esotica dove la danza diventa combattimento. L'eleganza è letale.",
+          "adatto_a": "Elfi, duellanti elfici, spadaccini acrobatici"
+        },
+        {
+          "nome": "Ladro di Tesori",
+          "tipo": "Specializzata",
+          "tema": "Furto e scasso rapido sotto pressione",
+          "abilita": [
+            {"nome": "Scasso Rapido", "livello_sblocco": 1, "effetto": "Il PG apre serrature base in 1 tick (invece di 3). Più veloce del Mago dello Scasso, ma meno versatile."},
+            {"nome": "Furto Sfuggente", "livello_sblocco": 3, "effetto": "Il PG può sfilare oggetti dalle tasche/borse di un bersaglio senza essere notato. Test di Istinto vs Percezione del bersaglio. Se riesce, ottiene un oggetto piccolo e resta ignoto."},
+            {"nome": "Colpo Perfetto", "livello_sblocco": 5, "effetto": "Il PG esegue un attacco backstab devastante: +3 al Potere, x2 danno. Solo se il bersaglio NON è a conoscenza della presenza del PG. Una volta per combattimento."}
+          ],
+          "tag_attivazione": ["[Furtivo]"],
+          "narrative": "La scuola del furto elegante. Non violenza — precisione.",
+          "adatto_a": "Ladri, borsaioli, agenti segreti"
+        },
+        {
+          "nome": "Acrobata",
+          "tipo": "Generica",
+          "tema": "Versatilità acrobatica per spostamenti e difese",
+          "abilita": [
+            {"nome": "Schivata", "livello_sblocco": 1, "effetto": "Una volta per round, il PG può sostituire una difesa normale con una Schivata: il danno è azzerato (Blocco Perfetto), MA il PG si sposta di 1 zona in qualsiasi direzione."},
+            {"nome": "Salto Mortale", "livello_sblocco": 1, "effetto": "Il PG può saltare distanze doppie rispetto alla norma. Inoltre, può cadere da altezze fino a 10 metri senza danno (rotolamento)."},
+            {"nome": "Capriola", "livello_sblocco": 1, "effetto": "Il PG si muove di 2 zone in un tick, ma NON può attaccare in quel tick. Utile per riposizionamento rapido."}
+          ],
+          "tag_attivazione": ["[Fisico]"],
+          "narrative": "Atletismo acrobatico puro. Per chi preferisce non farsi colpire.",
+          "adatto_a": "Acrobati, esploratori urbani, monaci"
+        },
+        {
+          "nome": "Duellante Acuto",
+          "tipo": "Generica",
+          "tema": "Versatilità nel duello uno-contro-uno",
+          "abilita": [
+            {"nome": "Para", "livello_sblocco": 1, "effetto": "Una volta per round, il PG può sostituire una difesa con una Parata: l'attacco nemico è bloccato (Blocco Perfetto) E il PG ottiene +1 al Potere per il prossimo attacco (contrattacco)."},
+            {"nome": "Risposta", "livello_sblocco": 1, "effetto": "Dopo una Parata riuscita, il PG può eseguire immediatamente un attacco di risposta con +1 al Potere. Non costa tick extra."},
+            {"nome": "Finta", "livello_sblocco": 1, "effetto": "Il PG esegue una finta: il prossimo attacco nemico ha -2 al Potere (il bersaglio crede che attacchi da una direzione, ma attacca da un'altra). Una volta per round."}
+          ],
+          "tag_attivazione": ["[Arma]"],
+          "narrative": "L'arte del duello: parare, rispondere, ingannare. Una scuola cortese.",
+          "adatto_a": "Duellanti di corte, ufficiali, spadaccini eleganti"
+        },
+        {
+          "nome": "Riflessi Felini",
+          "tipo": "Generica",
+          "tema": "Riflessi rapidi per reazioni difensive",
+          "abilita": [
+            {"nome": "Schivata", "livello_sblocco": 1, "effetto": "Una volta per round, il PG può sostituire una difesa con una Schivata: il danno è azzerato (Blocco Perfetto)."},
+            {"nome": "Reazione", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 all'Iniziativa (o -1 al proprio costo ATB per il primo tick del combattimento)."},
+            {"nome": "Anticipazione", "livello_sblocco": 1, "effetto": "Una volta per combattimento, il PG può dichiarare un'azione 'preventiva' prima che si risolva un attacco nemico (es. muoversi, attivare un oggetto, interrompere un incantesimo)."}
+          ],
+          "tag_attivazione": ["[Difesa]"],
+          "narrative": "Una nominated per chi è nato con riflessi superiori. Non è forza — è velocità pura.",
+          "adatto_a": "Scout, ladri reattivi, esploratori pericolosi"
+        },
+        {
+          "nome": "Cacciatore di Taglie",
+          "tipo": "Generica",
+          "tema": "Versatilità nella caccia e cattura di bersagli",
+          "abilita": [
+            {"nome": "Tracce", "livello_sblocco": 1, "effetto": "Il PG segue tracce fresche (max 24 ore) senza penalità. Identifica anche la direzione, il numero e le condizioni dei bersagli."},
+            {"nome": "Agguato", "livello_sblocco": 1, "effetto": "Il PG ottiene +2 al Potere per il primo attacco se il bersaglio NON era a conoscenza della sua presenza (agguato)."},
+            {"nome": "Cattura", "livello_sblocco": 1, "effetto": "Il PG può tentare di catturare (non uccidere) un bersaglio: test Istinto vs resistenza. Se riesce, il bersaglio è legato e disarmato. Utile per interrogatori."}
+          ],
+          "tag_attivazione": ["[Furtivo]"],
+          "narrative": "La scuola della caccia umana. Tracce, agguato, cattura.",
+          "adatto_a": "Cacciatori di taglie, esattori, ranger"
+        }
+      ]
+    },
+
+    "Risonanza": {
+      "approccio_metadata": {
+        "colore": "Verde",
+        "asse": "COMPRENDERE",
+        "keyword": "Empatia, connessione, sentire, comprendere attraverso il sentire, magia elementale e cura",
+        "typical_actions": "Incantesimi elementali (offensivi), magia di cura, empatia con creature/natura, incantesimi di supporto",
+        "hosting": "Incantesimi elementali offensivi, magia di cura, empatia, dominio animale",
+        "count_in_catalog": 10,
+        "mix_specializzate_generiche": "6 Specializzate + 4 Generiche"
+      },
+      "nominated": [
+        {
+          "nome": "Piròmante",
+          "tipo": "Specializzata",
+          "tema": "Dominio del fuoco elementale",
+          "abilita": [
+            {"nome": "Scintilla", "livello_sblocco": 1, "effetto": "Il PG genera una piccola scintilla: accende fuochi, illumina, brucia corde/carte. Danno minimo (1 PF) a un bersaglio singolo adiacente."},
+            {"nome": "Palla di Fuoco", "livello_sblocco": 3, "effetto": "Il PG lancia una sfera di fuoco che esplode in una zona. Danno = Tabella Potere × T a tutti i nemici nella zona. Area 1 zona."},
+            {"nome": "Inferno", "livello_sblocco": 5, "effetto": "Il PG evoca una colonna di fuoco devastante. Danno = Tabella Potere × T × 2 a tutti i nemici in una zona 2×2. Il fuoco persiste per 3 tick: chiunque entri subisce metà danno. Alleati Risonanza sono immuni al fuoco amico."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "La scuola del fuoco. Distruttiva, rapida, purificatrice.",
+          "adatto_a": "Maghi da battaglia, piromanti, evocatori elementali"
+        },
+        {
+          "nome": "Idromante",
+          "tipo": "Specializzata",
+          "tema": "Dominio dell'acqua e dei fluidi",
+          "abilita": [
+            {"nome": "Goccia", "livello_sblocco": 1, "effetto": "Il PG controlla piccole quantità d'acqua: pulisce, raffresca, dissetta. Può anche curare 1 PF a un alleato (contatto con acqua pura)."},
+            {"nome": "Onda", "livello_sblocco": 3, "effetto": "Il PG genera un'onda d'acqua che spazza una zona. Danno = Tabella Potere × T ai nemici. Inoltre, spinge i nemici di 1 zona indietro (test di forza per resistere)."},
+            {"nome": "Marea", "livello_sblocco": 5, "effetto": "Il PG controlla grandi masse d'acqua. Inondazione: 2 zone sono coperte d'acqua (movimento dimezzato per nemici, nuoto obbligatorio). Danno = Tabella Potere × T × 2 a tutti i nemici nelle 2 zone. Dura 5 tick."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "La scuola dell'acqua. Fluida, adattiva, potente.",
+          "adatto_a": "Maghi marini, sacerdoti di fiumi, druidi acquatici"
+        },
+        {
+          "nome": "Geomante",
+          "tipo": "Specializzata",
+          "tema": "Dominio della terra e della pietra",
+          "abilita": [
+            {"nome": "Pietra", "livello_sblocco": 1, "effetto": "Il PG manipola pietre: le solleva, le scaglia (danno = Tabella Potere), crea piccole barriere. Sufficiente per coperture temporanee."},
+            {"nome": "Terra", "livello_sblocco": 3, "effetto": "Il PG fa tremare la terra in una zona. Tutti i nemici nella zona subiscono danno (Tabella Potere × T) E devono fare un test di forza o cadere a terra ( prone: -2 al Potere per 1 tick)."},
+            {"nome": "Terremoto", "livello_sblocco": 5, "effetto": "Il PG genera un terremoto locale: 3 zone sono colpite. Danno = Tabella Potere × T × 2 a tutti i nemici. Tutte le strutture non-magiche nelle zone subiscono danni strutturali. Le creature prone per 2 tick."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "La scuola della terra. Solida, paziente, inesorabile.",
+          "adatto_a": "Druidi di montagna, sciamani della terra, geomanti"
+        },
+        {
+          "nome": "Cura Vitalità",
+          "tipo": "Specializzata",
+          "tema": "Magia di cura progressiva",
+          "abilita": [
+            {"nome": "Cura Minore", "livello_sblocco": 1, "effetto": "Il PG cura 1 PF a un alleato toccato. Non funziona su Cuori feriti (vedi 09_riposo_cura/01_cure_asimmetriche.json)."},
+            {"nome": "Cura", "livello_sblocco": 3, "effetto": "Il PG cura 3 PF a un alleato toccato, OPPURE rimuove 1 Ferita Approccio (gira la carta nominata sul dritto). Non su Cuori."},
+            {"nome": "Cura Maggiore", "livello_sblocco": 5, "effetto": "Il PG cura 5 PF a un alleato toccato, OPPURE rimuove 2 Ferite Approccio, OPPURE rimuove 1 Ferita Approccio E 3 PF. Non su Cuori (i Cuori richiedono rituali, non magia)."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "La scuola della cura. La magia più richiesta e più sottovalutata.",
+          "adatto_a": "Chierici, druidi, paladini curatori",
+          "cross_reference": "Vedi 09_riposo_cura/01_cure_asimmetriche.json per la cura dei Cuori (rituali, non magia)"
+        },
+        {
+          "nome": "Domatrice di Bestie",
+          "tipo": "Specializzata",
+          "tema": "Empatia animale e dominio progressivo",
+          "abilita": [
+            {"nome": "Richiamo", "livello_sblocco": 1, "effetto": "Il PG emette un richiamo che attira animali della zona. Piccoli animali (cani, corvi, gatti) si avvicinano e sono amichevoli. Possono eseguire compiti semplici."},
+            {"nome": "Legame", "livello_sblocco": 3, "effetto": "Il PG stringe un legame empatico con UN animale specifico (confermato dal Master). L'animale diventa FAMILIARE: ottiene PF, Attacco base (Tabella Potere × 1), obbedisce al PG. Dura finché l'animale vive o il PG rompe il legame."},
+            {"nome": "Dominio", "livello_sblocco": 5, "effetto": "Il PG può DOMARE creature animali fino a Tier 5 (inclusi predatori grandi, unicorni, ecc.). La creatura dominata obbedisce per 1 ora, poi torna libera (o continua a obbedire se si rinnova con un nuovo check)."}
+          ],
+          "tag_attivazione": ["[Empatia]"],
+          "narrative": "La scuola del legame animale. Comunicare senza parole, dominare senza forza.",
+          "adatto_a": "Druidi, ranger, esploratori selvaggi"
+        },
+        {
+          "nome": "Sciamano Ancestrale",
+          "tipo": "Specializzata",
+          "tema": "Connessione con gli spiriti degli antenati",
+          "abilita": [
+            {"nome": "Spirito Minore", "livello_sblocco": 1, "effetto": "Il PG chiama uno spirito minore (antenato, spirito della natura) per chiedere consiglio. Lo spirito risponde a 1 domanda semplice con onestà (Master)."},
+            {"nome": "Spirito Guida", "livello_sblocco": 3, "effetto": "Il PG evoca uno spirito guida che lo assiste per 1 ora. Lo spirito concede +1 al Potere in una categoria specifica (es. Percezione, una nominated) e può avvertire di pericoli."},
+            {"nome": "Antenato", "livello_sblocco": 5, "effetto": "Il PG evoca un antenato potente che si MANIFESTA fisicamente per 1 combattimento. L'antenato ha PF propri, attacca con Tabella Potere × T, e può usare 1 abilità speciale (definita dal Master in base alla tradizione)."}
+          ],
+          "tag_attivazione": ["[Spirito]"],
+          "narrative": "La scuola sciamanica. Il mondo degli spiriti è reale quanto quello materiale.",
+          "adatto_a": "Sciamani, stregoni tribali, mediatori"
+        },
+        {
+          "nome": "Druido",
+          "tipo": "Generica",
+          "tema": "Versatilità magica elementale naturale",
+          "abilita": [
+            {"nome": "Piccolo Fuoco", "livello_sblocco": 1, "effetto": "Come Scintilla (Piròmante livello 1). Danno minimo, illuminazione, accensione."},
+            {"nome": "Piccola Cura", "livello_sblocco": 1, "effetto": "Come Cura Minore (Cura Vitalità livello 1). Cura 1 PF a un alleato."},
+            {"nome": "Piccola Terra", "livello_sblocco": 1, "effetto": "Come Pietra (Geomante livello 1). Manipola pietre piccole, crea coperture temporanene."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "Il druido generico — un po' di tutto, niente di specializzato. Per chi preferisce la versatilità alla potenza.",
+          "adatto_a": "Avventurieri naturali, eremiti, viaggiatori"
+        },
+        {
+          "nome": "Empatica del Cuore",
+          "tipo": "Generica",
+          "tema": "Empatia e comunicazione emotiva",
+          "abilita": [
+            {"nome": "Percepì", "livello_sblocco": 1, "effetto": "Il PG percepisce le emozioni di una creatura intelligente entro 3 zone. Sente 'rabbia', 'paura', 'menzogna' ma non pensieri dettagliati."},
+            {"nome": "Calma", "livello_sblocco": 1, "effetto": "Il PG proieta calma. Una creatura ostile entro 1 zona può fare un test di volontà; se fallisce, riduce l'ostilità (potrebbe fermarsi, ascoltare, esitare). Non funziona su creature dominate o in trance."},
+            {"nome": "Conforta", "livello_sblocco": 1, "effetto": "Il PG conforta un alleato, rimuovendo 1 condizione negativa (paura, confusione, affascinamento) OPPURE concedendo +1 al prossimo test di volontà."}
+          ],
+          "tag_attivazione": ["[Empatia]"],
+          "narrative": "La scuola del cuore. Non è magia elementale — è magia emotiva.",
+          "adatto_a": "Counselor, sacerdoti, mediatori"
+        },
+        {
+          "nome": "Cantore del Vento",
+          "tipo": "Generica",
+          "tema": "Manipolazione dell'aria e dei venti",
+          "abilita": [
+            {"nome": "Brezza", "livello_sblocco": 1, "effetto": "Il PG genera una brezza: disperde fumi, asciuga, raffresca, sospinge piccoli oggetti. Sufficiente per pulire l'aria da veleni leggeri."},
+            {"nome": "Soffio", "livello_sblocco": 1, "effetto": "Il PG genera una raffica di vento in una direzione. Spinge di 1 zona creature di taglia Piccola o Media (test di forza). Disperde proiettili leggeri (frecce, dardi)."},
+            {"nome": "Vortice", "livello_sblocco": 1, "effetto": "Il PG crea un piccolo vortice attorno a sé: proiettili a distanza contro di lui subiscono -2 al Potere. Dura 3 tick."}
+          ],
+          "tag_attivazione": ["[Magia]"],
+          "narrative": "Una nominated leggera, per chi preferisce il controllo sottile alla distruzione.",
+          "adatto_a": "Bardi, indovini, viaggiatori del vento"
+        },
+        {
+          "nome": "Veggente del Cuore",
+          "tipo": "Generica",
+          "tema": "Premonizione e intuizione",
+          "abilita": [
+            {"nome": "Sensazione", "livello_sblocco": 1, "effetto": "Il PG ha 'sensazioni' su persone e situazioni. Una volta per sessione, può chiedere al Master 'sento qualcosa di strano?' — il Master deve rispondere onestamente (sì/no)."},
+            {"nome": "Presentimento", "livello_sblocco": 1, "effetto": "Una volta per combattimento, il PG può dichiarare un 'presentimento': un alleato entro 1 zona ottiene +2 al Potere per la sua prossima azione difensiva (il PG 'sente' l'attacco in arrivo)."},
+            {"nome": "Visione", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG entra in trance e ottiene una visione del Master (riguardante il futuro prossimo o un mistero corrente). Il Master fornisce immagini simboliche che il PG deve interpretare."}
+          ],
+          "tag_attivazione": ["[Empatia]"],
+          "narrative": "La scuola dell'intuizione. Non è magia razionale — è magia del cuore.",
+          "adatto_a": "Oracoli, mistici, indovini"
+        }
+      ]
+    }
+  },
+  "tag_reference": {
+    "note": "I tag di attivazione sono descritti nel dettaglio in 03_vitalita/02_giocare_vitalita.json. Qui una sintesi dei tag usati nel catalogo.",
+    "tags_used": {
+      "[Arma]": "L'abilità richiede una Vitalità con tag [Arma]. L'azione fisica è mediata da un'Arma equipaggiata. Vedi 06_equipaggiamento/02_categorie.json",
+      "[Difesa]": "L'abilità è difensiva. Può essere attivata con Vitalità [Difesa] o, in alcuni casi, [Reazione]. Vedi 05_combattimento/04_difesa.json",
+      "[Fisico]": "L'abilità è puramente fisica (nessuna arma). Si attiva con Vitalità [Fisico] o [Atletica].",
+      "[Sociale]": "L'abilità è sociale. Si attiva con Vitalità [Sociale] o [Persuasione].",
+      "[Utility]": "L'abilità è di utility (percezione, decifrazione, scasso). Si attiva con Vitalità [Utility] o specifiche.",
+      "[Crafting]": "L'abilità è di crafting. Si attiva durante un riposo, non in combattimento. Vedi 07_magia/03_analisi_crafting.json",
+      "[Strumento]": "L'abilità richiede uno Strumento Rapido (grimaldelli, talismano, ecc.). Vedi 06_equipaggiamento/04_stumenti_rapidi.json",
+      "[Magia]": "L'abilità è magica. Si attiva con Vitalità [Magia]. Vedi 07_magia/01_magia_due_vie.json",
+      "[Furtivo]": "L'abilità è furtiva. Si attiva con Vitalità [Furtivo] o [Ombra].",
+      "[Empatia]": "L'abilità è empatica. Si attiva con Vitalità [Empatia] o [Connessione].",
+      "[Spirito]": "L'abilità chiama spiriti. Si attiva con Vitalità [Spirito] o [Anima]."
+    }
+  },
+  "use_in_creation_and_progression": {
+    "creation_step_4": {
+      "rule": "Alla creazione, il PG sceglie 1-2 nominated LIBERE da questo catalogo, da collocare negli slot nominated rimanenti oltre le 3 Heart-linked (vedi 02_personaggio/05_creazione_pg.json → step_4_choose_free_nominated).",
+      "constraints": [
+        "Le nominated libere devono rispettare il VALUE dell'Approccio: una nominated Specializzata con abilità 3 (sblocco livello 5) può essere scelta anche con Approccio 1, MA le abilità di livello 3 sono inaccessibili finché l'Approccio non sale a 5.",
+        "Non si può scegliere la stessa nominated due volte (anche in Approcci diversi).",
+        "Le nominated Heart-linked (imposte dai Cuori) NON sono in questo catalogo — sono già scelte allo Step 2."
+      ]
+    },
+    "maturation_use": {
+      "rule": "Durante la Maturation, una carta BIANCA viene sostituita da una nominated LIBERA di questo catalogo dello stesso Approccio. Vedi 02_personaggio/06_riallineamento_approcci.json → maturation_full.",
+      "constraint_unique": "Anche in Maturation, non si può scegliere una nominated già presente nel pool del PG. Ogni nominated è unica nel pool."
+    },
+    "realignment_swap_use": {
+      "rule": "Durante il Riallineamento, se la carta rimossa dall'Approccio A è una nominated libera, la nuova carta nell'Approccio B deve essere una nominated libera di B scelta da questo catalogo. Vedi 02_personaggio/06_riallineamento_approcci.json → swap_rule_critical → case_2_nominated_to_nominated.",
+      "constraint_unique": "Anche in questo caso, non si può scegliere una nominated già presente nel pool del PG."
+    },
+    "master_discretion": {
+      "narrative_fit": "Il Master può richiedere che la scelta di una nominated libera abbia una giustificazione narrativa (specie per nominated potenti o tematiche). Es: il PG non può scegliere 'Cecchino' se non ha mai usato armi a distanza.",
+      "custom_nominated": "Il Master può creare nominated custom NON in questo catalogo, ma dovrebbe farlo solo per casi speciali (NPC alleati, side-quest specifiche). Per i PG, il catalogo è il riferimento standard.",
+      "ban_list": "Il Master può vietare nominated specifiche per la propria campagna (es. niente 'Maestro di Scherma' in un setting senza spade). Comunica la ban list ai giocatori prima della creazione."
+    }
+  },
+  "open_questions_v3_1": {
+    "nominated_count_per_approccio": "Domanda: 10 nominated per Approccio sono sufficienti? In futuro si può espandere il catalogo a 15-20 per Approccio. Per ora, 10 offrono varietà sufficiente per PG tipici.",
+    "tag_abilities_incompatibilities": "Alcune nominated hanno abilità che potrebbero sovrapporsi a tag Vitalità (es. [Furtivo] attiva sia 'Furtività' di Ombra Silenziosa sia altre meccaniche). Da armonizzare con playtest.",
+    "custom_nominated_rules": "Da definire meglio nella Master Guide (Canale 2): linee guida per la creazione di nominated custom (potenza appropriata, struttura corretta, bilanciamento)."
+  },
+  "design_evolution_notes": {
+    "v1_v3": "Le nominated (con nome + abilità/magie) esistevano già come concetto ma non c'era un catalogo strutturato. Ogni PG 'inventava' le proprie nominated.",
+    "v3_1_fase_3": "FASE 3 della transizione v3.1: questo catalogo è stato CREATO. 10 nominated per Approccio (40 totali), mix 6 Specializzate + 4 Generiche. Le nominated Heart-linked NON sono in questo catalogo — sono nelle liste sbloccate dai Cuori (vedi 07_catalogo_cuori.json). Questo catalogo serve per le nominated scelte liberamente alla creazione (Step 4) e durante la progressione (Maturation, Riallineamento swap)."
+  }
+}

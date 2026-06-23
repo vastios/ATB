@@ -1,0 +1,160 @@
+{
+  "section_id": "02-06",
+  "section_name": "Riallineamento degli Approcci — Maturation e Riallineamento, Due Dimensioni Ortogonali di Progressione",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce le DUE dimensioni di progressione del PG in v3.1: MATURATION (crescita verticale — una Carta Approccio BIANCA diventa NOMINATED libera) e RIALLINEAMENTO (crescita orizzontale — 1 Punto Approccio si sposta da un Approccio A a un Approccio B). Le due dimensioni sono ORTOGONALI: il PG può fare l'una, l'altra, entrambe, o nessuna. Nessuna è obbligatoria. Questo file è la CASA UNICA per le meccaniche di progressione v3.1.",
+  "v3_1_paradigm_shift": {
+    "name": "Svolta v3.1 — Da 'Divento Più Forte' a 'Evolvo il Mio Mindset'",
+    "principle": "Nella v3 (e versioni precedenti), la crescita del PG era 'divento più forte' — ma con somma fissa a 10, questo era ASSURDO (non puoi 'diventare più forte' se la somma resta 10). In v3.1, la crescita è 'evolvo il mio modo di affrontare le cose'. Due dimensioni: MATURATION (più profondo in un mindset esistente) e RIALLINEAMENTO (cambio di mindset).",
+    "what_changes_narratively": "La crescita non è più 'acquisisco più potere' ma 'evolvo la mia identità narrativa'. Un PG che matura impara una tecnica nuova in un Approccio che già coltiva. Un PG che si riallinea ammette che il proprio modo di affrontare le cose deve cambiare — e lo cambia.",
+    "what_does_not_change_mechanically": "La somma dei Punti Approccio resta SEMPRE 10. Le 10 Carte Approccio fisiche sul tavolo restano sempre 10. Le nominated Heart-linked sono PROTETTE (mai toccate da Maturation o Riallineamento). La Tabella Potere, il sistema nominated, il Mazzo Vitalità — tutti invariati nel principio."
+  },
+  "two_dimensions_overview": {
+    "name": "Le Due Dimensioni di Crescita",
+    "maturation": {
+      "name": "MATURATION — Crescita Verticale",
+      "what": "Una Carta Approccio BIANCA viene SOSTITUITA fisicamente da una NOMINATED libera (dal catalogo generale).",
+      "trigger": "Successo, forte volontà di crescere, apprendistato con un maestro. Più FLESSIBILE del Riallineamento — non richiede fallimento o crisi.",
+      "narrative": "Il PG impara una nuova tecnica in un Approccio che già coltiva. Non cambia mindset — diventa più PROFONDO in un mindset esistente.",
+      "pool_effect": "Il totale resta 10. Le nominated aumentano, le bianche diminuiscono. Al limite (raro): 10 nominated e 0 bianche — Maturation non più possibile, solo Riallineamento.",
+      "mazzo_vitalita_effect": "NESSUNO. Il valore dell'Approccio NON cambia — la composizione T1-T5 del Mazzo Vitalità resta identica."
+    },
+    "realignment": {
+      "name": "RIALLINEAMENTO — Crescita Orizzontale",
+      "what": "Un PUNTO di Approccio si sposta da un Approccio A a un Approccio B. Composizione del pool si aggiorna di conseguenza.",
+      "trigger": "Solo in momenti narrativi di FALLIMENTO o CRISI — quando il PG è costretto ad ammettere a se stesso che ha sbagliato qualcosa e deve cambiare.",
+      "narrative": "Le esperienze mi hanno insegnato che il mio modo di affrontare le cose deve cambiare. Non divento più forte — divento DIVERSO.",
+      "pool_effect": "Il totale resta 10. La distribuzione dei valori cambia. Le nominated Heart-linked restano.",
+      "mazzo_vitalita_effect": "Il mazzo Vitalità si AGGIORNA dinamicamente. Le carte rimosse (dall'Approccio A sceso) tornano nella Riserva Comune. Le nuove carte (per l'Approccio B salito) vengono selezionate dal Catalogo seguendo la nuova composizione."
+    },
+    "two_dimensional_growth": "La crescita del PG ha DUE dimensioni ortogonali. Il PG può: solo maturare (rimanere nello stesso mindset ma acquisire tecniche), solo riallineare (cambiare mindset senza acquisire tecniche nuove), fare entrambe (cambiare mindset E acquisire tecniche nel nuovo mindset), o nessuna (restare fermo). NON c'è 'livello' del PG in senso classico — la progressione è narrativa e contestuale.",
+    "no_level_system": "Importante: NON esiste un 'livello del PG' come in D&D. Le due dimensioni di progressione avvengono quando la NARRATIVA le giustifica, non in base a XP accumulati. Il Master è arbitro del quando."
+  },
+  "maturation_full": {
+    "name": "MATURATION — Dettaglio Completo",
+    "trigger_narrative": "Il PG vive un momento di apprendistato, intuizione o successo che gli permette di APPROFONDIRE un Approccio che già coltiva. Non è mai 'automatico' — richiede un momento narrativo.",
+    "examples_of_triggers": [
+      "Il PG sconfigge un nemico difficile usando un Approccio specifico — il successo cristallizza la tecnica.",
+      "Il PG trascorre tempo con un maestro che gli insegna una tecnica specifica (side-quest di apprendistato).",
+      "Il PG riflette profondamente durante un riposo prolungato e 'vede' come combinare meglio le proprie capacità.",
+      "Il PG trova un testo/oggetto che gli ispira una nuova prospettiva su un Approccio che già coltiva."
+    ],
+    "procedure_step_by_step": [
+      "Step 1: Il giocatore dichiara l'intenzione di maturare in un certo Approccio (deve avere almeno 1 carta BIANCA di quell'Approccio).",
+      "Step 2: Il Master valuta se la narrativa giustifica la Maturation (se no, può rinviare a un momento più consono).",
+      "Step 3: Il giocatore SCEGLIE una nominated LIBERA (NON Heart-linked) dal catalogo generale. La nominated deve essere dello stesso Approccio della carta bianca sostituita.",
+      "Step 4: La carta BIANCA viene fisicamente SOSTITUITA dalla nominated scelta. La nuova nominated entra nel pool attivo.",
+      "Step 5: Il totale resta 10. Le nominated aumentano di 1, le bianche diminuiscono di 1.",
+      "Step 6: NESSUNA modifica al Mazzo Vitalità — il valore dell'Approccio è invariato."
+    ],
+    "constraints": {
+      "must_replace_bianca": "La Maturation sostituisce SEMPRE una BIANCA con una NOMINATED. Non si può sostituire una nominated con un'altra nominated.",
+      "must_be_same_approccio": "La nominated scelta deve essere dello stesso Approccio della carta bianca sostituita. Non si può 'maturare Impeto' scegliendo una nominated Risonanza.",
+      "heart_linked_excluded": "Le nominated Heart-linked NON sono oggetto di Maturation. Sono già nominated dalla creazione, legate ai Cuori. La Maturation riguarda SOLO le bianche.",
+      "max_nominated_per_approccio": "Non esiste un limite massimo di nominated per Approccio (oltre il limite naturale del valore dell'Approccio). Se hai Impeto 3 e 3 nominated Impeto, non puoi maturare ulteriormente in Impeto — devi o riallineare o maturare in un altro Approccio con almeno una bianca.",
+      "total_pool_cap": "Il pool resta sempre 10 carte. Quando tutte le 10 sono nominated (raro), la Maturation non è più possibile in nessun Approccio."
+    },
+    "narrative_example": {
+      "scenario": "PG Guerriero con Impeto 5, Istinto 3, Analisi 1, Risonanza 1. Pool: 5 Impeto (2 nominated + 3 bianche), 3 Istinto (1 nominated + 2 bianche), 1 Analisi (1 nominated Heart-linked), 1 Risonanza (1 bianca).",
+      "trigger": "Il PG sconfigge un Orco Epico usando la sua Spada Lunga con una tecnica mai provata prima. Il Master riconosce il momento di crescita.",
+      "maturation": "Il giocatore sceglie di maturare in Impeto. Sceglie la nominated libera 'Fendente Devastante' (Impeto Specializzata: 3 abilità progressive di taglio). Sostituisce una delle 3 bianche Impeto con questa nominated.",
+      "result": "Pool aggiornato: 5 Impeto (3 nominated: 1 Heart-linked + 1 libera precedente + 1 nuova 'Fendente Devastante' + 2 bianche), 3 Istinto (1 nominated + 2 bianche), 1 Analisi (1 nominated), 1 Risonanza (1 bianca). Totale ancora 10 carte. Nominated totali: 5 (era 4)."
+    }
+  },
+  "realignment_full": {
+    "name": "RIALLINEAMENTO — Dettaglio Completo",
+    "trigger_narrative": "Il PG vive un FALLIMENTO o una CRISI che lo costringe ad ammettere a se stesso che il proprio modo di affrontare le cose deve cambiare. Il Riallineamento NON è mai banale o desiderato — è una RESA narrativa, un'ammissione di errore.",
+    "examples_of_triggers": [
+      "Il PG fallisce una missione cruciale per essere stato troppo impulsivo (eccesso Impeto) — ammette che deve imparare a studiare di più (Analisi).",
+      "Il PG perde un compagno per non essere stato abbastanza reattivo (carenza Istinto) — ammette che deve smettere di pensare troppo e agire.",
+      "Il PG scopre che il suo codice morale era sbagliato (crisi DOTTRINA) — il riallineamento riflette il nuovo modo di approcciar il mondo.",
+      "Il PG incontra un mentore che lo sfida a esplorare un Approccio che ha sempre trascurato.",
+      "Il PG sopravvive a un combattimento che lo ha quasi ucciso perché troppo specializzato — ammette che deve diversificare."
+    ],
+    "procedure_step_by_step": [
+      "Step 1: Il giocatore dichiara l'intenzione di riallinearsi: -1 punto all'Approccio A, +1 punto all'Approccio B (A ≠ B).",
+      "Step 2: Il Master valuta se il trigger narrativo giustifica il Riallineamento (deve essere un momento di FALLIMENTO o CRISI significativo, non un capriccio).",
+      "Step 3: L'Approccio A scende di 1, l'Approccio B sale di 1. La somma resta 10.",
+      "Step 4: Si RIMUOVE una carta dall'Approccio A (regola swap sotto). Si AGGIUNGE una carta all'Approccio B (regola swap sotto).",
+      "Step 5: Le nominated Heart-linked sono PROTETTE — non vengono mai toccate dal Riallineamento.",
+      "Step 6: Il Mazzo Vitalità si AGGIORNA dinamicamente: 6 carte di colore A tornano nella Riserva Comune, 6 carte di colore B vengono selezionate dal Catalogo (o dalla Riserva Comune).",
+      "Step 7: Il PG ha ora un pool aggiornato di 10 carte con i nuovi valori di Approccio."
+    ],
+    "swap_rule_critical": {
+      "name": "Regola di Scambio (SWAP) — Critica",
+      "principle": "Quando si rimuove una carta dall'Approccio A e se ne aggiunge una all'Approccio B, il TIPO di carta (nominated/bianca) segue la carta RIMOSSA — non è a scelta del giocatore.",
+      "case_1_bianca_to_bianca": "Se la carta rimossa dall'Approccio A è BIANCA, anche la carta aggiunta all'Approccio B è BIANCA. La logica: hai 'perso' energia grezza da A, hai 'guadagnato' energia grezza in B. Nessuna tecnica si sposta.",
+      "case_2_nominated_to_nominated": "Se la carta rimossa dall'Approccio A è NOMINATED (libera, NON Heart-linked), anche la carta aggiunta all'Approccio B è NOMINATED (scelta dal catalogo del nuovo Approccio). La logica: hai abbandonato una tecnica in A, hai appreso una nuova tecnica in B. Lo 'slot tecnico' si sposta.",
+      "player_chooses_which_to_remove": "Il giocatore SCEGLIE quale carta rimuovere dall'Approccio A (tra le candidate rimovibili — vedi sotto). Quindi decide indirettamente anche il tipo della carta aggiunta in B.",
+      "removable_candidates": "Le candidate rimovibili dall'Approccio A sono: tutte le BIANCHE + tutte le NOMINATED LIBERE (non Heart-linked). Le nominated Heart-linked sono PROTETTE — non sono mai rimovibili.",
+      "example_bianca_swap": "PG con Impeto 3 (1 nominated Heart-linked + 1 nominated libera + 1 bianca) riallinea -1 Impeto +1 Analisi. Se sceglie di rimuovere la BIANCA Impeto: perde la bianca, aggiunge una BIANCA Analisi. Le nominated Impeto restano entrambe.",
+      "example_nominated_swap": "Stesso PG. Se sceglie di rimuovere la NOMINATED LIBERA Impeto: perde quella nominated, aggiunge una NOMINATED LIBERA Analisi (scelta dal catalogo). La nominated Heart-linked Impeto resta (protetta), la bianca Impeto resta."
+    },
+    "heart_linked_protection_full": {
+      "name": "Protezione delle Nominated Heart-linked",
+      "principle": "Le nominated Heart-linked sono PROTETTE dal Riallineamento. NON possono MAI essere rimosse dal pool, indipendentemente da cosa accade all'Approccio.",
+      "what_if_approccio_drops_below_heart_linked_count": "Se l'Approccio A deve scendere a un livello inferiore al numero di nominated Heart-linked che contiene (es. Impeto 2 con 1 Heart-linked + 1 libera + 0 bianche, vuole scendere a 1), il Riallineamento NON PUÒ AVVENIRE in quella direzione. La nominated Heart-linked è protetta e resta nel pool — quindi l'Approccio non può scendere sotto il numero delle proprie Heart-linked.",
+      "narrative_justification": "Le nominated Heart-linked sono TECNICHE APPRESE PER via dei Cuori. I Cuori NON cambiano (PASSATO/DOTTRINA/LEGAMI sono immutabili) — quindi anche le tecniche che ne derivano restano. Il PG può cambiare mindset, ma non può 'dimenticare' ciò che ha appreso per via della propria essenza.",
+      "extreme_case_all_heart_linked": "Se un Approccio contiene SOLO nominated Heart-linked (nessuna libera, nessuna bianca), quell'Approccio è 'bloccato' — non può scendere di livello. Il PG dovrebbe considerare il Riallineamento in un'altra direzione."
+    },
+    "mazzo_vitalita_dynamic_update_full": {
+      "name": "Aggiornamento Dinamico del Mazzo Vitalità",
+      "principle": "Quando il Riallineamento modifica i valori degli Approcci, il Mazzo Vitalità si AGGIORNA per riflettere i nuovi valori. 6 carte di colore A (sceso) tornano nella Riserva Comune. 6 carte di colore B (salito) vengono selezionate dal Catalogo o dalla Riserva Comune.",
+      "selection_of_new_cards": "Le 6 nuove carte di colore B devono rispettare la composizione T1-T5 della Distribuzione Asimmetrica per Livello al NUOVO livello di B. Vedi 03_vitalita/01_mazzo_vitalita.json → distribuzione_asimmetrica_per_livello.",
+      "removal_of_old_cards": "Le 6 carte rimosse di colore A sono scelte in modo da rispettare la composizione T1-T5 della Distribuzione Asimmetrica per Livello al NUOVO livello di A (più basso). Le carte 'in eccesso' rispetto alla nuova composizione vengono rimosse.",
+      "hand_preserved": "La mano del PG (5 carte) NON viene modificata dal Riallineamento. Se la mano contiene carte di colore A che erano nel mazzo, restano in mano — sono giocate normalmente, semplicemente non sono più 'sostituibili' pescandole dal mazzo (perché il mazzo è stato aggiornato).",
+      "combat_restriction": "Il Riallineamento NON avviene durante il combattimento. Avviene SOLO in momenti narrativi di riposo o riflessione (dopo un fallimento, durante un riposo prolungato, in un momento di introspezione)."
+    },
+    "narrative_example": {
+      "scenario": "PG Guerriero con Impeto 5, Istinto 3, Analisi 1, Risonanza 1. Pool: 5 Impeto (1 Heart-linked + 2 libere + 2 bianche), 3 Istinto (1 Heart-linked + 0 libere + 2 bianche), 1 Analisi (1 Heart-linked), 1 Risonanza (1 bianca).",
+      "trigger": "Il PG carica un nemico Epico da solo senza studiarlo prima, e perde un Cuore (Anatema). Dopo il combattimento, il PG riflette: 'La mia irruenza mi ha quasi ucciso. Devo imparare a studiare prima di agire.'",
+      "realignment_decision": "Il giocatore dichiara: -1 Impeto (5 → 4), +1 Analisi (1 → 2).",
+      "swap_choice": "Il giocatore sceglie quale carta rimuovere dall'Impeto. Tra le candidate: 2 libere + 2 bianche. Sceglie di rimuovere una BIANCA Impeto (vuole preservare le sue nominated Impeto).",
+      "swap_execution": "Rimuove 1 BIANCA Impeto. Aggiunge 1 BIANCA Analisi. Pool aggiornato: 4 Impeto (1 Heart-linked + 2 libere + 1 bianca), 3 Istinto (1 Heart-linked + 2 bianche), 2 Analisi (1 Heart-linked + 1 bianca), 1 Risonanza (1 bianca). Totale 10 carte.",
+      "mazzo_vitalita_update": "Il mazzo si aggiorna: 6 carte Impeto vengono rimosse (tornano nella Riserva Comune), 6 carte Analisi vengono aggiunte (dal Catalogo o dalla Riserva Comune). La composizione T1-T5 riflette i nuovi valori: Impeto 4 (T1×3, T2×3, T3×4, T4×8, T5×6 = 24 carte) e Analisi 2 (T1×5, T2×4, T3×3 = 12 carte)."
+    },
+    "extreme_case_realignment_to_zero": {
+      "name": "Caso Estremo: Riallineamento verso 0",
+      "rule": "NON è possibile riallineare un Approccio a 0. Il valore MINIMO di un Approccio è 1 (limite del point buy alla creazione, mantenuto dopo i riallineamenti).",
+      "heart_linked_justification": "Anche se un Approccio ha solo 1 carta (Heart-linked), quella carta RESTA. Il PG non può 'dimenticare' la propria essenza. Se vuole smettere di usare un Approccio, deve VIVERLO in modo passivo (non giocare carte di quel colore) — ma meccanicamente l'Approccio resta a 1.",
+      "narrative_interpretation": "Il PG può scegliere di NON USARE un Approccio, ma l'Approccio resta parte della sua identità. Un Orfano di Guerra non può 'dimenticare' la sopravvivenza urbana — può solo scegliere di non usarla."
+    }
+  },
+  "two_dimensions_combined": {
+    "name": "Le Due Dimensioni Combinate",
+    "principle": "Il PG può combinare Maturation e Riallineamento nel corso della campagna. Non sono alternative — sono ortogonali.",
+    "typical_progression_arcs": [
+      "PG giovane: molte Maturation (impara tecniche nei propri Approcci), pochi Riallineamenti (la sua identità è ancora solida).",
+      "PG maturo: bilanciato tra Maturation e Riallineamento. Ha tecniche solide ma ha anche vissuto abbastanza da rivedere alcuni mindset.",
+      "PG veteran: pochi Riallineamenti (la sua identità è ora consolidata), poche Maturation (ha già esplorato a fondo i propri Approcci).",
+      "PG in crisi esistenziale: molti Riallineamenti (sta rivedendo tutto), poche Maturation (imparare tecniche nuove non è la priorità)."
+    ],
+    "narrative_design_intent": "Le due dimensioni permettono al PG di EVOLVERE in modo credibile. Non c'è 'livello 20' da raggiungere — c'è una STORIA di crescita che il giocatore e il Master costruiscono insieme. La meccanica SEGUE la narrazione, non la precede.",
+    "max_nominated_target": "Un PG ambizioso potrebbe puntare a 10 nominated tutte diverse (Maturation completa). Ma questo è RARO e richiede tempo narrativo significativo. Più comunemente, il PG avrà 6-8 nominated e 2-4 bianche anche a fine campagna — le bianche restano come 'potenziale inespresso' che la narrazione potrebbe attivare."
+  },
+  "master_role": {
+    "name": "Il Ruolo del Master",
+    "principle": "Il Master è ARBITRO delle due dimensioni di progressione. Valuta se i trigger narrativi giustificano Maturation o Riallineamento, e li autorizza (o rinvia).",
+    "maturation_master_advice": "Per la Maturation: favorisci trigger legati al successo, all'apprendistato, alla riflessione. Non autorizzare Maturation 'perché sì' — richiedi un momento narrativo. MA NON essere troppo restrittivo: la Maturation è la 'crescita naturale' del PG, e negarla costantemente scoraggia il giocatore.",
+    "realignment_master_advice": "Per il Riallineamento: favorisci trigger legati al fallimento, alla crisi, all'evoluzione interiore. NON autorizzare Riallineamento 'perché il giocatore vuole ottimizzare' — deve essere motivato narrativamente. Una buona regola: il Riallineamento dovrebbe COSTARE qualcosa al giocatore (in termini narrativi: ammissione di errore, dolore interiore, ricostruzione).",
+    "balance_advice": "Una campagna tipica potrebbe vedere 3-5 Maturation e 1-2 Riallineamenti per PG. Troppi Riallineamenti indicano che il PG è 'instabile' (e questo dovrebbe essere riflesso narrativamente). Troppi pochi indicano che il PG è 'rigido' (anche questo riflesso narrativamente)."
+  },
+  "interaction_with_other_systems": {
+    "cuori": "I Cuori NON sono toccati da Maturation o Riallineamento. Sono l'ESSENZA del PG, immutabile. Le nominated Heart-linked (che i Cuori sbloccano) sono protette. Vedi 02_personaggio/04_cuori.json",
+    "mazzo_vitalita": "Solo il Riallineamento (non la Maturation) modifica il Mazzo Vitalità. Vedi 03_vitalita/01_mazzo_vitalita.json → dynamic_deck_mechanic_v3_1",
+    "creazione_pg": "Alla creazione, il PG ha 4-5 nominated (3 Heart-linked + 1-2 libere) + 5-6 bianche. Le due dimensioni di progressione evolvono questa composizione nel tempo. Vedi 02_personaggio/05_creazione_pg.json",
+    "nominated_structure": "Vedi 02_personaggio/03_carte_approccio_nominated.json per la struttura delle nominated (Specializzata vs Generica) e il pool misto."
+  },
+  "open_questions_v3_1": {
+    "nominated_catalog_free": "RISOLTO in Fase 3: catalogo nominated LIBERE completato in 02_personaggio/08_catalogo_nominated_libere.json (40 carte = 10 per Approccio, mix 6 Specializzate + 4 Generiche). Referenziato da Maturation e Riallineamento swap.",
+    "master_guide_progression": "DA CREARE in 11_master_guide: linee guida dettagliate per il Master su come gestire le due dimensioni di progressione (esempi di trigger appropriati, bilanciamento, gestione di giocatori che vogliono 'ottimizzare' piuttosto che roleplayare).",
+    "max_nominated_per_approccio_rule": "Domanda aperta: dovrebbe esserci un limite massimo di nominated per Approccio (es. max 3)? Attuale regola: nessun limite esplicito, oltre il limite naturale del valore dell'Approccio. Da raffinare con il playtest."
+  },
+  "design_evolution_notes": {
+    "v1_v3": "NON ESISTEVANO dimensioni di progressione. Il PG era 'statico' dopo la creazione (eccetto sostituzioni narrative occasionali di carte bianche con nominated — meccanica vaga e non formalizzata).",
+    "v3_1": "ARCHITETTURA v3.1: introduce DUE dimensioni di progressione formalizzate — MATURATION (bianca → nominated libera, dopo successo) e RIALLINEAMENTO (1 punto A → B, dopo fallimento). Le due dimensioni sono ORTOGONALI e ORTOGONALI alla Narrazione (la meccanica segue la storia). Le nominated Heart-linked sono PROTETTE da entrambe. Il Mazzo Vitalità si aggiorna dinamicamente solo col Riallineamento. Somma degli Approcci resta SEMPRE 10 — la crescita è 'evoluzione del mindset', non 'acquisizione di potere'.",
+    "v3_1_fase_3": "FASE 3 della transizione v3.1: catalogo nominated LIBERE completato in 02_personaggio/08_catalogo_nominated_libere.json (40 carte = 10 per Approccio) — referenziato da Maturation e Riallineamento swap. Catalogo Cuori completato in 02_personaggio/07_catalogo_cuori.json (27 Cuori = 9 per categoria) — referenziato da cuori + heart-linked protection rules. Le nominated Heart-linked sono le nominated scelte dal catalogo Cuori alla creazione (una per Cuore, 3 totali), e sono PROTETTE da entrambe le dimensioni di progressione."
+  }
+}

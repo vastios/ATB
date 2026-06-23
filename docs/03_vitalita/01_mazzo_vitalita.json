@@ -1,17 +1,28 @@
 {
   "section_id": "03-01",
-  "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica del PG",
-  "version": "1.0-placeholder",
+  "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica, Distribuzione Asimmetrica per Livello",
+  "version": "2.0",
   "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "v3_1_status": "PLACEHOLDER — Questo file sarà COMPLETAMENTE RISCRITTO in Fase 2 della transizione v3.1. Il contenuto attuale riflette ancora la v3 (mazzo fisso alla creazione, composizione fissa T1-T5). Le decisioni v3.1 già prese sono: (1) il mazzo resta 60 carte (10 punti × 6 carte/punto); (2) la composizione T1-T5 è DETERMINATA dalla Distribuzione Asimmetrica per Livello (4 firme temporali uniche per i 4 Approcci, già definita in v1); (3) il mazzo DIVENTA DINAMICO — quando gli Approcci vengono riallineati, la composizione T1-T5 si aggiorna; (4) le carte rimosse dal mazzo tornano nella RISERVA COMUNE (utilizzabili da altri PG); (5) le nuove carte vengono selezionate dal Catalogo seguendo la tabella del nuovo livello.",
-  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali, proporzionali agli Approcci. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. In v3.1 il mazzo è DINAMICO — la composizione T1-T5 muta quando gli Approcci vengono riallineati. Questo file è la CASA UNICA per le proprietà strutturali del mazzo.",
+  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali (10 Punti Approccio × 6 carte per punto), proporzionali agli Approcci. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. In v3.1 il mazzo è DINAMICO — la composizione T1-T5 muta quando gli Approcci vengono riallineati. La composizione è determinata dalla DISTRIBUZIONE ASIMMETRICA PER LIVELLO: 4 firme temporali uniche per i 4 Approcci. Questo file è la CASA UNICA per le proprietà strutturali del mazzo e per la tabella di composizione.",
+  "v3_1_paradigm_shift": {
+    "name": "Svolta v3.1 — Mazzo Dinamico",
+    "what_changes": [
+      "Il mazzo NON è più 'fisso alla creazione'. È DINAMICO: la composizione T1-T5 muta quando gli Approcci vengono riallineati (vedi 02_personaggio/06_riallineamento_approcci.json).",
+      "Le carte rimosse dal mazzo durante un riallineamento tornano nella RISERVA COMUNE — una collezione condivisa di carte Vitalità utilizzabili da altri PG della campagna.",
+      "Le nuove carte necessarie (per un Approccio alzato) vengono selezionate dal Catalogo seguendo la tabella di scalatura del NUOVO livello.",
+      "La DISTRIBUZIONE ASIMMETRICA PER LIVELLO è ora FORMALIZZATA in questo file: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli (1-5)."
+    ],
+    "why_dynamic": "Se gli Approcci possono riallinearsi (v3.1), il mazzo DEVE seguire il riallineamento — altrimenti il PG avrebbe carte di un Approccio che non ha più. Il mazzo dinàmico rende COERENTE la riserva di energia col mindset attuale del PG.",
+    "what_does_not_change_mechanically": "La dimensione del mazzo resta 60 carte (10 Punti × 6 carte/punto). La mano resta 5 carte. Le regole di gioco (SCOPERTA/COPERTA), di danno (Milling/Esaustione), di esaurimento (svenimento + ferita Cuore) — TUTTE invariate. Cambia solo la COMPOSIZIONE T1-T5 che ora muta dinamicamente."
+  },
   "deck_properties": {
     "name": "Proprietà Strutturali del Mazzo",
     "deck_size": "60 carte Vitalità totali.",
     "proportionality_rule": "Il mazzo è PROPORZIONALE agli Approcci del PG: 10 Punti Approccio × 6 carte per punto. Un PG con valori diversi ma somma 10 ha lo stesso mazzo di 60 carte totali — MA la COMPOSIZIONE T1-T5 di ciascun colore dipende dal VALORE di ciascun Approccio (Distribuzione Asimmetrica per Livello).",
-    "composition_v3_1": "Il mazzo ha una distribuzione di Costo Tempo (T1-T5) e Tag DETERMINATA dagli Approcci attuali del PG. Non è più 'fisso alla creazione' — muta coi riallineamenti. La tabella di scalatura (Approccio × T) è la Distribuzione Asimmetrica per Livello (già definita in v1, sarà formalizzata in Fase 2).",
-    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi)."
+    "composition_v3_1": "Il mazzo ha una distribuzione di Costo Tempo (T1-T5) e Tag DETERMINATA dagli Approcci attuali del PG. Non è più 'fisso alla creazione' — muta coi riallineamenti. La tabella di scalatura (Approccio × Livello) è la Distribuzione Asimmetrica per Livello, formalizzata in questo file (sezione 'distribuzione_asimmetrica_per_livello').",
+    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi).",
+    "no_shuffle_rule": "Il mazzo NON si rimescola MAI. Le carte vengono pescate in ordine. Quando il mazzo finisce, si innesca l'Esaurimento (vedi 03_vitalita/04_esaurimento.json)."
   },
   "hand_mechanics": {
     "name": "La Mano del PG",
@@ -42,6 +53,133 @@
     ],
     "cross_reference_full": "Vedi 03_vitalita/02_giocare_vitalita.json per come si usano i tag"
   },
+  "distribuzione_asimmetrica_per_livello": {
+    "name": "Distribuzione Asimmetrica per Livello — Le 4 Firme Temporali",
+    "principle": "Per ciascun Approccio con valore N, il mazzo contiene N×6 carte di quel colore. La COMPOSIZIONE T1-T5 di quelle N×6 carte NON è uniforme — segue una FIRMA TEMPORALE UNICA per ciascun Approccio. Le firme sono DIVERSIVISE tra loro e riflettono l'identità narrativa di ciascun Approccio.",
+    "design_philosophy": "Ogni Approccio ha un 'profilo temporale' che ne riflette l'identità: Impeto (irruenza) ha molte carte T4-T5 (azioni devastanti); Analisi (utility/osservazione) ha molte carte T1-T2 (utility rapida); Istinto (riflessi) ha CARICATURA delle T1-T2 (azioni immediate); Risonanza (empatia elementale) ha una distribuzione bilanciata centrata su T3.",
+    "structure_of_tables": "Per ciascun livello N (1-5), la tabella specifica QUANTE carte T1, T2, T3, T4, T5 sono presenti. La somma è SEMPRE N×6. A livello 1-2, tutti gli Approcci condividono la stessa distribuzione BASE COMUNE. Dal livello 3, ogni Approccio sviluppa il proprio profilo unico. T5 è accessibile dal livello 4 per tutti gli Approcci.",
+    "firma_impeto": {
+      "name": "Firma Temporale — IMPETO (Rosso, Irruenza)",
+      "identity": "Agire senza riflettere, sfondare, devastation. Le tecniche Impeto sono O TUTTO O NULLA: colpi veloci quando serve sfondare, colpi devastanti quando serve annientare. Pochi 'attacchi medi' — la forza di Impeto è negli estremi.",
+      "profile_summary": "Basse T1-T2 (poche azioni rapide), T4-T5 ALTE (molte azioni devastanti). T3 media.",
+      "narrative_explanation": "Un PG Impeto non spreca tempo su azioni medie — o si sfonda subito, o si carica per la devastazione totale."
+    },
+    "firma_analisi": {
+      "name": "Firma Temporale — ANALISI (Giallo, Studio/Osservazione)",
+      "identity": "Studio, metodo, utility, crafting. Le tecniche Analisi sono VELOCI e NUMEROSE: scassinare, identificare, decifrare, osservare. Pochi 'poteri massivi' — Analisi è la pratica del 'molte piccole mosse accurate'.",
+      "profile_summary": "T1-T2 ALTissime (molte utility rapide), T4-T5 BASSE (pochi poteri massimi). T3 media.",
+      "narrative_explanation": "Un PG Analisi risolve i problemi con molte mosse piccole e precise, non con una grande magia. Il suo arsenale riflette questa filosofia."
+    },
+    "firma_istinto": {
+      "name": "Firma Temporale — ISTINTO (Blu, Riflessi/Reazione)",
+      "identity": "Riflessi, destrezza, reazione immediata. Le tecniche Istinto sono QUASI TUTTE veloci — un PG Istinto agisce prima ancora di pensare. Le azioni 'lunghe' (T4-T5) sono rare — Istinto è il regno dell'istante.",
+      "profile_summary": "T1-T2 ALTISSIME (quasi tutto l'arsenale è rapido), T4-T5 MINIME (pochissime azioni di impegno lungo).",
+      "narrative_explanation": "Un PG Istinto raramente 'carica' un'azione lunga — agisce e reagisce. Il suo arsenale è quasi interamente T1-T3."
+    },
+    "firma_risonanza": {
+      "name": "Firma Temporale — RISONANZA (Verde, Empatia/Elementale)",
+      "identity": "Empatia, connessione, magia elementale e di cura. Le tecniche Risonanza hanno un profilo BILANCIATO centrato su T3 — né troppo veloci (la magia richiede focus) né troppo lente (la connessione è naturale). È l'Approccio più 'medio' nel profilo temporale.",
+      "profile_summary": "T1-T2 MEDIE, T3 ALTA (cuore dell'arsenale), T4-T5 MEDIE. Profilo a campana centrato su T3.",
+      "narrative_explanation": "Un PG Risonanza bilancia istinto e potenza. Le sue magie sono 'medie' in tutti i sensi — né rapidissime né devastanti, ma profonde."
+    },
+    "tables": {
+      "name": "Tabelle Complete — Composizione T1-T5 per Approccio × Livello",
+      "level_1_base_comune": {
+        "applicability": "Livello 1 — tutti gli Approcci condividono la stessa distribuzione base.",
+        "total_cards": 6,
+        "composition": {"T1": 4, "T2": 2, "T3": 0, "T4": 0, "T5": 0},
+        "rationale": "Alla base, il PG ha solo accesso ad azioni rapide. T3, T4, T5 non sono ancora accessibili. Tutti gli Approcci partono dallo stesso arsenale minimo."
+      },
+      "level_2_base_comune": {
+        "applicability": "Livello 2 — tutti gli Approcci condividono la stessa distribuzione base.",
+        "total_cards": 12,
+        "composition": {"T1": 5, "T2": 4, "T3": 3, "T4": 0, "T5": 0},
+        "rationale": "Introduzione di T3. T4 e T5 non ancora accessibili. La specializzazione per Approccio inizia dal livello 3."
+      },
+      "level_3_specialization_starts": {
+        "applicability": "Livello 3 — ogni Approccio sviluppa il proprio profilo unico. T5 NON ancora accessibile.",
+        "total_cards": 18,
+        "impeto": {"T1": 3, "T2": 3, "T3": 4, "T4": 8, "T5": 0, "sum": 18},
+        "analisi": {"T1": 8, "T2": 6, "T3": 4, "T4": 0, "T5": 0, "sum": 18},
+        "istinto": {"T1": 10, "T2": 5, "T3": 3, "T4": 0, "T5": 0, "sum": 18},
+        "risonanza": {"T1": 5, "T2": 5, "T3": 5, "T4": 3, "T5": 0, "sum": 18},
+        "rationale": "Da livello 3, le firme temporali si differenziano. Impeto accelera su T4 (azione devastante media). Analisi mantiene puro utility. Istinto resta puro riflesso. Risonanza introduce T4 moderatamente."
+      },
+      "level_4_t5_accessible": {
+        "applicability": "Livello 4 — T5 accessibile per TUTTI gli Approcci. Le firme sono ora complete.",
+        "total_cards": 24,
+        "impeto": {"T1": 3, "T2": 3, "T3": 4, "T4": 8, "T5": 6, "sum": 24},
+        "analisi": {"T1": 8, "T2": 6, "T3": 5, "T4": 3, "T5": 2, "sum": 24},
+        "istinto": {"T1": 10, "T2": 6, "T3": 4, "T4": 2, "T5": 2, "sum": 24},
+        "risonanza": {"T1": 5, "T2": 5, "T3": 6, "T4": 5, "T5": 3, "sum": 24},
+        "rationale": "L'accesso al T5 riflette il raggiungimento della massima potenza nell'Approccio. Impeto ha il picco di T5 (6 carte). Analisi e Istinto hanno T5 minimale (2 carte ciascuno). Risonanza ha T5 moderato (3 carte)."
+      },
+      "level_5_peak": {
+        "applicability": "Livello 5 — picco massimo. Le firme raggiungono la loro forma definitiva.",
+        "total_cards": 30,
+        "impeto": {"T1": 3, "T2": 3, "T3": 4, "T4": 10, "T5": 10, "sum": 30},
+        "analisi": {"T1": 10, "T2": 8, "T3": 6, "T4": 4, "T5": 2, "sum": 30},
+        "istinto": {"T1": 12, "T2": 8, "T3": 5, "T4": 3, "T5": 2, "sum": 30},
+        "risonanza": {"T1": 5, "T2": 5, "T3": 7, "T4": 7, "T5": 6, "sum": 30},
+        "rationale": "Al picco, le firme sono massimamente differenziate. Impeto ha 20 carte T4-T5 (2/3 del suo arsenale è 'potenza'). Analisi ha 18 carte T1-T2 (3/5 del suo arsenale è 'utility rapida'). Istinto ha 20 carte T1-T2 (2/3 del suo arsenale è 'riflesso immediato'). Risonanza ha 13 carte T3-T4 (il 'centro' del suo arsenale)."
+      },
+      "table_summary_visualization": {
+        "note": "Per ciascun Approccio al livello N, il giocatore seleziona dal Catalogo delle Carte Vitalità la composizione esatta indicata nella tabella. Il totale per Approccio × 6 = N×6 carte. La somma di tutti gli Approcci = 60 carte (10 × 6).",
+        "example_pg_pure_warrior": {
+          "approcci": "Impeto 5, Istinto 3, Analisi 1, Risonanza 1",
+          "impeto_5_composition": "T1×3, T2×3, T3×4, T4×10, T5×10 = 30 carte",
+          "istinto_3_composition": "T1×10, T2×5, T3×3, T4×0, T5×0 = 18 carte",
+          "analisi_1_composition": "T1×4, T2×2 = 6 carte",
+          "risonanza_1_composition": "T1×4, T2×2 = 6 carte",
+          "total_check": "30 + 18 + 6 + 6 = 60 carte ✓"
+        },
+        "example_pg_balanced": {
+          "approcci": "Impeto 3, Istinto 3, Analisi 2, Risonanza 2",
+          "impeto_3_composition": "T1×3, T2×3, T3×4, T4×8 = 18 carte",
+          "istinto_3_composition": "T1×10, T2×5, T3×3 = 18 carte",
+          "analisi_2_composition": "T1×5, T2×4, T3×3 = 12 carte",
+          "risonanza_2_composition": "T1×5, T2×4, T3×3 = 12 carte",
+          "total_check": "18 + 18 + 12 + 12 = 60 carte ✓"
+        },
+        "example_pg_pure_mage": {
+          "approcci": "Risonanza 5, Analisi 3, Impeto 1, Istinto 1",
+          "risonanza_5_composition": "T1×5, T2×5, T3×7, T4×7, T5×6 = 30 carte",
+          "analisi_3_composition": "T1×8, T2×6, T3×4 = 18 carte",
+          "impeto_1_composition": "T1×4, T2×2 = 6 carte",
+          "istinto_1_composition": "T1×4, T2×2 = 6 carte",
+          "total_check": "30 + 18 + 6 + 6 = 60 carte ✓"
+        }
+      }
+    },
+    "t5_accessibility_rule": "T5 è accessibile dal livello 4 per TUTTI gli Approcci. Sotto il livello 4, NESSUNA carta T5 è presente nel mazzo (anche se la Tabella Potere Vitalità permette teoricamente di giocare a T5 — non hai carte T5 da giocare).",
+    "t4_accessibility_rule": "T4 è accessibile dal livello 3 per TUTTI gli Approcci (eccetto Analisi e Istinto che non hanno T4 fino al livello 4 per la loro firma specifica).",
+    "cross_reference_tabella_potere": "Vedi 05_combattimento/01_tabella_potere.json per la corrispondenza T → Potere (danno base)."
+  },
+  "dynamic_deck_mechanic_v3_1": {
+    "name": "Meccanica del Mazzo Dinamico",
+    "principle": "Quando gli Approcci del PG vengono riallineati (vedi 02_personaggio/06_riallineamento_approcci.json), il mazzo Vitalità si AGGIORNA per riflettere i nuovi valori.",
+    "trigger": "Solo ed esclusivamente durante un RIALLINEAMENTO (1 punto Approccio A → Approccio B, dopo fallimento/crisi narrativa). NON avviene spontaneamente, NON avviene durante il combattimento.",
+    "procedure_step_by_step": [
+      "Step 1: Il riallineamento riduce l'Approccio A di 1 e aumenta l'Approccio B di 1.",
+      "Step 2: Per l'Approccio A (scende di livello, es. da 3 a 2): si RIMUOVONO 6 carte Vitalità di colore A dal mazzo, scegliendo quelle che EXCEDONO la composizione del nuovo livello. Le carte rimosse tornano nella RISERVA COMUNE.",
+      "Step 3: Per l'Approccio B (sale di livello, es. da 2 a 3): si AGGIUNGONO 6 carte Vitalità di colore B al mazzo, selezionate dal Catalogo seguendo la composizione del nuovo livello.",
+      "Step 4: La mano viene mantenuta (nessuna carta scartata dalla mano per il riallineamento). Se la mano contiene carte di colore A che sono state rimosse dal mazzo, restano in mano — sono giocate normalmente, semplicemente non sono più 'sostituibili' pescandole.",
+      "Step 5: Il mazzo aggiornato è ora 60 carte (10×6) con la nuova composizione."
+    ],
+    "riserva_comune": {
+      "name": "La Riserva Comune",
+      "principle": "Una collezione condivisa di carte Vitalità a livello di CAMPAGNA (non di singolo PG). Quando un PG rimuove carte dal proprio mazzo (per riallineamento), queste carte vanno nella Riserva Comune. Quando un PG aggiunge carte al proprio mazzo, può pescarle dalla Riserva Comune (se disponibili) o crearle nuove dal Catalogo.",
+      "narrative_role": "Le carte Vitalità sono 'energia' — non sono legate al singolo PG. Passare dalla riserva comune al mazzo del PG rappresenta l'adattamento dell'energia del PG al nuovo mindset.",
+      "campaign_level": "La Riserva Comune è gestita dal Master. Tener traccia di quali carte sono disponibili (specialmente rare, con tag specifici) è una responsabilità del Master.",
+      "cross_reference": "Vedi 02_personaggio/06_riallineamento_approcci.json per il dettaglio della procedura di riallineamento"
+    },
+    "example_realignment": {
+      "scenario": "PG con Impeto 3, Istinto 3, Analisi 2, Risonanza 2 subisce una crisi narrativa e decide di riallineare: -1 Impeto (3 → 2), +1 Analisi (2 → 3).",
+      "step_1_remove_from_impeto": "Impeto scende da 3 a 2. La composizione Impeto 3 era T1×3, T2×3, T3×4, T4×8 (18 carte). La composizione Impeto 2 è T1×5, T2×4, T3×3 (12 carte). Si rimuovono 6 carte: scegliendo in modo da rispettare la nuova composizione, ad esempio rimuovendo 3 T4, 1 T3, 1 T1, 1 T2. Queste 6 carte tornano nella Riserva Comune.",
+      "step_2_add_to_analisi": "Analisi sale da 2 a 3. La composizione Analisi 2 era T1×5, T2×4, T3×3 (12 carte). La composizione Analisi 3 è T1×8, T2×6, T3×4 (18 carte). Si aggiungono 6 carte: 3 T1, 2 T2, 1 T3, selezionate dal Catalogo (o dalla Riserva Comune se disponibili).",
+      "step_3_result": "Il mazzo aggiornato ha ora 60 carte con la nuova composizione riflettente i valori Impeto 2, Istinto 3, Analisi 3, Risonanza 2."
+    }
+  },
   "fatigue_mechanic": {
     "name": "Fatica (giocare carte COPERTE)",
     "action_v3": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento.",
@@ -61,11 +199,7 @@
     },
     "danno_cronico_trauma": {
       "name": "Danno Cronico (Traumi/Status)",
-      "sources": [
-        "Maledizioni",
-        "Veleni",
-        "Malattie"
-      ],
+      "sources": ["Maledizioni", "Veleni", "Malattie"],
       "action": "Carte rimosse dal gioco o messe nella pila Traumi separata.",
       "effect": "Riducono permanentemente la taglia del Mazzo Vitalità o la mano massima finché non si trova una cura.",
       "recovery": "Molto difficile. Cure specifiche, rituali, lunghi periodi.",
@@ -78,7 +212,7 @@
     "equipment_role": "L'equipaggiamento è fondamentale per risparmiare Mazzo Vitalità. Armi riducono la fatica necessaria, scudi slittano difese, armature assorbono danni."
   },
   "design_evolution_notes": {
-    "v1": "Base — danno milling, fatica dalla mano, esaurimento.",
+    "v1": "Base — danno milling, fatica dalla mano, esaurimento. Distribuzione uniforme (6 carte per punto, ricetta del 6 fissa).",
     "v2": "Aggiunto Danno Acuto vs Cronico, mano sempre piena.",
     "v3": "Aggiunto vincolo: non si aggiunge finché la coda non scorre. Contestualizzato nella Action Grid.",
     "v4": "IL DILEMMA DEL GUERRIERO integrato. Tre opzioni di assorbimento combinabili. Esaurimento = ferita Cuore + svenimento. Cure asimmetriche.",
@@ -86,7 +220,8 @@
     "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
     "v8": "DUE CATEGORIE DI DANNO formalizzate. Soglia del Vuoto. Cuori NON sono opzione per Danno Standard. Punti Impresa NON curano Cuori.",
-    "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE. Ferita Caratteristica SEMPRE sulla Caratteristica.",
-    "v10": "ARCHITETTURA v3: rinomini caratteristiche. Le Carte Vitalità ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5."
+    "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE. Ferita Approccio SEMPRE sull'Approccio.",
+    "v10": "ARCHITETTURA v3: rinomini caratteristiche. Le Carte Vitalità ora attivano poteri dalle CARTE APPROCCIO NOMINATED o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5.",
+    "v11_v3_1": "ARCHITETTURA v3.1: Mazzo DINAMICO. La composizione T1-T5 muta coi riallineamenti degli Approcci. Distribuzione Asimmetrica per Livello FORMALIZZATA: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli. Carte rimosse tornano nella Riserva Comune. T5 accessibile dal livello 4."
   }
 }

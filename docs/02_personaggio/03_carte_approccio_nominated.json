@@ -13,7 +13,7 @@
       "Il sistema Materie FF7 con 5 livelli di potere",
       "Il sistema Esper (creature evocate)"
     ],
-    "v3_1_addition_heart_linked": "In v3.1, 3 delle nominated iniziali sono HEART-LINKED: sono scelte da liste sbloccate dai 3 Cuori Nominati del PG (PASSATO/DOTTRINA/LEGAMI). Rappresentano tecniche apprese PER via di quel Cuore — ad esempio, un PG col Cuore PASSATO 'Orfano di Guerra' può avere accesso a una nominated Istinto 'Sopravvivenza Urbana' che altri PG non possono scegliere. Dettaglio in 02_personaggio/04_cuori.json (riscritto in Fase 2)."
+    "v3_1_addition_heart_linked": "In v3.1, 3 delle nominated iniziali sono HEART-LINKED: sono scelte da liste sbloccate dai 3 Cuori Nominati del PG (PASSATO/DOTTRINA/LEGAMI). Rappresentano tecniche apprese PER via di quel Cuore — ad esempio, un PG col Cuore PASSATO 'Orfano di Guerra' può avere accesso a una nominated Istinto 'Sopravvivenza Urbana' che altri PG non possono scegliere. Dettaglio in 02_personaggio/04_cuori.json e catalogo completo in 02_personaggio/07_catalogo_cuori.json (Fase 3 COMPLETATA)."
   },
   "pool_structure": {
     "total_at_creation": "10 carte totali (somma dei valori point buy). Vedi 02_personaggio/05_creazione_pg.json",
@@ -45,7 +45,7 @@
       "example": "Generica Impeto 'Atleta Nato': (1) Salto, (1) Forza, (1) Resistenza — tutte deboli ma versatili"
     },
     "design_intent": "Il giocatore SCEGLIE il proprio stile. Specializzata = commitment a un'identità (sono il Piròmante). Generica = flessibilità (sono l'Avventuriero).",
-    "heart_linked_note": "Le nominated Heart-linked possono essere Specializzate o Generiche, ma sono scelte da LISTE SPECIFICHE per ciascuna carta Cuore. Dettaglio in 02_personaggio/04_cuori.json (Fase 2)."
+    "heart_linked_note": "Le nominated Heart-linked possono essere Specializzate o Generiche, ma sono scelte da LISTE SPECIFICHE per ciascuna carta Cuore. Dettaglio in 02_personaggio/04_cuori.json e catalogo completo in 02_personaggio/07_catalogo_cuori.json (Fase 3 COMPLETATA)."
   },
   "hosting_abilities_and_spells": {
     "name": "Cosa Ospita una Nominated",
@@ -116,6 +116,7 @@
   },
   "design_evolution_notes": {
     "v14_v3": "ARCHITETTURA v3: le Carte Approccio diventano NOMINATED (assorbono Abilità e Magie fisiche separate). Pool misto nominated/bianche. Le nominated sono Specializzate o Generiche.",
-    "v15_v3_1": "ARCHITETTURA v3.1: introduce le nominated HEART-LINKED (3 nominated scelte da liste sbloccate dai Cuori). Formalizza le due dimensioni di progressione: Maturation (bianca→nominated libera) e Riallineamento (sposta punto tra Approcci). Le nominated Heart-linked sono protette dal Riallineamento."
+    "v15_v3_1": "ARCHITETTURA v3.1: introduce le nominated HEART-LINKED (3 nominated scelte da liste sbloccate dai Cuori). Formalizza le due dimensioni di progressione: Maturation (bianca→nominated libera) e Riallineamento (sposta punto tra Approcci). Le nominated Heart-linked sono protette dal Riallineamento.",
+    "v16_v3_1_fase_3": "FASE 3 della transizione v3.1: catalogo nominated LIBERE completato in 02_personaggio/08_catalogo_nominated_libere.json (40 carte = 10 per Approccio, mix 6 Specializzate + 4 Generiche). Catalogo Cuori completato in 02_personaggio/07_catalogo_cuori.json (27 Cuori = 9 per categoria, ciascuno con lista nominated Heart-linked sbloccate). Le open_questions nominated_cards_catalog e heart_linked_lists sono ora RISOLTE."
   }
 }

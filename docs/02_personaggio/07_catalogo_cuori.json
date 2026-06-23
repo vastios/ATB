@@ -1,0 +1,867 @@
+{
+  "section_id": "02-07",
+  "section_name": "Catalogo Cuori Nominati — 27 Cuori (9 PASSATO + 9 DOTTRINA + 9 LEGAMI), ciascuno con lista nominated Heart-linked",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Catalogo delle 27 carte Cuore NOMINATE scelte alla creazione del PG. Il PG sceglie 1 PASSATO + 1 DOTTRINA + 1 LEGAMI (3 Cuori totali). Ogni Cuore è immutabile (NON cambia mai durante la vita del PG, nemmeno se il legame muore narrativamente — resta come cicatrice). Ogni Cuore SBLOCCA una LISTA di nominated Approccio (Heart-linked) tra cui il PG sceglie UNA nominated alla creazione. Le liste POSSONO sovrapporsi tra Cuori diversi (con coerenza narrativa). Le nominated in lista sono di due tipi: (a) nominated LIBERE del catalogo generale (vedi 02_personaggio/08_catalogo_nominated_libere.json, referenziate per nome) e (b) nominated HEART-LINKED ESCLUSIVE del Cuore (definite inline in questo file, non appaiono nel catalogo libere). Il giocatore sceglie UNA nominated per Cuore = 3 Heart-linked totali alla creazione.",
+  "v3_1_role_in_pipeline": {
+    "creation_step_2": "Alla creazione, il PG sceglie 1 PASSATO + 1 DOTTRINA + 1 LEGAMI da questo catalogo. Per ciascun Cuore, sceglie UNA nominated dalla lista sbloccata dal quel Cuore. Le 3 nominated così scelte sono le HEART-LINKED del PG. Vedi 02_personaggio/05_creazione_pg.json → step_2_choose_hearts",
+    "heart_linked_protection": "Le nominated Heart-linked scelte sono PROTETTE dal Riallineamento (non possono essere rimosse dal pool) e NON sono oggetto di Maturation (sono già nominated dalla creazione). Vedi 02_personaggio/06_riallineamento_approcci.json → heart_linked_protection_full",
+    "cuori_immutabili": "I Cuori NON cambiano mai. Se un LEGAME muore narrativamente (la sorella adottiva muore), il Cuore resta — si trasforma in cicatrice. Le nominated Heart-linked legate a quel Cuore restano giocabili (sono tecniche APPRESE PER via del Cuore, non 'poteri donati dal Cuore attivo'). Vedi 02_personaggio/04_cuori.json → ferita_heart_linked_clarification_critical"
+  },
+  "lista_struttura": {
+    "nome": "Nome del Cuore (alla creazione, il PG lo dichiara)",
+    "categoria": "PASSATO | DOTTRINA | LEGAMI",
+    "narrative": "Descrizione narrativa del Cuore — chi è il PG con questo Cuore, perché è relevante",
+    "heart_linked_lista": [
+      "Lista di 4-5 nominated sbloccate da questo Cuore. Ciascuna nominated è:",
+      "  - 'LIBERA: <nome nominated>' se è nel Catalogo Nominated Libere (vedi 02_personaggio/08_catalogo_nominated_libere.json)",
+      "  - 'ESCLUSIVA: <nome nominated>' se è esclusiva di questo Cuore (definita nella sezione 'nominated_heart_linked_esclusive' di questo file)"
+    ],
+    "scelta_alla_creazione": "Il giocatore SCEGLIE UNA nominated dalla lista. La nominated scelta diventa una delle 3 Heart-linked del PG.",
+    "coerenza_narrativa_con_approcci": "Il Master dovrebbe aiutare il giocatore a scegliere nominated coerenti col proprio profilo di Approcci. Es: se il PG ha Impeto 1, scegliere una nominated Impeto Heart-linked è meccanicamente debole (le abilità saranno sempre livello 1). Meglio scegliere nominated di Approcci che il PG coltiva."
+  },
+  "nominated_heart_linked_esclusive": {
+    "name": "Nominated Heart-linked Esclusive — Definite in questo file",
+    "principle": "Alcuni Cuori sbloccano nominated che NON sono nel Catalogo Nominated Libere. Sono esclusive del Cuore — rappresentano tecniche così specifiche che solo quel Cuore può ispirarle. La loro struttura è identica alle nominated del catalogo (Specializzata o Generica, 3 abilità, tag di attivazione), ma sono accessibili SOLO tramite il Cuore corrispondente.",
+    "why_have_esclusive_nominated": "Le nominated esclusive permettono ai Cuori di offrire tecniche UNIQUE che nessun PG senza quel Cuore può avere. Dà identità al Cuore: 'Tutti gli Orfani di Guerra possono scegliere Sopravvivenza Urbana, ma nessun altro PG può averla.'",
+    "structure": "Ciascuna nominated esclusiva è definita una sola volta in questo file (sotto il Cuore che la sblocca), e referenziata per nome nella lista del Cuore. Se due Cuori diversi la sbloccano (sovrapposizione permessa), la nominated è definita nel Cuore primario e referenziata nell'altro."
+  },
+
+  "catalog": {
+
+    "PASSATO": {
+      "category_metadata": {
+        "name": "PASSATO — Da dove vieni",
+        "narrative_role": "Le origini del PG. Cosa ha vissuto prima di diventare chi è ora. È la radice che ha plasmato il suo modo di approcciar al mondo.",
+        "changeable": "MAI — il passato non si riscrive. Anche se il PG cerca di fuggire dalle proprie origini, il PASSATO resta il suo Cuore 1 (drammaticamente: la negazione non è cancellazione).",
+        "heart_linked_theme": "Le nominated sbloccate dal PASSATO sono tipicamente tecniche di SOPRAVVIVENZA o di CULTURA apprese nell'infanzia/giovinezza. Tecniche che fanno parte di CHI ERI prima di diventare chi sei.",
+        "count": 9
+      },
+      "hearts": [
+
+        {
+          "nome": "Orfano di Guerra",
+          "categoria": "PASSATO",
+          "narrative": "Cresciuto tra le macerie di una città saccheggiata, hai imparato a sopravvivere dove gli adulti morivano. Non hai famiglia, non hai patria — hai solo la tua capacità di cavartela. La guerra ti ha tolto tutto, ma ti ha anche dato qualcosa: una durezza che la pace non potrà mai spegnare. Sai cosa significa avere fame per giorni, dormire con un occhio aperto, fidarti solo di te stesso. La tua irruenza in battaglia non è coraggio — è l'abitudine di chi ha imparato che esitare significa morire.",
+          "heart_linked_lista": [
+            "ESCLUSIVA: Sopravvivenza Urbana",
+            "LIBERA: Sfonda Porte",
+            "LIBERA: Intimiditore",
+            "LIBERA: Atleta Nato",
+            "ESCLUSIVA: Occhio per i Pericoli"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Tutte le nominated in lista sono tecniche di sopravvivenza urbana — coerenti con un'infanzia tra le macerie. 'Occhio per i Pericoli' è esclusiva perché è il sesto senso di chi è cresciuto sotto le bombe.",
+          "esclusive_definite_in_questo_cuore": {
+            "Sopravvivenza Urbana": {
+              "approccio": "Istinto",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Trovare Riparo", "livello_sblocco": 1, "effetto": "In qualsiasi ambiente urbano, il PG identifica in 1 tick il riparo più vicino (anche in zone sconosciute). Sufficiente per ripararsi da inseguimenti o piogge."},
+                {"nome": "Cibo di Strada", "livello_sblocco": 1, "effetto": "Il PG può identificare cibo commestibile in qualsiasi ambiente urbano (rifiuti, mercati abbandonati, topi — sì, anche topi). Una volta per riposo, recupera 1 PF mangiando 'nulla di nutriente'."},
+                {"nome": "Sesto Urbano", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può chiedere al Master 'cosa c'è di strano in questa zona?' — il Master fornisce un indizio su un pericolo urbano (tana di ladri, trappola, presenza ostile)."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Fisico]"],
+              "narrative": "L'arte di sopravvivere dove la civiltà è crollata. Tecniche apprese nei giorni di fame, raffinate negli anni di solitudine."
+            },
+            "Occhio per i Pericoli": {
+              "approccio": "Istinto",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Allerta", "livello_sblocco": 1, "effetto": "Il PG non è mai sorpreso in ambienti urbani o in rovine. Ottiene +2 al Potere nella prima azione difensiva di ogni combattimento."},
+                {"nome": "Sentire la Trappola", "livello_sblocco": 1, "effetto": "Una volta per dungeon/sessione, il PG 'sente' la presenza di una trappola entro 1 zona prima di attivarla. Sufficiente per fermarsi 1 tick prima."},
+                {"nome": "Sangue Freddo", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere contro effetti di paura, terrore o intimidation. La guerra gli ha insegnato che il terrore è solo un'emozione tra le altre."}
+              ],
+              "tag_attivazione": ["[Difesa]", "[Utility]"],
+              "narrative": "Il sesto senso di chi è cresciuto sotto le bombe. Non è percezione magica — è istinto animale affinato dal trauma."
+            }
+          }
+        },
+
+        {
+          "nome": "Erede Decaduto",
+          "categoria": "PASSATO",
+          "narrative": "La tua famiglia era qualcuno, una volta. Possedimenti, terre, nome. Poi il tracollo — debiti, scandali, tradimenti. Ora vivi in miseria ma porti ancora il cognome, l'orgoglio, l'educazione. Sai quali posate usare a corte, ma non sempre sai dove dormirai stanotte. Questa ambivalenza ti definisce: sei troppo nobile per i mendicanti, troppo povero per i nobili. La tua tecnica con la spada è quella di un gentiluomo, ma la tua fame è quella di un mendicante.",
+          "heart_linked_lista": [
+            "LIBERA: Maestro di Scherma",
+            "LIBERA: Duellante Acuto",
+            "ESCLUSIVA: Galateo Nobiliare",
+            "ESCLUSIVA: Patrimonio Perduto",
+            "LIBERA: Intimiditore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Tutte le nominated riflettono il doppio livello dell'Erede Decaduto: tecniche nobili (scherma, duello, galateo) + risorse della caduta (patrimonio perduto, intimidazione). 'Galateo Nobiliare' e 'Patrimonio Perduto' sono esclusive perché specifiche dell'esperienza nobiliare decaduta.",
+          "esclusive_definite_in_questo_cuore": {
+            "Galateo Nobiliare": {
+              "approccio": "Analisi",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Etichetta", "livello_sblocco": 1, "effetto": "Il PG conosce le usanze di corte di qualsiasi cultura 'civilizzata'. Ottiene +2 al Potere in interazioni sociali formali (banchetti, udienze, cerimonie)."},
+                {"nome": "Lingua degli Sguardi", "livello_sblocco": 1, "effetto": "Il PG legge il linguaggio del corpo e le micro-espressioni dei nobili. Una volta per sessione, può chiedere al Master 'cosa pensa davvero questo nobile?' — risposta onesta."},
+                {"nome": "Genealogia", "livello_sblocco": 1, "effetto": "Il PG riconosce cognomi, stemmi, alleanze familiari. Ottiene +1 al Potere in interazioni con chiunque porti un nome storico. Una volta per sessione, può dichiarare 'conosco la tua famiglia' — il Master rivela un legame pertinente."}
+              ],
+              "tag_attivazione": ["[Sociale]", "[Utility]"],
+              "narrative": "L'educazione che riceve un nobile, prima che cada in miseria. Una competenza sociale che trascende la ricchezza materiale."
+            },
+            "Patrimonio Perduto": {
+              "approccio": "Analisi",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Ricordo della Rotte", "livello_sblocco": 1, "effetto": "Il PG ricorda le antiche rotte commerciali della famiglia. Una volta per sessione, può identificare un oggetto raro o una merce di valore in un mercata (anche se l'oggetto è camuffato)."},
+                {"nome": "Vecchi Contatti", "livello_sblocco": 3, "effetto": "Una volta per sessione, il PG può dichiarare 'conoscevo qualcuno in questa città'. Il Master rivela se ha un contatto residuo e, se sì, chi è e cosa può fare per il PG."},
+                {"nome": "Eredità Nascosta", "livello_sblocco": 5, "effetto": "Il PG può dichiarare 'la mia famiglia nascose qualcosa qui'. Una volta per campagna, il Master deve fornire una location specifica con un tesoro/oggetto legato al passato familiare del PG. Il PG deve ancora trovarlo, ma la sua esistenza è garantita."}
+              ],
+              "tag_attivazione": ["[Utility]"],
+              "narrative": "La memoria del lignaggio. Anche caduto in miseria, l'Erede porta con sé mappe, contatti, segreti che il tempo non ha cancellato."
+            }
+          }
+        },
+
+        {
+          "nome": "Figlio di Contadini",
+          "categoria": "PASSATO",
+          "narrative": "Sei nato tra i campi, non tra i libri. Conosci i cicli delle stagioni, il peso del lavoro manuale, il valore del cibo. La tua mente è pratica, non teorica — sai che una problema si risolve con le mani, non con le speculazioni. La tua forza è quella di chi ha zappato da piccolo, la tua saggezza è quella di chi ha visto nascere e morire bestie. Non capisci i nobili, non capisci i maghi — ma capisci la terra, l'acqua, il cielo. E in molte situazioni, è sufficiente.",
+          "heart_linked_lista": [
+            "LIBERA: Atleta Nato",
+            "ESCLUSIVA: Lavoro nei Campi",
+            "ESCLUSIVA: Senso della Natura",
+            "LIBERA: Pugno del Gigante",
+            "LIBERA: Cartografa Esploratrice"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Tutte le nominated riflettono una sapienza pratica e rurale. 'Lavoro nei Campi' e 'Senso della Natura' sono esclusive — specifiche dell'infanzia contadina.",
+          "esclusive_definite_in_questo_cuore": {
+            "Lavoro nei Campi": {
+              "approccio": "Impeto",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Forza da Fieno", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere in prove di forza prolungata (sollevare, trasportare, scavare) — non in scatti esplosivi. Una volta per riposo, può ignorare 1 stanchezza."},
+                {"nome": "Resistenza al Sole", "livello_sblocco": 1, "effetto": "Il PG è immune a effetti di caldo, disidratazione lieve, fatica da marcia. Ottiene +1 PF virtuale durante il giorno."},
+                {"nome": "Occhio per i Cavalli", "livello_sblocco": 1, "effetto": "Il PG può valutare una cavalcatura o un animale da soma in 1 tick (salute, temperamento, valore). Ottiene +1 al Potere in prove di cavalcare o domare animali da lavoro."}
+              ],
+              "tag_attivazione": ["[Fisico]"],
+              "narrative": "La forza lenta e paziente di chi ha lavorato la terra. Non è la potenza del guerriero — è la costanza del contadino."
+            },
+            "Senso della Natura": {
+              "approccio": "Risonanza",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Prevedere il Tempo", "livello_sblocco": 1, "effetto": "Il PG prevede il meteo delle prossime 24 ore con precisione. Sa quando pioverà, quando verrà la tempesta, quando ci sarà nebbia."},
+                {"nome": "Cicli della Terra", "livello_sblocco": 1, "effetto": "Il PG sa quando piantare, quando raccogliere, quando cacciare. Una volta per regione, può identificare la stagione 'migliore' per qualsiasi attività."},
+                {"nome": "Linguaggio degli Animali", "livello_sblocco": 1, "effetto": "Il PG non parla con gli animali, ma ne 'sente' lo stato d'animo (paura, fame, calma). Sufficiente per capire se un cane è ostile o se un cavallo è spaventato."}
+              ],
+              "tag_attivazione": ["[Empatia]", "[Utility]"],
+              "narrative": "La saggezza contadina che legge il cielo, la terra, le bestie. Non è magia — è osservazione paziente di una vita."
+            }
+          }
+        },
+
+        {
+          "nome": "Esule da Terra Lontana",
+          "categoria": "PASSATO",
+          "narrative": "Vieni da un luogo che non è più il tuo. Forse una guerra, forse un esilio, forse una maledizione. Parli una lingua che pochi capiscono, porti usanze che sembrano strane, hai ricette che altri trovano esotiche. Sei straniero ovunque vai, anche quando impari la lingua locale. Questa estraneità è il tuo marchio — ti rende solo, ma anche libero. Non hai radici qui, ma non hai nemmeno vincoli. La tua prospettiva è unica: vedi ciò che i nativi non vedono perché per te tutto è nuovo.",
+          "heart_linked_lista": [
+            "ESCLUSIVA: Sopravvivenza Urbana",
+            "LIBERA: Cartografa Esploratrice",
+            "ESCLUSIVA: Occhio dello Straniero",
+            "LIBERA: Empatica del Cuore",
+            "LIBERA: Acrobata"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated sbloccate riflettono l'esperienza dello straniero: sopravvivenza (Sopravvivenza Urbana, condivisa con Orfano di Guerra), orientamento (Cartografa), prospettiva unica (Occhio dello Straniero), adattamento (Empatica, Acrobata).",
+          "esclusive_definite_in_questo_cuore": {
+            "Occhio dello Straniero": {
+              "approccio": "Analisi",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Notare l'Insolito", "livello_sblocco": 1, "effetto": "Il PG nota ciò che i nativi danno per scontato. Una volta per sessione, può chiedere al Master 'cosa c'è di strano qui per un forestiero?' — il Master fornisce un dettaglio che i nativi hanno blindato."},
+                {"nome": "Costumi Comparati", "livello_sblocco": 1, "effetto": "Il PG ha vissuto abbastanza culture da poterle confrontare. Ottiene +1 al Potere in interazioni sociali con stranieri (qualsiasi cultura, non solo la sua)."},
+                {"nome": "Lingua dei Segni", "livello_sblocco": 1, "effetto": "Il PG comunica base con chiunque, anche senza lingua comune. Può trasmettere concetti semplici (pericolo, cibo, amico, nemico) anche a creature intelligenti non umanoidi."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Sociale]"],
+              "narrative": "La prospettiva dello straniero: vedere ciò che i nativi non vedono perché troppo immersi. Una dote che si paga con la solitudine."
+            }
+          }
+        },
+
+        {
+          "nome": "Allievo di un Maestro Defunto",
+          "categoria": "PASSATO",
+          "narrative": "Hai passato gli anni formativi sotto la guida di un maestro — forse un artigiano, forse un guerriero, forse un mago. Ti ha insegnato tutto ciò che sapevi, poi è morto. Porti avanti la sua eredità, ma anche il peso della sua assenza. Ogni tecnica che usi è sua, prima che tua — ogni gesto è una memoria. Non sei solo un allievo: sei il custode di una tradizione che rischia di estinguersi con te. Il tuo maestro non c'è più, ma la sua voce nella tua testa guida ancora la tua mano.",
+          "heart_linked_lista": [
+            "LIBERA: Maestro di Scherma",
+            "LIBERA: Mago Erudito",
+            "LIBERA: Artefice dei Talismani",
+            "ESCLUSIVA: Stile del Maestro",
+            "LIBERA: Cura Vitalità"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated sbloccate coprono diverse discipline che un maestro potrebbe aver insegnato (scherma, magia, crafting, cura). 'Stile del Maestro' è esclusiva — è la nominated che rappresenta la tecnica SPECIFICA del maestro, qualunque fosse la sua disciplina.",
+          "esclusive_definite_in_questo_cuore": {
+            "Stile del Maestro": {
+              "approccio": "Istinto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Memoria del Gesto", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere in UNA nominated di sua scelta (dichiarata all'attivazione). La nominated scelta deve essere una che il PG possiede già. Rappresenta la 'perfezione del gesto' insegnata dal maestro."},
+                {"nome": "Correzione del Maestro", "livello_sblocco": 3, "effetto": "Una volta per combattimento, il PG può ridurre di 1 il costo di una Vitalità (gioca una Vitalità come se fosse T-1). La 'voce del maestro' gli suggerisce di aspettare il momento giusto."},
+                {"nome": "Tecnica Finale", "livello_sblocco": 5, "effetto": "Una volta per combattimento, il PG esegue la 'tecnica finale' del maestro: una nominated a sua scelta (che possiede) viene attivata con +3 al Potere. Rappresenta il culmine di anni di allenamento."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Arma]", "[Magia]"],
+              "narrative": "La tecnica del maestro, interiorizzata fino a diventare la tua. Ogni gesto è una memoria, ogni colpo è un tributo."
+            }
+          }
+        },
+
+        {
+          "nome": "Cresciuto nelle Strade",
+          "categoria": "PASSATO",
+          "narrative": "Non hai mai avuto una casa, solo angoli dove dormire. La tua famiglia era una banda di monelli, il tuo maestro era un mendicante che sapeva leggere. Hai imparato a vivere di espedienti, a parlare tre lingue senza saperne scrivere nessuna, a scassinare prima di saper contare. Le strade ti hanno dato tutto ciò che hai — compreso il marchio di chi non appartiene a nessun posto. Ora che sei cresciuto, le strade sono ancora dentro di te: il passo svelto, lo sguardo che valuta ogni persona come potenziale minaccia o potenziale preda.",
+          "heart_linked_lista": [
+            "LIBERA: Ladro di Tesori",
+            "LIBERA: Ombra Silenziosa",
+            "ESCLUSIVA: Sopravvivenza Urbana",
+            "LIBERA: Mago dello Scasso",
+            "LIBERA: Intimiditore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated sono tutte tecniche da strada — ladro, scasso, sopravvivenza, intimidazione. 'Sopravvivenza Urbana' è condivisa con 'Orfano di Guerra' (entrambi cresciuti in contesti urbani traumatici).",
+          "esclusive_definite_in_questo_cuore": {}
+        },
+
+        {
+          "nome": "Nato in Schiavitù",
+          "categoria": "PASSATO",
+          "narrative": "Sei nato proprietà di qualcuno. Non hai conosciuto libertà finché non te la sei presa, o non te l'hanno data. Porti i segni — fisici e psicologici — di chi è stato usato, non amato. La tua disciplina è quella del prigioniero: fare ciò che va fatto senza lamentarsi, sopportare ciò che va sopportato, aspettare il momento. Hai imparato a osservare i padroni, a capire cosa vogliono prima che lo chiedano, a dire ciò che vogliono sentire. Ora sei libero — ma le abitudini della schiavitù non se ne vanno.",
+          "heart_linked_lista": [
+            "LIBERA: Muro di Ferro",
+            "ESCLUSIVA: Pazienza del Prigioniero",
+            "LIBERA: Empatica del Cuore",
+            "LIBERA: Acrobata",
+            "ESCLUSIVA: Occhio per i Pericoli"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated riflettono l'esperienza della schiavitù: resistenza (Muro di Ferro), pazienza (Pazienza del Prigioniero), lettura dei padroni (Empatica), agilità forzata (Acrobata), allerta (Occhio per i Pericoli, condivisa con Orfano di Guerra).",
+          "esclusive_definite_in_questo_cuore": {
+            "Pazienza del Prigioniero": {
+              "approccio": "Analisi",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Aspettare il Momento", "livello_sblocco": 1, "effetto": "Una volta per combattimento, il PG può dichiarare 'aspetto'. Il prossimo attacco nemico contro di lui subisce -2 al Potere (il PG ha studiato il pattern d'attacco)."},
+                {"nome": "Sopportare", "livello_sblocco": 1, "effetto": "Il PG ottiene +2 al Potere contro effetti di tortura, coercion, paura. La schiavitù gli ha insegnato a sopportare."},
+                {"nome": "Leggere il Padrone", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'capisco cosa vuole'. Il Master rivela cosa vuole davvero un PNG (in termini di obbiettivo, non di pensieri)."}
+              ],
+              "tag_attivazione": ["[Difesa]", "[Empatia]"],
+              "narrative": "La disciplina forzata di chi è stato proprietà di altri. Pazienza, sopportazione, osservazione: le armi del prigioniero."
+            }
+          }
+        },
+
+        {
+          "nome": "Figlio di Mercanti",
+          "categoria": "PASSATO",
+          "narrative": "Sei cresciuto tra carri di merci, bilance, contratti. I tuoi genitori non erano nobili né contadini — erano intermediari, quei collegamenti essenziali tra chi produce e chi consuma. Hai imparato a valutare il valore di una cosa guardandola, a trattare sul prezzo prima di sapere se volevi davvero l'oggetto, a leggere la disonestà negli occhi di un venditore. Conosci rotte commerciali, monete straniere, lingue franche. La tua mente è calcolatrice, ma non fredda — sai che il miglior affare è quello dove tutti guadagnano, e sai anche che pochi lo capiscono.",
+          "heart_linked_lista": [
+            "ESCLUSIVA: Senso degli Affari",
+            "LIBERA: Investigatore",
+            "LIBERA: Intimiditore",
+            "ESCLUSIVA: Galateo Nobiliare",
+            "LIBERA: Erudita di Biblioteca"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated riflettono l'educazione mercantile: affari, indagine, contrattazione, etichetta (per trattare con nobili), conoscenza pratica. 'Galateo Nobiliare' è condivisa con 'Erede Decaduto' — entrambi i background comportano familiarità con le classi alte.",
+          "esclusive_definite_in_questo_cuore": {
+            "Senso degli Affari": {
+              "approccio": "Analisi",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Valutare", "livello_sblocco": 1, "effetto": "Il PG stima il valore di mercato di qualsiasi oggetto in 1 tick. Conosce anche il prezzo 'giusto' (non solo quello richiesto)."},
+                {"nome": "Trattare", "livello_sblocco": 3, "effetto": "Il PG ottiene +2 al Potere in contrattazioni. Una volta per sessione, può dichiarare 'facciamo un affare' — il Master deve fornire un'opportunità di scambio vantaggioso entro la sessione."},
+                {"nome": "Rete Commerciale", "livello_sblocco": 5, "effetto": "Una volta per sessione, il PG può dichiarare 'conosco un mercante qui'. Il Master rivela se ha un contatto commerciale in loco e, se sì, fornisce nome, merce specializzata e termini di favore."}
+              ],
+              "tag_attivazione": ["[Sociale]", "[Utility]"],
+              "narrative": "L'arte degli affari, appresa in famiglia. Valutare, trattare, mantenere contatti — la trinità del mercante."
+            }
+          }
+        },
+
+        {
+          "nome": "Sopravvissuto a una Catastrofe",
+          "categoria": "PASSATO",
+          "narrative": "C'era una vita prima, e c'è una vita dopo. Una catastrofe — incendio, epidemia, terremoto, attacco — ha cancellato la tua vecchia esistenza. Sei sopravvissuto per caso, o per caso ostinato, o per qualcosa che ancora non ti spieghi. Porti il peso di chi è rimasto quando altri sono morti. Forse ti senti in colpa, forse ti senti fortunato, forse non sai cosa senti. Ma sai questo: quando tutto crolla, tu sei ancora in piedi. E questo ti dà una calma strana nelle situazioni estreme — ne hai già vista una peggiore.",
+          "heart_linked_lista": [
+            "ESCLUSIVA: Calma nella Tempesta",
+            "LIBERA: Muro di Ferro",
+            "LIBERA: Cacciatrice di Trappole",
+            "ESCLUSIVA: Occhio per i Pericoli",
+            "LIBERA: Veggente del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del PASSATO.",
+          "coerenza_narrativa": "Le nominated riflettono l'esperienza del sopravvissuto: calma estrema, resistenza fisica, allerta ai pericoli, premonizione. 'Calma nella Tempesta' è esclusiva — specifica di chi ha già visto l'apocalisse.",
+          "esclusive_definite_in_questo_cuore": {
+            "Calma nella Tempesta": {
+              "approccio": "Istinto",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Niente Panico", "livello_sblocco": 1, "effetto": "Il PG è immune a effetti di panico, terrore o shock. Anche quando tutto crolla, agisce con lucidità."},
+                {"nome": "Reazione al Peggio", "livello_sblocco": 1, "effetto": "Una volta per combattimento, quando un alleato subisce un colpo critico o una ferita Cuore, il PG ottiene immediatamente +1 al Potere per il prossimo tick (reazione adrenalinica)."},
+                {"nome": "Sopravvissuto", "livello_sblocco": 1, "effetto": "Una volta per campagna, quando il PG dovrebbe MORIRE (3 Cuori feriti), invece SURVIVE: si rimette in piedi con 1 Cuore sano. La narrazione giustificherà il miracolo (Master + giocatore)."}
+              ],
+              "tag_attivazione": ["[Difesa]"],
+              "narrative": "La lucidità di chi ha già visto la fine. Niente spaventa chi è già sopravvissuto al peggio."
+            }
+          }
+        }
+
+      ]
+    },
+
+    "DOTTRINA": {
+      "category_metadata": {
+        "name": "DOTTRINA — In cosa credi",
+        "narrative_role": "Il codice etico del PG. La bussola morale che guida le sue scelte anche quando nessuno guarda. NON è religione (può esserlo, ma non necessariamente): è il principio che il PG non trasgredirebbe se non sotto costrizione estrema.",
+        "changeable": "MAI — la dottrina è un faro. Anche se il PG la tradisce in un momento di debolezza, resta il suo Cuore 2 (drammaticamente: il tradimento della propria dottrina è una ferita, non una sostituzione).",
+        "heart_linked_theme": "Le nominated sbloccate dalla DOTTRINA sono tipicamente tecniche CHE INCARNANO il principio. La dottrina si traduce in azione attraverso la nominated — è il modo in cui il PG mette in pratica il proprio credo.",
+        "count": 9
+      },
+      "hearts": [
+
+        {
+          "nome": "Mai Abbandonare un Compagno",
+          "categoria": "DOTTRINA",
+          "narrative": "Hai giurato a te stesso che non avresti mai lasciato indietro nessuno. Forse perché l'hai vissuto — qualcuno ha lasciato indietro te, o tu hai lasciato qualcuno e non te lo perdoni. La lealtà ai compagni è la tua legge, sopra ogni altra considerazione tattica. Questo non significa che non riconosci quando una ritirata è necessaria — significa che la ritirata la fai portando tutti con te, o non la fai. La tua lealtà è la tua forza e la tua condanna: ti spinge a sacrifici che altri non farebbero.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Cura Vitalità",
+            "ESCLUSIVA: Ultimo a Ritirarsi",
+            "LIBERA: Muro di Ferro",
+            "LIBERA: Empatica del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono tutte legate alla protezione e cura dei compagni: difesa fisica (Difensore del Fratello, Muro di Ferro), cura magica (Cura Vitalità), lealtà emotiva (Ultimo a Ritirarsi), comprensione (Empatica).",
+          "esclusive_definite_in_questo_cuore": {
+            "Ultimo a Ritirarsi": {
+              "approccio": "Impeto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Pattuglia di Retroguardia", "livello_sblocco": 1, "effetto": "Quando il gruppo si ritira, il PG può dichiararsi 'retroguardia'. Ottiene +1 al Potere per ogni round in cui resta indietro per coprire gli alleati. Cumulabile fino a +3."},
+                {"nome": "Non Lasciare Indietro Nessuno", "livello_sblocco": 3, "effetto": "Una volta per sessione, il PG può dichiarare 'non lascio nessuno'. Il Master deve permettere al gruppo di recuperare un alleato caduto/prigioniero/perduto, anche se la situazione sembra disperata (la narrativa troverà una via)."},
+                {"nome": "Ultimo Respiro", "livello_sblocco": 5, "effetto": "Una volta per campagna, quando un alleato sta per MORIRE (3 Cuori feriti), il PG può SACRIFICARE UN PROPRIO CUORE SANO per annullare la morte dell'alleato (un Cuore sano dell'alleato viene ripristinato). Il PG subisce la ferita Cuore, l'alleato sopravvive."}
+              ],
+              "tag_attivazione": ["[Difesa]", "[Empatia]"],
+              "narrative": "La dottrina fatta tecnica. Il giuramento di non abbandonare si traduce in abilità specifiche per mantenerlo."
+            }
+          }
+        },
+
+        {
+          "nome": "La Giustizia Prima della Legge",
+          "categoria": "DOTTRINA",
+          "narrative": "La legge è uno strumento, non un fine. Quando la legge è ingiusta, violarla è un dovere. Quando la legge protegge i colpevoli, aggirarla è giustizia. Credi in un ordine superiore — quello del giusto e dell'ingiusto — che le leggi umane possono solo approssimare. Non sei un anarchico: riconosci il valore della legge. Ma riconosci anche i suoi limiti. Sei disposto a subire le conseguenze delle tue azioni, ma non a tacere quando vedi un'ingiustizia. Questo ti rende eroe per alcuni, ribelle per altri, problema per molti.",
+          "heart_linked_lista": [
+            "LIBERA: Stratega Tattico",
+            "ESCLUSIVA: Verità Interiore",
+            "LIBERA: Duellante Acuto",
+            "LIBERA: Intimiditore",
+            "LIBERA: Investigatore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated riflettono chi insegue la giustizia: strategia (per individuare i colpevoli), verità interiore (per sapere cosa è giusto), duello (per affrontare i tiranni), intimidazione (per scardinare omertà), indagine (per scoprire la verità).",
+          "esclusive_definite_in_questo_cuore": {
+            "Verità Interiore": {
+              "approccio": "Analisi",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Discernere il Giusto", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'questo è ingiusto'. Il Master deve confermare onestamente se la situazione è oggettivamente ingiusta (non secondo la legge, ma secondo un principio morale superiore)."},
+                {"nome": "Imposizione Morale", "livello_sblocco": 1, "effetto": "Il PG ottiene +2 al Potere in interazioni sociali con chi sa di aver torto. La sua presenza silenziosa è un'accusa."},
+                {"nome": "Vietato il Silenzio", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'parla'. Un PNG che ha informazioni pertinenti a un'ingiustizia è costretto a rispondere (Master) — anche con menzogne, ma deve rispondere."}
+              ],
+              "tag_attivazione": ["[Sociale]", "[Utility]"],
+              "narrative": "La dottrina della giustizia superiore dà al PG un'autorevolezza morale che trascende il rango."
+            }
+          }
+        },
+
+        {
+          "nome": "Il Sapere è Libertà",
+          "categoria": "DOTTRINA",
+          "narrative": "Credi che l'ignoranza sia la catena più sottile e più forte. Chi non sa di essere schiavo non si ribella; chi non sa come si cambia il mondo non lo cambia. Per questo condividi il sapere, per questo lo cerchi ovunque, per questo lo proteggi. Un libro bruciato è un pensiero morto; un libro letto è una mente aperta. La tua missione è portare la luce della conoscenza dove c'è oscurantismo, anche quando le istituzioni la temono. Non sei un erudito chiuso in una torre — sei un propagatore di verità.",
+          "heart_linked_lista": [
+            "LIBERA: Mago Erudito",
+            "LIBERA: Erudita di Biblioteca",
+            "ESCLUSIVA: Diffondere il Sapere",
+            "LIBERA: Maestra dei Sigilli",
+            "LIBERA: Stratega Tattico"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono tutte legate al sapere: studio (Mago Erudito, Erudita), insegnamento (Diffondere il Sapere), preservazione (Maestra dei Sigilli), applicazione (Stratega).",
+          "esclusive_definite_in_questo_cuore": {
+            "Diffondere il Sapere": {
+              "approccio": "Risonanza",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Insegnare", "livello_sblocco": 1, "effetto": "Il PG può insegnare una propria nominated a un altro PG. L'allievo deve dedicare tempo narrativo (settimane di studio). Al termine, ottiene la nominated come propria (occupa uno slot). Una volta per allievo, per nominated."},
+                {"nome": "Decodificare", "livello_sblocco": 1, "effetto": "Il PG comprende testi complessi e li sa spiegare. Ottiene +2 al Potere in prove di decifrazione o traduzione. Può anche 'spiegare' magie complesse a non-maghi (concede loro comprensione base)."},
+                {"nome": "Ispirare Curiosità", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'questo ti interessa'. Un PNG diventa curioso di un argomento e potrebbe condividere informazioni pertinenti (Master) — chi ha sete di sapere parla con chi glielo offre."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Empatia]"],
+              "narrative": "Il sapere non va posseduto, va condiviso. Questa nominated trasforma l'erudito in maestro."
+            }
+          }
+        },
+
+        {
+          "nome": "Onore nel Duello",
+          "categoria": "DOTTRINA",
+          "narrative": "Affronta il nemico a faccia a faccia, mai a tradimento. Una vittoria disonorevole è peggiore di una sconfitta onorevole. Questo non significa che non usi tattiche — significa che rispetti il nemico come combattente. Lo avverti prima di attaccare, gli dai la possibilità di prepararsi, non colpisci chi non può difendersi. È un codice aristocratico, in un certo senso — ma per te è l'unica maniera di combattere che ha senso. Chi vince con l'inganno non ha vinto: ha solo ucciso.",
+          "heart_linked_lista": [
+            "LIBERA: Maestro di Scherma",
+            "LIBERA: Duellante Acuto",
+            "ESCLUSIVA: Codice del Duello",
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Intimiditore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono legate al duello e al combattimento leale: scherma, duellante, codice del duello (esclusiva), difesa (per proteggere, non tradire), intimidazione (per avvertire, non aggredire).",
+          "esclusive_definite_in_questo_cuore": {
+            "Codice del Duello": {
+              "approccio": "Impeto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Avvertimento", "livello_sblocco": 1, "effetto": "Prima di iniziare un combattimento, il PG può dichiarare 'ti affronto'. Il nemico designato ottiene +1 al Potere nel primo colpo (ha tempo di prepararsi), MA il PG ottiene +2 al Potere in tutti i colpi successivi (il duello è iniziato lealmente e lui è nel suo elemento)."},
+                {"nome": "Singolar Tenzone", "livello_sblocco": 3, "effetto": "Il PG dichiara un duello 1-vs-1 con un nemico. Gli altri partecipanti (alleati e nemici) non possono intervenire per 3 tick. Se il PG vince, ottiene +1 al Potere per il resto del combattimento. Se perde, subisce -1 al Potere per il resto."},
+                {"nome": "Colpo di Grazia", "livello_sblocco": 5, "effetto": "Quando un nemico è a 1 PF, il PG può dichiarare 'colpo di grazia'. Il nemico è ucciso istantaneamente, senza tiro. Il PG non ottiene XP extra, ma il nemico muore con dignità (narrativa: riconosce il duellante)."}
+              ],
+              "tag_attivazione": ["[Arma]", "[Sociale]"],
+              "narrative": "Il codice d'onore del duellante. Non è debolezza — è disciplina."
+            }
+          }
+        },
+
+        {
+          "nome": "Proteggere i Più Deboli",
+          "categoria": "DOTTRINA",
+          "narrative": "Il forte esiste per servire, non per dominare. Chi ha potere ha il dovere di proteggere chi non ne ha. Questa è la tua legge. Non è compassione paternalistica — è giustizia sostanziale. Se vedi un oppressore, lo affronti; se vedi un oppresso, lo difendi. La forza è un dono, e i doni vanno condivisi. Questo ti rende amato dai deboli e temuto dai tiranni. Non è una vita facile — ma è l'unica che ha senso per te.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Cura Vitalità",
+            "ESCLUSIVA: Scudo degli Indifesi",
+            "LIBERA: Muro di Ferro",
+            "LIBERA: Empatica del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono tutte di protezione: difesa fisica (Difensore del Fratello, Muro di Ferro), cura (Cura Vitalità), protezione attiva (Scudo degli Indifesi), empatia (Empatica).",
+          "esclusive_definite_in_questo_cuore": {
+            "Scudo degli Indifesi": {
+              "approccio": "Impeto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Difesa degli Innocenti", "livello_sblocco": 1, "effetto": "Il PG ottiene +1 al Potere per ogni alleato o PNG debole (PF ≤ 3) entro 1 zona. Cumulabile fino a +3. Rappresenta la determinazione del protettore."},
+                {"nome": "Fermare l'Oppressore", "livello_sblocco": 3, "effetto": "Una volta per combattimento, il PG può dichiarare 'fermati'. Un nemico che sta per colpire un bersaglio debole (PF ≤ 3) deve rifare l'attacco contro il PG (con -1 al Potere per la distrazione)."},
+                {"nome": "Sacra Furia", "livello_sblocco": 5, "effetto": "Una volta per combattimento, se un bersaglio debole (alleato o PNG) viene ucciso o ferito Cuore sotto gli occhi del PG, il PG entra in 'Sacra Furia': +3 al Potere per 3 tick contro il responsabile. Ignora la difesa: tutti i suoi colpi sono 'Pieni' (nessun blocco)."}
+              ],
+              "tag_attivazione": ["[Difesa]", "[Arma]"],
+              "narrative": "La dottrina di protezione si traduce in tecniche specifiche per difendere chi non può difendersi."
+            }
+          }
+        },
+
+        {
+          "nome": "Redenzione Sempre Possibile",
+          "categoria": "DOTTRINA",
+          "narrative": "Nessuno è oltre la possibilità di cambiare. Nemico, criminale, mostro — chiunque può redimersi, se vuole. Non sei ingenuo: sai che alcuni non vogliono cambiare, e che a volte la forza è necessaria. Ma non uccidi chi si arrende. Non disprezzi chi pentitosi chiede perdono. Dai sempre un'opportunità. La tua fede nella redenzione ti rende strano tra i compagni d'arme, che preferiscono uccidere piuttosto che rischiare tradimenti. Ma tu sai qualcosa che loro non sanno: anche tu, un tempo, avevi bisogno di perdono.",
+          "heart_linked_lista": [
+            "LIBERA: Empatica del Cuore",
+            "ESCLUSIVA: Mano Tesa",
+            "LIBERA: Veggente del Cuore",
+            "LIBERA: Cura Vitalità",
+            "LIBERA: Intimiditore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated riflettono la fede nella redenzione: empatia (Empatica, Veggente), offerta di pace (Mano Tesa), cura (Cura Vitalità), forza che non uccide (Intimiditore — spaventare invece di uccidere).",
+          "esclusive_definite_in_questo_cuore": {
+            "Mano Tesa": {
+              "approccio": "Risonanza",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Offerta di Resa", "livello_sblocco": 1, "effetto": "Una volta per combattimento, il PG può dichiarare 'arrenditi'. Un nemico non-Epico che ha PF ≤ metà deve fare un test di volontà; se fallisce, si arrende (cessa ostilità)."},
+                {"nome": "Perdono del Vinto", "livello_sblocco": 3, "effetto": "Dopo che un nemico si è arreso (con Offerta di Resa o per altri motivi), il PG può dichiarare 'sei perdonato'. Il nemico, se era un PNG umanoide, diventa neutrale o anche amichevole (Master). Non combatterà più contro il PG in questa sessione."},
+                {"nome": "Redenzione del Cuore", "livello_sblocco": 5, "effetto": "Una volta per campagna, il PG può dichiarare 'redimti'. Un nemicoEpico che è stato sconfitto ma non ucciso, se ha mostrato pentimento, può essere REDEMPTED. La narrativa giustificherà la trasformazione: il nemico diventa alleato (Master + giocatore). Potente ma raro."}
+              ],
+              "tag_attivazione": ["[Empatia]", "[Sociale]"],
+              "narrative": "La dottrina della redenzione resa tecnica. Offrire resa, perdonare, redimere — la trinità del pacificatore."
+            }
+          }
+        },
+
+        {
+          "nome": "La Verità Sopra Tutto",
+          "categoria": "DOTTRINA",
+          "narrative": "La menzogna è il cancro delle relazioni, l'ombra che avvelena la fiducia. Tu dici sempre la verità — non per brutalità, ma per rispetto. Una verità dolorosa è meglio di una bugia confortante. Questo ti rende impopolare a volte, ma ti rende anche affidabile sempre. Chi ti conosce sa che le tue parole sono oro — non perché siano sempre giuste, ma perché sono sempre vere come tu le vedi. La tua fede nella verità ti spinge a cercarla ovunque, anche quando fa male, anche quando costerebbe meno voltare lo sguardo.",
+          "heart_linked_lista": [
+            "LIBERA: Investigatore",
+            "ESCLUSIVA: Sguardo Penetrante",
+            "LIBERA: Mago Erudito",
+            "LIBERA: Stratega Tattico",
+            "LIBERA: Veggente del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono tutte di ricerca della verità: indagine (Investigatore), lettura delle persone (Sguardo Penetrante), studio (Mago Erudito), analisi (Stratega), intuizione (Veggente).",
+          "esclusive_definite_in_questo_cuore": {
+            "Sguardo Penetrante": {
+              "approccio": "Analisi",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Riconoscere la Menzogna", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'sta mentendo'. Il Master deve confermare onestamente se il PNG sta mentendo in quel momento. Non funziona su PNG con magie di inganno attive."},
+                {"nome": "Verità Forzata", "livello_sblocco": 3, "effetto": "Una volta per sessione, il PG pone una domanda diretta a un PNG. Il PNG deve rispondere con verità (anche se parziale o evasiva) — non può mentire. La domanda deve essere posta in conversazione diretta."},
+                {"nome": "Rivelazione", "livello_sblocco": 5, "effetto": "Una volta per campagna, il PG può dichiarare 'la verità verrà alla luce'. Il Master deve rivelare una verità nascosta pertinente alla situazione corrente (un segreto, un tradimento, una cospirazione). Il PG non sa quale sia, ma sa che esiste."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Empatia]"],
+              "narrative": "La ricerca della verità diventa tecnica. Riconoscere, forzare, rivelare — il percorso dell'inquisitore della verità."
+            }
+          }
+        },
+
+        {
+          "nome": "Il Sacro Dovere",
+          "categoria": "DOTTRINA",
+          "narrative": "Hai un incarico — una missione, un giuramento, una vocazione — che trascende la tua vita. Non è necessariamente religioso: può essere il giuramento a un ordine, la promessa a un morente, la vocazione a un mestiere. Quello che conta è che c'è qualcosa che DEVI fare, e tutto il resto è subordinato. Questo ti dà una determinazione che altri non hanno — ma ti toglie anche flessibilità. Non puoi tradire il dovere, nemmeno quando la situazione lo richiederebbe. Il tuo dovere è la tua ancora, la tua condanna, il tuo significato.",
+          "heart_linked_lista": [
+            "LIBERA: Muro di Ferro",
+            "LIBERA: Stratega Tattico",
+            "ESCLUSIVA: Adempimento del Dover",
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Cura Vitalità"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated sono legate al dovere e alla determinazione: resistenza (Muro di Ferro), pianificazione (Stratega), adempimento (esclusiva), protezione degli alleati (Difensore), cura (Cura).",
+          "esclusive_definite_in_questo_cuore": {
+            "Adempimento del Dover": {
+              "approccio": "Impeto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Voto di Adempimento", "livello_sblocco": 1, "effetto": "All'inizio di una sessione, il PG dichiara un 'dovere specifico' per quella sessione (es. 'proteggere l'ambasciatore', 'recuperare l'artefatto'). Ottiene +1 al Potere in tutte le azioni direttamente legate al dovere."},
+                {"nome": "Risoluzione", "livello_sblocco": 3, "effetto": "Il PG ottiene +2 al Potere contro effetti di coercion, corruzione, tentazione. Il dovere lo protegge dalle deviazioni."},
+                {"nome": "Ultimo Adempimento", "livello_sblocco": 5, "effetto": "Una volta per campagna, se il PG sta per morire (3 Cuori feriti) ma ha un dovere incompiuto dichiarato in sessione, può dichiarare 'non ancora'. Un Cuore ferito viene temporaneamente 'ignorato' (funziona come sano) per 5 tick — il tempo di adempiere al dovere. Poi il PG crolla."}
+              ],
+              "tag_attivazione": ["[Difesa]", "[Utility]"],
+              "narrative": "Il dovere diventa forza sovrumana. La determinazione del votato trascende i limiti del corpo."
+            }
+          }
+        },
+
+        {
+          "nome": "Il Coraggio di Cambiare",
+          "categoria": "DOTTRINA",
+          "narrative": "Credi che la fissità sia morte, e il cambiamento sia vita. Non ti attacchi a idee, ruoli, identità — non per superficialità, ma per convinzione che attaccarsi sia limitarsi. Sei disposto a rivedere tutto, anche te stesso, quando la realtà lo richiede. Questo ti rende adattabile, ma ti rende anche inaffidabile per chi cerca certezze. Non è un caso che tu abbia una propensione naturale per il Riallineamento: il tuo mindset non è una prigione, è un laboratorio. La tua dottrina è la meta-dottrina: credere nel cambiamento stesso.",
+          "heart_linked_lista": [
+            "ESCLUSIVA: Adattabilità",
+            "LIBERA: Empatica del Cuore",
+            "LIBERA: Investigatore",
+            "LIBERA: Veggente del Cuore",
+            "LIBERA: Acrobata"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked della DOTTRINA.",
+          "coerenza_narrativa": "Le nominated riflettono adattabilità e apertura: adattamento (Adattabilità esclusiva), empatia (Empatica), esplorazione (Investigatore), intuizione (Veggente), agilità (Acrobata).",
+          "esclusive_definite_in_questo_cuore": {
+            "Adattabilità": {
+              "approccio": "Istinto",
+              "tipo": "Generica",
+              "abilita": [
+                {"nome": "Pensiero Laterale", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'e se invece...'. Il Master deve ascoltare una proposta alternativa del giocatore per risolvere la situazione corrente. Se la proposta è coerente e creativa, il Master la onora (anche modificandola)."},
+                {"nome": "Cambio di Prospettiva", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'vediamola diversamente'. Il Master deve fornire una diversa interpretazione di un evento o informazione, rivelando angoli che il gruppo non aveva considerato."},
+                {"nome": "Flessibilità Narrativa", "livello_sblocco": 1, "effetto": "Il PG ha un bonus speciale ai Riallineamenti: se il trigger narrativo giustifica un Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json), il Master ha un margine ridotto per negarlo. Il PG 'crede' nel cambiamento più di altri."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Sociale]"],
+              "narrative": "La dottrina del cambiamento come tecnica. Pensare diversamente, vedere diversamente, evolvere più facilmente."
+            }
+          }
+        }
+
+      ]
+    },
+
+    "LEGAMI": {
+      "category_metadata": {
+        "name": "LEGAMI — Per chi combatti",
+        "narrative_role": "Le relazioni del PG. Le persone (o le comunità, o gli ideali-personificati) per cui il PG è disposto a spingersi oltre i propri limiti. È il WHY MOTIVANTE: la ragione per cui il PG continua a lottare anche quando sarebbe più facile arrendersi.",
+        "changeable": "MAI — anche se il legame muore narrativamente (la sorella muore, l'ordine si scioglie, il maestro è caduto), resta nel cuore come cicatrice. La perdita non cancella il legame: lo trasforma in memoria. Il Cuore 3 resta quello.",
+        "heart_linked_theme": "Le nominated sbloccate dai LEGAMI sono tipicamente tecniche CHE IL LEGAME STESSO HA INSEGNATO O ISPIRATO. Il PG ha appreso queste tecniche per via della relazione — per proteggerla, per onorarla, per imitarla.",
+        "count": 9
+      },
+      "hearts": [
+
+        {
+          "nome": "Sorella Adottiva",
+          "categoria": "LEGAMI",
+          "narrative": "Non siete sangue, ma siete famiglia. Avete condiviso tutto — il pane, i pericoli, le risate. Lei è la persona per cui uccideresti, per cui moriresti, per cui tradiresti chiunque altro. Quando ti guarda, sai che cosa pensa; quando chiudi gli occhi, la vedi. La tua forza in battaglia è anche la sua: la proteggi anche quando non è presente, perché sai che lei farebbe lo stesso per te. La vostra relazione è il modello di tutte le altre — e forse, per questo, ti deludono tutte.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Empatica del Cuore",
+            "ESCLUSIVA: Legame Sincronizzato",
+            "LIBERA: Cura Vitalità",
+            "LIBERA: Veggente del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated riflettono il legame fraterno: protezione (Difensore), comprensione (Empatica), sincronia (Legame Sincronizzato esclusiva), cura (Cura), intuizione del legame (Veggente).",
+          "esclusive_definite_in_questo_cuore": {
+            "Legame Sincronizzato": {
+              "approccio": "Risonanza",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Sentirsi", "livello_sblocco": 1, "effetto": "Se la sorella adottiva è un altro PG o un PNG importante (Master), il PG percepisce quando è in pericolo entro 1 km. Non sa cosa succede, ma sa che è in pericolo."},
+                {"nome": "Sincronia", "livello_sblocco": 3, "effetto": "Quando combatte fianco a fianco con la sorella adottiva (entrambi PG), ottengono +1 al Potere ciascuno. Inoltre, una volta per round, uno può 'passare' un'azione all'altro (l'altro agisce al posto suo)."},
+                {"nome": "Sacrificio Fraterno", "livello_sblocco": 5, "effetto": "Una volta per campagna, se la sorella sta per MORIRE (3 Cuori feriti), il PG può scambiare i cuori: la sorella guarisce 1 cuore, il PG subisce 1 ferita Cuore. Non funziona se il PG è già a 2 Cuori feriti (non puoi scambiare la morte)."}
+              ],
+              "tag_attivazione": ["[Empatia]", "[Difesa]"],
+              "narrative": "Il legame profondo tra fratelli adottivi trascende la fisicità. Sentirsi, sincronizzarsi, sacrificarsi — la trinità del legame."
+            }
+          }
+        },
+
+        {
+          "nome": "Maestro Defunto",
+          "categoria": "LEGAMI",
+          "narrative": "Il tuo maestro è morto — ma la sua voce no. Ti parla ancora, negli momenti di difficoltà. 'Ricorda cosa ti ho insegnato', 'Non così', 'Sei migliore di così'. Hai imparato da lui non solo la tecnica, ma anche l'atteggiamento, la postura, il modo di affrontare le sfide. Lo porti dentro come un padre spirituale. Quando combatti, una parte di te è lui che combatte attraverso di te. Non sai se questo è un dono o un peso — forse entrambi. Ma sai che non potresti essere chi sei senza di lui.",
+          "heart_linked_lista": [
+            "LIBERA: Maestro di Scherma",
+            "ESCLUSIVA: Stile del Maestro",
+            "LIBERA: Mago Erudito",
+            "LIBERA: Artefice dei Talismani",
+            "LIBERA: Cura Vitalità"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono tutte discipline che un maestro può aver insegnato: scherma, stile (esclusiva, condivisa con 'Allievo di un Maestro Defunto' PASSATO), magia, crafting, cura. La nominated 'Stile del Maestro' è condivisa tra PASSATO e LEGAMI — rappresentando che il maestro è sia la tua origine (PASSATO) sia il tuo legame (LEGAMI).",
+          "esclusive_definite_in_questo_cuore": {}
+        },
+
+        {
+          "nome": "Ordine Cavalleresco",
+          "categoria": "LEGAMI",
+          "narrative": "Hai giurato fedeltà a un ordine — cavalieresco, militare, magico. Non sei solo: sei parte di qualcosa di più grande. I tuoi fratelli d'arme sono la tua famiglia, il tuo codice è la tua legge, la tua missione è la tua vita. L'ordine ti ha formato, ti ha dato tutto ciò che hai — e in cambio chiede la tua lealtà assoluta. Non è una catena: è un'appartenenza. Anche quando sei lontano dall'ordine, lo porti con te nel modo di parlare, di combattere, di decidere. Sei un cavaliere, sempre, anche in abiti civili.",
+          "heart_linked_lista": [
+            "LIBERA: Maestro di Scherma",
+            "LIBERA: Difensore del Fratello",
+            "ESCLUSIVA: Codice del Duello",
+            "LIBERA: Stratega Tattico",
+            "LIBERA: Muro di Ferro"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono legate alla disciplina cavalleresca: scherma, difesa dei compagni, codice del duello (esclusiva, condivisa con 'Onore nel Duello' DOTTRINA), strategia, resistenza. 'Codice del Duello' è condivisa — l'ordine cavalleresco e la dottrina dell'onore sono tematicamente collegati.",
+          "esclusive_definite_in_questo_cuore": {}
+        },
+
+        {
+          "nome": "Amore Non Corrisposto",
+          "categoria": "LEGAMI",
+          "narrative": "Ami qualcuno che non ti ama — o che non può amarti, o che non sai se ti ami. Non è un amore adolescenziale: è una costellazione interiore che ti guida anche quando vorresti dimenticarla. Combatti per meritartelo, anche se sai che non basterà. Speri, anche quando la speranza è irragionevole. Questo amore non consumato ti rende simultaneously nobile e patetico — ma ti rende anche capace di gesti che altri non farebbero. C'è qualcosa di sacro nel sacrificio per chi non ti vedrà mai veramente.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "ESCLUSIVA: Gesto Eroe",
+            "LIBERA: Empatica del Cuore",
+            "LIBERA: Veggente del Cuore",
+            "LIBERA: Cura Vitalità"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono legate all'amore che spinge al sacrificio: protezione (Difensore del Fratello), gesto eroico (esclusiva), empatia (Empatica), intuizione del cuore (Veggente), cura (Cura).",
+          "esclusive_definite_in_questo_cuore": {
+            "Gesto Eroe": {
+              "approccio": "Impeto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Dichiarazione", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare pubblicamente un intento eroico legato al proprio amore ('la salverò', 'tornerò vincitore'). Ottiene +1 al Potere in tutte le azioni che avvicinano all'intento dichiarato, fino al raggiungimento o alla sessione successiva."},
+                {"nome": "Amaro Coraggio", "livello_sblocco": 3, "effetto": "Quando il PG è solo (nessun alleato entro 3 zone), ottiene +2 al Potere. La solitudine dell'amore non corrisposto diventa forza."},
+                {"nome": "Ultimo Atto Eroe", "livello_sblocco": 5, "effetto": "Una volta per campagna, quando il PG sta per MORIRE (3 Cuori feriti), può dichiarare 'per lei/lui'. Il PG sopravvive con 1 Cuore sano e ottiene +3 al Potere per 5 tick — il tempo di compiere l'ultimo gesto eroico. Poi crolla (e probabilmente muore)."}
+              ],
+              "tag_attivazione": ["[Arma]", "[Difesa]"],
+              "narrative": "L'amore non corrisposto come motore di eroismo. Dichiarare, resistere nella solitudine, compiere l'ultimo atto — la trinità del cavaliere dell'amore impossibile."
+            }
+          }
+        },
+
+        {
+          "nome": "Villaggio Natale da Proteggere",
+          "categoria": "LEGAMI",
+          "narrative": "Il tuo villaggio è la tua ragione. Lì sono nato, lì vivono i tuoi, lì tornerai un giorno. Tutto ciò che fai — avventure, battaglie, tesori — è per proteggerli. Quando sei lontano, li sogni. Quando combatti, è per loro. Il villaggio ti ha cresciuto, ti ha insegnato i valori che porti nel mondo. Ora tu porti il mondo fuori dal villaggio per tenerlo lontano. È una vocazione semplice, ma ti dà una determinazione che i mercenari non hanno. Tu non combatti per oro: combatti per casa.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "ESCLUSIVA: Scudo degli Indifesi",
+            "LIBERA: Muro di Ferro",
+            "LIBERA: Cartografa Esploratrice",
+            "LIBERA: Cura Vitalità"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated riflettono la protezione della comunità: difesa (Difensore del Fratello), protezione dei deboli (Scudo degli Indifesi, condivisa con 'Proteggere i Più Deboli' DOTTRINA), resistenza (Muro di Ferro), conoscenza del territorio (Cartografa), cura (Cura).",
+          "esclusive_definite_in_questo_cuore": {}
+        },
+
+        {
+          "nome": "Compagno d'Armi Caduto",
+          "categoria": "LEGAMI",
+          "narrative": "C'era qualcuno che combatteva al tuo fianco — un amico, un fratello d'arme, un compagno. È morto. Forse per colpa tua, forse nonostante i tuoi sforzi. Lo porti dentro come un debito che non potrai mai pagare. Combatti per lui ora, anche se lui non può più combattere. Speri che, ovunque sia, ti veda e sappia che non l'hai dimenticato. La tua tecnica ora è anche la sua — alcune mosse le hai imparate da lui, altre le fai in suo onore. Non sei solo sul campo: porti il suo spirito con te.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "ESCLUSIVA: Memoria del Caduto",
+            "ESCLUSIVA: Stile del Maestro",
+            "LIBERA: Muro di Ferro",
+            "ESCLUSIVA: Ultimo a Ritirarsi"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono legate al compagno caduto: difesa di altri (Difensore), memoria (Memoria del Caduto esclusiva), tecnica appresa (Stile del Maestro, condivisa con PASSATO e LEGAMI 'Maestro Defunto'), resistenza (Muro di Ferro), lealtà finale (Ultimo a Ritirarsi, condivisa con 'Mai Abbandonare un Compagno' DOTTRINA).",
+          "esclusive_definite_in_questo_cuore": {
+            "Memoria del Caduto": {
+              "approccio": "Istinto",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Vendetta", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare un nemico come 'responsabile' della morte del compagno. Ottiene +2 al Potere contro quel nemico per il resto della sessione."},
+                {"nome": "Tecnica del Caduto", "livello_sblocco": 3, "effetto": "Una volta per combattimento, il PG può dichiarare 'questa era la sua mossa'. Esegue una nominata del compagno caduto (Master + giocatore devono definire in anticipo quale fosse). La mossa ha +1 al Potere."},
+                {"nome": "Eredità", "livello_sblocco": 5, "effetto": "Una volta per campagna, il PG può dichiarare 'porto avanti la sua missione'. Il Master deve fornire una missione incompiuta del compagno caduto — il PG può intraprenderla come side-quest, ottenendo bonus narrativi (non meccanici) per onorarne la memoria."}
+              ],
+              "tag_attivazione": ["[Arma]", "[Utility]"],
+              "narrative": "Il compagno caduto come guida spirituale. Vendetta, tecnica, eredità — la trinità del sopravvissuto."
+            }
+          }
+        },
+
+        {
+          "nome": "Mentore Misterioso",
+          "categoria": "LEGAMI",
+          "narrative": "C'è qualcuno che ti guida — ma non sai chi sia. Compare quando meno te lo aspetti, dice cose che ti orientano, sparisce senza lasciare traccia. È una figura enigmatica: forse un immortale, forse un sogno, forse un trucco della tua mente. Ma gli effetti sono reali: quando lo ascolti, le cose vanno meglio. Non sai se sia reale, non sai se sia uno o molti, non sai cosa voglia da te. Ma sai che è importante — e che seguirlo ti ha sempre portato bene, anche quando non capivi.",
+          "heart_linked_lista": [
+            "LIBERA: Veggente del Cuore",
+            "ESCLUSIVA: Voce Interiore",
+            "LIBERA: Stratega Tattico",
+            "LIBERA: Mago Erudito",
+            "LIBERA: Empatica del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono legate alla guida misteriosa: intuizione (Veggente), voce interiore (esclusiva), strategia (Stratega), sapere (Mago Erudito), empatia (Empatica).",
+          "esclusive_definite_in_questo_cuore": {
+            "Voce Interiore": {
+              "approccio": "Analisi",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Consiglio", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'la voce mi consiglia'. Il Master deve fornire un consiglio criptico ma pertinente alla situazione corrente. Il PG non è obbligato a seguirlo."},
+                {"nome": "Avvertimento", "livello_sblocco": 3, "effetto": "Una volta per sessione, il Master può (a sua discrezione) far 'parlare' la voce per avvertire il PG di un pericolo imminente. Il PG ottiene +1 al Potere per la prossima azione difensiva."},
+                {"nome": "Rivelazione", "livello_sblocco": 5, "effetto": "Una volta per campagna, il PG può dichiarare 'la voce mi ha rivelato qualcosa'. Il Master deve fornire una rivelazione significativa su un mistero della campagna — non la soluzione, ma un pezzo importante del puzzle."}
+              ],
+              "tag_attivazione": ["[Utility]", "[Empatia]"],
+              "narrative": "La voce del mentore misterioso come guida. Consigli, avvertimenti, rivelazioni — il percorso dell'illuminato."
+            }
+          }
+        },
+
+        {
+          "nome": "Fratelli di Sangue",
+          "categoria": "LEGAMI",
+          "narrative": "Avete mischiato il sangue — letteralmente o metaforicamente. Siete legati da un giuramento che trascende l'amicizia. Non siete famiglia di nascita, ma siete famiglia di scelta. Uno è disposto a morire per l'altro senza esitare. Condividete segreti, debiti, missioni. Quando uno vince, vincono entrambi; quando uno cade, cade anche l'altro (almeno simbolicamente). La vostra lealtà è assoluta — e questo vi rende forti, ma vi rende anche vulnerabili. Se uno di voi tradisce, è come se tradisse se stesso.",
+          "heart_linked_lista": [
+            "LIBERA: Difensore del Fratello",
+            "ESCLUSIVA: Legame Sincronizzato",
+            "LIBERA: Cura Vitalità",
+            "LIBERA: Empatica del Cuore",
+            "ESCLUSIVA: Ultimo a Ritirarsi"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono tutte legate al legame di sangue: difesa reciproca (Difensore del Fratello), sincronia (Legame Sincronizzato, condivisa con 'Sorella Adottiva' LEGAMI), cura (Cura Vitalità), empatia (Empatica), lealtà finale (Ultimo a Ritirarsi, condivisa con 'Mai Abbandonare un Compagno' DOTTRINA).",
+          "esclusive_definite_in_questo_cuore": {}
+        },
+
+        {
+          "nome": "La Voce di un Popolo",
+          "categoria": "LEGAMI",
+          "narrative": "Non combatti per una persona: combatti per un popolo. Una tribù, una nazione oppressa, una comunità dispersa. Tu sei la loro voce, il loro campione, la loro speranza. Non ti hanno eletto — ti sei preso la responsabilità perché qualcuno doveva farlo. Quando combatti, lo fai sapendo che loro guardano (metaforicamente o realmente). Quando vinci, è una vittoria per tutti. Quando perdi, è una sconfitta per tutti. Questo peso è enorme, ma è anche la tua forza: non puoi permetterti di fallire, perché non stai fallendo solo per te.",
+          "heart_linked_lista": [
+            "LIBERA: Intimiditore",
+            "ESCLUSIVA: Voce del Popolo",
+            "LIBERA: Difensore del Fratello",
+            "LIBERA: Stratega Tattico",
+            "LIBERA: Empatica del Cuore"
+          ],
+          "scelta_alla_creazione": "Scegli UNA nominated dalla lista. Sarà la tua Heart-linked del LEGAMI.",
+          "coerenza_narrativa": "Le nominated sono legate alla leadership di un popolo: presenza (Intimiditore), voce del popolo (esclusiva), protezione (Difensore del Fratello), strategia (Stratega), empatia (Empatica).",
+          "esclusive_definite_in_questo_cuore": {
+            "Voce del Popolo": {
+              "approccio": "Risonanza",
+              "tipo": "Specializzata",
+              "abilita": [
+                {"nome": "Discorso", "livello_sblocco": 1, "effetto": "Una volta per sessione, il PG può dichiarare 'parlo per il mio popolo'. Un gruppo di PNG (fino a 10) del popolo che rappresenta diventa ispirato: ottengono +1 al Potere per 1 ora e sono disposti a seguire il PG in azioni coerenti."},
+                {"nome": "Legame Collettivo", "livello_sblocco": 3, "effetto": "Quando il PG è in presenza di 3+ membri del suo popolo, ottiene +1 al Potere. Rappresenta la forza di chi combatte per una comunità presente."},
+                {"nome": "Eredità del Popolo", "livello_sblocco": 5, "effetto": "Una volta per campagna, il PG può dichiarare 'il mio popolo mi sostiene'. Il Master deve fornire un aiuto concreto dal popolo del PG — un'informazione, un rifugio, un alleato, una risorsa. L'aiuto è sempre pertinente alla situazione corrente."}
+              ],
+              "tag_attivazione": ["[Sociale]", "[Empatia]"],
+              "narrative": "Il campione di un popolo non è solo: porta con sé la voce dei suoi. Discorso, legame, eredità — la trinità del portavoce."
+            }
+          }
+        }
+
+      ]
+    }
+  },
+
+  "scelta_heart_linked_procedura_completa": {
+    "step_1_scegli_cuori": "Il PG sceglie 1 PASSATO + 1 DOTTRINA + 1 LEGAMI da questo catalogo. Vedi 02_personaggio/04_cuori.json e 02_personaggio/05_creazione_pg.json → step_2_choose_hearts",
+    "step_2_per_ogni_cuore_scegli_una_nominated": "Per ciascuno dei 3 Cuori, il PG consulta la 'heart_linked_lista' del Cuore e SCEGLIE UNA nominated. Le 3 nominated così scelte sono le HEART-LINKED del PG.",
+    "step_3_verifica_approcci_coerenti": "Il Master aiuta il PG a scegliere nominated coerenti col profilo di Approcci. Es: se il PG ha Istinto 1, scegliere una nominated Istinto Heart-linked è meccanicamente debole (le abilità saranno sempre livello 1). Le nominated Heart-linked non sono OBBLIGATE a essere negli Approcci alti del PG, ma è consigliabile che almeno 2 su 3 lo siano.",
+    "step_4_heartbeat_protection_attiva": "Le 3 nominated Heart-linked scelte sono PROTETTE dal Riallineamento (non possono essere rimosse dal pool) e NON sono oggetto di Maturation. Vedi 02_personaggio/06_riallineamento_approcci.json → heart_linked_protection_full",
+    "step_5_verifica_unicità": "Le 3 nominated Heart-linked devono essere DISTINTE. Non si può scegliere la stessa nominated due volte, anche se appare in liste di Cuori diversi. Vedi 02_personaggio/04_cuori.json → heart_linked_nominated_unblock → lists_can_overlap"
+  },
+
+  "tag_reference": {
+    "note": "I tag di attivazione sono descritti nel dettaglio in 03_vitalita/02_giocare_vitalita.json. Qui una sintesi dei tag usati nelle nominated Heart-linked esclusive.",
+    "tags_used_in_esclusive": {
+      "[Utility]": "Abilità di utility (percezione, decifrazione, ricerca informazioni)",
+      "[Fisico]": "Abilità puramente fisica (nessuna arma)",
+      "[Sociale]": "Abilità sociale (interazioni, persuasione, intimidazione)",
+      "[Difesa]": "Abilità difensiva",
+      "[Empatia]": "Abilità empatica (connessione, comprensione emotiva)",
+      "[Arma]": "Abilità che richiede arma",
+      "[Magia]": "Abilità magica"
+    }
+  },
+
+  "sovrapposizioni_tra_liste": {
+    "name": "Sovrapposizioni tra Liste di Cuori Diversi",
+    "principle": "Le liste nominated sbloccate da Cuori diversi POSSONO sovrapporsi. Questo è desiderabile: dà coerenza narrativa al catalogo. Es: 'Sopravvivenza Urbana' appare sia nella lista di 'Orfano di Guerra' (PASSATO) sia in quella di 'Cresciuto nelle Strade' (PASSATO) — entrambi i background giustificano la stessa tecnica.",
+    "esempi_di_sovrapposizioni": [
+      "'Sopravvivenza Urbana' (ESCLUSIVA, definita in Orfano di Guerra) — appare anche in 'Cresciuto nelle Strade' e 'Esule da Terra Lontana'",
+      "'Occhio per i Pericoli' (ESCLUSIVA, definita in Orfano di Guerra) — appare anche in 'Nato in Schiavitù' e 'Sopravvissuto a una Catastrofe'",
+      "'Galateo Nobiliare' (ESCLUSIVA, definita in Erede Decaduto) — appare anche in 'Figlio di Mercanti'",
+      "'Stile del Maestro' (ESCLUSIVA, definita in Allievo di un Maestro Defunto PASSATO) — appare anche in 'Maestro Defunto' (LEGAMI)",
+      "'Codice del Duello' (ESCLUSIVA, definita in Onore nel Duello DOTTRINA) — appare anche in 'Ordine Cavalleresco' (LEGAMI)",
+      "'Scudo degli Indifesi' (ESCLUSIVA, definita in Proteggere i Più Deboli DOTTRINA) — appare anche in 'Villaggio Natale da Proteggere' (LEGAMI)",
+      "'Ultimo a Ritirarsi' (ESCLUSIVA, definita in Mai Abbandonare un Compagno DOTTRINA) — appare anche in 'Compagno d'Armi Caduto' (LEGAMI) e 'Fratelli di Sangue' (LEGAMI)",
+      "'Legame Sincronizzato' (ESCLUSIVA, definita in Sorella Adottiva LEGAMI) — appare anche in 'Fratelli di Sangue' (LEGAMI)"
+    ],
+    "constraint_unique_in_pool": "Anche se una nominated appare in liste diverse, il PG non può SCEGLIERLA due volte. Le 3 Heart-linked devono essere DISTINTE. Vedi 02_personaggio/04_cuori.json → heart_linked_nominated_unblock → lists_can_overlap"
+  },
+
+  "interazione_con_altre_mechanics": {
+    "creation_pg": "Questo catalogo è referenziato dallo Step 2 della creazione del PG. Vedi 02_personaggio/05_creazione_pg.json → step_2_choose_hearts",
+    "cuori_system": "Per le regole complete sui Cuori (ferita, cura, equivalenza, death condition), vedi 02_personaggio/04_cuori.json",
+    "riallineamento_protection": "Le nominated Heart-linked scelte da questo catalogo sono PROTETTE dal Riallineamento. Vedi 02_personaggio/06_riallineamento_approcci.json → heart_linked_protection_full",
+    "nominated_structure": "Per la struttura delle nominated (Specializzata vs Generica, abilità gerarchiche, tag di attivazione), vedi 02_personaggio/03_carte_approccio_nominated.json",
+    "nominated_catalog_libere": "Le nominated LIBERE (non Heart-linked) sono in 02_personaggio/08_catalogo_nominated_libere.json. Le nominated in questo file referenziano per nome le nominated libere quando appaiono in una lista Cuore."
+  },
+
+  "master_discretion": {
+    "narrative_coherence_check": "Il Master dovrebbe aiutare il giocatore a mantenere COERENZA NARRATIVA tra i 3 Cuori scelti. Vedi 02_personaggio/04_cuori.json → creation_step_integration → narrative_coherence",
+    "custom_cuori_permission": "Il Master può permettere al giocatore di CREARE un Cuore custom NON in questo catalogo, ma dovrebbe farlo solo in casi speciali (background molto specifico, setting particolare). Il Cuore custom deve essere approvato dal Master e deve definire una 'heart_linked_lista' di 4-5 nominated (miste libere + esclusive custom).",
+    "ban_list": "Il Master può vietare Cuori specifici per la propria campagna (es. niente 'Ordine Cavalleresco' in un setting senza ordini). Comunica la ban list ai giocatori prima della creazione.",
+    "trigger_narrativi_per_cuori": "Il Master dovrebbe usare i Cuori scelti dal PG come FONTI DI NARRATIVA: generare ganci, dilemmi, side-quest che li coinvolgano. Vedi 02_personaggio/04_cuori.json → out_of_combat_use"
+  },
+
+  "open_questions_v3_1": {
+    "cuori_count_per_category": "Domanda: 9 Cuori per categoria (27 totali) sono sufficienti? In futuro si può espandere a 12-15 per categoria. Per ora, 9 offrono varietà sufficiente per PG tipici.",
+    "nominated_heart_linked_esclusive_count": "Domanda: quante nominated esclusive per Cuore? Attualmente: 1-2 esclusive per Cuore (per i Cuori che ne hanno). In futuro si può espandere.",
+    "custom_cuori_rules": "Da definire meglio nella Master Guide (Canale 2): linee guida per la creazione di Cuori custom (narrazione appropriata, lista nominated coerente, bilanciamento).",
+    "heart_evolution_rules": "Domanda: i Cuori possono 'evolvere' narrativamente pur restando gli stessi? Es: 'Sorella Adottiva' può diventare 'Sorella Adottiva (in lutto)' dopo la sua morte? La meccanica dice 'il Cuore resta come cicatrice', ma la nominazione potrebbe evolvere. Da formalizzare."
+  },
+
+  "design_evolution_notes": {
+    "v1_v3": "NON ESISTEVANO Cuori nominati. I Cuori erano 3 carte segnaposto vuote, ferite in ordine gerarchico. Nessun catalogo, nessuna scelta, nessun Heart-linked.",
+    "v3_1_fase_2": "FASE 2 della transizione v3.1: il file 02_personaggio/04_cuori.json è stato riscritto con i Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), regole di ferita, equivalenza cura, sblocco Heart-linked. Ma il catalogo era solo annunciato come 'DA CREARE in Fase 3'.",
+    "v3_1_fase_3": "FASE 3 della transizione v3.1: questo catalogo è stato CREATO. 27 Cuori (9 per categoria), ciascuno con una lista di 4-5 nominated Heart-linked sbloccate. Le nominated sono miste: nominated LIBERE referenziate dal catalogo generale (vedi 02_personaggio/08_catalogo_nominated_libere.json) + nominated HEART-LINKED ESCLUSIVE definite inline in questo file. Le liste possono sovrapporsi tra Cuori diversi (con coerenza narrativa). Questo catalogo permette finalmente la completa procedura di creazione del PG v3.1."
+  }
+}

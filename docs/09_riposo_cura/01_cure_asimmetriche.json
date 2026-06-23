@@ -1,10 +1,10 @@
 {
   "section_id": "09-01",
-  "section_name": "Cure Asimmetriche — Vitalità Veloce, Approccio Medio, Cuori Lento",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Cure Asimmetriche — Vitalità Veloce, Approccio Medio, Cuori Lento (Equivalenza v3.1)",
+  "version": "2.0",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema di Cura Asimmetrica: le tre risorse del PG (Mazzo Vitalità, Approcci, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Il Mazzo Vitalità si cura VELOCE (riposo, pozioni rivitalizzanti). Le Approcci si curano MEDIO (pozioni guarigione, magia curativa, Punti Impresa). I Cuori si curano LENTO (rituali, tempo narrativo, miracoli). Questo file è la CASA UNICA per il sistema di cura.",
+  "description": "Definisce il sistema di Cura Asimmetrica: le tre risorse del PG (Mazzo Vitalità, Approcci, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Il Mazzo Vitalità si cura VELOCE (riposo, pozioni rivitalizzanti). Le Approcci si curano MEDIO (pozioni guarigione, magia curativa, Punti Impresa). I Cuori si curano LENTO (rituali, tempo narrativo, miracoli). In v3.1, l'asimmetria INTERNA dei Cuori (Cuore 1 facile / Cuore 3 impossibile) è RIMOSSA — i 3 Cuori sono EQUIVALENTI per difficoltà di cura. Questo file è la CASA UNICA per il sistema di cura.",
   "asymmetry_principle": {
     "name": "Principio di Asimmetria",
     "principle": "Le tre risorse del PG (Mazzo Vitalità, Approcci, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Questo riflette il loro peso narrativo: il Mazzo Vitalità è energia temporanea, le Approcci sono capacità apprese, i Cuori sono l'essenza profonda del personaggio.",
@@ -32,15 +32,17 @@
       }
     },
     "cuori": {
-      "resource": "Carte Cuore (Essenza profonda)",
-      "speed": "MOLTO LENTA — arco narrativo, side-quest.",
+      "resource": "Carte Cuore (Essenza profonda — PASSATO/DOTTRINA/LEGAMI)",
+      "speed_v3_1": "MOLTO LENTA per TUTTI e 3 i Cuori — arco narrativo, side-quest. Equivalenza v3.1: NESSUNA asimmetria interna (rimosso 'Cuore 1 facile, Cuore 3 impossibile').",
       "methods": {
-        "rituali_complessi_costosi": "Rapidi ma costano risorse significative (denaro, componenti rare).",
-        "rituali_settimane_riposo": "Economici ma richiedono settimane di riposo assoluto."
+        "rituali_complessi_costosi": "Rapidi ma costano risorse significative (denaro, componenti rare, favore divino).",
+        "rituali_settimane_riposo": "Economici ma richiedono settimane di riposo assoluto + cure mediche serie.",
+        "side_quest_narrativa": "Una missione specifica che affronta il tema del Cuore ferito. Il Master valuta caso per caso. Es: per curare il PASSATO 'Orfano di Guerra', il PG potrebbe dover tornare nel luogo della sua infanzia distrutta.",
+        "miracoli_narrativi": "Eventi narrativi eccezionali (intervento divino, sacrificio di un altro PG, oggetto leggendario). Riservati a momenti climatici della campagna."
       },
-      "cuore_1_easier": "Il Cuore 1 è il più facile da curare — è legato al corpo, e il corpo vuole guarire.",
-      "cuore_3_hardest": "Il Cuore 3 è quasi impossibile da curare — è la parte più profonda dell'identità.",
-      "impresa_non_cura_cuori": "I Punti Impresa NON possono curare le Carte Cuore. I Cuori richiedono sempre rituali, tempo narrativo o miracoli. Vedi 02_personaggio/04_cuori.json"
+      "v3_1_equivalence_rule": "I 3 Cuori sono EQUIVALENTI per difficoltà di cura. NON esiste più 'Cuore 1 facile da curare, Cuore 3 quasi impossibile'. Tutti e 3 i Cuori hanno la stessa difficoltà di cura. Vedi 02_personaggio/04_cuori.json → healing_v3_1_equivalence",
+      "ritual_theme_rule": "Il rituale di cura deve essere IN TEMA con il Cuore ferito. Es: per curare il PASSATO 'Orfano di Guerra', non basta 'una pozione rara' — serve un lavoro narrativo sulle radici del PG. Per la DOTTRINA 'Mai abbandonare un compagno', il rituale potrebbe richiedere la riunione con un compagno perduto.",
+      "impresa_non_cura_cuori": "I Punti Impresa NON possono curare le Carte Cuore. I Cuori richiedono sempre rituali, tempo narrativo o miracoli. Vedi 08_nemici/07_ricompense.json"
     }
   },
   "potion_distinction_critical": {
@@ -56,6 +58,13 @@
     "rule": "Punti Impresa possono curare Approcci GRATUITAMENTE. NON possono curare Cuori.",
     "cross_reference": "Vedi 08_nemici/07_ricompense.json → punti_impresa"
   },
+  "v3_1_changes_summary": {
+    "name": "Cosa Cambia in v3.1",
+    "removed": "Asimmetria INTERNA dei Cuori (Cuore 1 facile → Cuore 3 impossibile). RIMOSSA perché legata all'ordine gerarchico (anch'esso rimosso in v3.1).",
+    "added": "Equivalenza dei 3 Cuori: stessa difficoltà di cura. Aggiunte opzioni narrative: side-quest tematiche, miracoli narrativi.",
+    "ritual_theme_rule_new": "Il rituale di cura deve essere IN TEMA con il Cuore ferito (PASSATO/DOTTRINA/LEGAMI hanno tematiche diverse).",
+    "cross_reference": "Vedi 02_personaggio/04_cuori.json → healing_v3_1_equivalence per il dettaglio completo"
+  },
   "recovery_priority_recommendation": {
     "principle": "In combattimento, il PG deve priorizzare quale risorsa 'sacrificare' nel Dilemma del Guerriero tenendo conto della velocità di cura.",
     "tactical_recommendation": [
@@ -66,7 +75,11 @@
     ]
   },
   "design_intent_overall": {
-    "principle": "La Cura Asimmetrica è il pilastro che rende il Dilemma del Guerriero SIGNIFICATIVO. Se tutto si curasse alla stessa velocità, le scelte sarebbero equivalenti. Con cura asimmetrica, ogni scelta ha un COSTO reale e differenziato: sacrifichi la stamina (recupero veloce), la potenza (recupero medio), o l'essenza (recupero lentissimo).",
-    "comparison_with_other_systems": "A differenza di D&D (dove i PF si curano tutti allo stesso modo, con cure minori/maggiori), qui le tre risorse sono DISTINTE e hanno economies di cura separate. Più realistico narrativamente, più tattico meccanicamente."
+    "principle": "La Cura Asimmetrica è il pilastro che rende il Dilemma del Guerriero SIGNIFICATIVO. Se tutto si curasse alla stessa velocità, le scelte sarebbero equivalenti. Con cura asimmetrica, ogni scelta ha un COSTO reale e differenziato: sacrifichi la stamina (recupero veloce), la potenza (recupero medio), o l'essenza (recupero lentissimo). In v3.1, l'asimmetria è TRA le 3 risorse (Vitalità vs Approcci vs Cuori), MA NON è interna ai Cuori (i 3 Cuori sono equivalenti).",
+    "comparison_with_other_systems": "A differenza di D&D (dove i PF si curano tutti allo stesso modo, con cure minori/maggiori), qui le tre risorse sono DISTINTE e hanno economies di cura separate. Più realistico narrativamente, più tattico meccanicamente. La rimozione v3.1 dell'asimmetria interna dei Cuori rende la scelta di quale Cuore ferire PURAMENTE narrativa (non tattica)."
+  },
+  "design_evolution_notes": {
+    "v1_v3": "Asimmetria TRA risorse (Vitalità veloce / Approcci medio / Cuori lento) E ANCHE asimmetria INTERNA ai Cuori (Cuore 1 facile → Cuore 3 quasi impossibile). Ordine di ferita obbligatorio (1 → 2 → 3).",
+    "v3_1": "Asimmetria TRA risorse MANTENUTA (Vitalità veloce / Approcci medio / Cuori lento). Asimmetria INTERNA ai Cuori RIMOSSA — i 3 Cuori sono EQUIVALENTI. Ordine di ferita RIMOSSO (scelta del giocatore). Aggiunta regola 'rituale di cura in tema col Cuore ferito'. Aggiunte opzioni narrative: side-quest tematiche, miracoli narrativi."
   }
 }

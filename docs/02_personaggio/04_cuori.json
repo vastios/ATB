@@ -1,57 +1,161 @@
 {
   "section_id": "02-04",
-  "section_name": "I Cuori Nominati — Essenza, PASSATO/DOTTRINA/LEGAMI, Condizione di Morte",
-  "version": "1.0-placeholder",
+  "section_name": "I Cuori Nominati — Essenza del PG, PASSATO/DOTTRINA/LEGAMI, Condizione di Morte",
+  "version": "2.0",
   "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "v3_1_status": "PLACEHOLDER — Questo file sarà COMPLETAMENTE RISCRITTO in Fase 2 della transizione v3.1. Il contenuto attuale riflette ancora la v3 (Cuori segnaposto vuoti, ordine di ferita 1→2→3 obbligatorio, asimmetria di cura). Le decisioni v3.1 già prese sono: (1) i Cuori sono NOMINATI, scelti dal catalogo; (2) 3 categorie: PASSATO/DOTTRINA/LEGAMI; (3) ordine di ferita RIMOSSO — il giocatore SCEGLIE; (4) asimmetria di cura RIMOSSA — i 3 Cuori sono equivalenti; (5) le Ferite Cuore NON disattivano le nominated Heart-linked; (6) ogni carta Cuore sblocca una LISTA di nominated Approccio (Heart-linked) tra cui il PG sceglie UNA nominated.",
-  "description": "Definisce le 3 Carte Cuore del PG. I Cuori sono la risorsa vitale PIÙ PROFONDA: sono l'ultima linea di difesa prima della morte. In v3.1, i Cuori sono NOMINATI e rappresentano l'ESSENZA del PG (PASSATO, DOTTRINA, LEGAMI) — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. Si feriscono per scelta del giocatore (no ordine obbligatorio, no asimmetria di cura) e 3 Cuori feriti = morte. Questo file è la CASA UNICA per le regole dei Cuori: gli altri file usano cross-riferimenti qui.",
-  "what_are_hearts": {
-    "name": "Cosa Sono i Cuori",
-    "definition": "Tre carte fisiche disposte in fila nella Zona 2 dell'Area Gioco (vedi 02_personaggio/01_area_gioco.json). Rappresentano la vitalità profonda del PG — oltre la stamina (Vitalità) e oltre la potenza (Approcci).",
-    "narrative_identity_skin_only": "Nella skin cabalistica, i 3 Cuori corrispondono all'Anima Tripartita (Nefesh, Ruach, Neshamah). Vedi 10_lore_cabalistica/01_cosmologia.json — nel Canale 1 sono semplicemente 'Cuore 1, Cuore 2, Cuore 3'."
+  "description": "Definisce le 3 Carte Cuore del PG. In v3.1 i Cuori sono NOMINATI, scelti dal catalogo in 3 categorie (PASSATO, DOTTRINA, LEGAMI). Sono l'ESSENZA del PG — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. NON cambiano mai (nemmeno se un LEGAME muore narrativamente, resta nel cuore come cicatrice). Si feriscono per SCELTA del giocatore (nessun ordine obbligatorio, nessuna asimmetria di cura); 3 Cuori feriti = morte. Ferire un Cuore NON disattiva le nominated Heart-linked (restano giocabili). Ogni Cuore sblocca una LISTA di nominated Approccio (Heart-linked) tra cui il PG sceglie UNA nominated alla creazione. Questo file è la CASA UNICA per le regole dei Cuori: gli altri file usano cross-riferimenti qui.",
+  "v3_1_paradigm_shift": {
+    "name": "Svolta v3.1 — Cuori come Essenza Nominata",
+    "what_changes": [
+      "I Cuori non sono più 3 carte segnaposto vuote (v3). Sono NOMINATI, scelti dal catalogo in 3 categorie: PASSATO, DOTTRINA, LEGAMI.",
+      "L'ordine di ferita OBBLIGATORIO (Cuore 1 → 2 → 3) è RIMOSSO. Il giocatore SCEGLIE quale Cuore ferire quando deve.",
+      "L'asimmetria di cura (Cuore 1 facile, Cuore 3 quasi impossibile) è RIMOSSA. I 3 Cuori sono EQUIVALENTI: stessa difficoltà di cura.",
+      "Ferire un Cuore NON disattiva le nominated Heart-linked. Le tecniche apprese PER via di quel Cuore restano giocabili — la essenza non si smarrisce, si only ferisce."
+    ],
+    "why_these_changes": "I Cuori come 'segnaposto vuoti con ordine gerarchico' erano meccanicamente piatti e narrativamente ciechi. In v3.1, ogni Cuore è un'ancora narrativa CONCRETA: 'Sono un Orfano di Guerra (PASSATO), credo che la giustizia venga prima della legge (DOTTRINA), e combatto per mia sorella adottiva (LEGAMI)'. Ferire uno di questi cuori ha un peso drammatico specifico, non generico. La scelta di quale ferire diventa una scelta narrativa, non solo tattica.",
+    "what_does_not_change_mechanically": "I Cuori restano la risorsa PIÙ PROFONDA: 3 Cuori feriti = morte. NON sono un'opzione per il Danno Standard. Si feriscono SOLO nei 3 casi previsti (Esaurimento Mazzo, Anatema, Soglia del Vuoto). La cura resta LENTA (rituali, tempo narrativo) — più lenta delle Approcci e molto più lenta del Mazzo Vitalità.",
+    "cross_reference_full_mechanics": "Vedi 09_riposo_cura/01_cure_asimmetriche.json per la tabella completa delle cure (aggiornata per equivalenza Cuori)"
   },
-  "wound_order_rule": {
-    "name": "Regola dell'Ordine di Ferita",
-    "principle": "I Cuori si feriscono in ORDINE OBBLIGATORIO: Cuore 1 PRIMA, poi Cuore 2, infine Cuore 3.",
-    "no_skipping": "NON è possibile ferire Cuore 2 se Cuore 1 è sano. NON è possibile ferire Cuore 3 se Cuore 2 è sano.",
-    "visual": "Le 3 carte Cuore sono in fila. Si girano da sinistra (Cuore 1) verso destra (Cuore 3). Il PG vede fisicamente la morte avvicinarsi."
+  "three_categories": {
+    "name": "Le Tre Categorie di Cuori",
+    "principle": "Il PG ha 3 Cuori, uno per categoria. Ogni categoria rappresenta una dimensione DIVERSA dell'essenza del personaggio. La scelta del catalogo è LIBERA (entro i vincoli del catalogo stesso), ma le 3 categorie sono OBBLIGATORIE: un PG deve avere esattamente 1 PASSATO + 1 DOTTRINA + 1 LEGAMI.",
+    "passato": {
+      "name": "PASSATO — Da dove vieni",
+      "narrative_role": "Le origini del PG. Cosa ha vissuto prima di diventare chi è ora. È la radice che ha plasmato il suo modo di approcciar al mondo. NON si cambia: il passato è passato.",
+      "examples_from_catalog_to_be_created": [
+        "Orfano di Guerra — cresciuto tra le macerie, ha imparato a sopravvivere",
+        "Erede Decaduto — un tempo nobiltà, ora in miseria ma con orgoglio",
+        "Figlio di Contadini — educazione semplice, mente pratica",
+        "Esule da Terra Lontana — straniero ovunque vada",
+        "Allievo di un Maestro Defunto — porti avanti la sua eredità"
+      ],
+      "heart_linked_nominated_theme": "Le nominated sbloccate dal PASSATO sono tipicamente tecniche di SOPRAVVIVENZA o di CULTURA apprese nell'infanzia/giovinezza. Es: 'Orfano di Guerra' può sbloccare nominated Istinto 'Sopravvivenza Urbana'.",
+      "changeable": "MAI — il passato non si riscrive. Anche se il PG cerca di fuggire dalle proprie origini, il PASSATO resta il suo Cuore 1 (drammaticamente: la negazione non è cancellazione)."
+    },
+    "dottrina": {
+      "name": "DOTTRINA — In cosa credi",
+      "narrative_role": "Il codice etico del PG. La bussola morale che guida le sue scelte anche quando nessuno guarda. NON è religione (può esserlo, ma non necessariamente): è il principio che il PG non trasgredirebbe se non sotto costrizione estrema.",
+      "examples_from_catalog_to_be_created": [
+        "Mai abbandonare un compagno — anche a costo della vita",
+        "La giustizia prima della legge — la legge è strumento, non fine",
+        "Il sapere è libertà — condividi la conoscenza, non occultarla",
+        "Onore nel duello — affronta il nemico a faccia a faccia, mai a tradimento",
+        "Proteggere i più deboli — il forte esiste per servire, non per dominare",
+        "Redenzione sempre possibile — nessuno è oltre la possibilità di cambiare"
+      ],
+      "heart_linked_nominated_theme": "Le nominated sbloccate dalla DOTTRINA sono tipicamente tecniche CHE INCARNANO il principio. Es: 'Mai abbandonare un compagno' può sbloccare nominated Impeto 'Difesa del Fratello' (abilità difensiva protettiva).",
+      "changeable": "MAI — la dottrina è un faro. Anche se il PG la tradisce in un momento di debolezza, resta il suo Cuore 2 (drammaticamente: il tradimento della propria dottrina è una ferita, non una sostituzione)."
+    },
+    "legami": {
+      "name": "LEGAMI — Per chi combatti",
+      "narrative_role": "Le relazioni del PG. Le persone (o le comunità, o gli ideali-personificati) per cui il PG è disposto a spingersi oltre i propri limiti. È il WHY MOTIVANTE: la ragione per cui il PG continua a lottare anche quando sarebbe più facile arrendersi.",
+      "examples_from_catalog_to_be_created": [
+        "Sorella adottiva — l'unica famiglia che hai",
+        "Maestro defunto — ne porti il nome e la tecnica",
+        "Ordine cavalleresco — hai giurato fedeltà",
+        "Amore non corrisposto — combatti per meritartelo",
+        "Villaggio natale da proteggere — la tua gente",
+        "Compagno d'armi caduto — ne onori la memoria"
+      ],
+      "heart_linked_nominated_theme": "Le nominated sbloccate dai LEGAMI sono tipicamente tecniche CHE IL LEGAME STESSO HA INSEGNATO O ISPIRATO. Es: 'Maestro defunto' può sbloccare nominated Istinto 'Stile del Maestro' (tecnica ereditata).",
+      "changeable": "MAI — anche se il legame muore narrativamente (la sorella muore, l'ordine si scioglie, il maestro è caduto), resta nel cuore come cicatrice. La perdita non cancella il legame: lo trasforma in memoria. Il Cuore 3 resta quello."
+    }
+  },
+  "heart_linked_nominated_unblock": {
+    "name": "Sblocco nominated Heart-linked",
+    "principle": "Alla creazione, la scelta dei 3 Cuori SBLOCCA 3 LISTE di nominated Approccio — una lista per ciascun Cuore. Per ciascuna lista, il PG sceglie UNA nominated (che diventa una delle sue 4-5 nominated iniziali). Le nominated così scelte sono le HEART-LINKED del PG.",
+    "why_one_per_heart_not_more": "Un Cuore = una nominated. Vincolo di focalizzazione: il PG non può moltiplicare le proprie tecniche Heart-linked scegliendo 'cuori ricchi'. Ogni Cuore porta ESATTAMENTE UNA tecnica che lo incarna.",
+    "lists_can_overlap": "Le liste di nominated sbloccate da Cuori diversi POSSONO sovrapporsi. Una nominated Istinto 'Sopravvivenza Urbana' può apparire sia nella lista del PASSATO 'Orfano di Guerra' sia nella lista del PASSATO 'Esule da Terra Lontana'. Tuttavia, il PG non può scegliere la STESSA nominated due volte: le 3 Heart-linked devono essere DISTINTE.",
+    "cross_reference_catalog_created": "Il catalogo completo dei Cuori (27 carte = 9 per categoria, ciascuno con la lista di nominated Heart-linked sbloccate) è ORA CREATO in Fase 3. Vedi 02_personaggio/07_catalogo_cuori.json. Il catalogo Nominated Libere (40 carte = 10 per Approccio) è in 02_personaggio/08_catalogo_nominated_libere.json.",
+    "cross_reference_nominated_structure": "Vedi 02_personaggio/03_carte_approccio_nominated.json per la struttura delle nominated (Specializzata vs Generica)"
+  },
+  "wound_mechanic": {
+    "name": "Ferita dei Cuori",
+    "principle": "Girare una Carta Cuore sul dorso = FERITA. La carta resta in zona Cuori, visibile a tutti. Un Cuore ferito non viene rimosso — viene fisicamente girato per mostrare lo stato di danno.",
+    "player_chooses_which_heart_v3_1": "Quando un effetto forza la ferita di un Cuore (Esaurimento Mazzo, Anatema, Soglia del Vuoto), il GIOCATORE SCEGLIE quale dei Cuori sani ferire. NON c'è ordine obbligatorio (rimosso in v3.1). La scelta è sia tattica (quale nominated Heart-linked preservare attiva — vedi sotto) sia narrativa (quale essenza ferire in questo momento drammatico).",
+    "narrative_interpretation": "Una ferita a un Cuore NON è una ferita fisica (non è un colpo al petto). È un momento in cui l'essenza del PG viene scossa: il PASSATO fa ritorno come trauma, la DOTTRINA viene messa in dubbio, il LEGAME si incrina. Il PG resta scosso in quella dimensione della propria identità finché non guarisce.",
+    "ferita_heart_linked_clarification_critical": {
+      "name": "FERITA CUORE NON DISATTIVA LE HEART-LINKED (regola critica v3.1)",
+      "principle": "Ferire un Cuore NON disattiva le nominated Heart-linked che quello stesso Cuore ha sbloccato. Le Heart-linked restano GIUCABILI anche con il Cuore ferito.",
+      "why": "La meccanica 'Ferita Cuore = disattiva nominated Heart-linked' è stata CONSIDERATA E RESPINTA in v3.1. Motivazione: le nominated Heart-linked sono TECNICHE APPRESE PER via del Cuore — non sono 'abilità donate dal Cuore attivo'. Una volta apprese, fanno parte del PG. Ferire il Cuore non 'disimpara' la tecnica. La ferita colpisce l'essenza profonda (risorsa morte), non l'arsenale tecnico.",
+      "what_actually_happens_when_heart_wounded": "Il PG ha 1 Cuore in meno sano. Si avvicina alla morte (3 Cuori feriti = morte). Tutto qui. Niente penalità aggiuntive. Il costo è nella risorsa morte, non in penalità tattiche sovrapposte.",
+      "design_intent": "Mantiene il costo della ferita Cuore NETTO e COMPRENSIBILE: ti avvicini alla morte, punto. Niente contabilità di penalità cascading. Una ferita Cuore è SEMPRE e SOLO un passo verso la morte — il giocatore non deve ricordare 'ferita cuore = anche disattiva 3 nominated + 1 Approccio + ecc.'"
+    }
   },
   "when_hearts_get_wounded": {
     "name": "Quando si Ferisce un Cuore",
     "three_cases_only": "I Cuori si feriscono SOLO in questi tre casi. NON sono mai un'opzione per assorbire Danno Standard.",
     "case_1_deck_exhaustion": {
       "trigger": "Il Mazzo Vitalità è vuoto e si deve pescare. Vedi 03_vitalita/04_esaurimento.json",
-      "effect": "Il PG ferisce il prossimo Cuore disponibile E crolla svenuto (incapacitato fino a fine combattimento).",
-      "narrative": "L'energia del PG è esaurita. Il collasso colpisce la sua essenza più profonda."
+      "effect": "Il PG ferisce UN Cuore a propria scelta (v3.1: scelta libera, non ordine obbligatorio) E crolla svenuto (incapacitato fino a fine combattimento).",
+      "narrative": "L'energia del PG è esaurita. Il collasso colpisce la sua essenza più profonda — il giocatore sceglie quale dimensione dell'essenza viene colpita (PASSATO come trauma che riemerge? DOTTRINA come dubbio che si insinua? LEGAMI come paura di perdere chi ama?)."
     },
     "case_2_anatema_direct_heart_attack": {
       "trigger": "Attacchi Anatema (solo da nemici Epici). Vedi 08_nemici/04_attacchi_speciali.json",
-      "effect": "Il PG ferisce il prossimo Cuore disponibile. NESSUNA scelta.",
-      "narrative": "L'attacco colpisce direttamente l'anima, ignorando ogni difesa materiale."
+      "effect": "Il PG ferisce UN Cuore a propria scelta (v3.1: scelta libera). NESSUNA opposizione possibile.",
+      "narrative": "L'attacco colpisce direttamente l'anima, ignorando ogni difesa materiale. Il giocatore sceglie quale dimensione dell'essenza viene aggredita — scelta narrativa libera."
     },
     "case_3_soglia_del_vuoto": {
-      "trigger": "Una Approccio scende a 0. Vedi 05_combattimento/03_soglia_vuoto.json",
-      "effect": "Il PG è COSTRETTO a girare immediatamente un Cuore. NESSUNA scelta o opposizione.",
-      "narrative": "La frantumazione di un canale verso un Mondo destabilizza l'anima stessa."
+      "trigger": "Un Approccio scende a 0 (tutte le carte di quell'Approccio ferite). Vedi 05_combattimento/03_soglia_vuoto.json",
+      "effect": "Il PG è COSTRETTO a girare immediatamente un Cuore. NESSUNA opposizione. Tuttavia, il giocatore SCEGLIE quale Cuore ferire (v3.1: scelta libera).",
+      "narrative": "Il collasso di un modo di affrontare il mondo destabilizza l'anima stessa. Il PG è scosso profondamente — sceglie quale dimensione dell'essenza risente del collasso."
     },
-    "explicit_restriction": "I Cuori NON sono un'opzione per il Danno Standard (vedi 05_combattimento/02_danno.json). Il Danno Standard può essere assorbito SOLO con Milling (Mazzo Vitalità) o Ferita a Approccio."
+    "explicit_restriction": "I Cuori NON sono un'opzione per il Danno Standard (vedi 05_combattimento/02_danno.json). Il Danno Standard può essere assorbito SOLO con Milling (Mazzo Vitalità) o Ferita a un Approccio QUALSIASI (a scelta del giocatore)."
   },
   "death_condition": {
     "name": "Condizione di Morte",
-    "rule": "Cuore 1 + Cuore 2 + Cuore 3 TUTTI feriti = MORTE del PG.",
-    "narrative": "L'anima tripartita è completamente frantumata. Il PG non può più essere rianimato se non con miracoli narrativi eccezionali."
+    "rule": "Cuore PASSATO + Cuore DOTTRINA + Cuore LEGAMI — TUTTI e 3 feriti = MORTE del PG.",
+    "narrative": "L'anima tripartita è completamente frantumata. Le tre ancore — da dove vieni, in cosa credi, per chi combatti — sono spezzate simultaneamente. Il PG non può più essere rianimato se non con miracoli narrativi eccezionali (side-quest specifica, intervento divino, ecc.).",
+    "design_intent_two_heart_wounded_drama": "Con 2 Cuori feriti, il PG è in STATO CRITICO ma ANCORA ATTIVO. La drammaticità è massima: ogni scelta successiva può essere l'ultima. Il giocatore sa che un solo altro evento di ferita Cuore = morte. Questo crea una tensione narrativa che la v3 (con ordine gerarchico) non aveva: in v3, ferire Cuore 3 era 'l'ultimo passo meccanico', mentre in v3.1, ferire uno qualsiasi dei Cuori sani restanti è la morte. Ogni Cuore ferito è un passo verso la fine, indipendentemente dall'ordine."
   },
-  "healing_asymmetry": {
-    "name": "Cura Asimmetrica dei Cuori",
-    "principle": "I Cuori sono la risorsa PIÙ DIFFICILE da curare. Rispetto al Mazzo Vitalità (veloce) e alle Approcci (medio), i Cuori richiedono TEMPO NARRATIVO LUNGO o risorse rare.",
-    "cuore_1_easier": "Il Cuore 1 è il più facile da curare — è legato al corpo, e il corpo vuole guarire. Richiede comunque rituali o cure mediche serie.",
-    "cuore_2_medium": "Il Cuore 2 è difficile. Richiede rituali complessi o settimane di riposo assoluto.",
-    "cuore_3_hardest": "Il Cuore 3 è quasi impossibile da curare — è la parte più profonda dell'identità. Richiede miracoli, side-quest narrative, o magia eccezionale.",
-    "no_impresa_healing": "I Punti Impresa NON possono curare le Carte Cuore. Vedi 08_nemici/07_ricompense.json",
-    "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json per la tabella completa delle cure"
+  "healing_v3_1_equivalence": {
+    "name": "Cura dei Cuori (Equivalenza v3.1)",
+    "principle": "In v3.1, i 3 Cuori sono EQUIVALENTI per quanto riguarda la cura. NON esiste più 'Cuore 1 facile da curare, Cuore 3 quasi impossibile'. Tutti e 3 i Cuori hanno la stessa difficoltà di cura.",
+    "why_removed_asymmetry": "L'asimmetria v3 era legata all'ordine gerarchico (Cuore 1 = corpo, Cuore 2 = mente, Cuore 3 = anima profonda). Con l'ordine gerarchico RIMOSSO, l'asimmetria perdeva senso. Inoltre, dal punto di vista narrativo, non è chiaro perché 'Orfano di Guerra' (PASSATO) sia più facile da curare di 'Mai abbandonare un compagno' (DOTTRINA). Le tre dimensioni dell'essenza sono EQUAMENTE PROFONDE — quindi equamente difficili da guarire.",
+    "speed_v3_1": "MOLTO LENTA per tutti e 3 i Cuori. Richiede rituali complessi, side-quest narrative, tempo narrativo significativo (settimane di riposo assoluto, rituali costosi, miracoli).",
+    "methods_v3_1": {
+      "rituali_complessi_costosi": "Rapidi ma costano risorse significative (denaro, componenti rare, favore divino).",
+      "rituali_settimane_riposo": "Economici ma richiedono settimane di riposo assoluto + cure mediche serie.",
+      "side_quest_narrativa": "Una missione specifica che affronta il tema del Cuore ferito. Es: per curare il PASSATO 'Orfano di Guerra', il PG potrebbe dover tornare fisicamente nel luogo della sua infanzia distrutta e confrontarsi con i fantasmi del passato. Il Master valuta caso per caso.",
+      "miracoli_narrativi": "Eventi narrativi eccezionali (intervento divino, sacrificio di un altro PG, oggetto leggendario). Riservati a momenti climatici della campagna."
+    },
+    "no_impresa_healing": "I Punti Impresa NON possono curare le Carte Cuore. I Cuori richiedono sempre rituali, tempo narrativo o miracoli. Vedi 08_nemici/07_ricompense.json",
+    "narrative_ritual_theme": "Il rituale di cura deve essere IN TEMA con il Cuore ferito. Es: per curare il PASSATO 'Orfano di Guerra', non basta 'una pozione rara' — serve un lavoro narrativo sulle radici del PG. Per la DOTTRINA 'Mai abbandonare un compagno', il rituale potrebbe richiedere la riunione con un compagno perduto. Il Master ha libertà creative ma deve onorare il tema del Cuore.",
+    "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json per la tabella completa delle cure (aggiornata per equivalenza Cuori)"
   },
-  "open_questions": {
-    "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  "out_of_combat_use": {
+    "name": "Uso dei Cuori Fuori dal Combattimento",
+    "narrative_anchors": "I Cuori non hanno effetti meccanici attivi fuori dal combattimento (non sono 'abilità'). Sono ANCORE NARRATIVE: il Master può usarli per generare ganci narrativi, dilemmi morali, plot hook.",
+    "examples": [
+      "Il PASSATO 'Erede Decaduto' può far riconoscere il PG da un vecchio nemico di famiglia — il Master genera un incontro sociale.",
+      "La DOTTRINA 'Mai abbandonare un compagno' può mettere il PG di fronte a un dilemma: salvare un compagno O fermare il nemico — entrambe le opzioni hanno costo.",
+      "I LEGAMI 'Sorella adottiva' possono far comparire la sorella in pericolo, generando una side-quest di salvataggio."
+    ],
+    "design_intent": "I Cuori danno al Master MATERIALE NARRATIVO gratuito. Il giocatore ha già dichiarato 'questo è il mio essenziale' — il Master può usarlo per costruire storie che lo colpiscano personalmente. Non è un abuso: è il cuore (in senso letterale) del personaggio che diventa motore di narrazione."
+  },
+  "ferita_cuore_player_strategy": {
+    "name": "Strategia del Giocatore: Quale Cuore Ferire?",
+    "principle": "Quando un effetto forza una ferita Cuore (Esaurimento, Anatema, Soglia del Vuoto), il giocatore SCEGLIE quale Cuore sano ferire. La scelta ha DUE dimensioni: tattica e narrativa.",
+    "tactical_dimension": "POCO RILEVANTE in v3.1. Poiché ferire un Cuore NON disattiva le nominated Heart-linked, NON c'è una scelta tattica significativa in termini di 'quale tecnica preservare'. Tutte le nominated restano giocabili indipendentemente da quali Cuori siano feriti. La scelta è quasi interamente narrativa.",
+    "narrative_dimension": "DOMINANTE. Il giocatore sceglie quale dimensione dell'essenza viene scossa in quel momento drammatico. Es: se il PG ha appena fallito una missione di salvataggio, può scegliere di ferire il LEGAME (la fiducia in se stesso come protettore) o la DOTTRINA (la convinzione che 'mai abbandonare un compagno' sia possibile). È una scelta narrativa che il giocatore fa in conversazione col Master.",
+    "extreme_case_two_hearts_wounded": "Con 2 Cuori feriti, il giocatore è in STATO CRITICO. Ferire l'unico Cuore sano restante = morte. Il giocatore non può scegliere di ferire un Cuore già ferito (i Cuori feriti non si 'feriscono ulteriormente'). Se viene forzata una ferita Cuore quando 2 Cuori sono già feriti, il terzo Cuore viene ferito = MORTE. Nessuna scappatoia.",
+    "design_intent_simplified": "La rimozione dell'ordine obbligatorio e dell'asimmetria cura ha SEMPLIFICATO la scelta. Il giocatore non deve più ragionare su 'quale Cuore conviene ferire tatticamente' — deve solo scegliere quale ferita narrativa ha più senso in quel momento. Meno calcolo, più roleplay."
+  },
+  "creation_step_integration": {
+    "name": "Creazione del PG — Scelta dei Cuori (Step 2)",
+    "rule": "Alla creazione, il PG sceglie 3 carte Cuore nominate dal catalogo, una per ciascuna categoria: 1 PASSATO + 1 DOTTRINA + 1 LEGAMI.",
+    "order_of_choice_recommended": "Si raccomanda di scegliere nell'ordine: PASSATO → DOTTRINA → LEGAMI. Il PASSATO è la radice (determina gli altri due in modo naturale: un orfano svilupperà una certa dottrina e certi legami). Ma l'ordine è solo consigliato, non obbligatorio.",
+    "narrative_coherence": "Il Master dovrebbe aiutare il giocatore a mantenere COERENZA NARRATIVA tra i 3 Cuori. Es: 'Orfano di Guerra' (PASSATO) + 'La giustizia prima della legge' (DOTTRINA) + 'Ordine cavalleresco' (LEGAMI) è coerente. 'Orfano di Guerra' + 'Onore nel duello' + 'Villaggio natale da proteggere' è meno coerente (un orfano di guerra raramente ha un villaggio natale intatto). Il Master può chiedere al giocatore di giustificare le scelte non coerenti.",
+    "cross_reference_creation_full": "Vedi 02_personaggio/05_creazione_pg.json → step_2_choose_hearts per la procedura completa"
+  },
+  "open_questions_v3_1": {
+    "hearts_catalog": "RISOLTO in Fase 3: catalogo Cuori COMPLETO in 02_personaggio/07_catalogo_cuori.json — 27 carte (9 per categoria), ciascuna con lista di 4-5 nominated Heart-linked sbloccate (miste nominated libere + esclusive del Cuore).",
+    "heart_linked_lists_definition": "RISOLTO in Fase 3: per ogni carta Cuore del catalogo 02_personaggio/07_catalogo_cuori.json, la lista ESATTA di nominated Approccio sbloccate è definita. Le liste possono sovrapporsi tra carte Cuori diverse (con coerenza narrativa). Le nominated in lista possono essere Specializzate o Generiche (LIBERE dal catalogo 02_personaggio/08_catalogo_nominated_libere.json) o nominated esclusive del Cuore.",
+    "master_guide_heart_use": "DA CREARE in 11_master_guide: linee guida per il Master su come usare i Cuori (ganci narrativi, dilemmi, rituali di cura tematici, evoluzione narrativa)."
+  },
+  "design_evolution_notes": {
+    "v1_v3": "I Cuori erano 3 carte segnaposto vuote, ferite in ORDINE OBBLIGATORIO (1 → 2 → 3). Asimmetria di cura: Cuore 1 facile, Cuore 3 quasi impossibile. Le ferite Cuore erano puramente meccaniche (nessuna nominativa).",
+    "v3_1": "ARCHITETTURA v3.1: i Cuori diventano NOMINATI, scelti dal catalogo in 3 categorie (PASSATO/DOTTRINA/LEGAMI). Ordine di ferita RIMOSSO (scelta del giocatore). Asimmetria cura RIMOSSA (3 Cuori equivalenti). Ferita Cuore NON disattiva nominated Heart-linked (regola considerata e respinta per chiarezza meccanica). Ogni Cuore sblocca UNA nominated Heart-linked scelta da una lista specifica. I Cuori diventano ANCORE NARRATIVE attive per il Master, non solo risorse morte."
   }
 }

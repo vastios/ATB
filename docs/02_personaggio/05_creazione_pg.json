@@ -1,10 +1,10 @@
 {
   "section_id": "02-05",
   "section_name": "Creazione del Personaggio — Point Buy, Cuori, Composizione Pool",
-  "version": "2.0-placeholder",
+  "version": "3.1",
   "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "v3_1_status": "PARZIALMENTE AGGIORNATO — I passaggi 1-5 riflettono la v3.1 (Approcci). I passaggi 6 (Cuori) e 7 (Mazzo Vitalità) sono PLACEHOLDER e saranno riscritti in Fase 2 quando i file Cuori e Mazzo Vitalità saranno completati.",
+  "v3_1_status": "COMPLETATO FASE 3 — Tutti i 7 passaggi riflettono la v3.1. Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), Mazzo Vitalità Dinamico con Distribuzione Asimmetrica per Livello, Riallineamento/Maturation, e CATALOGHI COMPLETI (Cuori + Nominated libere) sono ora formalizzati nei file di riferimento.",
   "description": "Definisce la procedura di creazione del PG. Il PG è definito da: (1) i valori dei 4 Approcci (point buy totale 10), (2) i 3 Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), (3) la composizione del pool di 10 Carte Approccio (4-5 nominated = 3 Heart-linked + 1-2 libere, + 5-6 bianche), (4) l'Equipaggiamento iniziale (4 slot), (5) gli Strumenti Rapidi iniziali (5 slot), (6) il Mazzo Vitalità (60 carte, composizione dinamica). Questo file è la CASA UNICA per la procedura di creazione.",
   "step_by_step_creation": {
     "step_1_point_buy": {
@@ -27,10 +27,12 @@
     },
     "step_2_choose_hearts": {
       "name": "Step 2 — Scelta dei 3 Cuori Nominati (v3.1)",
-      "rule": "Il PG sceglie 3 carte Cuore nominate dal catalogo, una per ciascuna categoria: PASSATO, DOTTRINA, LEGAMI.",
-      "narrative_role": "I Cuori sono l'ESSENZA del PG — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. NON cambiano mai (nemmeno se un LEGAME muore narrativamente, resta nel cuore).",
+      "rule": "Il PG sceglie 3 carte Cuore nominate dal catalogo, una per ciascuna categoria: 1 PASSATO + 1 DOTTRINA + 1 LEGAMI.",
+      "narrative_role": "I Cuori sono l'ESSENZA del PG — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. NON cambiano mai (nemmeno se un LEGAME muore narrativamente, resta nel cuore come cicatrice).",
       "heart_linked_nominated_unblock": "La scelta dei 3 Cuori SBLOCCA 3 liste di nominated Approccio. Per ciascun Cuore, il PG sceglie UNA nominated dalla lista corrispondente. Queste 3 nominated sono le HEART-LINKED del PG — tecniche apprese PER via di quel Cuore.",
-      "cross_reference": "Vedi 02_personaggio/04_cuori.json (riscritto in Fase 2). Catalogo Cuori: DA CREARE in Fase 3."
+      "order_of_choice_recommended": "Si raccomanda di scegliere nell'ordine: PASSATO → DOTTRINA → LEGAMI. Il PASSATO è la radice (determina gli altri due in modo naturale). L'ordine è solo consigliato, non obbligatorio.",
+      "narrative_coherence_check": "Il Master dovrebbe aiutare il giocatore a mantenere COERENZA NARRATIVA tra i 3 Cuori. Es: 'Orfano di Guerra' + 'La giustizia prima della legge' + 'Ordine cavalleresco' è coerente. 'Orfano di Guerra' + 'Onore nel duello' + 'Villaggio natale da proteggere' è meno coerente e andrebbe giustificato.",
+      "cross_reference_full": "Vedi 02_personaggio/04_cuori.json per la struttura completa dei Cuori Nominati (3 categorie, sblocco Heart-linked, regole di ferita, cura equivalente). Catalogo Cuori COMPLETO: vedi 02_personaggio/07_catalogo_cuori.json (27 Cuori = 9 PASSATO + 9 DOTTRINA + 9 LEGAMI, ciascuno con lista nominated Heart-linked sbloccata)."
     },
     "step_3_compose_pool": {
       "name": "Step 3 — Composizione del Pool di Carte Approccio (v3.1)",
@@ -52,7 +54,7 @@
       "name": "Step 4 — Scelta delle Nominated Libere (1-2)",
       "rule": "Dopo le 3 Heart-linked (dallo Step 2), il PG sceglie 1-2 nominated LIBERE dal catalogo generale, da collocare negli slot nominated rimanenti.",
       "two_types": "Specializzata (3 abilità in tema, gerarchiche) o Generica (3 abilità diverse, tutte al livello 1). Vedi 02_personaggio/03_carte_approccio_nominated.json",
-      "open_question_catalog": "Il catalogo nominated libero completo è DA CREARE (Fase 3). Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+      "cross_reference_catalog": "Catalogo Nominated Libere COMPLETO: vedi 02_personaggio/08_catalogo_nominated_libere.json (40 nominated libere = 10 per Approccio, mix 6 Specializzate + 4 Generiche). Il giocatore sceglie 1-2 nominated da questo catalogo oltre alle 3 Heart-linked."
     },
     "step_5_equipment": {
       "name": "Step 5 — Equipaggiamento Iniziale",
@@ -70,7 +72,17 @@
       "name": "Step 7 — Il Mazzo Vitalità (Dinamico v3.1)",
       "rule": "Il Mazzo Vitalità è PROPORZIONALE agli Approcci del PG: 60 carte totali = 10 Punti Approccio × 6 carte per punto.",
       "composition_v3_1": "La COMPOSIZIONE T1-T5 di ciascun colore è determinata dal VALORE di quell'Approccio secondo la Distribuzione Asimmetrica per Livello (4 firme temporali uniche per i 4 Approcci). Il mazzo NON è fisso — muta quando gli Approcci vengono riallineati.",
-      "selection_from_catalog": "Il PG seleziona le 60 carte dal Catalogo seguendo la tabella di scalatura del proprio profilo di Approcci. Vedi 03_vitalita/01_mazzo_vitalita.json (riscritto in Fase 2)."
+      "selection_from_catalog": "Il PG seleziona le 60 carte dal Catalogo seguendo la tabella di scalatura del proprio profilo di Approcci. Per ciascun Approccio al valore N, consultare la tabella corrispondente al livello N per determinare la composizione T1-T5 delle N×6 carte di quel colore.",
+      "example_composition_warrior": {
+        "approcci": "Impeto 5, Istinto 3, Analisi 1, Risonanza 1",
+        "impeto_5": "T1×3, T2×3, T3×4, T4×10, T5×10 = 30 carte (peso su T4-T5: devastation)",
+        "istinto_3": "T1×10, T2×5, T3×3 = 18 carte (peso su T1-T2: riflessi)",
+        "analisi_1": "T1×4, T2×2 = 6 carte (base comune)",
+        "risonanza_1": "T1×4, T2×2 = 6 carte (base comune)",
+        "total": "30 + 18 + 6 + 6 = 60 carte ✓"
+      },
+      "dynamic_evolution_note": "Quando il PG subisce un Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json), il mazzo si AGGIORNA dinamicamente: 6 carte del colore sceso tornano nella Riserva Comune; 6 carte del colore salito vengono selezionate dal Catalogo o dalla Riserva Comune seguendo la nuova composizione.",
+      "cross_reference_full": "Vedi 03_vitalita/01_mazzo_vitalita.json per le tabelle complete della Distribuzione Asimmetrica per Livello e per la meccanica del Mazzo Dinamico."
     }
   },
   "creation_summary_table": {
@@ -91,7 +103,7 @@
         "Cuori Nominati",
         "3 carte (1 PASSATO + 1 DOTTRINA + 1 LEGAMI)",
         "Sì (dal catalogo Cuori)",
-        "Sani alla creazione, scelta libera quale ferire"
+        "Sani alla creazione; scelta libera quale ferire (no ordine obbligatorio)"
       ],
       [
         "Carte Approccio",
@@ -120,9 +132,15 @@
     ]
   },
   "open_questions_v3_1": {
-    "nominated_catalog_free": "DA CREARE (Fase 3): catalogo nominated LIBERE, 8-12 per Approccio, mix specializzate/generiche.",
-    "hearts_catalog": "DA CREARE (Fase 3): catalogo Cuori, 8-10 per categoria (PASSATO/DOTTRINA/LEGAMI), 24-30 totali. Ogni carta Cuore deve specificare la LISTA di nominated Approccio sbloccate.",
-    "riallineamento_mechanics": "DA DEFINIRE (Fase 2): meccanica esatta di Riallineamento, in 02_personaggio/06_riallineamento_approcci.json.",
-    "mazzo_vitalita_scalatura": "DA FORMALIZZARE (Fase 2): la Distribuzione Asimmetrica per Livello (tabella 4×5 × T1-T5) sarà formalizzata in 03_vitalita/01_mazzo_vitalita.json."
+    "nominated_catalog_free": "RISOLTO (Fase 3): catalogo nominated LIBERE completato in 02_personaggio/08_catalogo_nominated_libere.json — 40 nominated totali (10 per Approccio), mix 6 Specializzate + 4 Generiche. Referenziato da Step 4 (creazione), Maturation, e Riallineamento swap.",
+    "hearts_catalog": "RISOLTO (Fase 3): catalogo Cuori completato in 02_personaggio/07_catalogo_cuori.json — 27 Cuori (9 PASSATO + 9 DOTTRINA + 9 LEGAMI), ciascuno con lista di 4-5 nominated Heart-linked sbloccate (miste nominated libere del catalogo + esclusive del Cuore). Referenziato da Step 2 (creazione).",
+    "riallineamento_mechanics": "RISOLTO (Fase 2): meccanica esatta di Riallineamento e Maturation formalizzata in 02_personaggio/06_riallineamento_approcci.json.",
+    "mazzo_vitalita_scalatura": "RISOLTO (Fase 2): la Distribuzione Asimmetrica per Livello (4 firme temporali × 5 livelli) è formalizzata in 03_vitalita/01_mazzo_vitalita.json → distribuzione_asimmetrica_per_livello."
+  },
+  "design_evolution_notes": {
+    "v1_v3": "Procedura di creazione senza Cuori nominati, senza Mazzo Dinamico. Pool di carte Approccio fisso alla creazione.",
+    "v3_1_fase_1": "FASE 1 (rename + reframing): 'Caratteristica' → 'Approccio' con reframing mindset. Passaggi 1-5 aggiornati.",
+    "v3_1_fase_2": "FASE 2 (new mechanics): Cuori Nominati (PASSATO/DOTTRINA/LEGAMI) formalizzati in 02_personaggio/04_cuori.json. Mazzo Vitalità Dinamico + Distribuzione Asimmetrica per Livello formalizzati in 03_vitalita/01_mazzo_vitalita.json. Maturation + Riallineamento formalizzati in 02_personaggio/06_riallineamento_approcci.json. Tutti i 7 passaggi ora riflettono la v3.1.",
+    "v3_1_fase_3": "FASE 3 (catalogs): 02_personaggio/07_catalogo_cuori.json CREATO (27 Cuori con liste nominated Heart-linked sbloccate). 02_personaggio/08_catalogo_nominated_libere.json CREATO (40 nominated libere). Step 2 e Step 4 ora hanno cataloghi completi da referenziare. Tutte le open_questions v3.1 della creazione PG sono RISOLTE."
   }
 }
