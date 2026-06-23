@@ -4,11 +4,11 @@
   "version": "1.0",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema di difesa. In v3, il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Caratteristica NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE. Lo Shield Sliding e l'Assorbimento Armatura sono mantessi. Questo file è la CASA UNICA per il sistema di difesa.",
+  "description": "Definisce il sistema di difesa. In v3, il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Approccio NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE. Lo Shield Sliding e l'Assorbimento Armatura sono mantessi. Questo file è la CASA UNICA per il sistema di difesa.",
   "v3_change_summary": {
-    "principle": "Il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Caratteristica NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE (v3).",
+    "principle": "Il Blocco Perfetto si basa sull'ABILITÀ DINENSIVA ospitata su una Carta Approccio NOMINATED e attivata in quello stesso slot temporale. Le vecchie Carte Abilità fisiche separate sono RIMOSSE (v3).",
     "what_changed": [
-      "Le Abilità Difensive non sono più carte fisiche separate (4 slot v2). Sono ospitate su Carte Caratteristica nominated.",
+      "Le Abilità Difensive non sono più carte fisiche separate (4 slot v2). Sono ospitate su Carte Approccio nominated.",
       "Le nominated difensive sono tipicamente Istinto (Schivata Acrobatica) o Impeto (Parata).",
       "Lo Shield Sliding (slittamento scudo) continua a funzionare, ma l'Abilità Difensiva a cui si aggancia è ospitata su una nominated.",
       "L'Assorbimento Armatura resta invariato: Armatura feribile a 2 stadi volontariamente."
@@ -18,7 +18,7 @@
     "name": "I Tre Esiti della Difesa",
     "perfect_block": {
       "name": "Blocco Perfetto (v3)",
-      "condition_v3": "Una ABILITÀ DINENSIVA (ospitata su una Carta Caratteristica nominated, es. Istinto 'Schivata Acrobatica') è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
+      "condition_v3": "Una ABILITÀ DINENSIVA (ospitata su una Carta Approccio nominated, es. Istinto 'Schivata Acrobatica') è stata attivata da una Vitalità scoperta nella STESSA POSIZIONE dell'attacco nemico.",
       "effect": "0 danni. L'attacco viene completamente deviato.",
       "unlocks_reaction_tags": "Sblocca i tag Reazione sull'abilità difensiva nominated: [Contrattacco] (zeri danni + colpisci), [Intercettazione] (annulla attacco per tutti, richiede combo), [Immolazione] (subisci doppio, alleati a 0).",
       "narrative": "Hai parato esattamente dove l'attacco arrivava."
@@ -31,13 +31,13 @@
     "full_damage": {
       "name": "Danno Pieno",
       "condition_v3": "Nessuna Abilità Difensiva attivata nella posizione o in quelle adiacenti. Un PG senza Abilità Difensiva nominated subisce SEMPRE danno pieno.",
-      "effect": "Danno pieno (Milling o Ferita Caratteristica, a scelta del PG tramite Dilemma del Guerriero). Vedi 05_combattimento/02_danno.json"
+      "effect": "Danno pieno (Milling o Ferita Approccio, a scelta del PG tramite Dilemma del Guerriero). Vedi 05_combattimento/02_danno.json"
     }
   },
   "no_default_defense_rule": {
     "name": "Regola: Nessuna Difesa Predefinita",
-    "principle": "NOVITÀ v3: SENZA Abilità Difensiva nominated (su una Carta Caratteristica), il PG NON può difendersi. Subisce sempre danno pieno.",
-    "design_intent": "Questo rende le nominated difensive fondamentali quanto le Armi. Un PG puramente offusivo senza nominated difensiva è fragile. Costringe a bilanciare il pool di Carte Caratteristica nominated tra offesa e difesa.",
+    "principle": "NOVITÀ v3: SENZA Abilità Difensiva nominated (su una Carta Approccio), il PG NON può difendersi. Subisce sempre danno pieno.",
+    "design_intent": "Questo rende le nominated difensive fondamentali quanto le Armi. Un PG puramente offusivo senza nominated difensiva è fragile. Costringe a bilanciare il pool di Carte Approccio nominated tra offesa e difesa.",
     "exception_improvised": "Armi improvissate e difese improvvisate possono esistere come fallback narrativo, ma sono molto deboli. Vedi 06_equipaggiamento/01_slot_attivazione.json"
   },
   "shield_sliding_v3": {
@@ -65,7 +65,7 @@
       "tactical_implication": "I PG DEVONO usare azioni lente/potenti o combo per penetrare l'armatura."
     },
     "tag_based_mitigation": {
-      "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Caratteristica specifici.",
+      "rule": "Un mostro può essere immune o resistente ad azioni con Tag/Approccio specifici.",
       "examples": {
         "immunity": "Fantasma immune a [Impeto]: gli attacchi impulsivi e non ragionati non fanno nulla — serve freddezza.",
         "resistance": "Golem resistente a [Istinto]: gli attacchi di destrezza fanno danno ridotto.",
@@ -73,7 +73,7 @@
       },
       "cross_reference_full": "Vedi 08_nemici/03_tratti.json per il sistema completo dei Tratti nemici"
     },
-    "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
+    "design_intent": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Approccio."
   },
   "defense_offense_fusion": {
     "name": "Fusione Difesa/Offesa",

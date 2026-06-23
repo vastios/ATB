@@ -4,7 +4,7 @@
   "version": "1.0",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema di danno a doppio strato. Il danno si divide in DUE CATEGORIE meccaniche NETTAMENTE SEPARATE: Standard (scelta tra Milling o Ferita Caratteristica) e Diretto (nessuna scelta). I Cuori NON sono mai un'opzione per il Danno Standard. Il [Ferita] tag riattiva le abilità di una Carta Caratteristica ferita. Questo file è la CASA UNICA per il Dilemma del Guerriero e il sistema di danno subito.",
+  "description": "Definisce il sistema di danno a doppio strato. Il danno si divide in DUE CATEGORIE meccaniche NETTAMENTE SEPARATE: Standard (scelta tra Milling o Ferita Approccio) e Diretto (nessuna scelta). I Cuori NON sono mai un'opzione per il Danno Standard. Il [Ferita] tag riattiva le abilità di una Carta Approccio ferita. Questo file è la CASA UNICA per il Dilemma del Guerriero e il sistema di danno subito.",
   "two_layers_overview": {
     "name": "I Due Strati di Danno",
     "layer_1_esaustione": {
@@ -15,9 +15,9 @@
       "nature": "Danno temporaneo. Le carte possono tornare dalla Pila Scarti."
     },
     "layer_2_ferita": {
-      "target": "Caratteristiche e Cuori (e Equipaggiamento volontariamente ferito — vedi 06_equipaggiamento/03_ferita_2_stadi.json)",
+      "target": "Approcci e Cuori (e Equipaggiamento volontariamente ferito — vedi 06_equipaggiamento/03_ferita_2_stadi.json)",
       "the_warriors_dilemma": "Il danno si divide in DUE CATEGORIE meccaniche NETTAMENTE SEPARATE, con regole di assorbimento diverse. Vedi sezione 'Due Categorie di Danno' sotto.",
-      "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Caratteristiche/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità.",
+      "forced_wound": "Alcuni attacchi (Anatema, Boss) colpiscono Approcci/Cuori DIRETTAMENTE senza passare per il Mazzo Vitalità.",
       "damage_typing": {
         "fisico": "Bersaglia Impeto / Istinto. Colpi, tagli, impatti — chi AGISCE fisicamente.",
         "magico": "Bersaglia Risonanza / Analisi. Maledizioni, folgori, assalti psichici — chi COMPRENDE.",
@@ -35,24 +35,24 @@
         "name": "Opzione A — Milling (La Stanchezza)",
         "azione": "Scarta carte dalla cima del Mazzo Vitalità verso gli scarti pari al danno subito.",
         "costo": "Perde carte dal Mazzo Vitalità. Se il Mazzo finisce = 1 Ferita al prossimo Cuore + Svenimento.",
-        "quando_usarla": "Danni piccoli, Mazzo ancora pieno, vuoi conservare Caratteristiche."
+        "quando_usarla": "Danni piccoli, Mazzo ancora pieno, vuoi conservare Approcci."
       },
       "opzione_b_ferita": {
         "name": "Opzione B — Ferita (Il Sacrificio)",
-        "azione": "Il giocatore gira UNA carta di UNA QUALSIASI Caratteristica (a propria scelta, indipendentemente dal tipo di danno subito) sul dorso. Il danno viene COMPLETAMENTE ANNULLATO (0 danni subiti al mazzo), ma il Valore Statistico di quella Caratteristica si abbassa di 1.",
-        "nota_critica": "Una singola Ferita a una Caratteristica assorbe TUTTO il danno di un attacco Standard, indipendentemente dalla quantità. La scelta della Caratteristica è LIBERA.",
-        "costo": "Le azioni con il Tag di quella Caratteristica subiscono il Limite di Potenza. Perdi accesso alle azioni migliori di quel tipo.",
+        "azione": "Il giocatore gira UNA carta di UNA QUALSIASI Approccio (a propria scelta, indipendentemente dal tipo di danno subito) sul dorso. Il danno viene COMPLETAMENTE ANNULLATO (0 danni subiti al mazzo), ma il Valore Statistico di quella Approccio si abbassa di 1.",
+        "nota_critica": "Una singola Ferita a una Approccio assorbe TUTTO il danno di un attacco Standard, indipendentemente dalla quantità. La scelta della Approccio è LIBERA.",
+        "costo": "Le azioni con il Tag di quella Approccio subiscono il Limite di Potenza. Perdi accesso alle azioni migliori di quel tipo.",
         "quando_usarla": "Danni medi-grandi, vuoi proteggere il Mazzo Vitalità ma puoi permetterti di perdere potenza temporaneamente."
       },
       "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare permanentemente un punto di un'abilità per salvare la propria riserva energetica.",
-      "revoked_rule_note": "REGOLA REVOCATA: NON c'è più la corrispondenza obbligatoria tra tipo di danno subito e Caratteristica feribile. La scelta è LIBERA."
+      "revoked_rule_note": "REGOLA REVOCATA: NON c'è più la corrispondenza obbligatoria tra tipo di danno subito e Approccio feribile. La scelta è LIBERA."
     },
-    "danno_diretto_caratteristica": {
-      "name": "2. Danno Diretto alla Caratteristica (Il Colpo Mirato)",
-      "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni'). NON rappresenta un colpo generico, ma un'aggressione chirurgica a una Caratteristica specifica. Vedi 08_nemici/04_attacchi_speciali.json",
-      "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Caratteristica è stata direttamente aggredita.",
-      "azione_obbligatoria": "Il giocatore deve girare un numero di carte di QUELLA Caratteristica pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
-      "soglia_vuoto": "Se la Caratteristica scende a 0, si innesca la Soglia del Vuoto: il giocatore è COSTRETTO a girare immediatamente un Cuore. Vedi 05_combattimento/03_soglia_vuoto.json"
+    "danno_diretto_approccio": {
+      "name": "2. Danno Diretto alla Approccio (Il Colpo Mirato)",
+      "trigger": "Danno specifico di nemici Elite o Epici (indicato sulla loro scheda, es. 'Attacco Mirato a Analisi: 2 Danni'). NON rappresenta un colpo generico, ma un'aggressione chirurgica a una Approccio specifica. Vedi 08_nemici/04_attacchi_speciali.json",
+      "meccanica_nessuna_scelta": "Il giocatore NON può scegliere di pagare questo danno scartando carte dal Mazzo Vitalità. La Approccio è stata direttamente aggredita.",
+      "azione_obbligatoria": "Il giocatore deve girare un numero di carte di QUELLA Approccio pari al danno inflitto (o tutte le rimanenti, se il danno supera il valore attuale).",
+      "soglia_vuoto": "Se la Approccio scende a 0, si innesca la Soglia del Vuoto: il giocatore è COSTRETTO a girare immediatamente un Cuore. Vedi 05_combattimento/03_soglia_vuoto.json"
     },
     "danno_anatema": {
       "name": "3. Danno Anatema (Solo Boss Epici)",
@@ -60,28 +60,28 @@
       "meccanica": "Il giocatore ferisce il prossimo Cuore disponibile. NESSUNA scelta.",
       "cross_reference": "Vedi 02_personaggio/04_cuori.json → when_hearts_get_wounded → case_2_anatema_direct_heart_attack"
     },
-    "nota_cuori_nel_dilemma": "I Cuori NON sono un'opzione per il Danno Standard. I Cuori si feriscono SOLO in tre casi: (1) Esaurimento del Mazzo Vitalità, (2) Attacchi Anatema/Diretti ai Cuori, (3) Soglia del Vuoto (Caratteristica a 0). Questa regola rende i Cuori una risorsa INCOGNIABILE dal danno normale."
+    "nota_cuori_nel_dilemma": "I Cuori NON sono un'opzione per il Danno Standard. I Cuori si feriscono SOLO in tre casi: (1) Esaurimento del Mazzo Vitalità, (2) Attacchi Anatema/Diretti ai Cuori, (3) Soglia del Vuoto (Approccio a 0). Questa regola rende i Cuori una risorsa INCOGNIABILE dal danno normale."
   },
   "ferita_tag_v3": {
     "name": "TAG [Ferita] — Riattivazione Tattica",
-    "principle": "TAG [Ferita] sulle Vitalità = permette di RIATTIVARE le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata.",
+    "principle": "TAG [Ferita] sulle Vitalità = permette di RIATTIVARE le abilità di UNA Carta Approccio FERITA dello stesso tipo della Vitalità giocata.",
     "scenario": "Se ho 2 carte Impeto ferite e gioco una Vitalità Impeto con [Ferita], SCEGLIE quale delle due riattivare per quel turno.",
     "without_ferita_tag": "Senza [Ferita], le carte ferite sono inattive — le loro abilità nominated sono disabilitate.",
     "design_intent": "Il tag [Ferita] permette di continuare a usare abilità anche quando feriti, ma richiede una Vitalità specifica. È la 'persistenza attraverso il dolore': il PG ferito non è inutile, ma deve spendere risorse (Vitalità con [Ferita]) per riattivare ciò che ha perso.",
-    "cross_reference_nominated": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json → wound_effect_on_nominated"
+    "cross_reference_nominated": "Vedi 02_personaggio/03_carte_approccio_nominated.json → wound_effect_on_nominated"
   },
-  "ferita_caratteristica_separation_from_equipment": {
-    "principle": "La Ferita Caratteristica (da danno subito) è SEMPRE sulla Caratteristica. NON può essere trasferita all'Equipaggiamento.",
-    "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Caratteristiche (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti. Vedi 06_equipaggiamento/03_ferita_2_stadi.json"
+  "ferita_approccio_separation_from_equipment": {
+    "principle": "La Ferita Approccio (da danno subito) è SEMPRE sulla Approccio. NON può essere trasferita all'Equipaggiamento.",
+    "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Approcci (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti. Vedi 06_equipaggiamento/03_ferita_2_stadi.json"
   },
   "recovery_summary": {
     "characteristic_ferita": "Guaribile con pozioni guarigione/magia curativa (giornate). Punti Impresa per cura istantanea.",
-    "characteristic_sostituzione": "Le Caratteristiche NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Caratteristiche) per eventi narrativi significativi. Il totale resta sempre 10.",
+    "characteristic_sostituzione": "Le Approcci NON si distruggono. Si possono SOSTITUIRE (spostare punti tra Approcci) per eventi narrativi significativi. Il totale resta sempre 10.",
     "hearts_ferita": "Difficile (Cuore 1) a quasi impossibile (Cuore 3). Solo rituali o miracoli. Vedi 02_personaggio/04_cuori.json",
     "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json"
   },
   "design_intent": {
-    "principle": "Il Dilemma del Guerriero non si basa sulla matematica, ma sulla psicologia del giocatore. Per il Danno Standard: sacrifichi la tua Stamina (Milling) o la tua potenza (Ferita a Caratteristica)? Per il Danno Diretto: non hai scelta — il nemico ha rotto le tue difese e devi subire. Le cure asimmetriche e la Soglia del Vuoto rendono ogni perdita significativa."
+    "principle": "Il Dilemma del Guerriero non si basa sulla matematica, ma sulla psicologia del giocatore. Per il Danno Standard: sacrifichi la tua Stamina (Milling) o la tua potenza (Ferita a Approccio)? Per il Danno Diretto: non hai scelta — il nemico ha rotto le tue difese e devi subire. Le cure asimmetriche e la Soglia del Vuoto rendono ogni perdita significativa."
   },
   "design_evolution_notes": {
     "v4": "Token coperti, Perfect/Mitigated/Full, Fusione Difesa/Offesa.",

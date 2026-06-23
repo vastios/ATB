@@ -17,7 +17,7 @@
     "mechanical_expression": "I nemici attaccano per rubare Luce (milling), per frantumare Vasi (ferire Connessioni) o per divorare l'Anima (Anatema). Ogni tipo di attacco ha un movente cosmico.",
     "three_attack_types": {
       "milling": "Danno Standard (Milling) = il Qliphoth ruba Luce dal Reshimu del PG.",
-      "direct_characteristic": "Danno Diretto Caratteristica = il Qliphoth cerca di frantumare un Vaso specifico per raggiungere la Luce concentrata lì dentro.",
+      "direct_characteristic": "Danno Diretto Approccio = il Qliphoth cerca di frantumare un Vaso specifico per raggiungere la Luce concentrata lì dentro.",
       "anatema": "Danno Anatema = il Qliphoth colpisce direttamente l'Anima, il luogo più concentrato di Luce del PG."
     },
     "cross_reference_damage": "Vedi 05_combattimento/02_danno.json"

@@ -20,14 +20,14 @@
       "Pozione — cura 5 punti Vitalità (effetto fisso)",
       "Grimaldello — apre una serratura (Esplorazione)",
       "Bomba a Fumogeno — permette ritirata",
-      "Bendaggio — cura 1 Ferita Caratteristica (non Cuore)",
+      "Bendaggio — cura 1 Ferita Approccio (non Cuore)",
       "Pergamena di Fuoco (trovata) — infligge 4 danno a un bersaglio (effetto fisso)",
       "Bomba Acida — infligge 2 danno + riduce Armatura nemica di 1"
     ]
   },
   "analisi_crafting_system": {
     "name": "Crafting Analisi — Talismani Offensivi",
-    "creator": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Caratteristica nominated Analisi con il talento crafting).",
+    "creator": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Approccio nominated Analisi con il talento crafting).",
     "creation_time": "Durante il RIPOSO (non in combattimento).",
     "daily_limit": "Limite crafting = valore Analisi del PG (es: Analisi 3 = 3 talismani/giorno).",
     "upgradeable": "Aumentabile con nominated specifiche (es. 'Artigiano', 'Mago Erudito') che raddoppiano o aggiungono slot crafting.",

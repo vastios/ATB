@@ -27,7 +27,7 @@
   },
   "core_emotion": {
     "name": "Il Dilemma del Guerriero",
-    "definition": "Quando subisci danni, SCEGLI: Mazzo Vitalità (milling, temporaneo), Caratteristica (perdi potenza), o Cuore (più vicino alla morte). I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
+    "definition": "Quando subisci danni, SCEGLI: Mazzo Vitalità (milling, temporaneo), Approccio (perdi potenza), o Cuore (più vicino alla morte). I Cuori si feriscono in ORDINE: 1 → 2 → 3.",
     "cross_reference": "Vedi 05_combattimento/02_danno.json per la definizione formale delle Due Categorie di Danno."
   },
   "v3_pillars_quick_reference": {
@@ -40,15 +40,15 @@
     "list": [
       {
         "name": "Meccanica Flip Universale",
-        "description": "Tutte le carte (Caratteristiche, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'. Un'unica azione fisica per segnalare stati diversi."
+        "description": "Tutte le carte (Approcci, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'. Un'unica azione fisica per segnalare stati diversi."
       },
       {
         "name": "Vitalità come Chiavi",
-        "description": "Le Carte Vitalità non definiscono l'azione. I loro TAG sono chiavi di attivazione che permettono di attivare poteri dalle Carte Caratteristica nominated, dall'Equipaggiamento o dagli Strumenti Rapidi."
+        "description": "Le Carte Vitalità non definiscono l'azione. I loro TAG sono chiavi di attivazione che permettono di attivare poteri dalle Carte Approccio nominated, dall'Equipaggiamento o dagli Strumenti Rapidi."
       },
       {
-        "name": "Caratteristiche Nominated",
-        "description": "Le Carte Caratteristica non sono segnaposto passivi. Hanno NOME + ABILITÀ + INCANTESIMI. Il valore = numero di carte fisiche. Pool misto nominated + bianche per narrare la progressione."
+        "name": "Approcci Nominated",
+        "description": "Le Carte Approccio non sono segnaposto passivi. Hanno NOME + ABILITÀ + INCANTESIMI. Il valore = numero di carte fisiche. Pool misto nominated + bianche per narrare la progressione."
       },
       {
         "name": "Magia a Due Vie",
@@ -60,7 +60,7 @@
       },
       {
         "name": "Tag [Ferita] Tattico",
-        "description": "Una Vitalità con [Ferita] riattiva le abilità di UNA Carta Caratteristica ferita dello stesso tipo. Persistenza attraverso il dolore."
+        "description": "Una Vitalità con [Ferita] riattiva le abilità di UNA Carta Approccio ferita dello stesso tipo. Persistenza attraverso il dolore."
       },
       {
         "name": "Crafting Analisi",
@@ -72,11 +72,11 @@
       },
       {
         "name": "Tabella Potere Artigianale",
-        "description": "Il danno dipende dalla Caratteristica del PG incrociata col Costo Tempo. T=1 scala poco, T=5 scala MOLTO."
+        "description": "Il danno dipende dalla Approccio del PG incrociata col Costo Tempo. T=1 scala poco, T=5 scala MOLTO."
       },
       {
         "name": "Danno a Doppio Strato",
-        "description": "Esaustione (milling del Mazzo Vitalità) vs Ferita (Caratteristiche girate = perdita di potenza, Cuori girati = più vicino alla morte)."
+        "description": "Esaustione (milling del Mazzo Vitalità) vs Ferita (Approcci girate = perdita di potenza, Cuori girati = più vicino alla morte)."
       },
       {
         "name": "Combo Cooperative",
@@ -101,7 +101,7 @@
       "01_introduzione/01_concetti_base.json (questo file)",
       "01_introduzione/02_anatomia_carte.json",
       "02_personaggio/01_area_gioco.json",
-      "02_personaggio/02_caratteristiche.json",
+      "02_personaggio/02_approcci.json",
       "03_vitalita/01_mazzo_vitalita.json",
       "04_cintura_atb/01_struttura.json",
       "05_combattimento/06_round_combattimento.json"

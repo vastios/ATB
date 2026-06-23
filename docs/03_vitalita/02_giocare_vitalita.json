@@ -9,8 +9,8 @@
     "name": "I Due Modi di Giocare una Vitalità",
     "scoperta": {
       "name": "SCOPERTA (Attiva un Potere)",
-      "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) un'abilità/magia ospitata su una Carta Caratteristica nominated, (2) un Equipaggiamento, (3) uno Strumento Rapido.",
-      "level_of_effect": "Il livello di effetto è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Caratteristica del PG.",
+      "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) un'abilità/magia ospitata su una Carta Approccio nominated, (2) un Equipaggiamento, (3) uno Strumento Rapido.",
+      "level_of_effect": "Il livello di effetto è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Approccio del PG.",
       "placement_in_atb": "Posizionata nella Cintura ATB nello slot del suo Costo Tempo.",
       "resolution": "Si risolve al proprio tick (da sinistra a destra). Vedi 04_cintura_atb/02_risoluzione.json"
     },
@@ -27,12 +27,12 @@
     "name": "I Tag come Chiavi di Attivazione",
     "principle": "I TAG sulle Vitalità sono CHIAVI che indicano quali poteri il PG può attivare in quel turno. La Vitalità NON definisce l'azione: indica SOLO cosa si può attivare.",
     "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità.",
-    "important_clarification": "La Vitalità NON deve essere della stessa Caratteristica del potere attivato. Basta che abbia i TAG giusti. Una Vitalità Impeto con tag [Magia] può attivare un incantesimo Risonanza da una nominated Risonanza.",
+    "important_clarification": "La Vitalità NON deve essere della stessa Approccio del potere attivato. Basta che abbia i TAG giusti. Una Vitalità Impeto con tag [Magia] può attivare un incantesimo Risonanza da una nominated Risonanza.",
     "main_tags": {
       "[Strumento]": "Attiva un Equipaggiamento (Arma, Scudo, ecc.) o uno Strumento Rapido (Pozione, Talismano).",
-      "[Abilità]": "Attiva un'abilità da una Carta Caratteristica nominated (Impeto, Istinto, o utility Analisi).",
+      "[Abilità]": "Attiva un'abilità da una Carta Approccio nominated (Impeto, Istinto, o utility Analisi).",
       "[Magia]": "Attiva un incantesimo da una nominated Risonanza (elementale/cura) o utility Analisi.",
-      "[Ferita]": "PERMETTE di usare le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. Vedi 05_combattimento/02_danno.json",
+      "[Ferita]": "PERMETTE di usare le abilità di UNA Carta Approccio FERITA dello stesso tipo della Vitalità giocata. Vedi 05_combattimento/02_danno.json",
       "[Fulmineo]": "Meccanica di pagamento attivo. Vedi 04_cintura_atb/03_fulmineo.json",
       "[Apertura]": "Apre una combo cooperativa. Vedi 05_combattimento/05_combo.json",
       "[Sviluppo]": "Allunga una combo.",
@@ -42,19 +42,19 @@
   },
   "activation_rule_full": {
     "name": "Regola di Attivazione Completa",
-    "principle": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità, limitato dal valore attuale della Caratteristica del PG.",
+    "principle": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità, limitato dal valore attuale della Approccio del PG.",
     "requirements": [
       "La Vitalità deve avere i TAG richiesti dal potere specifico",
       "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB disponibile)",
-      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Caratteristica del PG",
-      "Se la Carta Caratteristica nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]"
+      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Approccio del PG",
+      "Se la Carta Approccio nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]"
     ],
-    "formula_danno": "DANNO TOTALE = Tabella Potere Vitalità(Caratteristica PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "formula_danno": "DANNO TOTALE = Tabella Potere Vitalità(Approccio PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
     "example_full": {
       "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento] nella posizione 3 della Cintura ATB.",
       "activation": "Attiva la sua Spada Lunga (Arma) al livello 3.",
       "damage_calculation": "Tabella Potere Impeto(3) × T3 = 8 danno base. La Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
-      "ferita_variant": "Se il PG ha una Carta Caratteristica Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico."
+      "ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico."
     },
     "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la Tabella Potere completa"
   },

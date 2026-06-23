@@ -1,17 +1,19 @@
 {
   "section_id": "02-05",
-  "section_name": "Creazione del Personaggio — Point Buy e Composizione Pool",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Creazione del Personaggio — Point Buy, Cuori, Composizione Pool",
+  "version": "2.0-placeholder",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la procedura di creazione del PG. Il PG è definito da: (1) i valori delle 4 Caratteristiche (point buy totale 10), (2) la composizione del pool di 10 Carte Caratteristica (misto nominated + bianche), (3) l'Equipaggiamento iniziale (4 slot), (4) gli Strumenti Rapidi iniziali (5 slot), (5) i 3 Cuori. Questo file è la CASA UNICA per la procedura di creazione.",
+  "v3_1_status": "PARZIALMENTE AGGIORNATO — I passaggi 1-5 riflettono la v3.1 (Approcci). I passaggi 6 (Cuori) e 7 (Mazzo Vitalità) sono PLACEHOLDER e saranno riscritti in Fase 2 quando i file Cuori e Mazzo Vitalità saranno completati.",
+  "description": "Definisce la procedura di creazione del PG. Il PG è definito da: (1) i valori dei 4 Approcci (point buy totale 10), (2) i 3 Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), (3) la composizione del pool di 10 Carte Approccio (4-5 nominated = 3 Heart-linked + 1-2 libere, + 5-6 bianche), (4) l'Equipaggiamento iniziale (4 slot), (5) gli Strumenti Rapidi iniziali (5 slot), (6) il Mazzo Vitalità (60 carte, composizione dinamica). Questo file è la CASA UNICA per la procedura di creazione.",
   "step_by_step_creation": {
     "step_1_point_buy": {
-      "name": "Step 1 — Assegnazione Caratteristiche (Point Buy)",
-      "rule": "Il PG ha 10 PUNTI da distribuire tra le 4 Caratteristiche: Impeto, Analisi, Istinto, Risonanza.",
+      "name": "Step 1 — Assegnazione Approcci (Point Buy)",
+      "rule": "Il PG ha 10 PUNTI da distribuire tra i 4 Approcci: Impeto, Analisi, Istinto, Risonanza.",
+      "v3_1_narrative_framing": "I valori NON rappresentano tratti innati (forza, intelligenza). Rappresentano la distribuzione INIZIALE dei mindset del PG — quanto fa affidamento su ciascun modo di affrontare il mondo alla partenza. Questi valori POSSONO cambiare nel tempo attraverso il Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json — Fase 2).",
       "constraints": {
-        "min_per_characteristic": 1,
-        "max_per_characteristic": 5,
+        "min_per_approccio": 1,
+        "max_per_approccio": 5,
         "total_must_equal": 10
       },
       "examples": [
@@ -21,74 +23,106 @@
         "Ladro specialista: Istinto 5, Analisi 3, Impeto 1, Risonanza 1",
         "Studioso artigiano: Analisi 5, Risonanza 3, Impeto 1, Istinto 1"
       ],
-      "implication": "10 punti = 10 Carte Caratteristica fisiche sul tavolo (composizione mista nominated + bianche). Vedi Step 2."
+      "implication": "10 punti = 10 Carte Approccio fisiche sul tavolo (composizione mista nominated + bianche). Vedi Step 3."
     },
-    "step_2_compose_pool": {
-      "name": "Step 2 — Composizione del Pool di Carte Caratteristica",
-      "rule": "Per ogni Caratteristica con valore N, il PG ha N carte fisiche di quella Caratteristica. Alcune sono NOMINATED (con nome + abilità), altre sono BIANCHE (segnaposto).",
-      "composition_choice": "Il giocatore SCEGLIE quante nominated e quante bianche per ciascuna Caratteristica, entro i limiti.",
-      "starting_limits": {
-        "max_nominated_per_characteristic": "Nessun limite esplicito, ma il Master può imporre limiti per bilanciamento (es. max 2 nominated a una singola Caratteristica alla creazione).",
-        "min_bianche_total": "Almeno 2 carte bianche nel pool alla creazione (per lasciare spazio alla progressione).",
-        "open_question": "Da raffinare i limiti precisi. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
-      },
+    "step_2_choose_hearts": {
+      "name": "Step 2 — Scelta dei 3 Cuori Nominati (v3.1)",
+      "rule": "Il PG sceglie 3 carte Cuore nominate dal catalogo, una per ciascuna categoria: PASSATO, DOTTRINA, LEGAMI.",
+      "narrative_role": "I Cuori sono l'ESSENZA del PG — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. NON cambiano mai (nemmeno se un LEGAME muore narrativamente, resta nel cuore).",
+      "heart_linked_nominated_unblock": "La scelta dei 3 Cuori SBLOCCA 3 liste di nominated Approccio. Per ciascun Cuore, il PG sceglie UNA nominated dalla lista corrispondente. Queste 3 nominated sono le HEART-LINKED del PG — tecniche apprese PER via di quel Cuore.",
+      "cross_reference": "Vedi 02_personaggio/04_cuori.json (riscritto in Fase 2). Catalogo Cuori: DA CREARE in Fase 3."
+    },
+    "step_3_compose_pool": {
+      "name": "Step 3 — Composizione del Pool di Carte Approccio (v3.1)",
+      "rule": "Per ogni Approccio con valore N, il PG ha N carte fisiche di quell'Approccio. Composizione iniziale: 4-5 NOMINATED + 5-6 BIANCHE (totale 10).",
+      "nominated_breakdown_v3_1": "Delle 4-5 nominated: 3 sono HEART-LINKED (già scelte nello Step 2 in base ai Cuori). Le restanti 1-2 sono LIBERE (scelte dal catalogo generale).",
       "example_pool_composition": {
         "pg": "Guerriero puro: Impeto 5, Istinto 3, Analisi 1, Risonanza 1",
         "pool": [
-          "Impeto: 2 nominated (es. 'Furia del Berserker', 'Atleta Nato') + 3 bianche",
-          "Istinto: 1 nominated (es. 'Maestro di Scherma') + 2 bianche",
-          "Analisi: 1 bianca (niente nominated a livello 1)",
-          "Risonanza: 1 bianca (niente nominated a livello 1)"
+          "Impeto: 2 nominated (1 Heart-linked + 1 libera) + 3 bianche",
+          "Istinto: 1 nominated (Heart-linked) + 2 bianche",
+          "Analisi: 1 nominated (Heart-linked) + 0 bianche",
+          "Risonanza: 1 bianca (nessuna nominated)"
         ],
-        "total": "5 + 3 + 1 + 1 = 10 carte. 4 nominated + 6 bianche. Le 6 bianche sono il 'potenziale di crescita' del PG."
+        "total": "5 + 3 + 1 + 1 = 10 carte. 4 nominated (3 Heart-linked + 1 libera) + 6 bianche. Le 6 bianche sono il 'potenziale di crescita' del PG."
       },
-      "cross_reference": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json per la struttura delle nominated"
+      "cross_reference": "Vedi 02_personaggio/03_carte_approccio_nominated.json per la struttura delle nominated"
     },
-    "step_3_choose_nominated": {
-      "name": "Step 3 — Scelta delle Carte Nominated",
-      "rule": "Per ogni slot nominated deciso nello Step 2, il giocatore SCEGLIE una carta nominated dal catalogo (o dal set approvato dal Master).",
-      "two_types": "Specializzata (3 abilità in tema, gerarchiche) o Generica (3 abilità diverse, tutte al livello 1). Vedi 02_personaggio/03_carte_caratteristica_nominated.json",
-      "open_question_catalog": "Il catalogo nominated completo è DA CREARE. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+    "step_4_choose_free_nominated": {
+      "name": "Step 4 — Scelta delle Nominated Libere (1-2)",
+      "rule": "Dopo le 3 Heart-linked (dallo Step 2), il PG sceglie 1-2 nominated LIBERE dal catalogo generale, da collocare negli slot nominated rimanenti.",
+      "two_types": "Specializzata (3 abilità in tema, gerarchiche) o Generica (3 abilità diverse, tutte al livello 1). Vedi 02_personaggio/03_carte_approccio_nominated.json",
+      "open_question_catalog": "Il catalogo nominated libero completo è DA CREARE (Fase 3). Vedi 00_indice.json → OPEN_QUESTIONS_V3"
     },
-    "step_4_equipment": {
-      "name": "Step 4 — Equipaggiamento Iniziale",
+    "step_5_equipment": {
+      "name": "Step 5 — Equipaggiamento Iniziale",
       "rule": "Il PG sceglie 4 carte Equipaggiamento: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio.",
       "starting_budget": "Il Master può assegnare un budget di 'pezzi di equipaggiamento iniziali' (es. 1 Superiore + 3 Normali, oppure 4 Normali, a seconda del livello di partenza della campagna).",
       "cross_reference": "Vedi 06_equipaggiamento/02_categorie.json"
     },
-    "step_5_quick_items": {
-      "name": "Step 5 — Strumenti Rapidi Iniziali",
+    "step_6_quick_items": {
+      "name": "Step 6 — Strumenti Rapidi Iniziali",
       "rule": "Il PG ha 5 slot Strumenti Rapidi. Può riempirli con oggetti trovati (Pozioni, Grimaldelli, ecc.) o talismani craftati da Analisi (solo se ha Analisi ≥ 1).",
       "starting_recommendation": "In genere 2-3 pozioni + 1-2 utility (grimaldelli, fumogeni). I talismani sono craftati dopo, durante il riposo.",
       "cross_reference": "Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
     },
-    "step_6_hearts": {
-      "name": "Step 6 — I Tre Cuori",
-      "rule": "Il PG ha 3 Cuori, tutti sani alla creazione. Si feriscono in ordine obbligatorio 1 → 2 → 3.",
-      "optional_narrative_hook": "OPEN QUESTION: far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare. Vedi 02_personaggio/04_cuori.json"
-    },
     "step_7_vitality_deck": {
-      "name": "Step 7 — Il Mazzo Vitalità",
-      "rule": "Il Mazzo Vitalità è PROPORZIONALE alle Caratteristiche del PG: 60 carte totali = 10 Punti Caratteristica × 6 carte per punto.",
-      "automatic": "Non si 'costruisce' il mazzo manualmente. È fisso: 60 carte con distribuzione fissa di Costo Tempo T1-T5 e Tag.",
-      "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json"
+      "name": "Step 7 — Il Mazzo Vitalità (Dinamico v3.1)",
+      "rule": "Il Mazzo Vitalità è PROPORZIONALE agli Approcci del PG: 60 carte totali = 10 Punti Approccio × 6 carte per punto.",
+      "composition_v3_1": "La COMPOSIZIONE T1-T5 di ciascun colore è determinata dal VALORE di quell'Approccio secondo la Distribuzione Asimmetrica per Livello (4 firme temporali uniche per i 4 Approcci). Il mazzo NON è fisso — muta quando gli Approcci vengono riallineati.",
+      "selection_from_catalog": "Il PG seleziona le 60 carte dal Catalogo seguendo la tabella di scalatura del proprio profilo di Approcci. Vedi 03_vitalita/01_mazzo_vitalita.json (riscritto in Fase 2)."
     }
   },
   "creation_summary_table": {
-    "headers": ["Componente", "Quantità", "Scelta del Giocatore", "Limiti"],
+    "headers": [
+      "Componente",
+      "Quantità",
+      "Scelta del Giocatore",
+      "Limiti"
+    ],
     "rows": [
-      ["Caratteristiche", "4 valori 1-5", "Sì (point buy)", "Somma = 10, min 1, max 5"],
-      ["Carte Caratteristica", "10 totali", "Composizione mista nominated/bianche", "Almeno 2 bianche iniziali"],
-      ["Carte Nominated", "Variabile (4-8 tipicamente)", "Sì (dal catalogo)", "Limiti per Caratteristica a discrezione Master"],
-      ["Equipaggiamento", "4 slot", "Sì", "1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio"],
-      ["Strumenti Rapidi", "5 slot", "Sì", "Monouso, talismani solo se Analisi ≥ 1"],
-      ["Cuori", "3 carte", "No (fissi)", "Sani alla creazione, ordine ferita 1→2→3"],
-      ["Mazzo Vitalità", "60 carte", "No (fisso, proporzionale alle Caratteristiche)", "10 Punti × 6 carte"]
+      [
+        "Approcci",
+        "4 valori 1-5",
+        "Sì (point buy)",
+        "Somma = 10, min 1, max 5"
+      ],
+      [
+        "Cuori Nominati",
+        "3 carte (1 PASSATO + 1 DOTTRINA + 1 LEGAMI)",
+        "Sì (dal catalogo Cuori)",
+        "Sani alla creazione, scelta libera quale ferire"
+      ],
+      [
+        "Carte Approccio",
+        "10 totali",
+        "4-5 nominated (3 Heart-linked + 1-2 libere) + 5-6 bianche",
+        "Heart-linked imposte dai Cuori"
+      ],
+      [
+        "Equipaggiamento",
+        "4 slot",
+        "Sì",
+        "1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio"
+      ],
+      [
+        "Strumenti Rapidi",
+        "5 slot",
+        "Sì",
+        "Monouso, talismani solo se Analisi ≥ 1"
+      ],
+      [
+        "Mazzo Vitalità",
+        "60 carte",
+        "Selezione dal Catalogo (no 'costruzione' manuale)",
+        "10 Punti × 6 carte, composizione T1-T5 dinamica per Approccio"
+      ]
     ]
   },
-  "open_questions": {
-    "nominated_cards_catalog": "DA CREARE: catalogo nominated per scelta iniziale. Vedi 00_indice.json → OPEN_QUESTIONS_V3",
-    "starting_nominated_limits": "Da definire quanti nominated per Caratteristica alla creazione",
-    "cuori_personalizzabili": "Da valutare se far scrivere qualcosa sui Cuori come gancio narrativo"
+  "open_questions_v3_1": {
+    "nominated_catalog_free": "DA CREARE (Fase 3): catalogo nominated LIBERE, 8-12 per Approccio, mix specializzate/generiche.",
+    "hearts_catalog": "DA CREARE (Fase 3): catalogo Cuori, 8-10 per categoria (PASSATO/DOTTRINA/LEGAMI), 24-30 totali. Ogni carta Cuore deve specificare la LISTA di nominated Approccio sbloccate.",
+    "riallineamento_mechanics": "DA DEFINIRE (Fase 2): meccanica esatta di Riallineamento, in 02_personaggio/06_riallineamento_approcci.json.",
+    "mazzo_vitalita_scalatura": "DA FORMALIZZARE (Fase 2): la Distribuzione Asimmetrica per Livello (tabella 4×5 × T1-T5) sarà formalizzata in 03_vitalita/01_mazzo_vitalita.json."
   }
 }

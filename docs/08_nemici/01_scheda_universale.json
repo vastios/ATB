@@ -25,7 +25,7 @@
     "applicability": "Principalmente per Nemici Base. Per Elite ed Epici, ogni nemico ha la sua scheda individuale."
   },
   "v3_changes_summary": {
-    "rinomini_caratteristiche": "Istinto→IMPETO, Evasione→ISTINTO. Le difese nemiche per Tag usano i nuovi nomi.",
+    "rinomini_approcci": "Istinto→IMPETO, Evasione→ISTINTO. Le difese nemiche per Tag usano i nuovi nomi.",
     "struttura_invariata": "La struttura della scheda nemico è INVARIATA rispetto a v2/v2.1.",
     "distruzione_tratti_allineata": "La distruzione dei Tratti nemici avviene attivando il POTERE SPECIALE di un'Arma (1° ferimento volontario). Vedi 08_nemici/03_tratti.json. NON si parla più di 'Arma Superiore' (sistema rimosso) — si parla di 'Arma con potere speciale attivato'."
   },

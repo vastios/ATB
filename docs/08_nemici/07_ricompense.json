@@ -32,12 +32,12 @@
           "note": "LA CARTA NON CAMBIA. Non servono carte diverse per oggetti con poteri speciali. L'evoluzione è narrativa.",
           "v3_clarification": "Sostituisce la vecchia 'evoluzione Arma Normale in Arma Superiore' (sistema rimosso)."
         },
-        "cura_caratteristica": {
-          "description": "Curare istantaneamente una Carta Caratteristica ferita (girandola sul lato sano) senza bisogno di ricorrere a pozioni, cure mediche o tempi di riposo.",
+        "cura_approccio": {
+          "description": "Curare istantaneamente una Carta Approccio ferita (girandola sul lato sano) senza bisogno di ricorrere a pozioni, cure mediche o tempi di riposo.",
           "speed": "ISTANTANEO."
         },
         "sostituzione_bianca_con_nominated": {
-          "description": "v3: Sostituire una Carta Caratteristica BIANCA con una NOMINATED. Vedi 02_personaggio/03_carte_caratteristica_nominated.json → progression_mechanics",
+          "description": "v3: Sostituire una Carta Approccio BIANCA con una NOMINATED. Vedi 02_personaggio/03_carte_approccio_nominated.json → progression_mechanics",
           "note": "Le carte bianche vengono sostituite da nominated durante la progressione. I Punti Impresa sono uno dei trigger per questa sostituzione."
         }
       },
@@ -46,7 +46,7 @@
   },
   "design_intent": {
     "principle": "Le Ricompense sono PROPORZIONATE alla minaccia. Nemici Base danno solo Risorse Materiali (poco). Nemici Elite danno Risorse + Punti Impresa. Nemici Epici danno tutto + Equipaggiamento prelevabile + più Punti Impresa.",
-    "narrative_weight": "Sconfiggere un Boss Epico è un evento SIGNIFICATIVO. I Punti Impresa permettono al PG di crescere (sostituire bianche con nominated) o di riparare i danni subiti (curare Caratteristiche)."
+    "narrative_weight": "Sconfiggere un Boss Epico è un evento SIGNIFICATIVO. I Punti Impresa permettono al PG di crescere (sostituire bianche con nominated) o di riparare i danni subiti (curare Approcci)."
   },
   "consequence_system_cross_reference": {
     "principle": "Nella skin cabalistica, la distruzione di Equipaggiamento durante il combattimento genera Conseguenze narrative (Qliphoth personali). Vedi 10_lore_cabalistica/03_qliphoth.json",

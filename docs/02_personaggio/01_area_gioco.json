@@ -21,12 +21,12 @@
         "mano": "Le 5 carte attualmente in mano al PG, tenute nascoste agli avversari (ma visibili ai compagni di squadra in co-op)."
       }
     },
-    "zona_2_caratteristiche_e_cuori": {
-      "name": "ZONA 2: Caratteristiche e Cuori (Centro)",
+    "zona_2_approcci_e_cuori": {
+      "name": "ZONA 2: Approcci e Cuori (Centro)",
       "position": "Al centro dell'area del PG, davanti a lui. La zona più importante e visibile.",
       "content": "L'identità profonda del personaggio: cosa sa fare e quanto può sopportare.",
       "components": {
-        "caratteristiche": "Quattro LINEE orizzontali di carte, una per Caratteristica (Impeto, Analisi, Istinto, Risonanza). La lunghezza di ogni linea = valore della Caratteristica. Vedi 02_personaggio/02_caratteristiche.json",
+        "approcci": "Quattro LINEE orizzontali di carte, una per Approccio (Impeto, Analisi, Istinto, Risonanza). La lunghezza di ogni linea = valore dell'Approccio. Vedi 02_personaggio/02_approcci.json",
         "cuori": "Tre carte Cuore disposte in fila. Si feriscono in ORDINE OBBLIGATORIO: Cuore 1, poi 2, infine 3. Vedi 02_personaggio/04_cuori.json"
       }
     },
@@ -38,7 +38,7 @@
         "equipaggiamento": "4 slot fissi: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio. Vedi 06_equipaggiamento/02_categorie.json",
         "strumenti_rapidi": "5 slot per oggetti monouso. Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
       },
-      "v3_change": "Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE. I loro poteri sono ospitati nelle Carte Caratteristica nominated. Vedi 02_personaggio/03_carte_caratteristica_nominated.json"
+      "v3_change": "Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE. I loro poteri sono ospitati nelle Carte Approccio nominated. Vedi 02_personaggio/03_carte_approccio_nominated.json"
     },
     "zona_4_cintura_atb": {
       "name": "ZONA 4: La Cintura ATB (in Condivisione)",
@@ -48,7 +48,7 @@
   },
   "visual_metaphor": {
     "name": "Metafora Visiva dell'Area",
-    "description": "L'Area del Giocatore è come una piccola fortezza: a sinistra/sotto le scorte (Vitalità), al centro le difese (Caratteristiche + Cuori), a destra l'arsenale (Equipaggiamento + Strumenti), e davanti a tutti il campo di battaglia condiviso (Cintura ATB).",
+    "description": "L'Area del Giocatore è come una piccola fortezza: a sinistra/sotto le scorte (Vitalità), al centro le difese (Approcci + Cuori), a destra l'arsenale (Equipaggiamento + Strumenti), e davanti a tutti il campo di battaglia condiviso (Cintura ATB).",
     "design_intent": "La disposizione spaziale segue una LOGICA di consultazione: il PG guarda a sinistra per valutare le proprie risorse energetiche, al centro per conoscere il proprio stato, a destra per scegliere l'arma, e davanti per leggere la battaglia."
   },
   "open_question": {

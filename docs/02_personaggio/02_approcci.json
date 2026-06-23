@@ -1,0 +1,124 @@
+{
+  "section_id": "02-02",
+  "section_name": "I Quattro Approcci — Mindset, Valori, Colori, Assi",
+  "version": "2.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Definisce i 4 APPROCCI del PG. Un Approccio non è un tratto innato del personaggio (quanto è forte, quanto è intelligente) — è il MODO in cui il PG sceglie di affrontare il mondo. Gli Approcci possono MUTARE nel corso della vita del PG: le esperienze, i fallimenti, le crisi narrative lo portano a ricalibrare il proprio mindset. Ogni Approccio ha un valore da 1 a 5. Il valore determina: (1) il NUMERO di Carte Approccio fisiche sul tavolo (10 carte totali = somma dei valori), (2) il CAP massimo di Potere raggiungibile con quell'Approccio, (3) la composizione T1-T5 del Mazzo Vitalità. Gli Approcci si organizzano in 2 ASSI tematici: AGIRE (Impeto + Istinto) e COMPRENDERE (Analisi + Risonanza).",
+  "v3_1_paradigm_shift": {
+    "name": "Svolta v3.1 — Da Tratto Innato a Mindset",
+    "principle": "Nella v3 (e versioni precedenti), le 'Caratteristiche' rappresentavano tratti innati del PG (forza fisica, intelligenza, ecc.). Cambiarle narrativeamente era assurdo: 'abbasso Impeto' significava 'divento più mingherlino'. Nella v3.1, gli APPROCCI sono mindset modificabili: 'abbasso Impeto per alzare Analisi' significa 'le mie esperienze mi hanno insegnato che non sempre l'irruenza è la risposta; a volte serve fermarsi e studiare la situazione'.",
+    "what_changes_narratively": "La crescita del PG non è più 'divento più forte' (che non aveva senso con somma fissa a 10), ma 'evolvo il mio modo di affrontare le cose'. Le ferite subite, i fallimenti, le crisi — tutto può spingere il PG a rivedere il proprio approccio al mondo.",
+    "what_does_not_change_mechanically": "La matematica resta: 10 punti totali, distribuzione 1-5 per Approccio, 10 carte fisiche sul tavolo. La Tabella Potere, il sistema nominated, il Mazzo Vitalità — tutti invariati nel principio. Solo la NARRATIVA degli Approcci cambia (e questo apre la porta a nuove meccaniche di progressione: Riallineamento, vedi 02_personaggio/06_riallineamento_approcci.json — in fase di definizione).",
+    "rename_history": {
+      "v3_renames_inherited": "I rinomini v3 (Istinto→IMPETO, Evasione→ISTINTO) restano validi in v3.1. La differenza è che ora descrivono APPROCCI (mindset), non più tratti innati.",
+      "v3_1_rename": "Caratteristica → Approccio (ovunque nel manuale). La v3.1 eredita tutti i rinomini v3 e li eleva a livello concettuale."
+    }
+  },
+  "four_approaches": {
+    "Impeto": {
+      "colore": "Rosso",
+      "asse": "AGIRE",
+      "elemento_associato_skin": "Fuoco (vedi 10_lore_cabalistica)",
+      "keyword": "Irruenza, sfondare, agire senza riflettere, buttarsi, irrompere",
+      "approccio_identity": "Quanto il PG fa affidamento sull'irruenza per risolvere i problemi. Non misura quanto è fisicamente forte — misura quanto SCEGLIE di buttarcisi a capofitto. Un PG con Impeto 5 non è necessariamente un colosso muscolare; è qualcuno che ha fatto dell'azione immediata e senza esitazione il proprio modo di stare al mondo.",
+      "typical_actions": "Attacchi con Arma nel corpo-a-corpo diretto, sfondare porte, intimidire con la sola presenza, resistere a danni fisici diretti, attaccare più nemici con un colpo solo",
+      "nominated_examples_for_reference": [
+        "Specializzata: 'Furia del Berserker' (3 abilità crescenti: carica → attacco multiplo → devastazione)",
+        "Generica: 'Atleta Nato' (forza, salto, resistenza — tutte deboli ma versatili)"
+      ]
+    },
+    "Analisi": {
+      "colore": "Giallo",
+      "asse": "COMPRENDERE",
+      "elemento_associato_skin": "Acqua (vedi 10_lore_cabalistica)",
+      "keyword": "Studio, osservazione, metodo, deduzione, magia ragionata, crafting",
+      "approccio_identity": "Quanto il PG cerca di comprendere il mondo attraverso osservazione, studio e metodo. Non misura quanto è 'intelligente' in senso assoluto — un PG intelligentissimo può avere Analisi 1 se comprende le cose empiricamente (Risonanza) piuttosto che razionalmente. Misura quanto SCEGLIE di smontare, studiare, dedurre.",
+      "typical_actions": "Utility magica (scassinare, riparare, rivelare debolezze), crafting talismani offensivi, identificare nemici/trappole, decifrare rune",
+      "magic_path": "Vedi 07_magia/03_analisi_crafting.json",
+      "nominated_examples_for_reference": [
+        "Specializzata: 'Mago Erudito' (utility crescente + crafting avanzato)",
+        "Generica: 'Investigatore' (percezione, deduzione, scasso — deboli ma versatile)"
+      ]
+    },
+    "Istinto": {
+      "colore": "Blu",
+      "asse": "AGIRE",
+      "elemento_associato_skin": "Aria (vedi 10_lore_cabalistica)",
+      "keyword": "Riflessi, destrezza, reazione, agire nel momento, furtività, precisione",
+      "approccio_identity": "Quanto il PG fa affidamento sui riflessi e sulla reazione immediata. A differenza di Impeto (proattivo: mi butto verso il problema), Istinto è REATTIVO: rispondo a quello che succede. Il ladro che scatta prima di pensare, il duellante che para d'istinto, l'esploratore che sente il pericolo prima di vederlo.",
+      "typical_actions": "Attacchi di precisione, schivate, furtività, attacchi chirurgici, abilità difensive (Blocco Perfetto, Schivata Acrobatica)",
+      "host_defensive_abilities": "Le Abilità Difensive sono ospitate su Carte Approccio nominated Istinto. Vedi 05_combattimento/04_difesa.json",
+      "nominated_examples_for_reference": [
+        "Specializzata: 'Maestro di Scherma' (3 abilità: stoccata → combo → colpo mortale)",
+        "Generica: 'Acrobata' (schivata, salto mortale, capriola — versatile)"
+      ]
+    },
+    "Risonanza": {
+      "colore": "Verde",
+      "asse": "COMPRENDERE",
+      "elemento_associato_skin": "Terra (vedi 10_lore_cabalistica)",
+      "keyword": "Empatia, connessione, sentire, comprendere attraverso il sentire, magia elementale e cura",
+      "approccio_identity": "Quanto il PG cerca di comprendere il mondo attraverso empatia e connessione. Non è 'magia vs intelligenza' — è DUE MODI DI COMPRENDERE. Analisi smonta e studia; Risonanza connette e sente. Un PG con Risonanza 5 non è 'meno intelligente' di uno con Analisi 5 — semplicemente, davanti a un enigma, sceglie di ascoltarlo invece che smontarlo.",
+      "typical_actions": "Incantesimi elementali (offensivi), magia di cura, empatia con creature/natura, incantesimi di supporto",
+      "magic_path": "Vedi 07_magia/02_risonanza.json",
+      "nominated_examples_for_reference": [
+        "Specializzata: 'Piròmante' (3 incantesimi di fuoco crescenti)",
+        "Generica: 'Druido' (piccolo fuoco, piccola cura, piccola terra — versatile)"
+      ]
+    }
+  },
+  "two_axes": {
+    "name": "I Due Assi degli Approcci",
+    "asse_agire": {
+      "approcci": ["Impeto (Rosso)", "Istinto (Blu)"],
+      "theme": "L'AZIONE. Chi sceglie di affrontare il mondo AGENDO fisicamente su di esso. Impeto è irruenza proattiva (mi butto); Istinto è reazione (rispondo). Entrambi causano DANNO FISICO.",
+      "damage_typing": "Fisico → bersaglia nemici fisicamente vulnerabili"
+    },
+    "asse_comprendere": {
+      "approcci": ["Analisi (Giallo)", "Risonanza (Verde)"],
+      "theme": "La COMPRENSIONE. Chi sceglie di affrontare il mondo COMPRENDENDOLO prima di agire. Analisi comprende attraverso studio e metodo; Risonanza comprende attraverso empatia e sentire. Entrambi causano DANNO MAGICO (o utility).",
+      "damage_typing": "Magico → bersaglia nemici magicamente vulnerabili"
+    },
+    "design_intent": "Gli assi NON sono una gerarchia. Sono due modi complementari di stare al mondo. Un PG puro AGIRE è un guerriero, un PG puro COMPRENDERE è un mago/studioso, un PG bilanciato è un avventuriero classico. La 'scelta di asse' è essa stessa una scelta di mindset.",
+    "axis_dichotomy_clarified": "La differenza tra Analisi e Risonanza non è 'intelligenza vs empatia' — è COME si sceglie di comprendere. La differenza tra Impeto e Istinto non è 'forza vs destrezza' — è COME si sceglie di agire (proattivo vs reattivo). Nessun Approccio è 'superiore' a un altro: sono modalità diverse di esistere nel mondo."
+  },
+  "value_meaning_1_to_5": {
+    "summary": "Il valore di un Approccio (1-5) determina 3 cose simultaneamente:",
+    "1_numero_di_carte": "Il NUMERO di Carte Approccio fisiche sul tavolo per quell'Approccio. Un PG con Impeto 3 ha 3 carte Impeto sul tavolo (nominated o bianche, in composizione mista).",
+    "2_cap_potere": "Il CAP massimo di Potere per azioni che usano quell'Approccio. Una Vitalità T5 gioca al livello 5 solo se l'Approccio corrispondente è almeno 5. Vedi 05_combattimento/01_tabella_potere.json",
+    "3_composizione_mazzo_vitalita": "Determina la COMPOSIZIONE T1-T5 delle carte di quel colore nel Mazzo Vitalità. Ogni Approccio ha una firma temporale unica (Distribuzione Asimmetrica per Livello). Vedi 03_vitalita/01_mazzo_vitalita.json",
+    "interpretation_in_v3_1": "Un Approccio a 5 NON significa 'il PG è il più forte/veloce/intelligente/empatico in assoluto'. Significa: 'il PG ha fatto di questo modo di affrontare il mondo la propria firma'. Un Approccio a 1 NON significa 'il PG è incapace'. Significa: 'il PG raramente sceglie questo modo di agire — non fa per lui, almeno per ora'.",
+    "evolution_note": "I valori possono MUTARE nel tempo attraverso il Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json — in fase di definizione)."
+  },
+  "point_buy_total": {
+    "rule": "La somma dei valori dei 4 Approcci è SEMPRE 10 alla creazione del PG.",
+    "implication_for_card_pool": "10 punti = 10 Carte Approccio totali sul tavolo (nominated + bianche miste). Vedi 02_personaggio/03_carte_approccio_nominated.json e 02_personaggio/05_creazione_pg.json",
+    "narrative_interpretation": "10 punti totali non significano 'il PG è mediamente forte'. Significano: 'alla partenza, il PG ha una certa distribuzione di mindset'. La somma resta 10 anche dopo riallineamenti: la crescita non è 'divento più potente in assoluto', è 'sposto il mio focus da un mindset a un altro'."
+  },
+  "ferita_approccio_quick_reference": {
+    "summary": "Girare una Carta Approccio = FERITA. Il valore si abbassa di 1.",
+    "narrative_interpretation": "Una ferita a un Approccio NON è una ferita fisica (non perdi muscoli, non perdi neuroni). È un momento in cui quel modo di affrontare il mondo ti ha tradito — l'irruenza ti ha portato in trappola, lo studio ti ha fatto perdere tempo prezioso, l'empatia ti ha fatto abbassare la guardia. Il PG resta scosso in quell'Approccio finché non guarisce.",
+    "effect_on_pool": "Una carta in meno attiva sul tavolo per quell'Approccio.",
+    "effect_on_power_cap": "Il CAP di Potere per quell'Approccio scende di 1.",
+    "effect_on_nominated_abilities": "Se la carta girata è NOMINATED, TUTTE le sue abilità sono DISATTIVATE. Una Vitalità con tag [Ferita] può riattivarle per quel turno. Vedi 05_combattimento/02_danno.json",
+    "cross_reference_full": "Vedi 05_combattimento/02_danno.json per le regole complete di Ferita Approccio"
+  },
+  "open_questions_v3_1": {
+    "riallineamento_mechanics": "Meccanica esatta di Riallineamento degli Approcci (trigger, regole di scambio, gestione nominated). Vedi 02_personaggio/06_riallineamento_approcci.json (file DA CREARE in Fase 2).",
+    "heart_linked_nominated": "3 nominated 'Heart-linked' (sbloccate dai Cuori scelti) — dettaglio in 02_personaggio/04_cuori.json (riscritto in Fase 2).",
+    "mazzo_vitalita_dinamico": "Composizione T1-T5 del Mazzo Vitalità che muta coi riallineamenti — dettaglio in 03_vitalita/01_mazzo_vitalita.json (riscritto in Fase 2)."
+  },
+  "design_evolution_notes": {
+    "v6": "Tabella Potere introdotta. Corrispondenza obbligatoria (Approccio della Vitalità = Approccio del potere).",
+    "v7": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Approcci definitivi.",
+    "v8": "FUSIONE LORE CABALISTICA.",
+    "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
+    "v10": "DUE CATEGORIE DI DANNO formalizzate.",
+    "v11": "Danno Anatema e Danno Diretto Cuore formalizzati.",
+    "v12": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità.",
+    "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Approccio × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base).",
+    "v14_v3": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Approccio nominated. Le Abilità Difensive sono ospitate su Carte Approccio nominated (non più Carte Abilità fisiche separate). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. Slot Strumenti Rapidi = 5. Tag [Ferita] = riattiva abilità di UNA Carta Approccio ferita dello stesso tipo.",
+    "v15_v3_1": "ARCHITETTURA v3.1: 'Caratteristica' → 'Approccio'. Svolta concettuale: gli Approcci sono MINDSET modificabili, non tratti innati. Apre la strada a: Riallineamento (progressione narrativa), Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), Mazzo Vitalità Dinamico. Le meccaniche v3 restano invariate nel principio — cambia la cornice narrativa e si introducono nuove meccaniche di progressione."
+  }
+}

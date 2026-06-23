@@ -1,15 +1,16 @@
 {
   "section_id": "03-01",
-  "section_name": "Il Mazzo Vitalità — Riserva di Energia del PG",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica del PG",
+  "version": "1.0-placeholder",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali, proporzionali alle Caratteristiche. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. Questo file è la CASA UNICA per le proprietà strutturali del mazzo.",
+  "v3_1_status": "PLACEHOLDER — Questo file sarà COMPLETAMENTE RISCRITTO in Fase 2 della transizione v3.1. Il contenuto attuale riflette ancora la v3 (mazzo fisso alla creazione, composizione fissa T1-T5). Le decisioni v3.1 già prese sono: (1) il mazzo resta 60 carte (10 punti × 6 carte/punto); (2) la composizione T1-T5 è DETERMINATA dalla Distribuzione Asimmetrica per Livello (4 firme temporali uniche per i 4 Approcci, già definita in v1); (3) il mazzo DIVENTA DINAMICO — quando gli Approcci vengono riallineati, la composizione T1-T5 si aggiorna; (4) le carte rimosse dal mazzo tornano nella RISERVA COMUNE (utilizzabili da altri PG); (5) le nuove carte vengono selezionate dal Catalogo seguendo la tabella del nuovo livello.",
+  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali, proporzionali agli Approcci. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. In v3.1 il mazzo è DINAMICO — la composizione T1-T5 muta quando gli Approcci vengono riallineati. Questo file è la CASA UNICA per le proprietà strutturali del mazzo.",
   "deck_properties": {
     "name": "Proprietà Strutturali del Mazzo",
     "deck_size": "60 carte Vitalità totali.",
-    "proportionality_rule": "Il mazzo è PROPORZIONALE alle Caratteristiche del PG: 10 Punti Caratteristica × 6 carte per punto. Un PG con valori diversi ma somma 10 ha lo stesso mazzo di 60 carte.",
-    "composition": "Il mazzo ha una distribuzione fissa di Costo Tempo (T1-T5) e Tag. NON si 'costruisce' manualmente. È un mazzo predefinito per tutti i PG.",
+    "proportionality_rule": "Il mazzo è PROPORZIONALE agli Approcci del PG: 10 Punti Approccio × 6 carte per punto. Un PG con valori diversi ma somma 10 ha lo stesso mazzo di 60 carte totali — MA la COMPOSIZIONE T1-T5 di ciascun colore dipende dal VALORE di ciascun Approccio (Distribuzione Asimmetrica per Livello).",
+    "composition_v3_1": "Il mazzo ha una distribuzione di Costo Tempo (T1-T5) e Tag DETERMINATA dagli Approcci attuali del PG. Non è più 'fisso alla creazione' — muta coi riallineamenti. La tabella di scalatura (Approccio × T) è la Distribuzione Asimmetrica per Livello (già definita in v1, sarà formalizzata in Fase 2).",
     "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi)."
   },
   "hand_mechanics": {
@@ -24,11 +25,21 @@
     "name": "Anatomia di una Carta Vitalità",
     "components": [
       "Costo Tempo (T1-T5): indica in quale slot della Cintura ATB la carta va posizionata e il livello di effetto dell'azione attivata.",
-      "Caratteristica di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione. I TAG indicano cosa si può attivare, non la Caratteristica della carta.",
+      "Approccio di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione. I TAG indicano cosa si può attivare, non la Approccio della carta.",
       "Tag di Attivazione: chiavi che indicano quali poteri possono essere attivati. T=1 ha 1 tag, T=5 ha 5 tag (regola d'oro)."
     ],
-    "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Caratteristica).",
-    "tag_examples": ["[Strumento]", "[Abilità]", "[Magia]", "[Ferita]", "[Fulmineo]", "[Apertura]", "[Sviluppo]", "[Chiusura]", "[Culmine]"],
+    "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Approccio).",
+    "tag_examples": [
+      "[Strumento]",
+      "[Abilità]",
+      "[Magia]",
+      "[Ferita]",
+      "[Fulmineo]",
+      "[Apertura]",
+      "[Sviluppo]",
+      "[Chiusura]",
+      "[Culmine]"
+    ],
     "cross_reference_full": "Vedi 03_vitalita/02_giocare_vitalita.json per come si usano i tag"
   },
   "fatigue_mechanic": {
@@ -50,7 +61,11 @@
     },
     "danno_cronico_trauma": {
       "name": "Danno Cronico (Traumi/Status)",
-      "sources": ["Maledizioni", "Veleni", "Malattie"],
+      "sources": [
+        "Maledizioni",
+        "Veleni",
+        "Malattie"
+      ],
       "action": "Carte rimosse dal gioco o messe nella pila Traumi separata.",
       "effect": "Riducono permanentemente la taglia del Mazzo Vitalità o la mano massima finché non si trova una cura.",
       "recovery": "Molto difficile. Cure specifiche, rituali, lunghi periodi.",

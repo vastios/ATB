@@ -14,8 +14,8 @@
   "attack_types": {
     "colpo_mirato": {
       "name": "Colpo Mirato (Targeting)",
-      "mechanic": "Invece di far scaricare carte vitalità ai giocatori, questo attacco costringe un giocatore specifico a subire una Ferita a una Caratteristica a scelta del Master (o a una scelta limitata del giocatore).",
-      "damage_category": "Questo è DANNO DIRETTO ALLA CARATTERISTICA. Il giocatore NON può scegliere di pagare con il Mazzo Vitalità. Deve girare carte della Caratteristica bersagliata. Vedi 05_combattimento/02_danno.json → danno_diretto_caratteristica"
+      "mechanic": "Invece di far scaricare carte vitalità ai giocatori, questo attacco costringe un giocatore specifico a subire una Ferita a una Approccio a scelta del Master (o a una scelta limitata del giocatore).",
+      "damage_category": "Questo è DANNO DIRETTO ALLA CARATTERISTICA. Il giocatore NON può scegliere di pagare con il Mazzo Vitalità. Deve girare carte della Approccio bersagliata. Vedi 05_combattimento/02_danno.json → danno_diretto_approccio"
     },
     "squarcio_anima": {
       "name": "Squarcio dell'Anima",
@@ -35,8 +35,8 @@
     }
   },
   "design_intent": {
-    "principle": "Gli Attacchi Speciali dei Boss bypassano il normale flusso di danno (Milling → scelta del PG) e colpiscono direttamente le risorse più preziose: Caratteristiche, Cuori, Equipaggiamento e la Cintura ATB stessa. Creano emergenze che richiedono risposte immediate.",
-    "tactical_implication": "I PG DEVONO bilanciare offesa e difesa quando affrontano un Boss. Se ignorano gli Attacchi Speciali, perderanno Caratteristiche e Cuori troppo in fretta. Se solo si difendono, non infliggeranno mai danno al Boss."
+    "principle": "Gli Attacchi Speciali dei Boss bypassano il normale flusso di danno (Milling → scelta del PG) e colpiscono direttamente le risorse più preziose: Approcci, Cuori, Equipaggiamento e la Cintura ATB stessa. Creano emergenze che richiedono risposte immediate.",
+    "tactical_implication": "I PG DEVONO bilanciare offesa e difesa quando affrontano un Boss. Se ignorano gli Attacchi Speciali, perderanno Approcci e Cuori troppo in fretta. Se solo si difendono, non infliggeranno mai danno al Boss."
   },
   "open_questions": {
     "boss_combo": "Il Boss può fare combo? Con i suoi minion?",

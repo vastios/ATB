@@ -9,7 +9,7 @@
     "name": "Logica di Risoluzione",
     "method": "Da sinistra a destra. Si risolve la colonna più a sinistra di TUTTI i partecipanti prima di passare alla successiva.",
     "step_by_step_v3": {
-      "tick_1": "Si risolve la prima Vitalità di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → il PG SCEGLIE quale potere attivare (abilità/magia da una Carta Caratteristica nominated, oppure Equipaggiamento o Strumento Rapido) e l'effetto si risolve al livello = T della Vitalità (limitato dal valore attuale di Caratteristica del PG).",
+      "tick_1": "Si risolve la prima Vitalità di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → il PG SCEGLIE quale potere attivare (abilità/magia da una Carta Approccio nominated, oppure Equipaggiamento o Strumento Rapido) e l'effetto si risolve al livello = T della Vitalità (limitato dal valore attuale di Approccio del PG).",
       "tick_2": "Si risolve la seconda Vitalità di ogni riga.",
       "tick_n": "Continua finché tutte le righe sono state risolte completamente."
     },
@@ -23,7 +23,7 @@
   },
   "defense_check_per_tick": {
     "name": "Controllo Difesa ad Ogni Tick",
-    "rule": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le Abilità Difensive dei PG (ospitate su Carte Caratteristica nominated) agganciate a Vitalità in quella posizione.",
+    "rule": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le Abilità Difensive dei PG (ospitate su Carte Approccio nominated) agganciate a Vitalità in quella posizione.",
     "outcomes": {
       "same_position": "Stessa posizione = Blocco Perfetto. 0 danni.",
       "adjacent_position": "Posizione adiacente (±1 slot) = Blocco Mitigato. Danno ridotto.",

@@ -1,14 +1,14 @@
 {
   "section_id": "09-01",
-  "section_name": "Cure Asimmetriche — Vitalità Veloce, Caratteristica Medio, Cuori Lento",
+  "section_name": "Cure Asimmetriche — Vitalità Veloce, Approccio Medio, Cuori Lento",
   "version": "1.0",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema di Cura Asimmetrica: le tre risorse del PG (Mazzo Vitalità, Caratteristiche, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Il Mazzo Vitalità si cura VELOCE (riposo, pozioni rivitalizzanti). Le Caratteristiche si curano MEDIO (pozioni guarigione, magia curativa, Punti Impresa). I Cuori si curano LENTO (rituali, tempo narrativo, miracoli). Questo file è la CASA UNICA per il sistema di cura.",
+  "description": "Definisce il sistema di Cura Asimmetrica: le tre risorse del PG (Mazzo Vitalità, Approcci, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Il Mazzo Vitalità si cura VELOCE (riposo, pozioni rivitalizzanti). Le Approcci si curano MEDIO (pozioni guarigione, magia curativa, Punti Impresa). I Cuori si curano LENTO (rituali, tempo narrativo, miracoli). Questo file è la CASA UNICA per il sistema di cura.",
   "asymmetry_principle": {
     "name": "Principio di Asimmetria",
-    "principle": "Le tre risorse del PG (Mazzo Vitalità, Caratteristiche, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Questo riflette il loro peso narrativo: il Mazzo Vitalità è energia temporanea, le Caratteristiche sono capacità apprese, i Cuori sono l'essenza profonda del personaggio.",
-    "design_intent": "L'asimmetria crea TENSIONE permanente. Il PG può recuperare velocemente la 'stamina' (Mazzo Vitalità), ma se perde Caratteristiche o Cuori, il costo è permanente o quasi. Ogni ferita profonda è un evento significativo, non un numero che si resetta."
+    "principle": "Le tre risorse del PG (Mazzo Vitalità, Approcci, Cuori) hanno VELOCITÀ DI CURA DIVERSE. Questo riflette il loro peso narrativo: il Mazzo Vitalità è energia temporanea, le Approcci sono capacità apprese, i Cuori sono l'essenza profonda del personaggio.",
+    "design_intent": "L'asimmetria crea TENSIONE permanente. Il PG può recuperare velocemente la 'stamina' (Mazzo Vitalità), ma se perde Approcci o Cuori, il costo è permanente o quasi. Ogni ferita profonda è un evento significativo, non un numero che si resetta."
   },
   "healing_table": {
     "name": "Tabella delle Cure",
@@ -21,14 +21,14 @@
         "incantesimi_rivitalizzanti": "Come pozioni ma più efficaci."
       }
     },
-    "caratteristiche": {
-      "resource": "Carte Caratteristica (Capacità/Potenza)",
+    "approcci": {
+      "resource": "Carte Approccio (Capacità/Potenza)",
       "speed": "MEDIO-LENTA — tra un dungeon e l'altro.",
       "methods": {
-        "pozioni_guarigione": "Rigirano le carte Caratteristica ferite.",
+        "pozioni_guarigione": "Rigirano le carte Approccio ferite.",
         "magia_curativa": "Come pozioni ma più potenti. Solo nominated Risonanza può curare. Vedi 07_magia/02_risonanza.json",
         "riposo_giornate": "Giorni di riposo assoluto + cure mediche.",
-        "punti_impresa": "Punti Impresa (da nemici Elite/Epici sconfitti o risparmiati) possono curare istantaneamente una Caratteristica ferita. Vedi 08_nemici/07_ricompense.json"
+        "punti_impresa": "Punti Impresa (da nemici Elite/Epici sconfitti o risparmiati) possono curare istantaneamente una Approccio ferita. Vedi 08_nemici/07_ricompense.json"
       }
     },
     "cuori": {
@@ -45,23 +45,23 @@
   },
   "potion_distinction_critical": {
     "name": "Distinzione Critica: Pozione Rivitalizzante vs Pozione Guarigione",
-    "rule": "CRUCIALE: POZIONE RIVITALIZZANTE (Mazzo Vitalità) ≠ POZIONE DI GUARIGIONE (Caratteristiche). Niente pozione universale.",
+    "rule": "CRUCIALE: POZIONE RIVITALIZZANTE (Mazzo Vitalità) ≠ POZIONE DI GUARIGIONE (Approcci). Niente pozione universale.",
     "revitalizing_potion": "Cura il Mazzo Vitalità (recupera carte dalla Pila Scarti). VELOCE.",
-    "healing_potion": "Cura le Carte Caratteristica ferite (le rigira sul lato sano). MEDIO.",
+    "healing_potion": "Cura le Carte Approccio ferite (le rigira sul lato sano). MEDIO.",
     "no_heart_potion": "NON esiste pozione che curi i Cuori. I Cuori richiedono rituali. LENTO.",
     "no_universal_potion": "Non esiste una pozione che curi più risorse. Le tre risorse sono DISTINTE per evitare scelte banali.",
     "design_intent": "Costringe i PG a gestire LE TRE RISORSE SEPARATAMENTE. Devono portare pozioni diverse, usare cure diverse, e valutare quale risorsa sta scendendo pericolosamente."
   },
   "evolution_bonus_clarification": {
-    "rule": "Punti Impresa possono curare Caratteristiche GRATUITAMENTE. NON possono curare Cuori.",
+    "rule": "Punti Impresa possono curare Approcci GRATUITAMENTE. NON possono curare Cuori.",
     "cross_reference": "Vedi 08_nemici/07_ricompense.json → punti_impresa"
   },
   "recovery_priority_recommendation": {
     "principle": "In combattimento, il PG deve priorizzare quale risorsa 'sacrificare' nel Dilemma del Guerriero tenendo conto della velocità di cura.",
     "tactical_recommendation": [
       "Se il Mazzo Vitalità è pieno: preferisci Opzione A (Milling) — si recupera veloce.",
-      "Se il Mazzo Vitalità è basso ma le Caratteristiche sono sane: preferisci Opzione B (Ferita Caratteristica) — si recupera medio.",
-      "Se sia Mazzo che Caratteristiche sono compromessi: SEI IN PERICOLO. Cerca di concludere il combattimento in fretta.",
+      "Se il Mazzo Vitalità è basso ma le Approcci sono sane: preferisci Opzione B (Ferita Approccio) — si recupera medio.",
+      "Se sia Mazzo che Approcci sono compromessi: SEI IN PERICOLO. Cerca di concludere il combattimento in fretta.",
       "I Cuori NON sono mai un'opzione per il Danno Standard. Vedi 05_combattimento/02_danno.json"
     ]
   },

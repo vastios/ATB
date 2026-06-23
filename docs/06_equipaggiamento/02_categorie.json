@@ -8,8 +8,10 @@
   "arma": {
     "slot": 1,
     "characteristic_typically": "Impeto (ma non obbligatorio — basta il tag [Strumento])",
-    "activation_tags_required": ["[Strumento]"],
-    "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto). Vedi 05_combattimento/01_tabella_potere.json",
+    "activation_tags_required": [
+      "[Strumento]"
+    ],
+    "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Approccio × T) + Bonus Danno Arma(livello scelto). Vedi 05_combattimento/01_tabella_potere.json",
     "base_power": "Attacco fisico. Danno base dalla Tabella Potere della Vitalità. L'Arma fornisce ABILITÀ EXTRA (effetti speciali per livello) ed eventuale BONUS DI DANNO che si SOMMA alla tabella.",
     "example_calculation": "PG Impeto 3 gioca Vitalità Impeto T3. Tabella Potere(3 × T3) = 8 danno base. Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
     "special_power_examples": [
@@ -25,7 +27,9 @@
     "options": "Scudo (difensivo) OPPURE Doppia Arma (offensivo, seconda Arma)",
     "scudo": {
       "characteristic_typically": "Istinto o Impeto",
-      "activation_tags_required": ["[Strumento]"],
+      "activation_tags_required": [
+        "[Strumento]"
+      ],
       "base_power": "Shield Sliding — slitta una Vitalità già giocata di 1 slot per riallineare la difesa (agganciata a un'Abilità Difensiva nominated). Vedi 05_combattimento/04_difesa.json",
       "special_power_examples": [
         "Riflesso — riflette 1 danno all'attaccante",
@@ -56,7 +60,7 @@
   "accessorio": {
     "slot": 1,
     "characteristic_typically": "passivo",
-    "base_power": "Bonus passivo (es. +1 a una Caratteristica per il calcolo del Potere, +1 slot Mano, ecc.)",
+    "base_power": "Bonus passivo (es. +1 a una Approccio per il calcolo del Potere, +1 slot Mano, ecc.)",
     "special_power_examples": [
       "Pozione Interna — cura automatica quando scendi sotto 10 Vitalità",
       "Focus Magico — +1 livello di effetto per i poteri nominated",

@@ -8,7 +8,7 @@
   "nature_of_analisi": {
     "name": "Natura dell'Analisi",
     "principle": "Magia ragionata. Il PG STUDIA la realtà, ne capisce le regole, e le sfrutta. A differenza di Risonanza (intuitiva/empatica), Analisi è razionale/studiata.",
-    "characteristic": "Analisi (Giallo, Asse Comprendere). Vedi 02_personaggio/02_caratteristiche.json",
+    "characteristic": "Analisi (Giallo, Asse Comprendere). Vedi 02_personaggio/02_approcci.json",
     "element_associated_skin": "Acqua (vedi 10_lore_cabalistica/01_cosmologia.json)"
   },
   "two_functions_of_analisi": {
@@ -29,7 +29,7 @@
     "function_2_crafting": {
       "name": "Funzione 2 — Crafting Talismani Offensivi",
       "description": "Creazione di talismani/pergamene monouso OFFENSIVI durante il RIPOSO. I talismani replicano incantesimi di attacco. Equipaggiati negli slot Strumenti Rapidi. ATTIVATI IN COMBATTIMENTO con tag [Strumento].",
-      "creator_requirement": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Caratteristica nominated Analisi con il talento crafting).",
+      "creator_requirement": "Solo PG con Analisi ≥ 1 (hanno almeno una Carta Approccio nominated Analisi con il talento crafting).",
       "creation_time": "Durante il RIPOSO (non in combattimento).",
       "daily_limit": "Limite crafting = valore Analisi del PG (es: Analisi 3 = 3 talismani/giorno).",
       "upgradeable": "Aumentabile con nominated specifiche (es. 'Artigiano', 'Mago Erudito') che raddoppiano o aggiungono slot crafting.",
@@ -64,7 +64,7 @@
     "name": "Attivazione Utility Analisi",
     "principle": "Per attivare un'utility Analisi:",
     "requirements": [
-      "Il PG deve avere una Carta Caratteristica nominated Analisi con l'utility desiderata (non ferita, oppure riattivata con [Ferita] tag).",
+      "Il PG deve avere una Carta Approccio nominated Analisi con l'utility desiderata (non ferita, oppure riattivata con [Ferita] tag).",
       "La Vitalità giocata SCOPERTA deve avere il tag [Abilità] o [Magia].",
       "Il T della Vitalità determina il livello di effetto (per utility che scalano)."
     ],
@@ -77,7 +77,7 @@
   "out_of_combat_use": {
     "name": "Uso Fuori dal Combattimento",
     "principle": "Le utility Analisi sono PARTICOLARMENTE utili fuori dal combattimento: scassinare, identificare, decifrare, riparare. Sono il pane del ladro/investigatore/artigiano.",
-    "cross_reference": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json → out_of_combat_use"
+    "cross_reference": "Vedi 02_personaggio/03_carte_approccio_nominated.json → out_of_combat_use"
   },
   "design_intent": {
     "principle": "Analisi è la via RAZIONALE della magia. Più versatile di Risonanza in utility (scasso, riparazione, identificazione, crafting), ma meno potente in combattimento diretto (deve preparare talismani in anticipo). È la via del ladro/investigatore/artigiano/mago erudito.",

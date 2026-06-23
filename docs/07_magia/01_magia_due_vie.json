@@ -4,12 +4,12 @@
   "version": "1.0",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema Magia a Due Vie (v3). Sostituisce il sistema Materie FF7 e Esper (RIMOSSI). La magia è a DUE VIE, ognuna associata a una Caratteristica diversa: RISONANZA (magia diretta — elementale + cura) e ANALISI (magia utility + crafting talismani offensivi). Questo file è la CASA UNICA per il confronto delle due vie.",
+  "description": "Definisce il sistema Magia a Due Vie (v3). Sostituisce il sistema Materie FF7 e Esper (RIMOSSI). La magia è a DUE VIE, ognuna associata a una Approccio diversa: RISONANZA (magia diretta — elementale + cura) e ANALISI (magia utility + crafting talismani offensivi). Questo file è la CASA UNICA per il confronto delle due vie.",
   "v3_removals": {
     "summary": "Componenti rimossi in v3:",
     "materie_ff7": "Sistema Materie FF7 con 5 livelli di potere Materie — sostituito dal livello di effetto basato su T della Vitalità (che già esisteva in v2).",
-    "esper_system": "Sistema Esper (creature evocate con condizione DOPPIA T5+Caratteristica 5) — rimosso del tutto.",
-    "magic_cards_physical": "Carte Magia come oggetti fisici separati con slot dedicati (3) — assorbite nelle Carte Caratteristica nominated."
+    "esper_system": "Sistema Esper (creature evocate con condizione DOPPIA T5+Approccio 5) — rimosso del tutto.",
+    "magic_cards_physical": "Carte Magia come oggetti fisici separati con slot dedicati (3) — assorbite nelle Carte Approccio nominated."
   },
   "two_paths_overview": {
     "name": "Le Due Vie della Magia",
@@ -17,16 +17,16 @@
       "name": "Via 1 — Risonanza (Magia Diretta)",
       "characteristic": "Risonanza (Verde, Asse Comprendere)",
       "nature": "Magia in sintonia col mondo. Incantesimi elementali (fuoco, ghiaccio, fulmine) + cura.",
-      "activation": "Vitalità con tag [Magia] + scelta dell'incantesimo dalla Carta Caratteristica nominated Risonanza.",
+      "activation": "Vitalità con tag [Magia] + scelta dell'incantesimo dalla Carta Approccio nominated Risonanza.",
       "power_scaling": "Potenza scala col T della Vitalità (Tabella Potere Vitalità). Livello effetto limitato dal valore attuale di Risonanza del PG.",
-      "hosting": "Gli incantesimi sono ospitati su Carte Caratteristica nominated Risonanza (specializzate o generiche).",
+      "hosting": "Gli incantesimi sono ospitati su Carte Approccio nominated Risonanza (specializzate o generiche).",
       "cross_reference_full": "Vedi 07_magia/02_risonanza.json"
     },
     "analisi_utility_and_crafting": {
       "name": "Via 2 — Analisi (Magia Utility + Crafting)",
       "characteristic": "Analisi (Giallo, Asse Comprendere)",
       "nature": "Magia ragionata: utility (rivelare debolezze, scassinare, riparare, danneggiare tratti nemici base come armatura fissa) + crafting di talismani/pergamene monouso OFFENSIVI.",
-      "utility_activation": "Vitalità con tag [Abilità] o [Magia] + scelta dell'utility dalla Carta Caratteristica nominated Analisi.",
+      "utility_activation": "Vitalità con tag [Abilità] o [Magia] + scelta dell'utility dalla Carta Approccio nominated Analisi.",
       "crafting_rule": "Creazione durante riposo. Limite crafting = valore Analisi (es: Analisi 3 = 3 talismani/giorno). Aumentabile con nominated specifiche ('Artigiano', 'Mago Erudito').",
       "talisman_hosting": "I talismani craftati vengono EQUIPAGGIATI negli slot Strumenti Rapidi (5 slot). Solo i talismani equipaggiati sono utilizzabili in combattimento.",
       "talisman_activation": "Si attivano con tag [Strumento] sulle Vitalità. Scale con Tabella Potere Vitalità. Solo OFFENSIVI (la cura resta dominio di Risonanza).",
@@ -34,23 +34,67 @@
     }
   },
   "comparison_table": {
-    "headers": ["Aspetto", "Risonanza (Via 1)", "Analisi (Via 2)"],
+    "headers": [
+      "Aspetto",
+      "Risonanza (Via 1)",
+      "Analisi (Via 2)"
+    ],
     "rows": [
-      ["Caratteristica", "Risonanza (Verde)", "Analisi (Giallo)"],
-      ["Asse", "Comprendere", "Comprendere"],
-      ["Tipo di magia", "Diretta (elementale + cura)", "Utility + Crafting"],
-      ["Offensiva?", "Sì (incantesimi elementali)", "Sì (talismani craftati)"],
-      ["Cura?", "Sì (dominio principale)", "No"],
-      ["Utility?", "Limitata (empatia, connessione)", "Sì (scasso, riparazione, reveal)"],
-      ["Attivazione", "Vitalità con [Magia]", "Vitalità con [Abilità] o [Magia] (utility) / [Strumento] (talismani)"],
-      ["Hosting", "Carte Caratteristica nominated Risonanza", "Carte Caratteristica nominated Analisi + slot Strumenti Rapidi"],
-      ["Scaling", "Tabella Potere Vitalità (Caratteristica × T)", "Tabella Potere Vitalità (per talismani) / effetto fisso (per utility)"],
-      ["Limite uso", "Mano Vitalità", "Limite crafting = valore Analisi/giorno (per talismani)"]
+      [
+        "Approccio",
+        "Risonanza (Verde)",
+        "Analisi (Giallo)"
+      ],
+      [
+        "Asse",
+        "Comprendere",
+        "Comprendere"
+      ],
+      [
+        "Tipo di magia",
+        "Diretta (elementale + cura)",
+        "Utility + Crafting"
+      ],
+      [
+        "Offensiva?",
+        "Sì (incantesimi elementali)",
+        "Sì (talismani craftati)"
+      ],
+      [
+        "Cura?",
+        "Sì (dominio principale)",
+        "No"
+      ],
+      [
+        "Utility?",
+        "Limitata (empatia, connessione)",
+        "Sì (scasso, riparazione, reveal)"
+      ],
+      [
+        "Attivazione",
+        "Vitalità con [Magia]",
+        "Vitalità con [Abilità] o [Magia] (utility) / [Strumento] (talismani)"
+      ],
+      [
+        "Hosting",
+        "Carte Approccio nominated Risonanza",
+        "Carte Approccio nominated Analisi + slot Strumenti Rapidi"
+      ],
+      [
+        "Scaling",
+        "Tabella Potere Vitalità (Approccio × T)",
+        "Tabella Potere Vitalità (per talismani) / effetto fisso (per utility)"
+      ],
+      [
+        "Limite uso",
+        "Mano Vitalità",
+        "Limite crafting = valore Analisi/giorno (per talismani)"
+      ]
     ]
   },
   "design_intent": {
-    "principle": "Le due vie riflettono due approcci alla magia: Risonanza è intuitiva/empatica (diretta), Analisi è razionale/studiata (utility + preparazione). Un PG può specializzarsi in una o avere both nominated in entrambe le Caratteristiche.",
-    "comparison_with_removed_systems": "A differenza del sistema Materie FF7 (dove ogni Materia era un oggetto fisico separato con 5 livelli), qui gli incantesimi sono ospitati sulle nominated e scalano col T della Vitalità. A differenza del sistema Esper (creature evocate con condizione DOPPIA), non ci sono 'super-invocazioni' — la potenza massima è determinata dal valore di Caratteristica e dal T massimo (5)."
+    "principle": "Le due vie riflettono due approcci alla magia: Risonanza è intuitiva/empatica (diretta), Analisi è razionale/studiata (utility + preparazione). Un PG può specializzarsi in una o avere both nominated in entrambe le Approcci.",
+    "comparison_with_removed_systems": "A differenza del sistema Materie FF7 (dove ogni Materia era un oggetto fisico separato con 5 livelli), qui gli incantesimi sono ospitati sulle nominated e scalano col T della Vitalità. A differenza del sistema Esper (creature evocate con condizione DOPPIA), non ci sono 'super-invocazioni' — la potenza massima è determinata dal valore di Approccio e dal T massimo (5)."
   },
   "what_a_character_can_do": {
     "specialist_risonanza": "PG con Risonanza alta + nominated Risonanza. Specialista in magia elementale e cura. Molto potente in combattimento, ma poca utility fuori.",

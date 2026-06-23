@@ -4,7 +4,7 @@
   "version": "1.0",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema degli slot Equipaggiamento: 4 slot fissi (Arma, Scudo/Doppia, Armatura, Accessorio) e la regola di attivazione tramite Vitalità con tag. Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE come slot fisici separati in v3 — assorbite dalle Carte Caratteristica nominated. Questo file è la CASA UNICA per il sistema degli slot e la regola di attivazione.",
+  "description": "Definisce il sistema degli slot Equipaggiamento: 4 slot fissi (Arma, Scudo/Doppia, Armatura, Accessorio) e la regola di attivazione tramite Vitalità con tag. Le vecchie Carte Abilità (4 slot) e Carte Magia (3 slot) sono RIMOSSE come slot fisici separati in v3 — assorbite dalle Carte Approccio nominated. Questo file è la CASA UNICA per il sistema degli slot e la regola di attivazione.",
   "v3_paradigm_shift": {
     "summary": "Nella v2, le Carte Lato Giocatore (Eq + Strumenti + Abilità + Magie) erano tutti slot fisici separati. Nella v3, le Carte Abilità e Carte Magia sono state RIMOSSE come slot fisici: i loro poteri sono assorbiti dalle CARTE CARATTERISTICA NOMINATED. Restano fisici solo: 4 Equipaggiamento + 5 Strumenti Rapidi.",
     "key_changes_v3": [
@@ -15,7 +15,7 @@
       "Strumenti Rapidi ospitano anche talismani craftati da Analisi (offensivi, monouso)",
       "Equipaggiamento (4 slot) invariato: sistema ferita 2 stadi VOLONTARIO",
       "Magia a due vie: Risonanza (elementale + cura) + Analisi (utility + crafting)",
-      "Rinomini caratteristiche: Istinto→IMPETO, Evasione→ISTINTO"
+      "Rinomini approcci: Istinto→IMPETO, Evasione→ISTINTO"
     ]
   },
   "player_card_slots_v3": {
@@ -23,7 +23,12 @@
     "breakdown": {
       "equipment": {
         "slots": 4,
-        "composition": ["1 Arma", "1 Scudo (o Doppia Arma)", "1 Armatura", "1 Accessorio"]
+        "composition": [
+          "1 Arma",
+          "1 Scudo (o Doppia Arma)",
+          "1 Armatura",
+          "1 Accessorio"
+        ]
       },
       "quick_items": {
         "slots": 5,
@@ -31,27 +36,27 @@
         "cross_reference": "Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
       }
     },
-    "note_pooled_powers": "I poteri basati su caratteristica (Abilità) e gli incantesimi (Magie) NON sono più slot fisici separati. Sono ospitati sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 02_personaggio/03_carte_caratteristica_nominated.json)."
+    "note_pooled_powers": "I poteri basati su approccio (Abilità) e gli incantesimi (Magie) NON sono più slot fisici separati. Sono ospitati sulle CARTE CARATTERISTICA NOMINATED (10 carte totali, vedi 02_personaggio/03_carte_approccio_nominated.json)."
   },
   "activation_rule_v3": {
     "name": "Regola di Attivazione Equipaggiamento (v3)",
-    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti di TAG (principalmente [Strumento]). La Vitalità NON deve essere della stessa caratteristica dell'Equipaggiamento: i TAG indicano cosa si può attivare.",
+    "principle": "Per attivare un Equipaggiamento, il PG deve giocare una Vitalità SCOPERTA che soddisfi i requisiti di TAG (principalmente [Strumento]). La Vitalità NON deve essere della stessa approccio dell'Equipaggiamento: i TAG indicano cosa si può attivare.",
     "requirements": [
       "La Vitalità deve avere i TAG richiesti dall'Equipaggiamento (principalmente [Strumento])",
       "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB)",
-      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Caratteristica del PG"
+      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Approccio del PG"
     ],
-    "level_of_effect": "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=scegli tra 1-5). Limitato dal valore di Caratteristica del PG.",
-    "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Caratteristica × T) + Bonus Danno Arma(livello scelto). Vedi 05_combattimento/01_tabella_potere.json"
+    "level_of_effect": "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=scegli tra 1-5). Limitato dal valore di Approccio del PG.",
+    "damage_formula_v3": "DANNO = Tabella Potere Vitalità(Approccio × T) + Bonus Danno Arma(livello scelto). Vedi 05_combattimento/01_tabella_potere.json"
   },
   "armi_improvissate_fallback": {
     "name": "Armi Improvissate (Fallback)",
     "principle": "Se il PG non ha un'Arma equipaggiata (slot vuoto o distrutta), NON può attaccare fisicamente. Può usare Armi Improvissate.",
-    "mechanic": "Attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma). Sostanzialmente una Vitalità T1 con danno = Tabella Potere(Caratteristica × 1).",
+    "mechanic": "Attacco base con Potere nudo della Vitalità (ignora tag, niente combo, niente tabella T1-T5 dell'arma). Sostanzialmente una Vitalità T1 con danno = Tabella Potere(Approccio × 1).",
     "design_intent": "Un PG senza Arma è gravemente penalizzato. Costringe a mantenere sempre un'Arma equipaggiata e a non farla distruggere troppo facilmente. Vedi 05_combattimento/04_difesa.json → no_default_defense_rule"
   },
   "universal_flip_mechanic_reminder": {
-    "principle": "TUTTE le carte (Caratteristiche, Cuori, Equipaggiamento) usano la STESSA meccanica: GIRARE LA CARTA sul dorso per indicare lo stato 'ferito/usurato'.",
+    "principle": "TUTTE le carte (Approcci, Cuori, Equipaggiamento) usano la STESSA meccanica: GIRARE LA CARTA sul dorso per indicare lo stato 'ferito/usurato'.",
     "cross_reference": "Vedi 01_introduzione/02_anatomia_carte.json → universal_flip_mechanic"
   },
   "design_evolution_notes": {

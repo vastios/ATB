@@ -8,10 +8,10 @@
   "description_extended": "Questa mappatura funziona in DIREZIONE INVERSA: dai termini neutri del Canale 1 ai termini cabalistici di questa skin. Permette al Master di 'tradurre' qualsiasi regola meccanica nella cornice cabalistica.",
   "mappings": [
     {
-      "mechanical_term": "Caratteristica",
+      "mechanical_term": "Approccio",
       "material_level": "Capacità naturale (Impeto, Analisi, Istinto, Risonanza)",
       "kabbalistic_nature": "Connessione a un Mondo (Atziluth, Beriah, Yetzirah, Assiah). L'Asse Comprendere (Analisi + Risonanza) e l'Asse Agire (Impeto + Istinto) riflettono la discesa della Luce: dal Comprendere (mondi superiori) all'Agire (mondi inferiori). v3 rinomini: Istinto→IMPETO (Atziluth/Fuoco), Evasione→ISTINTO (Yetzirah/Aria).",
-      "cross_reference": "Vedi 02_personaggio/02_caratteristiche.json e 10_lore_cabalistica/01_cosmologia.json → the_four_worlds"
+      "cross_reference": "Vedi 02_personaggio/02_approcci.json e 10_lore_cabalistica/01_cosmologia.json → the_four_worlds"
     },
     {
       "mechanical_term": "Cuori",
@@ -117,10 +117,10 @@
       "cross_reference": "Vedi 05_combattimento/02_danno.json → ferita_tag_v3 e 10_lore_cabalistica/02_shevirat_hakelim.json → silver_lining"
     },
     {
-      "mechanical_term": "Carte Caratteristica Nominated",
+      "mechanical_term": "Carte Approccio Nominated",
       "material_level": "Capacità appresa / Tecnica",
       "kabbalistic_nature": "Segreto Manifesto — conoscenza cosmica che il PG ha fatto sua e incarna in un Canale verso un Mondo",
-      "cross_reference": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json"
+      "cross_reference": "Vedi 02_personaggio/03_carte_approccio_nominated.json"
     },
     {
       "mechanical_term": "Talismani Analisi (craftati)",

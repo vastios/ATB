@@ -1,43 +1,56 @@
 {
   "section_id": "05-03",
-  "section_name": "Soglia del Vuoto — Caratteristica a 0 e Ferita Cuore Obbligatoria",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Soglia del Vuoto — Approccio a 0 e Ferita Cuore Obbligatoria",
+  "version": "2.0",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la Soglia del Vuoto: cosa succede quando una Caratteristica scende a valore 0 per ferite accumulate. È una regola di emergenza che connette il danno alle Caratteristiche con il danno ai Cuori. Questo file è la CASA UNICA per la Soglia del Vuoto.",
+  "description": "Definisce la Soglia del Vuoto: cosa succede quando un Approccio scende a valore 0 per ferite accumulate. È una regola di emergenza che connette il danno agli Approcci con il danno ai Cuori. Questo file è la CASA UNICA per la Soglia del Vuoto.",
   "trigger_condition": {
     "name": "Condizione di Attivazione",
-    "trigger": "Una Caratteristica scende a 0 a causa di ferite (Danno Diretto o scelte ripetute di Opzione B nel Dilemma del Guerriero).",
+    "trigger": "Un Approccio scende a 0 a causa di ferite (Danno Diretto o scelte ripetute di Opzione B nel Dilemma del Guerriero).",
+    "narrative_interpretation_v3_1": "L'Approccio a 0 NON significa 'il PG ha perso le sue capacità fisiche/mentali in quell'area'. Significa: il mindset del PG in quell'Approccio è COLASSATO. L'irruenza lo ha tradito troppe volte e ora non riesce più a buttarcisi a capofitto. Lo studio lo ha deluso e non riesce più a concentrarsi. L'empatia lo ha ferito e ora non sente più nulla. Il canale è chiuso — non perché il PG sia incapace, ma perché il suo modo di affrontare il mondo in quell'area è crollato.",
     "cross_reference_danno": "Vedi 05_combattimento/02_danno.json per le Due Categorie di Danno"
   },
   "azione_obbligatoria": {
     "name": "Azione Obbligatoria — Ferita Cuore Immediata",
     "rule": "Il giocatore è COSTRETTO a girare (ferire) immediatamente un Cuore, senza possibilità di scelta o opposizione.",
-    "no_alternative": "NON può scegliere di pagare con il Mazzo Vitalità. NON può scegliere un'altra Caratteristica. NON può evitare in alcun modo.",
-    "cross_reference_cuori": "Vedi 02_personaggio/04_cuori.json → wound_order_rule"
+    "v3_1_cuori_note": "In v3.1, il giocatore SCEGLIE quale Cuore ferire (PASSATO, DOTTRINA o LEGAMI) — la scelta è libera e non ha risvolti meccanici (i 3 Cuori sono equivalenti). Conta solo il NUMERO di Cuori feriti (3 = morte). Vedi 02_personaggio/04_cuori.json (riscritto in Fase 2).",
+    "no_alternative": "NON può scegliere di pagare con il Mazzo Vitalità. NON può scegliere un altro Approccio. NON può evitare in alcun modo la Ferita Cuore.",
+    "cross_reference_cuori": "Vedi 02_personaggio/04_cuori.json"
   },
   "stato_a_zero_rule": {
-    "name": "Stato di una Caratteristica a 0",
-    "principle": "Quando una Caratteristica è a 0, le carte di quel colore possono essere giocate SOLO COPRITE per pagare il Costo in Tempo.",
-    "azioni_scoperte": "Le azioni SCOPERTE di quel colore FALLISCONO senza effetto. La Caratteristica è 'cesionata' — il canale verso quel Mondo è completamente chiuso.",
-    "narrative": "Il PG ha perso l'accesso a un'intera dimensione della sua capacità. Deve guarire quella Caratteristica prima di poterla usare di nuovo per azioni attive."
+    "name": "Stato di un Approccio a 0",
+    "principle": "Quando un Approccio è a 0, le carte di quel colore possono essere giocate SOLO COPRITE per pagare il Costo in Tempo.",
+    "azioni_scoperte": "Le azioni SCOPERTE di quel colore FALLISCONO senza effetto. L'Approccio è 'collassato' — il canallo verso quel modo di affrontare il mondo è completamente chiuso.",
+    "narrative": "Il PG non ha perso l'uso di quel modo di agire — ha perso la CAPACITÀ DI SCEGLIERLO. Anche se volesse essere irruento, non ci riesce: il suo mindset è bloccato. Deve guarire quell'Approccio prima di poterlo scegliere di nuovo per azioni attive.",
+    "v3_1_interpretation": "In v3.1 questo è coerente col framing mindset: un Approccio a 0 è un mindset collassato, non una capacità perduta. La cura non è 'riabilitazione fisica' — è 'ritrovare la fiducia in quel modo di affrontare il mondo'."
   },
   "eccezione_tag_secondaria": {
-    "name": "Eccezione — Tag di Caratteristica Secondaria",
-    "rule": "Se una carta ha un Tag di Caratteristica Secondaria, il giocatore può usare quel Tag per calcolare il Potere basandosi sull'altra Caratteristica (se superiore a 0).",
-    "example": "Una Vitalità primariamente Impeto con tag secondario Istinto può essere giocata SCOPERTA usando Istinto come Caratteristica di riferimento, se Impeto è a 0 ma Istinto > 0.",
+    "name": "Eccezione — Tag di Approccio Secondario",
+    "rule": "Se una carta ha un Tag di Approccio Secondario, il giocatore può usare quel Tag per calcolare il Potere basandosi sull'altro Approccio (se superiore a 0).",
+    "example": "Una Vitalità primariamente Impeto con tag secondario Istinto può essere giocata SCOPERTA usando Istinto come Approccio di riferimento, se Impeto è a 0 ma Istinto > 0.",
+    "narrative_v3_1": "Anche se il mindset Impeto è collassato, il PG può ancora agire attraverso l'altro Approccio AGIRE (Istinto) se la carta lo permette. È come dire: 'non riesco a buttarmi a capofitto, ma posso ancora reagire'.",
     "open_question_tag_secondaria": "Da dettagliare come funzionano esattamente i tag secondari sulle Vitalità. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
   },
   "design_intent": {
-    "principle": "La Soglia del Vuoto garantisce che NON si possa 'stagnare' a Caratteristica 0. Se perdi completamente un canale, l'anima stessa viene ferita. Questo rende la scelta 'Opzione B — Ferita Caratteristica' nel Dilemma del Guerriero una scelta che ha un LIMITE: non puoi sacrificarla all'infinito, prima o poi collassa in una ferita Cuore.",
-    "tactical_implication": "Il PG deve gestire le ferite alle Caratteristiche in modo distribuito — non concentrarle tutte su una sola, altrimenti scatta la Soglia del Vuoto."
+    "principle": "La Soglia del Vuoto garantisce che NON si possa 'stagnare' a Approccio 0. Se il tuo mindset in un'area collassa completamente, l'anima stessa viene ferita. Questo rende la scelta 'Opzione B — Ferita Approccio' nel Dilemma del Guerriero una scelta che ha un LIMITE: non puoi sacrificarla all'infinito, prima o poi collassa in una Ferita Cuore.",
+    "tactical_implication": "Il PG deve gestire le ferite agli Approcci in modo distribuito — non concentrarle tutte su una sola, altrimenti scatta la Soglia del Vuoto.",
+    "narrative_implication_v3_1": "Distribuire le ferite significa: 'lascio che i miei vari mindset vengano scossi un po' ciascuno, senza far collassare nessuno'. Concentrarle significa: 'un solo modo di affrontare il mondo sta crollando, e prima o poi trascinerà con sé un Cuore'."
   },
   "recovery_from_zero": {
-    "principle": "Una Caratteristica a 0 può essere guarita come qualsiasi Caratteristica ferita: pozioni guarigione, magia curativa, Punti Impresa. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
-    "narrative": "Rigirare una carta Caratteristica = riaprire il canale verso quel Mondo. Il PG può tornare a usare azioni scoperte di quel colore."
+    "principle": "Un Approccio a 0 può essere guarito come qualsiasi Approccio ferito: pozioni guarigione, magia curativa, Punti Impresa. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
+    "narrative": "Rigirare una carta Approccio = riaprire quel canale mindset. Il PG ritrova la capacità di scegliere quel modo di affrontare il mondo. Non è una riabilitazione fisica — è una riconciliazione interiore.",
+    "heart_linked_note": "Se l'Approccio a 0 contiene nominated Heart-linked, queste nominated sono tra quelle ferite. Guarirle fa parte del processo di recupero dell'Approccio."
   },
   "relationship_with_death_condition": {
-    "principle": "Se la Ferita Cuore causata dalla Soglia del Vuoto è l'ULTIMO Cuore sano (Cuore 3), il PG MUORE. Vedi 02_personaggio/04_cuori.json → death_condition",
-    "rare_case": "Caso raro ma possibile: un PG accumula ferite tali che tutte e 3 le Caratteristiche di un Asse scendono a 0, innescando 3 Soglie del Vuoto in sequenza = 3 Ferite Cuore = morte."
+    "principle": "Se la Ferita Cuore causata dalla Soglia del Vuoto è l'ULTIMO Cuore sano, il PG MUORE. Vedi 02_personaggio/04_cuori.json → death_condition",
+    "rare_case": "Caso raro ma possibile: un PG accumula ferite tali che tutti e 3 i Cuori vengono feriti da Soglie del Vuoto in sequenza = morte per collasso mindset totale.",
+    "v3_1_note": "In v3.1, poiché il giocatore SCEGLIE quale Cuore ferire, in questo scenario raro il giocatore ha l'autonomia di scegliere l'ordine — ma il risultato (3 Cuori feriti = morte) è inesorabile."
+  },
+  "design_evolution_notes": {
+    "v10": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Approccio QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte dell'Approccio bersagliato pari al danno). Soglia del Vuoto. Cuori NON sono opzione per Danno Standard.",
+    "v11": "Danno Anatema e Danno Diretto Cuore formalizzati.",
+    "v14_v3": "Tag [Ferita] = riattiva abilità di UNA Carta Approccio ferita dello stesso Approccio della Vitalità giocata.",
+    "v15_v3_1": "Reframing mindset: Approccio a 0 = mindset collassato (non perdita di capacità fisica/mentale). Il giocatore SCEGLIE quale Cuore ferire (i 3 Cuori sono equivalenti, no asimmetria cura, no ordine fisso)."
   }
 }

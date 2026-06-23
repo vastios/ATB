@@ -1,13 +1,14 @@
 {
   "section_id": "02-04",
-  "section_name": "I Cuori — Punti Vitali Profondi e Condizione di Morte",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "I Cuori Nominati — Essenza, PASSATO/DOTTRINA/LEGAMI, Condizione di Morte",
+  "version": "1.0-placeholder",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce le 3 Carte Cuore del PG. I Cuori sono la risorsa vitale PIÙ PROFONDA: sono l'ultima linea di difesa prima della morte. Si feriscono in ORDINE OBBLIGATORIO (1 → 2 → 3) e sono DIFFICILI da curare. Questo file è la CASA UNICA per le regole dei Cuori: gli altri file usano cross-riferimenti qui.",
+  "v3_1_status": "PLACEHOLDER — Questo file sarà COMPLETAMENTE RISCRITTO in Fase 2 della transizione v3.1. Il contenuto attuale riflette ancora la v3 (Cuori segnaposto vuoti, ordine di ferita 1→2→3 obbligatorio, asimmetria di cura). Le decisioni v3.1 già prese sono: (1) i Cuori sono NOMINATI, scelti dal catalogo; (2) 3 categorie: PASSATO/DOTTRINA/LEGAMI; (3) ordine di ferita RIMOSSO — il giocatore SCEGLIE; (4) asimmetria di cura RIMOSSA — i 3 Cuori sono equivalenti; (5) le Ferite Cuore NON disattivano le nominated Heart-linked; (6) ogni carta Cuore sblocca una LISTA di nominated Approccio (Heart-linked) tra cui il PG sceglie UNA nominated.",
+  "description": "Definisce le 3 Carte Cuore del PG. I Cuori sono la risorsa vitale PIÙ PROFONDA: sono l'ultima linea di difesa prima della morte. In v3.1, i Cuori sono NOMINATI e rappresentano l'ESSENZA del PG (PASSATO, DOTTRINA, LEGAMI) — il WHY narrativo che spiega perché il PG approccia al mondo in un certo modo. Si feriscono per scelta del giocatore (no ordine obbligatorio, no asimmetria di cura) e 3 Cuori feriti = morte. Questo file è la CASA UNICA per le regole dei Cuori: gli altri file usano cross-riferimenti qui.",
   "what_are_hearts": {
     "name": "Cosa Sono i Cuori",
-    "definition": "Tre carte fisiche disposte in fila nella Zona 2 dell'Area Gioco (vedi 02_personaggio/01_area_gioco.json). Rappresentano la vitalità profonda del PG — oltre la stamina (Vitalità) e oltre la potenza (Caratteristiche).",
+    "definition": "Tre carte fisiche disposte in fila nella Zona 2 dell'Area Gioco (vedi 02_personaggio/01_area_gioco.json). Rappresentano la vitalità profonda del PG — oltre la stamina (Vitalità) e oltre la potenza (Approcci).",
     "narrative_identity_skin_only": "Nella skin cabalistica, i 3 Cuori corrispondono all'Anima Tripartita (Nefesh, Ruach, Neshamah). Vedi 10_lore_cabalistica/01_cosmologia.json — nel Canale 1 sono semplicemente 'Cuore 1, Cuore 2, Cuore 3'."
   },
   "wound_order_rule": {
@@ -30,11 +31,11 @@
       "narrative": "L'attacco colpisce direttamente l'anima, ignorando ogni difesa materiale."
     },
     "case_3_soglia_del_vuoto": {
-      "trigger": "Una Caratteristica scende a 0. Vedi 05_combattimento/03_soglia_vuoto.json",
+      "trigger": "Una Approccio scende a 0. Vedi 05_combattimento/03_soglia_vuoto.json",
       "effect": "Il PG è COSTRETTO a girare immediatamente un Cuore. NESSUNA scelta o opposizione.",
       "narrative": "La frantumazione di un canale verso un Mondo destabilizza l'anima stessa."
     },
-    "explicit_restriction": "I Cuori NON sono un'opzione per il Danno Standard (vedi 05_combattimento/02_danno.json). Il Danno Standard può essere assorbito SOLO con Milling (Mazzo Vitalità) o Ferita a Caratteristica."
+    "explicit_restriction": "I Cuori NON sono un'opzione per il Danno Standard (vedi 05_combattimento/02_danno.json). Il Danno Standard può essere assorbito SOLO con Milling (Mazzo Vitalità) o Ferita a Approccio."
   },
   "death_condition": {
     "name": "Condizione di Morte",
@@ -43,7 +44,7 @@
   },
   "healing_asymmetry": {
     "name": "Cura Asimmetrica dei Cuori",
-    "principle": "I Cuori sono la risorsa PIÙ DIFFICILE da curare. Rispetto al Mazzo Vitalità (veloce) e alle Caratteristiche (medio), i Cuori richiedono TEMPO NARRATIVO LUNGO o risorse rare.",
+    "principle": "I Cuori sono la risorsa PIÙ DIFFICILE da curare. Rispetto al Mazzo Vitalità (veloce) e alle Approcci (medio), i Cuori richiedono TEMPO NARRATIVO LUNGO o risorse rare.",
     "cuore_1_easier": "Il Cuore 1 è il più facile da curare — è legato al corpo, e il corpo vuole guarire. Richiede comunque rituali o cure mediche serie.",
     "cuore_2_medium": "Il Cuore 2 è difficile. Richiede rituali complessi o settimane di riposo assoluto.",
     "cuore_3_hardest": "Il Cuore 3 è quasi impossibile da curare — è la parte più profonda dell'identità. Richiede miracoli, side-quest narrative, o magia eccezionale.",

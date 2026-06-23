@@ -20,7 +20,7 @@
     },
     "connection_sacrifice": {
       "name": "Sacrificare la Connessione (Shevirat Parziale)",
-      "mechanical_correspondent": "Opzione B — Ferita a Caratteristica nel Dilemma del Guerriero",
+      "mechanical_correspondent": "Opzione B — Ferita a Approccio nel Dilemma del Guerriero",
       "nature": "Spezzo deliberatamente il mio canale verso un Mondo. Il Vaso si incrina, la Luce di quel Mondo scorre meno. Perdo potenza — ma sopravvivo.",
       "existential_weight": "Stai tagliando una parte della tua connessione col cosmo. Come un musicista che perde l'udito in un orecchio — puoi ancora suonare, ma non senti più le armonie."
     },
@@ -33,7 +33,7 @@
   },
   "narrative_implication": {
     "principle": "Il Dilemma del Guerriero non è solo una scelta meccanica — è una domanda ESISTENZIALE che il gioco pone a ogni turno: cosa sei disposto a perdere per sopravvivere? E cosa diventi quando hai perso troppo?",
-    "design_intent": "Il gioco non è un power fantasy. È un'indagine su cosa significa sopravvivere. Ogni vittoria ha un costo. Ogni costo lascia un segno. Il PG che vince tutti i combattimenti ma finisce con 2 Cuori feriti e 3 Caratteristiche ferite NON è un eroe trionfante — è un sopravvissuto menomato, più vicino al Qliphoth che al Vaso luminoso."
+    "design_intent": "Il gioco non è un power fantasy. È un'indagine su cosa significa sopravvivere. Ogni vittoria ha un costo. Ogni costo lascia un segno. Il PG che vince tutti i combattimenti ma finisce con 2 Cuori feriti e 3 Approcci ferite NON è un eroe trionfante — è un sopravvissuto menomato, più vicino al Qliphoth che al Vaso luminoso."
   },
   "master_guidelines": {
     "name": "Linee Guida per il Master",

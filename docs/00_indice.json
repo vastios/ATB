@@ -1,9 +1,15 @@
 {
   "section_id": "00",
   "section_name": "Indice del Manuale — Manifest del Progetto",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "version": "2.0",
+  "architecture_version": "v3.1",
   "last_updated": "2026-06-23",
+  "v3_1_transition_status": {
+    "summary": "Il manuale è in fase di transizione da v3 a v3.1. La FASE 1 (rename + reframing) è COMPLETATA: 'Caratteristica' → 'Approccio' ovunque, con reframing concettuale (Approcci = mindset modificabili, non tratti innati). La FASE 2 (nuove meccaniche: Riallineamento, Cuori Nominati, Mazzo Vitalità Dinamico) è IN CORSO. La FASE 3 (cataloghi Cuori + Nominated libere) è DA AVVIARE.",
+    "fase_1_rename_reframing": "COMPLETATA — 33+5 file aggiornati, ~300 sostituzioni. 02_personaggio/02_approcci.json e 03_carte_approccio_nominated.json riscritti con framing mindset. 05_combattimento/03_soglia_vuoto.json riscritto con reframing 'mindset collassato'.",
+    "fase_2_new_mechanics": "IN CORSO — file da riscrivere completamente: 02_personaggio/04_cuori.json (Cuori Nominati con PASSATO/DOTTRINA/LEGAMI), 03_vitalita/01_mazzo_vitalita.json (Mazzo Dinamico + Distribuzione Asimmetrica per Livello). File da creare: 02_personaggio/06_riallineamento_approcci.json.",
+    "fase_3_catalogs": "DA AVVIARE — catalogo Cuori (24-30 carte, 8-10 per categoria), catalogo Nominated libere (8-12 per Approccio)."
+  },
   "project_metadata": {
     "project_name": "Progetto GdR Cappa e Spada",
     "tagline": "Un GdR card-based con sistema ATB (Active Time Battle) e Dilemma del Guerriero.",
@@ -16,55 +22,88 @@
     "channel_1_player_manual": {
       "name": "Manuale del Giocatore",
       "content": "Meccaniche pure. ZERO lore. Terminologia neutra e funzionale.",
-      "chapters": ["01_introduzione", "02_personaggio", "03_vitalita", "04_cintura_atb", "05_combattimento", "06_equipaggiamento", "07_magia", "08_nemici", "09_riposo_cura"]
+      "chapters": [
+        "01_introduzione",
+        "02_personaggio",
+        "03_vitalita",
+        "04_cintura_atb",
+        "05_combattimento",
+        "06_equipaggiamento",
+        "07_magia",
+        "08_nemici",
+        "09_riposo_cura"
+      ]
     },
     "channel_2_master_guide": {
       "name": "Guida del Master",
       "content": "Regole avanzate, gestione sessione, bilanciamento, creazione nemici, consigli narrativi.",
-      "chapters": ["11_master_guide — DA CREARE"]
+      "chapters": [
+        "11_master_guide — DA CREARE"
+      ]
     },
     "channel_3_setting_skins": {
       "name": "Manuali Ambientazione (Skin)",
       "content": "Lore che 'veste' le meccaniche senza alterarle. Ogni ambientazione ha la sua skin.",
-      "chapters": ["10_lore_cabalistica (Skin #1 — Cabalistica)", "Future skin: Alchimia Ermetica, Taoismo, Fisica Quantistica, ecc."]
+      "chapters": [
+        "10_lore_cabalistica (Skin #1 — Cabalistica)",
+        "Future skin: Alchimia Ermetica, Taoismo, Fisica Quantistica, ecc."
+      ]
     }
   },
-  "core_emotion": "Il Dilemma del Guerriero: assorbi il danno col Mazzo Vitalità (esaurendo le forze), ferisci una Caratteristica (perdendo potenza), o sacrifichi un Cuore (avvicinandoti alla morte). Ogni scelta ha un costo asimmetrico nella guarigione.",
+  "core_emotion": "Il Dilemma del Guerriero: assorbi il danno col Mazzo Vitalità (esaurendo le forze), ferisci un Approccio (perdendo mindset temporaneamente), o sacrifichi un Cuore (avvicinandoti alla morte). Ogni scelta ha un costo asimmetrico nella guarigione.",
+  "v3_1_summary": {
+    "name": "Svolta v3.1 — Approcci come Mindset, Cuori come Essenza",
+    "principle": "Gli Approcci (ex-Caratteristiche) non sono tratti innati (forza, intelligenza) — sono MINDSET MODIFICABILI: il modo in cui il PG sceglie di affrontare il mondo. Possono riallinearsi nel tempo dopo fallimenti/crisi narrative. I Cuori sono l'ESSENZA del PG (PASSATO/DOTTRINA/LEGAMI) — non cambiano mai e danno il WHY narrativo. Il Mazzo Vitalità diventa DINAMICO — la composizione T1-T5 muta coi riallineamenti.",
+    "what_changes_narratively": "La crescita del PG non è più 'divento più forte' (assurdo con somma fissa a 10), ma 'evolvo il mio modo di affrontare le cose'. Le ferite, i fallimenti, le crisi — tutto può spingere il PG a rivedere il proprio approccio al mondo.",
+    "what_does_not_change_mechanically": "La matematica resta: 10 punti totali, 10 carte Approccio, 60 carte Vitalità. La Tabella Potere, il sistema nominated, il Dilemma del Guerriero — tutti invariati nel principio. Le meccaniche v3 restano valide; la v3.1 aggiunge nuove dimensioni di progressione (Maturation + Riallineamento).",
+    "new_mechanics_v3_1": [
+      "Riallineamento: 1 punto Approccio A → Approccio B, dopo fallimento/crisi narrativa. Scambio nominated↔nominated o bianca↔bianca. Le nominated Heart-linked sono protette.",
+      "Maturation: una bianca → nominated libera, dopo successo/volontà di crescere.",
+      "Cuori Nominati: 3 carte Cuore nominate (PASSATO/DOTTRINA/LEGAMI), scelte dal catalogo. Non cambiano mai. Ognuna sblocca una lista di nominated Approccio (Heart-linked).",
+      "Ordine ferita Cuori RIMOSSO: il giocatore SCEGLIE quale Cuore ferire. I 3 Cuori sono equivalenti.",
+      "Asimmetria cura Cuori RIMOSSA: i 3 Cuori hanno la stessa difficoltà di cura.",
+      "Ferita Cuore NON disattiva nominated Heart-linked (resta giocabile).",
+      "Mazzo Vitalità Dinamico: composizione T1-T5 muta coi riallineamenti. Le carte rimosse tornano nella Riserva Comune."
+    ]
+  },
   "v3_pillars_summary": {
-    "summary": "Le Carte Vitalità sono la RISERVA DI ENERGIA del PG. I loro TAG sono CHIAVI DI ATTIVAZIONE: indicano quali poteri il PG può usare in quel turno. I poteri sono ospitati dalle CARTE CARATTERISTICA NOMINATE, che assorbono le vecchie Carte Abilità e Carte Magia. Le Carte Lato Giocatore fisiche sono solo Equipaggiamento (4 slot) + Strumenti Rapidi (5 slot).",
+    "summary": "Le Carte Vitalità sono la RISERVA DI ENERGIA del PG. I loro TAG sono CHIAVI DI ATTIVAZIONE: indicano quali poteri il PG può usare in quel turno. I poteri sono ospitati dalle CARTE APPROCCIO NOMINATE, che assorbono le vecchie Carte Abilità e Carte Magia. Le Carte Lato Giocatore fisiche sono solo Equipaggiamento (4 slot) + Strumenti Rapidi (5 slot). In v3.1, gli Approcci sono MINDSET modificabili e i Cuori sono ESSENZA nominata.",
     "pillar_1_vitality": "Le Vitalità forniscono energia (Costo Tempo T1-T5) e chiavi di attivazione (TAG). Si giocano SCOPERTA (attivano un potere compatibile) o COPERTA (puro costo tempo). NON definiscono l'azione. → 03_vitalita/",
-    "pillar_2_characteristic_cards_nominated": "Le Carte Caratteristica sono il CATALOGO DELLE MOSSE del PG. Il VALORE della Caratteristica = NUMERO di carte fisiche sul tavolo (10 carte totali alla creazione). Pool MISTO: nominated (con nome+abilità/magie) + bianche (segnaposto). → 02_personaggio/03_carte_caratteristica_nominated.json",
+    "pillar_2_approccio_cards_nominated": "Le Carte Approccio sono il CATALOGO DELLE MOSSE del PG. Il VALORE dell'Approccio = NUMERO di carte fisiche sul tavolo (10 carte totali alla creazione). Pool MISTO: nominated (con nome+abilità/magie) + bianche (segnaposto). In v3.1: 3 nominated sono HEART-LINKED (imposte dai Cuori), le restanti 1-2 sono libere. → 02_personaggio/03_carte_approccio_nominated.json",
+    "pillar_2b_approcci_as_mindset_v3_1": "v3.1: gli Approcci sono MINDSET MODIFICABILI, non tratti innati. Il Riallineamento (1 punto A→B dopo fallimento) e la Maturation (bianca→nominated dopo successo) sono le due dimensioni di progressione del PG. → 02_personaggio/06_riallineamento_approcci.json (Fase 2)",
+    "pillar_2c_cuori_nominati_v3_1": "v3.1: i Cuori sono NOMINATI, scelti dal catalogo nelle 3 categorie PASSATO/DOTTRINA/LEGAMI. Sono l'ESSENZA del PG (non cambiano mai). Ognuna sblocca una lista di nominated Approccio (Heart-linked). Ordine ferita RIMOSSO, asimmetria cura RIMOSSA. → 02_personaggio/04_cuori.json (Fase 2)",
     "pillar_3_player_card_slots_v3": "Il PG ha 9 SLOT FISSI per Carte Lato Giocatore fisiche: 4 Equipaggiamento + 5 Strumenti Rapidi. Le vecchie Carte Abilità e Carte Magia sono RIMOSSE come slot fisici separati — assorbite dalle nominated. → 06_equipaggiamento/",
-    "pillar_4_activation_rule": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Caratteristica del PG. → 03_vitalita/02_giocare_vitalita.json",
+    "pillar_4_activation_rule": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Approccio del PG. → 03_vitalita/02_giocare_vitalita.json",
     "pillar_5_atb": "Cintura ATB fluida invariata. Le Vitalità scoperte attivano poteri; le coperte pagano solo il tempo. → 04_cintura_atb/",
-    "pillar_6_combat": "Niente attacco/difesa predefiniti. Senza Arma equipaggiata non si attacca. Difesa = Abilità Difensiva ospitata su una Carta Caratteristica nominated. → 05_combattimento/04_difesa.json",
-    "pillar_7_damage": "Danno a due categorie: Standard (scelta tra Milling o Ferita a Caratteristica QUALSIASI) e Diretto (NESSUNA scelta). La Ferita Caratteristica è SEMPRE sulla Caratteristica, NON trasferibile all'Equipaggiamento. → 05_combattimento/02_danno.json",
-    "pillar_7b_ferita_tag_role": "TAG [Ferita] sulle Vitalità = permette di usare le abilità di UNA Carta Caratteristica FERITA dello stesso tipo della Vitalità giocata. → 05_combattimento/02_danno.json",
+    "pillar_6_combat": "Niente attacco/difesa predefiniti. Senza Arma equipaggiata non si attacca. Difesa = Abilità Difensiva ospitata su una Carta Approccio nominated. → 05_combattimento/04_difesa.json",
+    "pillar_7_damage": "Danno a due categorie: Standard (scelta tra Milling o Ferita a Approccio QUALSIASI) e Diretto (NESSUNA scelta). La Ferita Approccio è SEMPRE sulla Approccio, NON trasferibile all'Equipaggiamento. → 05_combattimento/02_danno.json",
+    "pillar_7b_ferita_tag_role": "TAG [Ferita] sulle Vitalità = permette di usare le abilità di UNA Carta Approccio FERITA dello stesso tipo della Vitalità giocata. → 05_combattimento/02_danno.json",
     "pillar_8_equipment_wounds": "Ogni Equipaggiamento ha 2 SLOT FERITA. 1° ferimento: attiva il POTERE SPECIALE (uso continua). 2° ferimento: DISTRUTTO. Ferire l'Equipaggiamento è una SCELTA VOLONTARIA. → 06_equipaggiamento/03_ferita_2_stadi.json",
     "pillar_9_magic_two_ways_v3": "MAGIA A DUE VIE: RISONANZA (elementale+cura, diretta) + ANALISI (utility + crafting talismani offensivi monouso). → 07_magia/",
     "pillar_10_quick_items": "5 slot Strumenti Rapidi. Ospitano oggetti trovati + talismani craftati da Analisi. Si attivano con tag [Strumento], si consumano all'uso. → 06_equipaggiamento/04_stumenti_rapidi.json",
-    "pillar_11_out_of_combat": "Le Carte Caratteristica nominated ospitano abilità valide ANCHE fuori dal combattimento (persuadere, intimidire, scassinare, decifrare, ecc.). → 02_personaggio/03_carte_caratteristica_nominated.json",
-    "pillar_12_characteristic_renames_v3": "RINOMINE: Istinto→IMPETO (Rosso, irruenza), Evasione→ISTINTO (Blu, riflessi). Assi: AGIRE (Impeto + Istinto) / COMPRENDERE (Analisi + Risonanza). → 02_personaggio/02_caratteristiche.json"
+    "pillar_11_out_of_combat": "Le Carte Approccio nominated ospitano abilità valide ANCHE fuori dal combattimento (persuadere, intimidire, scassinare, decifrare, ecc.). → 02_personaggio/03_carte_approccio_nominated.json",
+    "pillar_12_characteristic_renames_v3": "RINOMINE: Istinto→IMPETO (Rosso, irruenza), Evasione→ISTINTO (Blu, riflessi). Assi: AGIRE (Impeto + Istinto) / COMPRENDERE (Analisi + Risonanza). → 02_personaggio/02_approcci.json"
   },
   "document_index": {
     "00": "indice.json — Questo file. Manifest, glossario, USP, Open Questions",
     "01-01": "01_introduzione/01_concetti_base.json — I 3 canali, i 12 pilastri v3, le USP",
-    "01-02": "01_introduzione/02_anatomia_carte.json — Le 3 famiglie di carte (Vitalità / Caratteristica / Lato Giocatore)",
+    "01-02": "01_introduzione/02_anatomia_carte.json — Le 3 famiglie di carte (Vitalità / Approccio / Lato Giocatore)",
     "02-01": "02_personaggio/01_area_gioco.json — Layout fisico del tavolo (4 zone)",
-    "02-02": "02_personaggio/02_caratteristiche.json — 4 caratteristiche, valori 1-5, rinomini v3, assi",
-    "02-03": "02_personaggio/03_carte_caratteristica_nominated.json — Pool 10 misto, specializzate/generiche, ferita",
-    "02-04": "02_personaggio/04_cuori.json — 3 cuori, ordine ferita, condizione morte",
-    "02-05": "02_personaggio/05_creazione_pg.json — Point buy 10, composizione pool iniziale",
-    "03-01": "03_vitalita/01_mazzo_vitalita.json — 60 carte, mano 5, pesca",
+    "02-02": "02_personaggio/02_approcci.json — 4 approcci, valori 1-5, rinomini v3, assi",
+    "02-03": "02_personaggio/03_carte_approccio_nominated.json — Pool 10 misto, specializzate/generiche, ferita",
+    "02-04": "02_personaggio/04_cuori.json — Cuori Nominati (PASSATO/DOTTRINA/LEGAMI) — PLACEHOLDER, sarà riscritto in Fase 2",
+    "02-05": "02_personaggio/05_creazione_pg.json — Point buy 10, Cuori Nominati, composizione pool v3.1",
+    "02-06": "02_personaggio/06_riallineamento_approcci.json — DA CREARE in Fase 2 (Maturation + Riallineamento)",
+    "03-01": "03_vitalita/01_mazzo_vitalita.json — 60 carte, mano 5, pesca — PLACEHOLDER (Mazzo Dinamico in Fase 2)",
     "03-02": "03_vitalita/02_giocare_vitalita.json — Scoperta/coperta, tag-chiave, attivazione poteri",
     "03-03": "03_vitalita/03_pila_scarti.json — Passiva, inviolabile",
     "03-04": "03_vitalita/04_esaurimento.json — Mazzo vuoto = svenimento + ferita cuore",
     "04-01": "04_cintura_atb/01_struttura.json — Riga fluida, continuità temporale assoluta",
     "04-02": "04_cintura_atb/02_risoluzione.json — Tick-per-tick, ordine turni",
     "04-03": "04_cintura_atb/03_fulmineo.json — Meccanica pagamento attivo",
-    "05-01": "05_combattimento/01_tabella_potere.json — Caratteristica × T, livello effetto",
+    "05-01": "05_combattimento/01_tabella_potere.json — Approccio × T, livello effetto",
     "05-02": "05_combattimento/02_danno.json — Due Categorie (Standard/Diretto) + Dilemma Guerriero (CASA UNICA)",
-    "05-03": "05_combattimento/03_soglia_vuoto.json — Caratteristica a 0 = ferita cuore",
+    "05-03": "05_combattimento/03_soglia_vuoto.json — Approccio a 0 = ferita cuore",
     "05-04": "05_combattimento/04_difesa.json — Blocco perfetto/mitigato/pieno, shield sliding",
     "05-05": "05_combattimento/05_combo.json — Apertura/Sviluppo/Chiusura/Culmine",
     "05-06": "05_combattimento/06_round_combattimento.json — Step-by-step di un round",
@@ -82,7 +121,7 @@
     "08-05": "08_nemici/05_token_bluff.json — 5 token coperti",
     "08-06": "08_nemici/06_boss_atb.json — Boss in cintura, potere 9",
     "08-07": "08_nemici/07_ricompense.json — Materiali, equip, punti impresa",
-    "09-01": "09_riposo_cura/01_cure_asimmetrice.json — Vitalità veloce / Caratteristica medio / Cuori lento",
+    "09-01": "09_riposo_cura/01_cure_asimmetrice.json — Vitalità veloce / Approccio medio / Cuori lento",
     "10-01": "10_lore_cabalistica/01_cosmologia.json — Tzimtzum, 4 mondi, discesa luce",
     "10-02": "10_lore_cabalistica/02_shevirat_hakelim.json — Frantumazione vasi",
     "10-03": "10_lore_cabalistica/03_qliphoth.json — Gusci vuoti + or chozer",
@@ -93,24 +132,66 @@
   },
   "glossary_neutral": {
     "note": "Tutti i file del Canale 1 usano TERMINOLOGIA NEUTRA. La terminologia lore-specifica è confinata nel Canale 3 (10_lore_cabalistica/).",
-    "characteristics_v3": {
-      "Impeto": { "colore": "Rosso", "asse": "Agire", "keyword": "Impulso non ragionato, sfondare, urlare, colpire senza riflettere, irruenza" },
-      "Analisi": { "colore": "Giallo", "asse": "Comprendere", "keyword": "Intelletto, strategia, percezione, magia ragionata, crafting talismani" },
-      "Istinto": { "colore": "Blu", "asse": "Agire", "keyword": "Destrezza, schiva, furtività, precisione, riflessi" },
-      "Risonanza": { "colore": "Verde", "asse": "Comprendere", "keyword": "Empatia, connessione col mondo, magia elementale e cura" }
+    "v3_1_rename_history": {
+      "v3_1": "Caratteristica → Approccio (ovunque nel manuale). Reframing concettuale: da 'tratto innato' a 'mindset modificabile'.",
+      "v3_renames_inherited": "Istinto→IMPETO (Rosso, irruenza proattiva), Evasione→ISTINTO (Blu, riflessi reattivi). Ancora validi in v3.1.",
+      "legacy_terms_preserved_in_history_sections": "Le sezioni 'design_evolution_notes' e 'REMOVED_IN_V3' preservano i vecchi termini come storia del design. NON sono termini attivi."
+    },
+    "approcci_v3_1": {
+      "Impeto": {
+        "colore": "Rosso",
+        "asse": "Agire",
+        "keyword": "Irruenza, sfondare, agire senza riflettere, buttarcisi a capofitto",
+        "v3_1_framing": "Quanto il PG fa affidamento sull'irruenza per risolvere i problemi. Mindset, non forza fisica."
+      },
+      "Analisi": {
+        "colore": "Giallo",
+        "asse": "Comprendere",
+        "keyword": "Studio, osservazione, metodo, deduzione, magia ragionata, crafting",
+        "v3_1_framing": "Quanto il PG comprende il mondo attraverso osservazione e studio. Mindset, non intelligenza."
+      },
+      "Istinto": {
+        "colore": "Blu",
+        "asse": "Agire",
+        "keyword": "Riflessi, destrezza, reazione, agire nel momento, furtività, precisione",
+        "v3_1_framing": "Quanto il PG fa affidamento su riflessi e reazione (vs proattività di Impeto). Mindset, non destrezza innata."
+      },
+      "Risonanza": {
+        "colore": "Verde",
+        "asse": "Comprendere",
+        "keyword": "Empatia, connessione, sentire, comprendere attraverso il sentire, magia elementale e cura",
+        "v3_1_framing": "Quanto il PG comprende il mondo attraverso empatia (vs studio di Analisi). Mindset, non empatia innata."
+      }
+    },
+    "cuori_v3_1": {
+      "PASSATO": {
+        "category": "Background — da dove vieni",
+        "example": "Orfano di Guerra, Erede Decaduto, Figlio di Contadini, Esule, ecc.",
+        "changeable": "MAI — il passato non si cambia."
+      },
+      "DOTTRINA": {
+        "category": "Codice etico — in cosa credi (bussola morale)",
+        "example": "Mai abbandonare un compagno, La giustizia prima della legge, Il sapere è libertà, ecc.",
+        "changeable": "MAI — la dottrina è un faro che non si spegne."
+      },
+      "LEGAMI": {
+        "category": "Relazioni — chi ami / per chi combatti",
+        "example": "Sorella adottiva, Maestro defunto, Ordine cavalleresco, ecc.",
+        "changeable": "MAI — anche se il legame muore, resta nel cuore."
+      }
     },
     "terms": {
       "vitality": "Mazzo Vitalità (60 carte — RISERVA DI ENERGIA)",
-      "characteristic_cards": "Carte Caratteristica (10 totali = somma valori, misto nominated/bianche)",
+      "characteristic_cards": "Carte Approccio (10 totali = somma valori, misto nominated/bianche)",
       "nominated_cards": "Carte Nominated (con nome + abilità/magie)",
       "white_cards": "Carte Bianche (segnaposto, sostituite da nominated in progressione)",
       "activation_tags": "Tag di Attivazione (sulle Vitalità: chiavi per poteri)",
       "discard_pile": "Pila Scarti",
-      "hearts": "Cuori (3, ordine ferita obbligatorio: 1 → 2 → 3)",
+      "hearts_v3_1": "Cuori (3 nominati — PASSATO/DOTTRINA/LEGAMI — scelti dal catalogo, non cambiabili, equivalenza totale)",
       "equipment": "Equipaggiamento (4 slot fissi, 2 slot ferita ciascuno)",
       "quick_items": "Strumenti Rapidi (5 slot — usa-e-getta + talismani craftati)",
       "damage_milling": "Danno da Milling (esaustione del Mazzo Vitalità)",
-      "damage_wound": "Ferita (girare la carta — Caratteristica, Cuore o Equipaggiamento)",
+      "damage_wound": "Ferita (girare la carta — Approccio, Cuore o Equipaggiamento)",
       "timeline": "Cintura ATB",
       "combo": "Combo Cooperativa (minimo 2 giocatori diversi)",
       "talismani_analisi": "Talismani (oggetti magici monouso offensivi craftati da Analisi)",
@@ -122,21 +203,34 @@
       "esper": "RIMOSSO — Sistema Esper (creature evocate).",
       "istinto_old_red": "RIMOSSO come nome Rosso — rinominato in IMPETO.",
       "evasione_old_blue": "RIMOSSO come nome Blu — rinominato in ISTINTO.",
+      "characteristic_cards_legacy_v3": "TERMINE LEGACY — v3 usava 'Carte Caratteristica'. In v3.1 sono 'Carte Approccio'. Vedi 'approcci_v3_1' sopra."
+    },
+    "REMOVED_TERMS_V3": {
+      "ability_cards": "RIMOSSO — Carte Abilità come oggetti fisici separati. Assorbite nelle nominated.",
+      "magic_cards_materie": "RIMOSSO — Carte Magia Materie FF7. Assorbite nelle nominated.",
+      "esper": "RIMOSSO — Sistema Esper (creature evocate).",
+      "istinto_old_red": "RIMOSSO come nome Rosso — rinominato in IMPETO.",
+      "evasione_old_blue": "RIMOSSO come nome Blu — rinominato in ISTINTO.",
+      "characteristic_term_v3_1": "RIMOSSO in v3.1 — il termine 'Caratteristica' è sostituito da 'Approccio'. Preservato solo nelle sezioni design_evolution_notes come storia del design.",
       "arma_superiore_alchemica": "RIMOSSO — Sistema Normale/Superiore. Le Armi Superiori sono ora le Armi con potere speciale attivato dal 1° ferimento. vedi 06_equipaggiamento/03_ferita_2_stadi.json"
     }
   },
   "usps": [
-    "MECCANICA FLIP UNIVERSALE: Tutte le carte (Caratteristiche, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'.",
+    "MECCANICA FLIP UNIVERSALE: Tutte le carte (Approcci, Cuori, Equipaggiamento) usano la stessa meccanica: girare la carta sul dorso per mostrare lo stato 'ferito/usurato'.",
     "VITALITÀ COME CHIAVI: Le Carte Vitalità non definiscono l'azione. I loro TAG sono chiavi di attivazione.",
-    "CARATTERISTICHE NOMINATE: Le Carte Caratteristica hanno NOME + ABILITÀ + INCANTESIMI. Il valore = numero di carte fisiche. Pool misto nominated + bianche.",
+    "APPROCCI COME MINDSET (v3.1): Le Caratteristiche diventano Approcci — non tratti innati, ma mindset modificabili. Possono riallinearsi dopo fallimenti/crisi narrative.",
+    "CUORI COME ESSENZA (v3.1): I Cuori sono nominati (PASSATO/DOTTRINA/LEGAMI), non cambiano mai, e sbloccano nominated Approccio Heart-linked.",
+    "DUE DIMENSIONI DI CRESCITA (v3.1): Maturation (bianca→nominated libera, dopo successo) + Riallineamento (sposta punto tra Approcci, dopo fallimento).",
+    "MAZZO VITALITÀ DINAMICO (v3.1): La composizione T1-T5 muta coi riallineamenti. Distribuzione Asimmetrica per Livello: 4 firme temporali uniche per i 4 Approcci.",
+    "CARATTERISTICHE NOMINATE: Le Carte Approccio hanno NOME + ABILITÀ + INCANTESIMI. Il valore = numero di carte fisiche. Pool misto nominated + bianche.",
     "MAGIA A DUE VIE: RISONANZA = magia elementale + cura. ANALISI = utility + crafting talismani monouso offensivi.",
     "9 SLOT LATO GIOCATORE: 4 Equipaggiamento + 5 Strumenti Rapidi.",
-    "TAG [FERITA] TATTICO: Una Vitalità con [Ferita] riattiva le abilità di UNA Carta Caratteristica ferita dello stesso tipo.",
+    "TAG [FERITA] TATTICO: Una Vitalità con [Ferita] riattiva le abilità di UNA Carta Approccio ferita dello stesso tipo.",
     "CRAFTING ANALISI: Talismani offensivi monouso creati durante riposo, limite = valore Analisi.",
     "EQUIPAGGIAMENTO FERIBILE A 2 STADI: 1° ferimento attiva il potere speciale, 2° ferimento distrugge. Ferita VOLONTARIA.",
-    "TABELLA POTERE ARTIGIANALE: Danno = Caratteristica del PG × T della Vitalità.",
-    "DANNO A DOPPIO STRATO: Esaustione (milling) vs Ferita (Caratteristiche girate / Cuori).",
-    "IL DILEMMA DEL GUERRIERO: Scegli Mazzo Vitalità (temporaneo), Caratteristica (potenza), o Cuore (morte).",
+    "TABELLA POTERE ARTIGIANALE: Danno = Approccio del PG × T della Vitalità.",
+    "DANNO A DOPPIO STRATO: Esaustione (milling) vs Ferita (Approcci girate / Cuori).",
+    "IL DILEMMA DEL GUERRIERO: Scegli Mazzo Vitalità (temporaneo), Approccio (mindset), o Cuore (morte).",
     "COMBO COOPERATIVE: Richiedono SEMPRE almeno 2 giocatori diversi.",
     "CINTURA ATB FLUIDA: Non esiste griglia fissa. Ogni PG traccia la propria riga.",
     "SISTEMA NEMICI: 3 Tier (Base/Elite/Epico), token bluff, Boss con Potere fino a 9.",
@@ -157,9 +251,9 @@
     "ricordo_tag": "Accantonato. Da riprendere quando si avrà un'ispirazione per meccanizzarlo.",
     "boss_combo": "Il Boss può fare combo? Con i suoi minion?",
     "boss_phases": "I Boss hanno fasi (sotto 50% PF cambiano abilità)?",
-    "progression": "Come evolve il PG? Come cambiano le carte nel mazzo nel lungo termine? (Definito parzialmente: pool misto nominated/bianche + sostituzione in progressione)",
-    "cuori_personalizzabili": "In fase di creazione, far scrivere al PG qualcosa su ciascun Cuore come gancio narrativo? Da valutare.",
-    "nominated_cards_catalog": "DA CREARE: catalogo delle Carte Caratteristica nominated (8-12 per caratteristica, mix di specializzate e generiche).",
+    "progression_v3_1": "PARZIALMENTE RISOLTO in v3.1: Maturation (bianca→nominated) + Riallineamento (sposta punto). Meccaniche esatte da dettagliare in 02_personaggio/06_riallineamento_approcci.json (Fase 2).",
+    "cuori_personalizzabili": "RISOLTO in v3.1: i Cuori sono NOMINATI, scelti dal catalogo nelle 3 categorie PASSATO/DOTTRINA/LEGAMI. Vedi 02_personaggio/04_cuori.json (Fase 2).",
+    "nominated_cards_catalog": "DA CREARE in Fase 3: catalogo Nominated LIBERE (8-12 per Approccio) + catalogo Cuori (24-30 totali, 8-10 per categoria, ognuno con la lista di nominated Heart-linked sbloccate).",
     "multi_tag_requirements": "DEFAULT ADOTTATO: la Vitalità deve avere ALMENO UNO dei tag richiesti. Da raffinare.",
     "tag_abilities_incompatibilities": "Da rivedere: alcuni tag possono attivare poteri che sono doppioni delle abilità delle nominated.",
     "consequence_system_lore": "Il sistema Conseguenze (Qliphoth generati dalla distruzione di Equipaggiamento) è dettagliato nel file lore. Va allineato meccanicamente col sistema v3 (Equipaggiamento 2 stadi volontari)."

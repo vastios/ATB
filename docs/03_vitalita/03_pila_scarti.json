@@ -33,9 +33,9 @@
     "cross_reference_full": "Vedi 09_riposo_cura/01_cure_asimmetriche.json"
   },
   "potion_distinction": {
-    "rule": "CRUCIALE: POZIONE RIVITALIZZANTE (Mazzo Vitalità) ≠ POZIONE DI GUARIGIONE (Caratteristiche). Niente pozione universale.",
+    "rule": "CRUCIALE: POZIONE RIVITALIZZANTE (Mazzo Vitalità) ≠ POZIONE DI GUARIGIONE (Approcci). Niente pozione universale.",
     "revitalizing_potion": "Cura il Mazzo Vitalità (recupera carte dalla Pila Scarti).",
-    "healing_potion": "Cura le Carte Caratteristica ferite (le rigira sul lato sano).",
+    "healing_potion": "Cura le Carte Approccio ferite (le rigira sul lato sano).",
     "no_universal_potion": "Non esiste una pozione che curi entrambi. Le due risorse sono DISTINTE per evitare scelte banali."
   }
 }

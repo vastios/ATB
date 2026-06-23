@@ -38,7 +38,7 @@
     },
     "step_6_damage_resolution": {
       "name": "Step 6 — Risoluzione del danno subito",
-      "action": "Se danno pieno → identificare la categoria: Standard (PG SCEGLIE: Milling o Ferita a Caratteristica QUALSIASI) o Diretto (PG DEVE girare carte della Caratteristica bersagliata). I Cuori NON sono un'opzione per Danno Standard.",
+      "action": "Se danno pieno → identificare la categoria: Standard (PG SCEGLIE: Milling o Ferita a Approccio QUALSIASI) o Diretto (PG DEVE girare carte della Approccio bersagliata). I Cuori NON sono un'opzione per Danno Standard.",
       "cross_reference": "Vedi 05_combattimento/02_danno.json"
     },
     "step_7_combo": {
@@ -66,17 +66,57 @@
     "subsequent_rounds": "Nei round successivi, il Master segue la regola standard (posiziona quando i PG hanno scartato l'ultima carta della loro riga)."
   },
   "quick_reference_table": {
-    "headers": ["Step", "Azione", "File di riferimento"],
+    "headers": [
+      "Step",
+      "Azione",
+      "File di riferimento"
+    ],
     "rows": [
-      ["1", "PG tracciano righe (1-5 carte)", "04_cintura_atb/01_struttura.json"],
-      ["2", "Master posiziona 5 token coperti", "08_nemici/05_token_bluff.json"],
-      ["3", "Risoluzione colonna più a sinistra", "04_cintura_atb/02_risoluzione.json"],
-      ["4", "Si gira il token (Attacco/Bluff)", "08_nemici/05_token_bluff.json"],
-      ["5", "Calcolo difesa (Perfetto/Mitigato/Pieno)", "05_combattimento/04_difesa.json"],
-      ["6", "Risoluzione danno (Standard/Diretto)", "05_combattimento/02_danno.json"],
-      ["7", "Controllo combo (2+ PG, Tag compatibili)", "05_combattimento/05_combo.json"],
-      ["8", "Refill mano + Azione Risonanzata", "03_vitalita/01_mazzo_vitalita.json"],
-      ["9", "Ripetere fino a fine combattimento", "Questo file"]
+      [
+        "1",
+        "PG tracciano righe (1-5 carte)",
+        "04_cintura_atb/01_struttura.json"
+      ],
+      [
+        "2",
+        "Master posiziona 5 token coperti",
+        "08_nemici/05_token_bluff.json"
+      ],
+      [
+        "3",
+        "Risoluzione colonna più a sinistra",
+        "04_cintura_atb/02_risoluzione.json"
+      ],
+      [
+        "4",
+        "Si gira il token (Attacco/Bluff)",
+        "08_nemici/05_token_bluff.json"
+      ],
+      [
+        "5",
+        "Calcolo difesa (Perfetto/Mitigato/Pieno)",
+        "05_combattimento/04_difesa.json"
+      ],
+      [
+        "6",
+        "Risoluzione danno (Standard/Diretto)",
+        "05_combattimento/02_danno.json"
+      ],
+      [
+        "7",
+        "Controllo combo (2+ PG, Tag compatibili)",
+        "05_combattimento/05_combo.json"
+      ],
+      [
+        "8",
+        "Refill mano + Azione Risonanzata",
+        "03_vitalita/01_mazzo_vitalita.json"
+      ],
+      [
+        "9",
+        "Ripetere fino a fine combattimento",
+        "Questo file"
+      ]
     ]
   },
   "design_intent": {

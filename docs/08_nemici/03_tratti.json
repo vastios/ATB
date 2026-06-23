@@ -32,7 +32,7 @@
         "resistance": "Golem resistente a [Istinto]: gli attacchi di destrezza fanno danno ridotto.",
         "vulnerability": "Non-morto vulnerabile a [Risonanza]: l'empatia e la connessione col mondo dei viventi fa danno aumentato."
       },
-      "tactical_effect": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Caratteristica."
+      "tactical_effect": "Costringe il gruppo a variare gli approcci. Ogni membro deve contribuire con la propria Approccio."
     },
     "ritorsione": {
       "name": "Ritorsione",

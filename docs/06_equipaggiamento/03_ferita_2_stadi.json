@@ -30,11 +30,11 @@
     "principle": "Le ferite all'Equipaggiamento sono SEMPRE VOLONTARIE. NON sono una deviazione di danno subito. Il giocatore non è mai costretto a ferire il proprio Equipaggiamento.",
     "tactical_meaning": "Il giocatore decide quando 'bruciare' il potere speciale del suo Equipaggiamento. È una risorsa tattica, non un danno subito."
   },
-  "separation_from_ferita_caratteristica": {
-    "name": "Separazione dalla Ferita Caratteristica",
-    "principle": "La Ferita Caratteristica (da danno subito in combattimento) è SEMPRE sulla Caratteristica. NON può essere trasferita all'Equipaggiamento.",
-    "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Caratteristiche (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti.",
-    "cross_reference_ferita_caratteristica": "Vedi 05_combattimento/02_danno.json → ferita_caratteristica_separation_from_equipment"
+  "separation_from_ferita_approccio": {
+    "name": "Separazione dalla Ferita Approccio",
+    "principle": "La Ferita Approccio (da danno subito in combattimento) è SEMPRE sulla Approccio. NON può essere trasferita all'Equipaggiamento.",
+    "two_separate_wound_tracks": "Esistono DUE tracce di ferita separate: (1) Approcci (da danno subito), (2) Equipaggiamento (volontaria, per poteri speciali). Sono indipendenti.",
+    "cross_reference_ferita_approccio": "Vedi 05_combattimento/02_danno.json → ferita_approccio_separation_from_equipment"
   },
   "use_cases": {
     "tactical_opening": "All'inizio del combattimento, ferisci l'Arma per ottenere subito un potere speciale (es. Fendente per colpire 2 nemici). Hai tutto il combattimento per riutilizzarla.",

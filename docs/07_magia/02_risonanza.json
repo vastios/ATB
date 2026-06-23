@@ -8,7 +8,7 @@
   "nature_of_risonanza": {
     "name": "Natura della Risonanza",
     "principle": "Magia in sintonia col mondo. Il PG non 'impone' la sua volontà sulla realtà — si ALLINEA con le forze elementali del mondo e le lascia fluire attraverso di sé.",
-    "characteristic": "Risonanza (Verde, Asse Comprendere). Vedi 02_personaggio/02_caratteristiche.json",
+    "characteristic": "Risonanza (Verde, Asse Comprendere). Vedi 02_personaggio/02_approcci.json",
     "element_associated_skin": "Terra (vedi 10_lore_cabalistica/01_cosmologia.json)"
   },
   "what_risonanza_does": {
@@ -24,11 +24,11 @@
     },
     "healing_spells": {
       "name": "Incantesimi di Cura",
-      "description": "Risonanza è il DOMINIO della cura. Nessun'altra Caratteristica può curare (Analisi non può, eccetto utility molto limitate).",
+      "description": "Risonanza è il DOMINIO della cura. Nessun'altra Approccio può curare (Analisi non può, eccetto utility molto limitate).",
       "examples": [
-        "Cura Minore — rigira 1 carta Caratteristica ferita o cura 5 Vitalità",
-        "Cura — rigira 2 carte Caratteristica ferite o cura 10 Vitalità",
-        "Cura Maggiore — rigira 3 carte Caratteristica ferite o cura 15 Vitalità"
+        "Cura Minore — rigira 1 carta Approccio ferita o cura 5 Vitalità",
+        "Cura — rigira 2 carte Approccio ferite o cura 10 Vitalità",
+        "Cura Maggiore — rigira 3 carte Approccio ferite o cura 15 Vitalità"
       ],
       "no_heart_healing": "La cura Risonanza NON può curare i Cuori. I Cuori richiedono rituali specifici. Vedi 02_personaggio/04_cuori.json → healing_asymmetry"
     },
@@ -47,7 +47,7 @@
     "name": "Meccanica di Attivazione",
     "principle": "Per attivare un incantesimo Risonanza:",
     "requirements": [
-      "Il PG deve avere una Carta Caratteristica nominated Risonanza con l'incantesimo desiderato (non ferita, oppure riattivata con [Ferita] tag).",
+      "Il PG deve avere una Carta Approccio nominated Risonanza con l'incantesimo desiderato (non ferita, oppure riattivata con [Ferita] tag).",
       "La Vitalità giocata SCOPERTA deve avere il tag [Magia].",
       "Il T della Vitalità determina il livello di effetto (T1=1° livello, T5=5° livello), limitato dal valore attuale di Risonanza del PG."
     ],
@@ -60,12 +60,12 @@
   },
   "hosting_on_nominated": {
     "name": "Ospitare Incantesimi sulle Nominated",
-    "principle": "Gli incantesimi Risonanza sono ospitati su Carte Caratteristica nominated Risonanza. Ogni nominated ospita 3 incantesimi.",
+    "principle": "Gli incantesimi Risonanza sono ospitati su Carte Approccio nominated Risonanza. Ogni nominated ospita 3 incantesimi.",
     "two_nominated_types": {
       "specializzata_esempio": "Specializzata Risonanza 'Piròmante': (1) Spark, (3) Fire, (5) Inferno — tutti fuoco, gerarchici",
       "generica_esempio": "Generica Risonanza 'Druido': (1) Piccolo Fuoco, (1) Piccola Cura, (1) Parlare con Animali — diverse, tutte livello 1"
     },
-    "cross_reference_nominated": "Vedi 02_personaggio/03_carte_caratteristica_nominated.json → two_nominated_types"
+    "cross_reference_nominated": "Vedi 02_personaggio/03_carte_approccio_nominated.json → two_nominated_types"
   },
   "wound_effect_on_risonanza_nominated": {
     "principle": "Una nominated Risonanza FERITA disattiva TUTTI i suoi incantesimi. Il PG perde accesso a quegli incantesimi finché la carta non è guarita.",
