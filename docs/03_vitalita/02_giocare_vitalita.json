@@ -1,7 +1,7 @@
 {
   "section_id": "03-02",
   "section_name": "Giocare le Carte Vitalità — Scoperta/Coperta, Tag-Chiave, Attivazione",
-  "version": "1.0",
+  "version": "1.1",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Definisce COME si giocano le Carte Vitalità nella Cintura ATB e COME attivano i poteri. Le Vitalità si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). I TAG sono CHIAVI di attivazione che indicano quali poteri possono essere attivati. Questo file è la CASA UNICA per la regola di attivazione tramite Vitalità.",
@@ -10,7 +10,7 @@
     "scoperta": {
       "name": "SCOPERTA (Attiva un Potere)",
       "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) un'abilità/magia ospitata su una Carta Approccio nominated, (2) un Equipaggiamento, (3) uno Strumento Rapido.",
-      "level_of_effect": "Il livello di effetto è determinato dal T della Vitalità (T1=1° livello, T5=5° livello), limitato dal valore attuale della Approccio del PG.",
+      "level_of_effect_v3_1": "Il T della Vitalità determina il LIVELLO DI EFFETTO del potere attivato (T1=1° livello, T5=5° livello). Il valore di Approccio del PG determina la RIGA DA LEGGERE nella Tabella del Potere stampata sulla carta (riga 1-5). NON esiste un CAP che vieta di giocare T sopra il proprio Approccio — il PG può giocare qualsiasi T che ha in mano, leggendo semplicemente la riga corrispondente al suo Approccio. Vedi 05_combattimento/01_tabella_potere.json",
       "placement_in_atb": "Posizionata nella Cintura ATB nello slot del suo Costo Tempo.",
       "resolution": "Si risolve al proprio tick (da sinistra a destra). Vedi 04_cintura_atb/02_risoluzione.json"
     },
@@ -42,21 +42,24 @@
   },
   "activation_rule_full": {
     "name": "Regola di Attivazione Completa",
-    "principle": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità, limitato dal valore attuale della Approccio del PG.",
+    "principle_v3_1": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità. Il POTERE BASE è letto dalla TABELLA DEL POTERE stampata sulla carta, alla riga = valore attuale di Approccio del PG. NON esiste un CAP che vieta di giocare T sopra il proprio Approccio.",
     "requirements": [
       "La Vitalità deve avere i TAG richiesti dal potere specifico",
       "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB disponibile)",
-      "Il livello di effetto (limitato dal T della Vitalità) non può superare il valore attuale della Approccio del PG",
+      "Il livello di effetto del potere attivato è determinato dal T della Vitalità (T1=1°, T5=5°)",
+      "Il Potere base è letto dalla Tabella del Potere alla riga = Approccio PG attuale (1-5). Se l'Approccio è ferito, si legge la riga inferiore",
       "Se la Carta Approccio nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]"
     ],
-    "formula_danno": "DANNO TOTALE = Tabella Potere Vitalità(Approccio PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "formula_danno_v3_1": "DANNO TOTALE = Tabella del Potere della Vitalità giocata(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
+    "no_cap_principle": "IMPORTANTE: il valore di Approccio NON vieta di giocare T sopra il proprio valore. Un PG con Impeto 1 PUÒ giocare una T5 — legge la riga 1 della tabella T5, ottenendo un Potere basso ma non zero. L'unica limitazione reale è AVERE la carta in mano (determinata dalla composizione del mazzo). Vedi 03_vitalita/01_mazzo_vitalita.json → no_cap_clarification",
     "example_full": {
       "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento] nella posizione 3 della Cintura ATB.",
       "activation": "Attiva la sua Spada Lunga (Arma) al livello 3.",
-      "damage_calculation": "Tabella Potere Impeto(3) × T3 = 8 danno base. La Spada Lunga ha +2 danno bonus = 8 + 2 = 10 danno totale.",
-      "ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico."
+      "damage_calculation": "Tabella del Potere T3, riga 3 = 10 Potere base. La Spada Lunga ha +2 danno bonus = 10 + 2 = 12 danno totale.",
+      "ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita, legge la riga 2 (3-1=2). Tabella T3 riga 2 = 6 Potere. Danno = 6 + 2 = 8. Se la Vitalità ha anche [Ferita], il PG SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
+      "low_approccio_high_t_variant": "PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento]. Tabella T5 riga 1 = 8 Potere. Spada +2 = 10 danno. L'azione è LEGITTIMA — legge la riga 1 perché Approccio = 1."
     },
-    "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la Tabella Potere completa"
+    "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la struttura completa delle 5 tabelle del Potere"
   },
   "perfect_block_via_vitality": {
     "name": "Attivazione di Abilità Difensive",
@@ -72,6 +75,7 @@
   "design_evolution_notes": {
     "v1_v8": "Le Vitalità erano SIA costo SIA azione. Il tag indicava l'azione stessa.",
     "v9_v2": "Le Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE per Carte Lato Giocatore. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo.",
-    "v10_v3": "Le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated."
+    "v10_v3": "Le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated.",
+    "v11_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): RIMOSSO il CAP di Approccio come limite. Il valore di Approccio è un SELETTORE DI RIGA nella Tabella del Potere stampata su ogni Carta Vitalità. Tutti i PG possono giocare qualsiasi T (se ce l'hanno in mano), leggendo la riga = proprio Approccio. Ferita Approccio = leggi riga inferiore. Vedi 05_combattimento/01_tabella_potere.json"
   }
 }

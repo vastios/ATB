@@ -1,49 +1,117 @@
 {
   "section_id": "05-01",
-  "section_name": "Tabella Potere — Approccio × Costo Tempo",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "La Tabella del Potere — 5 Tabelle per T, Lettura per Riga di Approccio",
+  "version": "2.0",
+  "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la TABELLA POTERE: il cuore matematico del sistema di danno. Il danno base di un'azione è determinato dalla Approccio del PG incrociata col Costo Tempo (T) della Vitalità giocata. T=1 scala poco, T=5 scala MOLTO. Questo file è la CASA UNICA per la Tabella Potere.",
-  "core_rule": {
-    "name": "Regola Centrale della Tabella Potere",
-    "principle": "Il danno base è determinato dalla TABELLA POTERE DELLA VITALITÀ (Approccio del PG × T della carta giocata). Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
-    "formula_v3": "DANNO TOTALE = Tabella Potere Vitalità(Approccio PG × T) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
-    "philosophy_v3": "La Tabella Potere della Vitalità resta la base numerica del danno. I poteri attivati (dalle nominated o dalle Carte Lato Giocatore fisiche) aggiungono personalità (effetti speciali per livello) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale."
+  "description": "Definisce la TABELLA DEL POTERE: il cuore matematico del sistema di danno e risoluzione azioni. Ogni Carta Vitalità ha una TABELLA DEL POTERE STAMPATA SOPRA. Esistono 5 tabelle distinte (una per ogni Costo Tempo T1-T5), ciascuna con 5 righe (Approccio 1-5) × 2 colonne (Approccio, Potere). Le 5 tabelle sono IDENTICHE per tutti gli Approcci (Impeto, Analisi, Istinto, Risonanza) — questo garantisce la neutralità tra Approcci: nessun Approccio è 'più forte' per costruzione. Il valore di Approccio del PG determina la RIGA DA LEGGERE nella tabella del T della carta giocata. Il Potere letto è di DEFAULT il DANNO BASE dell'azione (in combat) o il VALORE per superare una soglia (fuori dal combat); alcune abilità nominated specifiche possono leggerlo come POOL di punti da spendere in effetti alternativi.",
+  "v3_1_paradigm_shift": {
+    "name": "Svolta v3.1 — Da CAP a Selettore di Riga",
+    "principle": "Nella v3, il valore di Approccio era un CAP: vietava di selezionare livelli di effetto superiori al proprio valore. Nella v3.1, il valore di Approccio è un SELETTORE DI RIGA: il PG legge SEMPRE la riga corrispondente al proprio valore attuale. Tutti i PG possono giocare qualsiasi T (T1-T5) — il valore di Approccio determina solo QUALE riga leggere, non QUALE carta è permessa.",
+    "what_changes_mechanically": [
+      "RIMOSSO il concetto di 'CAP di Potere' come limite. Nessuna T è vietata in base all'Approccio.",
+      "Una Vitalità T5 giocata da un PG con Approccio 1 è LEGITTIMA: il PG paga T5 nella Cintura ATB, legge la riga 1 della tabella T5, ottiene un Potere basso ma non zero.",
+      "La Ferita Approccio riduce la riga di lettura di 1 (Approccio 3 ferito → leggi riga 2), NON 'blocca' livelli di effetto.",
+      "Le 5 tabelle sono UGUALI per tutti gli Approcci. La differenza tra un Approccio e l'altro sta nella FIRMA TEMPORALE del mazzo (quali T ha nel mazzo), NON nella tabella."
+    ],
+    "why_this_change": [
+      "Coerenza col principio di neutralità tra Approcci (nessun Approccio 'superiore').",
+      "Elimina la contraddizione interna del vecchio file (che diceva sia 'vietato sopra il CAP' sia 'consulta a Approccio × T').",
+      "Rende la Ferita Approccio più intuitiva: leggi una riga sotto, semplice.",
+      "Permette al giocatore di 'sprecare' T alte se necessario (es. pagare uno slot ATB T5 con una carta T5 anche se Approccio basso), senza rendere l'azione illegale."
+    ],
+    "what_does_not_change": [
+      "Il danno totale si calcola ancora: Tabella del Potere + Bonus Danno Potere attivato + Modificatori.",
+      "Il T della Vitalità determina ancora lo slot ATB e il POTENZIALE massimo della carta.",
+      "La composizione del mazzo (Distribuzione Asimmetrica per Livello) resta invariata: un PG con Approccio 1 ha comunque poche carte T3-T5 nel mazzo perché la sua firma temporale non le prevede."
+    ]
   },
-  "the_table_conceptual": {
-    "name": "Tabella Potere (Schema Concettuale)",
+  "core_rule": {
+    "name": "Regola Centrale della Tabella del Potere",
+    "principle": "Il danno base di un'azione è determinato dalla TABELLA DEL POTERE STAMPATA SULLA CARTA VITALITÀ GIOCATA, letta alla riga del valore di Approccio del PG. Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
+    "formula_v3_1": "DANNO TOTALE = Tabella del Potere della Vitalità giocata(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.)",
+    "philosophy_v3_1": "La Tabella del Potere stampata su ogni Carta Vitalità resta la base numerica del danno. I poteri attivati (dalle nominated o dalle Carte Lato Giocatore fisiche) aggiungono personalità (effetti speciali) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale."
+  },
+  "table_structure": {
+    "name": "Struttura delle 5 Tabelle del Potere",
     "axes": {
-      "rows": "Valore Approccio del PG (da 1 a 5)",
-      "columns": "Costo Tempo T della Vitalità (da T1 a T5)"
+      "rows": "Valore Approccio del PG (1-5) — determina la RIGA DA LEGGERE",
+      "columns": "2 colonne: (1) Valore Approccio, (2) Potere della carta"
     },
-    "scaling_principle": "T=1 scala poco (la Approccio influisce marginalmente). T=5 scala MOLTO (la Approccio moltiplica il danno base). Questo crea il dilemma: azioni veloci ma deboli, oppure azioni lente ma devastanti.",
-    "table_values_note": "I valori precisi della Tabella sono in fase di playtest. Lo schema concettuale: una matrice 5×5 dove il valore cella(1,1) è basso (es. 2) e cella(5,5) è molto alto (es. 20-25). La crescita è NON lineare: cella(5,1) è poco più di cella(1,1), ma cella(1,5) è molto più di cella(5,1).",
-    "open_question_table_values": "Da finalizzare i valori precisi della Tabella Potere 5×5. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+    "five_tables_per_t": "Esistono 5 tabelle distinte, una per ogni Costo Tempo (T1, T2, T3, T4, T5). Ogni Carta Vitalità ha stampata la tabella del suo T. Una carta T3 mostra la tabella T3; una carta T5 mostra la tabella T5.",
+    "identity_across_approcci": "Le 5 tabelle sono IDENTICHE per tutti i 4 Approcci. La tabella T3 di Impeto = tabella T3 di Analisi = tabella T3 di Istinto = tabella T3 di Risonanza. Questo garantisce neutralità: nessun Approccio ha una tabella 'più forte'.",
+    "scaling_principle": "T1 scala poco (la Approccio influisce marginalmente). T5 scala MOLTO (la Approccio moltiplica il danno base). Questo crea il dilemma: azioni veloci ma deboli, oppure azioni lente ma devastanti.",
+    "table_values_note": "I valori precisi delle 5 tabelle sono in fase di playtest. Lo schema concettuale: una matrice 5×5 dove il valore cella(1,1) è basso (es. 2) e cella(5,5) è molto alto (es. 20-25). La crescita è NON lineare: cella(5,1) è poco più di cella(1,1), ma cella(1,5) è molto più di cella(5,1). Vedi sezione 'conceptual_table' sotto per lo schema.",
+    "open_question_table_values": "Da finalizzare i valori precisi delle 5 tabelle del Potere. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+  },
+  "conceptual_table": {
+    "name": "Schema Concettuale Unificato (5×5)",
+    "note": "Questo schema mostra la FORMA delle 5 tabelle sovrapposte. La riga = Approccio del PG, la colonna = T della carta. Ciascuna 'colonna' di questa matrice è una delle 5 tabelle stampate sulle carte Vitalità.",
+    "axes": {
+      "rows": "Approccio PG (1-5) — la riga che il PG legge in base al suo valore attuale",
+      "columns": "T della carta Vitalità (T1-T5) — la tabella specifica stampata su quella carta"
+    },
+    "shape_principle": "Valori bassi in alto a sinistra (cella 1,1 ≈ 2). Valori alti in basso a destra (cella 5,5 ≈ 20-25). Crescita NON lineare: la diagonale cresce più che proporzionalmente.",
+    "example_cell_values": {
+      "(1,1)": "≈2 — PG con Approccio 1 gioca T1, Potere minimo",
+      "(5,1)": "≈4 — PG con Approccio 5 gioca T1, Potere leggermente superiore (T1 scala poco)",
+      "(1,5)": "≈8 — PG con Approccio 1 gioca T5, Potere moderato (T5 ha base alta ma riga 1 bassa)",
+      "(5,5)": "≈20-25 — PG con Approccio 5 gioca T5, Potere massimo",
+      "(3,3)": "≈10 — PG con Approccio 3 gioca T3, Potere medio (punto di bilanciamento)"
+    }
   },
   "level_of_effect_rule": {
     "name": "Regola del Livello di Effetto",
-    "principle": "Il T della Vitalità determina il livello di effetto del potere attivato. T1=1° livello, T5=5° livello.",
-    "characteristic_power_cap": "Il PG non può selezionare livelli di effetto superiori al suo valore di Approccio attuale. Una Approccio ferita riduce i livelli raggiungibili.",
-    "example": "PG con Impeto 3 gioca Vitalità T5 con [Strumento] per attivare la Spada. Il livello di effetto è 3 (limitato dal valore di Approccio), NON 5. La Tabella Potere viene consultata a Approccio 3 × T5, non a 5×5."
+    "principle": "Il T della Vitalità determina il livello di effetto del potere attivato. T1=1° livello, T5=5° livello. Il valore di Approccio del PG determina la RIGA DA LEGGERE nella tabella del T giocato, cioè il POTERE base dell'azione.",
+    "no_cap_rule": "NON esiste più un CAP che vieta di giocare T sopra il proprio Approccio. Il PG può giocare qualsiasi T che ha in mano. Tuttavia, leggere una riga bassa su una tabella alta (es. Approccio 1 su T5) produce un Potere ridotto rispetto a leggere la riga alta (es. Approccio 5 su T5).",
+    "example_no_cap": "PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento] per attivare la Spada. Legge la riga 1 della tabella T5. Il livello di effetto dell'abilità della Spada è 5 (determinato dal T della Vitalità), ma il Potere base letto dalla tabella è basso (riga 1). La somma del danno totale sarà quindi moderata: basso Potere base + bonus livellato dell'arma."
   },
-  "approccio_power_cap_wounded": {
-    "name": "Cap di Potere con Approccio Ferito",
-    "principle": "Approccio FERITA = non puoi giocare azioni con quel Tag sopra il valore attuale. Le abilità della Carta Approccio nominated ferita sono disabilitate.",
-    "ferita_tag_bypass": "Una Vitalità con [Ferita] le riattiva per quel turno. Vedi 05_combattimento/02_danno.json"
+  "ferita_approcco_lectura_riga_inferiore": {
+    "name": "Lettura con Approccio Ferito",
+    "principle": "Quando una Carta Approccio è FERITA, il valore di Approccio scende di 1. Di conseguenza, il PG consulta la Tabella del Potere UNA RIGA SOTTO il valore normale. Se Approccio = 3 con una ferita → legge la riga 2.",
+    "effect_on_power": "Tutte le azioni che usano quell'Approccio producono un Potere ridotto per la durata della ferita.",
+    "effect_on_nominated": "Se la Carta Approccio ferita è NOMINATED, le sue abilità sono DISATTIVATE. Una Vitalità con tag [Ferita] le riattiva per quel turno (ma la riga di lettura resta inferiore). Vedi 05_combattimento/02_danno.json",
+    "multiple_ferite": "Se un Approccio ha più carte ferite, ogni ferita riduce la riga di 1 (cumulativo). Se Approccio = 4 con due ferite → legge riga 2. Il minimo è sempre riga 1 (non si scende sotto)."
+  },
+  "power_interpretation_hybrid": {
+    "name": "Interpretazione del Potere Letto — Modello Ibrido",
+    "principle": "Il Potere letto dalla Tabella è un NUMERO. La sua INTERPRETAZIONE dipende dal contesto: di default è danno/soglia, ma alcune nominated specifiche lo trattano come pool da spendere.",
+    "default_combat": {
+      "name": "Default in Combattimento — Danno Base",
+      "rule": "Il Potere letto è il DANNO BASE dell'azione. Si somma a: Bonus Danno Potere attivato (arma, nominated, ecc.) + Modificatori (tag [Ferita], ecc.).",
+      "example": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con [Strumento] per attivare la Spada. Tabella T3 riga 3 = 10 Potere. Spada ha +2 bonus = 10 + 2 = 12 danno totale."
+    },
+    "default_out_of_combat": {
+      "name": "Default Fuori dal Combattimento — Valore di Soglia",
+      "rule": "Il Potere letto deve superare una SOGLIA DI DIFFICOLTÀ fissata dal Master per l'azione tentata. Es. scassinare una serratura semplice = soglia 6. Il PG legge la Tabella del Potere con la sua Vitalità + Approccio e confronta.",
+      "excess_as_advantage": "Se il Potere letto SUPERA la soglia, la differenza è 'Potere in eccesso' spendibile per vantaggi extra decisi dal Master (es. 8 di soglia, 12 letto → 4 da spendere per 'non lasciare tracce' o 'farlo silenziosamente').",
+      "cross_reference": "Vedi 02_personaggio/03_carte_approccio_nominated.json → pillar_11_out_of_combat"
+    },
+    "pool_variant_via_nominated": {
+      "name": "Variante Pool — Attivata da Nominated Specifiche",
+      "rule": "Alcune abilità nominated specifiche (definite nel catalogo) trattano il Potere letto come POOL DI PUNTI da spendere in effetti alternativi, INVECE del danno/soglia standard.",
+      "examples_hypothetical": [
+        "'Spacca Scudi' (nominated Impeto, livello 3): invece di fare danno, spendi il Potere letto per distruggere armatura nemica. Costo: 5 Potere = -1 armatura.",
+        "'Colpo Mortale' (nominated Istinto, livello 5): se il Potere letto è ≥ 15, invece del danno normale infliggi Ferita Approccio diretta al nemico.",
+        "'Rituale di Svelamento' (nominated Risonanza, livello 4): spendi 10 Potere per rivelare tutti i tratti nascosti di un nemico."
+      ],
+      "design_intent": "Il modello ibrido mantiene il sistema semplice per il 90% dei casi (danno diretto/soglia) e strategico per il 10% (abilità nominated speciali che sfruttano il pool). Non introduce un componente fisico nuovo (segnalini) come meccanica obbligatoria — il 'pool' è un'interpretazione del numero letto, non una nuova risorsa.",
+      "catalog_reference": "Le nominated che usano il modello pool saranno marcate esplicitamente nel catalogo. Vedi 02_personaggio/08_catalogo_nominated_libere.json"
+    }
   },
   "worked_example": {
     "name": "Esempio Completo di Calcolo Danno",
     "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento].",
-    "step_1_base": "Tabella Potere Impeto(3) × T3 = 8 danno base.",
-    "step_2_weapon_bonus": "La Spada Lunga (Arma) ha +2 danno bonus al livello 3 = 8 + 2 = 10 danno totale.",
-    "step_3_ferita_modifier": "Se il PG ha una Carta Approccio Impeto ferita e la Vitalità ha [Ferita], il giocatore SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
-    "step_4_combo": "Se un compagno ha [Apertura] nella stessa posizione con Potere 5, e questo PG ha [Chiusura], combo = 10 + 5 = 15 danno. Vedi 05_combattimento/05_combo.json"
+    "step_1_base": "Tabella del Potere T3, riga 3 = 10 Potere (danno base).",
+    "step_2_weapon_bonus": "La Spada Lunga (Arma) ha +2 danno bonus al livello 3 = 10 + 2 = 12 danno totale.",
+    "step_3_ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita, la riga di lettura scende a 2. Tabella T3 riga 2 = 6 Potere. Danno totale = 6 + 2 = 8. Se la Vitalità ha anche [Ferita], il PG SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
+    "step_4_combo": "Se un compagno ha [Apertura] nella stessa posizione con Potere 5, e questo PG ha [Chiusura], combo = 12 + 5 = 17 danno. Vedi 05_combattimento/05_combo.json",
+    "step_5_low_approccio_high_t": "Variante: PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento]. Tabella T5 riga 1 = 8 Potere. Spada +2 = 10 danno. L'azione è LEGITTIMA ma il Potere è basso perché il PG ha letto la riga 1 della tabella T5."
   },
   "armor_and_damage_bonus_interaction": {
     "name": "Interazione con Armatura Nemica e Bonus Arma",
     "principle": "Il danno totale viene confrontato con le difese nemiche. Vedi 08_nemici/03_tratti.json per Armatura Fissa e resistenze per Tag.",
-    "armor_subtraction": "Armatura Fissa nemica sottrae un valore fisso dal danno totale. Es. 10 danno - 2 armatura = 8 danno effettivo.",
+    "armor_subtraction": "Armatura Fissa nemica sottrae un valore fisso dal danno totale. Es. 12 danno - 2 armatura = 10 danno effettivo.",
     "tag_resistance": "Resistenza/Immunità per Tag riduce o azzera il danno se l'attacco ha un tag specifico. Vedi 08_nemici/03_tratti.json"
   },
   "design_evolution_notes": {
@@ -53,8 +121,10 @@
     "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
     "v10": "DUE CATEGORIE DI DANNO formalizzate.",
     "v11": "Danno Anatema e Danno Diretto Cuore formalizzati.",
-    "v12": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità.",
-    "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base).",
-    "v14": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Caratteristica nominated. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated (non più Carte Abilità fisiche separate). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. Slot Strumenti Rapidi = 5. Tag [Ferita] = riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo."
+    "v12": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE attivate tramite Vitalità.",
+    "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma.",
+    "v14": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Caratteristica nominated. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated.",
+    "v15_v3_1": "ARCHITETTURA v3.1: rename Caratteristica → Approccio. Approcci come mindset modificabili.",
+    "v16_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura Tabella Potere): 5 tabelle distinte (una per T), uguali per tutti gli Approcci (neutralità garantita). Approccio = selettore di riga, NON CAP. Ferita Approccio = leggi riga inferiore. Modello ibrido: Potere = danno base di default, pool solo per nominated specifiche. Tutti i PG possono giocare qualsiasi T."
   }
 }

@@ -1,7 +1,7 @@
 {
   "section_id": "01-02",
   "section_name": "Anatomia delle Carte — Le Tre Famiglie",
-  "version": "1.0",
+  "version": "1.1",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Definisce la struttura di TUTTE le carte del gioco (v3). Esistono TRE famiglie di carte, ognuna con una funzione distinta: (1) Carte Vitalità — la riserva di energia con tag-chiave; (2) Carte Approccio — il catalogo delle mosse del PG (nominated + bianche); (3) Carte Lato Giocatore fisiche — Equipaggiamento + Strumenti Rapidi. Le Vitalità forniscono energia + chiavi; le Approcci nominated ospitano i poteri; le Carte Lato Giocatore fisiche forniscono Equipaggiamento e Strumenti.",
@@ -20,15 +20,22 @@
   "three_card_families": {
     "family_1_vitality": {
       "name": "Famiglia 1 — Carte Vitalità",
-      "role": "RISERVA DI ENERGIA + CHIAVI DI ATTIVAZIONE",
-      "what_they_do": "Le Vitalità forniscono: (1) TEMPO per la Cintura ATB, (2) TAG DI ATTIVAZIONE per attivare poteri dalle Carte Approccio nominated o dalle Carte Lato Giocatore fisiche.",
+      "role": "RISERVA DI ENERGIA + CHIAVI DI ATTIVAZIONE + TABELLA DEL POTERE STAMPATA",
+      "what_they_do": "Le Vitalità forniscono: (1) TEMPO per la Cintura ATB, (2) TAG DI ATTIVAZIONE per attivare poteri dalle Carte Approccio nominated o dalle Carte Lato Giocatore fisiche, (3) TABELLA DEL POTERE STAMPATA che determina il Potere base dell'azione (letta alla riga = Approccio PG).",
       "what_they_do_NOT_do": "Le Vitalità NON definiscono l'azione. I loro TAG sono CHIAVI che indicano cosa si può attivare, ma l'azione vera e propria è ospitata altrove (nominated, Equipaggiamento, Strumenti Rapidi).",
+      "physical_components": [
+        "Costo Tempo (T1-T5) — slot ATB",
+        "Colore Approccio (Impeto=Rosso, Analisi=Giallo, Istinto=Blu, Risonanza=Verde) — visivo, NON limita l'attivazione",
+        "Tag di Attivazione (T=1 → 1 tag, T=5 → 5 tag)",
+        "TABELLA DEL POTERE STAMPATA (5 righe × 2 colonne) — letta alla riga = Approccio PG"
+      ],
       "play_modes": {
-        "scoperta": "Attiva un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG.",
+        "scoperta": "Attiva un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG. Legge la Tabella del Potere alla riga = Approccio PG.",
         "coperta": "Puro costo tempo. Non attiva nulla — è solo energia di sostenimento."
       },
       "deck_properties": "60 carte totali. 10 Punti Approccio × 6 carte per punto. Il mazzo è PROPORZIONALE alle Approcci del PG.",
       "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Approccio).",
+      "tabella_potere_rule": "5 tabelle distinte (una per T), ciascuna 5 righe (Approccio 1-5) × 2 colonne (Approccio, Potere), UGUALI per tutti gli Approcci. Stampate fisicamente su ogni Carta Vitalità. Il PG legge la riga = suo Approccio attuale. Se l'Approccio è ferito, legge la riga inferiore. NON esiste un CAP che vieta di giocare T alte a PG con Approccio basso. Vedi 05_combattimento/01_tabella_potere.json",
       "cross_reference_full": "Vedi 03_vitalita/01_mazzo_vitalita.json e 03_vitalita/02_giocare_vitalita.json"
     },
     "family_2_characteristic_cards": {
@@ -45,7 +52,7 @@
         "generiche": "3 abilità DIVERSE (tutte disponibili a basso livello). Più deboli ma versatili."
       },
       "wound_effect": "Una Carta Approccio nominated FERITA disattiva TUTTE le sue abilità. Il tag [Ferita] sulle Vitalità permette di RIATTIVARE le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata.",
-      "no_level_requirement": "Nessun livello minimo richiesto — la Tabella Potere Vitalità scala automaticamente l'effetto. Vedi 05_combattimento/01_tabella_potere.json",
+      "no_level_requirement": "Nessun livello minimo richiesto — il valore di Approccio del PG determina la RIGA DA LEGGERE nella Tabella del Potere stampata sulla Vitalità (NON un CAP). Vedi 05_combattimento/01_tabella_potere.json",
       "cross_reference_full": "Vedi 02_personaggio/03_carte_approccio_nominated.json"
     },
     "family_3_player_cards_physical": {

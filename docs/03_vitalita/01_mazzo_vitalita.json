@@ -1,7 +1,7 @@
 {
   "section_id": "03-01",
   "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica, Distribuzione Asimmetrica per Livello",
-  "version": "2.0",
+  "version": "2.1",
   "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali (10 Punti Approccio × 6 carte per punto), proporzionali agli Approcci. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. In v3.1 il mazzo è DINAMICO — la composizione T1-T5 muta quando gli Approcci vengono riallineati. La composizione è determinata dalla DISTRIBUZIONE ASIMMETRICA PER LIVELLO: 4 firme temporali uniche per i 4 Approcci. Questo file è la CASA UNICA per le proprietà strutturali del mazzo e per la tabella di composizione.",
@@ -37,9 +37,11 @@
     "components": [
       "Costo Tempo (T1-T5): indica in quale slot della Cintura ATB la carta va posizionata e il livello di effetto dell'azione attivata.",
       "Approccio di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione. I TAG indicano cosa si può attivare, non la Approccio della carta.",
-      "Tag di Attivazione: chiavi che indicano quali poteri possono essere attivati. T=1 ha 1 tag, T=5 ha 5 tag (regola d'oro)."
+      "Tag di Attivazione: chiavi che indicano quali poteri possono essere attivati. T=1 ha 1 tag, T=5 ha 5 tag (regola d'oro).",
+      "TABELLA DEL POTERE STAMPATA: 5 righe (Approccio 1-5) × 2 colonne (Approccio, Potere). Una per ogni T. Il PG legge la riga corrispondente al proprio valore di Approccio attuale. Vedi 05_combattimento/01_tabella_potere.json"
     ],
     "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Approccio).",
+    "tabella_potere_golden_rule": "Ogni Carta Vitalità ha la sua TABELLA DEL POTERE stampata sopra, determinata dal suo T. Esistono 5 tabelle distinte (T1-T5), uguali per tutti gli Approcci. Il PG legge la riga = suo Approccio attuale (1-5). Se l'Approccio è ferito, legge una riga sotto. Vedi 05_combattimento/01_tabella_potere.json",
     "tag_examples": [
       "[Strumento]",
       "[Abilità]",
@@ -151,8 +153,9 @@
         }
       }
     },
-    "t5_accessibility_rule": "T5 è accessibile dal livello 4 per TUTTI gli Approcci. Sotto il livello 4, NESSUNA carta T5 è presente nel mazzo (anche se la Tabella Potere Vitalità permette teoricamente di giocare a T5 — non hai carte T5 da giocare).",
-    "t4_accessibility_rule": "T4 è accessibile dal livello 3 per TUTTI gli Approcci (eccetto Analisi e Istinto che non hanno T4 fino al livello 4 per la loro firma specifica).",
+    "t5_accessibility_rule": "La firma temporale del mazzo NON include carte T5 sotto il livello 4 per NESSUN Approccio. Quindi un PG con Approccio 1-3 non ha T5 nel mazzo e di fatto non può giocarle (non le ha in mano). MA: se una T5 finisce in mano per qualsiasi motivo (es. presa dalla Riserva Comune durante un riallineamento, o scambiata con un compagno in campagne cooperative), il PG PUÒ giocarla legittimamente — legge la riga del suo Approccio attuale (es. riga 1 se Approccio 1). NON esiste un divieto di gioco basato sull'Approccio.",
+    "t4_accessibility_rule": "La firma temporale del mazzo NON include carte T4 sotto il livello 3 (eccetto Analisi e Istinto che non hanno T4 fino al livello 4 per la loro firma specifica). Come per T5, se una T4 finisce in mano, il PG PUÒ giocarla leggendo la riga del suo Approccio.",
+    "no_cap_clarification": "IMPORTANTE: la composizione del mazzo (quali T hai a disposizione) è una cosa. La LEGGE DI GIOCO (quali T puoi giocare se le hai in mano) è un'altra. La composizione è limitata dalla firma temporale; la LEGGE DI GIOCO non ha limiti basati sull'Approccio. Vedi 05_combattimento/01_tabella_potere.json → no_cap_rule",
     "cross_reference_tabella_potere": "Vedi 05_combattimento/01_tabella_potere.json per la corrispondenza T → Potere (danno base)."
   },
   "dynamic_deck_mechanic_v3_1": {
@@ -222,6 +225,7 @@
     "v8": "DUE CATEGORIE DI DANNO formalizzate. Soglia del Vuoto. Cuori NON sono opzione per Danno Standard. Punti Impresa NON curano Cuori.",
     "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE. Ferita Approccio SEMPRE sull'Approccio.",
     "v10": "ARCHITETTURA v3: rinomini caratteristiche. Le Carte Vitalità ora attivano poteri dalle CARTE APPROCCIO NOMINATED o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5.",
-    "v11_v3_1": "ARCHITETTURA v3.1: Mazzo DINAMICO. La composizione T1-T5 muta coi riallineamenti degli Approcci. Distribuzione Asimmetrica per Livello FORMALIZZATA: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli. Carte rimosse tornano nella Riserva Comune. T5 accessibile dal livello 4."
+    "v11_v3_1": "ARCHITETTURA v3.1: Mazzo DINAMICO. La composizione T1-T5 muta coi riallineamenti degli Approcci. Distribuzione Asimmetrica per Livello FORMALIZZATA: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli. Carte rimosse tornano nella Riserva Comune. T5 accessibile dal livello 4.",
+    "v12_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): ogni Carta Vitalità ha la sua TABELLA DEL POTERE stampata sopra (5 righe × 2 colonne, una tabella per T, uguali per tutti gli Approcci). Le regole di accessibilità T4/T5 sono riformulate: la composizione del mazzo limita QUALI T sono nel mazzo, ma NON esiste un CAP che vieta di giocare T alte a PG con Approccio basso. Se hai la carta in mano, la giochi leggendo la riga del tuo Approccio."
   }
 }

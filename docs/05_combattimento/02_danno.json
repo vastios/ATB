@@ -1,7 +1,7 @@
 {
   "section_id": "05-02",
   "section_name": "Danno a Doppio Strato — Due Categorie e Dilemma del Guerriero",
-  "version": "1.0",
+  "version": "1.1",
   "architecture_version": "v3",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
   "description": "Definisce il sistema di danno a doppio strato. Il danno si divide in DUE CATEGORIE meccaniche NETTAMENTE SEPARATE: Standard (scelta tra Milling o Ferita Approccio) e Diretto (nessuna scelta). I Cuori NON sono mai un'opzione per il Danno Standard. Il [Ferita] tag riattiva le abilità di una Carta Approccio ferita. Questo file è la CASA UNICA per il Dilemma del Guerriero e il sistema di danno subito.",
@@ -41,7 +41,8 @@
         "name": "Opzione B — Ferita (Il Sacrificio)",
         "azione": "Il giocatore gira UNA carta di UNA QUALSIASI Approccio (a propria scelta, indipendentemente dal tipo di danno subito) sul dorso. Il danno viene COMPLETAMENTE ANNULLATO (0 danni subiti al mazzo), ma il Valore Statistico di quella Approccio si abbassa di 1.",
         "nota_critica": "Una singola Ferita a una Approccio assorbe TUTTO il danno di un attacco Standard, indipendentemente dalla quantità. La scelta della Approccio è LIBERA.",
-        "costo": "Le azioni con il Tag di quella Approccio subiscono il Limite di Potenza. Perdi accesso alle azioni migliori di quel tipo.",
+        "costo_meccanico_v3_1": "Due effetti immediati: (1) il PG legge la TABELLA DEL POTERE UNA RIGA SOTTO per tutte le azioni che usano quell'Approccio (es. Approccio 3 ferito → legge riga 2); (2) se la carta girata è NOMINATED, le sue abilità sono DISATTIVATE (riattivabili con tag [Ferita]). Vedi 05_combattimento/01_tabella_potere.json → ferita_approccio_lectura_riga_inferiore",
+        "costo_narrativo": "Le azioni con quel Tag di Approccio sono MENO POTENTI finché la ferita non guarisce. Perdi accesso alle azioni migliori di quel tipo.",
         "quando_usarla": "Danni medi-grandi, vuoi proteggere il Mazzo Vitalità ma puoi permetterti di perdere potenza temporaneamente."
       },
       "strategia": "Il giocatore valuta se è meglio perdere carte dal mazzo (rischiando lo svenimento futuro) o sacrificare permanentemente un punto di un'abilità per salvare la propria riserva energetica.",
@@ -94,6 +95,7 @@
     "v10": "DUE CATEGORIE DI DANNO formalizzate: Standard (scelta Milling/Ferita a Caratteristica QUALSIASI, assorbe TUTTO il danno) vs Diretto (nessuna scelta, gira carte della Caratteristica bersagliata pari al danno). Soglia del Vuoto. Cuori NON sono opzione per Danno Standard.",
     "v11": "Danno Anatema e Danno Diretto Cuore formalizzati. Rimosso 'mandatory_matching' e 'assorbe fino a 3 danni' (regole errate sostituite).",
     "v12_v13": "ARCHITETTURA v2 / v2.1: adattamento minori.",
-    "v14": "ARCHITETTURA v3: Tag [Ferita] = riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo della Vitalità giocata. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated. RIMOSSO sistema Materie FF7 ed Esper."
+    "v14": "ARCHITETTURA v3: Tag [Ferita] = riattiva abilità di UNA Carta Caratteristica ferita dello stesso tipo della Vitalità giocata. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated. RIMOSSO sistema Materie FF7 ed Esper.",
+    "v15_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): Ferita Approccio = leggi riga inferiore nella Tabella del Potere (NON 'limite di potenza' o 'blocca livelli'). Rimossa la vecchia dizione 'Limite di Potenza' come costo della Ferita — ora il costo meccanico è CHIARO: -1 riga di lettura + disattivazione nominated (con [Ferita] tag per riattivare). Vedi 05_combattimento/01_tabella_potere.json"
   }
 }

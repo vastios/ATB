@@ -1,15 +1,15 @@
 {
   "section_id": "02-02",
   "section_name": "I Quattro Approcci — Mindset, Valori, Colori, Assi",
-  "version": "2.0",
+  "version": "2.1",
   "architecture_version": "v3.1",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce i 4 APPROCCI del PG. Un Approccio non è un tratto innato del personaggio (quanto è forte, quanto è intelligente) — è il MODO in cui il PG sceglie di affrontare il mondo. Gli Approcci possono MUTARE nel corso della vita del PG: le esperienze, i fallimenti, le crisi narrative lo portano a ricalibrare il proprio mindset. Ogni Approccio ha un valore da 1 a 5. Il valore determina: (1) il NUMERO di Carte Approccio fisiche sul tavolo (10 carte totali = somma dei valori), (2) il CAP massimo di Potere raggiungibile con quell'Approccio, (3) la composizione T1-T5 del Mazzo Vitalità. Gli Approcci si organizzano in 2 ASSI tematici: AGIRE (Impeto + Istinto) e COMPRENDERE (Analisi + Risonanza).",
+  "description": "Definisce i 4 APPROCCI del PG. Un Approccio non è un tratto innato del personaggio (quanto è forte, quanto è intelligente) — è il MODO in cui il PG sceglie di affrontare il mondo. Gli Approcci possono MUTARE nel corso della vita del PG: le esperienze, i fallimenti, le crisi narrative lo portano a ricalibrare il proprio mindset. Ogni Approccio ha un valore da 1 a 5. Il valore determina: (1) il NUMERO di Carte Approccio fisiche sul tavolo (10 carte totali = somma dei valori), (2) la RIGA DA LEGGERE nella Tabella del Potere stampata su ogni Carta Vitalità, (3) la composizione T1-T5 del Mazzo Vitalità. Gli Approcci si organizzano in 2 ASSI tematici: AGIRE (Impeto + Istinto) e COMPRENDERE (Analisi + Risonanza).",
   "v3_1_paradigm_shift": {
     "name": "Svolta v3.1 — Da Tratto Innato a Mindset",
     "principle": "Nella v3 (e versioni precedenti), le 'Caratteristiche' rappresentavano tratti innati del PG (forza fisica, intelligenza, ecc.). Cambiarle narrativeamente era assurdo: 'abbasso Impeto' significava 'divento più mingherlino'. Nella v3.1, gli APPROCCI sono mindset modificabili: 'abbasso Impeto per alzare Analisi' significa 'le mie esperienze mi hanno insegnato che non sempre l'irruenza è la risposta; a volte serve fermarsi e studiare la situazione'.",
     "what_changes_narratively": "La crescita del PG non è più 'divento più forte' (che non aveva senso con somma fissa a 10), ma 'evolvo il mio modo di affrontare le cose'. Le ferite subite, i fallimenti, le crisi — tutto può spingere il PG a rivedere il proprio approccio al mondo.",
-    "what_does_not_change_mechanically": "La matematica resta: 10 punti totali, distribuzione 1-5 per Approccio, 10 carte fisiche sul tavolo. La Tabella Potere, il sistema nominated, il Mazzo Vitalità — tutti invariati nel principio. Solo la NARRATIVA degli Approcci cambia (e questo apre la porta a nuove meccaniche di progressione: Riallineamento, vedi 02_personaggio/06_riallineamento_approcci.json — in fase di definizione).",
+    "what_does_not_change_mechanically": "La matematica resta: 10 punti totali, distribuzione 1-5 per Approccio, 10 carte fisiche sul tavolo. La Tabella del Potere, il sistema nominated, il Mazzo Vitalità — tutti invariati nel principio. Solo la NARRATIVA degli Approcci cambia (e questo apre la porta a nuove meccaniche di progressione: Riallineamento, vedi 02_personaggio/06_riallineamento_approcci.json).",
     "rename_history": {
       "v3_renames_inherited": "I rinomini v3 (Istinto→IMPETO, Evasione→ISTINTO) restano validi in v3.1. La differenza è che ora descrivono APPROCCI (mindset), non più tratti innati.",
       "v3_1_rename": "Caratteristica → Approccio (ovunque nel manuale). La v3.1 eredita tutti i rinomini v3 e li eleva a livello concettuale."
@@ -81,15 +81,15 @@
       "damage_typing": "Magico → bersaglia nemici magicamente vulnerabili"
     },
     "design_intent": "Gli assi NON sono una gerarchia. Sono due modi complementari di stare al mondo. Un PG puro AGIRE è un guerriero, un PG puro COMPRENDERE è un mago/studioso, un PG bilanciato è un avventuriero classico. La 'scelta di asse' è essa stessa una scelta di mindset.",
-    "axis_dichotomy_clarified": "La differenza tra Analisi e Risonanza non è 'intelligenza vs empatia' — è COME si sceglie di comprendere. La differenza tra Impeto e Istinto non è 'forza vs destrezza' — è COME si sceglie di agire (proattivo vs reattivo). Nessun Approccio è 'superiore' a un altro: sono modalità diverse di esistere nel mondo."
+    "axis_dichotomy_clarified": "La differenza tra Analisi e Risonanza non è 'intelligenza vs empatia' — è COME si sceglie di comprendere. La differenza tra Impeto e Istinto non è 'forza vs destrezza' — è COME si sceglie di agire (proattivo vs reattivo). Nessun Approccio è 'superiore' a un altro: sono modalità diverse di esistere nel mondo. Questa neutralità è riflesso anche nella Tabella del Potere: le 5 tabelle (una per T) sono IDENTICHE per tutti gli Approcci — nessun Approccio ha una tabella 'più forte'."
   },
   "value_meaning_1_to_5": {
     "summary": "Il valore di un Approccio (1-5) determina 3 cose simultaneamente:",
     "1_numero_di_carte": "Il NUMERO di Carte Approccio fisiche sul tavolo per quell'Approccio. Un PG con Impeto 3 ha 3 carte Impeto sul tavolo (nominated o bianche, in composizione mista).",
-    "2_cap_potere": "Il CAP massimo di Potere per azioni che usano quell'Approccio. Una Vitalità T5 gioca al livello 5 solo se l'Approccio corrispondente è almeno 5. Vedi 05_combattimento/01_tabella_potere.json",
+    "2_riga_tabella_potere": "La RIGA DA LEGGERE nella Tabella del Potere stampata su ogni Carta Vitalità. Quando il PG gioca una Vitalità SCOPERTA, legge la riga corrispondente al proprio valore attuale di Approccio (1-5) nella tabella del T di quella carta. Una riga più alta = Potere più alto. Non è un 'limite' o un 'CAP': è un SELETTORE DI RIGA. Tutti i PG possono giocare qualsiasi T (T1-T5) — il valore di Approccio determina solo QUALE riga leggere. Vedi 05_combattimento/01_tabella_potere.json",
     "3_composizione_mazzo_vitalita": "Determina la COMPOSIZIONE T1-T5 delle carte di quel colore nel Mazzo Vitalità. Ogni Approccio ha una firma temporale unica (Distribuzione Asimmetrica per Livello). Vedi 03_vitalita/01_mazzo_vitalita.json",
-    "interpretation_in_v3_1": "Un Approccio a 5 NON significa 'il PG è il più forte/veloce/intelligente/empatico in assoluto'. Significa: 'il PG ha fatto di questo modo di affrontare il mondo la propria firma'. Un Approccio a 1 NON significa 'il PG è incapace'. Significa: 'il PG raramente sceglie questo modo di agire — non fa per lui, almeno per ora'.",
-    "evolution_note": "I valori possono MUTARE nel tempo attraverso il Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json — in fase di definizione)."
+    "interpretation_in_v3_1": "Un Approccio a 5 NON significa 'il PG è il più forte/veloce/intelligente/empatico in assoluto'. Significa: 'il PG ha fatto di questo modo di affrontare il mondo la propria firma'. Un Approccio a 1 NON significa 'il PG è incapace'. Significa: 'il PG raramente sceglie questo modo di agire — non fa per lui, almeno per ora'. Tradotto in meccanica: un PG con Impeto 1 che gioca una Vitalità T5 Impeto legge la riga 1 della tabella T5 — l'azione è legittima ma produce un Potere basso.",
+    "evolution_note": "I valori possono MUTARE nel tempo attraverso il Riallineamento (vedi 02_personaggio/06_riallineamento_approcci.json)."
   },
   "point_buy_total": {
     "rule": "La somma dei valori dei 4 Approcci è SEMPRE 10 alla creazione del PG.",
@@ -99,15 +99,17 @@
   "ferita_approccio_quick_reference": {
     "summary": "Girare una Carta Approccio = FERITA. Il valore si abbassa di 1.",
     "narrative_interpretation": "Una ferita a un Approccio NON è una ferita fisica (non perdi muscoli, non perdi neuroni). È un momento in cui quel modo di affrontare il mondo ti ha tradito — l'irruenza ti ha portato in trappola, lo studio ti ha fatto perdere tempo prezioso, l'empatia ti ha fatto abbassare la guardia. Il PG resta scosso in quell'Approccio finché non guarisce.",
+    "effect_immediate_on_power_table": "Il PG consulta la Tabella del Potere UNA RIGA SOTTO il valore attuale. Se Approccio = 3 con una ferita → legge la riga 2. Questo riduce il Potere di tutte le azioni che usano quell'Approccio per la durata della ferita.",
     "effect_on_pool": "Una carta in meno attiva sul tavolo per quell'Approccio.",
-    "effect_on_power_cap": "Il CAP di Potere per quell'Approccio scende di 1.",
     "effect_on_nominated_abilities": "Se la carta girata è NOMINATED, TUTTE le sue abilità sono DISATTIVATE. Una Vitalità con tag [Ferita] può riattivarle per quel turno. Vedi 05_combattimento/02_danno.json",
+    "effect_on_mazzo_vitalita": "La composizione del Mazzo Vitalità NON cambia immediatamente con la ferita. Il mazzo cambia SOLO coi riallineamenti narrativi (vedi 03_vitalita/01_mazzo_vitalita.json → dynamic_deck_mechanic_v3_1). Durante il combattimento, una ferita riduce solo la riga di lettura della Tabella del Potere.",
     "cross_reference_full": "Vedi 05_combattimento/02_danno.json per le regole complete di Ferita Approccio"
   },
   "open_questions_v3_1": {
-    "riallineamento_mechanics": "Meccanica esatta di Riallineamento degli Approcci (trigger, regole di scambio, gestione nominated). Vedi 02_personaggio/06_riallineamento_approcci.json (file DA CREARE in Fase 2).",
-    "heart_linked_nominated": "3 nominated 'Heart-linked' (sbloccate dai Cuori scelti) — dettaglio in 02_personaggio/04_cuori.json (riscritto in Fase 2).",
-    "mazzo_vitalita_dinamico": "Composizione T1-T5 del Mazzo Vitalità che muta coi riallineamenti — dettaglio in 03_vitalita/01_mazzo_vitalita.json (riscritto in Fase 2)."
+    "riallineamento_mechanics": "RISOLTO — Meccanica formalizzata in 02_personaggio/06_riallineamento_approcci.json (Fase 2 completata).",
+    "heart_linked_nominated": "RISOLTO — 3 nominated 'Heart-linked' sbloccate dai Cuori scelti. Vedi 02_personaggio/04_cuori.json e 02_personaggio/07_catalogo_cuori.json (Fase 2-3 completate).",
+    "mazzo_vitalita_dinamico": "RISOLTO — Composizione T1-T5 del Mazzo Vitalità muta coi riallineamenti. Vedi 03_vitalita/01_mazzo_vitalita.json (Fase 2 completata).",
+    "tabella_potere_struttura": "RISOLTO in v3.1: 5 tabelle distinte (una per T), ciascuna 5 righe × 2 colonne (Approccio × Potere), uguali per tutti gli Approcci. Stampate fisicamente su ogni Carta Vitalità. Vedi 05_combattimento/01_tabella_potere.json"
   },
   "design_evolution_notes": {
     "v6": "Tabella Potere introdotta. Corrispondenza obbligatoria (Approccio della Vitalità = Approccio del potere).",
@@ -119,6 +121,7 @@
     "v12": "ARCHITETTURA v2: le azioni di attacco/difesa sono determinate dalle CARTE LATO GIOCATORE (Equipaggiamento/Abilità/Magie) attivate tramite Vitalità.",
     "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Approccio × T) + Bonus opzionale Arma (la tabella della Vitalità resta la base).",
     "v14_v3": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Approccio nominated. Le Abilità Difensive sono ospitate su Carte Approccio nominated (non più Carte Abilità fisiche separate). Rinomini: Istinto→IMPETO, Evasione→ISTINTO. Slot Strumenti Rapidi = 5. Tag [Ferita] = riattiva abilità di UNA Carta Approccio ferita dello stesso tipo.",
-    "v15_v3_1": "ARCHITETTURA v3.1: 'Caratteristica' → 'Approccio'. Svolta concettuale: gli Approcci sono MINDSET modificabili, non tratti innati. Apre la strada a: Riallineamento (progressione narrativa), Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), Mazzo Vitalità Dinamico. Le meccaniche v3 restano invariate nel principio — cambia la cornice narrativa e si introducono nuove meccaniche di progressione."
+    "v15_v3_1": "ARCHITETTURA v3.1: 'Caratteristica' → 'Approccio'. Svolta concettuale: gli Approcci sono MINDSET modificabili, non tratti innati. Apre la strada a: Riallineamento (progressione narrativa), Cuori Nominati (PASSATO/DOTTRINA/LEGAMI), Mazzo Vitalità Dinamico. Le meccaniche v3 restano invariate nel principio — cambia la cornice narrativa e si introducono nuove meccaniche di progressione.",
+    "v16_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura Tabella Potere): RIMOSSO il concetto di 'CAP di Potere' come limite. Il valore di Approccio NON vieta di giocare T sopra il proprio valore — è un SELETTORE DI RIGA nella Tabella del Potere stampata su ogni Carta Vitalità. 5 tabelle distinte (una per T), uguali per tutti gli Approcci (neutralità tra Approcci garantita). Ferita Approccio = leggi riga inferiore, NON 'blocca livelli'. Tutti i PG possono giocare qualsiasi T."
   }
 }
