@@ -1,0 +1,183 @@
+{
+  "section_id": "MG-02",
+  "section_name": "Capitolo 1 — Concetti base",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "last_updated": "2026-07-02",
+  "chapter_number": 1,
+  "chapter_title": "Concetti base",
+  "design_decisions": {
+    "relazione_con_source_files": "B — Nuovo file player-facing che estrae e riorganizza il contenuto dei source files esistenti (01_introduzione/01_concetti_base.json e 02_personaggio/02_approcci.json). I source files restano come reference canonica per designer; questo file è la versione leggibile per il giocatore.",
+    "dilemma_del_guerriero": "Definito formalmente in questo capitolo (sottosezione 1.5), con rimando meccanico al Capitolo 9 (Danno) per i dettagli operativi.",
+    "usp": "5 USP core selezionate (Vitalità come Chiavi, Approcci come Mindset, Magia Due Vie, 9 Slot Lato Giocatore, Cintura ATB Fluida) + box rimando al manifest tecnico per le restanti.",
+    "pilastri_v3": "NON esposti come lista. Restano confinati nel manifest tecnico (00_indice.json → v3_pillars_summary).",
+    "vs_caratteristiche": "Breve accenno al reframing mindset, senza lunga storia evolutiva del 'vs Caratteristiche'.",
+    "vista_insieme": "1 paragrafo ciascuno per Cuori / Vitalità / Cintura ATB, con cross-riferimento ai capitoli dedicati.",
+    "sezioni": "5 sottosezioni: 1.1 Cos'è ATB, 1.2 Architettura 3 Canali, 1.3 I 4 Approcci, 1.4 Le 3 famiglie di carte, 1.5 Il Dilemma del Guerriero.",
+    "tono": "B — Stesso Frontespizio: cordiale, seconda persona ('tu'), zero lore."
+  },
+  "content": {
+    "intro": {
+      "title": "Capitolo 1 — Concetti base",
+      "paragraphs": [
+        "Questo capitolo ti dà il quadro mentale entro cui tutto il resto del manuale acquisisce senso. Non impari ancora regole operative — quelle arrivano dalla Parte II in poi. Qui impari quali sono i pezzi in tavola, come si chiamano, e perché ATB è costruito in questo modo. Se ti viene voglia di saltare avanti perché vuoi 'già giocare', resisti: senza questi concetti, le regole concrete ti sembreranno arbitrarie. Con questi concetti, ogni regola ti apparirà come la conseguenza naturale di un'idea di fondo.",
+        "Le idee di fondo sono tre. Primo: il tuo personaggio non è una scheda con numeri, è un insieme di carte sul tavolo. Secondo: quando subisci un colpo, scegli tu cosa cedere — e questa scelta è il cuore del gioco. Terzo: le meccaniche pure sono separate dalla lore, così puoi giocare ATB con qualsiasi ambientazione tu voglia. Tutto il resto del manuale sviluppa queste tre idee."
+      ]
+    },
+    "sezione_1_1_cosa_e_atb": {
+      "title": "1.1 Cos'è ATB (e cosa non è)",
+      "paragraphs": [
+        "ATB è un GdR card-based: le azioni si risolvono con carte fisiche, non con tiri di dado. Le carte che hai sul tavolo rappresentano la tua energia, le tue mosse disponibili e il tuo equipaggiamento. Giocare una carta è sempre una scelta — quale energia spendere, quale potere attivare, quando attendere il momento giusto nella linea temporale condivisa.",
+        "ATB non è un GdR 'a classi' (non scegli 'guerriero' o 'mago' all'inizio e poi resti fermo lì). Il tuo personaggio è definito da 4 Approcci — mindset che puoi ricalibrare nel tempo attraverso il Riallineamento. La crescita non è 'divento più forte in assoluto', ma 'evolvo il mio modo di affrontare le cose'. Una somma fissa di 10 punti tra i 4 Approcci significa che ogni PG è bilanciato alla partenza; ciò che cambia è la distribuzione.",
+        "ATB non è un GdR 'simulationista'. Le regole non cercano di modellare la realtà fisica con realismo: cercano di creare situazioni di gioco tese, significative, cariche di scelta. Quando una meccanica sembra astratta (la Cintura ATB, la Tabella Potere, il Dilemma del Guerriero), non è perché manchi di profondità — è perché è costruita per generare decisioni interessanti al tavolo, non per simulare la fisica del mondo."
+      ]
+    },
+    "sezione_1_2_architettura_3_canali": {
+      "title": "1.2 L'architettura a 3 canali",
+      "paragraphs": [
+        "ATB è diviso in tre canali indipendenti. Il Canale 1 è questo Manuale del Giocatore: contiene le meccaniche pure, con terminologia neutra, giocabili con qualsiasi ambientazione. Il Canale 2 è la Guida del Master: contiene la gestione della sessione, la creazione dei nemici, il bilanciamento. Il Canale 3 sono i manuali 'skin' di ambientazione: vestono le meccaniche con la lore senza alterarle. La prima skin disponibile è 'Cabalistica'; altre skin future (Alchimia Ermetica, Taoismo, Fisica Quantistica) vestiranno le stesse meccaniche con cornici narrative diverse.",
+        "Perché questa separazione? Perché ti permette di imparare le regole una volta sola e poi giocarle in mondi diversi. Le meccaniche del Canale 1 sono il 'motore'; le skin del Canale 3 sono la 'carrozzeria'. Un PG costruito con le regole del Canale 1 funziona in qualsiasi skin — semplicemente, i suoi Approcci e i suoi Cuori avranno nomi e significati diversi a seconda dell'ambientazione che avete scelto.",
+        "Questo manuale contiene SOLO Canale 1. Non troverai lore del setting (è nel Canale 3) né regole per il Master (sono nel Canale 2). Se ti serve qualcosa che non è qui, probabilmente è in uno degli altri due canali. Questa separazione non è un limite: è una garanzia che il sistema è modulare e replicabile."
+      ],
+      "box_3_canali_ricap": {
+        "title": "I 3 canali in breve",
+        "items": [
+          "Canale 1 — Manuale del Giocatore (questo manuale): meccaniche pure, zero lore.",
+          "Canale 2 — Guida del Master: gestione sessione, nemici, bilanciamento, master tips.",
+          "Canale 3 — Manuali Ambientazione (skin): lore che veste le meccaniche. Prima disponibile: 'Cabalistica'."
+        ]
+      }
+    },
+    "sezione_1_3_i_4_approcci": {
+      "title": "1.3 I 4 Approcci",
+      "paragraphs": [
+        "Il tuo personaggio è definito da 4 Approcci: Impeto, Istinto, Analisi, Risonanza. Un Approccio non è un tratto innato (quanto sei forte, quanto sei intelligente) — è il modo in cui il PG sceglie di affrontare il mondo. Gli Approcci possono mutare nel corso della vita del PG: le ferite, i fallimenti, le crisi narrative lo portano a ricalibrare il proprio mindset. Questa è la svolta concettuale della versione 3.1 di ATB, e la differenza più importante rispetto ai GdR classici.",
+        "I 4 Approcci si organizzano in 2 assi tematici. L'asse AGIRE raccoglie Impeto (Rosso, irruenza proattiva — mi butto) e Istinto (Blu, reazione — rispondo a quello che succede). L'asse COMPRENDERE raccoglie Analisi (Giallo, studio e metodo — smonto e deduco) e Risonanza (Verde, empatia e connessione — sento e comprendo attraverso il sentire). Entrambi gli assi sono modi legittimi di stare al mondo: nessuno è superiore all'altro, e la 'scelta di asse' è essa stessa una scelta di mindset.",
+        "Ogni Approccio ha un valore da 1 a 5. La somma dei 4 valori è SEMPRE 10 alla creazione del PG. Quel valore determina tre cose simultaneamente: quante Carte Approccio fisiche hai sul tavolo per quell'Approccio, quale riga leggere nella Tabella del Potere stampata su ogni Carta Vitalità, e la composizione T1-T5 del tuo Mazzo Vitalità. Un valore alto non significa 'sei più capace in assoluto' — significa 'hai fatto di questo modo di affrontare il mondo la tua firma'.",
+        "Quattro esempi per fissare le idee: un PG con Impeto 5 non è un colosso muscolare, è qualcuno che ha fatto dell'azione immediata e senza esitazione il proprio modo di stare al mondo. Un PG con Analisi 5 non è 'il più intelligente', è qualcuno che sceglie di smontare e studiare ogni situazione. Un PG con Istinto 5 non è 'il più veloce', è qualcuno che ha fatto dei riflessi la propria prima risposta. Un PG con Risonanza 5 non è 'il più empatico' in senso generico, è qualcuno che comprende il mondo connettendosi con esso invece che smontandolo."
+      ],
+      "box_4_approcci_ricap": {
+        "title": "I 4 Approcci in breve",
+        "items": [
+          "Impeto 🔴 (Rosso, Asse Agire) — Irruenza, sfondare, buttarsi a capofitto.",
+          "Istinto 🔵 (Blu, Asse Agire) — Riflessi, destrezza, reazione immediata.",
+          "Analisi 🟡 (Giallo, Asse Comprendere) — Studio, osservazione, metodo, crafting.",
+          "Risonanza 🟢 (Verde, Asse Comprendere) — Empatia, connessione, magia elementale e cura."
+        ]
+      },
+      "cross_references": [
+        "Vedi 02_personaggio/02_approcci.json per la definizione canonica dei 4 Approcci, dei 2 assi, e del significato dei valori 1-5.",
+        "Vedi Capitolo 4 (Creazione del PG) per la distribuzione point-buy.",
+        "Vedi Capitolo 6 (Carte Approccio Nominated) per il pool di carte che materializza i tuoi Approcci sul tavolo."
+      ]
+    },
+    "sezione_1_4_le_3_famiglie_di_carte": {
+      "title": "1.4 Le 3 famiglie di carte (a colpo d'occhio)",
+      "paragraphs": [
+        "Sul tavolo hai tre famiglie di carte, ciascuna con un ruolo distinto. Le Carte Vitalità sono la tua riserva di energia: 60 carte totali, una mano di 5 da giocare. Quando giochi una Vitalità scoperta, i suoi tag attivano un potere da una tua Carta Approccio nominated, dal tuo Equipaggiamento o dai tuoi Strumenti Rapidi. Quando la giochi coperta, paga solo il costo in tempo senza attivare nulla. Le Vitalità non definiscono l'azione: la rendono possibile.",
+        "Le Carte Approccio sono il catalogo delle tue mosse. Il valore di un Approccio (1-5) ti dice quante carte fisiche hai sul tavolo per quell'Approccio, per un totale di 10 carte alla creazione. Di queste, alcune sono nominated (con nome, abilità e magie proprie), altre sono bianche (segnaposto che rappresentano il tuo potenziale di crescita). Quando giochi una Vitalità scoperta con i tag giusti, attivi un potere da una delle tue nominated compatibile. Le nominated sono il 'chi sei operative': il tuo stile, le tue firme tattiche, le tue specializzazioni.",
+        "Le Carte Lato Giocatore sono i tuoi oggetti fisici: Equipaggiamento (4 slot fissi — Arma, Scudo/Doppia, Armatura, Accessorio) e Strumenti Rapidi (5 slot, usa-e-getta). L'Equipaggiamento può essere ferito volontariamente in 2 stadi: il primo ferimento attiva un potere speciale, il secondo distrugge l'oggetto. Gli Strumenti Rapidi ospitano oggetti trovati e talismani offensivi monouso craftati da Analisi durante i riposi. Insieme alle Carte Approccio, formano il tavolo che è il tuo personaggio.",
+        "Sopra tutte queste carte scorre la Cintura ATB — una linea temporale fluida che regola i turni. Non esiste griglia fissa: ogni PG traccia la propria riga di lunghezza variabile, e il tempo non si ferma mai. Giocare una carta coperta fa avanzare il tuo segnalino di pochi tick; giocarla scoperta fa avanzare di più, ma attiva un potere. La Cintura è ciò che trasforma le carte scelte in turni risolti."
+      ],
+      "box_3_famiglie_ricap": {
+        "title": "Le 3 famiglie in breve",
+        "items": [
+          "Carte Vitalità (60 nel mazzo, 5 in mano) — Energia + chiavi di attivazione (tag).",
+          "Carte Approccio (10 sul tavolo) — Catalogo delle mosse. Misto nominated (con abilità) + bianche (segnaposto).",
+          "Carte Lato Giocatore (9 slot totali) — Equipaggiamento (4 slot) + Strumenti Rapidi (5 slot).",
+          "Cintura ATB — Linea temporale fluida che regola i turni."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 2 (Le carte) per l'anatomia dettagliata di ciascuna famiglia.",
+        "Vedi Capitolo 3 (La Cintura ATB) per la struttura e la risoluzione tick-per-tick.",
+        "Vedi Capitolo 12 (Vitalità e Scarti) per il Mazzo Vitalità Dinamico.",
+        "Vedi Capitolo 11 (Equipaggiamento) per slot, ferita a 2 stadi e Strumenti Rapidi."
+      ]
+    },
+    "sezione_1_5_il_dilemma_del_guerriero": {
+      "title": "1.5 Il Dilemma del Guerriero",
+      "paragraphs": [
+        "Quando il pericolo ti raggiunge e subisci un danno, non esiste 'subire e basta'. Devi sempre scegliere cosa cedere, e hai tre opzioni. Puoi consumare il tuo Mazzo Vitalità: scarti carte dalla cima del mazzo finché non assorbono il danno. È la scelta meno dolorosa nel breve termine — il mazzo si rimescola, l'energia torna. Ma se il mazzo si esaurisce, svieni e ferisci un Cuore.",
+        "Puoi ferire un Approccio: giri una delle tue Carte Approccio sul dorso. Il valore di quell'Approccio si abbassa di 1 per la durata della ferita, e se la carta girata è nominated, tutte le sue abilità si disattivano finché non guarisce. È una scelta che ti indebolisce operativamente nel combattimento in corso, ma non ti avvicina alla morte. Una Vitalità con tag [Ferita] può riattivare temporaneamente le abilità di una carta ferita, dandoti una breve finestra di efficacia nonostante il danno subito.",
+        "Puoi ferire un Cuore: giri una delle tue 3 carte Cuore nominate. È la scelta più grave — i Cuori sono la tua essenza (Passato, Dottrina, Legami), e ferirli ti porta un passo più vicino alla morte. Quando tutti e 3 i Cuori sono feriti, il PG muore. La cura dei Cuori è la più lenta delle tre (molto più lenta della Vitalità, più lenta degli Approcci), quindi ogni Cuore ferito è una ferita che ti accompagna a lungo.",
+        "Questo triplo bivio — Vitalità, Approccio, Cuore — è il cuore emotivo e tattico di ATB. Lo chiamiamo Dilemma del Guerriero. Ogni volta che subisci un colpo, sei davanti a una scelta significativa: cedere energia (temporaneo), cedere efficacia (medio termine), o cedere essenza (lungo termine, verso la morte). Non esiste scelta 'giusta' in assoluto: dipende dalla situazione, dalla tua tolleranza al rischio, da cosa stai proteggendo. Questa è la meccanica che dà peso a ogni colpo subito."
+      ],
+      "box_dilemma_ricap": {
+        "title": "Il Dilemma del Guerriero — le 3 scelte",
+        "items": [
+          "Mazzo Vitalità (milling) — Scarti carte dalla cima del mazzo. Temporaneo, ma se il mazzo si esaurisce svieni e ferisci un Cuore.",
+          "Approccio (ferita) — Giri una Carta Approccio. Perdi 1 valore in quell'Approccio e disattivi le abilità della nominated girata. Medio termine.",
+          "Cuore (ferita) — Giri una Carta Cuore. Ti avvicini alla morte. Cura molto lenta. Quando tutti e 3 i Cuori sono feriti, il PG muore."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 9 (Combattimento → Danno) per le regole operative complete: danno Standard (scelta tra le 3 opzioni) vs danno Diretto (nessuna scelta, ferita automatica).",
+        "Vedi Capitolo 5 (Cuori Nominati) per le 3 categorie di Cuore (Passato, Dottrina, Legami) e le regole di cura.",
+        "Vedi Capitolo 13 (Riposo e Cura) per le velocità di cura asimmetriche tra Vitalità, Approcci e Cuori."
+      ]
+    },
+    "sezione_usp_core": {
+      "title": "Cosa rende ATB diverso (USP core)",
+      "paragraphs": [
+        "Per aiutarti a fissare cosa rende ATB diverso dagli altri GdR, ecco le 5 Unique Selling Propositions core del sistema. Non sono tutte — il manifest tecnico ne elenca di più — ma queste sono le 5 che danno forma al gioco che stai per imparare.",
+        "Queste USP non sono 'feature' isolate: sono conseguenze delle idee di fondo che hai letto in questo capitolo. Se ti sembrano naturali dopo aver letto 1.1-1.5, significa che hai colto il disegno del sistema. Se alcune ti sembrano ancora oscure, torna a questo capitolo dopo aver letto la Parte II — torneranno chiare."
+      ],
+      "usp_list": [
+        {
+          "name": "Vitalità come Chiavi",
+          "description": "Le Carte Vitalità non definiscono l'azione. I loro tag sono chiavi di attivazione che permettono di attivare poteri dalle Carte Approccio nominated, dall'Equipaggiamento o dagli Strumenti Rapidi."
+        },
+        {
+          "name": "Approcci come Mindset",
+          "description": "I 4 Approcci non sono tratti innati. Sono mindset modificabili che possono riallinearsi nel tempo attraverso il Riallineamento (dopo fallimenti) e la Maturation (bianca → nominated, dopo successi)."
+        },
+        {
+          "name": "Magia a Due Vie",
+          "description": "Risonanza = magia elementale + cura in sintonia col mondo. Analisi = utility + crafting talismani monouso offensivi. Niente Materie FF7, niente Esper: due vie distinte e complementari."
+        },
+        {
+          "name": "9 Slot Lato Giocatore",
+          "description": "4 Equipaggiamento + 5 Strumenti Rapidi. Le vecchie Carte Abilità e Carte Magia sono assorbite nelle Carte Approccio nominated. Tavolo più snello, più leggibile, più focalizzato."
+        },
+        {
+          "name": "Cintura ATB Fluida",
+          "description": "Non esiste griglia fissa di turni. Ogni PG traccia la propria riga di lunghezza variabile, e il tempo non si ferma mai. Le scelte di costo temporale (coperta vs scoperta, T bassa vs T alta) diventano scelte tattiche."
+        }
+      ],
+      "box_altre_usp": {
+        "title": "Altre USP",
+        "paragraph": "Il manifest tecnico (00_indice.json → usps) elenca altre USP: Meccanica Flip Universale, Tag [Ferita] Tattico, Crafting Analisi, Equipaggiamento Feribile a 2 Stadi, Tabella Potere Artigianale, Combo Cooperative, Sistema Nemici a 3 Tier, Architettura 3 Canali. Le scoprirai nei capitoli dedicati. Qui le abbiamo selezionate per darti l'idea centrale; le altre sono conseguenze o dettagli."
+      }
+    }
+  },
+  "cross_references": [
+    "Capitolo 2 — Le carte (anatomia dettagliata)",
+    "Capitolo 3 — La Cintura ATB (struttura e risoluzione)",
+    "Capitolo 4 — Creazione del PG (point-buy 10)",
+    "Capitolo 5 — Cuori Nominati (Passato, Dottrina, Legami)",
+    "Capitolo 6 — Carte Approccio Nominated (pool misto)",
+    "Capitolo 9 — Combattimento → Danno (regole operative del Dilemma del Guerriero)",
+    "Capitolo 11 — Equipaggiamento (slot, ferita 2 stadi, Strumenti Rapidi)",
+    "Capitolo 12 — Vitalità e Scarti (Mazzo Dinamico, mano, esaurimento)",
+    "Capitolo 13 — Riposo e Cura (cure asimmetriche)",
+    "00_indice.json → usps (lista completa USP, per designer)",
+    "00_indice.json → v3_pillars_summary (12 pilastri v3, per designer)"
+  ],
+  "scope_constraints": {
+    "lore_level": "ZERO — nessun termine di ambientazione. I riferimenti a 'skin cabalistica' sono puramente strutturali (per spiegare l'architettura 3 canali), non contenuti lore.",
+    "mechanics_depth": "Quadro mentale. Nessuna regola operativa completa — tutto rimanda ai capitoli dedicati.",
+    "audience_assumption": "Il lettore ha letto il Frontespizio. Conosce già tagline, 3 famiglie di carte al nome, Cintura ATB al nome. Qui acquisisce la cornice concettuale."
+  },
+  "source_files_referenced": [
+    "01_introduzione/01_concetti_base.json (architettura 3 canali, USP, core_emotion)",
+    "02_personaggio/02_approcci.json (4 Approcci, 2 assi, valori 1-5, reframing mindset)"
+  ],
+  "backup_protocol": {
+    "method": "Auto-push su GitHub",
+    "repository": "https://github.com/vastios/ATB",
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione",
+    "note": "NO PUSH finché l'utente non dà l'ordine esplicito."
+  }
+}
