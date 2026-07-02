@@ -1,0 +1,235 @@
+{
+  "section_id": "MG-00",
+  "section_name": "ATB — Manuale del Giocatore (Indice)",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "last_updated": "2026-07-02",
+  "channel": "CANALE 1 — Manuale del Giocatore",
+  "description": "Indice ufficiale del Manuale del Giocatore ATB. È il documento che organizza i file JSON esistenti in un percorso leggibile per il giocatore, dal primer fino ai riferimenti rapidi. Esclude tutto ciò che è GM-only (Canale 2 — Guida del Master) e la lore profonda (Canale 3 — Manuali Ambientazione). Ogni voce dell'indice mappa a uno o più file JSON esistenti in docs/.",
+  "scope_note": "Questo indice NON sostituisce i file JSON esistenti: li ORDINA in una struttura narrativa per il lettore-giocatore. Ogni voce punta al file JSON che contiene la regola canonica (la 'casa unica' di quel concetto).",
+  "manual_structure": {
+    "frontespizio": {
+      "title": "Frontespizio",
+      "description": "Apertura del manuale: benvenuto, convenzioni, nozioni base su cosa sia un GdR.",
+      "subsections": [
+        {"name": "Benvenuto in ATB", "brief": "Presentazione del gioco, tono, pubblico target."},
+        {"name": "Come usare questo manuale", "brief": "Convenzioni tipografiche, ordine di lettura consigliato, rimandi alla Guida del Master e agli skin di ambientazione."},
+        {"name": "Cos'è un gioco di ruolo", "brief": "Brevissimo primer per nuovi arrivati — il Cerchio Narrativo, il ruolo del Master, il ruolo dei giocatori."}
+      ]
+    },
+    "parte_I_fondamenti": {
+      "title": "Parte I — Fondamenti",
+      "description": "I concetti che ogni giocatore deve conoscere prima di sedersi al tavolo. Nessuna creazione del personaggio, solo il quadro mentale.",
+      "chapters": [
+        {
+          "chapter": 1,
+          "title": "Il mondo in breve",
+          "brief": "Primer di ambientazione player-facing (~2 pagine). Tono neutro. La lore approfondita è nella Parte IV.",
+          "source_files": ["10_lore_cabalistica/01_cosmologia.json (player-facing excerpt only)"],
+          "new_content_needed": "Estratto breve da creare — non esiste ancora un file player-facing separato."
+        },
+        {
+          "chapter": 2,
+          "title": "Concetti base",
+          "brief": "Architettura 3 Canali, 12 pilastri v3, USP del sistema. Approcci vs Caratteristiche (reframing mindset). I 4 Approcci nominati. Cuori / Vitalità / Cintura ATB a colpo d'occhio.",
+          "source_files": [
+            "01_introduzione/01_concetti_base.json",
+            "02_personaggio/02_approcci.json"
+          ]
+        },
+        {
+          "chapter": 3,
+          "title": "Le carte",
+          "brief": "Anatomia di una carta. Le 3 famiglie: Vitalità, Approccio, Lato Giocatore. Nominated vs bianche. Tag di attivazione.",
+          "source_files": ["01_introduzione/02_anatomia_carte.json"]
+        },
+        {
+          "chapter": 4,
+          "title": "La Cintura ATB",
+          "brief": "Struttura della cintura fluida, risoluzione tick-per-tick, fulmineo.",
+          "source_files": [
+            "04_cintura_atb/01_struttura.json",
+            "04_cintura_atb/02_risoluzione.json",
+            "04_cintura_atb/03_fulmineo.json"
+          ]
+        }
+      ]
+    },
+    "parte_II_creazione_personaggio": {
+      "title": "Parte II — Creazione del Personaggio",
+      "description": "Tutti gli step per costruire un PG completo e giocabile, dalla distribuzione dei punti alla scelta dei Cuori.",
+      "chapters": [
+        {
+          "chapter": 5,
+          "title": "Creazione del PG — Step-by-step",
+          "brief": "I 7 step: Point buy 10 punti, scelta Cuori Nominati, composizione pool, nominated libere, equipaggiamento iniziale, strumenti rapidi, mazzo Vitalità dinamico.",
+          "source_files": ["02_personaggio/05_creazione_pg.json"]
+        },
+        {
+          "chapter": 6,
+          "title": "Cuori Nominati",
+          "brief": "Cos'è un Cuore. Le 3 categorie: Passato / Dottrina / Legami. Come si scelgono, come si feriscono, come si curano. Sblocco delle nominated Heart-linked.",
+          "source_files": [
+            "02_personaggio/04_cuori.json",
+            "02_personaggio/07_catalogo_cuori.json"
+          ]
+        },
+        {
+          "chapter": 7,
+          "title": "Carte Approccio Nominated",
+          "brief": "Struttura della nominated (testo combattimento + tag Situazione). Pool misto nominated/bianche. Slot e ferita. Specializzate vs generiche. Riallineamento e Maturation.",
+          "source_files": [
+            "02_personaggio/03_carte_approccio_nominated.json",
+            "02_personaggio/06_riallineamento_approcci.json",
+            "02_personaggio/08_catalogo_nominated_libere.json"
+          ]
+        },
+        {
+          "chapter": 8,
+          "title": "Area di Gioco",
+          "brief": "I 9 slot fisici (4 Equipaggiamento + 5 Strumenti Rapidi). Layout del tavolo. Disposizione e attivazione delle carte.",
+          "source_files": ["02_personaggio/01_area_gioco.json"]
+        }
+      ]
+    },
+    "parte_III_giocare": {
+      "title": "Parte III — Giocare",
+      "description": "Il cuore operativo del manuale: tutto ciò che succede al tavolo durante una sessione.",
+      "chapters": [
+        {
+          "chapter": 9,
+          "title": "Le 7 Situazioni (non-combat)",
+          "brief": "Framework delle 7 situazioni non di combattimento: Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada. Per ciascuna: definizione, esempi, come usare i 4 Approcci, tabella successo/parziale/fallimento, ruolo delle nominated ibride.",
+          "source_files": ["02_personaggio/09_situazioni.json (DA CREARE)"],
+          "status": "DECISO in sessione di design — non ancora formalizzato in JSON."
+        },
+        {
+          "chapter": 10,
+          "title": "Combattimento",
+          "brief": "Round e Cintura ATB in combate. Tabella Potere (5 tabelle, lettura per riga = Approccio PG). Danno (Standard/Diretto, fisico/magico). Soglia del Vuoto. Difesa (Parata/Blocco/Evasione). Combo cooperative. Round-by-round.",
+          "source_files": [
+            "05_combattimento/01_tabella_potere.json",
+            "05_combattimento/02_danno.json",
+            "05_combattimento/03_soglia_vuoto.json",
+            "05_combattimento/04_difesa.json",
+            "05_combattimento/05_combo.json",
+            "05_combattimento/06_round_combattimento.json"
+          ]
+        },
+        {
+          "chapter": 11,
+          "title": "Magia: Due Vie",
+          "brief": "Overview della magia a due vie. Via della Risonanza (elementale + cura, diretta). Via dell'Analisi (utility + crafting talismani offensivi monouso).",
+          "source_files": [
+            "07_magia/01_magia_due_vie.json",
+            "07_magia/02_risonanza.json",
+            "07_magia/03_analisi_crafting.json"
+          ]
+        },
+        {
+          "chapter": 12,
+          "title": "Equipaggiamento",
+          "brief": "I 4 slot equipaggiamento. Categorie (Arma, Scudo/Doppia, Armatura, Accessorio). Ferita a 2 stadi (potere speciale → distruzione, volontaria). Strumenti Rapidi (5 slot, usa-e-getta).",
+          "source_files": [
+            "06_equipaggiamento/01_slot_attivazione.json",
+            "06_equipaggiamento/02_categorie.json",
+            "06_equipaggiamento/03_ferita_2_stadi.json",
+            "06_equipaggiamento/04_stumenti_rapidi.json"
+          ]
+        },
+        {
+          "chapter": 13,
+          "title": "Vitalità e Scarti",
+          "brief": "Mazzo Vitalità Dinamico (60 carte, composizione che muta coi riallineamenti). Distribuzione Asimmetrica per Livello. Mano di 5. Giocare coperta/scoperta. Pila Scarti. Esaurimento.",
+          "source_files": [
+            "03_vitalita/01_mazzo_vitalita.json",
+            "03_vitalita/02_giocare_vitalita.json",
+            "03_vitalita/03_pila_scarti.json",
+            "03_vitalita/04_esaurimento.json"
+          ]
+        },
+        {
+          "chapter": 14,
+          "title": "Riposo e Cura",
+          "brief": "Cure asimmetriche lato giocatore: Vitalità veloce / Approccio medio / Cuori lento. Riposo breve vs riposo lungo.",
+          "source_files": ["09_riposo_cura/01_cure_asimmetriche.json"]
+        }
+      ]
+    },
+    "parte_IV_riferimenti": {
+      "title": "Parte IV — Riferimenti",
+      "description": "Materiali di consultazione rapida durante il gioco e dopo la creazione del PG.",
+      "chapters": [
+        {
+          "chapter": 15,
+          "title": "Glossario",
+          "brief": "Tutti i termini ATB in ordine alfabetico. Esclude termini rimossi (Caratteristica, Materie, Esper, Evasione) — segnalati come legacy.",
+          "source_files": ["00_indice.json → glossary_neutral"]
+        },
+        {
+          "chapter": 16,
+          "title": "Tabelle riepilogative",
+          "brief": "Tabella Potere (5 tabelle), tabella Danno (Standard/Diretto), tabella Slot (9 slot), tabella Combo (Apertura/Sviluppo/Chiusura/Culmine), tabella Cure (velocità per categoria).",
+          "source_files": [
+            "05_combattimento/01_tabella_potere.json",
+            "05_combattimento/02_danno.json",
+            "05_combattimento/05_combo.json",
+            "09_riposo_cura/01_cure_asimmetriche.json"
+          ]
+        },
+        {
+          "chapter": 17,
+          "title": "Scheda Personaggio",
+          "brief": "Template compilabile della scheda PG. Sezioni: Approcci, Cuori, Pool nominated, Equipaggiamento, Strumenti Rapidi, Mazzo Vitalità, Ferite.",
+          "source_files": ["02_personaggio/05_creazione_pg.json (riferimento struttura)"],
+          "new_content_needed": "Template grafico scheda PG da creare in formato stampabile."
+        },
+        {
+          "chapter": 18,
+          "title": "Lore approfondita",
+          "brief": "Estratto player-facing dalla Cosmologia, Shevirat HaKelim, Rivelazione Progressiva. Per giocatori curiosi che vogliono approfondire il setting senza consultare la Guida del Master.",
+          "source_files": [
+            "10_lore_cabalistica/01_cosmologia.json",
+            "10_lore_cabalistica/02_shevirat_hakelim.json",
+            "10_lore_cabalistica/04_rivelazione_progressiva.json",
+            "10_lore_cabalistica/05_mappatura_terminologica.json",
+            "10_lore_cabalistica/06_paradosso_sacrificio.json"
+          ]
+        }
+      ]
+    }
+  },
+  "exclusions_from_player_manual": {
+    "note": "Questi argomenti NON compaiono nel Manuale del Giocatore. Vivono nella Guida del Master (Canale 2) o negli skin di ambientazione (Canale 3).",
+    "channel_2_master_only": [
+      "08_nemici/01_scheda_universale.json — Costruzione scheda nemico",
+      "08_nemici/02_tre_tier.json — Tier Base/Elite/Epico",
+      "08_nemici/03_tratti.json — Tratti nemici e loro distruzione",
+      "08_nemici/04_attacchi_speciali.json — Attacchi speciali",
+      "08_nemici/05_token_bluff.json — Token bluff (5 coperti)",
+      "08_nemici/06_boss_atb.json — Boss ATB con potere 9",
+      "08_nemici/07_ricompense.json — Tabelle ricompense",
+      "10_lore_cabalistica/03_qliphoth.json — Lore profonda (Conseguenze/Qliphoth) — GM-only"
+    ],
+    "channel_3_lore_deep": [
+      "Lore Qliphoth come consequenza narrativa di distruzione equipaggiamento",
+      "Master tips su paradosso del sacrificio"
+    ]
+  },
+  "open_work_for_player_manual": [
+    "Creare file player-facing primer di ambientazione (~2 pagine) per Capitolo 1 — estratto da 10_lore_cabalistica/01_cosmologia.json",
+    "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 9 (DECISO, da scrivere)",
+    "Validare modello nominated ibride (testo combattimento + tag Situazione) in 02_personaggio/03_carte_approccio_nominated.json per Capitolo 7",
+    "Template grafico scheda PG per Capitolo 17 (formato stampabile)"
+  ],
+  "mapping_to_existing_index": {
+    "note": "Questo file (00_manuale_giocatore/indice.json) è diverso da 00_indice.json. 00_indice.json è il MANIFEST TECNICO del progetto (architettura, versioni, Open Questions, design evolution). Questo file è l'INDICE NARRATIVO per il lettore-giocatore.",
+    "relationship": "COMPLEMENTARE — non in conflitto. Il manifest tecnico rimane la fonte canonica per versioni e stato di completamento; questo indice narra l'ordine di lettura."
+  },
+  "backup_protocol": {
+    "method": "Auto-push su GitHub",
+    "repository": "https://github.com/vastios/ATB",
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione",
+    "note": "NO PUSH finché l'utente non dà l'ordine esplicito."
+  }
+}
