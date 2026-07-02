@@ -1,11 +1,11 @@
 {
   "section_id": "MG-00",
   "section_name": "ATB — Manuale del Giocatore (Indice)",
-  "version": "1.0",
+  "version": "1.1",
   "architecture_version": "v3.1",
   "last_updated": "2026-07-02",
   "channel": "CANALE 1 — Manuale del Giocatore",
-  "description": "Indice ufficiale del Manuale del Giocatore ATB. È il documento che organizza i file JSON esistenti in un percorso leggibile per il giocatore, dal primer fino ai riferimenti rapidi. Esclude tutto ciò che è GM-only (Canale 2 — Guida del Master) e la lore profonda (Canale 3 — Manuali Ambientazione). Ogni voce dell'indice mappa a uno o più file JSON esistenti in docs/.",
+  "description": "Indice ufficiale del Manuale del Giocatore ATB. È il documento che organizza i file JSON esistenti in un percorso leggibile per il giocatore, dal frontespizio fino ai riferimenti rapidi. Il manuale è SKIN-AGNOSTIC: contiene SOLO meccaniche pure. TUTTA la lore (incluso il primer di ambientazione) vive nei manuali ambientazione (Canale 3). Esclude anche tutto ciò che è GM-only (Canale 2 — Guida del Master). Ogni voce dell'indice mappa a uno o più file JSON esistenti in docs/.",
   "scope_note": "Questo indice NON sostituisce i file JSON esistenti: li ORDINA in una struttura narrativa per il lettore-giocatore. Ogni voce punta al file JSON che contiene la regola canonica (la 'casa unica' di quel concetto).",
   "manual_structure": {
     "frontespizio": {
@@ -19,17 +19,10 @@
     },
     "parte_I_fondamenti": {
       "title": "Parte I — Fondamenti",
-      "description": "I concetti che ogni giocatore deve conoscere prima di sedersi al tavolo. Nessuna creazione del personaggio, solo il quadro mentale.",
+      "description": "I concetti che ogni giocatore deve conoscere prima di sedersi al tavolo. Nessuna creazione del personaggio, solo il quadro mentale. ATB è skin-agnostic: questa parte contiene SOLO meccaniche pure, zero lore. La lore vive nei manuali ambientazione (Canale 3).",
       "chapters": [
         {
           "chapter": 1,
-          "title": "Il mondo in breve",
-          "brief": "Primer di ambientazione player-facing (~2 pagine). Tono neutro. La lore approfondita è nella Parte IV.",
-          "source_files": ["10_lore_cabalistica/01_cosmologia.json (player-facing excerpt only)"],
-          "new_content_needed": "Estratto breve da creare — non esiste ancora un file player-facing separato."
-        },
-        {
-          "chapter": 2,
           "title": "Concetti base",
           "brief": "Architettura 3 Canali, 12 pilastri v3, USP del sistema. Approcci vs Caratteristiche (reframing mindset). I 4 Approcci nominati. Cuori / Vitalità / Cintura ATB a colpo d'occhio.",
           "source_files": [
@@ -38,13 +31,13 @@
           ]
         },
         {
-          "chapter": 3,
+          "chapter": 2,
           "title": "Le carte",
           "brief": "Anatomia di una carta. Le 3 famiglie: Vitalità, Approccio, Lato Giocatore. Nominated vs bianche. Tag di attivazione.",
           "source_files": ["01_introduzione/02_anatomia_carte.json"]
         },
         {
-          "chapter": 4,
+          "chapter": 3,
           "title": "La Cintura ATB",
           "brief": "Struttura della cintura fluida, risoluzione tick-per-tick, fulmineo.",
           "source_files": [
@@ -60,13 +53,13 @@
       "description": "Tutti gli step per costruire un PG completo e giocabile, dalla distribuzione dei punti alla scelta dei Cuori.",
       "chapters": [
         {
-          "chapter": 5,
+          "chapter": 4,
           "title": "Creazione del PG — Step-by-step",
           "brief": "I 7 step: Point buy 10 punti, scelta Cuori Nominati, composizione pool, nominated libere, equipaggiamento iniziale, strumenti rapidi, mazzo Vitalità dinamico.",
           "source_files": ["02_personaggio/05_creazione_pg.json"]
         },
         {
-          "chapter": 6,
+          "chapter": 5,
           "title": "Cuori Nominati",
           "brief": "Cos'è un Cuore. Le 3 categorie: Passato / Dottrina / Legami. Come si scelgono, come si feriscono, come si curano. Sblocco delle nominated Heart-linked.",
           "source_files": [
@@ -75,7 +68,7 @@
           ]
         },
         {
-          "chapter": 7,
+          "chapter": 6,
           "title": "Carte Approccio Nominated",
           "brief": "Struttura della nominated (testo combattimento + tag Situazione). Pool misto nominated/bianche. Slot e ferita. Specializzate vs generiche. Riallineamento e Maturation.",
           "source_files": [
@@ -85,7 +78,7 @@
           ]
         },
         {
-          "chapter": 8,
+          "chapter": 7,
           "title": "Area di Gioco",
           "brief": "I 9 slot fisici (4 Equipaggiamento + 5 Strumenti Rapidi). Layout del tavolo. Disposizione e attivazione delle carte.",
           "source_files": ["02_personaggio/01_area_gioco.json"]
@@ -94,17 +87,17 @@
     },
     "parte_III_giocare": {
       "title": "Parte III — Giocare",
-      "description": "Il cuore operativo del manuale: tutto ciò che succede al tavolo durante una sessione.",
+      "description": "Il cuore operativo del manuale: tutto ciò che succede al tavolo durante una sessione. SOLO meccaniche pure, zero lore.",
       "chapters": [
         {
-          "chapter": 9,
+          "chapter": 8,
           "title": "Le 7 Situazioni (non-combat)",
           "brief": "Framework delle 7 situazioni non di combattimento: Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada. Per ciascuna: definizione, esempi, come usare i 4 Approcci, tabella successo/parziale/fallimento, ruolo delle nominated ibride.",
           "source_files": ["02_personaggio/09_situazioni.json (DA CREARE)"],
           "status": "DECISO in sessione di design — non ancora formalizzato in JSON."
         },
         {
-          "chapter": 10,
+          "chapter": 9,
           "title": "Combattimento",
           "brief": "Round e Cintura ATB in combate. Tabella Potere (5 tabelle, lettura per riga = Approccio PG). Danno (Standard/Diretto, fisico/magico). Soglia del Vuoto. Difesa (Parata/Blocco/Evasione). Combo cooperative. Round-by-round.",
           "source_files": [
@@ -117,7 +110,7 @@
           ]
         },
         {
-          "chapter": 11,
+          "chapter": 10,
           "title": "Magia: Due Vie",
           "brief": "Overview della magia a due vie. Via della Risonanza (elementale + cura, diretta). Via dell'Analisi (utility + crafting talismani offensivi monouso).",
           "source_files": [
@@ -127,7 +120,7 @@
           ]
         },
         {
-          "chapter": 12,
+          "chapter": 11,
           "title": "Equipaggiamento",
           "brief": "I 4 slot equipaggiamento. Categorie (Arma, Scudo/Doppia, Armatura, Accessorio). Ferita a 2 stadi (potere speciale → distruzione, volontaria). Strumenti Rapidi (5 slot, usa-e-getta).",
           "source_files": [
@@ -138,7 +131,7 @@
           ]
         },
         {
-          "chapter": 13,
+          "chapter": 12,
           "title": "Vitalità e Scarti",
           "brief": "Mazzo Vitalità Dinamico (60 carte, composizione che muta coi riallineamenti). Distribuzione Asimmetrica per Livello. Mano di 5. Giocare coperta/scoperta. Pila Scarti. Esaurimento.",
           "source_files": [
@@ -149,7 +142,7 @@
           ]
         },
         {
-          "chapter": 14,
+          "chapter": 13,
           "title": "Riposo e Cura",
           "brief": "Cure asimmetriche lato giocatore: Vitalità veloce / Approccio medio / Cuori lento. Riposo breve vs riposo lungo.",
           "source_files": ["09_riposo_cura/01_cure_asimmetriche.json"]
@@ -158,16 +151,16 @@
     },
     "parte_IV_riferimenti": {
       "title": "Parte IV — Riferimenti",
-      "description": "Materiali di consultazione rapida durante il gioco e dopo la creazione del PG.",
+      "description": "Materiali di consultazione rapida durante il gioco. SOLO meccaniche pure, zero lore. La lore approfondita vive nel Canale 3 (manuali ambientazione).",
       "chapters": [
         {
-          "chapter": 15,
+          "chapter": 14,
           "title": "Glossario",
           "brief": "Tutti i termini ATB in ordine alfabetico. Esclude termini rimossi (Caratteristica, Materie, Esper, Evasione) — segnalati come legacy.",
           "source_files": ["00_indice.json → glossary_neutral"]
         },
         {
-          "chapter": 16,
+          "chapter": 15,
           "title": "Tabelle riepilogative",
           "brief": "Tabella Potere (5 tabelle), tabella Danno (Standard/Diretto), tabella Slot (9 slot), tabella Combo (Apertura/Sviluppo/Chiusura/Culmine), tabella Cure (velocità per categoria).",
           "source_files": [
@@ -178,7 +171,7 @@
           ]
         },
         {
-          "chapter": 17,
+          "chapter": 16,
           "title": "Tracker di Tavolo",
           "brief": "Tracker accessori per gestire ciò che le carte non rappresentano: Cintura ATB (striscia numerata + segnalini per ciascun PG e token nemici), segnalini temporanei (bonus/penalità di round, condizioni), inventario non-card (monete, note narrative, chiavi, documenti). ATB è card-based puro: il personaggio STA SUL TAVOLO, non su una scheda.",
           "source_files": [
@@ -186,18 +179,6 @@
             "02_personaggio/01_area_gioco.json (riferimento zone di gioco)"
           ],
           "design_note": "Refraime del vecchio Capitolo 17 'Scheda Personaggio' — in ATB non esiste scheda PG separata: il tavolo è la scheda."
-        },
-        {
-          "chapter": 18,
-          "title": "Lore approfondita",
-          "brief": "Estratto player-facing dalla Cosmologia, Shevirat HaKelim, Rivelazione Progressiva. Per giocatori curiosi che vogliono approfondire il setting senza consultare la Guida del Master.",
-          "source_files": [
-            "10_lore_cabalistica/01_cosmologia.json",
-            "10_lore_cabalistica/02_shevirat_hakelim.json",
-            "10_lore_cabalistica/04_rivelazione_progressiva.json",
-            "10_lore_cabalistica/05_mappatura_terminologica.json",
-            "10_lore_cabalistica/06_paradosso_sacrificio.json"
-          ]
         }
       ]
     }
@@ -216,14 +197,14 @@
     ],
     "channel_3_lore_deep": [
       "Lore Qliphoth come consequenza narrativa di distruzione equipaggiamento",
-      "Master tips su paradosso del sacrificio"
+      "Master tips su paradosso del sacrificio",
+      "TUTTA la lore cabalistica (cosmologia, Quattro Mondi, Shevirat HaKelim, Rivelazione Progressiva) — vive nei manuali ambientazione Canale 3, non qui. Incluso il primer player-facing che in precedenza era pianificato come Capitolo 1."
     ]
   },
   "open_work_for_player_manual": [
-    "Creare file player-facing primer di ambientazione (~2 pagine) per Capitolo 1 — estratto da 10_lore_cabalistica/01_cosmologia.json",
-    "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 9 (DECISO, da scrivere)",
-    "Validare modello nominated ibride (testo combattimento + tag Situazione) in 02_personaggio/03_carte_approccio_nominated.json per Capitolo 7",
-    "Template grafico tracker di tavolo per Capitolo 17 (Cintura ATB stampabile + segnalini condizioni + mini-tracker inventario non-card)"
+    "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 8 (DECISO, da scrivere)",
+    "Validare modello nominated ibride (testo combattimento + tag Situazione) in 02_personaggio/03_carte_approccio_nominated.json per Capitolo 6",
+    "Template grafico tracker di tavolo per Capitolo 16 (Cintura ATB stampabile + segnalini condizioni + mini-tracker inventario non-card)"
   ],
   "mapping_to_existing_index": {
     "note": "Questo file (00_manuale_giocatore/indice.json) è diverso da 00_indice.json. 00_indice.json è il MANIFEST TECNICO del progetto (architettura, versioni, Open Questions, design evolution). Questo file è l'INDICE NARRATIVO per il lettore-giocatore.",
