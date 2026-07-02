@@ -25,8 +25,8 @@
     "come_usare_questo_manuale": {
       "title": "Come usare questo manuale",
       "paragraphs": [
-        "Il manuale è organizzato in quattro parti progressive. La Parte I (Fondamenti) ti introduce ai concetti che devi conoscere prima di sederti al tavolo: i 4 Approcci, le tre famiglie di carte, e come funziona la Cintura ATB. La Parte II (Creazione del Personaggio) ti guida passo-passo nella costruzione del tuo PG, dalla distribuzione dei punti fino alla scelta dei Cuori e delle nominated. La Parte III (Giocare) è il cuore operativo: le 7 Situazioni non di combattimento, il combattimento, la magia, l'equipaggiamento, la Vitalità e il riposo. La Parte IV (Riferimenti) raccoglie glossario, tabelle riepilogative, la scheda PG e un estratto di lore approfondita per chi vuole spingersi oltre.",
-        "Puoi leggere il manuale in ordine la prima volta, ma è stato progettato anche per la consultazione rapida: ogni capitolo è autonomo e rimanda agli altri tramite cross-riferimenti espliciti. In sessione ti basterà tenere aperti i capitoli della Parte III e il glossario della Parte IV. La scheda PG stampabile è pensata per stare sul tavolo accanto alle tue carte.",
+        "Il manuale è organizzato in quattro parti progressive. La Parte I (Fondamenti) ti introduce ai concetti che devi conoscere prima di sederti al tavolo: i 4 Approcci, le tre famiglie di carte, e come funziona la Cintura ATB. La Parte II (Creazione del Personaggio) ti guida passo-passo nella costruzione del tuo PG, dalla distribuzione dei punti fino alla scelta dei Cuori e delle nominated. La Parte III (Giocare) è il cuore operativo: le 7 Situazioni non di combattimento, il combattimento, la magia, l'equipaggiamento, la Vitalità e il riposo. La Parte IV (Riferimenti) raccoglie glossario, tabelle riepilogative, il tracker di tavolo e un estratto di lore approfondita per chi vuole spingersi oltre.",
+        "Puoi leggere il manuale in ordine la prima volta, ma è stato progettato anche per la consultazione rapida: ogni capitolo è autonomo e rimanda agli altri tramite cross-riferimenti espliciti. In sessione ti basterà tenere aperti i capitoli della Parte III e il glossario della Parte IV. Il tuo personaggio non sta su una scheda: STA SUL TAVOLO, sotto forma di carte disposte nelle tue zone di gioco.",
         "Questo manuale non vive isolato. Fa parte di un'architettura a tre canali: il Canale 1 (questo manuale) contiene le meccaniche pure; il Canale 2 (Guida del Master) contiene la gestione della sessione, la creazione dei nemici e il bilanciamento; il Canale 3 (manuali 'skin') contiene le ambientazioni che vestono le meccaniche senza alterarle. Se ti serve qualcosa che non è qui, probabilmente è in uno degli altri due canali."
       ],
       "convenzioni_tipografiche": {
@@ -43,8 +43,7 @@
         "title": "Altri manuali",
         "items": [
           "Guida del Master (Canale 2) — Creazione nemici, gestione sessione, bilanciamento, master tips. Leggi se fai tu da Master.",
-          "Manuali Skin (Canale 3) — Ambientazioni che vestono le meccaniche. La prima disponibile è 'Cabalistica'.",
-          "Scheda PG stampabile — Template compilabile, Parte IV del manuale."
+          "Manuali Skin (Canale 3) — Ambientazioni che vestono le meccaniche. La prima disponibile è 'Cabalistica'."
         ]
       }
     },
@@ -54,7 +53,7 @@
       "paragraphs": [
         "Un gioco di ruolo è una conversazione strutturata tra un Master (che descrive il mondo, interpreta i PNG e arbitra le regole) e uno o più giocatori (che interpretano ciascuno un personaggio, il PG). Il gruppo racconta collettivamente una storia: il Master pone le situazioni, i giocatori dichiarano cosa fanno i loro PG, le regole traducono le dichiarazioni in esiti.",
         "ATB usa carte fisiche invece di dadi per risolvere le azioni. Le carte che hai in mano e sul tavolo rappresentano la tua energia, le tue mosse disponibili e il tuo equipaggiamento. Giocare una carta è sempre una scelta: quale energia spendere, quale potere attivare, quando attendere il tick giusto nella Cintura ATB.",
-        "Per giocare ad ATB ti servono: questo manuale, una copia stampata della scheda PG per ciascun giocatore, un mazzo di Carte Vitalità e un set di Carte Approccio per ciascun PG, le Carte Lato Giocatore (Equipaggiamento + Strumenti Rapidi), e un tracker visibile per la Cintura ATB (una striscia di carta numerata è sufficiente). Tutto il resto è narrazione."
+        "Per giocare ad ATB ti servono: questo manuale, un mazzo di Carte Vitalità e un set di Carte Approccio per ciascun PG, le Carte Lato Giocatore (Equipaggiamento + Strumenti Rapidi), e un tracker visibile per la Cintura ATB (una striscia di carta numerata è sufficiente). Il tuo personaggio è già tutto sul tavolo: non esiste 'scheda PG' separata da compilare. Tutto il resto è narrazione."
       ]
     }
   },

@@ -179,10 +179,13 @@
         },
         {
           "chapter": 17,
-          "title": "Scheda Personaggio",
-          "brief": "Template compilabile della scheda PG. Sezioni: Approcci, Cuori, Pool nominated, Equipaggiamento, Strumenti Rapidi, Mazzo Vitalità, Ferite.",
-          "source_files": ["02_personaggio/05_creazione_pg.json (riferimento struttura)"],
-          "new_content_needed": "Template grafico scheda PG da creare in formato stampabile."
+          "title": "Tracker di Tavolo",
+          "brief": "Tracker accessori per gestire ciò che le carte non rappresentano: Cintura ATB (striscia numerata + segnalini per ciascun PG e token nemici), segnalini temporanei (bonus/penalità di round, condizioni), inventario non-card (monete, note narrative, chiavi, documenti). ATB è card-based puro: il personaggio STA SUL TAVOLO, non su una scheda.",
+          "source_files": [
+            "04_cintura_atb/01_struttura.json (riferimento Cintura ATB)",
+            "02_personaggio/01_area_gioco.json (riferimento zone di gioco)"
+          ],
+          "design_note": "Refraime del vecchio Capitolo 17 'Scheda Personaggio' — in ATB non esiste scheda PG separata: il tavolo è la scheda."
         },
         {
           "chapter": 18,
@@ -220,7 +223,7 @@
     "Creare file player-facing primer di ambientazione (~2 pagine) per Capitolo 1 — estratto da 10_lore_cabalistica/01_cosmologia.json",
     "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 9 (DECISO, da scrivere)",
     "Validare modello nominated ibride (testo combattimento + tag Situazione) in 02_personaggio/03_carte_approccio_nominated.json per Capitolo 7",
-    "Template grafico scheda PG per Capitolo 17 (formato stampabile)"
+    "Template grafico tracker di tavolo per Capitolo 17 (Cintura ATB stampabile + segnalini condizioni + mini-tracker inventario non-card)"
   ],
   "mapping_to_existing_index": {
     "note": "Questo file (00_manuale_giocatore/indice.json) è diverso da 00_indice.json. 00_indice.json è il MANIFEST TECNICO del progetto (architettura, versioni, Open Questions, design evolution). Questo file è l'INDICE NARRATIVO per il lettore-giocatore.",
