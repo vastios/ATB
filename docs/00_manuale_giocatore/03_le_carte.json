@@ -1,0 +1,223 @@
+{
+  "section_id": "MG-03",
+  "section_name": "Capitolo 2 — Le carte",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "last_updated": "2026-07-03",
+  "chapter_number": 2,
+  "chapter_title": "Le carte",
+  "design_decisions": {
+    "relazione_con_source_files": "B — Nuovo file player-facing che estrae e riorganizza il contenuto dei source files esistenti (01_introduzione/02_anatomia_carte.json e 02_personaggio/01_area_gioco.json per le zone, ma solo come rimando). I source files restano come reference canonica per designer.",
+    "changelog_v2_v3": "C — Omesso totalmente. Il giocatore non conosce v2 e non ha bisogno di sapere cosa è stato rimosso. Il sistema si presenta così com'è.",
+    "struttura_sezionale": "C — Ibrido: anatomia di una carta → 3 famiglie dettagliate una a una → meccaniche trasversali (Flip, Tag, Tabella Potere come cenno).",
+    "nominated_vs_bianche": "A — Sezione autonoma (2.6) che spiega il pool misto in dettaglio, perché è concetto centrale per Cap.6.",
+    "flip_universale": "A — Sezione autonoma (2.7) con box riassuntivo per tipo di carta. Il punto forte del design è che LA STESSA meccanica vale per tutte le carte feribili.",
+    "tabella_potere": "B — Definita concettualmente qui (1 paragrafo + box), regole operative al Cap.9 (Combattimento).",
+    "zone_di_gioco": "B — Solo nominato con rimando al Cap.7 (Area di Gioco). Qui parliamo delle carte, non della loro disposizione sul tavolo.",
+    "tono": "B — Stesso Frontespizio e Cap.1: cordiale, seconda persona ('tu'), zero lore."
+  },
+  "content": {
+    "intro": {
+      "title": "Capitolo 2 — Le carte",
+      "paragraphs": [
+        "In ATB tutto ciò che il tuo personaggio è, ha o fa sta sul tavolo sotto forma di carte. Non esiste scheda separata da compilare: il tavolo è la scheda. Questo capitolo ti spiega cosa sono fisicamente le carte, come sono fatte, quali famiglie esistono, e quali meccaniche trasversali le attraversano. Le regole operative complete su come si giocano le carte in situazione di combattimento arriveranno al Capitolo 9; qui impari l'anatomia e la grammatica di base.",
+        "Una carta ATB non è un oggetto passivo che 'resta lì': è una risorsa che consumi, una chiave che attivi, una mossa che decidi di compiere. Le carte si girano (Flip Universale), si scartano, si attivano combinandosi con altre. Capire la struttura di una carta è capire cosa puoi fare al tavolo — e perché certe combinazioni funzionano e altre no. Il resto del manuale assume che tu abbia interiorizzato questa grammatica."
+      ]
+    },
+    "sezione_2_1_cosa_e_una_carta": {
+      "title": "2.1 Cos'è una carta",
+      "paragraphs": [
+        "Una carta ATB è un rettangolo di carta pesante con un fronte e un dorso. Il fronte mostra la carta nel suo stato attivo: il nome, il simbolo della famiglia di appartenenza, gli eventuali poteri o tag, e l'illustrazione. Il dorso mostra la STESSA immagine del fronte, ma in scala di grigi o colori sbiaditi — è il segnale visivo unificato che indica 'questa carta è ferita, usurata o disattivata'. Girare una carta sul dorso è l'azione fisica che corrisponde a un cambio di stato.",
+        "Le carte si dividono in tre grandi famiglie, ciascuna con un ruolo diverso: le Carte Vitalità (energia + chiavi di attivazione), le Carte Approccio (catalogo delle mosse del PG), e le Carte Lato Giocatore (oggetti fisici: Equipaggiamento e Strumenti Rapidi). A queste si aggiungono le Carte Cuore, che sono un caso speciale perché rappresentano l'essenza profonda del personaggio e vivono accanto alle Carte Approccio nella stessa zona del tavolo.",
+        "Quello che cambia tra le famiglie non è la forma fisica della carta, ma cosa ci fai. Le Vitalità le giochi dalla mano per attivare poteri o pagare costi temporali. Le Carte Approccio stanno ferme sul tavolo come un catalogo da cui attingi: non le 'peschi' nel senso classico, le attivi quando una Vitalità scoperta le chiama. Le Carte Lato Giocatore occupano slot fissi e si attivano come le nominated quando una Vitalità le chiama, ma possono anche essere ferite volontariamente per innescare poteri speciali. Le Carte Cuore, infine, non si 'giocano' mai: sono indicatori di essenza che si girano solo quando subisci un danno profondo."
+      ]
+    },
+    "sezione_2_2_le_3_famiglie": {
+      "title": "2.2 Le 3 famiglie (a colpo d'occhio)",
+      "paragraphs": [
+        "Prima di entrare nel dettaglio di ciascuna famiglia, ecco una mappa d'insieme. Sul tavolo di un PG trovi sempre tre blocchi di carte fisiche, ciascuno con una funzione distinta. Le Carte Vitalità stanno a sinistra o sotto (mazzo + pila scarti + mano di 5): sono la tua energia. Le Carte Approccio stanno al centro in 4 linee, una per Approccio: sono il tuo catalogo di mosse. Le Carte Lato Giocatore stanno a destra (4 slot Equipaggiamento + 5 slot Strumenti Rapidi): sono i tuoi oggetti fisici.",
+        "Il principio che tiene insieme le tre famiglie è questo: le Vitalità forniscono l'energia e le chiavi, le nominated ospitano i poteri, le Carte Lato Giocatore forniscono poteri fisici aggiuntivi. Nessuna famiglia basta da sola. Un PG senza nominated è un PG senza mosse; un PG senza Vitalità è un PG senza energia per attivarle; un PG senza Equipaggiamento è un PG senza difese fisiche. Il gioco nasce dall'incastro delle tre famiglie."
+      ],
+      "box_3_famiglie_ricap": {
+        "title": "Le 3 famiglie in breve",
+        "items": [
+          "Famiglia 1 — Carte Vitalità (60 nel mazzo, 5 in mano): energia + chiavi di attivazione (tag) + Tabella del Potere stampata.",
+          "Famiglia 2 — Carte Approccio (10 sul tavolo): catalogo delle mosse del PG. Pool misto nominated (con abilità/magie) + bianche (segnaposto).",
+          "Famiglia 3 — Carte Lato Giocatore (9 slot totali): Equipaggiamento (4 slot fissi) + Strumenti Rapidi (5 slot usa-e-getta).",
+          "Caso speciale — Carte Cuore (3 sul tavolo): essenza profonda del PG, ordine di ferita obbligato 1→2→3. Si girano solo quando subisci un colpo che scegli di assorbire con un Cuore."
+        ]
+      }
+    },
+    "sezione_2_3_famiglia_1_vitalita": {
+      "title": "2.3 Famiglia 1 — Carte Vitalità",
+      "paragraphs": [
+        "Le Carte Vitalità sono la tua riserva di energia. Il mazzo è composto esattamente da 60 carte, e la sua composizione è PROPORZIONALE ai valori dei tuoi Approcci: se hai Impeto 3, avrai 18 carte Impeto nel mazzo (3 × 6). Questo significa che ogni Riallineamento degli Approcci modifica anche la composizione del mazzo Vitalità, e che un Approccio ferito influenza indirettamente la probabilità di pescare carte di quel colore.",
+        "Ogni Carta Vitalità ha quattro componenti fisici. Il Costo Tempo (T1-T5) indica quanto fa avanzare il tuo segnalino sulla Cintura ATB quando la giochi. Il Colore Approccio (Impeto=Rosso, Analisi=Giallo, Istinto=Blu, Risonanza=Verde) è un riferimento visivo: NON limita quali poteri puoi attivare, ma ti dice a quale Approccio la carta è associata. I Tag di Attivazione (in numero uguale al Costo Tempo: T1 = 1 tag, T5 = 5 tag) sono le chiavi che ti permettono di attivare poteri da nominated, Equipaggiamento o Strumenti Rapidi compatibili. La Tabella del Potere stampata sulla carta (5 righe × 2 colonne) determina il Potere base dell'azione che stai compiendo.",
+        "Le Carte Vitalità si giocano in due modi. Giocata SCOPERTA: attiva un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG, e legge la Tabella del Potere alla riga corrispondente al tuo Approccio attuale. Giocata COPERTA: paga solo il costo in tempo, non attiva nulla. È pura energia di sostenimento — la usi quando non vuoi spendere un potere, ma vuoi avanzare nella Cintura ATB per raggiungere un momento tattico favorevole.",
+        "Una regola aurea da fissare subito: i tag stanno SOLO sulle Vitalità, non sulle Carte Approccio nominated né sulle Carte Lato Giocatore. È la Vitalità che chiama; è la nominated (o l'Equipaggiamento, o lo Strumento) che risponde. Se invertissi la logica — ovvero se fossero le nominated a esibire i tag — il sistema collasserebbe, perché ogni nominated dovrebbe elencare tutti i tag possibili che la attivano. Invece così è la singola Vitalità a dichiarare, una volta per tutte, quali poteri sta chiamando in causa."
+      ],
+      "box_vitalita_ricap": {
+        "title": "Carta Vitalità — anatomia",
+        "items": [
+          "Costo Tempo (T1-T5) — slot ATB sulla Cintura.",
+          "Colore Approccio (Impeto=Rosso, Analisi=Giallo, Istinto=Blu, Risonanza=Verde) — visivo, NON limita.",
+          "Tag di Attivazione (T=1 → 1 tag, T=5 → 5 tag) — chiavi per attivare poteri.",
+          "Tabella del Potere stampata (5 righe × 2 colonne) — letta alla riga = tuo Approccio.",
+          "Modalità di gioco: SCOPERTA (attiva + paga tempo) / COPERTA (paga solo tempo)."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 3 (La Cintura ATB) per la risoluzione tick-per-tick del Costo Tempo.",
+        "Vedi Capitolo 9 (Combattimento → Tabella Potere) per le regole operative complete della lettura.",
+        "Vedi Capitolo 12 (Vitalità e Scarti) per Mazzo Dinamico, mano, pila scarti ed esaurimento."
+      ]
+    },
+    "sezione_2_4_famiglia_2_approccio": {
+      "title": "2.4 Famiglia 2 — Carte Approccio",
+      "paragraphs": [
+        "Le Carte Approccio sono il catalogo delle tue mosse. Il valore di un Approccio (1-5) ti dice quante carte fisiche hai sul tavolo per quell'Approccio: se hai Impeto 3, hai 3 carte Impeto fisiche in fila. La somma dei valori dei 4 Approcci è sempre 10 alla creazione, quindi hai 10 carte Approccio totali sul tavolo all'inizio della vita del PG. Questo numero può crescere nel tempo attraverso la Maturation (carte bianche che diventano nominated) ma la struttura di base resta: 4 linee orizzontali, una per Approccio, disposte al centro del tuo tavolo.",
+        "Di queste 10 carte, alcune sono NOMINATED (hanno un nome proprio, un'illustrazione, e ospitano abilità o magie specifiche) e altre sono BIANCHE (segnaposto senza testo, che rappresentano il tuo potenziale di crescita). La proporzione tra nominated e bianche dipende dalla tua fase di creazione del PG e dalla sua storia: un PG appena creato ha più bianche, un PG con molti successi narrativi alle spalle ha più nominated. Vediamo il modello del pool misto in dettaglio nella sezione 2.6.",
+        "Quando giochi una Vitalità scoperta con i tag giusti, attivi un potere da una delle tue nominated compatibile. La nominated non si consuma: resta sul tavolo e può essere richiamata ancora, a patto che tu abbia una Vitalità con i tag giusti da giocare. Questo significa che le nominated sono 'firme tattiche' — mosse che puoi ripetere — e non risorse usa-e-getta. Quello che si consuma è la Vitalità, non la nominated.",
+        "Le Carte Approccio nominated possono essere FERITE: giri la carta sul dorso. Il valore di quell'Approccio si abbassa di 1 per la durata della ferita (e questo influenza la riga che leggi nella Tabella del Potere stampata sulle Vitalità), e tutte le abilità della nominated ferita si disattivano finché non guarisce. Esiste una via per riattivarle temporaneamente: una Vitalità con tag [Ferita] permette di usare le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata, dando una breve finestra di efficacia nonostante il danno subito. Vediamo la Meccanica Flip in dettaglio nella sezione 2.7."
+      ],
+      "box_approccio_ricap": {
+        "title": "Carta Approccio — anatomia",
+        "items": [
+          "Nome proprio (se nominated) — niente nome se bianca.",
+          "Approccio di appartenenza (Impeto/Istinto/Analisi/Risonanza) + colore.",
+          "Slot di Potere (3 abilità per nominated) — tema e potenza crescente.",
+          "Tag di Situazione (solo nominated ibride) — rimando al Capitolo 6 e Capitolo 8.",
+          "Stato: INTATTA (fronte) o FERITA (dorso). Ferita = -1 al valore Approccio + abilità disattivate."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 6 (Carte Approccio Nominated) per il pool misto, i tipi di nominated e il Riallineamento.",
+        "Vedi Capitolo 4 (Creazione del PG) per la composizione iniziale del pool.",
+        "Vedi Capitolo 9 (Combattimento → Danno) per le regole operative della ferita."
+      ]
+    },
+    "sezione_2_5_famiglia_3_lato_giocatore": {
+      "title": "2.5 Famiglia 3 — Carte Lato Giocatore",
+      "paragraphs": [
+        "Le Carte Lato Giocatore sono i tuoi oggetti fisici: occupano 9 slot totali divisi in due gruppi. I primi 4 slot sono l'EQUIPAGGIAMENTO, fisso e strutturato: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio. I restanti 5 slot sono gli STRUMENTI RAPIDI, usa-e-getta: ospitano oggetti trovati (pozioni, grimaldelli, bende) e talismani offensivi monouso craftati da Analisi durante i riposi. La distinzione è netta: l'Equipaggiamento è stabile e dà poteri ricorrenti, gli Strumenti Rapidi si consumano.",
+        "Anche le Carte Lato Giocatore possono essere attivate tramite i tag di una Vitalità scoperta, esattamente come le nominated: la Vitalità chiama, l'oggetto risponde. La differenza è che le Carte Lato Giocatore hanno poteri più 'fisici' e immediati (un colpo d'arma, un blocco di scudo, un assorbimento di armatura, un bonus di accessorio) rispetto alle nominated che tendono a ospitare firme tattiche più complesse (abilità speciali, magie, combo).",
+        "L'aspetto più distintivo delle Carte Lato Giocatore è la FERITA A 2 STADI, volontaria. Quando scegli di ferire il tuo Equipaggiamento per assorbire un danno (è una delle tre opzioni del Dilemma del Guerriero, alternativa a ferire un Approccio o un Cuore), la carta va al primo stadio: si gira sul dorso, e questo ATTIVA UN POTERE SPECIALE che l'oggetto possiede solo nello stato usurato. Se l'Equipaggiamento viene ferito una seconda volta, è DISTRUTTO: esce dal tavolo e perdi l'oggetto. La ferita a 2 stadi è quindi una risorsa tattica, non solo un danno — molti PG costruiscono la propria strategia sull'attivazione deliberata di poteri speciali di Equipaggiamento usurato."
+      ],
+      "box_lato_giocatore_ricap": {
+        "title": "Carta Lato Giocatore — anatomia",
+        "items": [
+          "Nome e categoria (Arma / Scudo-Doppia / Armatura / Accessorio / Strumento Rapido).",
+          "Poteri attivi (fronte intatto) — attivabili tramite tag di una Vitalità scoperta.",
+          "Poteri speciali (dorso usurato) — si attivano al 1° ferimento volontario.",
+          "Stato: INTATTO → USURATO (1° ferimento, attiva potere speciale) → DISTRUTTO (2° ferimento, esce dal tavolo).",
+          "Equipaggiamento (4 slot): stabile, poteri ricorrenti. Strumenti Rapidi (5 slot): monouso, si consumano all'attivazione."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 11 (Equipaggiamento) per slot, categorie, ferita a 2 stadi e Strumenti Rapidi.",
+        "Vedi Capitolo 7 (Area di Gioco) per la disposizione fisica delle carte Lato Giocatore sul tavolo.",
+        "Vedi Capitolo 9 (Combattimento → Danno) per la scelta tattica di ferire l'Equipaggiamento nel Dilemma del Guerriero."
+      ]
+    },
+    "sezione_2_6_nominated_vs_bianche": {
+      "title": "2.6 Nominated vs bianche",
+      "paragraphs": [
+        "Il pool di Carte Approccio di un PG non è uniforme: è un pool MISTO in cui convivono carte nominated e carte bianche. Le NOMINATED hanno un nome proprio, un'illustrazione, e ospitano abilità o magie specifiche: sono la 'firma' del tuo personaggio, le mosse che hai imparato e che sai ripetere. Le BIANCHE sono segnaposto senza testo: rappresentano il tuo potenziale di crescita, lo spazio dove in futuro si materializzerà una nuova nominated.",
+        "La proporzione tra nominated e bianche evolve nel tempo. Alla creazione del PG hai un mix deciso in fase di point-buy (vedi Capitolo 4): alcuni Approcci sono già dichiarati con nominated, altri restano bianchi in attesa di sviluppo. Quando vivi successi narrativi significativi, una carta bianca può essere sostituita da una nominated attraverso la Maturation: scegli (con il Master) quale nominated farsi entrare in quel slot, in coerente con la storia che hai raccontato al tavolo. Al contrario, quando vivi fallimenti o crisi, il Riallineamento può spostare punti tra Approcci — e questo può comportare che nominated vadano girate o temporaneamente disattivate.",
+        "Le nominated si dividono in due grandi tipi. Le SPECIALIZZATE ospitano 3 abilità in TEMA tra loro, con potenza crescente sbloccata dal valore dell'Approccio: sono più potenti (le abilità sinergizzano) ma meno versatili (coprono un solo tema tattico). Le GENERICHE ospitano 3 abilità DIVERSE tra loro, tutte disponibili a basso livello: sono meno potenti (nessuna sinergia tematica) ma più versatili (coprono più situazioni). La scelta tra specializzate e generiche è una scelta di identità del PG — vuoi essere 'il mago del fuoco' (specializzata) o 'colui che sa fare un po' di tutto' (generica)?",
+        "Esiste una terza categoria, trasversale: le NOMINATED IBRIDE. Sono nominated che ospitano sia testo di combattimento (abilità e/o magie utilizzabili in scontro) sia un tag di Situazione (uno dei 7 contesti non-combat che vedremo nel Capitolo 8). Questo significa che la stessa carta ti dà un potere in combattimento E un'opzione nelle situazioni esplorative/sociali. Le nominated ibride sono il ponte tra il sistema card-based di ATB e il framework delle 7 Situazioni, e sono essenziali per PG che vogliono essere efficaci sia dentro che fuori dal combattimento."
+      ],
+      "box_nominated_bianche_ricap": {
+        "title": "Pool misto — tipi di carte",
+        "items": [
+          "BIANCHE — Segnaposto senza testo. Rappresentano potenziale di crescita. Sostituibili con nominated via Maturation.",
+          "NOMINATED SPECIALIZZATE — 3 abilità in tema, potenza crescente col valore Approccio. Più potenti, meno versatili.",
+          "NOMINATED GENERICHE — 3 abilità diverse, tutte disponibili a basso livello. Più versatili, meno potenti.",
+          "NOMINATED IBRIDE — Testo combattimento + tag di Situazione. Attive sia in combate sia nelle 7 Situazioni non-combat."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 4 (Creazione del PG) per il mix iniziale nominated/bianche.",
+        "Vedi Capitolo 6 (Carte Approccio Nominated) per Riallineamento, Maturation e catalogo delle nominated libere.",
+        "Vedi Capitolo 8 (Le 7 Situazioni) per il ruolo delle nominated ibride fuori dal combattimento."
+      ]
+    },
+    "sezione_2_7_flip_universale": {
+      "title": "2.7 La Meccanica Flip Universale",
+      "paragraphs": [
+        "C'è una meccanica che attraversa TUTTE le carte feribili di ATB, ed è la stessa identica azione fisica: GIRARE LA CARTA sul dorso. Il fronte mostra la carta nel suo stato PRISTINO (colori vivi, oggetto intatto, abilità attive); il dorso mostra la STESSA illustrazione in SCALA DI GRIGI o COLORI SBIADITI (linguaggio visivo unificato per 'questa carta è ferita, usurata o disattivata'). Questa uniformità non è estetica: è didattica. Il giocatore non deve imparare tre meccaniche diverse per tre tipi di carta — impara UNA meccanica che vale per tutto.",
+        "Il significato del flip cambia in base alla famiglia della carta, ma la struttura è sempre la stessa: passi da uno stato attivo a uno stato compromesso, e questo comporta perdita di funzionalità e/o attivazione di un potere speciale. Per le Carte Approccio nominated, il flip indica FERITA: il valore dell'Approccio si abbassa di 1, e tutte le abilità della nominated si disattivano (con l'eccezione del tag [Ferita] sulle Vitalità che permette di riattivarle temporaneamente). Per le Carte Cuore, il flip indica FERITA DEL CUORE: ti avvicini alla morte, e l'ordine di ferita è obbligato (Cuore 1 → Cuore 2 → Cuore 3). Quando tutti e 3 i Cuori sono girati, il PG muore.",
+        "Per le Carte Lato Giocatore (Equipaggiamento), il flip ha una struttura a 2 STADI volontaria. Il primo flip porta la carta allo stato USURATO: attiva il potere speciale che l'oggetto possiede solo in quello stato (è una risorsa tattica deliberata, non una conseguenza subita). Il secondo flip DISTRUGGE l'oggetto: esce dal tavolo. La ferita a 2 stadi è quindi una meccanica di scelta — sei TU a decidere se e quando ferire l'Equipaggiamento, e questa scelta è una delle tre opzioni del Dilemma del Guerriero.",
+        "L'eleganza del Flip Universale sta in questo: ti permette di leggere lo stato del tavolo a colpo d'occhio. Se vedi carte in scala di grigi davanti a un PG, sai che è ferito in punti specifici. Se vedi una carta Cuore girata, sai che è a un terzo della morte. Se vedi un Equipaggiamento usurato, sai che ha attivato il suo potere speciale e che un'altra ferita lo distruggerebbe. La memoria tattica è esterna, sul tavolo — non devi tenerla a mente."
+      ],
+      "box_flip_ricap": {
+        "title": "Meccanica Flip Universale — cosa significa per tipo",
+        "items": [
+          "Carta Approccio nominated FERITA: valore Approccio -1, abilità disattivate (riattivabili con tag [Ferita] sulle Vitalità).",
+          "Carta Cuore FERITA: ti avvicini alla morte. Ordine obbligato 1 → 2 → 3. Tre Cuori feriti = morte del PG.",
+          "Carta Equipaggiamento USURATA (1° flip volontario): attiva il potere speciale. DISTRUTTA (2° flip): esce dal tavolo.",
+          "Strumenti Rapidi: non si flippano, si consumano (escono dal tavolo all'attivazione)."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 9 (Combattimento → Danno) per le regole operative del danno e della scelta di cosa ferire.",
+        "Vedi Capitolo 5 (Cuori Nominati) per l'ordine di ferita obbligato e le regole di cura dei Cuori.",
+        "Vedi Capitolo 11 (Equipaggiamento → Ferita a 2 stadi) per i poteri speciali dell'usura.",
+        "Vedi Capitolo 13 (Riposo e Cura) per le velocità asimmetriche di cura: Vitalità veloce, Approcci medio, Cuori lento."
+      ]
+    },
+    "sezione_2_8_tag_di_attivazione": {
+      "title": "2.8 Tag di attivazione",
+      "paragraphs": [
+        "I tag di attivazione sono il cuore della sintassi di ATB. Sono piccole etichette stampate sulle Carte Vitalità, e la regola aurea è questa: il NUMERO di tag su una Vitalità è UGUALE al suo Costo Tempo. Una Vitalità T1 ha 1 tag; una T2 ha 2 tag; una T5 ha 5 tag. Più tempo paghi, più chiavi hai per attivare poteri complessi. È una relazione lineare, elegante, immediatamente leggibile guardando la carta.",
+        "Una seconda regola aurea, altrettanto importante: i tag stanno SOLO sulle Carte Vitalità. Non sulle nominated. Non sull'Equipaggiamento. Non sugli Strumenti Rapidi. È sempre la Vitalità che chiama; è sempre la nominated (o l'Equipaggiamento, o lo Strumento) che risponde. Questa asimmetria è voluta: se i tag stessero anche sulle nominated, ogni nominated dovrebbe elencare tutti i tag che la attivano, e il sistema diventerebbe una matrice dispersiva. Invece così, una singola Vitalità dichiara quali poteri sta chiamando in causa — una sola volta, una sola direzione.",
+        "Quando giochi una Vitalità scoperta, i suoi tag ti dicono quali poteri puoi attivare dal tuo tavolo. Puoi attivare UN potere da una nominated compatibile, OPPURE un potere da un Equipaggiamento compatibile, OPPURE un potere da uno Strumento Rapido compatibile. La scelta è tua, e fa parte della tattica: a seconda della situazione, potresti preferire l'abilità della nominated (più potente, ma non consuma la carta) o lo Strumento Rapido (più debole, ma si consuma e ti libera dello slot). I tag sono la sintassi; la tua scelta è la semantica.",
+        "Esiste un tag speciale, [Ferita], che merita un cenno: quando una Vitalità con tag [Ferita] viene giocata scoperta, può riattivare temporaneamente le abilità di UNA sola carta Approccio ferita dello stesso colore della Vitalità. È una via di uscita tattica dal penalty della ferita — una breve finestra di efficacia nonostante il danno subito. Non è una cura: la nominated resta ferita, e guarirà solo con il riposo adeguato. Ma in mezzo a un combattimento, poter riattivare per un turno l'abilità chiave di una tua nominated girata può ribaltare lo scontro."
+      ],
+      "box_tag_ricap": {
+        "title": "Tag di attivazione — regole auree",
+        "items": [
+          "Numero tag = Costo Tempo (T1=1 tag, T5=5 tag).",
+          "Tag stanno SOLO sulle Carte Vitalità. Mai su nominated, Equipaggiamento, Strumenti.",
+          "La Vitalità chiama; la nominated/Equipaggiamento/Strumento risponde.",
+          "Tag speciale [Ferita]: riattiva temporaneamente le abilità di UNA nominated ferita dello stesso colore."
+        ]
+      },
+      "cross_references": [
+        "Vedi Capitolo 9 (Combattimento → Tabella Potere) per come i tag si combinano con la lettura della Tabella.",
+        "Vedi Capitolo 12 (Vitalità e Scarti) per la composizione del mazzo e la distribuzione dei tag per T.",
+        "Vedi Capitolo 11 (Equipaggiamento) per come gli oggetti rispondono ai tag.",
+        "Vedi Capitolo 10 (Magia) per come le nominated di Risonanza e Analisi rispondono ai tag."
+      ]
+    }
+  },
+  "cross_references": [
+    "Capitolo 3 — La Cintura ATB (struttura e risoluzione del Costo Tempo)",
+    "Capitolo 4 — Creazione del PG (composizione iniziale del pool di carte)",
+    "Capitolo 5 — Cuori Nominati (anatomia dei Cuori, ordine di ferita, cura)",
+    "Capitolo 6 — Carte Approccio Nominated (pool misto, Riallineamento, Maturation, ibride)",
+    "Capitolo 7 — Area di Gioco (disposizione fisica delle carte in 4 zone)",
+    "Capitolo 8 — Le 7 Situazioni (ruolo delle nominated ibride fuori dal combattimento)",
+    "Capitolo 9 — Combattimento (Tabella Potere, Danno, Dilemma del Guerriero operativo)",
+    "Capitolo 10 — Magia: Due Vie (nominated di Risonanza e Analisi)",
+    "Capitolo 11 — Equipaggiamento (slot, categorie, ferita a 2 stadi, Strumenti Rapidi)",
+    "Capitolo 12 — Vitalità e Scarti (Mazzo Dinamico, mano, pila scarti, esaurimento)",
+    "Capitolo 13 — Riposo e Cura (velocità asimmetriche di cura per famiglia)"
+  ],
+  "scope_constraints": {
+    "lore_level": "ZERO — nessun termine di ambientazione. La menzione 'Rosso/Blu/Giallo/Verde' per i colori degli Approcci è puramente meccanica.",
+    "mechanics_depth": "Anatomia e grammatica di base. Nessuna regola operativa completa — tutto rimanda ai capitoli dedicati. La Tabella del Potere è definita concettualmente, non operativamente.",
+    "audience_assumption": "Il lettore ha letto il Frontespizio e il Capitolo 1 (Concetti base). Conosce già i nomi delle 3 famiglie, i 4 Approcci, il Dilemma del Guerriero. Qui acquisisce l'anatomia dettagliata delle carte."
+  },
+  "source_files_referenced": [
+    "01_introduzione/02_anatomia_carte.json (anatomia 3 famiglie, Flip Universale, tag, Tabella Potere)",
+    "02_personaggio/01_area_gioco.json (zone di gioco — non dettagliate qui, rimandate a Cap.7)"
+  ],
+  "backup_protocol": {
+    "method": "Auto-push su GitHub",
+    "repository": "https://github.com/vastios/ATB",
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione",
+    "note": "NO PUSH finché l'utente non dà l'ordine esplicito."
+  }
+}
