@@ -18,6 +18,7 @@ FILES = [
     ("02_concetti_base.json", "cap1"),
     ("03_le_carte.json", "cap2"),
     ("04_la_cintura_atb.json", "cap3"),
+    ("05_creazione_pg.json", "cap4"),
 ]
 OUTPUT_HTML = REPO_ROOT / "builds" / "ATB_Manuale_Giocatore_Parte_I.html"
 
