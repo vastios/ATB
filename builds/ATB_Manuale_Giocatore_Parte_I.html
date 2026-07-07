@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>ATB — Manuale del Giocatore · Parte I — Fondamenti</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+@page {
+    size: A4;
+    margin: 2cm 2cm 2cm 2cm;
+}
+:root {
+    --c-bg:           #ffffff;
+    --c-bg-alt:       #fafafa;
+    --c-surface:      #f5f5f5;
+    --c-surface-2:    #efefef;
+    --c-text:         #1a1a1a;
+    --c-text-strong:  #000000;
+    --c-muted:        #666666;
+    --c-accent:       #8B4513;
+    --c-accent-dim:   #a0522d;
+    --c-border:       #cccccc;
+    --c-border-dim:   #e5e5e5;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: 'Source Serif Pro', Georgia, serif;
+    font-size: 11.5pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+@media screen {
+    html {
+        background: #e0e0e0;
+        display: flex;
+        justify-content: center;
+    }
+    body {
+        margin: 20px auto;
+        box-shadow: 0 0 40px rgba(0,0,0,0.15);
+        width: 21cm;
+    }
+}
+
+/* ==================== COVER ==================== */
+.cover {
+    box-sizing: border-box;
+    background: var(--c-bg);
+    position: relative;
+    overflow: hidden;
+    break-after: page;
+    padding: 1cm 0 1cm 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 24cm;
+}
+.cover-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cover-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.3em;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.cover-roman {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 14pt;
+    font-style: italic;
+    color: var(--c-muted);
+    letter-spacing: 0.2em;
+}
+.cover-center {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 4cm;
+}
+.cover-acronym {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 120pt;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--c-text-strong);
+    margin: 0;
+}
+.cover-acronym .accent {
+    color: var(--c-accent);
+}
+.cover-tagline {
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-size: 14pt;
+    color: var(--c-muted);
+    margin-top: 24px;
+    max-width: 460px;
+    line-height: 1.5;
+}
+.cover-title-block {
+    margin-top: 56px;
+    position: relative;
+}
+.cover-title-block::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--c-accent);
+    margin-bottom: 22px;
+}
+.cover-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 26pt;
+    color: var(--c-text-strong);
+    letter-spacing: -0.01em;
+    margin: 0;
+    line-height: 1.1;
+}
+.cover-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13pt;
+    color: var(--c-muted);
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+}
+.cover-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3cm;
+}
+.cover-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: var(--c-muted);
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+}
+.cover-meta .label {
+    color: var(--c-accent);
+    text-transform: uppercase;
+    font-size: 7.5pt;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+.cover-version {
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    color: var(--c-muted);
+    text-align: right;
+    letter-spacing: 0.1em;
+}
+.cover-version .v-num {
+    color: var(--c-accent);
+    font-weight: 600;
+    font-size: 10pt;
+}
+
+/* ==================== TOC PAGE ==================== */
+.toc-page {
+    break-before: page;
+    break-after: page;
+    padding: 0;
+}
+.toc-header {
+    margin-bottom: 28px;
+}
+.toc-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28pt;
+    color: var(--c-text-strong);
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.1;
+}
+.toc-list {
+    margin-top: 18px;
+}
+.toc-entry {
+    display: flex;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--c-border-dim);
+}
+.toc-entry:last-child {
+    border-bottom: none;
+}
+.toc-chapter {
+    margin-top: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--c-border);
+}
+.toc-chapter:first-child {
+    margin-top: 0;
+}
+.toc-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    width: 110px;
+    flex-shrink: 0;
+}
+.toc-chapter .toc-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--c-text-strong);
+}
+.toc-sub {
+    padding-left: 110px;
+}
+.toc-sub .toc-name {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 10.5pt;
+    font-weight: 400;
+    color: var(--c-text);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+    padding: 0;
+}
+
+.chapter {
+    margin-top: 0;
+}
+.chapter + .chapter {
+    margin-top: 36px;
+    border-top: 1px solid var(--c-border-dim);
+    padding-top: 36px;
+}
+
+.chapter-header {
+    break-after: avoid;
+    break-inside: avoid;
+    margin-bottom: 28px;
+}
+.chapter-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.3em;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.chapter-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 28pt;
+    color: var(--c-text-strong);
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.1;
+}
+.frontespizio-header .chapter-tag {
+    color: var(--c-muted);
+}
+.chapter-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--c-accent) 0%, var(--c-accent) 60px, var(--c-border) 60px, var(--c-border) 100%);
+    margin-top: 18px;
+}
+
+/* ==================== SUBSECTIONS ==================== */
+.subsection-title, .intro-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14.5pt;
+    color: var(--c-text-strong);
+    letter-spacing: -0.005em;
+    margin: 26px 0 0 0;
+    line-height: 1.25;
+    break-after: avoid;
+}
+.subsection-title.first-in-chapter {
+    margin-top: 6px;
+}
+.intro-title {
+    color: var(--c-accent);
+    font-style: italic;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 13pt;
+    font-weight: 400;
+}
+.subsection-divider {
+    height: 1px;
+    background: var(--c-border-dim);
+    margin: 8px 0 14px 0;
+    width: 40px;
+}
+
+/* ==================== BODY TEXT ==================== */
+.body-text {
+    margin: 0 0 12px 0;
+    color: var(--c-text);
+    text-align: left;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+}
+.body-text + .body-text {
+    margin-top: 0;
+}
+
+/* ==================== RECAP BOXES (in breve) ==================== */
+.recap-box {
+    background: var(--c-surface);
+    border-left: 3px solid var(--c-accent);
+    padding: 14px 18px;
+    margin: 18px 0 18px 0;
+    break-inside: avoid;
+    border-radius: 0 4px 4px 0;
+}
+.box-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 9.5pt;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+}
+.box-list {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--c-text);
+    font-size: 10pt;
+    line-height: 1.55;
+}
+.box-list li {
+    margin-bottom: 5px;
+}
+.box-list li:last-child {
+    margin-bottom: 0;
+}
+.box-paragraph {
+    margin: 0;
+    font-size: 10pt;
+    color: var(--c-text);
+    line-height: 1.55;
+}
+
+/* ==================== USP LIST ==================== */
+.usp-list {
+    margin: 20px 0;
+}
+.usp-item {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-dim);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+.usp-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--c-text-strong);
+    margin-bottom: 4px;
+}
+.usp-num {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    background: var(--c-accent);
+    color: var(--c-bg);
+    border-radius: 50%;
+    font-size: 9pt;
+    font-weight: 700;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.usp-desc {
+    font-size: 10.5pt;
+    color: var(--c-text);
+    line-height: 1.55;
+    padding-left: 30px;
+}
+
+/* ==================== CROSS REFERENCES BOX ==================== */
+.cross-refs-box {
+    background: var(--c-surface-2);
+    border: 1px solid var(--c-border-dim);
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 16px 0 22px 0;
+    break-inside: avoid;
+}
+.cross-refs-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--c-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+}
+.cross-refs-list {
+    margin: 0;
+    padding-left: 16px;
+    color: var(--c-muted);
+    font-size: 9.5pt;
+    line-height: 1.55;
+}
+.cross-refs-list li {
+    margin-bottom: 3px;
+}
+.cross-refs-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================== ENDING ==================== */
+.ending {
+    margin-top: 40px;
+    padding: 30px 0 10px 0;
+    border-top: 1px solid var(--c-border-dim);
+    break-before: avoid;
+    break-inside: avoid;
+}
+.ending-mark {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+.ending-text {
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--c-muted);
+    line-height: 1.6;
+    max-width: 500px;
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+    <div class="cover-top">
+        <div class="cover-badge">Canale 1 · Meccaniche pure</div>
+        <div class="cover-roman">— I —</div>
+    </div>
+    <div class="cover-center">
+        <div class="cover-acronym">A<span class="accent">T</span>B</div>
+        <div class="cover-tagline">Active Time Battle. Un GdR card-based dove ogni colpo subito ti costringe a scegliere cosa cedere.</div>
+        <div class="cover-title-block">
+            <div class="cover-title">Manuale del Giocatore</div>
+            <div class="cover-subtitle">Parte I — Fondamenti · Capitoli 1–3</div>
+        </div>
+    </div>
+    <div class="cover-bottom">
+        <div class="cover-meta">
+            <span class="label">In questo volume</span>
+            Frontespizio · Concetti base · Le carte · La Cintura ATB
+        </div>
+        <div class="cover-version">
+            <div class="v-num">v1.0</div>
+            <div>Luglio 2026</div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC -->
+<section class="toc-page">
+<div class="toc-header">
+<div class="chapter-tag">Indice</div>
+<h2 class="toc-title">Indice</h2>
+<div class="chapter-divider"></div>
+</div>
+<div class="toc-list">
+<div class="toc-entry toc-chapter">
+<span class="toc-label">Frontespizio</span>
+<span class="toc-name">Frontespizio — Benvenuto in ATB</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">Benvenuto in ATB</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">Come usare questo manuale</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">Cos'è un gioco di ruolo (box breve)</span>
+</div>
+<div class="toc-entry toc-chapter">
+<span class="toc-label">Capitolo 1</span>
+<span class="toc-name">Concetti base</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">1.1 Cos'è ATB (e cosa non è)</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">1.2 L'architettura a 3 canali</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">1.3 I 4 Approcci</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">1.4 Le 3 famiglie di carte (a colpo d'occhio)</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">1.5 Il Dilemma del Guerriero</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">Cosa rende ATB diverso (USP core)</span>
+</div>
+<div class="toc-entry toc-chapter">
+<span class="toc-label">Capitolo 2</span>
+<span class="toc-name">Le carte</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.1 Cos'è una carta</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.2 Le 3 famiglie (a colpo d'occhio)</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.3 Famiglia 1 — Carte Vitalità</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.4 Famiglia 2 — Carte Approccio</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.5 Famiglia 3 — Carte Lato Giocatore</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.6 Nominated vs bianche</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.7 La Meccanica Flip Universale</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">2.8 Tag di attivazione</span>
+</div>
+<div class="toc-entry toc-chapter">
+<span class="toc-label">Capitolo 3</span>
+<span class="toc-name">La Cintura ATB</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.1 La riga fluida (non la griglia fissa)</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.2 Continuità Temporale Assoluta</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.3 Risoluzione tick-per-tick</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.4 Controlli combo e difesa ad ogni tick</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.5 La meccanica [Fulmineo]</span>
+</div>
+<div class="toc-entry toc-sub">
+<span class="toc-name">3.6 Esempio guidato: un round completo</span>
+</div>
+</div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+<section class="chapter"><div class="chapter-header frontespizio-header">
+<div class="chapter-tag">Frontespizio</div>
+<h2 class="chapter-title">Frontespizio — Benvenuto in ATB</h2>
+<div class="chapter-divider"></div>
+</div>
+<h3 class="subsection-title first-in-chapter">Benvenuto in ATB</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">ATB è un gioco di ruolo da tavolo costruito attorno a un'idea semplice ma esigente: ogni colpo subito ti costringe a scegliere cosa cedere. Non esiste 'subire danno e basta'. Quando il pericolo ti raggiunge, devi sempre decidere se consumare la tua riserva di energia (il Mazzo Vitalità), se ferire il modo in cui affronti il mondo (un tuo Approccio) o se sacrificare qualcosa di più profondo (uno dei tuoi Cuori). Questo triplo bivio è il cuore del sistema, e lo chiamiamo Dilemma del Guerriero.</p>
+<p class="body-text">Il gioco si gioca con carte fisiche sul tavolo, distribuite in tre famiglie: Carte Vitalità (la tua energia e le chiavi per attivare i poteri), Carte Approccio (il catalogo delle tue mosse, di cui alcune nominated con nome e abilità proprie) e Carte Lato Giocatore (Equipaggiamento e Strumenti Rapidi). Sopra tutte queste carte scorre la Cintura ATB, una linea temporale fluida che regola i turni senza griglia fissa: ognuno traccia la propria riga, e il tempo non si ferma mai.</p>
+<p class="body-text">Questo manuale contiene tutto ciò che ti serve per creare un personaggio e portarlo al tavolo. Non troverai qui la lore del setting né le regole per il Master: le prime vivono nei manuali di ambientazione (le 'skin'), le seconde nella Guida del Master. Qui trovi solo meccaniche pure, nella loro forma neutra e giocabile con qualsiasi ambientazione tu scelga.</p>
+<h3 class="subsection-title">Come usare questo manuale</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Il manuale è organizzato in quattro parti progressive. La Parte I (Fondamenti) ti introduce ai concetti che devi conoscere prima di sederti al tavolo: i 4 Approcci, le tre famiglie di carte, e come funziona la Cintura ATB. La Parte II (Creazione del Personaggio) ti guida passo-passo nella costruzione del tuo PG, dalla distribuzione dei punti fino alla scelta dei Cuori e delle nominated. La Parte III (Giocare) è il cuore operativo: le 7 Situazioni non di combattimento, il combattimento, la magia, l'equipaggiamento, la Vitalità e il riposo. La Parte IV (Riferimenti) raccoglie glossario, tabelle riepilogative e il tracker di tavolo.</p>
+<p class="body-text">Puoi leggere il manuale in ordine la prima volta, ma è stato progettato anche per la consultazione rapida: ogni capitolo è autonomo e rimanda agli altri tramite cross-riferimenti espliciti. In sessione ti basterà tenere aperti i capitoli della Parte III e il glossario della Parte IV. Il tuo personaggio non sta su una scheda: STA SUL TAVOLO, sotto forma di carte disposte nelle tue zone di gioco.</p>
+<p class="body-text">Questo manuale non vive isolato. Fa parte di un'architettura a tre canali: il Canale 1 (questo manuale) contiene le meccaniche pure; il Canale 2 (Guida del Master) contiene la gestione della sessione, la creazione dei nemici e il bilanciamento; il Canale 3 (manuali 'skin') contiene le ambientazioni che vestono le meccaniche senza alterarle. Se ti serve qualcosa che non è qui, probabilmente è in uno degli altri due canali.</p>
+<div class="recap-box">
+<div class="box-title">Altri manuali</div>
+<ul class="box-list">
+<li>Guida del Master (Canale 2) — Creazione nemici, gestione sessione, bilanciamento, master tips. Leggi se fai tu da Master.</li>
+<li>Manuali Skin (Canale 3) — Ambientazioni che vestono le meccaniche. La prima disponibile è 'Cabalistica'.</li>
+</ul>
+</div>
+<h3 class="subsection-title">Cos'è un gioco di ruolo (box breve)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Un gioco di ruolo è una conversazione strutturata tra un Master (che descrive il mondo, interpreta i PNG e arbitra le regole) e uno o più giocatori (che interpretano ciascuno un personaggio, il PG). Il gruppo racconta collettivamente una storia: il Master pone le situazioni, i giocatori dichiarano cosa fanno i loro PG, le regole traducono le dichiarazioni in esiti.</p>
+<p class="body-text">ATB usa carte fisiche invece di dadi per risolvere le azioni. Le carte che hai in mano e sul tavolo rappresentano la tua energia, le tue mosse disponibili e il tuo equipaggiamento. Giocare una carta è sempre una scelta: quale energia spendere, quale potere attivare, quando attendere il tick giusto nella Cintura ATB.</p>
+<p class="body-text">Per giocare ad ATB ti servono: questo manuale, un mazzo di Carte Vitalità e un set di Carte Approccio per ciascun PG, le Carte Lato Giocatore (Equipaggiamento + Strumenti Rapidi), e un tracker visibile per la Cintura ATB (una striscia di carta numerata è sufficiente). Il tuo personaggio è già tutto sul tavolo: non esiste 'scheda PG' separata da compilare. Tutto il resto è narrazione.</p>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Capitolo 1 — Concetti base (per le USP complete e i 4 Approcci)</li>
+<li>00_indice.json — Manifest tecnico del progetto (per designer, non per giocatori)</li>
+<li>00_manuale_giocatore/indice.json — Indice narrativo del Manuale del Giocatore</li>
+<li>Manuali ambientazione Canale 3 (per il primer di ambientazione e la lore profonda — NON in questo manuale)</li>
+</ul>
+</div></section>
+<section class="chapter"><div class="chapter-header">
+<div class="chapter-tag">Capitolo 1</div>
+<h2 class="chapter-title">Concetti base</h2>
+<div class="chapter-divider"></div>
+</div>
+<h3 class="intro-title">Capitolo 1 — Concetti base</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Questo capitolo ti dà il quadro mentale entro cui tutto il resto del manuale acquisisce senso. Non impari ancora regole operative — quelle arrivano dalla Parte II in poi. Qui impari quali sono i pezzi in tavola, come si chiamano, e perché ATB è costruito in questo modo. Se ti viene voglia di saltare avanti perché vuoi 'già giocare', resisti: senza questi concetti, le regole concrete ti sembreranno arbitrarie. Con questi concetti, ogni regola ti apparirà come la conseguenza naturale di un'idea di fondo.</p>
+<p class="body-text">Le idee di fondo sono tre. Primo: il tuo personaggio non è una scheda con numeri, è un insieme di carte sul tavolo. Secondo: quando subisci un colpo, scegli tu cosa cedere — e questa scelta è il cuore del gioco. Terzo: le meccaniche pure sono separate dalla lore, così puoi giocare ATB con qualsiasi ambientazione tu voglia. Tutto il resto del manuale sviluppa queste tre idee.</p>
+<h3 class="subsection-title first-in-chapter">1.1 Cos'è ATB (e cosa non è)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">ATB è un GdR card-based: le azioni si risolvono con carte fisiche, non con tiri di dado. Le carte che hai sul tavolo rappresentano la tua energia, le tue mosse disponibili e il tuo equipaggiamento. Giocare una carta è sempre una scelta — quale energia spendere, quale potere attivare, quando attendere il momento giusto nella linea temporale condivisa.</p>
+<p class="body-text">ATB non è un GdR 'a classi' (non scegli 'guerriero' o 'mago' all'inizio e poi resti fermo lì). Il tuo personaggio è definito da 4 Approcci — mindset che puoi ricalibrare nel tempo attraverso il Riallineamento. La crescita non è 'divento più forte in assoluto', ma 'evolvo il mio modo di affrontare le cose'. Una somma fissa di 10 punti tra i 4 Approcci significa che ogni PG è bilanciato alla partenza; ciò che cambia è la distribuzione.</p>
+<p class="body-text">ATB non è un GdR 'simulationista'. Le regole non cercano di modellare la realtà fisica con realismo: cercano di creare situazioni di gioco tese, significative, cariche di scelta. Quando una meccanica sembra astratta (la Cintura ATB, la Tabella Potere, il Dilemma del Guerriero), non è perché manchi di profondità — è perché è costruita per generare decisioni interessanti al tavolo, non per simulare la fisica del mondo.</p>
+<h3 class="subsection-title">1.2 L'architettura a 3 canali</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">ATB è diviso in tre canali indipendenti. Il Canale 1 è questo Manuale del Giocatore: contiene le meccaniche pure, con terminologia neutra, giocabili con qualsiasi ambientazione. Il Canale 2 è la Guida del Master: contiene la gestione della sessione, la creazione dei nemici, il bilanciamento. Il Canale 3 sono i manuali 'skin' di ambientazione: vestono le meccaniche con la lore senza alterarle. La prima skin disponibile è 'Cabalistica'; altre skin future (Alchimia Ermetica, Taoismo, Fisica Quantistica) vestiranno le stesse meccaniche con cornici narrative diverse.</p>
+<p class="body-text">Perché questa separazione? Perché ti permette di imparare le regole una volta sola e poi giocarle in mondi diversi. Le meccaniche del Canale 1 sono il 'motore'; le skin del Canale 3 sono la 'carrozzeria'. Un PG costruito con le regole del Canale 1 funziona in qualsiasi skin — semplicemente, i suoi Approcci e i suoi Cuori avranno nomi e significati diversi a seconda dell'ambientazione che avete scelto.</p>
+<p class="body-text">Questo manuale contiene SOLO Canale 1. Non troverai lore del setting (è nel Canale 3) né regole per il Master (sono nel Canale 2). Se ti serve qualcosa che non è qui, probabilmente è in uno degli altri due canali. Questa separazione non è un limite: è una garanzia che il sistema è modulare e replicabile.</p>
+<div class="recap-box">
+<div class="box-title">I 3 canali in breve</div>
+<ul class="box-list">
+<li>Canale 1 — Manuale del Giocatore (questo manuale): meccaniche pure, zero lore.</li>
+<li>Canale 2 — Guida del Master: gestione sessione, nemici, bilanciamento, master tips.</li>
+<li>Canale 3 — Manuali Ambientazione (skin): lore che veste le meccaniche. Prima disponibile: 'Cabalistica'.</li>
+</ul>
+</div>
+<h3 class="subsection-title">1.3 I 4 Approcci</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Il tuo personaggio è definito da 4 Approcci: Impeto, Istinto, Analisi, Risonanza. Un Approccio non è un tratto innato (quanto sei forte, quanto sei intelligente) — è il modo in cui il PG sceglie di affrontare il mondo. Gli Approcci possono mutare nel corso della vita del PG: le ferite, i fallimenti, le crisi narrative lo portano a ricalibrare il proprio mindset. Questa è la svolta concettuale della versione 3.1 di ATB, e la differenza più importante rispetto ai GdR classici.</p>
+<p class="body-text">I 4 Approcci si organizzano in 2 assi tematici. L'asse AGIRE raccoglie Impeto (Rosso, irruenza proattiva — mi butto) e Istinto (Blu, reazione — rispondo a quello che succede). L'asse COMPRENDERE raccoglie Analisi (Giallo, studio e metodo — smonto e deduco) e Risonanza (Verde, empatia e connessione — sento e comprendo attraverso il sentire). Entrambi gli assi sono modi legittimi di stare al mondo: nessuno è superiore all'altro, e la 'scelta di asse' è essa stessa una scelta di mindset.</p>
+<p class="body-text">Ogni Approccio ha un valore da 1 a 5. La somma dei 4 valori è SEMPRE 10 alla creazione del PG. Quel valore determina tre cose simultaneamente: quante Carte Approccio fisiche hai sul tavolo per quell'Approccio, quale riga leggere nella Tabella del Potere stampata su ogni Carta Vitalità, e la composizione T1-T5 del tuo Mazzo Vitalità. Un valore alto non significa 'sei più capace in assoluto' — significa 'hai fatto di questo modo di affrontare il mondo la tua firma'.</p>
+<p class="body-text">Quattro esempi per fissare le idee: un PG con Impeto 5 non è un colosso muscolare, è qualcuno che ha fatto dell'azione immediata e senza esitazione il proprio modo di stare al mondo. Un PG con Analisi 5 non è 'il più intelligente', è qualcuno che sceglie di smontare e studiare ogni situazione. Un PG con Istinto 5 non è 'il più veloce', è qualcuno che ha fatto dei riflessi la propria prima risposta. Un PG con Risonanza 5 non è 'il più empatico' in senso generico, è qualcuno che comprende il mondo connettendosi con esso invece che smontandolo.</p>
+<div class="recap-box">
+<div class="box-title">I 4 Approcci in breve</div>
+<ul class="box-list">
+<li>Impeto 🔴 (Rosso, Asse Agire) — Irruenza, sfondare, buttarsi a capofitto.</li>
+<li>Istinto 🔵 (Blu, Asse Agire) — Riflessi, destrezza, reazione immediata.</li>
+<li>Analisi 🟡 (Giallo, Asse Comprendere) — Studio, osservazione, metodo, crafting.</li>
+<li>Risonanza 🟢 (Verde, Asse Comprendere) — Empatia, connessione, magia elementale e cura.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi 02_personaggio/02_approcci.json per la definizione canonica dei 4 Approcci, dei 2 assi, e del significato dei valori 1-5.</li>
+<li>Vedi Capitolo 4 (Creazione del PG) per la distribuzione point-buy.</li>
+<li>Vedi Capitolo 6 (Carte Approccio Nominated) per il pool di carte che materializza i tuoi Approcci sul tavolo.</li>
+</ul>
+</div>
+<h3 class="subsection-title">1.4 Le 3 famiglie di carte (a colpo d'occhio)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Sul tavolo hai tre famiglie di carte, ciascuna con un ruolo distinto. Le Carte Vitalità sono la tua riserva di energia: 60 carte totali, una mano di 5 da giocare. Quando giochi una Vitalità scoperta, i suoi tag attivano un potere da una tua Carta Approccio nominated, dal tuo Equipaggiamento o dai tuoi Strumenti Rapidi. Quando la giochi coperta, paga solo il costo in tempo senza attivare nulla. Le Vitalità non definiscono l'azione: la rendono possibile.</p>
+<p class="body-text">Le Carte Approccio sono il catalogo delle tue mosse. Il valore di un Approccio (1-5) ti dice quante carte fisiche hai sul tavolo per quell'Approccio, per un totale di 10 carte alla creazione. Di queste, alcune sono nominated (con nome, abilità e magie proprie), altre sono bianche (segnaposto che rappresentano il tuo potenziale di crescita). Quando giochi una Vitalità scoperta con i tag giusti, attivi un potere da una delle tue nominated compatibile. Le nominated sono il 'chi sei operative': il tuo stile, le tue firme tattiche, le tue specializzazioni.</p>
+<p class="body-text">Le Carte Lato Giocatore sono i tuoi oggetti fisici: Equipaggiamento (4 slot fissi — Arma, Scudo/Doppia, Armatura, Accessorio) e Strumenti Rapidi (5 slot, usa-e-getta). L'Equipaggiamento può essere ferito volontariamente in 2 stadi: il primo ferimento attiva un potere speciale, il secondo distrugge l'oggetto. Gli Strumenti Rapidi ospitano oggetti trovati e talismani offensivi monouso craftati da Analisi durante i riposi. Insieme alle Carte Approccio, formano il tavolo che è il tuo personaggio.</p>
+<p class="body-text">Sopra tutte queste carte scorre la Cintura ATB — una linea temporale fluida che regola i turni. Non esiste griglia fissa: ogni PG traccia la propria riga di lunghezza variabile, e il tempo non si ferma mai. Giocare una carta coperta fa avanzare il tuo segnalino di pochi tick; giocarla scoperta fa avanzare di più, ma attiva un potere. La Cintura è ciò che trasforma le carte scelte in turni risolti.</p>
+<div class="recap-box">
+<div class="box-title">Le 3 famiglie in breve</div>
+<ul class="box-list">
+<li>Carte Vitalità (60 nel mazzo, 5 in mano) — Energia + chiavi di attivazione (tag).</li>
+<li>Carte Approccio (10 sul tavolo) — Catalogo delle mosse. Misto nominated (con abilità) + bianche (segnaposto).</li>
+<li>Carte Lato Giocatore (9 slot totali) — Equipaggiamento (4 slot) + Strumenti Rapidi (5 slot).</li>
+<li>Cintura ATB — Linea temporale fluida che regola i turni.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 2 (Le carte) per l'anatomia dettagliata di ciascuna famiglia.</li>
+<li>Vedi Capitolo 3 (La Cintura ATB) per la struttura e la risoluzione tick-per-tick.</li>
+<li>Vedi Capitolo 12 (Vitalità e Scarti) per il Mazzo Vitalità Dinamico.</li>
+<li>Vedi Capitolo 11 (Equipaggiamento) per slot, ferita a 2 stadi e Strumenti Rapidi.</li>
+</ul>
+</div>
+<h3 class="subsection-title">1.5 Il Dilemma del Guerriero</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Quando il pericolo ti raggiunge e subisci un danno, non esiste 'subire e basta'. Devi sempre scegliere cosa cedere, e hai tre opzioni. Puoi consumare il tuo Mazzo Vitalità: scarti carte dalla cima del mazzo finché non assorbono il danno. È la scelta meno dolorosa nel breve termine — il mazzo si rimescola, l'energia torna. Ma se il mazzo si esaurisce, svieni e ferisci un Cuore.</p>
+<p class="body-text">Puoi ferire un Approccio: giri una delle tue Carte Approccio sul dorso. Il valore di quell'Approccio si abbassa di 1 per la durata della ferita, e se la carta girata è nominated, tutte le sue abilità si disattivano finché non guarisce. È una scelta che ti indebolisce operativamente nel combattimento in corso, ma non ti avvicina alla morte. Una Vitalità con tag [Ferita] può riattivare temporaneamente le abilità di una carta ferita, dandoti una breve finestra di efficacia nonostante il danno subito.</p>
+<p class="body-text">Puoi ferire un Cuore: giri una delle tue 3 carte Cuore nominate. È la scelta più grave — i Cuori sono la tua essenza (Passato, Dottrina, Legami), e ferirli ti porta un passo più vicino alla morte. Quando tutti e 3 i Cuori sono feriti, il PG muore. La cura dei Cuori è la più lenta delle tre (molto più lenta della Vitalità, più lenta degli Approcci), quindi ogni Cuore ferito è una ferita che ti accompagna a lungo.</p>
+<p class="body-text">Questo triplo bivio — Vitalità, Approccio, Cuore — è il cuore emotivo e tattico di ATB. Lo chiamiamo Dilemma del Guerriero. Ogni volta che subisci un colpo, sei davanti a una scelta significativa: cedere energia (temporaneo), cedere efficacia (medio termine), o cedere essenza (lungo termine, verso la morte). Non esiste scelta 'giusta' in assoluto: dipende dalla situazione, dalla tua tolleranza al rischio, da cosa stai proteggendo. Questa è la meccanica che dà peso a ogni colpo subito.</p>
+<div class="recap-box">
+<div class="box-title">Il Dilemma del Guerriero — le 3 scelte</div>
+<ul class="box-list">
+<li>Mazzo Vitalità (milling) — Scarti carte dalla cima del mazzo. Temporaneo, ma se il mazzo si esaurisce svieni e ferisci un Cuore.</li>
+<li>Approccio (ferita) — Giri una Carta Approccio. Perdi 1 valore in quell'Approccio e disattivi le abilità della nominated girata. Medio termine.</li>
+<li>Cuore (ferita) — Giri una Carta Cuore. Ti avvicini alla morte. Cura molto lenta. Quando tutti e 3 i Cuori sono feriti, il PG muore.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 9 (Combattimento → Danno) per le regole operative complete: danno Standard (scelta tra le 3 opzioni) vs danno Diretto (nessuna scelta, ferita automatica).</li>
+<li>Vedi Capitolo 5 (Cuori Nominati) per le 3 categorie di Cuore (Passato, Dottrina, Legami) e le regole di cura.</li>
+<li>Vedi Capitolo 13 (Riposo e Cura) per le velocità di cura asimmetriche tra Vitalità, Approcci e Cuori.</li>
+</ul>
+</div>
+<h3 class="subsection-title">Cosa rende ATB diverso (USP core)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Per aiutarti a fissare cosa rende ATB diverso dagli altri GdR, ecco le 5 Unique Selling Propositions core del sistema. Non sono tutte — il manifest tecnico ne elenca di più — ma queste sono le 5 che danno forma al gioco che stai per imparare.</p>
+<p class="body-text">Queste USP non sono 'feature' isolate: sono conseguenze delle idee di fondo che hai letto in questo capitolo. Se ti sembrano naturali dopo aver letto 1.1-1.5, significa che hai colto il disegno del sistema. Se alcune ti sembrano ancora oscure, torna a questo capitolo dopo aver letto la Parte II — torneranno chiare.</p>
+<div class="recap-box">
+<div class="box-title">Altre USP</div>
+<p class="box-paragraph">Il manifest tecnico (00_indice.json → usps) elenca altre USP: Meccanica Flip Universale, Tag [Ferita] Tattico, Crafting Analisi, Equipaggiamento Feribile a 2 Stadi, Tabella Potere Artigianale, Combo Cooperative, Sistema Nemici a 3 Tier, Architettura 3 Canali. Le scoprirai nei capitoli dedicati. Qui le abbiamo selezionate per darti l'idea centrale; le altre sono conseguenze o dettagli.</p>
+</div>
+<div class="usp-list">
+<div class="usp-item">
+<div class="usp-name"><span class="usp-num">1</span> Vitalità come Chiavi</div>
+<div class="usp-desc">Le Carte Vitalità non definiscono l'azione. I loro tag sono chiavi di attivazione che permettono di attivare poteri dalle Carte Approccio nominated, dall'Equipaggiamento o dagli Strumenti Rapidi.</div>
+</div>
+<div class="usp-item">
+<div class="usp-name"><span class="usp-num">2</span> Approcci come Mindset</div>
+<div class="usp-desc">I 4 Approcci non sono tratti innati. Sono mindset modificabili che possono riallinearsi nel tempo attraverso il Riallineamento (dopo fallimenti) e la Maturation (bianca → nominated, dopo successi).</div>
+</div>
+<div class="usp-item">
+<div class="usp-name"><span class="usp-num">3</span> Magia a Due Vie</div>
+<div class="usp-desc">Risonanza = magia elementale + cura in sintonia col mondo. Analisi = utility + crafting talismani monouso offensivi. Niente Materie FF7, niente Esper: due vie distinte e complementari.</div>
+</div>
+<div class="usp-item">
+<div class="usp-name"><span class="usp-num">4</span> 9 Slot Lato Giocatore</div>
+<div class="usp-desc">4 Equipaggiamento + 5 Strumenti Rapidi. Le vecchie Carte Abilità e Carte Magia sono assorbite nelle Carte Approccio nominated. Tavolo più snello, più leggibile, più focalizzato.</div>
+</div>
+<div class="usp-item">
+<div class="usp-name"><span class="usp-num">5</span> Cintura ATB Fluida</div>
+<div class="usp-desc">Non esiste griglia fissa di turni. Ogni PG traccia la propria riga di lunghezza variabile, e il tempo non si ferma mai. Le scelte di costo temporale (coperta vs scoperta, T bassa vs T alta) diventano scelte tattiche.</div>
+</div>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Capitolo 2 — Le carte (anatomia dettagliata)</li>
+<li>Capitolo 3 — La Cintura ATB (struttura e risoluzione)</li>
+<li>Capitolo 4 — Creazione del PG (point-buy 10)</li>
+<li>Capitolo 5 — Cuori Nominati (Passato, Dottrina, Legami)</li>
+<li>Capitolo 6 — Carte Approccio Nominated (pool misto)</li>
+<li>Capitolo 9 — Combattimento → Danno (regole operative del Dilemma del Guerriero)</li>
+<li>Capitolo 11 — Equipaggiamento (slot, ferita 2 stadi, Strumenti Rapidi)</li>
+<li>Capitolo 12 — Vitalità e Scarti (Mazzo Dinamico, mano, esaurimento)</li>
+<li>Capitolo 13 — Riposo e Cura (cure asimmetriche)</li>
+<li>00_indice.json → usps (lista completa USP, per designer)</li>
+<li>00_indice.json → v3_pillars_summary (12 pilastri v3, per designer)</li>
+</ul>
+</div></section>
+<section class="chapter"><div class="chapter-header">
+<div class="chapter-tag">Capitolo 2</div>
+<h2 class="chapter-title">Le carte</h2>
+<div class="chapter-divider"></div>
+</div>
+<h3 class="intro-title">Capitolo 2 — Le carte</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">In ATB tutto ciò che il tuo personaggio è, ha o fa sta sul tavolo sotto forma di carte. Non esiste scheda separata da compilare: il tavolo è la scheda. Questo capitolo ti spiega cosa sono fisicamente le carte, come sono fatte, quali famiglie esistono, e quali meccaniche trasversali le attraversano. Le regole operative complete su come si giocano le carte in situazione di combattimento arriveranno al Capitolo 9; qui impari l'anatomia e la grammatica di base.</p>
+<p class="body-text">Una carta ATB non è un oggetto passivo che 'resta lì': è una risorsa che consumi, una chiave che attivi, una mossa che decidi di compiere. Le carte si girano (Flip Universale), si scartano, si attivano combinandosi con altre. Capire la struttura di una carta è capire cosa puoi fare al tavolo — e perché certe combinazioni funzionano e altre no. Il resto del manuale assume che tu abbia interiorizzato questa grammatica.</p>
+<h3 class="subsection-title first-in-chapter">2.1 Cos'è una carta</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Una carta ATB è un rettangolo di carta pesante con un fronte e un dorso. Il fronte mostra la carta nel suo stato attivo: il nome, il simbolo della famiglia di appartenenza, gli eventuali poteri o tag, e l'illustrazione. Il dorso mostra la STESSA immagine del fronte, ma in scala di grigi o colori sbiaditi — è il segnale visivo unificato che indica 'questa carta è ferita, usurata o disattivata'. Girare una carta sul dorso è l'azione fisica che corrisponde a un cambio di stato.</p>
+<p class="body-text">Le carte si dividono in tre grandi famiglie, ciascuna con un ruolo diverso: le Carte Vitalità (energia + chiavi di attivazione), le Carte Approccio (catalogo delle mosse del PG), e le Carte Lato Giocatore (oggetti fisici: Equipaggiamento e Strumenti Rapidi). A queste si aggiungono le Carte Cuore, che sono un caso speciale perché rappresentano l'essenza profonda del personaggio e vivono accanto alle Carte Approccio nella stessa zona del tavolo.</p>
+<p class="body-text">Quello che cambia tra le famiglie non è la forma fisica della carta, ma cosa ci fai. Le Vitalità le giochi dalla mano per attivare poteri o pagare costi temporali. Le Carte Approccio stanno ferme sul tavolo come un catalogo da cui attingi: non le 'peschi' nel senso classico, le attivi quando una Vitalità scoperta le chiama. Le Carte Lato Giocatore occupano slot fissi e si attivano come le nominated quando una Vitalità le chiama, ma possono anche essere ferite volontariamente per innescare poteri speciali. Le Carte Cuore, infine, non si 'giocano' mai: sono indicatori di essenza che si girano solo quando subisci un danno profondo.</p>
+<h3 class="subsection-title">2.2 Le 3 famiglie (a colpo d'occhio)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Prima di entrare nel dettaglio di ciascuna famiglia, ecco una mappa d'insieme. Sul tavolo di un PG trovi sempre tre blocchi di carte fisiche, ciascuno con una funzione distinta. Le Carte Vitalità stanno a sinistra o sotto (mazzo + pila scarti + mano di 5): sono la tua energia. Le Carte Approccio stanno al centro in 4 linee, una per Approccio: sono il tuo catalogo di mosse. Le Carte Lato Giocatore stanno a destra (4 slot Equipaggiamento + 5 slot Strumenti Rapidi): sono i tuoi oggetti fisici.</p>
+<p class="body-text">Il principio che tiene insieme le tre famiglie è questo: le Vitalità forniscono l'energia e le chiavi, le nominated ospitano i poteri, le Carte Lato Giocatore forniscono poteri fisici aggiuntivi. Nessuna famiglia basta da sola. Un PG senza nominated è un PG senza mosse; un PG senza Vitalità è un PG senza energia per attivarle; un PG senza Equipaggiamento è un PG senza difese fisiche. Il gioco nasce dall'incastro delle tre famiglie.</p>
+<div class="recap-box">
+<div class="box-title">Le 3 famiglie in breve</div>
+<ul class="box-list">
+<li>Famiglia 1 — Carte Vitalità (60 nel mazzo, 5 in mano): energia + chiavi di attivazione (tag) + Tabella del Potere stampata.</li>
+<li>Famiglia 2 — Carte Approccio (10 sul tavolo): catalogo delle mosse del PG. Pool misto nominated (con abilità/magie) + bianche (segnaposto).</li>
+<li>Famiglia 3 — Carte Lato Giocatore (9 slot totali): Equipaggiamento (4 slot fissi) + Strumenti Rapidi (5 slot usa-e-getta).</li>
+<li>Caso speciale — Carte Cuore (3 sul tavolo): essenza profonda del PG, ordine di ferita obbligato 1→2→3. Si girano solo quando subisci un colpo che scegli di assorbire con un Cuore.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.3 Famiglia 1 — Carte Vitalità</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Le Carte Vitalità sono la tua riserva di energia. Il mazzo è composto esattamente da 60 carte, e la sua composizione è PROPORZIONALE ai valori dei tuoi Approcci: se hai Impeto 3, avrai 18 carte Impeto nel mazzo (3 × 6). Questo significa che ogni Riallineamento degli Approcci modifica anche la composizione del mazzo Vitalità, e che un Approccio ferito influenza indirettamente la probabilità di pescare carte di quel colore.</p>
+<p class="body-text">Ogni Carta Vitalità ha quattro componenti fisici. Il Costo Tempo (T1-T5) indica quanto fa avanzare il tuo segnalino sulla Cintura ATB quando la giochi. Il Colore Approccio (Impeto=Rosso, Analisi=Giallo, Istinto=Blu, Risonanza=Verde) è un riferimento visivo: NON limita quali poteri puoi attivare, ma ti dice a quale Approccio la carta è associata. I Tag di Attivazione (in numero uguale al Costo Tempo: T1 = 1 tag, T5 = 5 tag) sono le chiavi che ti permettono di attivare poteri da nominated, Equipaggiamento o Strumenti Rapidi compatibili. La Tabella del Potere stampata sulla carta (5 righe × 2 colonne) determina il Potere base dell'azione che stai compiendo.</p>
+<p class="body-text">Le Carte Vitalità si giocano in due modi. Giocata SCOPERTA: attiva un potere (abilità nominated, magia nominated, Equipaggiamento o Strumento Rapido) compatibile tramite i TAG, e legge la Tabella del Potere alla riga corrispondente al tuo Approccio attuale. Giocata COPERTA: paga solo il costo in tempo, non attiva nulla. È pura energia di sostenimento — la usi quando non vuoi spendere un potere, ma vuoi avanzare nella Cintura ATB per raggiungere un momento tattico favorevole.</p>
+<p class="body-text">Una regola aurea da fissare subito: i tag stanno SOLO sulle Vitalità, non sulle Carte Approccio nominated né sulle Carte Lato Giocatore. È la Vitalità che chiama; è la nominated (o l'Equipaggiamento, o lo Strumento) che risponde. Se invertissi la logica — ovvero se fossero le nominated a esibire i tag — il sistema collasserebbe, perché ogni nominated dovrebbe elencare tutti i tag possibili che la attivano. Invece così è la singola Vitalità a dichiarare, una volta per tutte, quali poteri sta chiamando in causa.</p>
+<div class="recap-box">
+<div class="box-title">Carta Vitalità — anatomia</div>
+<ul class="box-list">
+<li>Costo Tempo (T1-T5) — slot ATB sulla Cintura.</li>
+<li>Colore Approccio (Impeto=Rosso, Analisi=Giallo, Istinto=Blu, Risonanza=Verde) — visivo, NON limita.</li>
+<li>Tag di Attivazione (T=1 → 1 tag, T=5 → 5 tag) — chiavi per attivare poteri.</li>
+<li>Tabella del Potere stampata (5 righe × 2 colonne) — letta alla riga = tuo Approccio.</li>
+<li>Modalità di gioco: SCOPERTA (attiva + paga tempo) / COPERTA (paga solo tempo).</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 3 (La Cintura ATB) per la risoluzione tick-per-tick del Costo Tempo.</li>
+<li>Vedi Capitolo 9 (Combattimento → Tabella Potere) per le regole operative complete della lettura.</li>
+<li>Vedi Capitolo 12 (Vitalità e Scarti) per Mazzo Dinamico, mano, pila scarti ed esaurimento.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.4 Famiglia 2 — Carte Approccio</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Le Carte Approccio sono il catalogo delle tue mosse. Il valore di un Approccio (1-5) ti dice quante carte fisiche hai sul tavolo per quell'Approccio: se hai Impeto 3, hai 3 carte Impeto fisiche in fila. La somma dei valori dei 4 Approcci è sempre 10 alla creazione, quindi hai 10 carte Approccio totali sul tavolo all'inizio della vita del PG. Questo numero può crescere nel tempo attraverso la Maturation (carte bianche che diventano nominated) ma la struttura di base resta: 4 linee orizzontali, una per Approccio, disposte al centro del tuo tavolo.</p>
+<p class="body-text">Di queste 10 carte, alcune sono NOMINATED (hanno un nome proprio, un'illustrazione, e ospitano abilità o magie specifiche) e altre sono BIANCHE (segnaposto senza testo, che rappresentano il tuo potenziale di crescita). La proporzione tra nominated e bianche dipende dalla tua fase di creazione del PG e dalla sua storia: un PG appena creato ha più bianche, un PG con molti successi narrativi alle spalle ha più nominated. Vediamo il modello del pool misto in dettaglio nella sezione 2.6.</p>
+<p class="body-text">Quando giochi una Vitalità scoperta con i tag giusti, attivi un potere da una delle tue nominated compatibile. La nominated non si consuma: resta sul tavolo e può essere richiamata ancora, a patto che tu abbia una Vitalità con i tag giusti da giocare. Questo significa che le nominated sono 'firme tattiche' — mosse che puoi ripetere — e non risorse usa-e-getta. Quello che si consuma è la Vitalità, non la nominated.</p>
+<p class="body-text">Le Carte Approccio nominated possono essere FERITE: giri la carta sul dorso. Il valore di quell'Approccio si abbassa di 1 per la durata della ferita (e questo influenza la riga che leggi nella Tabella del Potere stampata sulle Vitalità), e tutte le abilità della nominated ferita si disattivano finché non guarisce. Esiste una via per riattivarle temporaneamente: una Vitalità con tag [Ferita] permette di usare le abilità di UNA sola carta ferita dello stesso tipo della Vitalità giocata, dando una breve finestra di efficacia nonostante il danno subito. Vediamo la Meccanica Flip in dettaglio nella sezione 2.7.</p>
+<div class="recap-box">
+<div class="box-title">Carta Approccio — anatomia</div>
+<ul class="box-list">
+<li>Nome proprio (se nominated) — niente nome se bianca.</li>
+<li>Approccio di appartenenza (Impeto/Istinto/Analisi/Risonanza) + colore.</li>
+<li>Slot di Potere (3 abilità per nominated) — tema e potenza crescente.</li>
+<li>Tag di Situazione (solo nominated ibride) — rimando al Capitolo 6 e Capitolo 8.</li>
+<li>Stato: INTATTA (fronte) o FERITA (dorso). Ferita = -1 al valore Approccio + abilità disattivate.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 6 (Carte Approccio Nominated) per il pool misto, i tipi di nominated e il Riallineamento.</li>
+<li>Vedi Capitolo 4 (Creazione del PG) per la composizione iniziale del pool.</li>
+<li>Vedi Capitolo 9 (Combattimento → Danno) per le regole operative della ferita.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.5 Famiglia 3 — Carte Lato Giocatore</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Le Carte Lato Giocatore sono i tuoi oggetti fisici: occupano 9 slot totali divisi in due gruppi. I primi 4 slot sono l'EQUIPAGGIAMENTO, fisso e strutturato: 1 Arma + 1 Scudo/Doppia Arma + 1 Armatura + 1 Accessorio. I restanti 5 slot sono gli STRUMENTI RAPIDI, usa-e-getta: ospitano oggetti trovati (pozioni, grimaldelli, bende) e talismani offensivi monouso craftati da Analisi durante i riposi. La distinzione è netta: l'Equipaggiamento è stabile e dà poteri ricorrenti, gli Strumenti Rapidi si consumano.</p>
+<p class="body-text">Anche le Carte Lato Giocatore possono essere attivate tramite i tag di una Vitalità scoperta, esattamente come le nominated: la Vitalità chiama, l'oggetto risponde. La differenza è che le Carte Lato Giocatore hanno poteri più 'fisici' e immediati (un colpo d'arma, un blocco di scudo, un assorbimento di armatura, un bonus di accessorio) rispetto alle nominated che tendono a ospitare firme tattiche più complesse (abilità speciali, magie, combo).</p>
+<p class="body-text">L'aspetto più distintivo delle Carte Lato Giocatore è la FERITA A 2 STADI, volontaria. Quando scegli di ferire il tuo Equipaggiamento per assorbire un danno (è una delle tre opzioni del Dilemma del Guerriero, alternativa a ferire un Approccio o un Cuore), la carta va al primo stadio: si gira sul dorso, e questo ATTIVA UN POTERE SPECIALE che l'oggetto possiede solo nello stato usurato. Se l'Equipaggiamento viene ferito una seconda volta, è DISTRUTTO: esce dal tavolo e perdi l'oggetto. La ferita a 2 stadi è quindi una risorsa tattica, non solo un danno — molti PG costruiscono la propria strategia sull'attivazione deliberata di poteri speciali di Equipaggiamento usurato.</p>
+<div class="recap-box">
+<div class="box-title">Carta Lato Giocatore — anatomia</div>
+<ul class="box-list">
+<li>Nome e categoria (Arma / Scudo-Doppia / Armatura / Accessorio / Strumento Rapido).</li>
+<li>Poteri attivi (fronte intatto) — attivabili tramite tag di una Vitalità scoperta.</li>
+<li>Poteri speciali (dorso usurato) — si attivano al 1° ferimento volontario.</li>
+<li>Stato: INTATTO → USURATO (1° ferimento, attiva potere speciale) → DISTRUTTO (2° ferimento, esce dal tavolo).</li>
+<li>Equipaggiamento (4 slot): stabile, poteri ricorrenti. Strumenti Rapidi (5 slot): monouso, si consumano all'attivazione.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 11 (Equipaggiamento) per slot, categorie, ferita a 2 stadi e Strumenti Rapidi.</li>
+<li>Vedi Capitolo 7 (Area di Gioco) per la disposizione fisica delle carte Lato Giocatore sul tavolo.</li>
+<li>Vedi Capitolo 9 (Combattimento → Danno) per la scelta tattica di ferire l'Equipaggiamento nel Dilemma del Guerriero.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.6 Nominated vs bianche</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Il pool di Carte Approccio di un PG non è uniforme: è un pool MISTO in cui convivono carte nominated e carte bianche. Le NOMINATED hanno un nome proprio, un'illustrazione, e ospitano abilità o magie specifiche: sono la 'firma' del tuo personaggio, le mosse che hai imparato e che sai ripetere. Le BIANCHE sono segnaposto senza testo: rappresentano il tuo potenziale di crescita, lo spazio dove in futuro si materializzerà una nuova nominated.</p>
+<p class="body-text">La proporzione tra nominated e bianche evolve nel tempo. Alla creazione del PG hai un mix deciso in fase di point-buy (vedi Capitolo 4): alcuni Approcci sono già dichiarati con nominated, altri restano bianchi in attesa di sviluppo. Quando vivi successi narrativi significativi, una carta bianca può essere sostituita da una nominated attraverso la Maturation: scegli (con il Master) quale nominated farsi entrare in quel slot, in coerente con la storia che hai raccontato al tavolo. Al contrario, quando vivi fallimenti o crisi, il Riallineamento può spostare punti tra Approcci — e questo può comportare che nominated vadano girate o temporaneamente disattivate.</p>
+<p class="body-text">Le nominated si dividono in due grandi tipi. Le SPECIALIZZATE ospitano 3 abilità in TEMA tra loro, con potenza crescente sbloccata dal valore dell'Approccio: sono più potenti (le abilità sinergizzano) ma meno versatili (coprono un solo tema tattico). Le GENERICHE ospitano 3 abilità DIVERSE tra loro, tutte disponibili a basso livello: sono meno potenti (nessuna sinergia tematica) ma più versatili (coprono più situazioni). La scelta tra specializzate e generiche è una scelta di identità del PG — vuoi essere 'il mago del fuoco' (specializzata) o 'colui che sa fare un po' di tutto' (generica)?</p>
+<p class="body-text">Esiste una terza categoria, trasversale: le NOMINATED IBRIDE. Sono nominated che ospitano sia testo di combattimento (abilità e/o magie utilizzabili in scontro) sia un tag di Situazione (uno dei 7 contesti non-combat che vedremo nel Capitolo 8). Questo significa che la stessa carta ti dà un potere in combattimento E un'opzione nelle situazioni esplorative/sociali. Le nominated ibride sono il ponte tra il sistema card-based di ATB e il framework delle 7 Situazioni, e sono essenziali per PG che vogliono essere efficaci sia dentro che fuori dal combattimento.</p>
+<div class="recap-box">
+<div class="box-title">Pool misto — tipi di carte</div>
+<ul class="box-list">
+<li>BIANCHE — Segnaposto senza testo. Rappresentano potenziale di crescita. Sostituibili con nominated via Maturation.</li>
+<li>NOMINATED SPECIALIZZATE — 3 abilità in tema, potenza crescente col valore Approccio. Più potenti, meno versatili.</li>
+<li>NOMINATED GENERICHE — 3 abilità diverse, tutte disponibili a basso livello. Più versatili, meno potenti.</li>
+<li>NOMINATED IBRIDE — Testo combattimento + tag di Situazione. Attive sia in combate sia nelle 7 Situazioni non-combat.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 4 (Creazione del PG) per il mix iniziale nominated/bianche.</li>
+<li>Vedi Capitolo 6 (Carte Approccio Nominated) per Riallineamento, Maturation e catalogo delle nominated libere.</li>
+<li>Vedi Capitolo 8 (Le 7 Situazioni) per il ruolo delle nominated ibride fuori dal combattimento.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.7 La Meccanica Flip Universale</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">C'è una meccanica che attraversa TUTTE le carte feribili di ATB, ed è la stessa identica azione fisica: GIRARE LA CARTA sul dorso. Il fronte mostra la carta nel suo stato PRISTINO (colori vivi, oggetto intatto, abilità attive); il dorso mostra la STESSA illustrazione in SCALA DI GRIGI o COLORI SBIADITI (linguaggio visivo unificato per 'questa carta è ferita, usurata o disattivata'). Questa uniformità non è estetica: è didattica. Il giocatore non deve imparare tre meccaniche diverse per tre tipi di carta — impara UNA meccanica che vale per tutto.</p>
+<p class="body-text">Il significato del flip cambia in base alla famiglia della carta, ma la struttura è sempre la stessa: passi da uno stato attivo a uno stato compromesso, e questo comporta perdita di funzionalità e/o attivazione di un potere speciale. Per le Carte Approccio nominated, il flip indica FERITA: il valore dell'Approccio si abbassa di 1, e tutte le abilità della nominated si disattivano (con l'eccezione del tag [Ferita] sulle Vitalità che permette di riattivarle temporaneamente). Per le Carte Cuore, il flip indica FERITA DEL CUORE: ti avvicini alla morte, e l'ordine di ferita è obbligato (Cuore 1 → Cuore 2 → Cuore 3). Quando tutti e 3 i Cuori sono girati, il PG muore.</p>
+<p class="body-text">Per le Carte Lato Giocatore (Equipaggiamento), il flip ha una struttura a 2 STADI volontaria. Il primo flip porta la carta allo stato USURATO: attiva il potere speciale che l'oggetto possiede solo in quello stato (è una risorsa tattica deliberata, non una conseguenza subita). Il secondo flip DISTRUGGE l'oggetto: esce dal tavolo. La ferita a 2 stadi è quindi una meccanica di scelta — sei TU a decidere se e quando ferire l'Equipaggiamento, e questa scelta è una delle tre opzioni del Dilemma del Guerriero.</p>
+<p class="body-text">L'eleganza del Flip Universale sta in questo: ti permette di leggere lo stato del tavolo a colpo d'occhio. Se vedi carte in scala di grigi davanti a un PG, sai che è ferito in punti specifici. Se vedi una carta Cuore girata, sai che è a un terzo della morte. Se vedi un Equipaggiamento usurato, sai che ha attivato il suo potere speciale e che un'altra ferita lo distruggerebbe. La memoria tattica è esterna, sul tavolo — non devi tenerla a mente.</p>
+<div class="recap-box">
+<div class="box-title">Meccanica Flip Universale — cosa significa per tipo</div>
+<ul class="box-list">
+<li>Carta Approccio nominated FERITA: valore Approccio -1, abilità disattivate (riattivabili con tag [Ferita] sulle Vitalità).</li>
+<li>Carta Cuore FERITA: ti avvicini alla morte. Ordine obbligato 1 → 2 → 3. Tre Cuori feriti = morte del PG.</li>
+<li>Carta Equipaggiamento USURATA (1° flip volontario): attiva il potere speciale. DISTRUTTA (2° flip): esce dal tavolo.</li>
+<li>Strumenti Rapidi: non si flippano, si consumano (escono dal tavolo all'attivazione).</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 9 (Combattimento → Danno) per le regole operative del danno e della scelta di cosa ferire.</li>
+<li>Vedi Capitolo 5 (Cuori Nominati) per l'ordine di ferita obbligato e le regole di cura dei Cuori.</li>
+<li>Vedi Capitolo 11 (Equipaggiamento → Ferita a 2 stadi) per i poteri speciali dell'usura.</li>
+<li>Vedi Capitolo 13 (Riposo e Cura) per le velocità asimmetriche di cura: Vitalità veloce, Approcci medio, Cuori lento.</li>
+</ul>
+</div>
+<h3 class="subsection-title">2.8 Tag di attivazione</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">I tag di attivazione sono il cuore della sintassi di ATB. Sono piccole etichette stampate sulle Carte Vitalità, e la regola aurea è questa: il NUMERO di tag su una Vitalità è UGUALE al suo Costo Tempo. Una Vitalità T1 ha 1 tag; una T2 ha 2 tag; una T5 ha 5 tag. Più tempo paghi, più chiavi hai per attivare poteri complessi. È una relazione lineare, elegante, immediatamente leggibile guardando la carta.</p>
+<p class="body-text">Una seconda regola aurea, altrettanto importante: i tag stanno SOLO sulle Carte Vitalità. Non sulle nominated. Non sull'Equipaggiamento. Non sugli Strumenti Rapidi. È sempre la Vitalità che chiama; è sempre la nominated (o l'Equipaggiamento, o lo Strumento) che risponde. Questa asimmetria è voluta: se i tag stessero anche sulle nominated, ogni nominated dovrebbe elencare tutti i tag che la attivano, e il sistema diventerebbe una matrice dispersiva. Invece così, una singola Vitalità dichiara quali poteri sta chiamando in causa — una sola volta, una sola direzione.</p>
+<p class="body-text">Quando giochi una Vitalità scoperta, i suoi tag ti dicono quali poteri puoi attivare dal tuo tavolo. Puoi attivare UN potere da una nominated compatibile, OPPURE un potere da un Equipaggiamento compatibile, OPPURE un potere da uno Strumento Rapido compatibile. La scelta è tua, e fa parte della tattica: a seconda della situazione, potresti preferire l'abilità della nominated (più potente, ma non consuma la carta) o lo Strumento Rapido (più debole, ma si consuma e ti libera dello slot). I tag sono la sintassi; la tua scelta è la semantica.</p>
+<p class="body-text">Esiste un tag speciale, [Ferita], che merita un cenno: quando una Vitalità con tag [Ferita] viene giocata scoperta, può riattivare temporaneamente le abilità di UNA sola carta Approccio ferita dello stesso colore della Vitalità. È una via di uscita tattica dal penalty della ferita — una breve finestra di efficacia nonostante il danno subito. Non è una cura: la nominated resta ferita, e guarirà solo con il riposo adeguato. Ma in mezzo a un combattimento, poter riattivare per un turno l'abilità chiave di una tua nominated girata può ribaltare lo scontro.</p>
+<div class="recap-box">
+<div class="box-title">Tag di attivazione — regole auree</div>
+<ul class="box-list">
+<li>Numero tag = Costo Tempo (T1=1 tag, T5=5 tag).</li>
+<li>Tag stanno SOLO sulle Carte Vitalità. Mai su nominated, Equipaggiamento, Strumenti.</li>
+<li>La Vitalità chiama; la nominated/Equipaggiamento/Strumento risponde.</li>
+<li>Tag speciale [Ferita]: riattiva temporaneamente le abilità di UNA nominated ferita dello stesso colore.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 9 (Combattimento → Tabella Potere) per come i tag si combinano con la lettura della Tabella.</li>
+<li>Vedi Capitolo 12 (Vitalità e Scarti) per la composizione del mazzo e la distribuzione dei tag per T.</li>
+<li>Vedi Capitolo 11 (Equipaggiamento) per come gli oggetti rispondono ai tag.</li>
+<li>Vedi Capitolo 10 (Magia) per come le nominated di Risonanza e Analisi rispondono ai tag.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Capitolo 3 — La Cintura ATB (struttura e risoluzione del Costo Tempo)</li>
+<li>Capitolo 4 — Creazione del PG (composizione iniziale del pool di carte)</li>
+<li>Capitolo 5 — Cuori Nominati (anatomia dei Cuori, ordine di ferita, cura)</li>
+<li>Capitolo 6 — Carte Approccio Nominated (pool misto, Riallineamento, Maturation, ibride)</li>
+<li>Capitolo 7 — Area di Gioco (disposizione fisica delle carte in 4 zone)</li>
+<li>Capitolo 8 — Le 7 Situazioni (ruolo delle nominated ibride fuori dal combattimento)</li>
+<li>Capitolo 9 — Combattimento (Tabella Potere, Danno, Dilemma del Guerriero operativo)</li>
+<li>Capitolo 10 — Magia: Due Vie (nominated di Risonanza e Analisi)</li>
+<li>Capitolo 11 — Equipaggiamento (slot, categorie, ferita a 2 stadi, Strumenti Rapidi)</li>
+<li>Capitolo 12 — Vitalità e Scarti (Mazzo Dinamico, mano, pila scarti, esaurimento)</li>
+<li>Capitolo 13 — Riposo e Cura (velocità asimmetriche di cura per famiglia)</li>
+</ul>
+</div></section>
+<section class="chapter"><div class="chapter-header">
+<div class="chapter-tag">Capitolo 3</div>
+<h2 class="chapter-title">La Cintura ATB</h2>
+<div class="chapter-divider"></div>
+</div>
+<h3 class="intro-title">Capitolo 3 — La Cintura ATB</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">La Cintura ATB è il cuore del sistema di iniziativa e risoluzione di ATB. Non è una griglia fissa di turni, come in molti altri GdR: è una linea temporale fluida in cui ogni partecipante — PG o nemico — traccia la propria riga di lunghezza variabile. La Cintura decide chi agisce prima, chi agisce più spesso, e quanto costa in tempo fare qualcosa di potente. Capire la Cintura significa capire il ritmo del gioco.</p>
+<p class="body-text">Questo capitolo ti spiega la struttura fisica della Cintura (3.1), la regola della continuità temporale assoluta (3.2), la risoluzione tick-per-tick (3.3), i controlli di combo e difesa che avvengono ad ogni tick (3.4), la meccanica Fulmineo che permette più azioni attive per turno (3.5), e infine un esempio guidato di round completo (3.6). Le regole operative su combo e difesa sono rimandate al Capitolo 9 (Combattimento); qui impari la grammatica della Cintura, non i dettagli tattici.</p>
+<h3 class="subsection-title first-in-chapter">3.1 La riga fluida (non la griglia fissa)</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">La prima cosa da fissare: in ATB NON esiste una griglia fissa 5×5 di turni. Ogni partecipante traccia la PROPRIA riga orizzontale, di lunghezza variabile, nella Cintura condivisa al centro del tavolo. La lunghezza di ogni riga dipende da quante carte il partecipante sceglie di giocare e da quale Costo Tempo hanno quelle carte. Un Ladro che gioca 3 carte T1 ha una riga corta e veloce; un Guerriero che gioca 1 carta T5 ha una riga lunga ma con un solo colpo devastante in fondo; un Boss con Potere 9 può tracciare una riga che sporge enormemente rispetto a quelle dei PG.</p>
+<p class="body-text">L'asimmetria è il punto. La Cintura ATB è asimmetrica PER NATURA: il Ladro agisce 3 volte prima che il Guerriero finisca il suo colpo, e il Guerriero accetta questa lentezza perché il suo colpo è devastante. Il Boss avanza inarrestabilmente, ma lentamente — i PG hanno tempo di preparare una difesa o una combo prima che la sua azione si risolva. Questa asimmetria non è un difetto del sistema: è la sua firma. Genera il ritmo caratteristico di ATB, dove la velocità e la potenza sono scelte tattiche alternative, non bonus cumulabili.</p>
+<p class="body-text">Metafora visiva: pensa alla Cintura come a un insieme di nastri trasportatori che scorrono a velocità diverse. Il nastro del Ladro scorre veloce e corto; quello del Guerriero scorre lento e lungo; quello del Boss scorre lentissimo ma trasporta un carico enorme. Tutti i nastri convergono nella stessa area del tavolo, e le combo avvengono quando due nastri diversi arrivano alla stessa posizione nello stesso momento.</p>
+<p class="body-text">La regola pratica: ogni PG ha la propria 'Corsia' (la sua striscia di tavolo), e ogni Corsia ospita la riga di carte giocate. I nemici basici condividono una riga di token coperti; il Boss ha una riga dedicata. La Cintura ATB è quindi una sovrapposizione di righe parallele, tutte risolte contemporaneamente tick-per-tick.</p>
+<div class="recap-box">
+<div class="box-title">La riga fluida — principi</div>
+<ul class="box-list">
+<li>Niente griglia fissa: ogni partecipante traccia la propria riga di lunghezza variabile.</li>
+<li>La lunghezza dipende da quante carte giochi e dal loro Costo Tempo.</li>
+<li>Ladro veloce = riga corta, più azioni. Guerriero lento = riga lunga, colpo potente.</li>
+<li>Boss = riga dedicata, può arrivare a Potere 9 (9 posizioni).</li>
+<li>Metafora: nastri trasportatori a velocità diverse che convergono.</li>
+</ul>
+</div>
+<h3 class="subsection-title">3.2 Continuità Temporale Assoluta</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">La regola aurea della Cintura ATB è la Continuità Temporale Assoluta: le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra della propria riga. È IMPOSSIBILE saltare slot. Non ci sono 'buchi' nella Cintura — se vuoi arrivare alla posizione 4, devi prima riempire le posizioni 1, 2 e 3. Questa regola apparentemente tecnica ha conseguenze tattiche enormi, perché significa che il tempo in ATB si paga sempre per intero, mai a salti.</p>
+<p class="body-text">La conseguenza più importante riguarda le combo. Se il Mago ha un'azione nella posizione 4 e il Guerriero vuole convergere lì per attivare una combo cooperativa, il Guerriero DEVE riempire le posizioni 1, 2 e 3 della propria riga prima di arrivare al 4. Non può 'teletrasportare' la sua riga in posizione 4. Le combo pesanti richiedono quindi un investimento di posizioni MASSIVO: il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago, e questo lo rende vulnerabile agli attacchi rapidi nel frattempo.</p>
+<p class="body-text">Questa regola genera una differenza netta tra combo veloci e combo devastanti. Le combo veloci (posizione 1, Costo 1) sono scambi fulminei tra PG che convergono subito: poco danno, ma nessun investimento di tempo. Le combo devastanti (posizione 4 o 5) sono eventi che si preparano a destra del tavolo: molto danno, ma espongono i PG a tutto ciò che i nemici fanno nelle posizioni precedenti. Scegliere quale tipo di combo costruire è una scelta tattica continua.</p>
+<p class="body-text">La stessa regola vale per la difesa: non puoi far apparire una difesa nella posizione 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella posizione. Se un nemico attacca in posizione 2 e tu non hai nulla in posizione 2, subisci il colpo pieno — anche se in posizione 5 hai una difesa potentissima. La Cintura premia chi pianifica in anticipo e punisce chi reagisce a freddo.</p>
+<div class="recap-box">
+<div class="box-title">Continuità Temporale Assoluta — regole</div>
+<ul class="box-list">
+<li>Le carte si posizionano SEMPRE dalla prima posizione libera a sinistra. Mai salti.</li>
+<li>Combo pesanti = investimento di posizioni massivo (riempi 1-2-3 per arrivare al 4).</li>
+<li>Combo veloci (pos 1) = scambi fulminei, poco danno.</li>
+<li>Combo devastanti (pos 4-5) = molto danno, ma esposizione agli attacchi nelle posizioni precedenti.</li>
+<li>La difesa deve essere 'pagata' nel tempo: non appare a freddo nella posizione del nemico.</li>
+</ul>
+</div>
+<h3 class="subsection-title">3.3 Risoluzione tick-per-tick</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Quando tutti i partecipanti hanno tracciato le loro righe, la Cintura si risolve da sinistra a destra, tick per tick. Ad ogni tick si risolve la colonna più a sinistra di TUTTI i partecipanti contemporaneamente: ogni riga 'avanza' di una posizione, e le carte in quella posizione vengono attivate o scartate. Solo dopo che tutta la colonna è risolta, si passa al tick successivo.</p>
+<p class="body-text">Cosa succede a ogni tick dipende dallo stato della carta in quella posizione. Una carta COPERTA viene scartata senza effetto: rappresenta fatica spesa per pagare il tempo, nient'altro. Una carta SCOPERTA fa due cose: il PG SCEGLIE quale potere attivare (un'abilità o magia da una sua Carta Approccio nominated, oppure un potere da Equipaggiamento o Strumento Rapido compatibile tramite i tag), e l'effetto si risolve al livello = T della Vitalità, limitato dal valore attuale dell'Approccio del PG. Se l'Approccio è ferito, il livello effettivo si abbassa di conseguenza.</p>
+<p class="body-text">L'ordine dei turni al primo round ha una regola specifica: i PG scelgono come tracciare le loro righe di comune accordo, e il Master posiziona i token nemici PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo turno, perché possono vedere — o meglio, non vedere — cosa hanno fatto i compagni prima di scegliere. Nei turni successivi, l'ordine è dettato da chi svuota per primo la propria riga: chi finisce prima le carte, rigioca prima. Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo, compensato dal fatto che gli altri hanno già 'pagato' il loro tempo.</p>
+<p class="body-text">Una regola importante per il ritmo: ogni volta che un PG gioca carte nella Cintura ATB, ne pesca altrettante dal Mazzo Vitalità per tornare a 5 in mano. Questo significa che la mano di 5 carte è una risorsa che si rigenera costantemente, e il vero bottleneck non è 'avere carte in mano' ma 'avere il tempo di giocarle'. Un PG non può mai restare senza carte nella Cintura: quando scarta l'ultima carta della sua riga, PUO giocarne altre (da 1 a 5), ma non può aggiungere carte a una riga già in corso finché la coda non scorre di almeno 1 posizione.</p>
+<div class="recap-box">
+<div class="box-title">Risoluzione — regole</div>
+<ul class="box-list">
+<li>Da sinistra a destra, tick-per-tick. Si risolve la colonna più a sinistra di TUTTI prima di passare alla successiva.</li>
+<li>COPERTA = scartata senza effetto (paga solo tempo).</li>
+<li>SCOPERTA = attiva un potere (nominated/Equip/Strumento) al livello = T, limitato dal valore Approccio attuale.</li>
+<li>Primo turno: PG scelgono prima, Master posiziona nemici per ultimo.</li>
+<li>Turni successivi: chi svuota prima la riga, rigioca prima.</li>
+<li>Refill automatico: si pesca dal Mazzo Vitalità per tornare a 5 carte in mano.</li>
+</ul>
+</div>
+<h3 class="subsection-title">3.4 Controlli combo e difesa ad ogni tick</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">La risoluzione tick-per-tick non è solo 'attiva le carte scoperte': ad ogni tick avvengono anche due controlli trasversali che coinvolgono tutti i partecipanti nella stessa colonna. Il primo è il CONTROLLO COMBO: se in una stessa posizione ci sono Vitalità scoperte di ALMENO 2 PG DIVERSI con tag combo compatibili (per esempio [Apertura]+[Chiusura] o [Culmine]), la combo si attiva. Il danno di una combo è la SOMMA dei valori POTERE dei poteri attivati dai partecipanti — quindi combinare due PG nello stesso tick può generare un danno che nessuno dei due avrebbe prodotto da solo.</p>
+<p class="body-text">Il secondo è il CONTROLLO DIFESA: se in una posizione c'è un attacco nemico, si controllano le Abilità Difensive dei PG agganciate a Vitalità in quella posizione. Le difese in ATB sono ospitate su Carte Approccio nominated (non sono oggetti fisici separati) e si attivano con la stessa logica delle abilità offensive: tramite i tag di una Vitalità scoperta. Il risultato dipende dalla posizione relativa tra difesa e attacco: STESSA posizione = Blocco Perfetto (0 danni), posizione ADIACENTE (±1 slot) = Blocco Mitigato (danno ridotto), altrove = Danno Pieno.</p>
+<p class="body-text">Questi due controlli trasformano la Cintura da un semplice nastro di turni in un campo tattico denso. Ogni posizione non è solo 'quando agisci', ma anche 'con chi convergi' e 'cosa copri'. Un PG può scegliere di posizionare una difesa in posizione 3 non perché vuole fare qualcosa lui, ma perché sa che un nemico attaccherà lì e un compagno vulnerabile sta convergendo con un'azione potente. La Cintura premia chi legge le righe altrui e anticipa le convergenze.</p>
+<p class="body-text">I dettagli operativi completi di combo (tag, tipi, danno) e difesa (Abilità Difensive nominate, calcolo esatto del danno mitigato) sono nei capitoli dedicati al Combattimento. Qui ti basta fissare il concetto: ogni tick non è un'isola, è una cellula tattica dove convergenze e difese si calcolano in tempo reale.</p>
+<div class="recap-box">
+<div class="box-title">Controlli ad ogni tick</div>
+<ul class="box-list">
+<li>COMBO: 2+ PG con Vitalità scoperte e tag compatibili nella STESSA posizione. Danno = somma Poteri.</li>
+<li>DIFESA: Abilità Difensive nominated attivate da Vitalità scoperte. Stessa pos = Blocco Perfetto, ±1 = Blocco Mitigato, altrove = Danno Pieno.</li>
+<li>Difese NON sono oggetti fisici separati: ospitate su Carte Approccio nominated.</li>
+<li>Dettagli operativi: vedi Capitolo 9 (Combattimento → Combo e Difesa).</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 9 (Combattimento → Combo) per i tag [Apertura]/[Sviluppo]/[Chiusura]/[Culmine] e il calcolo del danno.</li>
+<li>Vedi Capitolo 9 (Combattimento → Difesa) per Parate, Blocco ed Evasione come Abilità Difensive nominated.</li>
+<li>Vedi Capitolo 6 (Carte Approccio Nominated) per come le nominated ospitano abilità difensive.</li>
+</ul>
+</div>
+<h3 class="subsection-title">3.5 La meccanica [Fulmineo]</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">C'è una regola implicita in tutto quello che abbiamo detto finora: in un turno normale, hai UNA sola azione attiva. Se giochi 4 carte (3 coperte + 1 scoperta T4), l'unica azione che si attiva è quella al tick 4 — le altre 3 sono puro pagamento del tempo. Questo è il default della Cintura ATB, e crea il ritmo caratteristico del sistema: ogni turno è costruito attorno a un'unica azione principale, e il resto è preparazione o posizionamento.</p>
+<p class="body-text">La meccanica [Fulmineo] è l'ECCEZIONE a questa regola, ed è l'unico modo per eseguire più di un'azione attiva per turno. Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA nel proprio slot — attivando il suo potere — ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. In altre parole: la carta Fulmineo paga il tempo E attiva il suo potere, contemporaneamente. Raddoppia il valore di quello slot.</p>
+<p class="body-text">Vediamolo con un esempio concreto. Vuoi giocare una Vitalità T4 scoperta per attivare un'Arma potente. Ti servono 3 carte paganti per riempire gli slot 1-2-3. Sequenza normale: COPERTA - COPERTA - COPERTA - SCOPERTA(T4). Risultato: 1 sola azione attiva al tick 4. Sequenza con Fulmineo: COPERTA - SCOPERTA([Fulmineo], T2) - COPERTA - SCOPERTA(T4). Risultato: la Fulmineo attiva il suo potere al tick 2 E conta come pagamento per la T4. Hai 2 azioni attive (tick 2 e tick 4) con lo stesso numero di carte.</p>
+<p class="body-text">Il costo di questa flessibilità è la potenza. Le carte [Fulmineo] sono solitamente più deboli di un'azione scoperta pura dello stesso Costo Tempo, e occupano uno slot che poteva essere una T più alta. Inoltre, puoi avere più Fulmineo nella stessa riga: una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in un turno. È una configurazione rara ma potente, che richiede carte Fulmineo specifiche e una carta terminale molto costosa.</p>
+<p class="body-text">Tatticamente, Fulmineo è la meccanica per i PG VERSATILI che vogliono combinare più cose in un turno: buffare prima di un colpo potente, rivelare un token nemico prima di attaccare, posizionarsi difensivamente prima di un'azione offensiva. Una carta [Fulmineo] può avere ANCHE altri tag: [Ferita], [Apertura], [Strumento] — e in questo caso cumula gli effetti. Una Fulmineo con [Apertura] può iniziare una combo nel suo slot mentre paga per una [Chiusura] successiva: il massimo della densità tattica in una sola carta.</p>
+<div class="recap-box">
+<div class="box-title">Meccanica [Fulmineo] — regole</div>
+<ul class="box-list">
+<li>Default: 1 sola azione attiva per turno (le altre carte sono puro pagamento del tempo).</li>
+<li>[Fulmineo]: la carta si attiva nel suo slot E conta come costo tempo per le carte successive.</li>
+<li>Costo: le carte Fulmineo sono più deboli di un'azione scoperta pura di pari T.</li>
+<li>Max teorico: 4 Fulmineo + 1 carta terminale = 5 azioni attive in un turno.</li>
+<li>Cumulabile con altri tag: [Ferita], [Apertura]/[Chiusura], [Strumento].</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Vedi Capitolo 12 (Vitalità e Scarti) per la distribuzione delle carte [Fulmineo] nel mazzo.</li>
+<li>Vedi Capitolo 9 (Combattimento → Combo) per l'interazione Fulmineo + tag combo.</li>
+<li>Vedi Capitolo 11 (Equipaggiamento) per l'interazione Fulmineo + [Strumento].</li>
+</ul>
+</div>
+<h3 class="subsection-title">3.6 Esempio guidato: un round completo</h3>
+<div class="subsection-divider"></div>
+<p class="body-text">Per fissare i concetti, vediamo un round completo con tre PG (Guerriero con Impeto 4, Mago con Risonanza 4, Ladro con Istinto 5) e un gruppo di nemici basici (rappresentati da 5 token coperti). Il Master posiziona i token per ultimo, dopo che i PG hanno tracciato le loro righe. Le righe sono: Guerriero = [T1 COPERTA] [T2 COPERTA] [T3 SCOPERTA (Spada)] [T4 COPERTA]; Mago = [T1 SCOPERTA (utility)] [T2 COPERTA] [T3 SCOPERTA (Fireball)]; Ladro = [T1 SCOPERTA (Schivata)] [T2 SCOPERTA (Pugnalata)]; Nemici = 5 token coperti in fila.</p>
+<p class="body-text">TICK 1: si risolve la colonna 1 di tutti. Guerriero COPERTA — scartata senza effetto, ha pagato tempo. Mago SCOPERTA — attiva la sua utility (per esempio un buff o un reveal informazioni). Ladro SCOPERTA — attiva Schivata, preparandosi a difendere nei prossimi tick. Nemico token 1 — viene girato: è un ATTACCO o un BLUFF? Se è un attacco, si calcola la difesa: il Ladro ha Schivata in posizione 1, quindi se il nemico attacca in posizione 1 è Blocco Perfetto; se attacca in posizione 2 è Blocco Mitigato; oltre, danno pieno.</p>
+<p class="body-text">TICK 2: si risolve la colonna 2. Guerriero COPERTA — altro pagamento. Mago COPERTA — pagamento. Ladro SCOPERTA — attiva Pugnalata, infligge danno al nemico. Nemico token 2 — girato, effetto risolto. Qui vediamo il vantaggio della riga corta del Ladro: ha già attivato due azioni mentre il Guerriero sta ancora pagando per arrivare alla sua Spada in posizione 3.</p>
+<p class="body-text">TICK 3: colonna 3, il momento chiave del round. Guerriero SCOPERTA — attiva Spada al livello 3 (T3, limitato da Impeto 4, quindi effetto pieno al livello 3). Mago SCOPERTA — attiva Fireball al livello 3. CONTROLLO COMBO: Guerriero e Mago sono nella stessa posizione con tag [Apertura]+[Chiusura]? Se sì, la combo si attiva con danno = somma dei Poteri di Spada e Fireball. Questo è il momento per cui il Guerriero ha pagato i primi due tick: una combo devastante in posizione 3.</p>
+<p class="body-text">TICK 4 e 5: si risolvono le colonne rimanenti. Il Guerriero ha una COPERTA in posizione 4 (paga tempo senza effetto), e i nemici token 4 e 5 vengono girati. Il Ladro e il Mago hanno righe già terminate, quindi possono tracciare nuove righe — pescando dal Mazzo Vitalità per tornare a 5 carte in mano. L'ordine di chi rigioca è dettato da chi ha svuotato prima: il Ladro (riga corta) rigioca prima del Guerriero (riga lunga ancora in corso).</p>
+<p class="body-text">Questo esempio mostra tutte le dinamiche della Cintura: l'asimmetria delle righe (Ladro veloce vs Guerriero lento), la Continuità Temporale (il Guerriero paga 1-2 per arrivare a 3), il controllo combo (Guerriero+Mago convergenti in 3), il controllo difesa (Schivata del Ladro in 1), e il refill automatico. Ogni round di ATB è una piccola composizione tattica di queste lunghezze variabili.</p>
+<div class="recap-box">
+<div class="box-title">Esempio — cosa abbiamo visto</div>
+<ul class="box-list">
+<li>Asimmetria: Ladro riga corta (2 carte), Guerriero riga lunga (4 carte).</li>
+<li>Continuità: Guerriero paga tick 1-2 per arrivare all'azione in tick 3.</li>
+<li>Combo: Guerriero e Mago convergenti in tick 3 attivano combo.</li>
+<li>Difesa: Schivata del Ladro in tick 1 copre il tick 1 (Blocco Perfetto) o il 2 (Mitigato).</li>
+<li>Refill: chi svuota prima la riga, rigioca prima e pesca per tornare a 5 in mano.</li>
+</ul>
+</div>
+<div class="cross-refs-box">
+<div class="cross-refs-label">Vedi anche</div>
+<ul class="cross-refs-list">
+<li>Capitolo 2 — Le carte (anatomia delle Carte Vitalità: Costo Tempo, tag, Tabella Potere)</li>
+<li>Capitolo 9 — Combattimento (Combo, Difesa, Tabella Potere operativa, Danno)</li>
+<li>Capitolo 11 — Equipaggiamento (interazione con tag [Strumento] e ferita a 2 stadi)</li>
+<li>Capitolo 12 — Vitalità e Scarti (Mazzo Vitalità, refill mano, esaurimento)</li>
+<li>Capitolo 7 — Area di Gioco (Zona 4: la Cintura condivisa al centro del tavolo)</li>
+<li>Canale 2 — Guida del Master (per i dettagli operativi sul Boss e sui token nemici)</li>
+</ul>
+</div></section>
+</div>
+
+<!-- ENDING -->
+<div class="ending">
+    <div class="ending-mark">Fine della Parte I</div>
+    <div class="ending-text">I Fondamenti sono conclusi. La Parte II — Creazione del Personaggio — entra nel dettaglio della costruzione del PG: point buy, Cuori Nominati, pool nominated, Area di Gioco.</div>
+</div>
+
+</body>
+</html>
