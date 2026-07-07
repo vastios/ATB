@@ -1,0 +1,210 @@
+{
+  "section_id": "MG-05",
+  "section_name": "Capitolo 4 — Creazione del PG",
+  "version": "1.0",
+  "architecture_version": "v3.1",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "last_updated": "2026-07-07",
+  "chapter_number": 4,
+  "chapter_title": "Creazione del PG",
+  "design_decisions": {
+    "struttura_capitolo": "A — 7 sottosezioni (1 per step) + intro + riepilogo = 9 sezioni",
+    "esempio_guidato": "A — Singolo filo conduttore Guerriero puro (Impeto 5, Istinto 3, Analisi 1, Risonanza 1) attraverso tutti gli 7 step",
+    "profondita_cuori": "B — Regola + 2-3 esempi concreti di triplette coerenti (PASSATO+DOTTRINA+LEGAMI)",
+    "profondita_mazzo_vitalita": "A — Solo regola (60 = 10×6, composizione T1-T5 per Approccio, esempio Guerriero puro)",
+    "tabella_riepilogativa": "A — Sottosezione finale 'Riepilogo' con tabella completa dei 6 componenti",
+    "cross_references": "C — Singolo box 'Vedi anche' finale (come Cap.1-3)",
+    "tono": "A — Cordiale, seconda persona ('tu'), zero lore",
+    "intro": "B — Breve paragrafo hook: 'Siediti. Davanti a te non hai una scheda...'"
+  },
+  "content": {
+    "intro": {
+      "title": "Capitolo 4 — Creazione del PG",
+      "paragraphs": [
+        "Siediti. Davanti a te non hai una scheda da compilare: hai un mucchio di carte. Questo capitolo ti guida passo-passo a trasformare quel mucchio in un personaggio giocabile. In ATB il personaggio STA SUL TAVOLO, non su un foglio: ogni scelta che fai qui diventa una carta fisica che gli altri vedono, toccano e leggono durante il gioco. Non ci sono caratteristica da cerchiare né numeri da annotare in caselle: ci sono decisioni da prendere, una per volta, in sette step.",
+        "I sette step sono in ordine obbligatorio per ragioni pratiche. Step 1 (Approcci) fissa il budget di partenza: 10 punti da distribuire tra i quattro Approcci. Step 2 (Cuori) dà al PG la sua essenza narrativa: tre carte Cuore nominate che scelgono da dove vieni, in cosa credi, per chi combatti. Step 3 e 4 (Pool e Nominated) traducono i numeri di Step 1 e i racconti di Step 2 in dieci carte fisiche, miste tra nominated e bianche. Step 5 e 6 (Equipaggiamento e Strumenti) completano il Lato Giocatore con nove slot fisici. Step 7 (Mazzo Vitalità) chiude con le 60 carte che rappresentano la tua energia in combattimento.",
+        "Quando hai finito, il tuo tavolo mostra tutto: a sinistra il mazzo e la mano, al centro le quattro linee degli Approcci e i tre Cuori in fila, a destra le nove carte del Lato Giocatore. Non serve altro. Sei pronto a giocare."
+      ]
+    },
+    "sezione_4_1_step_1_approcci": {
+      "title": "4.1 Step 1 — Assegnazione Approcci (Point Buy)",
+      "paragraphs": [
+        "Il PG ha 10 PUNTI da distribuire tra i quattro Approcci: Impeto, Analisi, Istinto, Risonanza. Ogni Approccio deve avere almeno 1 e al massimo 5. La somma deve fare esattamente 10. Non ci sono eccezioni: non puoi avere zero in un Approccio (saresti incapace di fare qualsiasi cosa in quel mindset) né sei (saresti un monomaniaco senza flessibilità).",
+        "Cosa rappresentano questi numeri? NON sono tratti innati come forza o intelligenza. Sono la distribuzione INIZIALE dei mindset del tuo PG: quanto fa affidamento, alla partenza, su ciascuno dei quattro modi di affrontare il mondo. Un Guerriero con Impeto 5 non è 'più forte' di un Mago con Impeto 1: è qualcuno che ha imparato a buttarsi nella mischia prima ancora di pensare, mentre il Mago ha imparato a ragionare prima di agire. La differenza non è genetica: è esperienza, abitudine, identità.",
+        "I valori POSSONO cambiare nel tempo attraverso il Riallineamento, una meccanica che attivi in momenti narrativi di crisi o fallimento: sposti un punto da un Approccio a un altro, riflettendo che il tuo PG ha dovuto cambiare modo di affrontare le cose. Non è un upgrade, è un cambio di rotta. Il dettaglio operativo del Riallineamento è nel Capitolo 6 — Carte Approccio Nominated.",
+        "Esempio filo conduttore: il Guerriero puro. Distribuisci i tuoi 10 punti così: Impeto 5, Istinto 3, Analisi 1, Risonanza 1. Sei qualcuno che combatte d'impeto per abitudine, ha affinato riflessi da sopravvissuto, ma ragiona poco e sente ancora meno la magia. Sul tavolo, questo si traduce in una linea Impeto lunga (5 carte), una Istinto media (3 carte), e due linee minuscole (1 carta ciascuna) per Analisi e Risonanza."
+      ],
+      "box_step1_ricap": {
+        "title": "Point Buy — regole",
+        "items": [
+          "10 punti da distribuire tra Impeto, Analisi, Istinto, Risonanza.",
+          "Minimo 1, massimo 5 per Approccio. La somma deve fare 10.",
+          "NON sono tratti innati: sono mindset iniziali.",
+          "Possono cambiare nel tempo tramite Riallineamento (vedi Cap.6).",
+          "5 profili-tipo dal sorgente: Guerriero puro, Mago puro, Avventuriero bilanciato, Ladro specialista, Studioso artigiano."
+        ]
+      },
+      "box_step1_profili": {
+        "title": "Cinque profili-tipo",
+        "items": [
+          "Guerriero puro: Impeto 5, Istinto 3, Analisi 1, Risonanza 1",
+          "Mago puro: Risonanza 5, Analisi 3, Impeto 1, Istinto 1",
+          "Avventuriero bilanciato: Impeto 3, Istinto 3, Analisi 2, Risonanza 2",
+          "Ladro specialista: Istinto 5, Analisi 3, Impeto 1, Risonanza 1",
+          "Studioso artigiano: Analisi 5, Risonanza 3, Impeto 1, Istinto 1"
+        ]
+      }
+    },
+    "sezione_4_2_step_2_cuori": {
+      "title": "4.2 Step 2 — Scelta dei 3 Cuori Nominati",
+      "paragraphs": [
+        "Il PG sceglie 3 carte Cuore nominated dal catalogo, una per ciascuna delle tre categorie obbligatorie: 1 PASSATO + 1 DOTTRINA + 1 LEGAMI. Le tre categorie sono fissate: non puoi avere due PASSATO e zero LEGAMI, né qualunque altra combinazione. Ogni categoria rappresenta una dimensione DIVERSA dell'essenza del personaggio, e tutte e tre devono essere presenti.",
+        "Il PASSATO è da dove vieni: le origini che hanno plasmato il tuo modo di approcciare al mondo. La DOTTRINA è in cosa credi: il codice etico che guida le tue scelte anche quando nessuno guarda. I LEGAMI sono per chi combatti: le persone, le comunità o gli ideali-personificati per cui sei disposto a spingerti oltre i tuoi limiti. La scelta del catalogo è libera, ma le tre categorie sono obbligatorie.",
+        "L'ordine consigliato per scegliere è PASSATO → DOTTRINA → LEGAMI, perché il PASSATO è la radice che determina gli altri due in modo naturale: un orfano di guerra svilupperà una certa dottrina (probabilmente legata alla sopravvivenza o alla giustizia) e certi legami (probabilmente con chi lo ha accolto). L'ordine non è obbligatorio, ma segue la logica narrativa del personaggio.",
+        "La coerenza narrativa tra i tre Cuori è importante. Il Master dovrebbe aiutarti a mantenere un filo coerente: se scegli 'Orfano di Guerra' (PASSATO), 'La giustizia prima della legge' (DOTTRINA) e 'Ordine cavalleresco che ti ha accolto' (LEGAMI), il personaggio ha un'identità chiara. Se scegli 'Orfano di Guerra' + 'Onore nel duello' + 'Villaggio natale da proteggere', c'è una tensione (un orfano di guerra raramente ha un villaggio natale intatto) che va giustificata o rivista.",
+        "La cosa più importante: i Cuori NON cambiano mai. Nemmeno se un LEGAME muore narrativamente (la sorella adottiva muore, l'ordine si scioglie, il maestro cade): resta nel cuore come cicatrice. La perdita non cancella il legame, lo trasforma in memoria. È una scelta di design forte: i Cuori sono ancore, non opzioni. Sceglile bene."
+      ],
+      "box_step2_triplette_coerenti": {
+        "title": "Tre triplette di esempio (coerenti)",
+        "items": [
+          "Orfano di Guerra (P) + La giustizia prima della legge (D) + Ordine cavalleresco (L) — il cavaliere redento",
+          "Erede Decaduto (P) + Onore nel duello (D) + Maestro defunto (L) — il duellante che porta avanti una tradizione",
+          "Figlio di Contadini (P) + Proteggere i più deboli (D) + Villaggio natale da proteggere (L) — l'eroe contadino"
+        ]
+      },
+      "box_step2_ricap": {
+        "title": "Cuori Nominati — regole",
+        "items": [
+          "3 Cuori: 1 PASSATO + 1 DOTTRINA + 1 LEGAMI (obbligatorio).",
+          "Scelti dal catalogo di 27 Cuori (9 per categoria).",
+          "Ordine consigliato: PASSATO → DOTTRINA → LEGAMI.",
+          "NON cambiano mai (nemmeno se il legame muore — diventa cicatrice).",
+          "3 Cuori feriti = morte del PG.",
+          "Sblocco: ogni Cuore dà accesso a UNA nominated Heart-linked (vedi Step 3)."
+        ]
+      }
+    },
+    "sezione_4_3_step_3_composizione_pool": {
+      "title": "4.3 Step 3 — Composizione del Pool di Carte Approccio",
+      "paragraphs": [
+        "Per ogni Approccio con valore N, il PG ha N carte fisiche di quell'Approccio. La somma dei valori (10) ti dà esattamente 10 carte totali sul tavolo. La composizione iniziale è MISTA: 4-5 NOMINATED + 5-6 BIANCHE. Le nominated sono carte con nome e abilità; le bianche sono segnaposto che rappresentano il tuo potenziale di crescita.",
+        "Delle 4-5 nominated, 3 sono HEART-LINKED: sono quelle che hai sbloccato scegliendo i Cuori allo Step 2. Per ciascun Cuore, hai scelto UNA nominated dalla lista specifica sbloccata da quel Cuore. Queste tre nominated sono la traduzione meccanica della tua identità narrativa: il PASSATO 'Orfano di Guerra' ti ha dato ad esempio 'Sopravvivenza Urbana' (nominated Istinto), la DOTTRINA 'La giustizia prima della legge' ti ha dato 'Difesa del Fratello' (nominated Impeto), e il LEGAME 'Ordine cavalleresco' ti ha dato 'Stile del Maestro' (nominated Istinto).",
+        "Le restanti 1-2 nominated sono LIBERE e le scegli allo Step 4. Le 5-6 bianche sono il potenziale di crescita: durante la progressione (Maturation) le sostituirai una alla volta con nominated libere dal catalogo. Il pool resta sempre di 10 carte: non si aggiungono carte, si sostituiscono.",
+        "Esempio filo conduttore: il Guerriero puro. Hai Impeto 5, Istinto 3, Analisi 1, Risonanza 1 = 10 carte totali. Composizione iniziale: 4 nominated (3 Heart-linked + 1 libera) + 6 bianche. Distribuzione per Approccio: Impeto ha 2 nominated (1 Heart-linked + 1 libera) + 3 bianche = 5 carte; Istinto ha 1 nominated (Heart-linked) + 2 bianche = 3 carte; Analisi ha 1 nominated (Heart-linked) + 0 bianche = 1 carta; Risonanza ha 0 nominated + 1 bianca = 1 carta. Le 6 bianche sono il tuo potenziale: cresceranno in nominated durante la campagna."
+      ],
+      "box_step3_ricap": {
+        "title": "Pool — composizione iniziale",
+        "items": [
+          "10 carte totali = somma dei valori di Approccio.",
+          "Composizione: 4-5 nominated + 5-6 bianche.",
+          "Delle nominated: 3 Heart-linked (dai Cuori) + 1-2 libere (Step 4).",
+          "Le bianche = potenziale di crescita (Maturation futura).",
+          "Le Heart-linked sono PROTETTE dal Riallineamento: non si toccano mai."
+        ]
+      }
+    },
+    "sezione_4_4_step_4_nominated_libere": {
+      "title": "4.4 Step 4 — Scelta delle Nominated Libere",
+      "paragraphs": [
+        "Dopo le 3 Heart-linked (imposte dai Cuori allo Step 2), scegli 1-2 nominated LIBERE dal catalogo generale. Queste nominated vanno a collocare negli slot nominated rimanenti, completando il totale di 4-5 nominated iniziali. La scelta è libera dal catalogo, ma deve rispettare una regola pratica: ogni nominated appartiene a un Approccio specifico, e non puoi avere più nominated di quante carte abbia in quell'Approccio.",
+        "Esistono due tipi di nominated libere, e li puoi mixare come preferisci. La NOMINATED SPECIALIZZATA ha 3 abilità in TEMA (stesso filone), con potenza crescente sbloccata dal valore di Approccio: abilità 1 con Approccio ≥ 1, abilità 2 con Approccio ≥ 3, abilità 3 con Approccio ≥ 5. È potente a livelli alti ma poco versatile. La NOMINATED GENERICA ha 3 abilità DIVERSE (non in tema), tutte disponibili con Approccio ≥ 1: più versatile, meno potente.",
+        "La scelta tra Specializzata e Generica è una scelta di identità. Specializzata = commitment a un'identità (sono il Piròmante, sono il Berserker). Generica = flessibilità (sono l'Avventuriero che sa fare un po' di tutto). Nessuna è oggettivamente migliore: dipende dal personaggio che vuoi interpretare e dalla campagna che giocherai.",
+        "Esempio filo conduttore: il Guerriero puro. Hai 1 slot libera da riempire (su 4-5 nominated totali, 3 sono Heart-linked, quindi scegli 1 libera). Per coerenza col personaggio, scegli una nominated Specializzata Impeto: 'Furia del Berserker', con le tre abilità progressive (1) Carica, (3) Attacco Multiplo, (5) Devastazione Totale. Hai Impeto 5, quindi puoi sbloccare tutte e tre le abilità: è la punta di lancia del tuo personaggio."
+      ],
+      "box_step4_ricap": {
+        "title": "Nominated Libere — regole",
+        "items": [
+          "1-2 nominated libere scelte dal catalogo generale (40 nominated totali, 10 per Approccio).",
+          "Non puoi avere più nominated di quante carte abbia in quell'Approccio.",
+          "Due tipi: Specializzata (3 abilità in tema, gerarchiche) o Generica (3 abilità diverse, tutte livello 1).",
+          "Specializzata = potente ma poco versatile. Generica = versatile ma meno potente.",
+          "Catalogo completo: vedi Capitolo 6 — Carte Approccio Nominated."
+        ]
+      }
+    },
+    "sezione_4_5_step_5_equipaggiamento": {
+      "title": "4.5 Step 5 — Equipaggiamento Iniziale",
+      "paragraphs": [
+        "Il PG sceglie 4 carte Equipaggiamento, una per ciascuno dei quattro slot fissi: 1 ARMA + 1 SCUDO/DOPPIA ARMA + 1 ARMATURA + 1 ACCESSORIO. Gli slot sono strutturali: non puoi avere due armi e zero armatura, né scambiare slot tra categorie. Ogni categoria ha una funzione specifica nel combattimento e va occupata.",
+        "L'arma è la tua principale fonte di danno attivo. Lo scudo o la doppia arma offre opzioni difensive o una seconda modalità offensiva. L'armatura riduce il danno subito. L'accessorio fornisce un potere speciale (magico, utility, situazionale). La combinazione delle quattro carte definisce il tuo stile di combattimento molto più dei valori di Approccio: un Guerriero con arma pesante + armatura pesante è un muro d'assalto; lo stesso Guerriero con arma leggera + doppia + accessorio mobile è un combattente tecnico.",
+        "Il budget iniziale lo decide il Master in base al livello di partenza della campagna. Una campagna 'eroi emergenti' può assegnare 1 pezzo Superiore + 3 Normali; una campagna 'veterani' può assegnare 4 Normali o anche 2 Superiori + 2 Normali. Questa flessibilità permette al Master di calibrare la potenza iniziale del gruppo senza toccare i valori di Approccio o i Cuori.",
+        "Esempio filo conduttore: il Guerriero puro. Scegli 4 carte Normali: Spada Longa (Arma), Scudo Pesante (Scudo), Cotta di Maglia (Armatura), Anello del Vigore (Accessorio). Sei un combattente classico, ben difeso, con un accessorio che ti dà un piccolo bonus costante. Niente fronzoli, ma niente punti deboli evidenti."
+      ],
+      "box_step5_ricap": {
+        "title": "Equipaggiamento — regole",
+        "items": [
+          "4 slot fissi: 1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio.",
+          "Il budget iniziale lo decide il Master (es. 1 Superiore + 3 Normali, oppure 4 Normali).",
+          "Categorie: Arma (danno), Scudo/Doppia (difesa o seconda offensiva), Armatura (riduzione danno), Accessorio (potere speciale).",
+          "L'equipaggiamento può essere FERITO (in 2 stadi: potere speciale → distruzione, volontaria o no).",
+          "Dettagli categorie e meccanica ferita: vedi Capitolo 11 — Equipaggiamento."
+        ]
+      }
+    },
+    "sezione_4_6_step_6_strumenti_rapidi": {
+      "title": "4.6 Step 6 — Strumenti Rapidi Iniziali",
+      "paragraphs": [
+        "Il PG ha 5 slot Strumenti Rapidi. Sono oggetti monouso che attivi in un singolo tick della Cintura ATB per un effetto immediato: pozioni, grimaldelli, fumogeni, talismani craftati, kit di primo soccorso, ecc. Una volta usati, la carta va scartata e lo slot resta vuoto fino a quando non lo riempi con un nuovo Strumento (trovato in esplorazione, comprato, o craftato).",
+        "Alla creazione, riempi i 5 slot con una combinazione di oggetti iniziali. La raccomandazione è 2-3 pozioni (cura, energia, antidoto) + 1-2 utility (grimaldelli, fumogeni, kit di riparazione). I talismani craftati da Analisi sono un'opzione SOLO se hai Analisi ≥ 1, perché il talento Crafting è sbloccato da quell'Approccio: sono oggetti magici monouso che puoi costruire durante i riposi, non cose che compri all'inizio.",
+        "Gli Strumenti Rapidi sono la tua riserva di flessibilità tattica. Le nominated ti danno opzioni ricorrenti, l'Equipaggiamento ti dà poteri stabili, ma gli Strumenti ti permettono di risolvere situazioni specifiche (un veleno che ti serve proprio ora, una porta che va scassinata in fretta, una ritirata coperta da fumogeno). Tenerli sempre un po' scarsi è sano: ti costringe a scegliere cosa preparare e cosa no.",
+        "Esempio filo conduttore: il Guerriero puro. Riempi i 5 slot con: 2 Pozioni di Cura (cura base), 1 Pozione di Vigore (+1 al Potere per un turno), 1 Grimaldello (per le porte chiuse), 1 Fumogeno (per ritirata coperta). Hai Analisi 1, quindi in futuro potrai craftare talismani — ma non ora."
+      ],
+      "box_step6_ricap": {
+        "title": "Strumenti Rapidi — regole",
+        "items": [
+          "5 slot monouso: pozioni, utility, talismani (craftati solo se Analisi ≥ 1).",
+          "Una volta usati, lo slot resta vuoto finché non lo riempi.",
+          "Raccomandazione iniziale: 2-3 pozioni + 1-2 utility.",
+          "Talismani craftati sono opzione SOLO se Analisi ≥ 1 (Crafting sbloccato da quell'Approccio).",
+          "Si attivano in 1 tick della Cintura ATB per effetto immediato.",
+          "Dettagli: vedi Capitolo 11 — Equipaggiamento."
+        ]
+      }
+    },
+    "sezione_4_7_step_7_mazzo_vitalita": {
+      "title": "4.7 Step 7 — Il Mazzo Vitalità",
+      "paragraphs": [
+        "Il Mazzo Vitalità è PROPORZIONALE agli Approcci del PG: 60 carte totali = 10 Punti Approccio × 6 carte per punto. Per ogni punto in un Approccio, hai 6 carte di quel colore nel mazzo. La composizione T1-T5 (i cinque livelli di potere delle carte Vitalità) di ciascun colore è determinata dal VALORE di quell'Approccio secondo la Distribuzione Asimmetrica per Livello: ogni Approccio ha una firma temporale unica, e la composizione del mazzo riflette quella firma.",
+        "Cosa significa 'firma temporale'? Che i quattro Approcci non scalano nello stesso modo. Impeto ha una firma che carica le carte T4-T5 (devastation): più hai Impeto, più il tuo mazzo si riempie di carte potenti a tempo lungo. Istinto ha una firma che carica le carte T1-T2 (riflessi): più hai Istinto, più il tuo mazzo si riempie di carte rapide a tempo corto. Analisi e Risonanza hanno firme più bilanciate, con una leggera emphasis sulle T2-T3. Le tabelle complete della Distribuzione Asimmetrica per Livello sono nel Capitolo 12 — Vitalità e Scarti.",
+        "Il mazzo NON è fisso. Quando subisci un Riallineamento (punto spostato da un Approccio all'altro), il mazzo si AGGIORNA dinamicamente: 6 carte del colore sceso tornano nella Riserva Comune, e 6 carte del colore salito vengono selezionate dal Catalogo o dalla Riserva seguendo la nuova composizione. Questo significa che il tuo mazzo evolve insieme al tuo personaggio: non è mai una scelta fissa che fai una volta per tutte.",
+        "Esempio filo conduttore: il Guerriero puro. Hai Impeto 5, Istinto 3, Analisi 1, Risonanza 1 = 10 punti × 6 carte = 60 carte. La composizione è: Impeto 5 → 30 carte (T1×3, T2×3, T3×4, T4×10, T5×10 — peso su T4-T5, devastation); Istinto 3 → 18 carte (T1×10, T2×5, T3×3 — peso su T1-T2, riflessi); Analisi 1 → 6 carte (T1×4, T2×2 — base comune); Risonanza 1 → 6 carte (T1×4, T2×2 — base comune). Totale: 30 + 18 + 6 + 6 = 60 carte ✓. Il tuo mazzo è pesantemente sbilanciato verso il colpo devastante: trenta carte su sessanta sono Impeto di livello alto."
+      ],
+      "box_step7_ricap": {
+        "title": "Mazzo Vitalità — regole",
+        "items": [
+          "60 carte totali = 10 Punti Approccio × 6 carte per punto.",
+          "Per ogni punto in un Approccio: 6 carte di quel colore.",
+          "Composizione T1-T5 = Distribuzione Asimmetrica per Livello (4 firme uniche, vedi Cap.12).",
+          "Impeto carica T4-T5 (devastation). Istinto carica T1-T2 (riflessi). Analisi e Risonanza più bilanciate.",
+          "Il mazzo è DINAMICO: muta quando subisci un Riallineamento.",
+          "Mano di 5 carte, pesca per tornare a 5 dopo aver giocato."
+        ]
+      }
+    },
+    "sezione_4_8_riepilogo": {
+      "title": "4.8 Riepilogo — Il personaggio completo",
+      "paragraphs": [
+        "Quando hai completato tutti e sette gli step, il tuo tavolo mostra un personaggio completo e giocabile. Niente scheda cartacea: tutto è visibile nelle carte fisiche disposte nelle quattro Zone della tua Area di Gioco. La tabella qui sotto riepiloga i sei componenti del PG, le loro quantità, le scelte che hai fatto, e i limiti entro cui hai operato.",
+        "Tieni presente che la creazione è solo il punto di partenza. Le nominated bianche diventeranno nominated nominated tramite Maturation. Gli Approcci possono essere Riallineati in momenti di crisi. L'Equipaggiamento viene sostituito, ferito, distrutto. Gli Strumenti si consumano e si rinnovano. Il Mazzo Vitalità evolve con i tuoi cambiamenti. I Cuori, soltanto quelli, restano immutabili: sono le ancore che tengono insieme tutto il resto mentre tutto il resto si trasforma."
+      ],
+      "box_riepilogo_tabella": {
+        "title": "Tabella riepilogativa — creazione del PG",
+        "items": [
+          "APPROCCI · 4 valori 1-5 · Point buy (scelta libera) · Somma = 10, min 1, max 5",
+          "CUORI NOMINATI · 3 carte (1 PASSATO + 1 DOTTRINA + 1 LEGAMI) · Dal catalogo Cuori (27 carte) · Sani alla creazione, immutabili",
+          "CARTE APPROCCIO · 10 totali · 4-5 nominated (3 Heart-linked + 1-2 libere) + 5-6 bianche · Le Heart-linked sono imposte dai Cuori e protette dal Riallineamento",
+          "EQUIPAGGIAMENTO · 4 slot · 1 Arma + 1 Scudo/Doppia + 1 Armatura + 1 Accessorio · Budget decide dal Master",
+          "STRUMENTI RAPIDI · 5 slot · Pozioni, utility, talismani (solo se Analisi ≥ 1) · Monouso, si rinnovano",
+          "MAZZO VITALITÀ · 60 carte · Selezione dal Catalogo (Distribuzione Asimmetrica per Livello) · 10 Punti × 6 carte, composizione dinamica"
+        ]
+      }
+    }
+  },
+  "cross_references": [
+    "Capitolo 5 — Cuori Nominati: struttura completa delle 3 categorie, sblocco Heart-linked, regole di ferita, cura equivalente",
+    "Capitolo 6 — Carte Approccio Nominated: pool misto, Specializzate vs Generiche, ferita, Maturation e Riallineamento",
+    "Capitolo 7 — Area di Gioco: le 4 Zone fisiche (Vitalità, Approcci+Cuori, Lato Giocatore, Cintura ATB)",
+    "Capitolo 11 — Equipaggiamento: 4 slot, categorie, ferita a 2 stadi, Strumenti Rapidi",
+    "Capitolo 12 — Vitalità e Scarti: Mazzo Dinamico, Distribuzione Asimmetrica per Livello, mano di 5, pila scarti, esaurimento"
+  ]
+}
