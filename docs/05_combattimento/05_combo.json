@@ -1,19 +1,19 @@
 {
   "section_id": "05-05",
   "section_name": "Combo Cooperative — Apertura, Sviluppo, Chiusura, Culmine",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il sistema Combo Cooperative. Le combo si attivano quando carte di PG diversi sono nella STESSA POSIZIONE TEMPORALE con Tag Combo compatibili. Richiedono OBBLIGATORIAMENTE almeno 2 giocatori diversi. Il danno combo = somma dei valori POTERE delle carte nella colonna. Questo file è la CASA UNICA per il sistema combo.",
+  "description": "Definisce il sistema Combo Cooperative. Le combo si attivano quando carte di PG diversi sono nella STESSA COLONNA con Tag Combo compatibili. Richiedono OBBLIGATORIAMENTE almeno 2 giocatori diversi. Il danno combo = somma dei valori POTERE delle carte nella colonna. Aggiornato al modello a colonne con header fisso (v3.2). Questo file è la CASA UNICA per il sistema combo.",
   "activation_rule": {
     "name": "Regola di Attivazione",
-    "principle": "Le combo si attivano quando carte di PG diversi sono nella STESSA POSIZIONE TEMPORALE con Tag Combo compatibili.",
-    "position_requirement": "La CONVERGENZA nella stessa posizione è obbligatoria. Vedi 04_cintura_atb/01_struttura.json → absolute_temporal_continuity",
+    "principle": "Le combo si attivano quando carte di PG diversi sono nella STESSA COLONNA (sotto la stessa carta numerata dell'header) con Tag Combo compatibili.",
+    "position_requirement": "La CONVERGENZA nella stessa colonna è obbligatoria. Vedi 04_cintura_atb/01_struttura.json → continuita_temporale_per_colonne",
     "tag_compatibility": "I Tag Combo devono essere compatibili: [Apertura]+[Chiusura] o [Apertura]+[Culmine] funzionano. [Apertura]+[Apertura] NON funziona (manca la chiusura)."
   },
   "two_player_minimum": {
     "name": "Minimo 2 Giocatori Diversi",
-    "rule": "Per attivare una combo, è OBBLIGATORIO impilare le carte di almeno 2 GIOCATORI DIVERSI nello stesso slot.",
+    "rule": "Per attivare una combo, è OBBLIGATORIO avere carte di almeno 2 GIOCATORI DIVERSI nella stessa colonna dell'header.",
     "narrative_reason": "La combo è SINERGIA tra compagni. Un solo PG non può fare combo con se stesso.",
     "mechanical_reason": "Previene il 'Doppio Colpo Devastante' di un solo PG e valorizza la cooperazione.",
     "fulmineo_exception_clarification": "Anche con [Fulmineo] (che permette più azioni attive per un singolo PG), NON si può fare combo da soli. Fulmineo attiva più poteri, ma la combo richiede sempre 2 PG diversi."
@@ -28,8 +28,8 @@
   },
   "combo_enabler": {
     "name": "Requisiti di Sincronizzazione",
-    "rule": "Le combo richiedono che le carte siano nella STESSA POSIZIONE TEMPORALE con Tag compatibili.",
-    "synchronization_cost": "Continuità Temporale Assoluta: per convergere nella posizione 4, devi riempire le posizioni 1-3 prima. Vedi 04_cintura_atb/01_struttura.json",
+    "rule": "Le combo richiedono che le carte siano nella STESSA COLONNA con Tag compatibili.",
+    "synchronization_cost": "Continuità Temporale per Colonne: per convergere in colonna 4, devi riempire le colonne 1-3 della tua riga prima. Vedi 04_cintura_atb/01_struttura.json",
     "design_intent": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Sei vulnerabile nel frattempo."
   },
   "combo_damage": {
@@ -41,8 +41,8 @@
   },
   "fast_vs_slow_combos": {
     "name": "Combo Veloci vs Lente",
-    "fast": "Combo veloci (posizione 1-2) = scambi fulminei, danno modesto ma immediato. Ideali per finire nemici deboli o creare pressione.",
-    "slow": "Combo pesanti (posizione 4-5) = eventi devastanti che si preparano a destra del tavolo, vulnerabilità durante la preparazione. Ideali per Boss o Elite con armatura."
+    "fast": "Combo veloci (colonna 1-2) = scambi fulminei, danno modesto ma immediato. Ideali per finire nemici deboli o creare pressione.",
+    "slow": "Combo pesanti (colonna 4-5, o 7-9 vs Boss) = eventi devastanti che si preparano a destra del tavolo, vulnerabilità durante la preparazione. Ideali per Boss o Elite con armatura."
   },
   "defense_offense_fusion": {
     "name": "Fusione Difesa/Offesa",
@@ -53,6 +53,7 @@
     "v5": "IL DILEMMA DEL GUERRIERO. Combo con carte Movimento.",
     "v7": "TAG COMBO v1.1. [Strumento] come requisito. Nomi Caratteristiche definitivi.",
     "v9": "ARCHITETTURA 3 CANALI. De-lore-izzazione.",
-    "v10_v3": "Le combo possono ora includere poteri dalle nominated (abilità/magie) oltre alle Carte Lato Giocatore fisiche. La regola del minimo 2 PG diversi è INVARIATA."
+    "v10_v3": "Le combo possono ora includere poteri dalle nominated (abilità/magie) oltre alle Carte Lato Giocatore fisiche. La regola del minimo 2 PG diversi è INVARIATA.",
+    "v3_2": "Aggiornamento terminologico al modello a colonne con header fisso. La regola di attivazione è IDENTICA nel principio: 2+ PG con carte scoperte e tag compatibili nella stessa colonna."
   }
 }

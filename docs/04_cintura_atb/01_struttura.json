@@ -1,67 +1,77 @@
 {
   "section_id": "04-01",
-  "section_name": "Struttura della Cintura ATB — Riga Fluida e Continuità Temporale",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Struttura della Cintura ATB — Header Fisso e Colonne Condivise",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la struttura fisica della Cintura ATB: il sistema di iniziativa e risoluzione basato su righe FLUIDE (non griglia fissa). Ogni PG traccia la propria riga di lunghezza variabile. La Cintura ATB è INVARIATA nella struttura tra v2 e v3 — le uniche differenze sono COSA attivano le carte scoperte (in v3: poteri nominated o Carte Lato Giocatore fisiche). Questo file è la CASA UNICA per la struttura fisica della Cintura.",
+  "description": "Definisce la struttura fisica della Cintura ATB: un HEADER FISSO di carte numerate posizionate dal Master, sotto il quale ogni PG traccia la propria riga. La risoluzione procede per COLONNE da sinistra a destra. Lo scrolling sincronizzato riallinea le righe quando un partecipante svuota la propria. Questo file è la CASA UNICA per la struttura fisica della Cintura.",
+  "revision_history": {
+    "v2_0": "RIFORMA STRUTTURALE v3.2: il precedente modello 'righe parallele fluide di lunghezza variabile' è stato RIMOSSO. Sostituito dal modello a colonne con header fisso, che era il modello fin dall'origine inteso dal designer ma era stato formalizzato in modo errato in v1.0.",
+    "v1_0": "Versione errata — righe parallele fluide senza header condiviso. Sostituita."
+  },
   "core_concept": {
-    "name": "Cintura ATB Fluida",
-    "definition": "NON esiste una griglia fissa 5×5. Ogni PG traccia una riga orizzontale di lunghezza VARIABILE nella Cintura ATB. Il Ladro con 3 azioni Costo 1 ha una riga corta e veloce. Il Guerriero con 1 azione Costo 5 ha una riga lunga e lenta. Il Boss con Potere 9 ha una riga che sporge enormemente.",
-    "visual_metaphor": "Come la vera ATB di Final Fantasy: strisce di lunghezze diverse che scorrono. Non un quadrato, ma una serie di nastri trasportatori a velocità diverse.",
-    "asymmetry": "L'ATB è asimmetrica PER NATURA. Il Ladro agisce 3 volte prima che il Guerriero finisca il suo colpo. Il Boss con Potere 9 avanza lentamente ma inarrestabilmente."
+    "name": "Cintura ATB a Colonne Condivise",
+    "definition": "Quando il Master 'chiama' la Cintura ATB, posiziona al centro del tavolo un HEADER FISSO di 5 carte numerate (combat base) o 9 carte numerate (Boss). Queste carte numerate sono solo GUIDA VISIVA dei tick temporali e NON si muovono. Sopra ogni carta numerata il Master posiziona un token coperto (attacco o bluff). SOTTO l'header, ogni PG traccia la PROPRIA riga orizzontale di carte Vitalità, allineata alle colonne numerate.",
+    "visual_metaphor": "Una tabella: la riga superiore (header) sono le carte numerate del Master; le righe sottostanti sono le righe dei PG, una per giocatore. Tutte allineate alle colonne dell'header.",
+    "key_principle": "Le colonne sono la coordinata temporale condivisa. La colonna 1 è 'adesso', la colonna 5 (o 9) è 'fra 5 tick'. Tutti i partecipanti (PG + Master) sono sincronizzati alla stessa colonna durante la risoluzione."
   },
-  "absolute_temporal_continuity": {
-    "name": "Continuità Temporale Assoluta",
-    "rule": "Le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra. È IMPOSSIBILE saltare slot. Non ci sono 'buchi' nella Cintura ATB.",
-    "implication_for_combos": "Se il Mago ha un'azione nella posizione 4 e il Guerriero vuole convergere lì, DEVE riempire le posizioni 1, 2 e 3 prima di arrivare al 4. Non può 'teletrasportare' la sua riga.",
-    "combo_synchronization_cost": "Le combo pesanti richiedono un investimento di posizioni MASSIVO. Il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago. È vulnerabile agli attacchi rapidi nel frattempo.",
-    "fast_vs_slow_combos": "Le combo veloci (posizione 1, Costo 1) sono scambi fulminei. Le combo devastanti (posizione 4-5) sono eventi che si preparano a destra del tavolo.",
-    "implication_for_defense": "Non puoi far apparire una difesa nella posizione 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella posizione."
+  "header_setup": {
+    "name": "Header Fisso del Master",
+    "rule": "Il Master posiziona un header di carte numerate: 5 carte (combat base o Elite) o 9 carte (Boss Epico).",
+    "card_role": "Le carte numerate sono solo GUIDA VISIVA. Non si attivano, non si muovono, non interagiscono con le regole. Esistono per fissare visivamente le colonne temporali.",
+    "token_placement": "Il Master posiziona 1 token coperto SOPRA ogni carta numerata. Ogni token rappresenta un attacco (vero) o un bluff del nemico. La combinazione attacchi/bluff è scelta liberamente dal Master. Vedi 08_nemici/05_token_bluff.json.",
+    "boss_header": "Contro un Boss Epico l'header ha 9 carte numerate (Potere massimo del Boss = 9). La riga del Boss si allinea alle 9 colonne come quella dei PG."
   },
-  "row_mechanics": {
-    "row_per_pg": "Ogni PG ha la propria riga orizzontale nella Cintura ATB.",
-    "row_per_enemy_basic": "1 riga per i token nemici basici (5 token coperti).",
-    "row_per_boss": "1 riga per il Boss (con azioni come i PG ma potere fino a 9).",
-    "variable_length": "La lunghezza di ogni riga dipende da quante carte il giocatore sceglie di giocare. Non esiste una lunghezza fissa.",
-    "corsie": "Ogni PG ha la propria 'Corsia' (striscia di tavolo). Le combo avvengono per CONVERGENZA delle righe nella stessa posizione."
+  "player_rows": {
+    "name": "Righe dei PG sotto l'header",
+    "rule": "Ogni PG traccia la PROPRIA riga orizzontale SOTTO l'header, partendo sempre dalla colonna 1 e procedendo L→R. Una riga contiene da 1 a 5 carte Vitalità.",
+    "card_placement": "Per attivare un'azione TN (Costo Tempo = N), il PG posiziona N carte nella propria riga: 1 SCOPERTA sotto la colonna N (che attiva il potere al tick N) + N−1 COPERTE sotto le colonne 1, 2, …, N−1 (che pagano il costo tempo).",
+    "mandatory_discovered": "Ogni volta che un PG gioca carte nella Cintura, DEVE posizionare ALMENO 1 carta SCOPERTA. Non è permessa una riga di sole carte coperte.",
+    "multiple_actions_per_row": "Un PG può distribuire più azioni nella stessa riga, fintantoché la mano di 5 carte basta. Esempio: 2 carte sotto colonna 2 (T2) + 3 carte sotto colonna 3 (T3) = riga di 5 carte con 2 azioni attive ai tick 2 e 3. Le carte coperte sotto la colonna 1 pagano contemporaneamente entrambe le azioni.",
+    "row_lengths_are_aligned": "Le righe dei PG possono essere di lunghezze diverse (Ladro riga da 2, Guerriero riga da 5), MA tutte iniziano dalla colonna 1 dell'header. Nessuno 'sporge' oltre la colonna 1 a sinistra. L'estensione massima a destra è la colonna 5 (combat base) o 9 (Boss)."
+  },
+  "continuita_temporale_per_colonne": {
+    "name": "Continuità Temporale per Colonne",
+    "rule": "Per attivare un'azione in colonna N, il PG deve riempire tutte le colonne da 1 a N−1 con carte (coperte o scoperte). Non possono esserci 'buchi' nella riga del PG.",
+    "implication_for_combos": "Se il Mago vuole attivare un'azione in colonna 4 e il Guerriero vuole convergere lì con una combo, il Guerriero deve riempire le colonne 1-2-3 della propria riga con carte paganti. Non può 'teletrasportare' la propria azione in colonna 4.",
+    "implication_for_defense": "Non puoi far apparire una difesa in colonna 5 all'ultimo secondo. Devi aver 'pagato' il tempo (carte nelle colonne 1-4) per portare la tua riga in colonna 5.",
+    "fast_vs_slow_combos": "Combo veloci (colonna 1-2) = scambi fulminei, danno modesto. Combo devastanti (colonna 4-5, o 7-9 contro i Boss) = eventi che si preparano a destra del tavolo, vulnerabilità durante la preparazione."
   },
   "how_many_cards_to_play": {
-    "rule": "Ogni giocatore sceglie quante carte giocare: da 1 a 5.",
-    "example": "Un PG con 3 carte Costo 5 e 2 carte Costo 3 potrebbe decidere di giocare coperte 2 carte da 5 per attivare una carta da 3, fermandosi a 1 azione da 3 con le altre 2 carte ancora in mano.",
-    "asymmetry_result": "Chi gioca 1 carta lenta ha una riga corta ma potente. Chi gioca 5 carte veloci traccia una riga più lunga ma con impatto minore per posizione.",
-    "forced_action": {
-      "name": "Azione Risonanzata",
-      "rule": "Quando un PG ha scartato l'ultima carta del suo Sentiero, PUÒ giocare altre carte (da 1 a 5). Non può restare senza carte nella Cintura ATB.",
-      "refill_rule": "Ogni volta che giocano carte, i PG ne pescano altrettante dal Mazzo Vitalità per averne sempre 5 in mano.",
-      "refill_restriction": "NON può aggiungere altre carte finché la coda non scorre di almeno 1 posizione."
-    }
+    "rule": "Ogni PG sceglie quante carte giocare: da 1 a 5 (limite mano).",
+    "obbligo_scoperta": "Almeno 1 carta deve essere SCOPERTA. Le altre (se giocate) sono COPERTE e pagano solo tempo.",
+    "refill_rule": "Ogni volta che un PG posiziona carte nella propria riga, pesca immediatamente dal Mazzo Vitalità per tornare a 5 carte in mano.",
+    "refill_restriction": "Un PG NON può aggiungere carte a una riga già in corso finché la riga non si svuota completamente (o subisce scrolling)."
   },
-  "turn_order": {
-    "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO.",
-    "subsequent_turns": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
-    "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo."
+  "iniziativa": {
+    "name": "Ordine di Iniziativa",
+    "rule_first_round": "Nel PRIMO round di Cintura, i PG scelgono tra loro l'ordine di iniziativa. Posizionano le loro righe nell'ordine concordato. Il Master posiziona i token SOPRA le carte numerate PER ULTIMO.",
+    "rule_subsequent_rounds": "Nei round successivi, l'ordine di iniziativa è dettato da chi svuota per primo la propria riga: chi svuota prima, rigioca prima.",
+    "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo. Si compensa col fatto che gli altri hanno già 'pagato' il loro tempo."
   },
-  "boss_integration_quick_reference": {
-    "principle": "Il Boss traccia la propria riga nella stessa Cintura ATB dei PG.",
-    "power_9": "Il Boss può giocare Potere 9 = 8 carte coperte + 1 carta azione scoperta. Quella riga di 9 posizioni sporge enormemente rispetto alle righe dei PG.",
-    "cross_reference_full": "Vedi 04_cintura_atb/03_fulmineo.json per Fulmineo e 08_nemici/06_boss_atb.json per i dettagli sul Boss"
+  "azzione_risonanzata": {
+    "name": "Azione Risonanzata",
+    "rule": "Quando un PG ha scartato l'ultima carta della propria riga (riga vuota), è OBBLIGATO a rigiocare: posiziona da 1 a 5 nuove carte nella propria riga, sempre partendo dalla colonna 1, con almeno 1 carta scoperta.",
+    "trigger": "La riga è vuota = nessuna carta in attesa di risoluzione nella propria riga.",
+    "refill_after": "Dopo aver posizionato nuove carte, pesca dal Mazzo Vitalità per tornare a 5 in mano."
   },
   "pacing_considerations": {
-    "natural_rhythm": "La fluidità delle righe crea un ritmo naturale. I PG veloci agiscono spesso, quelli lenti colpiscono forte ma raramente.",
-    "combo_timing": "Le combo richiedono pianificazione. Non sono mai gratuite: devi 'pagare' il tempo per far convergere la tua riga con quella del compagno."
+    "natural_rhythm": "Il modello a colonne crea un ritmo sincronizzato: tutti i partecipanti avanzano colonna per colonna insieme. Nessuno 'salta' avanti o indietro nel tempo.",
+    "combo_timing": "Le combo richiedono pianificazione: per convergere in colonna N con un compagno, devi pagare il tempo nelle colonne precedenti. Non sono mai gratuite.",
+    "header_as_visual_anchor": "L'header fisso è l'ancora visiva del combattimento. Tutti sanno sempre quale colonna si sta risolvendo, perché è la colonna più a sinistra non ancora risolta."
   },
   "design_evolution_notes": {
     "v1": "Cinghia di trasmissione base.",
     "v2": "Action Queue a Risoluzione Sincrona.",
     "v3": "Action Grid (griglia fissa 5×5) con token coperti.",
-    "v3.1": "Token coperti, Boss con riga dedicata.",
-    "v4": "LINEA DEL TEMPO FLUIDA (Cinghia di Trasporto). Niente griglia fissa. Continuità Temporale Assoluta.",
-    "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori. [Strumento] per slittamento scudo.",
+    "v3_1": "Token coperti, Boss con riga dedicata.",
+    "v4": "LINEA DEL TEMPO FLUIDA — formalizzazione ERRATA (righe parallele senza header condiviso). Questo file è stato riscritto in v3.2.",
+    "v5": "TAG COMBO v1.1: combo richiedono minimo 2 giocatori.",
     "v6": "FUSIONE LORE CABALISTICA — terminologia lore integrata.",
     "v7": "ARCHITETTURA 3 CANALI. De-lore-izzazione completa.",
-    "v8": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo. La struttura della Cintura ATB è INVARIATA.",
-    "v9": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA. Vedi 04_cintura_atb/03_fulmineo.json",
-    "v10": "ARCHITETTURA v3: le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated. Struttura Cintura ATB INVARIATA."
+    "v8": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo.",
+    "v9": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA.",
+    "v10_v3": "ARCHITETTURA v3: Vitalità SCOPERTE attivano poteri dalle nominated o dalle Carte Lato Giocatore.",
+    "v3_2": "RIFORMA STRUTTURALE: il modello a righe parallele fluide è RIMOSSO. Reintrodotto l'HEADER FISSO di carte numerate del Master con righe dei PG allineate SOTTO. Scrolling sincronizzato R→L quando un partecipante svuota. Questa era l'interpretazione originaria del designer, mai formalizzata correttamente prima d'ora."
   }
 }

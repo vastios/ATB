@@ -1,49 +1,58 @@
 {
   "section_id": "04-03",
-  "section_name": "Meccanica [Fulmineo] — Pagamento Attivo",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Meccanica [Fulmineo] — Pagamento Attivo nel Modello a Colonne",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la meccanica [Fulmineo]: l'unico modo per eseguire più di un'azione attiva per turno. Una Vitalità con [Fulmineo] può essere giocata SCOPERTA nel proprio slot ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. Questo file è la CASA UNICA per la meccanica Fulmineo.",
+  "description": "Definisce la meccanica [Fulmineo]: l'unico modo per eseguire più di un'azione attiva per riga. Una Vitalità con [Fulmineo] può essere giocata SCOPERTA nella propria colonna ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. Questo file è la CASA UNICA per la meccanica Fulmineo.",
+  "revision_history": {
+    "v2_0": "Aggiornamento al modello a colonne con header fisso (v3.2). La meccanica Fulmineo resta IDENTICA nel principio — cambia solo la terminologia da 'slot/riga' a 'colonna'.",
+    "v1_0": "Versione originale basata sul modello errato di righe parallele fluide."
+  },
   "fulmineo_mechanic": {
     "name": "Meccanica [Fulmineo] — Pagamento Attivo",
-    "description": "Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA (attivandosi nel suo slot) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. È l'unico modo per eseguire più di un'azione attiva per turno.",
-    "rule": "La carta [Fulmineo] va posizionata nello slot del suo Costo Tempo (NON nello slot della carta che sta pagando). Si attiva nel proprio tick E conta come pagamento per le Vitalità scoperte successive nella stessa riga."
+    "description": "Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA (attivandosi nella propria colonna) ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. È l'unico modo per eseguire più di un'azione attiva per riga.",
+    "rule": "La carta [Fulmineo] va posizionata nella COLONNA del suo Costo Tempo (NON nella colonna della carta che sta pagando). Si attiva nel proprio tick E conta come pagamento per le Vitalità scoperte successive nella stessa riga."
   },
   "concrete_example": {
-    "name": "Esempio T4",
-    "scenario": "PG vuole giocare una Vitalità T4 SCOPERTA (per attivare un'Arma T4). Servono 3 carte paganti.",
+    "name": "Esempio T4 nel modello a colonne",
+    "scenario": "PG vuole attivare un'Arma T4 (scoperta in colonna 4). Servono 3 carte paganti nelle colonne 1, 2 e 3.",
     "normal_sequence": {
-      "composition": "COPERTA — COPERTA — COPERTA — SCOPERTA(T4)",
-      "result": "1 sola azione attiva al tick 4."
+      "composition": "Col1=COPERTA, Col2=COPERTA, Col3=COPERTA, Col4=SCOPERTA(T4)",
+      "result": "1 sola azione attiva al tick 4 (colonna 4)."
     },
     "fulmineo_sequence": {
-      "composition": "COPERTA — SCOPERTA([Fulmineo], T2) — COPERTA — SCOPERTA(T4)",
-      "result": "La Fulmineo attiva il suo potere (abilità nominated o Carta Lato Giocatore) al tick 2 E conta come pagamento. Risultato: 2 azioni attive (tick 2 e tick 4) con lo stesso numero di carte.",
-      "note": "La Fulmineo è una T2: occupa lo slot 2. Le altre due T1/T1 pagano gli slot 1 e 3. La T4 nello slot 4."
+      "composition": "Col1=COPERTA, Col2=SCOPERTA([Fulmineo], T2), Col3=COPERTA, Col4=SCOPERTA(T4)",
+      "result": "La Fulmineo attiva il suo potere (abilità nominated o Carta Lato Giocatore) nella colonna 2 E conta come pagamento per la T4. Risultato: 2 azioni attive (colonna 2 e colonna 4) con lo stesso numero di carte.",
+      "note": "La Fulmineo è una T2: occupa la colonna 2. Le altre due T1/T1 pagano le colonne 1 e 3. La T4 nella colonna 4."
     }
   },
   "strategic_value": {
-    "principle": "Permette di combinare un'azione preparatoria (es. buff, posizionamento, reveal informazioni) con l'azione principale nello stesso turno.",
-    "cost": "La carta Fulmineo è solitamente più debole di un'azione scoperta pura, e occupa uno slot che poteva essere una T più alta.",
-    "tactical_use": "Ideale per: (1) buffare prima di un colpo potente, (2) rivelare un token nemico prima di attaccare, (3) posizionarsi difensivamente prima di un'azione offusiva."
+    "principle": "Permette di combinare un'azione preparatoria (es. buff, posizionamento, reveal informazioni) con l'azione principale nella stessa riga.",
+    "cost": "La carta Fulmineo è solitamente più debole di un'azione scoperta pura di pari T, e occupa una colonna che poteva essere pagata con una coperta più economica.",
+    "tactical_use": "Ideale per: (1) buffare prima di un colpo potente, (2) rivelare un token nemico prima di attaccare, (3) posizionarsi difensivamente prima di un'azione offensiva, (4) partecipare a una combo in colonna 2 mentre si prepara un'azione terminale in colonna 4."
   },
   "multiple_fulmineo": {
-    "rule": "Più carte [Fulmineo] possono essere giocate nella stessa riga, ciascuna attivandosi nel proprio slot e pagando per le successive.",
-    "maximum": "Una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in un turno.",
+    "rule": "Più carte [Fulmineo] possono essere giocate nella stessa riga, ciascuna attivandosi nella propria colonna e pagando per le successive.",
+    "maximum": "Una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in una riga.",
     "rare_case": "Configurazione rara ma potente. Spesso richiede carte Fulmineo specifiche e una carta terminale molto costosa."
   },
   "relationship_with_other_tags": {
     "ferita": "Una carta [Fulmineo] può avere ANCHE [Ferita] o altri tag. Cumula gli effetti.",
-    "combo_tags": "Una carta [Fulmineo] con [Apertura] può iniziare una combo nel suo slot mentre paga per una [Chiusura] successiva.",
-    "strumento": "Una carta [Fulmineo] con [Strumento] può attivare un Equipaggiamento o Strumento Rapido nel suo slot."
+    "combo_tags": "Una carta [Fulmineo] con [Apertura] può iniziare una combo nella sua colonna mentre paga per una [Chiusura] successiva in una colonna più a destra.",
+    "strumento": "Una carta [Fulmineo] con [Strumento] può attivare un Equipaggiamento o Strumento Rapido nella propria colonna."
+  },
+  "interaction_with_scrolling": {
+    "principle": "Lo scrolling sincronizzato non influenza la meccanica Fulmineo: una volta che la carta [Fulmineo] è stata posizionata in una colonna, resta in quella colonna fino alla risoluzione. Lo scrolling sposta le carte IN ATTESA DI RISOLUZIONE (cioè carte non ancora risolte), e una Fulmineo non risolta scrolla come qualsiasi altra carta.",
+    "fulmineo_gia_risolta": "Una Fulmineo già risolta (la sua colonna è stata processata) è già nella pila scarti. Non scrolla."
   },
   "design_intent": {
-    "principle": "Fulmineo è la meccanica per i PG VERSATILI che vogliono fare più cose per turno. Senza Fulmineo, ogni turno è 1 sola azione attiva. Con Fulmineo, puoi combinare azioni — ma paghi in potenza (la carta Fulmineo è più debole).",
-    "comparison_with_other_systems": "Simile al 'Quick Action' di D&D 5e, ma più flessibile — puoi avere quante Fulmineo vuoi, finché hai carte."
+    "principle": "Fulmineo è la meccanica per i PG VERSATILI che vogliono fare più cose per riga. Senza Fulmineo, ogni riga è 1 sola azione attiva. Con Fulmineo, puoi combinare azioni — ma paghi in potenza (la carta Fulmineo è più debole).",
+    "comparison_with_other_systems": "Simile al 'Quick Action' di D&D 5e, ma più flessibile — puoi avere quante Fulmineo vuoi, finché hai carte nella mano."
   },
   "design_evolution_notes": {
-    "v9_v2_1": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA. Una Vitalità con [Fulmineo] può essere giocata SCOPERTA nel proprio slot E conteggiata come costo tempo per una Vitalità successiva più costosa. Unico modo per avere più azioni attive per turno.",
-    "v10_v3": "INVARIATA. La meccanica Fulmineo resta identica in v3. Le carte [Fulmineo] possono attivare poteri dalle nominated o dalle Carte Lato Giocatore fisiche come qualsiasi altra scoperta."
+    "v9_v2_1": "ARCHITETTURA v2.1: meccanica [Fulmineo] CHIARITA.",
+    "v10_v3": "INVARIATA. Le carte [Fulmineo] possono attivare poteri dalle nominated o dalle Carte Lato Giocatore fisiche come qualsiasi altra scoperta.",
+    "v3_2": "Aggiornamento terminologico al modello a colonne con header fisso. La meccanica Fulmineo è IDENTICA nel principio: paga il costo E attiva il potere nella stessa colonna."
   }
 }

@@ -1,61 +1,92 @@
 {
   "section_id": "04-02",
-  "section_name": "Risoluzione della Cintura ATB — Tick-per-Tick e Ordine Turni",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "section_name": "Risoluzione della Cintura ATB — Colonna per Colonna e Scrolling Sincronizzato",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce COME si risolve la Cintura ATB dopo che tutti hanno posizionato le loro carte. La risoluzione scorre da sinistra a destra (tick-per-tick). Ad ogni tick si risolve la colonna più a sinistra di TUTTI i partecipanti. Le combo si attivano se le condizioni sono soddisfatte. Le difese si calcolano in base alla posizione. Questo file è la CASA UNICA per la risoluzione della Cintura ATB.",
+  "description": "Definisce COME si risolve la Cintura ATB dopo che tutti hanno posizionato le loro carte. La risoluzione scorre da sinistra a destra, COLONNA PER COLONNA. Ad ogni colonna si risolvono insieme tutte le carte dei PG e il token del Master in quella colonna. Quando un partecipante svuota la propria riga, TUTTI gli altri scrollano a sinistra per riallineare la prossima colonna da risolvere sotto la carta numerata 1. Questo file è la CASA UNICA per la risoluzione della Cintura ATB.",
   "resolution_logic": {
-    "name": "Logica di Risoluzione",
-    "method": "Da sinistra a destra. Si risolve la colonna più a sinistra di TUTTI i partecipanti prima di passare alla successiva.",
-    "step_by_step_v3": {
-      "tick_1": "Si risolve la prima Vitalità di ogni riga. Coperte → scartate senza effetto (fatica spesa). Scoperte → il PG SCEGLIE quale potere attivare (abilità/magia da una Carta Approccio nominated, oppure Equipaggiamento o Strumento Rapido) e l'effetto si risolve al livello = T della Vitalità (limitato dal valore attuale di Approccio del PG).",
-      "tick_2": "Si risolve la seconda Vitalità di ogni riga.",
-      "tick_n": "Continua finché tutte le righe sono state risolte completamente."
+    "name": "Logica di Risoluzione a Colonne",
+    "method": "Da sinistra a destra, colonna per colonna. Ad ogni passo si risolve la colonna più a sinistra (sotto la carta numerata 1 dell'header) di TUTTI i partecipanti contemporaneamente.",
+    "step_by_step": {
+      "colonna_corrente": "La colonna più a sinistra non ancora risolta è la COLONNA CORRENTE. È sempre allineata alla carta numerata 1 dell'header (grazie allo scrolling).",
+      "cosa_si_risolve_nella_colonna_corrente": "Per ogni riga (di ogni PG e del Master): se la colonna corrente contiene una carta, quella carta viene risolta. Se la colonna corrente è vuota per quella riga (riga già conclusa), non si fa nulla per quel partecipante.",
+      "carta_coperta": "COPERTA = scartata senza effetto. Rappresenta fatica spesa per pagare il tempo, nient'altro. Va nella pila scarti.",
+      "carta_scoperta": "SCOPERTA = il PG SCEGLIE quale potere attivare (abilità/magia da una Carta Approccio nominated, oppure Equipaggiamento o Strumento Rapido compatibile tramite i tag). L'effetto si risolve al livello = T della Vitalità, limitato dal valore attuale di Approccio del PG.",
+      "token_master": "Il token del Master nella colonna corrente viene GIRATO: ATTACCO (infligge danno come da scheda nemica) o BLUFF (nessun danno, il nemico ha perso tempo).",
+      "passaggio_successivo": "Dopo aver risolto TUTTE le carte della colonna corrente (PG + Master) e aver rimosso le carte coperte, si passa alla COLONNA SUCCESSIVA (vedi scrolling_rule)."
     },
     "cross_reference_activation": "Vedi 03_vitalita/02_giocare_vitalita.json per la regola di attivazione completa"
   },
-  "combo_check_per_tick": {
-    "name": "Controllo Combo ad Ogni Tick",
-    "rule": "Ad ogni tick, se Vitalità scoperte di ALMENO 2 PG DIVERSI sono nella STESSA POSIZIONE con Tag Combo compatibili ([Apertura]+[Chiusura]/[Culmine]), la combo si attiva.",
+  "scrolling_rule": {
+    "name": "Scrolling Sincronizzato R→L",
+    "principle": "Quando un partecipante (PG o Master) ha la propria riga VUOTA (tutte le carte della propria riga sono state risolte), è obbligato a rigiocare (Azione Risonanzata per i PG). Mentre decide quali carte giocare, TUTTI gli ALTRI partecipanti scrollano le loro righe verso SINISTRA, in modo che la prossima colonna da risolvere sia sempre allineata alla carta numerata 1 dell'header.",
+    "what_scrolls": "Scrollano insieme: le righe dei PG (con le loro carte in attesa di risoluzione) e i token del Master.",
+    "what_does_not_scroll": "L'header di carte numerate del Master NON scrolla. È fisso. Sono le righe dei partecipanti che si riallineano sotto l'header.",
+    "after_scroll": "Dopo lo scrolling, si riparte dalla risoluzione della COLONNA 1 (sotto la carta numerata 1 dell'header).",
+    "purpose": "Lo scrolling garantisce che la risoluzione sia sempre leggibile: la colonna corrente è SEMPRE la numero 1 dell'header. Non si perde il conto dei tick."
+  },
+  "combo_check_per_column": {
+    "name": "Controllo Combo ad Ogni Colonna",
+    "rule": "Ad ogni colonna, se Vitalità scoperte di ALMENO 2 PG DIVERSI sono presenti nella STESSA COLONNA con Tag Combo compatibili ([Apertura]+[Chiusura]/[Culmine]), la combo si attiva.",
     "damage_calculation": "Il danno è la SOMMA dei valori POTERE dei poteri attivati (abilità nominated, Equipaggiamento o Strumento Rapido).",
     "cross_reference_full": "Vedi 05_combattimento/05_combo.json per il sistema combo completo"
   },
-  "defense_check_per_tick": {
-    "name": "Controllo Difesa ad Ogni Tick",
-    "rule": "Ad ogni tick, se c'è un attacco nemico in quella posizione, si controllano le Abilità Difensive dei PG (ospitate su Carte Approccio nominated) agganciate a Vitalità in quella posizione.",
+  "defense_check_per_column": {
+    "name": "Controllo Difesa ad Ogni Colonna",
+    "rule": "Ad ogni colonna, se c'è un attacco nemico (token girato come ATTACCO), si controllano le Abilità Difensive nominated dei PG agganciate a Vitalità scoperte in quella colonna.",
     "outcomes": {
-      "same_position": "Stessa posizione = Blocco Perfetto. 0 danni.",
-      "adjacent_position": "Posizione adiacente (±1 slot) = Blocco Mitigato. Danno ridotto.",
-      "elsewhere": "Altrove = Danno Pieno."
+      "same_column": "Stessa colonna dell'attacco = Blocco Perfetto. 0 danni. Sblocca i tag Reazione [Contrattacco], [Intercettazione], [Immolazione] sull'abilità difensiva nominated (se presenti).",
+      "adjacent_column": "Colonna adiacente (±1, cioè la colonna precedente o successiva alla colonna corrente) = Blocco Mitigato. Danno ridotto.",
+      "elsewhere": "Altrove (colonne più lontane di ±1) = Danno Pieno."
     },
+    "protezione_alleati": "Le nominated difensive specifiche (Difensore del Fratello, Muro di Ferro, ecc.) ESTENDONO la protezione ad alleati. Vedi il loro catalogo per gli effetti esatti (Copertura, Barriera Umana, Sacrificio, ecc.).",
     "cross_reference_full": "Vedi 05_combattimento/04_difesa.json per il sistema difesa completo"
   },
+  "monster_resolution": {
+    "name": "Risoluzione dei Mostri come Entità Singola",
+    "principle": "I mostri (Base ed Elite con token, oppure Boss Epico con riga dedicata) sono gestiti come entità SINGOLA per quanto riguarda il danno.",
+    "subiscono_da_tutti": "Tutti i PG che attivano poteri offensivi nella colonna corrente infliggono danno al mostro (somma dei Poteri).",
+    "infliggono_a_tutti": "Quando il token del mostro è un ATTACCO, infligge danno a TUTTI i PG. Non c'è 'scelta del bersaglio' da parte del Master: il danno colpisce l'intero gruppo.",
+    "eccezioni_tratti": "I Tratti del nemico (Armatura Fissa, Resistenze per Tag, Ritorsione, ecc.) modificano l'economia del danno. Vedi 08_nemici/03_tratti.json.",
+    "eccezioni_attacchi_speciali": "Gli Attacchi Speciali dei Boss Epici (Colpo Mirato, Squarcio dell'Anima, Distruzione Risorse, Modifica ATB) sono le uniche eccezioni: bersagliano risorse specifiche. Vedi 08_nemici/04_attacchi_speciali.json.",
+    "difese_protettive_trasversali": "Le nominated difensive con tag Reazione ([Intercettazione], [Immolazione]) o le nominated tank (Difensore del Fratello con Barriera Umana o Sacrificio) permettono di deviare/assorbire il danno destinato ad altri PG, ripristinando la dimensione tattica del 'proteggere il compagno'."
+  },
   "boss_atb_resolution": {
-    "principle": "Il Boss segue le STESSE regole di risoluzione dei PG. La sua riga è solo più lunga (fino a 9 posizioni).",
+    "principle": "Il Boss Epico segue le STESSE regole di risoluzione dei PG. La sua riga si allinea alle 9 colonne dell'header (invece di 5). Il suo Potere può arrivare a 9 (8 carte coperte + 1 carta azione scoperta in colonna 9).",
     "cross_reference_full": "Vedi 08_nemici/06_boss_atb.json"
   },
   "turn_order_rules": {
-    "first_turn": "I PG scelgono come tracciare le loro righe di comune accordo. Il Master posiziona i token PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo turno.",
-    "subsequent_turns": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
+    "first_round": "I PG scelgono l'ordine di iniziativa tra loro. Posizionano le righe nell'ordine concordato. Il Master posiziona i token SOPRA le carte numerate PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo round.",
+    "subsequent_rounds": "Quando un PG ha scartato l'ultima carta della sua riga, può tracciare nuove carte. L'ordine è dettato da chi svuota per primo.",
     "knowledge_advantage": "Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo. Si compensa col fatto che gli altri hanno già 'pagato' il loro tempo.",
-    "refill_rule": "Ogni volta che un PG gioca carte nella Cintura ATB, ne pesca altrettante dal Mazzo Vitalità per tornare a 5 in mano. Vedi 03_vitalita/01_mazzo_vitalita.json"
+    "refill_rule": "Ogni volta che un PG posiziona carte nella propria riga, pesca dal Mazzo Vitalità per tornare a 5 carte in mano. Vedi 03_vitalita/01_mazzo_vitalita.json"
   },
   "visual_example": {
-    "name": "Esempio di Risoluzione",
-    "scenario": "Tre PG (Guerriero, Mago, Ladro) e un Boss affrontano un round. Il Master posiziona 5 token coperti per i nemici.",
-    "setup": [
-      "Guerriero (Impeto 4): riga = [T1 COPERTA] [T2 COPERTA] [T3 SCOPERTA (Spada)] [T4 COPERTA]",
-      "Mago (Risonanza 4): riga = [T1 SCOPERTA (utility)] [T2 COPERTA] [T3 SCOPERTA (Fireball)]",
-      "Ladro (Istinto 5): riga = [T1 SCOPERTA (Schivata)] [T2 SCOPERTA (Pugnalata)]",
-      "Nemici: riga = [token 1] [token 2] [token 3] [token 4] [token 5]"
+    "name": "Esempio di Setup e Risoluzione",
+    "scenario": "Tre PG (Guerriero, Mago, Ladro) affrontano 2 mostri basici. Header di 5 carte numerate.",
+    "setup_layout": [
+      "HEADER:        [NUM1] [NUM2] [NUM3] [NUM4] [NUM5]",
+      "TOKEN MASTER:  [TOK1] [TOK2] [TOK3] [TOK4] [TOK5]  (tutti coperti)",
+      "RIGA LADRO:    [SC1L]                          (T1: 1 scoperta)",
+      "RIGA MAGO:     [CP1M] [CP2M] [SC3M]            (T3: 2 coperte + 1 scoperta in col3)",
+      "RIGA GUERRIERO:[CP1G] [CP2G] [CP3G] [SC4G]     (T4: 3 coperte + 1 scoperta in col4)"
     ],
-    "tick_1_resolution": "Si risolve la colonna 1: Guerriero COPERTA (scartata), Mago SCOPERTA (utility risolta), Ladro SCOPERTA (Schivata — si prepara a difendere), Nemico token 1 (girato: ATTACCO o BLUFF).",
-    "tick_2_resolution": "Colonna 2: Guerriero COPERTA, Mago COPERTA, Ladro SCOPERTA (Pugnalata — danno al nemico), Nemico token 2.",
-    "tick_3_resolution": "Colonna 3: Guerriero SCOPERTA (Spada — attiva al livello 3), Mago SCOPERTA (Fireball — attiva al livello 3). COMBO: Guerriero e Mago sono nella stessa posizione con Tag [Apertura]+[Chiusura]? Se sì, combo si attiva con danno = somma Poteri.",
-    "tick_4_5_resolution": "Continua fino a risolvere tutte le colonne."
+    "colonna_1_resolution": "Si risolve la colonna 1 (sotto NUM1): Ladro SC1L scoperta → attiva Schivata. Mago CP1M coperta → scartata. Guerriero CP1G coperta → scartata. Master gira TOK1: ATTACCO. Controllo difesa: Schivata del Ladro è in colonna 1 = Blocco Perfetto (con eventuale tag Reazione).",
+    "scrolling_dopo_colonna_1": "La riga del Ladro è vuota. Il Ladro deve rigiocare (Azione Risonanzata). Mentre decide, TUTTI gli altri scrollano a sinistra:",
+    "after_scroll_layout": [
+      "HEADER:        [NUM1] [NUM2] [NUM3] [NUM4] [NUM5]  (INVARIATO)",
+      "TOKEN MASTER:  [TOK2] [TOK3] [TOK4] [TOK5]         (scrollati)",
+      "RIGA MAGO:     [CP2M] [SC3M]                       (scrollati)",
+      "RIGA GUERRIERO:[CP2G] [CP3G] [SC4G]                (scrollati)",
+      "RIGA LADRO:    (vuota — il Ladro sta decidendo)"
+    ],
+    "ladro_rigioca": "Il Ladro decide T2: posiziona 1 coperta sotto NUM1 + 1 scoperta sotto NUM2.",
+    "riprendi_risoluzione": "Si riparte dalla colonna 1 (sotto NUM1): Ladro CP1L coperta → scartata. Mago CP2M coperta → scartata. Guerriero CP2G coperta → scartata. Master gira TOK2: BLUFF.",
+    "colonna_2_resolution": "Colonna 2 (sotto NUM2): Ladro SC2L scoperta → attiva Pugnalata (danno al mostro). Mago SC3M scoperta → attiva Fireball. CONTROLLO COMBO: stesso colonna, tag compatibili? Se sì, combo con somma Poteri. Guerriero CP3G coperta → scartata. Master gira TOK3: ATTACCO. Nessuna difesa in colonna 2 → Danno Pieno a tutti i PG."
   },
   "design_evolution_notes": {
-    "principle": "La risoluzione da sinistra a destra è INVARIATA dalla v1. Le uniche differenze nelle versioni successive riguardano COSA attivano le carte scoperte (in v3: poteri nominated o Carte Lato Giocatore fisiche)."
+    "v3_2": "RIFORMA STRUTTURALE: risoluzione a colonne con scrolling sincronizzato. Sostituisce la vecchia risoluzione 'tick-per-tick su righe parallele' che era basata sul modello errato di righe fluide.",
+    "v1_0": "Versione errata — risoluzione su righe parallele senza header. Sostituita."
   }
 }

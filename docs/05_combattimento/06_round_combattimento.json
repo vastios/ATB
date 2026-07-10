@@ -1,10 +1,10 @@
 {
   "section_id": "05-06",
   "section_name": "Round di Combattimento — Step-by-Step",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la sequenza esatta di un round di combattimento. È la sintesi operativa di tutti i sistemi precedenti (Cintura ATB, Vitalità, Danno, Difesa, Combo). Questo file è la CASA UNICA per la sequenza del round.",
+  "description": "Definisce la sequenza esatta di un round di combattimento. È la sintesi operativa di tutti i sistemi precedenti (Cintura ATB, Vitalità, Danno, Difesa, Combo). Aggiornato al modello a colonne con header fisso e scrolling sincronizzato (v3.2). Questo file è la CASA UNICA per la sequenza del round.",
   "round_summary": {
     "name": "Sintesi del Round",
     "principle": "Un round di combattimento è composto da 9 step sequenziali. Si ripetono fino alla fine del combattimento (tutti i nemici sconfitti o tutti i PG svenuti/morti).",
@@ -12,19 +12,19 @@
   },
   "step_by_step": {
     "step_1_pg_plan": {
-      "name": "Step 1 — PG tracciano le loro righe",
-      "action": "I PG scelgono quante carte giocare (da 1 a 5) e le posizionano nella Cintura ATB. Le carte SCOPERTE attivano poteri; le COPERTE pagano solo il tempo.",
-      "cross_reference": "Vedi 04_cintura_atb/01_struttura.json → how_many_cards_to_play"
+      "name": "Step 1 — Master chiama la Cintura e PG tracciano le righe",
+      "action": "Il Master posiziona l'HEADER FISSO di 5 carte numerate (combat base) o 9 (Boss). I PG scelgono l'ordine di iniziativa tra loro e tracciano le proprie righe SOTTO l'header, partendo dalla colonna 1. Ogni PG sceglie quante carte giocare (da 1 a 5), con almeno 1 SCOPERTA. Le altre (se giocate) sono COPERTE e pagano solo tempo.",
+      "cross_reference": "Vedi 04_cintura_atb/01_struttura.json → header_setup, player_rows"
     },
     "step_2_master_tokens": {
-      "name": "Step 2 — Master posiziona i token",
-      "action": "Il Master posiziona 5 token coperti per i nemici. NEL PRIMO ROUND, il Master posiziona PER ULTIMO (dopo i PG). Nei round successivi segue la regola standard.",
+      "name": "Step 2 — Master posiziona i token sopra l'header",
+      "action": "Il Master posiziona 1 token coperto SOPRA ogni carta numerata dell'header. NEL PRIMO ROUND, il Master posiziona PER ULTIMO (dopo i PG). Nei round successivi segue la regola standard.",
       "cross_reference": "Vedi 08_nemici/05_token_bluff.json"
     },
     "step_3_resolution_left_to_right": {
-      "name": "Step 3 — Risoluzione da sinistra a destra",
-      "action": "Si risolve la colonna più a sinistra di TUTTI i partecipanti (PG + nemici) prima di passare alla successiva.",
-      "cross_reference": "Vedi 04_cintura_atb/02_risoluzione.json"
+      "name": "Step 3 — Risoluzione colonna per colonna (L→R)",
+      "action": "Si risolve la COLONNA CORRENTE (sempre allineata alla carta numerata 1 dell'header grazie allo scrolling) di TUTTI i partecipanti (PG + nemici) prima di passare alla successiva. Le COPERTE vengono scartate, le SCOPERTE attivano poteri, il token del Master viene girato (Attacco/Bluff).",
+      "cross_reference": "Vedi 04_cintura_atb/02_risoluzione.json → resolution_logic"
     },
     "step_4_reveal_token": {
       "name": "Step 4 — Si gira il token",
@@ -46,14 +46,14 @@
       "action": "Se carte di 2+ PG diversi convergono con Tag compatibili nella stessa posizione, la combo si attiva. Danno = somma valori Potere.",
       "cross_reference": "Vedi 05_combattimento/05_combo.json"
     },
-    "step_8_refill": {
-      "name": "Step 8 — refill e Azione Risonanzata",
-      "action": "PG senza carte nella riga DEVE rigiocare (Azione Risonanzata). Ogni PG pesca per tornare a 5 carte in mano.",
-      "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json → hand_mechanics"
+    "step_8_refill_and_scrolling": {
+      "name": "Step 8 — Refill, Scrolling sincronizzato e Azione Risonanzata",
+      "action": "Ogni PG che ha posizionato carte pesca per tornare a 5 in mano. Quando un partecipante (PG o Master) ha la propria riga vuota, è obbligato a rigiocare (Azione Risonanzata per i PG: 1-5 nuove carte con almeno 1 scoperta). Mentre decide, TUTTI gli altri partecipanti scrollano le loro righe verso SINISTRA, in modo che la prossima colonna da risolvere sia sempre sotto la carta numerata 1. L'header resta fisso.",
+      "cross_reference": "Vedi 04_cintura_atb/02_risoluzione.json → scrolling_rule, azzione_risonanzata"
     },
     "step_9_repeat": {
       "name": "Step 9 — Ripetere",
-      "action": "Ripetere gli step 1-8 fino a fine combattimento (tutti i nemici sconfitti o tutti i PG svenuti/morti)."
+      "action": "Ripetere gli step 3-8 fino a fine combattimento (tutti i nemici sconfitti o tutti i PG svenuti/morti). Lo Step 1 e 2 si ripetono solo se il combattimento cambia contesto (es. nuovo Boss che chiama una nuova Cintura con header diverso)."
     }
   },
   "end_conditions": {
@@ -62,8 +62,8 @@
     "retreat": "I PG possono tentare la ritirata (con Strumenti Rapidi appositi, es. Bomba a Fumogeno). La ritirata NON concede ricompense meccaniche. Vedi 06_equipaggiamento/04_stumenti_rapidi.json"
   },
   "first_turn_special_rule": {
-    "principle": "Nel PRIMO round di combattimento, il Master posiziona i token PER ULTIMO (dopo che i PG hanno tracciato le loro righe). Questo dà un leggero vantaggio informativo ai PG all'inizio del combattimento.",
-    "subsequent_rounds": "Nei round successivi, il Master segue la regola standard (posiziona quando i PG hanno scartato l'ultima carta della loro riga)."
+    "principle": "Nel PRIMO round di combattimento, il Master posiziona l'header e i token SOPRA le carte numerate PER ULTIMO (dopo che i PG hanno tracciato le loro righe sotto l'header). Questo dà un leggero vantaggio informativo ai PG all'inizio del combattimento.",
+    "subsequent_rounds": "Nei round successivi, il Master segue la regola standard (i token scrollano a sinistra insieme alle righe dei PG quando un partecipante svuota)."
   },
   "quick_reference_table": {
     "headers": [
@@ -74,17 +74,17 @@
     "rows": [
       [
         "1",
-        "PG tracciano righe (1-5 carte)",
+        "Master chiama Cintura (header 5/9) + PG tracciano righe sotto",
         "04_cintura_atb/01_struttura.json"
       ],
       [
         "2",
-        "Master posiziona 5 token coperti",
+        "Master posiziona 5/9 token coperti sopra l'header",
         "08_nemici/05_token_bluff.json"
       ],
       [
         "3",
-        "Risoluzione colonna più a sinistra",
+        "Risoluzione colonna corrente (sempre sotto NUM1)",
         "04_cintura_atb/02_risoluzione.json"
       ],
       [
@@ -109,8 +109,8 @@
       ],
       [
         "8",
-        "Refill mano + Azione Risonanzata",
-        "03_vitalita/01_mazzo_vitalita.json"
+        "Refill mano + Scrolling sincronizzato + Azione Risonanzata",
+        "04_cintura_atb/02_risoluzione.json"
       ],
       [
         "9",

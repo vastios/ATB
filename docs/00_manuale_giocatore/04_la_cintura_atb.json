@@ -1,126 +1,134 @@
 {
   "section_id": "MG-04",
   "section_name": "Capitolo 3 — La Cintura ATB",
-  "version": "1.0",
-  "architecture_version": "v3.1",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "last_updated": "2026-07-03",
+  "last_updated": "2026-07-10",
   "chapter_number": 3,
   "chapter_title": "La Cintura ATB",
   "design_decisions": {
-    "relazione_con_source_files": "B — Nuovo file player-facing che estrae e riorganizza il contenuto di 3 source files (01_struttura, 02_risoluzione, 03_fulmineo). I source files restano come reference canonica per designer.",
-    "struttura_sezionale": "C — Ibrido: concept (riga fluida) → struttura fisica → risoluzione tick-per-tick → meccanica Fulmineo → esempio guidato.",
+    "relazione_con_source_files": "B — Nuovo file player-facing che estrae e riorganizza il contenuto di 3 source files (01_struttura, 02_risoluzione, 03_fulmineo) aggiornati al modello a colonne v3.2.",
+    "struttura_sezionale": "C — Ibrido: concept (header fisso + righe) → struttura fisica → risoluzione colonna per colonna → meccanica Fulmineo → esempio guidato.",
     "design_evolution_notes": "C — Omessa totalmente. Il giocatore non ha bisogno di vedere v1-v10.",
-    "boss_integration": "B — Solo nominato (il Boss traccia la sua riga come i PG, ma con Potere fino a 9). Dettagli operativi del Boss sono nel Canale 2.",
-    "combo_e_difesa": "B — Nominati come controlli che avvengono ad ogni tick, con rimando ai capitoli dedicati (Cap.9 Combattimento). Nessun dettaglio operativo qui.",
-    "esempio_guidato": "A — Sezione dedicata con un esempio completo di round, per fissare il concetto di risoluzione L→R.",
+    "boss_integration": "B — Solo nominato (il Boss usa header a 9 colonne invece di 5). Dettagli operativi del Boss sono nel Canale 2.",
+    "combo_e_difesa": "B — Nominati come controlli che avvengono ad ogni colonna, con rimando ai capitoli dedicati (Cap.9 Combattimento). Nessun dettaglio operativo qui.",
+    "esempio_guidato": "A — Sezione dedicata con un esempio completo di round, per fissare il concetto di risoluzione L→R con scrolling sincronizzato.",
     "tono": "B — Cordiale, seconda persona ('tu'), zero lore. Stesso Frontespizio e Cap.1-2."
   },
   "content": {
     "intro": {
       "title": "Capitolo 3 — La Cintura ATB",
       "paragraphs": [
-        "La Cintura ATB è il cuore del sistema di iniziativa e risoluzione di ATB. Non è una griglia fissa di turni, come in molti altri GdR: è una linea temporale fluida in cui ogni partecipante — PG o nemico — traccia la propria riga di lunghezza variabile. La Cintura decide chi agisce prima, chi agisce più spesso, e quanto costa in tempo fare qualcosa di potente. Capire la Cintura significa capire il ritmo del gioco.",
-        "Questo capitolo ti spiega la struttura fisica della Cintura (3.1), la regola della continuità temporale assoluta (3.2), la risoluzione tick-per-tick (3.3), i controlli di combo e difesa che avvengono ad ogni tick (3.4), la meccanica Fulmineo che permette più azioni attive per turno (3.5), e infine un esempio guidato di round completo (3.6). Le regole operative su combo e difesa sono rimandate al Capitolo 9 (Combattimento); qui impari la grammatica della Cintura, non i dettagli tattici."
+        "La Cintura ATB è il cuore del sistema di iniziativa e risoluzione di ATB. Non è una griglia fissa di turni uguali per tutti, come in molti altri GdR: è una struttura a colonne condivise, dove il Master posiziona un header fisso di carte numerate e ogni PG traccia la propria riga sotto, allineata alle colonne. La Cintura decide chi agisce quando, quanto costa in tempo fare qualcosa di potente, e quando due PG possono convergere per una combo. Capire la Cintura significa capire il ritmo del gioco.",
+        "Questo capitolo ti spiega la struttura fisica della Cintura (3.1), la regola della continuità temporale per colonne (3.2), la risoluzione colonna per colonna con scrolling sincronizzato (3.3), i controlli di combo e difesa che avvengono ad ogni colonna (3.4), la meccanica Fulmineo che permette più azioni attive per riga (3.5), e infine un esempio guidato di round completo (3.6). Le regole operative su combo e difesa sono rimandate al Capitolo 9 (Combattimento); qui impari la grammatica della Cintura, non i dettagli tattici."
       ]
     },
-    "sezione_3_1_la_riga_fluida": {
-      "title": "3.1 La riga fluida (non la griglia fissa)",
+    "sezione_3_1_header_fisso_e_righe_pg": {
+      "title": "3.1 Header fisso e righe dei PG",
       "paragraphs": [
-        "La prima cosa da fissare: in ATB NON esiste una griglia fissa 5×5 di turni. Ogni partecipante traccia la PROPRIA riga orizzontale, di lunghezza variabile, nella Cintura condivisa al centro del tavolo. La lunghezza di ogni riga dipende da quante carte il partecipante sceglie di giocare e da quale Costo Tempo hanno quelle carte. Un Ladro che gioca 3 carte T1 ha una riga corta e veloce; un Guerriero che gioca 1 carta T5 ha una riga lunga ma con un solo colpo devastante in fondo; un Boss con Potere 9 può tracciare una riga che sporge enormemente rispetto a quelle dei PG.",
-        "L'asimmetria è il punto. La Cintura ATB è asimmetrica PER NATURA: il Ladro agisce 3 volte prima che il Guerriero finisca il suo colpo, e il Guerriero accetta questa lentezza perché il suo colpo è devastante. Il Boss avanza inarrestabilmente, ma lentamente — i PG hanno tempo di preparare una difesa o una combo prima che la sua azione si risolva. Questa asimmetria non è un difetto del sistema: è la sua firma. Genera il ritmo caratteristico di ATB, dove la velocità e la potenza sono scelte tattiche alternative, non bonus cumulabili.",
-        "Metafora visiva: pensa alla Cintura come a un insieme di nastri trasportatori che scorrono a velocità diverse. Il nastro del Ladro scorre veloce e corto; quello del Guerriero scorre lento e lungo; quello del Boss scorre lentissimo ma trasporta un carico enorme. Tutti i nastri convergono nella stessa area del tavolo, e le combo avvengono quando due nastri diversi arrivano alla stessa posizione nello stesso momento.",
-        "La regola pratica: ogni PG ha la propria 'Corsia' (la sua striscia di tavolo), e ogni Corsia ospita la riga di carte giocate. I nemici basici condividono una riga di token coperti; il Boss ha una riga dedicata. La Cintura ATB è quindi una sovrapposizione di righe parallele, tutte risolte contemporaneamente tick-per-tick."
+        "La prima cosa da fissare: in ATB la Cintura ha un HEADER FISSO di carte numerate, posizionato al centro del tavolo dal Master. Per i combattimenti base l'header ha 5 carte numerate (da 1 a 5); per i Boss Epici l'header ha 9 carte numerate (da 1 a 9). Queste carte numerate sono solo GUIDA VISIVA: indicano i tick temporali e NON si muovono mai, non si attivano, non interagiscono con le regole. Esistono per fissare visivamente le colonne.",
+        "SOPRA ogni carta numerata, il Master posiziona un TOKEN COPERTO. Il token rappresenta un'azione del nemico: ATTACCO (infligge danno quando viene rivelato) o BLUFF (nessun danno, il nemico ha solo 'perso tempo'). I PG non sanno quali token siano attacchi e quali bluff finché non vengono girati al tick di risoluzione. La combinazione attacchi/bluff è scelta liberamente dal Master.",
+        "SOTTO l'header, ogni PG traccia la PROPRIA riga orizzontale di carte Vitalità, allineata alle colonne dell'header. Il Ladro può avere una riga corta (una sola carta in colonna 1), il Guerriero una riga lunga (cinque carte che attraversano tutte le colonne), il Mago una riga media. Le righe possono avere lunghezze diverse, MA tutte iniziano dalla colonna 1: nessuno 'sporge' a sinistra. L'estensione massima a destra è la colonna 5 (combat base) o 9 (Boss).",
+        "L'asimmetria è il punto. La Cintura ATB è asimmetrica PER NATURA: il Ladro con una riga corta agisce prima e più spesso, il Guerriero con una riga lunga colpisce potente ma lentamente, il Boss con Potere 9 estende la sua riga fino alla colonna 9 dell'header — un'azione lentissima ma devastante. Questa asimmetria non è un difetto del sistema: è la sua firma. Genera il ritmo caratteristico di ATB, dove la velocità e la potenza sono scelte tattiche alternative, non bonus cumulabili.",
+        "Metafora visiva: pensa alla Cintura come a una tabella. La riga superiore (header) sono le carte numerate del Master, fissate al tavolo. Le righe sottostanti sono le righe dei PG, una per giocatore, tutte allineate alle colonne dell'header. Sopra l'header, i token del Master. Quando una colonna viene risolta, le righe scrollano a sinistra per riallineare la prossima colonna da risolvere sotto la carta numerata 1 — come un nastro trasportatore che avanza."
       ],
-      "box_riga_fluida_ricap": {
-        "title": "La riga fluida — principi",
+      "box_header_righe_ricap": {
+        "title": "Header e righe — principi",
         "items": [
-          "Niente griglia fissa: ogni partecipante traccia la propria riga di lunghezza variabile.",
-          "La lunghezza dipende da quante carte giochi e dal loro Costo Tempo.",
-          "Ladro veloce = riga corta, più azioni. Guerriero lento = riga lunga, colpo potente.",
-          "Boss = riga dedicata, può arrivare a Potere 9 (9 posizioni).",
-          "Metafora: nastri trasportatori a velocità diverse che convergono."
+          "Header fisso: 5 carte numerate (combat base) o 9 (Boss). Solo guida visiva.",
+          "Token del Master: 1 coperto sopra ogni carta numerata (Attacco o Bluff).",
+          "Righe dei PG: una per giocatore, sotto l'header, allineate alle colonne.",
+          "Le righe possono avere lunghezze diverse, ma tutte partono dalla colonna 1.",
+          "Metafora: tabella con header fisso + righe che scrollano a sinistra."
         ]
       }
     },
-    "sezione_3_2_continuita_temporale_assoluta": {
-      "title": "3.2 Continuità Temporale Assoluta",
+    "sezione_3_2_continuita_temporale_per_colonne": {
+      "title": "3.2 Continuità Temporale per Colonne",
       "paragraphs": [
-        "La regola aurea della Cintura ATB è la Continuità Temporale Assoluta: le carte si posizionano SEMPRE a partire dalla prima posizione libera a sinistra della propria riga. È IMPOSSIBILE saltare slot. Non ci sono 'buchi' nella Cintura — se vuoi arrivare alla posizione 4, devi prima riempire le posizioni 1, 2 e 3. Questa regola apparentemente tecnica ha conseguenze tattiche enormi, perché significa che il tempo in ATB si paga sempre per intero, mai a salti.",
-        "La conseguenza più importante riguarda le combo. Se il Mago ha un'azione nella posizione 4 e il Guerriero vuole convergere lì per attivare una combo cooperativa, il Guerriero DEVE riempire le posizioni 1, 2 e 3 della propria riga prima di arrivare al 4. Non può 'teletrasportare' la sua riga in posizione 4. Le combo pesanti richiedono quindi un investimento di posizioni MASSIVO: il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago, e questo lo rende vulnerabile agli attacchi rapidi nel frattempo.",
-        "Questa regola genera una differenza netta tra combo veloci e combo devastanti. Le combo veloci (posizione 1, Costo 1) sono scambi fulminei tra PG che convergono subito: poco danno, ma nessun investimento di tempo. Le combo devastanti (posizione 4 o 5) sono eventi che si preparano a destra del tavolo: molto danno, ma espongono i PG a tutto ciò che i nemici fanno nelle posizioni precedenti. Scegliere quale tipo di combo costruire è una scelta tattica continua.",
-        "La stessa regola vale per la difesa: non puoi far apparire una difesa nella posizione 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella posizione. Se un nemico attacca in posizione 2 e tu non hai nulla in posizione 2, subisci il colpo pieno — anche se in posizione 5 hai una difesa potentissima. La Cintura premia chi pianifica in anticipo e punisce chi reagisce a freddo."
+        "La regola aurea della Cintura ATB è la Continuità Temporale per Colonne: per attivare un'azione in colonna N, devi riempire tutte le colonne da 1 a N−1 della tua riga con carte (coperte o scoperte). È IMPOSSIBILE saltare colonne. Non ci sono 'buchi' nella riga di un PG — se vuoi piazzare una carta scoperta in colonna 4, devi prima mettere qualcosa nelle colonne 1, 2 e 3. Questa regola apparentemente tecnica ha conseguenze tattiche enormi, perché significa che il tempo in ATB si paga sempre per intero, mai a salti.",
+        "La conseguenza più importante riguarda le combo. Se il Mago ha un'azione scoperta in colonna 4 e il Guerriero vuole convergere lì per attivare una combo cooperativa, il Guerriero DEVE riempire le colonne 1, 2 e 3 della propria riga prima di arrivare al 4. Non può 'teletrasportare' la sua azione in colonna 4. Le combo pesanti richiedono quindi un investimento di posizioni MASSIVO: il Guerriero deve sacrificare i primi 3 slot (con carte coperte o azioni veloci) per sincronizzarsi col Mago, e questo lo rende vulnerabile agli attacchi rapidi nel frattempo.",
+        "Questa regola genera una differenza netta tra combo veloci e combo devastanti. Le combo veloci (colonna 1-2) sono scambi fulminei tra PG che convergono subito: poco danno, ma nessun investimento di tempo. Le combo devastanti (colonna 4-5, o 7-9 contro i Boss) sono eventi che si preparano a destra del tavolo: molto danno, ma espongono i PG a tutto ciò che i nemici fanno nelle colonne precedenti. Scegliere quale tipo di combo costruire è una scelta tattica continua.",
+        "La stessa regola vale per la difesa: non puoi far apparire una difesa in colonna 5 all'ultimo secondo. Devi aver 'pagato' il tempo per portare la tua riga in quella colonna. Se un nemico attacca in colonna 2 e tu non hai nulla in colonna 2, subisci il colpo pieno — anche se in colonna 5 hai una difesa potentissima. La Cintura premia chi pianifica in anticipo e punisce chi reagisce a freddo."
       ],
       "box_continuita_ricap": {
-        "title": "Continuità Temporale Assoluta — regole",
+        "title": "Continuità Temporale per Colonne — regole",
         "items": [
-          "Le carte si posizionano SEMPRE dalla prima posizione libera a sinistra. Mai salti.",
+          "Per attivare un'azione in colonna N, devi riempire le colonne 1, 2, …, N−1.",
+          "Mai salti. Mai buchi nella riga di un PG.",
           "Combo pesanti = investimento di posizioni massivo (riempi 1-2-3 per arrivare al 4).",
-          "Combo veloci (pos 1) = scambi fulminei, poco danno.",
-          "Combo devastanti (pos 4-5) = molto danno, ma esposizione agli attacchi nelle posizioni precedenti.",
-          "La difesa deve essere 'pagata' nel tempo: non appare a freddo nella posizione del nemico."
+          "Combo veloci (col 1-2) = scambi fulminei, poco danno.",
+          "Combo devastanti (col 4-5, o 7-9 vs Boss) = molto danno, ma esposizione nelle colonne precedenti.",
+          "La difesa deve essere 'pagata' nel tempo: non appare a freddo nella colonna del nemico."
         ]
       }
     },
-    "sezione_3_3_risoluzione_tick_per_tick": {
-      "title": "3.3 Risoluzione tick-per-tick",
+    "sezione_3_3_risoluzione_colonna_per_colonna": {
+      "title": "3.3 Risoluzione colonna per colonna",
       "paragraphs": [
-        "Quando tutti i partecipanti hanno tracciato le loro righe, la Cintura si risolve da sinistra a destra, tick per tick. Ad ogni tick si risolve la colonna più a sinistra di TUTTI i partecipanti contemporaneamente: ogni riga 'avanza' di una posizione, e le carte in quella posizione vengono attivate o scartate. Solo dopo che tutta la colonna è risolta, si passa al tick successivo.",
-        "Cosa succede a ogni tick dipende dallo stato della carta in quella posizione. Una carta COPERTA viene scartata senza effetto: rappresenta fatica spesa per pagare il tempo, nient'altro. Una carta SCOPERTA fa due cose: il PG SCEGLIE quale potere attivare (un'abilità o magia da una sua Carta Approccio nominated, oppure un potere da Equipaggiamento o Strumento Rapido compatibile tramite i tag), e l'effetto si risolve al livello = T della Vitalità, limitato dal valore attuale dell'Approccio del PG. Se l'Approccio è ferito, il livello effettivo si abbassa di conseguenza.",
-        "L'ordine dei turni al primo round ha una regola specifica: i PG scelgono come tracciare le loro righe di comune accordo, e il Master posiziona i token nemici PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo turno, perché possono vedere — o meglio, non vedere — cosa hanno fatto i compagni prima di scegliere. Nei turni successivi, l'ordine è dettato da chi svuota per primo la propria riga: chi finisce prima le carte, rigioca prima. Il PG che rigioca dopo aver visto cosa hanno giocato gli altri ha un vantaggio informativo, compensato dal fatto che gli altri hanno già 'pagato' il loro tempo.",
-        "Una regola importante per il ritmo: ogni volta che un PG gioca carte nella Cintura ATB, ne pesca altrettante dal Mazzo Vitalità per tornare a 5 in mano. Questo significa che la mano di 5 carte è una risorsa che si rigenera costantemente, e il vero bottleneck non è 'avere carte in mano' ma 'avere il tempo di giocarle'. Un PG non può mai restare senza carte nella Cintura: quando scarta l'ultima carta della sua riga, PUO giocarne altre (da 1 a 5), ma non può aggiungere carte a una riga già in corso finché la coda non scorre di almeno 1 posizione."
+        "Quando tutti i partecipanti hanno posizionato le loro carte, la Cintura si risolve da sinistra a destra, colonna per colonna. Ad ogni passo si risolve la COLONNA CORRENTE — quella più a sinistra non ancora risolta, sempre allineata alla carta numerata 1 dell'header grazie allo scrolling. Si risolvono in contemporanea tutte le carte dei PG e il token del Master in quella colonna. Solo dopo che tutta la colonna è risolta, si passa alla successiva.",
+        "Cosa succede ad ogni colonna dipende dallo stato di ogni carta. Una carta COPERTA viene scartata senza effetto: rappresenta fatica spesa per pagare il tempo, nient'altro. Va nella pila scarti. Una carta SCOPERTA fa due cose: il PG SCEGLIE quale potere attivare (un'abilità o magia da una sua Carta Approccio nominated, oppure un potere da Equipaggiamento o Strumento Rapido compatibile tramite i tag), e l'effetto si risolve al livello = T della Vitalità, limitato dal valore attuale dell'Approccio del PG. Se l'Approccio è ferito, il livello effettivo si abbassa di conseguenza.",
+        "Contestualmente alle carte dei PG, si GIRA il token del Master nella colonna corrente: ATTACCO (infligge danno come da scheda nemica) o BLUFF (nessun danno). Se è un attacco, si calcola la difesa dei PG in quella colonna (vedi 3.4). Il danno di un attacco nemico colpisce TUTTI i PG — i mostri sono gestiti come entità singola. Le nominated difensive specifiche (Difensore del Fratello, Muro di Ferro, ecc.) permettono di deviare o assorbire il danno destinato ad altri PG, ripristinando la dimensione tattica del 'proteggere il compagno'.",
+        "L'ordine dei turni al primo round ha una regola specifica: i PG scelgono tra loro l'ordine di iniziativa e posizionano le loro righe nell'ordine concordato, e il Master posiziona i token SOPRA le carte numerate PER ULTIMO. Questo dà un leggero vantaggio informativo ai PG al primo turno, perché possono vedere — o meglio, non vedere — cosa hanno fatto i compagni prima di scegliere. Nei turni successivi, l'ordine è dettato da chi svuota per primo la propria riga: chi finisce prima le carte, rigioca prima.",
+        "Una regola importante per il ritmo: ogni volta che un PG posiziona carte nella Cintura ATB, ne pesca altrettante dal Mazzo Vitalità per tornare a 5 in mano. Questo significa che la mano di 5 carte è una risorsa che si rigenera costantemente, e il vero bottleneck non è 'avere carte in mano' ma 'avere il tempo di giocarle'. Un PG non può mai restare senza carte nella Cintura: quando scarta l'ultima carta della sua riga, è obbligato a rigiocare (Azione Risonanzata), posizionando da 1 a 5 nuove carte con almeno 1 scoperta.",
+        "Lo SCROLLING SINCRONIZZATO è la meccanica che mantiene la Cintura leggibile. Quando un partecipante (PG o Master) ha la propria riga vuota, deve rigiocare. Mentre decide quali carte giocare, TUTTI gli altri partecipanti scrollano le loro righe verso SINISTRA, in modo che la prossima colonna da risolvere sia sempre allineata alla carta numerata 1 dell'header. Scrollano insieme: le righe dei PG (con le loro carte in attesa) e i token del Master. L'header di carte numerate NON scrolla — è fisso. Dopo lo scrolling, si riparte dalla risoluzione della colonna 1."
       ],
       "box_risoluzione_ricap": {
         "title": "Risoluzione — regole",
         "items": [
-          "Da sinistra a destra, tick-per-tick. Si risolve la colonna più a sinistra di TUTTI prima di passare alla successiva.",
-          "COPERTA = scartata senza effetto (paga solo tempo).",
+          "Da sinistra a destra, colonna per colonna. Si risolve la colonna più a sinistra (sempre allineata a NUM1 grazie allo scrolling).",
+          "COPERTA = scartata senza effetto (paga solo tempo). Va nella pila scarti.",
           "SCOPERTA = attiva un potere (nominated/Equip/Strumento) al livello = T, limitato dal valore Approccio attuale.",
-          "Primo turno: PG scelgono prima, Master posiziona nemici per ultimo.",
-          "Turni successivi: chi svuota prima la riga, rigioca prima.",
-          "Refill automatico: si pesca dal Mazzo Vitalità per tornare a 5 carte in mano."
+          "Token del Master: si gira nella colonna corrente. ATTACCO = danno a tutti i PG. BLUFF = nessun danno.",
+          "Primo round: PG scelgono iniziativa, Master posiziona token PER ULTIMO.",
+          "Round successivi: chi svuota prima la riga, rigioca prima.",
+          "Refill automatico: si pesca dal Mazzo Vitalità per tornare a 5 carte in mano dopo ogni posizionamento.",
+          "Scrolling sincronizzato: quando un partecipante ha la riga vuota, tutti gli altri scrollano a sinistra. L'header resta fisso.",
+          "Azione Risonanzata: un PG con riga vuota è obbligato a rigiocare 1-5 carte con almeno 1 scoperta."
         ]
       }
     },
     "sezione_3_4_controlli_combo_e_difesa": {
-      "title": "3.4 Controlli combo e difesa ad ogni tick",
+      "title": "3.4 Controlli combo e difesa ad ogni colonna",
       "paragraphs": [
-        "La risoluzione tick-per-tick non è solo 'attiva le carte scoperte': ad ogni tick avvengono anche due controlli trasversali che coinvolgono tutti i partecipanti nella stessa colonna. Il primo è il CONTROLLO COMBO: se in una stessa posizione ci sono Vitalità scoperte di ALMENO 2 PG DIVERSI con tag combo compatibili (per esempio [Apertura]+[Chiusura] o [Culmine]), la combo si attiva. Il danno di una combo è la SOMMA dei valori POTERE dei poteri attivati dai partecipanti — quindi combinare due PG nello stesso tick può generare un danno che nessuno dei due avrebbe prodotto da solo.",
-        "Il secondo è il CONTROLLO DIFESA: se in una posizione c'è un attacco nemico, si controllano le Abilità Difensive dei PG agganciate a Vitalità in quella posizione. Le difese in ATB sono ospitate su Carte Approccio nominated (non sono oggetti fisici separati) e si attivano con la stessa logica delle abilità offensive: tramite i tag di una Vitalità scoperta. Il risultato dipende dalla posizione relativa tra difesa e attacco: STESSA posizione = Blocco Perfetto (0 danni), posizione ADIACENTE (±1 slot) = Blocco Mitigato (danno ridotto), altrove = Danno Pieno.",
-        "Questi due controlli trasformano la Cintura da un semplice nastro di turni in un campo tattico denso. Ogni posizione non è solo 'quando agisci', ma anche 'con chi convergi' e 'cosa copri'. Un PG può scegliere di posizionare una difesa in posizione 3 non perché vuole fare qualcosa lui, ma perché sa che un nemico attaccherà lì e un compagno vulnerabile sta convergendo con un'azione potente. La Cintura premia chi legge le righe altrui e anticipa le convergenze.",
-        "I dettagli operativi completi di combo (tag, tipi, danno) e difesa (Abilità Difensive nominate, calcolo esatto del danno mitigato) sono nei capitoli dedicati al Combattimento. Qui ti basta fissare il concetto: ogni tick non è un'isola, è una cellula tattica dove convergenze e difese si calcolano in tempo reale."
+        "La risoluzione colonna per colonna non è solo 'attiva le carte scoperte e gira il token': ad ogni colonna avvengono anche due controlli trasversali. Il primo è il CONTROLLO COMBO: se nella colonna corrente ci sono Vitalità scoperte di ALMENO 2 PG DIVERSI con tag combo compatibili (per esempio [Apertura]+[Chiusura] o [Culmine]), la combo si attiva. Il danno di una combo è la SOMMA dei valori POTERE dei poteri attivati dai partecipanti — quindi combinare due PG nella stessa colonna può generare un danno che nessuno dei due avrebbe prodotto da solo.",
+        "Il secondo è il CONTROLLO DIFESA: se nella colonna corrente c'è un attacco nemico (token girato come ATTACCO), si controllano le Abilità Difensive dei PG agganciate a Vitalità scoperte in quella colonna. Le difese in ATB sono ospitate su Carte Approccio nominated (non sono oggetti fisici separati) e si attivano con la stessa logica delle abilità offensive: tramite i tag di una Vitalità scoperta. Il risultato dipende dalla colonna relativa tra difesa e attacco: STESSA colonna = Blocco Perfetto (0 danni, sblocca tag Reazione come [Contrattacco], [Intercettazione], [Immolazione]), colonna ADIACENTE (±1) = Blocco Mitigato (danno ridotto), altrove = Danno Pieno.",
+        "Questi due controlli trasformano la Cintura da un semplice nastro di turni in un campo tattico denso. Ogni colonna non è solo 'quando agisci', ma anche 'con chi convergi' e 'cosa copri'. Un PG può scegliere di posizionare una difesa in colonna 3 non perché vuole fare qualcosa lui, ma perché sa che un nemico attaccherà lì e un compagno vulnerabile sta convergendo con un'azione potente. Inoltre, nominated difensive specifiche come 'Difensore del Fratello' (Impeto) permettono di deviare un attacco diretto a un alleato verso di sé, o di assorbirne il danno — ripristinando la dimensione tattica del tanking e del body-blocking.",
+        "I dettagli operativi completi di combo (tag, tipi, danno) e difesa (Abilità Difensive nominated, calcolo esatto del danno mitigato, tag Reazione, nominated tank) sono nei capitoli dedicati al Combattimento. Qui ti basta fissare il concetto: ogni colonna non è un'isola, è una cellula tattica dove convergenze e difese si calcolano in tempo reale."
       ],
       "box_controlli_ricap": {
-        "title": "Controlli ad ogni tick",
+        "title": "Controlli ad ogni colonna",
         "items": [
-          "COMBO: 2+ PG con Vitalità scoperte e tag compatibili nella STESSA posizione. Danno = somma Poteri.",
-          "DIFESA: Abilità Difensive nominated attivate da Vitalità scoperte. Stessa pos = Blocco Perfetto, ±1 = Blocco Mitigato, altrove = Danno Pieno.",
+          "COMBO: 2+ PG con Vitalità scoperte e tag compatibili nella STESSA colonna. Danno = somma Poteri.",
+          "DIFESA: Abilità Difensive nominated attivate da Vitalità scoperte. Stessa colonna dell'attacco = Blocco Perfetto (sblocca Reazioni), ±1 colonna = Blocco Mitigato, altrove = Danno Pieno.",
           "Difese NON sono oggetti fisici separati: ospitate su Carte Approccio nominated.",
+          "Nominated tank (Difensore del Fratello, Muro di Ferro, ecc.) permettono di deviare o assorbire il danno destinato ad altri PG.",
           "Dettagli operativi: vedi Capitolo 9 (Combattimento → Combo e Difesa)."
         ]
       },
       "cross_references": [
         "Vedi Capitolo 9 (Combattimento → Combo) per i tag [Apertura]/[Sviluppo]/[Chiusura]/[Culmine] e il calcolo del danno.",
         "Vedi Capitolo 9 (Combattimento → Difesa) per Parate, Blocco ed Evasione come Abilità Difensive nominated.",
-        "Vedi Capitolo 6 (Carte Approccio Nominated) per come le nominated ospitano abilità difensive."
+        "Vedi Capitolo 6 (Carte Approccio Nominated) per come le nominated ospitano abilità difensive e per il catalogo delle nominated tank."
       ]
     },
     "sezione_3_5_meccanica_fulmineo": {
       "title": "3.5 La meccanica [Fulmineo]",
       "paragraphs": [
-        "C'è una regola implicita in tutto quello che abbiamo detto finora: in un turno normale, hai UNA sola azione attiva. Se giochi 4 carte (3 coperte + 1 scoperta T4), l'unica azione che si attiva è quella al tick 4 — le altre 3 sono puro pagamento del tempo. Questo è il default della Cintura ATB, e crea il ritmo caratteristico del sistema: ogni turno è costruito attorno a un'unica azione principale, e il resto è preparazione o posizionamento.",
-        "La meccanica [Fulmineo] è l'ECCEZIONE a questa regola, ed è l'unico modo per eseguire più di un'azione attiva per turno. Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA nel proprio slot — attivando il suo potere — ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. In altre parole: la carta Fulmineo paga il tempo E attiva il suo potere, contemporaneamente. Raddoppia il valore di quello slot.",
-        "Vediamolo con un esempio concreto. Vuoi giocare una Vitalità T4 scoperta per attivare un'Arma potente. Ti servono 3 carte paganti per riempire gli slot 1-2-3. Sequenza normale: COPERTA - COPERTA - COPERTA - SCOPERTA(T4). Risultato: 1 sola azione attiva al tick 4. Sequenza con Fulmineo: COPERTA - SCOPERTA([Fulmineo], T2) - COPERTA - SCOPERTA(T4). Risultato: la Fulmineo attiva il suo potere al tick 2 E conta come pagamento per la T4. Hai 2 azioni attive (tick 2 e tick 4) con lo stesso numero di carte.",
-        "Il costo di questa flessibilità è la potenza. Le carte [Fulmineo] sono solitamente più deboli di un'azione scoperta pura dello stesso Costo Tempo, e occupano uno slot che poteva essere una T più alta. Inoltre, puoi avere più Fulmineo nella stessa riga: una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in un turno. È una configurazione rara ma potente, che richiede carte Fulmineo specifiche e una carta terminale molto costosa.",
-        "Tatticamente, Fulmineo è la meccanica per i PG VERSATILI che vogliono combinare più cose in un turno: buffare prima di un colpo potente, rivelare un token nemico prima di attaccare, posizionarsi difensivamente prima di un'azione offensiva. Una carta [Fulmineo] può avere ANCHE altri tag: [Ferita], [Apertura], [Strumento] — e in questo caso cumula gli effetti. Una Fulmineo con [Apertura] può iniziare una combo nel suo slot mentre paga per una [Chiusura] successiva: il massimo della densità tattica in una sola carta."
+        "C'è una regola implicita in tutto quello che abbiamo detto finora: in una riga normale, hai UNA sola azione attiva. Se posi 4 carte (3 coperte sotto le colonne 1-2-3 + 1 scoperta T4 sotto la colonna 4), l'unica azione che si attiva è quella in colonna 4 — le altre 3 sono puro pagamento del tempo. Questo è il default della Cintura ATB, e crea il ritmo caratteristico del sistema: ogni riga è costruita attorno a un'unica azione principale, e il resto è preparazione o posizionamento.",
+        "La meccanica [Fulmineo] è l'ECCEZIONE a questa regola, ed è l'unico modo per eseguire più di un'azione attiva per riga. Una Vitalità con il tag [Fulmineo] può essere giocata SCOPERTA nella propria colonna — attivando il suo potere — ANCHE quando sta fungendo da COSTO TEMPO per una Vitalità successiva più costosa. In altre parole: la carta Fulmineo paga il tempo E attiva il suo potere, contemporaneamente. Raddoppia il valore di quella colonna.",
+        "Vediamolo con un esempio concreto. Vuoi giocare una Vitalità T4 scoperta in colonna 4 per attivare un'Arma potente. Ti servono 3 carte paganti nelle colonne 1, 2 e 3. Sequenza normale: Col1=COPERTA, Col2=COPERTA, Col3=COPERTA, Col4=SCOPERTA(T4). Risultato: 1 sola azione attiva in colonna 4. Sequenza con Fulmineo: Col1=COPERTA, Col2=SCOPERTA([Fulmineo], T2), Col3=COPERTA, Col4=SCOPERTA(T4). Risultato: la Fulmineo attiva il suo potere in colonna 2 E conta come pagamento per la T4. Hai 2 azioni attive (colonna 2 e colonna 4) con lo stesso numero di carte.",
+        "Il costo di questa flessibilità è la potenza. Le carte [Fulmineo] sono solitamente più deboli di un'azione scoperta pura dello stesso Costo Tempo, e occupano una colonna che poteva essere pagata con una coperta più economica. Inoltre, puoi avere più Fulmineo nella stessa riga: una riga di 5 carte può avere fino a 4 Fulmineo + 1 carta terminale, per un totale di 5 azioni attive in una riga. È una configurazione rara ma potente, che richiede carte Fulmineo specifiche e una carta terminale molto costosa.",
+        "Tatticamente, Fulmineo è la meccanica per i PG VERSATILI che vogliono combinare più cose in una riga: buffare prima di un colpo potente, rivelare un token nemico prima di attaccare, posizionarsi difensivamente prima di un'azione offensiva, o partecipare a una combo in colonna 2 mentre si prepara un'azione terminale in colonna 4. Una carta [Fulmineo] può avere ANCHE altri tag: [Ferita], [Apertura], [Strumento] — e in questo caso cumula gli effetti. Una Fulmineo con [Apertura] può iniziare una combo nella sua colonna mentre paga per una [Chiusura] successiva: il massimo della densità tattica in una sola carta."
       ],
       "box_fulmineo_ricap": {
         "title": "Meccanica [Fulmineo] — regole",
         "items": [
-          "Default: 1 sola azione attiva per turno (le altre carte sono puro pagamento del tempo).",
-          "[Fulmineo]: la carta si attiva nel suo slot E conta come costo tempo per le carte successive.",
+          "Default: 1 sola azione attiva per riga (le altre carte sono puro pagamento del tempo).",
+          "[Fulmineo]: la carta si attiva nella sua colonna E conta come costo tempo per le carte successive.",
           "Costo: le carte Fulmineo sono più deboli di un'azione scoperta pura di pari T.",
-          "Max teorico: 4 Fulmineo + 1 carta terminale = 5 azioni attive in un turno.",
+          "Max teorico: 4 Fulmineo + 1 carta terminale = 5 azioni attive in una riga.",
           "Cumulabile con altri tag: [Ferita], [Apertura]/[Chiusura], [Strumento]."
         ]
       },
@@ -133,20 +141,23 @@
     "sezione_3_6_esempio_guidato": {
       "title": "3.6 Esempio guidato: un round completo",
       "paragraphs": [
-        "Per fissare i concetti, vediamo un round completo con tre PG (Guerriero con Impeto 4, Mago con Risonanza 4, Ladro con Istinto 5) e un gruppo di nemici basici (rappresentati da 5 token coperti). Il Master posiziona i token per ultimo, dopo che i PG hanno tracciato le loro righe. Le righe sono: Guerriero = [T1 COPERTA] [T2 COPERTA] [T3 SCOPERTA (Spada)] [T4 COPERTA]; Mago = [T1 SCOPERTA (utility)] [T2 COPERTA] [T3 SCOPERTA (Fireball)]; Ladro = [T1 SCOPERTA (Schivata)] [T2 SCOPERTA (Pugnalata)]; Nemici = 5 token coperti in fila.",
-        "TICK 1: si risolve la colonna 1 di tutti. Guerriero COPERTA — scartata senza effetto, ha pagato tempo. Mago SCOPERTA — attiva la sua utility (per esempio un buff o un reveal informazioni). Ladro SCOPERTA — attiva Schivata, preparandosi a difendere nei prossimi tick. Nemico token 1 — viene girato: è un ATTACCO o un BLUFF? Se è un attacco, si calcola la difesa: il Ladro ha Schivata in posizione 1, quindi se il nemico attacca in posizione 1 è Blocco Perfetto; se attacca in posizione 2 è Blocco Mitigato; oltre, danno pieno.",
-        "TICK 2: si risolve la colonna 2. Guerriero COPERTA — altro pagamento. Mago COPERTA — pagamento. Ladro SCOPERTA — attiva Pugnalata, infligge danno al nemico. Nemico token 2 — girato, effetto risolto. Qui vediamo il vantaggio della riga corta del Ladro: ha già attivato due azioni mentre il Guerriero sta ancora pagando per arrivare alla sua Spada in posizione 3.",
-        "TICK 3: colonna 3, il momento chiave del round. Guerriero SCOPERTA — attiva Spada al livello 3 (T3, limitato da Impeto 4, quindi effetto pieno al livello 3). Mago SCOPERTA — attiva Fireball al livello 3. CONTROLLO COMBO: Guerriero e Mago sono nella stessa posizione con tag [Apertura]+[Chiusura]? Se sì, la combo si attiva con danno = somma dei Poteri di Spada e Fireball. Questo è il momento per cui il Guerriero ha pagato i primi due tick: una combo devastante in posizione 3.",
-        "TICK 4 e 5: si risolvono le colonne rimanenti. Il Guerriero ha una COPERTA in posizione 4 (paga tempo senza effetto), e i nemici token 4 e 5 vengono girati. Il Ladro e il Mago hanno righe già terminate, quindi possono tracciare nuove righe — pescando dal Mazzo Vitalità per tornare a 5 carte in mano. L'ordine di chi rigioca è dettato da chi ha svuotato prima: il Ladro (riga corta) rigioca prima del Guerriero (riga lunga ancora in corso).",
-        "Questo esempio mostra tutte le dinamiche della Cintura: l'asimmetria delle righe (Ladro veloce vs Guerriero lento), la Continuità Temporale (il Guerriero paga 1-2 per arrivare a 3), il controllo combo (Guerriero+Mago convergenti in 3), il controllo difesa (Schivata del Ladro in 1), e il refill automatico. Ogni round di ATB è una piccola composizione tattica di queste lunghezze variabili."
+        "Per fissare i concetti, vediamo un round completo con tre PG (Guerriero con Impeto 4, Mago con Risonanza 4, Ladro con Istinto 5) e un gruppo di nemici basici. Il Master chiama la Cintura e posiziona 5 carte numerate come header. Poi posiziona 5 token coperti sopra le carte numerate. I PG scelgono l'ordine di iniziativa: Ladro → Mago → Guerriero. Il Master posiziona i token PER ULTIMO (regola del primo round).",
+        "SETUP INIZIALE: Header = [NUM1] [NUM2] [NUM3] [NUM4] [NUM5]. Token del Master = [TOK1] [TOK2] [TOK3] [TOK4] [TOK5] (tutti coperti). Riga Ladro = [SC1L] (T1: 1 scoperta in col1, azione Schivata). Riga Mago = [CP1M] [CP2M] [SC3M] (T3: 2 coperte in col1-2 + 1 scoperta in col3, azione Fireball). Riga Guerriero = [CP1G] [CP2G] [CP3G] [SC4G] (T4: 3 coperte in col1-2-3 + 1 scoperta in col4, azione Spada).",
+        "COLONNA 1 (sotto NUM1): Ladro SC1L scoperta → attiva Schivata (si prepara a difendere). Mago CP1M coperta → scartata, paga tempo. Guerriero CP1G coperta → scartata, paga tempo. Master gira TOK1: ATTACCO. Controllo difesa: Schivata del Ladro è in colonna 1 = Blocco Perfetto (0 danni al Ladro, e se Schivata ha tag [Intercettazione] il danno è neutralizzato per TUTTI i PG).",
+        "SCROLLING DOPO COLONNA 1: La riga del Ladro è vuota. Il Ladro deve rigiocare (Azione Risonanzata). Mentre decide, TUTTI gli altri scrollano a sinistra. Header resta fisso. Token del Master scrolla: [TOK2] [TOK3] [TOK4] [TOK5] ora sono sotto NUM1-NUM2-NUM3-NUM4. Riga Mago scrolla: [CP2M] [SC3M] ora sono sotto NUM1-NUM2. Riga Guerriero scrolla: [CP2G] [CP3G] [SC4G] ora sono sotto NUM1-NUM2-NUM3. Il Ladro decide T2: posiziona [CP1L] sotto NUM1 + [SC2L] sotto NUM2 (azione Pugnalata).",
+        "COLONNA 1 (dopo scroll): Ladro CP1L coperta → scartata. Mago CP2M coperta → scartata. Guerriero CP2G coperta → scartata. Master gira TOK2 (ora sotto NUM1): BLUFF. Nessun danno, il nemico ha perso tempo.",
+        "COLONNA 2 (sotto NUM2): Ladro SC2L scoperta → attiva Pugnalata, infligge danno al mostro. Mago SC3M scoperta → attiva Fireball al livello 3 (limitato da Risonanza 4 → effetto pieno al livello 3). CONTROLLO COMBO: Ladro e Mago sono nella stessa colonna con tag [Apertura]+[Chiusura]? Se sì, combo con danno = somma Poteri. Guerriero CP3G coperta → scartata. Master gira TOK3: ATTACCO. Nessuna difesa in colonna 2 → Danno Pieno a TUTTI i PG.",
+        "PROSECUZIONE: Il round continua con lo stesso principio. Quando il Guerriero svuota la sua riga (dopo colonna 4), anche lui rigioca. L'ordine di chi rigioca è dettato da chi svuota prima: il Ladro (riga corta) rigioca prima del Guerriero (riga lunga). Il refill automatico porta ogni PG a 5 carte in mano dopo ogni posizionamento.",
+        "Questo esempio mostra tutte le dinamiche della Cintura: l'asimmetria delle righe (Ladro veloce vs Guerriero lento), la Continuità Temporale (il Guerriero paga col1-2-3 per arrivare a col4), il controllo combo (Ladro+Mago convergenti in col2), il controllo difesa (Schivata del Ladro in col1 con Blocco Perfetto), lo scrolling sincronizzato (righe e token scrollano a sinistra quando il Ladro rigioca), e il refill automatico. Ogni round di ATB è una piccola composizione tattica di queste lunghezze variabili."
       ],
       "box_esempio_ricap": {
         "title": "Esempio — cosa abbiamo visto",
         "items": [
-          "Asimmetria: Ladro riga corta (2 carte), Guerriero riga lunga (4 carte).",
-          "Continuità: Guerriero paga tick 1-2 per arrivare all'azione in tick 3.",
-          "Combo: Guerriero e Mago convergenti in tick 3 attivano combo.",
-          "Difesa: Schivata del Ladro in tick 1 copre il tick 1 (Blocco Perfetto) o il 2 (Mitigato).",
+          "Asimmetria: Ladro riga corta (1 carta), Guerriero riga lunga (4 carte).",
+          "Continuità: Guerriero paga col1-2-3 per arrivare all'azione in col4.",
+          "Combo: Ladro e Mago convergenti in col2 attivano combo.",
+          "Difesa: Schivata del Ladro in col1 copre la col1 (Blocco Perfetto).",
+          "Scrolling: quando il Ladro svuota la riga, tutti gli altri (compresi i token) scrollano a sinistra. L'header resta fisso.",
           "Refill: chi svuota prima la riga, rigioca prima e pesca per tornare a 5 in mano."
         ]
       }
@@ -162,13 +173,13 @@
   ],
   "scope_constraints": {
     "lore_level": "ZERO — nessun termine di ambientazione. La Cintura ATB è presentata come sistema di iniziativa puro.",
-    "mechanics_depth": "Struttura e risoluzione complete. Combo e Difesa sono nominate come controlli che avvengono ad ogni tick, ma i dettagli operativi sono rimandati al Capitolo 9. La meccanica Fulmineo è spiegata in dettaglio perché è parte della grammatica della Cintura stessa.",
+    "mechanics_depth": "Struttura e risoluzione complete. Combo e Difesa sono nominate come controlli che avvengono ad ogni colonna, ma i dettagli operativi sono rimandati al Capitolo 9. La meccanica Fulmineo è spiegata in dettaglio perché è parte della grammatica della Cintura stessa.",
     "audience_assumption": "Il lettore ha letto Frontespizio, Cap.1 (Concetti base) e Cap.2 (Le carte). Conosce già le 3 famiglie di carte, i 4 Approcci, il Costo Tempo T1-T5, il concetto di scoperta/coperta. Qui acquisisce la grammatica operativa della Cintura.",
-    "boss_note": "Il Boss è menzionato come caso limite (riga dedicata, Potere fino a 9) per fissare il concetto di asimmetria estrema. I dettagli operativi sui nemici sono nel Canale 2."
+    "boss_note": "Il Boss è menzionato come caso limite (header a 9 colonne invece di 5, Potere fino a 9) per fissare il concetto di asimmetria estrema. I dettagli operativi sui nemici sono nel Canale 2."
   },
   "source_files_referenced": [
-    "04_cintura_atb/01_struttura.json (riga fluida, continuità temporale assoluta, mechanics)",
-    "04_cintura_atb/02_risoluzione.json (tick-per-tick, controlli combo e difesa, ordine turni)",
+    "04_cintura_atb/01_struttura.json (header fisso, righe PG, continuità temporale per colonne)",
+    "04_cintura_atb/02_risoluzione.json (colonna per colonna, scrolling sincronizzato, controlli combo e difesa)",
     "04_cintura_atb/03_fulmineo.json (meccanica Fulmineo, esempio, interazioni con altri tag)"
   ],
   "backup_protocol": {

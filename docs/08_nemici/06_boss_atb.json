@@ -1,26 +1,26 @@
 {
   "section_id": "08-06",
   "section_name": "Boss nella Cintura ATB — Potere 9 e Integrazione",
-  "version": "1.0",
-  "architecture_version": "v3",
+  "version": "2.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce come il Boss Epico si integra nella Cintura ATB. Il Boss ha la sua riga come i PG, ma può giocare Potere fino a 9 (8 carte coperte + 1 carta azione scoperta). Questo file è la CASA UNICA per l'integrazione del Boss nella Cintura ATB.",
+  "description": "Definisce come il Boss Epico si integra nella Cintura ATB. Il Boss ha la sua riga come i PG, ma usa un HEADER A 9 COLONNE (invece di 5) e può giocare Potere fino a 9 (8 carte coperte + 1 carta azione scoperta in colonna 9). Aggiornato al modello a colonne con header fisso (v3.2). Questo file è la CASA UNICA per l'integrazione del Boss nella Cintura ATB.",
   "integration_principle": {
-    "method": "Il Boss Epico ha la sua riga nella Cintura ATB, come i PG.",
-    "same_rules": "Segue le stesse regole di posizionamento e risoluzione. Continuità Temporale Assoluta vale anche per il Boss. Vedi 04_cintura_atb/01_struttura.json",
-    "no_grid_problem": "Nella Cintura FLUIDA, non c'è problema di spazio. Il Boss semplicemente ha una riga più lunga — un'azione più potente e lenta.",
+    "method": "Il Boss Epico ha la sua riga nella Cintura ATB, come i PG. Quando il Master chiama la Cintura per un Boss, posiziona un HEADER A 9 COLONNE (invece di 5).",
+    "same_rules": "Segue le stesse regole di posizionamento e risoluzione. Continuità Temporale per Colonne vale anche per il Boss. Vedi 04_cintura_atb/01_struttura.json",
+    "header_extension": "L'header di 9 carte numerate permette a tutti i partecipanti (PG + Boss) di posizionare carte fino alla colonna 9. Le righe dei PG possono comunque estendersi al massimo fino alla colonna 5 (limite T5 per i PG), ma la colonna 9 è disponibile per le azioni del Boss.",
     "boss_freedom": "Il Master SCEGLIE LIBERAMENTE quale Livello di Potere giocare. Ha 9 carte 'Livello Potere' (da 1 a 9)."
   },
   "power_9_rule": {
     "name": "Regola del Potere 9",
-    "principle": "Il Boss può giocare Potere 9 = 8 carte coperte + 1 carta azione scoperta. Quella riga di 9 posizioni sporge enormemente rispetto alle righe dei PG (che vanno da 1 a 5).",
-    "visual_impact": "Il 'trenino' di 9 carte del Boss è una presenza fisica imponente sul tavolo. I PG vedono l'attacco arrivare per 8 tick di tempo.",
+    "principle": "Il Boss può giocare Potere 9 = 8 carte coperte (sotto le colonne 1-8) + 1 carta azione scoperta (sotto la colonna 9). La sua riga attraversa tutte le 9 colonne dell'header.",
+    "visual_impact": "La riga del Boss che attraversa tutte le 9 colonne dell'header è una presenza fisica imponente sul tavolo. I PG vedono l'attacco arrivare per 8 tick di tempo.",
     "tactical_meaning": "L'azione è potentissima ma lentissima. I PG hanno 8 tick di tempo per preparare difese, curarsi, tentare di distruggere i Tratti del Boss, o ucciderlo prima che il colpo arrivi."
   },
   "counter_tactic_for_pg": {
-    "principle": "I PG vedono il 'trenino' che si avvicina. Hanno tempo per reagire.",
+    "principle": "I PG vedono la riga del Boss attraversare le colonne dell'header. Hanno tempo per reagire.",
     "options": [
-      "Preparare difese specifiche nella posizione 9 (Blocco Perfetto richiede un'Abilità Difensiva nominated nella stessa posizione)",
+      "Preparare difese specifiche nella colonna 9 (Blocco Perfetto richiede un'Abilità Difensiva nominated nella stessa colonna — ma i PG sono limitati a T5, quindi serve una combo difensiva o una nominated tank)",
       "Curarsi e curare i compagni prima del colpo",
       "Distruggere i Tratti del Boss nel frattempo",
       "Concentrare tutto il danno per uccidere il Boss prima che il colpo arrivi"
@@ -28,7 +28,7 @@
   },
   "risk_for_boss": {
     "principle": "L'azione è potentissima ma lentissima. I PG hanno molto tempo per reagire. Il Master deve valutare se il payoff vale l'attesa.",
-    "vulnerability_during_charge": "Mentre il Boss sta caricando il Potere 9, la sua riga è occupata. Non può giocare altre azioni contemporanee (a meno di non usare [Fulmineo] come i PG)."
+    "vulnerability_during_charge": "Mentre il Boss sta caricando il Potere 9, la sua riga è occupata nelle colonne 1-8 con carte coperte. Non può giocare altre azioni contemporanee (a meno di non usare [Fulmineo] come i PG)."
   },
   "information_asymmetry": {
     "principle": "I PG vedono il Livello di Potere giocato (es. '7') ma NON sanno quale abilità specifica sarà usata. Solo al tick della risoluzione l'attacco si rivela.",
