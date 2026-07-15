@@ -1,0 +1,580 @@
+{
+  "section_id": "02-09",
+  "section_name": "Framework Situazioni — Le 10 Situazioni ATB",
+  "version": "1.0",
+  "architecture_version": "v3.2",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "last_updated": "2026-07-15",
+  "description": "Definisce il Framework Situazioni: 10 contesti di gioco dichiarati dal Master che usano la STESSA Cintura ATB del combattimento con declinazioni tematiche diverse. Le 10 Situazioni sono: Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza, Arcano, Performance. Questo file è la CASA UNICA per il framework Situazioni: definisce il template comune, le 10 schede dettagliate, il catalogo dei Tag di Situazione e la mappatura nominated coerenti.",
+  "revision_history": {
+    "v1_0": "FORMALIZZAZIONE INIZIALE. Sostituisce la pianificazione precedente (7 Situazioni funzionali: Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada) con 10 Situazioni tematiche. Le 7 azioni funzionali previste sono assorbite come 'operazioni trasversali' che si applicano dentro ciascuna Situazione. Decisioni di design chiuse in sessione 2026-07-15 (D1-D14 + P1-P6 + scelta Situazione 9 = Arcano + Situazione 10 = Performance)."
+  },
+  "core_concept": {
+    "name": "Situazione ATB",
+    "definition": "Una Situazione è un contesto di gioco dichiarato dal Master in cui i PG affrontano una sfida con CD esplicita. Tutte le Situazioni condividono la stessa Cintura ATB v3.2 (header fisso + righe PG + scrolling sincronizzato + Continuità Temporale per Colonne), la stessa Tabella del Potere (in modalità Valore di Soglia), lo stesso sistema di Vitalità, Cuori, nominated e Dilemma del Guerriero. Quello che cambia tra Situazione e Situazione è: (1) la dimensione dell'header, (2) il significato tematico dei token del Master, (3) la pelle narrativa del 'danno', (4) quali nominated ottengono il Bonus Situazione.",
+    "key_principle": "MECCANICA INVARIANTE, PELLE NARRATIVA VARIABILE. Le regole non cambiano mai: cambia solo la glossa narrativa. Una perdita di carte dal Mazzo Vitalità può essere 'fame' in Sopravvivenza, 'umiliazione' in Etichetta, 'affaticamento' in Investigazione o 'tensione' in Infiltrazione. Il sistema resta identico.",
+    "when_a_situation_activates": "Una Situazione si attiva SOLO quando il Master dichiara una sfida (CD + eventuali regole temporali). Tutto ciò che non è una sfida dichiarata è freechat narrativa: dialogo spontaneo, esplorazione senza minaccia, riposo, crafting non sotto pressione. Il framework Situazioni è uno strumento di FOCUS, non una prigione che deve coprire ogni secondo di gioco."
+  },
+  "relationship_to_existing_mechanics": {
+    "principle": "Il framework Situazioni è uno STRATO SOPRA il nucleo ATB. NON ridefinisce nulla di quanto già formalizzato.",
+    "inherited_without_changes": [
+      "Cintura ATB v3.2 — header fisso (5/9 colonne), righe PG L→R, scrolling sincronizzato R→L, Continuità Temporale per Colonne, Azione Risonanzata, Meccanica [Fulmineo]. Vedi 04_cintura_atb/01_struttura.json, 02_risoluzione.json, 03_fulmineo.json.",
+      "Tabella del Potere — 5 tabelle T1-T5, lettura per riga di Approccio. In Situazione non-combat si usa in modalità 'Valore di Soglia' come già previsto in 05_combattimento/01_tabella_potere.json → power_interpretation_hybrid → default_out_of_combat.",
+      "Vitalità — SCOPERTA attiva potere, COPERTA paga tempo, refill mano a 5. Vedi 03_vitalita/02_giocare_vitalita.json.",
+      "Cuori — PASSATO/DOTTRINA/LEGAMI, immutabili, feribili solo nei 3 casi canonici. Vedi 02_personaggio/04_cuori.json.",
+      "Danno a doppio strato — Standard (Milling o Ferita Approccio) + Diretto (solo Elite/Epici). Vedi 05_combattimento/02_danno.json.",
+      "Difesa — Blocco Perfetto / Mitigato / Pieno, richiede nominated difensiva coerente con la Situazione. Vedi 05_combattimento/04_difesa.json.",
+      "Combo cooperative — [Apertura] + [Sviluppo] + [Chiusura]/[Culmine] nella stessa colonna, minimo 2 PG. Vedi 05_combattimento/05_combo.json.",
+      "Nominated — Specializzate/Generiche/Ibride, attivazione via tag sulle Vitalità. Vedi 02_personaggio/03_carte_approccio_nominated.json."
+    ],
+    "what_this_file_addes": [
+      "Il template comune (modalità temporali, sistema a soglie, Bonus Situazione).",
+      "10 schede dettagliate per ciascuna Situazione.",
+      "Il catalogo dei 10 Tag di Situazione (uno per Situazione).",
+      "La mappatura delle nominated coerenti per ciascuna Situazione.",
+      "Esempi di gioco completi per ciascuna Situazione."
+    ]
+  },
+  "common_template": {
+    "name": "Template Comune alle 10 Situazioni",
+    "intro": "Tutte le 10 Situazioni condividono 6 regole comuni. Ciascuna Situazione poi specializza questi elementi con i suoi token tematici e la sua pelle narrativa.",
+    "temporal_modes": {
+      "name": "1. Tre modalità temporali",
+      "rule": "Il Master dichiara all'apertura della Situazione quale modalità temporale si applica. La scelta definisce il ritmo della sfida.",
+      "modes": [
+        {
+          "code": "(a)",
+          "name": "Senza limite",
+          "use_when": "Sfide dove il tempo non conta",
+          "duration": "Fino al raggiungimento della CD o al fallimento",
+          "special_ticks": "Nessuno — i tick sono puro costo tempo"
+        },
+        {
+          "code": "(b)",
+          "name": "A tempo con danni periodici",
+          "use_when": "Sfide con pressione ambientale, scadenze, eventi che avanzano",
+          "duration": "N tick dichiarati dal Master all'apertura",
+          "special_ticks": "Ogni tick (o ogni K tick) il Master gira un token che infligge danno/conseguenza. Il danno è tematico (fisico/mentale/relazionale/anatema) secondo la Situazione."
+        },
+        {
+          "code": "(c)",
+          "name": "Lampo",
+          "use_when": "Sfide rapide, un colpo singolo",
+          "duration": "1 carta per PG, no Cintura ATB",
+          "special_ticks": "N/A. Si risolve in un singolo check: ogni PG gioca 1 Vitalità SCOPERTA, legge la Tabella del Potere, somma al PS del gruppo, confronto con CD.",
+          " nomination_rules": "Anche in modalità lampo, le nominated coerenti ottengono Bonus Situazione. Un PG può ASTENERSI (non giocare nessuna carta): la sua astensione conta come 0 verso la CD, ma non consuma risorse."
+        }
+      ],
+      "partial_in_flash_mode": "In modalità lampo valgono le stesse soglie Pieno/Parziale/Grave del sistema a soglie (vedi sotto). L'esito parziale costa 1 conseguenza narrativa o 1 Ferita Approccio a scelta del giocatore."
+    },
+    "threshold_system": {
+      "name": "2. Sistema a soglie",
+      "rule": "Il PG (o il gruppo) accumula Punti Successo (PS) = somma dei Poteri letti nella Tabella quando gioca carte SCOPERTE coerenti con la Situazione. Il PS totale del gruppo viene confrontato con la CD dichiarata dal Master.",
+      "calculation": "PS = somma (Potere letto alla riga di Approccio) + (Bonus Danno Potere attivato, se applicabile) + (Bonus Situazione +2 se nominated coerente) + (modificatori vari: tag [Ferita], ecc.).",
+      "outcomes": [
+        {
+          "label": "Pieno",
+          "condition": "PS ≥ 100% CD",
+          "effect": "Successo completo. Il 'Potere in eccesso' (PS - CD) è spendibile per vantaggi extra decisi dal Master: 1 vantaggio per ogni 5 punti di scarto. Esempi di vantaggi: 'silenziosamente', 'senza lasciare tracce', 'con stile', 'in metà tempo', 'senza consumare materiali'."
+        },
+        {
+          "label": "Parziale",
+          "condition": "PS ≥ 60% CD",
+          "effect": "Successo con costo. Il PG subisce 1 conseguenza narrativa o 1 Ferita Approccio a scelta del giocatore. Esempi: 'la serratura si apre ma il grimaldello si rompe', 'il Duca concede udienza ma si ricorda del tuo tono', 'il prigioniero parla ma uno degli altri carcerieri ti ha visto'."
+        },
+        {
+          "label": "Grave",
+          "condition": "PS < 60% CD",
+          "effect": "Fallimento grave. Conseguenze pesanti: Ferita Cuore, perdita di risorsa importante, transizione automatica a Combattimento, fuga obbligata, compromissione irreversibile della situazione. La scelta della conseguenza è del Master, in coerenza con la Situazione."
+        }
+      ]
+    },
+    "coherent_nominated": {
+      "name": "3. Nominated coerenti e Bonus Situazione",
+      "rule": "Una nominated è COERENTE con la Situazione corrente se ha ALMENO UN Tag di Situazione corrispondente (vedi tag_di_situazione_catalog).",
+      "coherent_case": "Nominated COERENTE: si gioca SCOPERTA, attiva il suo potere nominale, e ottiene il BONUS SITUAZIONE di +2 al Potere letto. Il bonus è cumulabile con il Bonus Danno Potere attivato e con altri modificatori (tag [Ferita], ecc.).",
+      "non_coherent_case": "Nominated NON COERENTE: si gioca SCOPERTA lo stesso, attiva il suo potere nominale, MA SENZA Bonus Situazione. Non c'è penalità: l'azione funziona, semplicemente non ottiene il +2 tematico. Questo permette al PG di usare qualsiasi nominated in qualsiasi Situazione, ma lo premi quando la nominated è tematicamente calzante.",
+      "ibride_note": "Le nominated IBRIDE sono progettate per avere Tag di Situazione multipli: possono essere coerenti in più di una Situazione. Questo le rende strategiche per PG che affrontano contesti diversi nella stessa sessione.",
+      "catalog_marking": "I cataloghi nominated (02_personaggio/07_catalogo_cuori.json e 08_catalogo_nominated_libere.json) vanno aggiornati per marcare esplicitamente quali Tag di Situazione possiede ciascuna nominated. La mappatura completa è in mappatura_nominated_per_situazione di questo file."
+    },
+    "single_entity_adversary": {
+      "name": "4. Avversario come entità singola",
+      "rule": "In ogni Situazione, l'avversario (PNG ostile, ambiente, entità astratta come 'la Corte' o 'il Sospetto' o 'il Pubblico') è gestito come ENTITÀ SINGOLA, esattamente come i mostri in Combattimento.",
+      "implications": [
+        "Il Master mette 1 token per colonna nell'header (NON 1 token per PG).",
+        "Tutti i PG che attivano poteri nella colonna corrente infliggono 'danno' all'avversario (somma dei PS).",
+        "Quando il token del Master è OSTILE, l'avversario infligge 'danno' a TUTTI i PG.",
+        "Non c'è scelta del bersaglio da parte del Master. Tutti i PG coinvolti subiscono."
+      ]
+    },
+    "vitality_as_psycho_physical": {
+      "name": "5. Vitalità come riserva psico-fisica",
+      "rule": "La Vitalità rappresenta la riserva psico-fisica del PG: FISICA + MENTALE + RELAZIONALE. Il danno in una Situazione non è sempre fisico, ma meccanicamente si risolve sempre allo stesso modo (milling o Ferita Approccio).",
+      "narrative_skins": [
+        "Fisico (Combattimento, Pericolo, Inseguimento, Sopravvivenza): ferite, fame, sete, stanchezza, usura.",
+        "Relazionale (Etichetta, Negoziazione): perdita di Faccia, perdita di Stima, perdita di Fiducia. Il milling è narrato come 'erosione della reputazione'; la Ferita Approccio è narrata come 'umiliazione che ti segna'.",
+        "Mentale (Investigazione, Infiltrazione): affaticamento mentale, sospetto crescente, confusione. Il milling è 'stanchezza che annebbia'; la Ferita Approccio è 'trauma mentale che compromette un tuo mindset'.",
+        "Anatema (Arcano): danno diretto ai Cuori, l'unico caso in cui una Situazione può ferire un Cuore al di fuori dei 3 trigger canonici. Rappresenta il costo di avere toccato il trascendente.",
+        "Reputazionale (Performance): perdita di fama, calo di pubblico, flop. Il milling è 'il pubblico si disinteressa'; la Ferita Approccio è 'la brutta figura ti segna come artista'."
+      ],
+      "design_principle": "MECCANICA INVARIANTE, PELLE NARRATIVA VARIABILE. Non ci sono risorse separate come 'Faccia' o 'Pazienza' o 'Sospetto' (con l'eccezione opzionale di Sospetto in Infiltrazione, vedi scheda). Si riusa sempre il Mazzo Vitalità come unica riserva psico-fisica."
+    },
+    "out_of_scope": {
+      "name": "6. Cosa NON è una Situazione",
+      "rule": "Tutto ciò che non è una sfida con CD dichiarata resta fuori dal framework. Questo è intenzionale: il framework è uno strumento di focus, non una prigione.",
+      "examples": [
+        "Esplorazione pura senza minaccia → freechat narrativa.",
+        "Dialogo spontaneo tra PG e PNG amichevoli → freechat.",
+        "Riposo, cura, gestione inventario → Cap.13 (Riposo e Cura).",
+        "Crafting non sotto pressione → prova lampo di nominated (Artefice/Alchimista) senza Cintura ATB.",
+        "Viaggio non minacciato → freechat + mappa.",
+        "Downtime, addestramento, vita quotidiana → freechat."
+      ]
+    }
+  },
+  "the_10_situations": {
+    "name": "Le 10 Situazioni",
+    "intro": "Ciascuna Situazione è descritta con: definizione operativa, dimensione tipica dell'header, token del Master (ostile + neutro), pelle narrativa del danno, approcci narrativamente pertinenti (suggerimento NON obbligatorio — la neutralità della Tabella del Potere garantisce che tutti gli Approcci siano giocabili), Tag di Situazione, nominated coerenti (derivate dal catalogo esistente), soglia tipica, modalità tipica, 1 esempio di gioco completo.",
+    "situations": [
+      {
+        "id": "S1",
+        "name": "Combattimento",
+        "definition": "Scontro fisico diretto tra PG e avversari. È la Situazione paradigmatica, già formalizzata nei Cap.3-9. Qui elencata per completezza del framework.",
+        "header_size": "5 colonne (Base/Elite) o 9 colonne (Boss Epico).",
+        "token_hostile": "ATTACCO — il nemico colpisce, infligge danno fisico.",
+        "token_neutral": "BLUFF — il nemico perde tempo, nessun danno.",
+        "damage_skin": "Fisico (erosione Mazzo Vitalità o Ferita Approccio, come da regole standard di Combattimento).",
+        "pertinent_approcci": "Tutti (neutralità garantita dalla Tabella del Potere identica per tutti gli Approcci).",
+        "situation_tag": "[Combattimento]",
+        "coherent_nominated": "Tutte le nominated con tag di attivazione [Arma], [Difesa], o [Magia] offensiva (Piròmante, Furia del Berserker, Muro di Ferro, Maestro di Scherma, Difensore del Fratello, ecc.).",
+        "typical_cd": "N/A — la CD è rappresentata dai PF del nemico. Vedi 08_nemici/01_scheda_universale.json.",
+        "typical_mode": "(a) Senza limite, ma con pressione dei token ATTACCO nemici.",
+        "example": "Vedi esempio guidato completo in 00_manuale_giocatore/04_la_cintura_atb.json sezione 3.6 (round con Ladro/Mago/Guerriero)."
+      },
+      {
+        "id": "S2",
+        "name": "Pericolo",
+        "definition": "Ambiente ostile acuto che minaccia i PG senza un avversario attivo: trappole, crollo, tempesta, lava, gas tossico, incendio. Il 'nemico' è l'ambiente stesso.",
+        "header_size": "3 colonne (pericolo rapido) o 5 colonne (pericolo acuto esteso).",
+        "token_hostile": "PERICOLO — l'ambiente colpisce: trappola scatta, magma erutta, trave cede.",
+        "token_neutral": "PAUSA — il pericolo si attenua temporaneamente, una finestra di respiro.",
+        "damage_skin": "Fisico. Il danno rappresenta ferite da ambiente: ustioni, contusioni, tagli da detriti. Meccanicamente: milling o Ferita Approccio come in Combattimento.",
+        "pertinent_approcci": "Istinto (riflessi per schivare), Impeto (sfondare ostacoli), Risonanza (percepire elemento).",
+        "situation_tag": "[Pericolo]",
+        "coherent_nominated": [
+          "Occhio per i Pericoli (Istinto, Heart-linked) — tag [Difesa], [Utility]",
+          "Cacciatrice di Trappole (Analisi, libera) — tag [Utility]",
+          "Calma nella Tempesta (Istinto, Heart-linked) — tag [Difesa]",
+          "Atleta Nato (Impeto, libera) — tag [Fisico]",
+          "Acrobata (Istinto, libera) — tag [Fisico]",
+          "Sopravvivenza Urbana (Istinto, Heart-linked) — tag [Utility], [Fisico]",
+          "Riflessi Felini (Istinto, libera) — tag [Difesa]"
+        ],
+        "typical_cd": "8-15 (pericolo ambientale medio); 20+ (catastrofe).",
+        "typical_mode": "(b) A tempo con danni periodici — ogni tick il Master gira un token PERICOLO che infligge danno se non contrastato da una difesa.",
+        "example": "I PG devono attraversare un corridoio con piastre a pressione. Header a 5 colonne. Master mette 5 token coperti (3 PERICOLO trappola, 2 PAUSA). I PG giocano carte per attivare 'Individua' (Cacciatrice di Trappole), 'Schiduta Acrobatica' (Acrobata o Danzatore di Lame), 'Allerta' (Occhio per i Pericoli). PS totali a fine round = 14, CD = 12. Successo pieno con 2 punti di Potere in eccesso (1 vantaggio: 'l'ultimo PG passa senza far scattare nessuna trappola')."
+      },
+      {
+        "id": "S3",
+        "name": "Inseguimento",
+        "definition": "I PG rincorrono o sono rincorsi. Dinamica di guadagno/perdita distanza nel tempo. Il 'nemico' è l'inseguitore (se i PG fuggono) o l'inseguito (se i PG rincorrono).",
+        "header_size": "5 colonne (inseguimento urbano) o 7 colonne (inseguimento lungo attraverso tetti/boschi).",
+        "token_hostile": "OSTACOLO — ostacolo improvviso che rallenta: comignolo, cornicione cedevole, carretto, folla improvvisa.",
+        "token_neutral": "FINTA — l'inseguito (o l'inseguitore) esita, perde il ritmo.",
+        "damage_skin": "Fisico se catturati (subiscono attacco del inseguitore). Se i PG inseguono, il 'danno' è perdita di distanza: il PS negativo o insufficiente allunga la distanza; il PS sufficiente la accorcia.",
+        "pertinent_approcci": "Istinto (riflessi, destrezza), Impeto (scatto esplosivo), Analisi (scorciatoie, calcolo del percorso).",
+        "situation_tag": "[Inseguimento]",
+        "coherent_nominated": [
+          "Atleta Nato (Impeto) — Salto, Forza, Resistenza",
+          "Acrobata (Istinto) — Schiduta, Salto Mortale, Capriola",
+          "Ombra Silenziosa (Istinto) — per seminare gli inseguitori",
+          "Cecchino (Istinto) — per fermare il fuggitivo a distanza",
+          "Cacciatore di Taglie (Istinto) — Tracce, Agguato, Cattura",
+          "Cartografa Esploratrice (Analisi) — Mappa, Bussola, Territorio (scorciatoie)",
+          "Sopravvivenza Urbana (Istinto) — Sesto Urbano (percorrere vie secondarie)",
+          "Adattabilità (Istinto, Heart-linked) — Pensiero Laterale (improvvisare percorso)"
+        ],
+        "typical_cd": "12-20 (distanza da colmare in un inseguimento attivo); 8-12 (distanza da mantenere in una fuga).",
+        "typical_mode": "(b) A tempo — ogni tick OSTACOLO infligge 'distanza persa' (riduce il PS accumulato).",
+        "example": "I PG rincorrono un ladro sui tetti. Header a 5 colonne. Master mette 5 token (3 OSTACOLO comignoli/cornicioni, 2 FINTA il ladro esita). I PG giocano 'Salto' (Atleta Nato), 'Capriola' (Acrobata), 'Tracce' (Cacciatore di Taglie). PS = 16, CD = 15. Successo pieno: il ladro viene raggiunto e può essere afferrato al prossimo round."
+      },
+      {
+        "id": "S4",
+        "name": "Etichetta",
+        "definition": "Contesto formale con regole sociali rigide: corte, banchetto, cerimonia, ricevimento diplomatico. Il 'nemico' è la gaffe sociale, l'offesa ricevuta, il giudizio dei presenti.",
+        "header_size": "3 colonne (incontro breve formale) o 5 colonne (evento formale esteso).",
+        "token_hostile": "OFFESA — qualcuno mette il PG in difficoltà sociale: nobile rivale provoca, insulto velato, imbarazzo pubblico.",
+        "token_neutral": "COMPLIMENTO — opportunità di guadagnare Faccia: un alleato lancia un pallino, il padrone di casa fa un apprezzamento.",
+        "damage_skin": "Relazionale (perdita di Faccia/Stima). Meccanicamente: milling (la pazienza si erode) o Ferita Approccio (di solito Risonanza o Analisi, narrata come umiliazione che ti segna).",
+        "pertinent_approcci": "Analisi (galateo, osservazione, genealogia), Risonanza (empatia, leggere la stanza), Impeto (presenza, intimidation sociale).",
+        "situation_tag": "[Etichetta]",
+        "coherent_nominated": [
+          "Galateo Nobiliare (Analisi, Heart-linked) — Etichetta, Lingua degli Sguardi, Genealogia",
+          "Intimiditore (Impeto) — Sguardo Truce, Voce Tonante, Presenza",
+          "Verità Interiore (Analisi, Heart-linked) — Discernere il Giusto, Imposizione Morale, Vietato il Silenzio",
+          "Codice del Duello (Impeto, Heart-linked) — Avvertimento, Singolar Tenzone, Colpo di Grazia",
+          "Voce del Popolo (Risonanza, Heart-linked) — Discorso, Legame Collettivo, Eredità del Popolo",
+          "Senso degli Affari (Analisi, Heart-linked) — Valutare, Trattare, Rete Commerciale",
+          "Adattabilità (Istinto, Heart-linked) — Pensiero Laterale, Cambio di Prospettiva, Flessibilità Narrativa",
+          "Empatica del Cuore (Risonanza) — Percepisci, Calma, Conforta",
+          "Galateo Nobiliare (Analisi) — Etichetta (per corti straniere)",
+          "Occhio dello Straniero (Analisi, Heart-linked) — Notare l'Insolito, Costumi Comparati (per contesti stranieri)"
+        ],
+        "typical_cd": "10-15 (ottenere udienza favorevole); 15-25 (ottenere concessione formale); 25-35 (ottenere alleanza o promessa vincolante).",
+        "typical_mode": "(a) senza limite per ricevimenti informali; (b) a tempo per cerimonie (ogni K tick il padrone di casa si irrita).",
+        "example": "I PG sono a banchetto dal Duca. Header a 5 colonne. Master: 3 OFFESA (nobile rivale provoca, Duca fa osservazione tagliente, dama sussurra malignità), 2 COMPLIMENTO (alleato lancia pallino, buffone fa battuta che allenta tensione). I PG giocano 'Etichetta' (Galateo Nobiliare), 'Presenza' (Intimiditore), 'Percepisci' (Empatica del Cuore). PS = 19, CD = 18. Successo pieno con 1 punto di Potere in eccesso (nessun vantaggio extra, soglia minima): il Duca concede invito a udienza privata."
+      },
+      {
+        "id": "S5",
+        "name": "Negoziazione",
+        "definition": "Trattativa con un bersaglio per ottenere qualcosa: mercante, diplomatico, prigioniero, informatore. L'obiettivo è convincere, non impressionare (a differenza di Etichetta).",
+        "header_size": "5 colonne (trattativa standard) o 7 colonne (trattativa lunga/diplomatica).",
+        "token_hostile": "RIFIUTO — la controparte respinge: 'no', alza le spalle, fa finta di non aver sentito, chiede di più.",
+        "token_neutral": "CONCESSIONE — la controparte cede su un punto: ammette un fatto, abbassa il prezzo di una frazione, rivela un dettaglio.",
+        "damage_skin": "Relazionale (perdita fiducia, innervosimento). Meccanicamente: milling (la pazienza del PG si erode, o la controparte si chiude).",
+        "pertinent_approcci": "Risonanza (empatia, leggere bisogni), Analisi (logica, fatti, calcolo), Impeto (pressione, intimidazione commerciale).",
+        "situation_tag": "[Negoziazione]",
+        "coherent_nominated": [
+          "Senso degli Affari (Analisi, Heart-linked) — Valutare, Trattare, Rete Commerciale",
+          "Empatica del Cuore (Risonanza) — Percepisci, Calma, Conforta",
+          "Mano Tesa (Risonanza, Heart-linked) — Offerta di Resa, Perdono del Vinto, Redenzione del Cuore",
+          "Intimiditore (Impeto) — Sguardo Truce, Voce Tonante, Presenza",
+          "Sguardo Penetrante (Analisi, Heart-linked) — Riconoscere la Menzogna, Verità Forzata, Rivelazione",
+          "Voce del Popolo (Risonanza, Heart-linked) — Discorso, Legame Collettivo, Eredità del Popolo",
+          "Verità Interiore (Analisi, Heart-linked) — Discernere il Giusto, Imposizione Morale",
+          "Diffondere il Sapere (Risonanza, Heart-linked) — Insegnare, Decodificare, Ispirare Curiosità"
+        ],
+        "typical_cd": "10-15 (piccola concessione); 20-30 (concessione importante); 30+ (capitolazione totale).",
+        "typical_mode": "(a) senza limite per contrattazioni pazienti; (b) a tempo per negoziazioni sotto scadenza (asta, trattativa con timer).",
+        "example": "I PG contrattano il prezzo di una mappa rara con un mercante sospetto. Header a 5 colonne. Master: 3 RIFIUTO (mercante alza prezzo, finge scarsezza, distoglie lo sguardo), 2 CONCESSIONE (rivela provenienza, ammette fretta). I PG giocano 'Valutare' (Senso degli Affari), 'Riconoscere la Menzogna' (Sguardo Penetrante), 'Percepisci' (Empatica del Cuore). PS = 22, CD = 20. Successo pieno con 2 punti di Potere in eccesso (1 vantaggio: 'il mercante ti rivela anche chi altro ha chiesto la mappa di recente')."
+      },
+      {
+        "id": "S6",
+        "name": "Investigazione",
+        "definition": "Raccogliere e collegare indizi per risolvere un mistero: scena del crimine, biblioteca, interrogatorio testimoni, decifrazione. Il 'nemico' è il tempo e le false piste.",
+        "header_size": "5 colonne (indagine standard) o 7 colonne (caso complesso).",
+        "token_hostile": "FALSA PISTA — informazione fuorviante: indizio inquinato, testimone confuso, documento contraffatto. Infligge danno mentale (milling) e può richiedere tick aggiuntivi per disambiguare.",
+        "token_neutral": "INDIZIO — informazione utile: traccia significativa, testimonianza coerente, passaggio rivelatore. NON infligge danno; il Master fornisce un'informazione narrativa aggiuntiva.",
+        "damage_skin": "Mentale (affaticamento, confusione). Meccanicamente: milling (carte dalla cima del Mazzo Vitalità, narrate come stanchezza mentale).",
+        "pertinent_approcci": "Analisi (deduzione, ricerca), Istinto (percezione, intuito), Risonanza (empatia con testimoni, divinazione).",
+        "situation_tag": "[Investigazione]",
+        "coherent_nominated": [
+          "Investigatore (Analisi) — Percezione, Deduzione, Scasso",
+          "Erudita di Biblioteca (Analisi) — Traduci, Cataloga, Ricorda",
+          "Sguardo Penetrante (Analisi, Heart-linked) — Riconoscere la Menzogna, Verità Forzata, Rivelazione",
+          "Voce Interiore (Analisi, Heart-linked) — Consiglio, Avvertimento, Rivelazione",
+          "Veggente del Cuore (Risonanza) — Sensazione, Presentimento, Visione",
+          "Mago Erudito (Analisi) — Decifra, Rivela, Comprende",
+          "Cacciatrice di Trappole (Analisi) — Individua (per trappole investigative)",
+          "Cartografa Esploratrice (Analisi) — Mappa (per ricostruire scene ampie)",
+          "Occhio dello Straniero (Analisi, Heart-linked) — Notare l'Insolito, Costumi Comparati",
+          "Domatrice di Bestie (Risonanza) — per usare animali da traccia"
+        ],
+        "typical_cd": "15-20 (caso semplice); 25-35 (caso complesso); 35+ (mistero intricato).",
+        "typical_mode": "(b) a tempo — ogni K tick le prove si raffreddano (testimoni dimenticano, pioggia lava tracce, documento viene spostato).",
+        "example": "I PG esaminano la scena di un omicidio. Header a 5 colonne. Master: 3 INDIZIO (corda annodata in modo strano, impronta di stivale insolita, lettera mezza bruciata), 2 FALSA PISTA (sangue in posizione sospetta, testimone confuso contraddice sé stesso). I PG giocano 'Percezione' (Investigatore), 'Decifra' (Mago Erudito), 'Notare l'Insolito' (Occhio dello Straniero). PS = 27, CD = 25. Successo pieno con 2 punti di Potere in eccesso (1 vantaggio: 'riconosci anche il marchio del tipo di corda, risalendo a una bottega specifica')."
+      },
+      {
+        "id": "S7",
+        "name": "Infiltrazione",
+        "definition": "Entrare/uscire non visti da un luogo sorvegliato: castello, accampamento, banca, tempio. Il 'nemico' è il Sospetto crescente delle guardie/sensori.",
+        "header_size": "5 colonne (infiltrazione standard) o 7 colonne (complessa, multi-tappa).",
+        "token_hostile": "RONDA — guardia passa, rischio rilevamento. Se il PG non è sufficientemente nascosto, Sospetto aumenta.",
+        "token_neutral": "OMBBRA — momento di quiete, opportunità di movimento. La guardia si distrae, la luce si sposta, c'è un rumore di copertura.",
+        "damage_skin": "Mentale (tensione) + gauge Sospetto. Meccanicamente: milling come tensione che erode. IN AGGIUNTA: gauge narrativa Sospetto (0-10). Se Sospetto raggiunge 10, transizione automatica a Combattimento o fuga.",
+        "sospetto_gauge": {
+          "rule": "Ogni tick RONDA non contrastato da una difesa adeguata aumenta Sospetto di +2. Token OMBRA lo riduce di -1. Sospetto 0 = perfettamente invisibili. Sospetto 10 = scoperti.",
+          "outcome_at_max": "Transizione automatica a Combattimento (le guardie chiamano rinforzi) o fuga obbligata (Inseguimento). A discrezione del Master in base al contesto."
+        },
+        "pertinent_approcci": "Istinto (furtività, riflessi), Analisi (pianificazione, scasso), Risonanza (percepire presenze).",
+        "situation_tag": "[Infiltrazione]",
+        "coherent_nominated": [
+          "Ombra Silenziosa (Istinto) — Furtività, Invisibilità, Passo delle Ombre",
+          "Ladro di Tesori (Istinto) — Scasso Rapido, Furto Sfuggente, Colpo Perfetto",
+          "Mago dello Scasso (Analisi) — Grimaldello, Serratura Complessa, Cassaforte",
+          "Cacciatore di Taglie (Istinto) — Agguato (per neutralizzare silenziosamente)",
+          "Acrobata (Istinto) — per accessi verticali (muri, tetti, finestre)",
+          "Adattabilità (Istinto, Heart-linked) — Pensiero Laterale (per improvvisare)",
+          "Sopravvivenza Urbana (Istinto, Heart-linked) — Sesto Urbano (sentieri alternativi)",
+          "Investigatore (Analisi) — Percezione (per notare guardie)",
+          "Occhio per i Pericoli (Istinto, Heart-linked) — Allerta (permeabilità sensoriale)",
+          "Pugnale Veloce (Istinto) — per neutralizzazioni silenziose se scoperti"
+        ],
+        "typical_cd": "15-25 (infiltrazione media); 25-35 (banca/fortezza); 35+ (palazzo reale/templio sorvegliato).",
+        "typical_mode": "(b) a tempo — ogni tick RONDA aumenta Sospetto se non contrastato.",
+        "example": "I PG entrano nel palazzo del Visir di notte. Header a 7 colonne. Master: 4 RONDA (guardie in pattuglia, cane da guardia, specchio che riflette, servitore notturno), 3 OMBRA (cambio guardia, nuvola copre luna, fuoco nel camino crea ombre). I PG giocano 'Furtività' (Ombra Silenziosa), 'Grimaldello' (Mago dello Scasso), 'Sesto Urbano' (Sopravvivenza Urbana). PS = 30, CD = 28. Successo pieno con 2 punti di Potere in eccesso (1 vantaggio: 'raggiungete lo studio del Visir senza che nessuno sappia che siete entrati')."
+      },
+      {
+        "id": "S8",
+        "name": "Sopravvivenza",
+        "definition": "Resistere a lungo a un ambiente ostile senza scadenza precisa: deserto, prigionia, malattia, assedio, nave alla deriva. Il 'nemico' è la deplezione lenta delle risorse.",
+        "header_size": "5 colonne (giornata) o 9 colonne (settimana/assedio lungo).",
+        "token_hostile": "DEPLEZIONE — risorse calano: sete, fame, freddo, malattia. Infligge danno fisico (milling come usura del corpo).",
+        "token_neutral": "RIPOSO — opportunità di recuperare: oasi, riparo, cibo trovato, momento di tregua. NON infligge danno; può permettere piccole cure Vitalità.",
+        "damage_skin": "Fisico (milling prolungato, usura). Narrativamente: fame, sete, stanchezza, malattia, ipotermia, disidratazione.",
+        "pertinent_approcci": "Istinto (sopravvivenza primitiva), Risonanza (natura, cura, percezione meteorologica), Impeto (resistenza fisica grezza), Analisi (pianificazione razione, orientamento).",
+        "situation_tag": "[Sopravvivenza]",
+        "coherent_nominated": [
+          "Sopravvivenza Urbana (Istinto, Heart-linked) — Trovare Riparo, Cibo di Strada, Sesto Urbano",
+          "Lavoro nei Campi (Impeto, Heart-linked) — Forza da Fieno, Resistenza al Sole, Occhio per i Cavalli",
+          "Senso della Natura (Risonanza, Heart-linked) — Prevedere il Tempo, Cicli della Terra, Linguaggio degli Animali",
+          "Calma nella Tempesta (Istinto, Heart-linked) — Niente Panico, Reazione al Peggio, Sopravvissuto",
+          "Occhio per i Pericoli (Istinto, Heart-linked) — Allerta (per pericoli ambientali)",
+          "Pazienza del Prigioniero (Analisi, Heart-linked) — Aspettare il Momento, Sopportare, Leggere il Padrone",
+          "Atleta Nato (Impeto) — Resistenza (per fatiche prolungate)",
+          "Cura Vitalità (Risonanza) — Cura Minore, Cura, Cura Maggiore (per teammates feriti)",
+          "Domatrice di Bestie (Risonanza) — per cavalcature e animali da soma",
+          "Cartografa Esploratrice (Analisi) — Mappa, Bussola, Territorio (per orientamento)"
+        ],
+        "typical_cd": "20-30 (sopravvivere 1 giorno); 30-50 (sopravvivere 1 settimana); 50+ (assedio o traversata estrema).",
+        "typical_mode": "(a) senza limite per attraversamenti dove il tempo è solo distanza; (b) a tempo con DEPLEZIONE periodica per assedi/prigionie.",
+        "example": "I PG attraversano il Deserto Rosso per 3 giorni. Header a 9 colonne. Master: 6 DEPLEZIONE (caldo diurno, freddo notturno, sete, tempesta di sabbia, serpenti, disidratazione), 3 RIPOSO (oasi notturna, grotta al mattino, vento favorevole). I PG giocano 'Resistenza al Sole' (Lavoro nei Campi), 'Prevedere il Tempo' (Senso della Natura), 'Resistenza' (Atleta Nato). PS = 38, CD = 35. Successo pieno con 3 punti di Potere in eccesso (1 vantaggio: 'trovate anche erbe medicinali lungo il percorso, 1 Cura Minore gratuita per uno di voi')."
+      },
+      {
+        "id": "S9",
+        "name": "Arcano",
+        "definition": "Il PG cerca di OLTREPASSARE i propri limiti mortali: riti, visioni, possessioni, channeling, iniziazioni, apoteosi, estasi mistica, contatto col divino. Il 'nemico' è la distanza tra il mortale e ciò che sta tentando di toccare. Unica Situazione in cui il danno può colpire direttamente i Cuori.",
+        "header_size": "7 colonne (rituale/contatto medio) o 9 colonne (rito di passaggio, apoteosi, evocazione maggiore).",
+        "token_hostile": "DISTURBO — forze avverse ostacolano: interferenza di un'entità ostile, errore nel sigillo, vento magico che disperde l'energia. Infligge danno Anatema al fallimento grave.",
+        "token_neutral": "RISONANZA — l'entità risponde, il rituale guadagna slancio. NON infligge danno; può aumentare il PS accumulato (effetto 'onda' simile a Performance).",
+        "damage_skin": "Anatema (diretto ai Cuori). È l'UNICA Situazione in cui il danno può ferire un Cuore al di fuori dei 3 trigger canonici (esaurimento, attacchi Anatema Boss, Soglia del Vuoto). Rappresenta il costo di avere toccato il trascendente: la ferita al Cuore è la 'cicatrice mistica'.",
+        "anatema_rule": "Se il PS finale è GRAVE (< 60% CD), il PG subisce 1 Ferita Cuore (a scelta del giocatore in v3.1). Se il PS è PARZIALE (60-99%), il PG subisce 1 Ferita Approccio (di solito Risonanza o Analisi, narrata come 'shock arcano'). Se il PS è PIENO, nessun danno: il contatto è riuscito.",
+        "pertinent_approcci": "Risonanza (canale primario, magia elementale), Analisi (sigilli, formule, decifrazione), Impeto (potenza grezza, sfida all'entità).",
+        "situation_tag": "[Arcano]",
+        "coherent_nominated": [
+          "Sciamano Ancestrale (Risonanza) — Spirito Minore, Spirito Guida, Antenato",
+          "Mago Erudito (Analisi) — Decifra, Rivela, Comprende (per testi sacri)",
+          "Maestra dei Sigilli (Analisi) — Sigillo, Sigillo Complesso, Sigillo Maggiore",
+          "Artefice dei Talismani (Analisi) — Schizzo, Talismano Minore, Talismano Superiore",
+          "Veggente del Cuore (Risonanza) — Sensazione, Presentimento, Visione",
+          "Piròmante (Risonanza) — per rituali di fuoco",
+          "Idromante (Risonanza) — per rituali d'acqua",
+          "Geomante (Risonanza) — per rituali di terra",
+          "Sciamano Ancestrale (Risonanza) — per evocazione antenati",
+          "Voce Interiore (Analisi, Heart-linked) — Consiglio, Avvertimento, Rivelazione (per seguire indicazioni di un mentore spirituale)",
+          "Druido (Risonanza) — versatilità per rituali naturali minori"
+        ],
+        "typical_cd": "25-35 (rituale minore, visione); 35-50 (evocazione, scongiuro); 50+ (apoteosi, portale cosmico).",
+        "typical_mode": "(b) a tempo con DISTURBO periodico — più il rito è lungo, più i DISTURBO si accumulano e più il rischio di Anatema cresce.",
+        "example": "Il PG Mago tenta di evocare uno spirito guida per avere informazioni. Header a 7 colonne. Master: 4 DISTURBO (interferenza entità minore, sigillo che si indebolisce, vento magico, dubbio del evocatore), 3 RISONANZA (entità risponde a metà, simbolo si illumina, eco incoraggiante). Il PG gioca 'Sigillo Complesso' (Maestra dei Sigilli), 'Antenato' (Sciamano Ancestrale), 'Visione' (Veggente del Cuore). PS = 36, CD = 35. Successo pieno con 1 punto di Potere in eccesso: lo spirito appare e risponde a 1 domanda."
+      },
+      {
+        "id": "S10",
+        "name": "Performance",
+        "definition": "Il PG si esibisce davanti a un pubblico per conquistarlo: concerto, orazione, spettacolo, danza, numero circense, gara esibitiva. Il 'nemico' è l'indifferenza del pubblico, il flop. Dinamicamente distintiva: più tick passano con successo, più il PS può diventare esponenziale.",
+        "header_size": "5 colonne (pezzo medio) o 7 colonne (opera/performance lunga).",
+        "token_hostile": "NOIA — il pubblico disattende, qualcuno sbadiglia, una conversazione sovrasta l'esibizione. Infligge danno reputazionale (milling).",
+        "token_neutral": "ENTUSIASMO — il pubblico si accende, batte le mani, chiede il bis. NON infligge danno; può ATTIVARE la meccanica Onda del Pubblico.",
+        "damage_skin": "Reputazionale (perdita di fama, calo di pubblico, flop). Meccanicamente: milling narrato come 'il pubblico si disinteressa'. Ferita Approccio (di solito Risonanza o Istinto) narrata come 'la brutta figura ti segna come artista'.",
+        "onda_del_pubbolo": {
+          "name": "Onda del Pubblico (meccanica distintiva)",
+          "rule": "Una volta superata una soglia intermedia di PS (50% CD), ogni tick successivo in cui il PS continua a crescere RADDOPPIA il PS accumulato in quel tick. Crea un picco narrativo 'applauso esplosivo' che può portare a Pieno da situazioni inizialmente modeste.",
+          "cap": "Il raddoppio si applica al massimo una volta per tick, e non si cumula (non è un raddoppio esponenziale: è raddoppio lineare del singolo tick).",
+          "narrative": "L'artista entra in stato di grazia, il pubblico si alza in piedi, l'onda cresce. È l'unica Situazione con una curva di accelerazione positiva invece di deplezione."
+        },
+        "pertinent_approcci": "Risonanza (emozione, connessione col pubblico), Impeto (energia, presenza scenica), Istinto (destrezza, tecnica), Analisi (composizione, struttura).",
+        "situation_tag": "[Performance]",
+        "coherent_nominated": [
+          "Voce del Popolo (Risonanza, Heart-linked) — Discorso, Legame Collettivo, Eredità del Popolo (oratoria)",
+          "Empatica del Cuore (Risonanza) — Percepisci, Calma, Conforta (reading the room)",
+          "Veggente del Cuore (Risonanza) — Sensazione, Presentimento, Visione (per improvvisazione guidata)",
+          "Cantore del Vento (Risonanza) — Brezza, Soffio, Vortice (musica elementale)",
+          "Danzatore di Lame (Istinto) — Schiduta Acrobatica, Danza delle Lame, Vortice di Lame (danza marziale)",
+          "Acrobata (Istinto) — numero circense",
+          "Intimiditore (Impeto) — oratoria trascinante, non solo minaccia",
+          "Adattabilità (Istinto, Heart-linked) — Pensiero Laterale (improvvisazione teatrale)",
+          "Voce Interiore (Analisi, Heart-linked) — Consiglio, Avvertimento, Rivelazione (per seguire l'ispirazione)",
+          "Diffondere il Sapere (Risonanza, Heart-linked) — Insegnare, Decodificare, Ispirare Curiosità (per lezioni/conferenze)"
+        ],
+        "typical_cd": "10-15 (pubblico piccolo, taverna); 20-30 (pubblico medio, piazza); 30-50 (pubblico enorme, corte reale).",
+        "typical_mode": "(b) a tempo — la performance ha una durata fissata (numero di movimenti). Il Master può dichiarare 'pezzo in 3 movimenti' = 3 round di Cintura ATB.",
+        "example": "Il PG bardo si esibisce alla taverna per conquistare il pubblico e ottenere informazioni dopo. Header a 5 colonne. Master: 3 ENTUSIASMO (avventori attenti, locandiera applaude, menestrello locale si unisce), 2 NOIA (mercante annoiato, ubriaco chiacchieroso). Il PG gioca 'Discorso' (Voce del Popolo), 'Percepisci' (Empatica), 'Pensiero Laterale' (Adattabilità) per improvvisare sul pubblico. PS = 19, CD = 18. Successo pieno con 1 punto di Potere in eccesso. L'Onda del Pubbolo si è attivata al tick 3 (50% CD raggiunto) e ha raddoppiato il PS del tick 4 portando al Pieno. Risultato: il pubblico offre da bere al bardo e condivide voci gratuite."
+      }
+    ]
+  },
+  "tag_di_situazione_catalog": {
+    "name": "Catalogo dei Tag di Situazione",
+    "intro": "Sono introdotti 10 nuovi Tag di Situazione, uno per Situazione. Sono diversi dai Tag di Attivazione classici ([Strumento], [Abilità], [Magia], [Ferita], [Fulmineo], [Apertura], [Sviluppo], [Chiusura], [Culmine]) e dai Tag di Natura nominated ([Utility], [Fisico], [Sociale], [Difesa], [Empatia], [Arma], [Magia], [Crafting], [Furtivo], [Spirito]). I Tag di Situazione indicano in quali contesti non-combat una nominated è COERENTE e ottiene il Bonus Situazione (+2 Potere).",
+    "tags": [
+      {
+        "tag": "[Combattimento]",
+        "situation": "S1 Combattimento",
+        "definition": "Coerente in scontro fisico diretto.",
+        "mapping_to_existing_tags": "Coincide con tag di natura [Arma], [Difesa], o tag di attivazione [Magia] per incantesimi offensivi."
+      },
+      {
+        "tag": "[Pericolo]",
+        "situation": "S2 Pericolo",
+        "definition": "Coerente contro ambiente ostile acuto (trappole, catastrofi, fenomeni improvvisi).",
+        "mapping_to_existing_tags": "Sovrappone a [Difesa], [Fisico], [Utility] percettivi (individuare, schivare, resistere)."
+      },
+      {
+        "tag": "[Inseguimento]",
+        "situation": "S3 Inseguimento",
+        "definition": "Coerente in dinamiche di velocità, scatto, inseguimento, fuga.",
+        "mapping_to_existing_tags": "Sovrappone a [Fisico], [Furtivo] (per seminare), [Utility] territoriali (scorciatoie, orientamento)."
+      },
+      {
+        "tag": "[Etichetta]",
+        "situation": "S4 Etichetta",
+        "definition": "Coerente in contesti formali con regole sociali rigide.",
+        "mapping_to_existing_tags": "Sovrappone a [Sociale], [Utility] culturali (galateo, genealogia, costumi)."
+      },
+      {
+        "tag": "[Negoziazione]",
+        "situation": "S5 Negoziazione",
+        "definition": "Coerente in trattative, contrattazioni, persuasioni, interrogatori collaborativi.",
+        "mapping_to_existing_tags": "Sovrappone a [Sociale], [Empatia] (leggere la controparte)."
+      },
+      {
+        "tag": "[Investigazione]",
+        "situation": "S6 Investigazione",
+        "definition": "Coerente in raccolta/collegamento indizi, deduzione, ricerca, decifrazione.",
+        "mapping_to_existing_tags": "Sovrappone a [Utility] percettivi e deduttivi, [Empatia] (per interrogatori)."
+      },
+      {
+        "tag": "[Infiltrazione]",
+        "situation": "S7 Infiltrazione",
+        "definition": "Coerente in ingresso non visto, scasso, neutralizzazione silenziosa.",
+        "mapping_to_existing_tags": "Sovrappone a [Furtivo], [Utility] tattici (percezione guardie, pianificazione)."
+      },
+      {
+        "tag": "[Sopravvivenza]",
+        "situation": "S8 Sopravvivenza",
+        "definition": "Coerente in resistenza prolungata ad ambiente ostile, deplezione risorse, prigionia, assedio.",
+        "mapping_to_existing_tags": "Sovrappone a [Utility] ambientali, [Difesa] passiva, [Empatia] (per natura/animali)."
+      },
+      {
+        "tag": "[Arcano]",
+        "situation": "S9 Arcano",
+        "definition": "Coerente in riti, evocazioni, contatto col trascendente, visioni, possessioni.",
+        "mapping_to_existing_tags": "Sovrappone a [Magia], [Spirito], [Utility] magiche (sigilli, decifrazione arcanica)."
+      },
+      {
+        "tag": "[Performance]",
+        "situation": "S10 Performance",
+        "definition": "Coerente in esibizioni davanti a pubblico: concerto, orazione, danza, spettacolo.",
+        "mapping_to_existing_tags": "Sovrappone a [Sociale] (oratoria), [Empatia] (reading the room), [Arma] per danze marziali esibitive."
+      }
+    ],
+    "allocation_rule": {
+      "principle": "Ogni nominated esistente riceve da 1 a 3 Tag di Situazione in base alla sua natura tematica, derivabili dai suoi tag di attivazione esistenti.",
+      "ibride": "Una nominated IBRIDA ha poteri di combattimento E almeno un altro Tag di Situazione oltre a [Combattimento]. È progettata per essere utile in più contesti.",
+      "catalog_update": "I cataloghi 02_personaggio/07_catalogo_cuori.json e 08_catalogo_nominated_libere.json vanno aggiornati per marcare esplicitamente i Tag di Situazione di ciascuna nominated. Fino ad allora, la mappatura è derivabile dalla sezione mappatura_nominated_per_situazione di questo file."
+    }
+  },
+  "mappatura_nominated_per_situazione": {
+    "name": "Mappatura nominated coerenti per Situazione",
+    "intro": "Tabella derivata che elenca, per ciascuna delle 10 Situazioni, quali nominated (dal catalogo cuori 07 + catalogo libere 08) sono coerenti. Una nominated può comparire in più Situazioni. Le nominated con poteri di combattimento sono coerenti anche in [Combattimento].",
+    "by_situation": {
+      "Combattimento": "Tutte le nominated con tag [Arma], [Difesa], o tag di attivazione [Magia] offensiva: Furia del Berserker, Fendente Devastante, Muro di Ferro, Carica da Belva, Spacca Scudi, Difensore del Fratello, Maestro di Scherma, Cecchino, Pugnale Veloce, Danzatore di Lame, Codice del Duello, Scudo degli Indifesi, Gesto Eroe, Memoria del Caduto, Ultimo a Ritirarsi, Adempimento del Dover, Piròmante, Idromante, Geomante, ecc.",
+      "Pericolo": "Occhio per i Pericoli (H), Cacciatrice di Trappole, Calma nella Tempesta (H), Atleta Nato, Acrobata, Sopravvivenza Urbana (H), Riflessi Felini, Pazienza del Prigioniero (H), Muro di Ferro, Difensore del Fratello.",
+      "Inseguimento": "Atleta Nato, Acrobata, Ombra Silenziosa, Cecchino, Cacciatore di Taglie, Cartografa Esploratrice, Sopravvivenza Urbana (H), Adattabilità (H), Pugnale Veloce, Danzatore di Lame.",
+      "Etichetta": "Galateo Nobiliare (H), Intimiditore, Verità Interiore (H), Codice del Duello (H), Voce del Popolo (H), Senso degli Affari (H), Adattabilità (H), Empatica del Cuore, Occhio dello Straniero (H), Patrimonio Perduto (H), Pazienza del Prigioniero (H).",
+      "Negoziazione": "Senso degli Affari (H), Empatica del Cuore, Mano Tesa (H), Intimiditore, Sguardo Penetrante (H), Voce del Popolo (H), Verità Interiore (H), Diffondere il Sapere (H), Voce Interiore (H).",
+      "Investigazione": "Investigatore, Erudita di Biblioteca, Sguardo Penetrante (H), Voce Interiore (H), Veggente del Cuore, Mago Erudito, Cacciatrice di Trappole, Cartografa Esploratrice, Occhio dello Straniero (H), Domatrice di Bestie.",
+      "Infiltrazione": "Ombra Silenziosa, Ladro di Tesori, Mago dello Scasso, Cacciatore di Taglie, Acrobata, Adattabilità (H), Sopravvivenza Urbana (H), Investigatore, Occhio per i Pericoli (H), Pugnale Veloce.",
+      "Sopravvivenza": "Sopravvivenza Urbana (H), Lavoro nei Campi (H), Senso della Natura (H), Calma nella Tempesta (H), Occhio per i Pericoli (H), Pazienza del Prigioniero (H), Atleta Nato, Cura Vitalità, Domatrice di Bestie, Cartografa Esploratrice.",
+      "Arcano": "Sciamano Ancestrale, Mago Erudito, Maestra dei Sigilli, Artefice dei Talismani, Veggente del Cuore, Piròmante, Idromante, Geomante, Voce Interiore (H), Druido.",
+      "Performance": "Voce del Popolo (H), Empatica del Cuore, Veggente del Cuore, Cantore del Vento, Danzatore di Lame, Acrobata, Intimiditore, Adattabilità (H), Voce Interiore (H), Diffondere il Sapere (H)."
+    },
+    "legend": "(H) = nominated Heart-linked esclusiva, sbloccata da un Cuore specifico. Le altre sono nominated libere del catalogo 08."
+  },
+  "decisioni_chiuse": {
+    "name": "Decisioni di design chiuse",
+    "intro": "Tutte le decisioni chiuse nelle sessioni di design del 2026-07-15. Queste decisioni sono il contratto di design del framework e NON possono essere riaperte senza una nuova sessione esplicita.",
+    "D1_avanzamento_riga_temporale": "Ogni PG gioca carte come in combat; coperte pagano scoperte; timeline condivisa di N tick.",
+    "D2_esito_fallimento": "Sistema a soglie (100% pieno / 60%+ parziale con costo / <60% grave).",
+    "D3_combo_nelle_sfide_gruppo": "NON si applicano extra — la sfida è già combo continua. Le combo ATB classiche ([Apertura]+[Sviluppo]+[Chiusura]) restano giocabili normalmente con le stesse regole del combattimento.",
+    "D4_boss_level_sfide": "Sospese. Se emergono in playtest, si valuterà un'estensione del framework.",
+    "D5_modalita_temporali": "3 modalità: (a) senza limite / (b) a tempo con danni periodici / (c) lampo (1 carta/PG, no ATB).",
+    "D6_danni_da_tick_speciali": "Universali (Pericolo, Etichetta, Negoziazione, …). Ogni Situazione ha la sua pelle narrativa del danno, ma la meccanica è invariante.",
+    "D7_coerenza_nominated_situazione": "Stretta — bonus solo se tematica coerente. Bonus Situazione = +2 al Potere letto.",
+    "D8_bonus_nominated_coerenti": "Come proposto (+2 fisso); rivedibile a sistema definito con playtest.",
+    "D9_nominated_in_prova_lampo": "Sì, con bonus coerente come nelle altre modalità.",
+    "D10_astensione_in_prova_lampo": "Sì, conta come 0 verso la CD. Non consuma risorse.",
+    "D11_esito_parziale_in_lampo": "Sì, stesse soglie Pieno/Parziale/Grave.",
+    "D12_vitalita_riserva_psicofisica": "La Vitalità rappresenta la riserva psico-fisica (fisica + mentale + relazionale).",
+    "D13_mostri_entita_singola": "Subiscono da tutti, infliggono a tutti. Vale per tutte le Situazioni.",
+    "D14_difesa_protettiva": "Nominated tank (Difensore del Fratello, Muro di Ferro, Scudo degli Indifesi, ecc.) ripristinano tanking/body-block nelle Situazioni non-combat esattamente come in Combattimento.",
+    "P1_8_situazioni_confermate": "Le 8 Situazioni iniziali (Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza) sono confermate.",
+    "P2_nominated_coerenti_in_catalogo": "I cataloghi nominated vanno aggiornati per marcare i Tag di Situazione.",
+    "P3_esplorazione_separata": "NON esiste una Situazione Esplorazione separata: è Sopravvivenza. La Situazione scatta solo quando c'è una sfida specifica.",
+    "P4_esplorazione_pura_fuori_framework": "Le 10 Situazioni si attivano solo quando il Master dichiara una sfida (CD, eventualmente tempo limite). Tutto il resto è freechat narrativa.",
+    "P5_prova_lampo_per_tutte": "La prova lampo si applica a tutte le 10 Situazioni.",
+    "P6_nominated_non_coerente": "La nominated si gioca lo stesso, attiva il suo potere, ma senza bonus situazione.",
+    "P7_situazione_9_arcano": "La 9ª Situazione è Arcano (non Rituale — più ampio e immediato).",
+    "P8_situazione_10_performance": "La 10ª Situazione è Performance, con meccanica distintiva Onda del Pubblico."
+  },
+  "casi_borderline_e_traduzioni": {
+    "name": "Casi borderline e loro traduzione in Situazioni",
+    "intro": "Alcune scene di gioco non cadono immediatamente in una sola Situazione. Si risolvono combinandone 2 o applicando una traduzione. Il fatto che qualche scena vada 'tradotta' dal Master è una feature, non un bug: costringe a pensare a quale meccanica generale applicare.",
+    "table": [
+      {"scene": "Sabotaggio di un meccanismo", "translation": "Pericolo + Investigazione (combaciare le due CD)"},
+      {"scene": "Interrogatorio di testimone restio", "translation": "Negoziazione + Investigazione"},
+      {"scene": "Duello di volontà mentale", "translation": "Combattimento + Arcano (token fisici + token DISTURBO)"},
+      {"scene": "Corteggiamento", "translation": "Etichetta + Negoziazione"},
+      {"scene": "Processo/tribunale", "translation": "Etichetta + Negoziazione (CD cumulativa)"},
+      {"scene": "Inseguimento a corte durante un banchetto", "translation": "Inseguimento + Etichetta (gauge Sospetto sostituita da Faccia)"},
+      {"scene": "Concerto in corte formale", "translation": "Performance + Etichetta"},
+      {"scene": "Torneo di tiro con l'arco", "translation": "Inseguimento 'in parallelo' o prova lampo di Cecchino"},
+      {"scene": "Comando di truppe / Mass combat", "translation": "Combattimento con bonus 'commander' narrativo (ATB non mira al wargame)"},
+      {"scene": "Insegnamento / Trasmissione di sapere", "translation": "Prova lampo di Risonanza o Analisi (Diffondere il Sapere)"},
+      {"scene": "Crafting non sotto pressione", "translation": "Prova lampo di nominated (Artefice/Alchimista), no Cintura ATB"},
+      {"scene": "Esplorazione senza minaccia", "translation": "Freechat narrativa (NON Situazione)"}
+    ]
+  },
+  "cross_references": {
+    "core_mechanics_inherited": [
+      "04_cintura_atb/01_struttura.json — Header fisso + righe PG + Continuità Temporale per Colonne",
+      "04_cintura_atb/02_risoluzione.json — Risoluzione colonna per colonna + Scrolling sincronizzato",
+      "04_cintura_atb/03_fulmineo.json — Meccanica [Fulmineo] per azioni multiple nella stessa riga",
+      "05_combattimento/01_tabella_potere.json → power_interpretation_hybrid → default_out_of_combat — Modalità 'Valore di Soglia' usata in tutte le Situazioni non-combat",
+      "05_combattimento/02_danno.json — Danno a due categorie (Standard/Diretto) + Dilemma del Guerriero",
+      "05_combattimento/04_difesa.json — Blocco Perfetto/Mitigato/Pieno + Shield Sliding",
+      "05_combattimento/05_combo.json — Tag [Apertura]/[Sviluppo]/[Chiusura]/[Culmine] per combo cooperative",
+      "03_vitalita/02_giocare_vitalita.json — Vitalità SCOPERTA/COPERTA + Tag di attivazione",
+      "02_personaggio/03_carte_approccio_nominated.json — Nominated Specializzate/Generiche/Ibride",
+      "02_personaggio/04_cuori.json — Cuori Nominati PASSATO/DOTTRINA/LEGAMI",
+      "02_personaggio/07_catalogo_cuori.json — Catalogo 27 Cuori con Heart-linked esclusive",
+      "02_personaggio/08_catalogo_nominated_libere.json — Catalogo 40 nominated libere (10 per Approccio)",
+      "08_nemici/01_scheda_universale.json — Mostri come entità singola (applicato a tutti gli avversari di Situazione)"
+    ],
+    "player_manual_chapters": [
+      "Capitolo 3 — La Cintura ATB (struttura e risoluzione condivisa)",
+      "Capitolo 6 — Carte Approccio Nominated (nominated ibride con Tag di Situazione)",
+      "Capitolo 9 — Combattimento (Situazione S1 paradigmatica)",
+      "Capitolo 12 — Vitalità e Scarti (Mazzo Vitalità come riserva psico-fisica)",
+      "Capitolo 13 — Riposo e Cura (tra una Situazione e l'altra)"
+    ],
+    "future_work": [
+      "Canale 2 (Guida del Master): linee guida per dichiarare CD, scegliere modalità temporale, gestire gauge narrative (Sospetto, Faccia, Pubblico), bilanciare situazioni boss-level se emargeranno.",
+      "Aggiornamento cataloghi nominated (file 07 e 08): marcare esplicitamente i Tag di Situazione di ciascuna nominated.",
+      "Playtest: validare i valori di CD tipici per ciascuna Situazione e il Bonus Situazione +2.",
+      "Estensione futura: se emergono categorie di scene ricorrenti non coperte, valutare 11ª Situazione (es. Comando, Creazione strutturata, Viaggio)."
+    ]
+  },
+  "design_evolution_notes": {
+    "v_pre_formalizzazione": "Pianificazione precedente in 00_manuale_giocatore/indice.json: 7 Situazioni funzionali (Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada). Mai formalizzate in JSON.",
+    "v1_0_session_2026_07_15": "Ridefinizione completa. Le 7 azioni funzionali previste sono assorbite come 'operazioni trasversali' che si applicano dentro ciascuna Situazione. 8 Situazioni tematiche iniziali (Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza). Aggiunta di Arcano come 9ª (più ampia di Rituale, unico caso con danno Anatema). Aggiunta di Performance come 10ª (unica con curva di accelerazione positiva tramite Onda del Pubblico).",
+    "open_questions_v1_0": [
+      "I valori numerici di CD tipica per Situazione sono stimati e da validare con playtest.",
+      "Il Bonus Situazione +2 è un valore proposto; potrebbe essere +1 o +3 in base ai playtest.",
+      "La gauge Sospetto in Infiltrazione è opzionale: il Master può usare solo milling se preferisce più leggerezza.",
+      "La meccanica Onda del Pubbolo in Performance richiede playtest per validare il raddoppio lineare.",
+      "Le 7 azioni funzionali originali (Influenzare, Manipolare, ecc.) potrebbero ricevere un file dedicato in futuro come 'operazioni trasversali' con esempi concreti per ciascuna Situazione.",
+      "Comandi di truppe/mass combat: rimandato a eventuale futura estensione (ATB non mira al wargame)."
+    ]
+  },
+  "scope_constraints": {
+    "lore_level": "ZERO — nessun termine di ambientazione. 'Arcano' è un nome tematico neutro (rimanda agli Arcani dei Tarocchi, universale); non contiene lore cabalistica o altro skin-specifico.",
+    "mechanics_depth": "Definizione operativa completa del framework. Le meccaniche ereditate (Cintura ATB, Tabella Potere, Danno, Difesa, Combo, Cuori, Vitalità) sono richiamate per nome e rimandano ai loro file canonici.",
+    "audience_assumption": "Il lettore conosce già il Capitolo 3 (Cintura ATB), il Capitolo 6 (Nominated), il Capitolo 9 (Combattimento) e il Capitolo 12 (Vitalità). Questo file costruisce sopra quella base."
+  },
+  "backup_protocol": {
+    "method": "Auto-push su GitHub",
+    "repository": "https://github.com/vastios/ATB",
+    "commit_format": "[SEZIONE] Nome sezione — breve descrizione",
+    "note": "PUSH automatico al completamento della stesura + aggiornamenti correlati in indice.json, le_carte.json, 00_indice.json."
+  }
+}

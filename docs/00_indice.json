@@ -1,9 +1,9 @@
 {
   "section_id": "00",
   "section_name": "Indice del Manuale — Manifest del Progetto",
-  "version": "2.3",
-  "architecture_version": "v3.1",
-  "last_updated": "2026-06-25",
+  "version": "2.4",
+  "architecture_version": "v3.2",
+  "last_updated": "2026-07-15",
   "v3_1_transition_status": {
     "summary": "Il manuale è in fase di transizione da v3 a v3.1. La FASE 1 (rename + reframing) è COMPLETATA: 'Caratteristica' → 'Approccio' ovunque, con reframing concettuale (Approcci = mindset modificabili, non tratti innati). La FASE 2 (nuove meccaniche: Riallineamento, Cuori Nominati, Mazzo Vitalità Dinamico) è COMPLETATA. La FASE 3 (cataloghi Cuori + Nominated libere) è COMPLETATA: 27 Cuori nel catalogo (9 per categoria) e 40 nominated libere (10 per Approccio) sono ora formalizzati.",
     "fase_1_rename_reframing": "COMPLETATA — 33+5 file aggiornati, ~300 sostituzioni. 02_personaggio/02_approcci.json e 03_carte_approccio_nominated.json riscritti con framing mindset. 05_combattimento/03_soglia_vuoto.json riscritto con reframing 'mindset collassato'.",
@@ -81,7 +81,7 @@
     "pillar_8_equipment_wounds": "Ogni Equipaggiamento ha 2 SLOT FERITA. 1° ferimento: attiva il POTERE SPECIALE (uso continua). 2° ferimento: DISTRUTTO. Ferire l'Equipaggiamento è una SCELTA VOLONTARIA. → 06_equipaggiamento/03_ferita_2_stadi.json",
     "pillar_9_magic_two_ways_v3": "MAGIA A DUE VIE: RISONANZA (elementale+cura, diretta) + ANALISI (utility + crafting talismani offensivi monouso). → 07_magia/",
     "pillar_10_quick_items": "5 slot Strumenti Rapidi. Ospitano oggetti trovati + talismani craftati da Analisi. Si attivano con tag [Strumento], si consumano all'uso. → 06_equipaggiamento/04_stumenti_rapidi.json",
-    "pillar_11_out_of_combat": "Le Carte Approccio nominated ospitano abilità valide ANCHE fuori dal combattimento (persuadere, intimidire, scassinare, decifrare, ecc.). → 02_personaggio/03_carte_approccio_nominated.json",
+    "pillar_11_out_of_combat": "Le Carte Approccio nominated ospitano abilità valide ANCHE fuori dal combattimento (persuadere, intimidire, scassinare, decifrare, ecc.). In v3.2 questo è formalizzato nel Framework Situazioni: 10 Situazioni ATB condividono la stessa Cintura ATB del combattimento. → 02_personaggio/03_carte_approccio_nominated.json e 02_personaggio/09_situazioni.json",
     "pillar_12_characteristic_renames_v3": "RINOMINE: Istinto→IMPETO (Rosso, irruenza), Evasione→ISTINTO (Blu, riflessi). Assi: AGIRE (Impeto + Istinto) / COMPRENDERE (Analisi + Risonanza). → 02_personaggio/02_approcci.json"
   },
   "document_index": {
@@ -96,6 +96,7 @@
     "02-06": "02_personaggio/06_riallineamento_approcci.json — Maturation (bianca→nominated) + Riallineamento (1 punto A→B) [CREATO Fase 2]",
     "02-07": "02_personaggio/07_catalogo_cuori.json — 27 Cuori Nominati (9 PASSATO + 9 DOTTRINA + 9 LEGAMI), ciascuno con lista nominated Heart-linked [CREATO Fase 3]",
     "02-08": "02_personaggio/08_catalogo_nominated_libere.json — 40 nominated libere (10 per Approccio, mix 6 Specializzate + 4 Generiche) [CREATO Fase 3]",
+    "02-09": "02_personaggio/09_situazioni.json — Framework Situazioni v1.0: 10 Situazioni ATB (Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza, Arcano, Performance) con template comune, 3 modalità temporali, sistema a soglie, Tag di Situazione, mappatura nominated coerenti [CREATO 2026-07-15]",
     "03-01": "03_vitalita/01_mazzo_vitalita.json — 60 carte, mano 5, Distribuzione Asimmetrica per Livello, Mazzo Dinamico",
     "03-02": "03_vitalita/02_giocare_vitalita.json — Scoperta/coperta, tag-chiave, attivazione poteri",
     "03-03": "03_vitalita/03_pila_scarti.json — Passiva, inviolabile",
@@ -236,6 +237,7 @@
     "COMBO COOPERATIVE: Richiedono SEMPRE almeno 2 giocatori diversi.",
     "CINTURA ATB FLUIDA: Non esiste griglia fissa. Ogni PG traccia la propria riga.",
     "SISTEMA NEMICI: 3 Tier (Base/Elite/Epico), token bluff, Boss con Potere fino a 9.",
+    "FRAMEWORK SITUAZIONI (v3.2): 10 Situazioni ATB (Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza, Arcano, Performance) condividono la stessa Cintura ATB del combattimento. 3 modalità temporali, sistema a soglie Pieno/Parziale/Grave, nominated coerenti con Bonus Situazione +2. → 02_personaggio/09_situazioni.json",
     "ARCHITETTURA 3 CANALI: Meccaniche pure separate dalla lore. Le ambientazioni sono 'skin' intercambiabili."
   ],
   "REMOVED_IN_V3": {
@@ -273,8 +275,8 @@
     "point_9_healing_resources": "PARZIALMENTE — vedi 09_riposo_cura/01_cure_asimmetriche.json",
     "point_10_magic": "DEFINITO v3 — vedi 07_magia/",
     "point_11_progression": "PARZIALMENTE — pool misto + sostituzione narrativa. Da dettagliare.",
-    "point_12_social": "PARZIALMENTE — emerge naturalmente da abilità nominated.",
-    "point_13_exploration": "PARZIALMENTE — emerge naturalmente da nominated + Strumenti Rapidi."
+    "point_12_social": "DEFINITO v3.2 — Framework Situazioni formalizzato in 02_personaggio/09_situazioni.json. Le Situazioni Etichetta, Negoziazione e Performance coprono interamente la sfera sociale.",
+    "point_13_exploration": "DEFINITO v3.2 — Framework Situazioni formalizzato in 02_personaggio/09_situazioni.json. Le Situazioni Pericolo, Inseguimento, Investigazione, Infiltrazione, Sopravvivenza e Arcano coprono interamente la sfera esplorativa."
   },
   "backup_protocol": {
     "method": "Auto-push su GitHub",

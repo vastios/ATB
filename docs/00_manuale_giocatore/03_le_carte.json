@@ -1,10 +1,10 @@
 {
   "section_id": "MG-03",
   "section_name": "Capitolo 2 — Le carte",
-  "version": "1.0",
-  "architecture_version": "v3.1",
+  "version": "1.1",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "last_updated": "2026-07-03",
+  "last_updated": "2026-07-15",
   "chapter_number": 2,
   "chapter_title": "Le carte",
   "design_decisions": {
@@ -126,7 +126,7 @@
         "Il pool di Carte Approccio di un PG non è uniforme: è un pool MISTO in cui convivono carte nominated e carte bianche. Le NOMINATED hanno un nome proprio, un'illustrazione, e ospitano abilità o magie specifiche: sono la 'firma' del tuo personaggio, le mosse che hai imparato e che sai ripetere. Le BIANCHE sono segnaposto senza testo: rappresentano il tuo potenziale di crescita, lo spazio dove in futuro si materializzerà una nuova nominated.",
         "La proporzione tra nominated e bianche evolve nel tempo. Alla creazione del PG hai un mix deciso in fase di point-buy (vedi Capitolo 4): alcuni Approcci sono già dichiarati con nominated, altri restano bianchi in attesa di sviluppo. Quando vivi successi narrativi significativi, una carta bianca può essere sostituita da una nominated attraverso la Maturation: scegli (con il Master) quale nominated farsi entrare in quel slot, in coerente con la storia che hai raccontato al tavolo. Al contrario, quando vivi fallimenti o crisi, il Riallineamento può spostare punti tra Approcci — e questo può comportare che nominated vadano girate o temporaneamente disattivate.",
         "Le nominated si dividono in due grandi tipi. Le SPECIALIZZATE ospitano 3 abilità in TEMA tra loro, con potenza crescente sbloccata dal valore dell'Approccio: sono più potenti (le abilità sinergizzano) ma meno versatili (coprono un solo tema tattico). Le GENERICHE ospitano 3 abilità DIVERSE tra loro, tutte disponibili a basso livello: sono meno potenti (nessuna sinergia tematica) ma più versatili (coprono più situazioni). La scelta tra specializzate e generiche è una scelta di identità del PG — vuoi essere 'il mago del fuoco' (specializzata) o 'colui che sa fare un po' di tutto' (generica)?",
-        "Esiste una terza categoria, trasversale: le NOMINATED IBRIDE. Sono nominated che ospitano sia testo di combattimento (abilità e/o magie utilizzabili in scontro) sia un tag di Situazione (uno dei 7 contesti non-combat che vedremo nel Capitolo 8). Questo significa che la stessa carta ti dà un potere in combattimento E un'opzione nelle situazioni esplorative/sociali. Le nominated ibride sono il ponte tra il sistema card-based di ATB e il framework delle 7 Situazioni, e sono essenziali per PG che vogliono essere efficaci sia dentro che fuori dal combattimento."
+        "Esiste una terza categoria, trasversale: le NOMINATED IBRIDE. Sono nominated che ospitano sia testo di combattimento (abilità e/o magie utilizzabili in scontro) sia uno o più Tag di Situazione (i 10 contesti che vedremo nel Capitolo 8: Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza, Arcano, Performance). Questo significa che la stessa carta ti dà un potere in combattimento E un'opzione in altri contesti non-combat. Le nominated ibride sono il ponte tra il sistema card-based di ATB e il framework delle 10 Situazioni, e sono essenziali per PG che vogliono essere efficaci sia dentro che fuori dal combattimento. Quando una nominated ha il Tag di Situazione coerente con la Situazione corrente, ottiene il Bonus Situazione di +2 al Potere letto."
       ],
       "box_nominated_bianche_ricap": {
         "title": "Pool misto — tipi di carte",
@@ -134,13 +134,13 @@
           "BIANCHE — Segnaposto senza testo. Rappresentano potenziale di crescita. Sostituibili con nominated via Maturation.",
           "NOMINATED SPECIALIZZATE — 3 abilità in tema, potenza crescente col valore Approccio. Più potenti, meno versatili.",
           "NOMINATED GENERICHE — 3 abilità diverse, tutte disponibili a basso livello. Più versatili, meno potenti.",
-          "NOMINATED IBRIDE — Testo combattimento + tag di Situazione. Attive sia in combate sia nelle 7 Situazioni non-combat."
+          "NOMINATED IBRIDE — Testo combattimento + Tag di Situazione (uno o più dei 10 contesti). Attive in Combattimento E nelle Situazioni non-combat coerenti, con Bonus Situazione +2 al Potere."
         ]
       },
       "cross_references": [
         "Vedi Capitolo 4 (Creazione del PG) per il mix iniziale nominated/bianche.",
         "Vedi Capitolo 6 (Carte Approccio Nominated) per Riallineamento, Maturation e catalogo delle nominated libere.",
-        "Vedi Capitolo 8 (Le 7 Situazioni) per il ruolo delle nominated ibride fuori dal combattimento."
+        "Vedi Capitolo 8 (Le 10 Situazioni ATB) per il ruolo delle nominated ibride fuori dal combattimento e il Bonus Situazione."
       ]
     },
     "sezione_2_7_flip_universale": {
@@ -198,7 +198,7 @@
     "Capitolo 5 — Cuori Nominati (anatomia dei Cuori, ordine di ferita, cura)",
     "Capitolo 6 — Carte Approccio Nominated (pool misto, Riallineamento, Maturation, ibride)",
     "Capitolo 7 — Area di Gioco (disposizione fisica delle carte in 4 zone)",
-    "Capitolo 8 — Le 7 Situazioni (ruolo delle nominated ibride fuori dal combattimento)",
+    "Capitolo 8 — Le 10 Situazioni ATB (ruolo delle nominated ibride fuori dal combattimento, Bonus Situazione)",
     "Capitolo 9 — Combattimento (Tabella Potere, Danno, Dilemma del Guerriero operativo)",
     "Capitolo 10 — Magia: Due Vie (nominated di Risonanza e Analisi)",
     "Capitolo 11 — Equipaggiamento (slot, categorie, ferita a 2 stadi, Strumenti Rapidi)",

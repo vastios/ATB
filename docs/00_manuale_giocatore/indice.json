@@ -1,9 +1,9 @@
 {
   "section_id": "MG-00",
   "section_name": "ATB — Manuale del Giocatore (Indice)",
-  "version": "1.1",
-  "architecture_version": "v3.1",
-  "last_updated": "2026-07-02",
+  "version": "1.2",
+  "architecture_version": "v3.2",
+  "last_updated": "2026-07-15",
   "channel": "CANALE 1 — Manuale del Giocatore",
   "description": "Indice ufficiale del Manuale del Giocatore ATB. È il documento che organizza i file JSON esistenti in un percorso leggibile per il giocatore, dal frontespizio fino ai riferimenti rapidi. Il manuale è SKIN-AGNOSTIC: contiene SOLO meccaniche pure. TUTTA la lore (incluso il primer di ambientazione) vive nei manuali ambientazione (Canale 3). Esclude anche tutto ciò che è GM-only (Canale 2 — Guida del Master). Ogni voce dell'indice mappa a uno o più file JSON esistenti in docs/.",
   "scope_note": "Questo indice NON sostituisce i file JSON esistenti: li ORDINA in una struttura narrativa per il lettore-giocatore. Ogni voce punta al file JSON che contiene la regola canonica (la 'casa unica' di quel concetto).",
@@ -91,10 +91,10 @@
       "chapters": [
         {
           "chapter": 8,
-          "title": "Le 7 Situazioni (non-combat)",
-          "brief": "Framework delle 7 situazioni non di combattimento: Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada. Per ciascuna: definizione, esempi, come usare i 4 Approcci, tabella successo/parziale/fallimento, ruolo delle nominated ibride.",
-          "source_files": ["02_personaggio/09_situazioni.json (DA CREARE)"],
-          "status": "DECISO in sessione di design — non ancora formalizzato in JSON."
+          "title": "Le 10 Situazioni ATB",
+          "brief": "Framework delle 10 Situazioni che condividono la stessa Cintura ATB del combattimento: Combattimento, Pericolo, Inseguimento, Etichetta, Negoziazione, Investigazione, Infiltrazione, Sopravvivenza, Arcano, Performance. Per ciascuna: definizione operativa, dimensione header, token del Master, pelle narrativa del danno, nominated coerenti con Bonus Situazione, esempi di gioco. Template comune: 3 modalità temporali (senza limite / a tempo / lampo), sistema a soglie (Pieno/Parziale/Grave), nominated coerenti con Bonus +2.",
+          "source_files": ["02_personaggio/09_situazioni.json"],
+          "status": "FORMALIZZATO v1.0 in data 2026-07-15. Sostituisce la pianificazione precedente delle 7 Situazioni funzionali (Influenzare, Raccogliere informazioni, Manipolare, Ripristinare, Occultare, Districarsi, Farsi strada) assorbite come 'operazioni trasversali' dentro ciascuna Situazione tematica."
         },
         {
           "chapter": 9,
@@ -202,7 +202,8 @@
     ]
   },
   "open_work_for_player_manual": [
-    "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 8 (DECISO, da scrivere)",
+    "Formalizzare 02_personaggio/09_situazioni.json per Capitolo 8 — COMPLETATO v1.0 in data 2026-07-15. 10 Situazioni formalizzate.",
+    "Aggiornare cataloghi nominated (file 07 e 08) per marcare esplicitamente i Tag di Situazione di ciascuna nominated — DA FARE (mappatura già disponibile in 02_personaggio/09_situazioni.json → mappatura_nominated_per_situazione).",
     "Validare modello nominated ibride (testo combattimento + tag Situazione) in 02_personaggio/03_carte_approccio_nominated.json per Capitolo 6",
     "Template grafico tracker di tavolo per Capitolo 16 (Cintura ATB stampabile + segnalini condizioni + mini-tracker inventario non-card)"
   ],
