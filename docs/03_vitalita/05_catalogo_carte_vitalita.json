@@ -1,0 +1,542 @@
+{
+  "section_id": "03-05",
+  "section_name": "Catalogo delle Carte Vitalità Nominate — Gioco Base",
+  "version": "1.0",
+  "architecture_version": "v3.2",
+  "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
+  "description": "Catalogo delle CARTE VITALITÀ NOMINATE del gioco base. Ogni carta ha Nome, Approccio, Costo Tempo, Rarità, Contesto Tematico, Descrizione, Tag, Tabella del Potere Generica, Tabella del Potere Tematica, e (se applicabile) Effetto Tematico Extra. Le Leggendarie hanno anche una Tabella del Potere Modificata che sostituisce la Generica. Il catalogo è organizzato per Approccio. Questo file è la CASA UNICA per le carte nominate disponibili nel gioco base — espansioni e moduli LORE futuri possono aggiungere nuove carte in file separati (es. 03_vitalita/06_catalogo_expansion_X.json).",
+  "catalog_purpose": {
+    "name": "Scopo del Catalogo",
+    "principle": "Il Catalogo è il riferimento completo delle carte Vitalità nominated che un PG può acquisire nel gioco base. Alla CREAZIONE DEL PG, il giocatore seleziona da questo catalogo le carte nominate per comporre il proprio mazzo secondo la Distribuzione Asimmetrica per Livello dei suoi Approcci. Durante la CAMPAGNA, il Master distribuisce nuove carte (loot, quest, crafting, eventi) attingendo da questo catalogo.",
+    "deckbuilding_use": "Vedi 03_vitalita/01_mazzo_vitalita.json → deckbuilding_v3_2 per la regola di composizione del mazzo.",
+    "future_expansions": "Le espansioni future aggiungeranno nuovi file di catalogo separati (es. '06_catalogo_espansione_deserto.json'). Le carte dei cataloghi di espansione sono AGGIUNTE al catalogo base, non lo sostituiscono.",
+    "rarity_distribution_target": "Composizione target del catalogo base: ~60% Comuni, ~25% Non Comuni, ~12% Rare, ~3% Leggendarie. Le Leggendarie sono poche e memorabili — il Master le distribuisce solo in momenti di grande impatto narrativo."
+  },
+  "card_model_v3_2": {
+    "name": "Modello di Carta Vitalità Nominata v3.2",
+    "fields": [
+      "card_id: codice univoco formato VIT-[APPROCCIO]-[T]-[NNN] (es. VIT-IMP-T3-001).",
+      "name: nome proprio della carta.",
+      "approccio: Impeto / Analisi / Istinto / Risonanza.",
+      "costo_tempo: T1 / T2 / T3 / T4 / T5.",
+      "rarita: Comune / Non Comune / Rara / Leggendaria.",
+      "contesto_tematico: elenco di contesti in cui la carta può essere giocata in Modo Tematico.",
+      "descrizione: flavor text + descrizione narrativa di cosa rappresenta l'azione.",
+      "tags: elenco dei tag di attivazione (max = T).",
+      "tabella_potere_generica: {approccio_1..5: valore}. UGUALE per tutte le carte dello stesso T.",
+      "tabella_potere_tematica: {approccio_1..5: valore}. POTENZIATA rispetto alla Generica. PROPRIA della carta.",
+      "effetto_tematico_extra: effetto speciale applicato SOLO in Modo Tematico. Formato testo descrittivo.",
+      "tabella_potere_modificata (solo Leggendarie): {approccio_1..5: valore}. SOSTITUISCE la Generica per le Leggendarie."
+    ],
+    "tabella_generica_note": "La Tabella Generica è IDENTICA per tutte le carte dello stesso T, indipendentemente dall'Approccio o dalla Rarità. I valori precisi sono in fase di playtest (vedi 05_combattimento/01_tabella_potere.json). Per questo catalogo usiamo valori PROVVISORI coerenti con lo schema concettuale: cella(1,1)≈2, cella(5,5)≈20-25, crescita non lineare.",
+    "tabella_generica_provvisoria": {
+      "T1": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+      "T2": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+      "T3": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+      "T4": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+      "T5": {"approccio_1": 8, "approccio_2": 12, "approccio_3": 16, "approccio_4": 20, "approccio_5": 25}
+    },
+    "tabella_tematica_boost_principle": "La Tabella Tematica è POTENZIATA rispetto alla Generica di circa +1/+2 per le Comuni, +2/+3 per le Non Comuni, +3/+5 per le Rare, +5/+8 per le Leggendarie (valori crescenti riga per riga). Il boost cresce con la rarità e con la riga (Approccio alto beneficia di più).",
+    "cross_reference": "Vedi 05_combattimento/01_tabella_potere.json per il dettaglio delle 5 Tabelle Generiche e il sistema completo."
+  },
+  "carte_impeto": {
+    "name": "Carte Vitalità IMPETO (Rosso, Irruenza)",
+    "identity": "Tecniche di sfondamento, irruenza, azione fisica diretta. Profilo temporale: poche T1-T2, tante T4-T5. Le carte Impeto privilegiano il danno diretto e l'apertura di guardia.",
+    "cards": [
+      {
+        "card_id": "VIT-IMP-T1-001",
+        "name": "Pugno Rapido",
+        "approccio": "Impeto",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un pugno scattato senza preparazione, diretto al volo dell'avversario.",
+        "tags": ["Strumento"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 5, "approccio_5": 6},
+        "effetto_tematico_extra": "+1 al danno se il bersaglio è già Engaged (in mischia ravvicinata con il PG)."
+      },
+      {
+        "card_id": "VIT-IMP-T1-002",
+        "name": "Carica Breve",
+        "approccio": "Impeto",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Uno scatto in avanti di pochi passi che riduce la distanza col bersaglio.",
+        "tags": ["Abilità"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 5, "approccio_5": 6},
+        "effetto_tematico_extra": "Il PG si sposta di 1 zona verso il bersaglio senza spendere movimento aggiuntivo."
+      },
+      {
+        "card_id": "VIT-IMP-T2-001",
+        "name": "Calcio Spazzata",
+        "approccio": "Impeto",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un calcio basso che mira a sbilanciare l'avversario.",
+        "tags": ["Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Se il bersaglio ha Guardia Aperta, subisce Sbilanciamento per 1 round (prossimo attacco contro di lui +2 danno)."
+      },
+      {
+        "card_id": "VIT-IMP-T3-001",
+        "name": "Fendente",
+        "approccio": "Impeto",
+        "costo_tempo": "T3",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un colpo ampio e deciso che apre la guardia dell'avversario.",
+        "tags": ["Strumento", "Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 6, "approccio_2": 8, "approccio_3": 12, "approccio_4": 14, "approccio_5": 17},
+        "effetto_tematico_extra": "Infligge 'Guardia Aperta' al bersaglio per 1 round (prossimo attacco fisico contro di lui +2 danno)."
+      },
+      {
+        "card_id": "VIT-IMP-T3-002",
+        "name": "Testata",
+        "approccio": "Impeto",
+        "costo_tempo": "T3",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Una testata brutale a distanza ravvicinata, tipica delle risse da taverna.",
+        "tags": ["Abilità", "Fisico", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "effetto_tematico_extra": "Infligge Frastornamento al bersaglio per 1 round (soglia difesa -2)."
+      },
+      {
+        "card_id": "VIT-IMP-T4-001",
+        "name": "Carica Furiosa",
+        "approccio": "Impeto",
+        "costo_tempo": "T4",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Il PG si lancia in avanti con tutto il peso del corpo, concentrando la rabbia in un'unica carica devastante.",
+        "tags": ["Strumento", "Abilità", "Apertura", "Sviluppo"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 9, "approccio_2": 13, "approccio_3": 17, "approccio_4": 21, "approccio_5": 25},
+        "effetto_tematico_extra": "Infligge Sanguinamento (perde 2 carte Vitalità all'inizio del prossimo tick). Il PG si muove di 1 zona verso il bersaglio senza spendere movimento."
+      },
+      {
+        "card_id": "VIT-IMP-T4-002",
+        "name": "Fendente Devastante",
+        "approccio": "Impeto",
+        "costo_tempo": "T4",
+        "rarita": "Rara",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un fendente caricato con tutta la forza — il marchio di fabbrica del guerriero esperto.",
+        "tags": ["Strumento", "Abilità", "Apertura", "Chiusura"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 10, "approccio_2": 14, "approccio_3": 18, "approccio_4": 22, "approccio_5": 27},
+        "effetto_tematico_extra": "Se chiude una combo (tag [Chiusura]), infligge Danno Anatema (1 ferita Approccio) al bersaglio se il danno totale ≥ 20."
+      },
+      {
+        "card_id": "VIT-IMP-T5-001",
+        "name": "Assalto Inarrestabile",
+        "approccio": "Impeto",
+        "costo_tempo": "T5",
+        "rarita": "Leggendaria",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "La tecnica suprema del guerriero: una sequenza di cariche concatenate che travolge tutto ciò che incontra. Si dice che il primo guerriero a usarla abbia sfondato le porte di una fortezza da solo.",
+        "tags": ["Strumento", "Abilità", "Apertura", "Sviluppo", "Culmine"],
+        "tabella_potere_modificata": {"approccio_1": 12, "approccio_2": 16, "approccio_3": 22, "approccio_4": 28, "approccio_5": 35},
+        "tabella_potere_tematica": {"approccio_1": 14, "approccio_2": 19, "approccio_3": 26, "approccio_4": 33, "approccio_5": 42},
+        "effetto_tematico_extra": "Colpisce TUTTI i nemici in una linea retta lunga 2 zone. Ogni nemico colpito subisce il danno pieno. Le caratteristiche Leggendarie di questa carta (danni alti, effetto area) la rendono una delle più temute tecniche da battaglia del Catalogo."
+      }
+    ]
+  },
+  "carte_analisi": {
+    "name": "Carte Vitalità ANALISI (Giallo, Studio/Osservazione)",
+    "identity": "Tecniche di studio, osservazione, scasso, decifrazione, crafting. Profilo temporale: tante T1-T2, poche T4-T5. Le carte Analisi privilegiano utility, informazioni, e risoluzione di problemi tecnici.",
+    "cards": [
+      {
+        "card_id": "VIT-ANA-T1-001",
+        "name": "Sguardo Indagatore",
+        "approccio": "Analisi",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Investigazione", "Sociale"],
+        "descrizione": "Il PG osserva con attenzione un dettaglio che altri ignorerebbero.",
+        "tags": ["Abilità"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 5, "approccio_5": 6},
+        "effetto_tematico_extra": "Il Master rivela 1 tratto nascosto del bersaglio (PNG, oggetto, nemico) o 1 indizio in una scena di investigazione."
+      },
+      {
+        "card_id": "VIT-ANA-T1-002",
+        "name": "Valutazione Rapida",
+        "approccio": "Analisi",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento", "Investigazione"],
+        "descrizione": "Una stima veloce delle capacità di un avversario o della difficoltà di un'azione.",
+        "tags": ["Abilità"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 6},
+        "effetto_tematico_extra": "Rivela il valore approssimativo di un tratto del bersaglio (es. Armatura, Danno base, Soglia Difesa)."
+      },
+      {
+        "card_id": "VIT-ANA-T2-001",
+        "name": "Scasso Serratura",
+        "approccio": "Analisi",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Esplorazione", "Stealth"],
+        "descrizione": "Tecnica classica dello scassinatore: strumenti fini e pazienza per aprire una serratura senza chiave.",
+        "tags": ["Strumento", "Abilità"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Se supera la soglia della serratura di 3+, il PG apre senza lasciare tracce (nessun allarme, nessun segno di scasso)."
+      },
+      {
+        "card_id": "VIT-ANA-T2-002",
+        "name": "Decifrazione Antica",
+        "approccio": "Analisi",
+        "costo_tempo": "T2",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Investigazione", "Esplorazione"],
+        "descrizione": "Il PG applica la sua conoscenza di lingue morte e simboli arcani per leggere iscrizioni dimenticate.",
+        "tags": ["Abilità", "Magia"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 8, "approccio_4": 10, "approccio_5": 11},
+        "effetto_tematico_extra": "Oltre a decifrare, il PG ricava 1 informazione bonus (Master rivela lore sul contesto dell'iscrizione)."
+      },
+      {
+        "card_id": "VIT-ANA-T3-001",
+        "name": "Identifica Oggetto",
+        "approccio": "Analisi",
+        "costo_tempo": "T3",
+        "rarita": "Comune",
+        "contesto_tematico": ["Investigazione", "Esplorazione"],
+        "descrizione": "Studio sistematico di un oggetto per determinarne origine, proprietà e funzione.",
+        "tags": ["Abilità", "Strumento"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 6, "approccio_2": 8, "approccio_3": 12, "approccio_4": 14, "approccio_5": 17},
+        "effetto_tematico_extra": "Rivela TUTTE le proprietà dell'oggetto, incluse eventuali maledizioni o proprietà nascoste."
+      },
+      {
+        "card_id": "VIT-ANA-T3-002",
+        "name": "Trappola Ingegnosa",
+        "approccio": "Analisi",
+        "costo_tempo": "T3",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento", "Stealth"],
+        "descrizione": "Il PG costruisce rapidamente una trappola usando l'ambiente e materiali a portata di mano.",
+        "tags": ["Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "effetto_tematico_extra": "La trappola si attiva al primo nemico che entra nella zona: infligge il Potere come danno + Blocca (perde 1 tick)."
+      },
+      {
+        "card_id": "VIT-ANA-T4-001",
+        "name": "Piano Strategico",
+        "approccio": "Analisi",
+        "costo_tempo": "T4",
+        "rarita": "Rara",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Il PG analizza il campo di battaglia e individua il punto debole dello schieramento nemico, comunicandolo ai compagni.",
+        "tags": ["Abilità", "Apertura", "Sviluppo"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 10, "approccio_2": 14, "approccio_3": 18, "approccio_4": 22, "approccio_5": 27},
+        "effetto_tematico_extra": "Tutti i compagni di squadra del PG ottengono +2 al prossimo attacco contro il bersaglio designato. Cumulativo con altre aperture."
+      },
+      {
+        "card_id": "VIT-ANA-T5-001",
+        "name": "Incidere Carta",
+        "approccio": "Analisi",
+        "costo_tempo": "T5",
+        "rarita": "Leggendaria",
+        "contesto_tematico": ["Rituale"],
+        "descrizione": "La tecnica segreta dei Maestri Incisori: il PG crea una NUOVA carta Vitalità nominated dal nulla, plasmando l'energia grezza con la propria conoscenza. Si dice che i Maestri Incisori più esperti possano creare carte Leggendarie — ma il costo in termini di materiali e fatica è enorme.",
+        "tags": ["Abilità", "Magia", "Apertura", "Sviluppo", "Culmine"],
+        "tabella_potere_modificata": {"approccio_1": 10, "approccio_2": 13, "approccio_3": 18, "approccio_4": 23, "approccio_5": 30},
+        "tabella_potere_tematica": {"approccio_1": 12, "approccio_2": 16, "approccio_3": 22, "approccio_4": 28, "approccio_5": 36},
+        "effetto_tematico_extra": "CRAFTING: il PG crea una nuova carta nominated dal Catalogo (a scelta del giocatore, tra quelle di rarità fino a Rara — le Leggendarie richiedono un rito separato). La nuova carta è AGGIUNTA al mazzo del PG. Richiede materiali rari (decisi dal Master) e l'intero tick T5 per essere completata. È la carta DEFINITORIA dell'Approccio Analisi in campagna."
+      }
+    ]
+  },
+  "carte_istinto": {
+    "name": "Carte Vitalità ISTINTO (Blu, Riflessi/Reazione)",
+    "identity": "Tecniche di riflesso, destrezza, reazione immediata, evasione. Profilo temporale: tantissime T1-T2, poche T3, rarissime T4-T5. Le carte Istinto privilegiano velocità, schivate, contrattacchi, e azioni reattive.",
+    "cards": [
+      {
+        "card_id": "VIT-IST-T1-001",
+        "name": "Schivata Laterale",
+        "approccio": "Istinto",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un passo di lato scattante che evita un colpo in arrivo.",
+        "tags": ["Fulmineo"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 5, "approccio_5": 6},
+        "effetto_tematico_extra": "Annulla un attacco nemico con Potere ≤ al valore letto. Funziona come reazione (si gioca nel tick del nemico)."
+      },
+      {
+        "card_id": "VIT-IST-T1-002",
+        "name": "Riflesso Rapido",
+        "approccio": "Istinto",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento", "Esplorazione"],
+        "descrizione": "Il PG reagisce a un pericolo prima ancora di averlo razionalizzato.",
+        "tags": ["Fulmineo"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 6},
+        "effetto_tematico_extra": "Permette al PG di agire fuori turno (azione Fulminea) per una singola azione rapida (T1-T2)."
+      },
+      {
+        "card_id": "VIT-IST-T2-001",
+        "name": "Passo Felino",
+        "approccio": "Istinto",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Stealth", "Esplorazione"],
+        "descrizione": "Movimento silenzioso e fluido che non lascia traccia né rumore.",
+        "tags": ["Abilità", "Fulmineo"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Il PG si muove di 1 zona in silenzio totale. Percepito solo se un osservatore ha soglia percezione ≥ Potere letto + 3."
+      },
+      {
+        "card_id": "VIT-IST-T2-002",
+        "name": "Contrattacco",
+        "approccio": "Istinto",
+        "costo_tempo": "T2",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Il PG sfrutta l'apertura lasciata da un attacco nemico per colpire di rimando.",
+        "tags": ["Abilità", "Fulmineo", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 8, "approccio_4": 10, "approccio_5": 11},
+        "effetto_tematico_extra": "Si gioca in reazione a un attacco nemico mancato. Il PG infligge il Potere come danno diretto al bersaglio. Cumulabile con Schivata Laterale."
+      },
+      {
+        "card_id": "VIT-IST-T3-001",
+        "name": "Mille Tagli",
+        "approccio": "Istinto",
+        "costo_tempo": "T3",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Una serie di tagli piccoli e rapidissimi, ciascuno quasi insignificante, ma insieme devastanti.",
+        "tags": ["Strumento", "Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "effetto_tematico_extra": "Infligge 3 tagli separati (divide il Potere per 3, ciascuno infligge Sanguinamento lieve: -1 carta Vitalità al prossimo tick). Utile contro nemici con armatura alta (ogni colpo è calcolato separatamente contro l'armatura)."
+      },
+      {
+        "card_id": "VIT-IST-T3-002",
+        "name": "Lettura del Respiro",
+        "approccio": "Istinto",
+        "costo_tempo": "T3",
+        "rarita": "Rara",
+        "contesto_tematico": ["Combattimento", "Sociale"],
+        "descrizione": "Il PG osserva il respiro e i micromovimenti dell'avversario, anticipandone la mossa successiva.",
+        "tags": ["Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 8, "approccio_2": 11, "approccio_3": 15, "approccio_4": 18, "approccio_5": 22},
+        "effetto_tematico_extra": "Il PG dichiara un'azione nemica futura (es. 'attacca con la spada'). Se il nemico compie quell'azione nel prossimo tick, il PG ottiene +5 al prossimo attacco contro di lui o annulla la sua azione. In contesto Sociale: il PG intuisce se il PNG mente (Master rivela la verità)."
+      },
+      {
+        "card_id": "VIT-IST-T4-001",
+        "name": "Danza delle Lame",
+        "approccio": "Istinto",
+        "costo_tempo": "T4",
+        "rarita": "Rara",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Una sequenza acrobatica di attacchi e schivate, dove il PG diventa una macchia indistinta di acciaio.",
+        "tags": ["Strumento", "Abilità", "Apertura", "Sviluppo"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 10, "approccio_2": 14, "approccio_3": 18, "approccio_4": 22, "approccio_5": 27},
+        "effetto_tematico_extra": "Il PG colpisce tutti i nemici adiacenti (danno pieno a ciascuno) E ottiene +3 alla prossima difesa. Una delle poche carte Istinto con effetto area."
+      },
+      {
+        "card_id": "VIT-IST-T5-001",
+        "name": "Occhio del Vuoto",
+        "approccio": "Istinto",
+        "costo_tempo": "T5",
+        "rarita": "Leggendaria",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Lo stato mentale leggendario in cui il guerriero percepisce ogni cosa come al rallentatore. Il tempo si ferma intorno a lui. Si racconta che il primo maestro a raggiungerlo abbia parato cento frecce in volo contemporaneamente.",
+        "tags": ["Abilità", "Fulmineo", "Apertura", "Sviluppo", "Culmine"],
+        "tabella_potere_modificata": {"approccio_1": 11, "approccio_2": 14, "approccio_3": 19, "approccio_4": 25, "approccio_5": 32},
+        "tabella_potere_tematica": {"approccio_1": 13, "approccio_2": 17, "approccio_3": 23, "approccio_4": 30, "approccio_5": 40},
+        "effetto_tematico_extra": "Per questo turno, il PG può AGIRE DUE VOLTE nella Cintura ATB (gioca due carte Vitalità in due slot, anche se in genere uno solo è permesso per tick). Inoltre annulla AUTOMATICAMENTE un attacco nemico qualsiasi diretto a lui (rifiuta il danno). Una delle tecniche più rare e temute del Catalogo."
+      }
+    ]
+  },
+  "carte_risonanza": {
+    "name": "Carte Vitalità RISONANZA (Verde, Empatia/Elementale)",
+    "identity": "Tecniche di magia elementale, cura, empatia, connessione. Profilo temporale: bilanciato, centrato su T3. Le carte Risonanza privilegiano cura, evocazione elementale, manipolazione dell'ambiente, e supporto ai compagni.",
+    "cards": [
+      {
+        "card_id": "VIT-RIS-T1-001",
+        "name": "Bacio Curativo",
+        "approccio": "Risonanza",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento", "Rituale"],
+        "descrizione": "Un tocco lieve che infonde energia vitale in un compagno ferito.",
+        "tags": ["Magia"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 5, "approccio_5": 6},
+        "effetto_tematico_extra": "Cura 1 ferita Approccio a un compagno Engaged (rigira la carta Approccio ferita sul lato sano)."
+      },
+      {
+        "card_id": "VIT-RIS-T1-002",
+        "name": "Sussurro Vegetale",
+        "approccio": "Risonanza",
+        "costo_tempo": "T1",
+        "rarita": "Comune",
+        "contesto_tematico": ["Esplorazione", "Rituale"],
+        "descrizione": "Il PG ascolta la voce delle piante e della terra, raccogliendo informazioni sull'ambiente circostante.",
+        "tags": ["Magia"],
+        "tabella_potere_generica": {"approccio_1": 2, "approccio_2": 3, "approccio_3": 3, "approccio_4": 4, "approccio_5": 4},
+        "tabella_potere_tematica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 6},
+        "effetto_tematico_extra": "Il Master rivela 1 informazione sull'ambiente (presenza di creature, passaggi nascosti, fonti d'acqua, pericoli naturali)."
+      },
+      {
+        "card_id": "VIT-RIS-T2-001",
+        "name": "Inchino",
+        "approccio": "Risonanza",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Sociale"],
+        "descrizione": "Un inchino formale, antico gesto di rispetto che apre ogni negoziazione onorevole.",
+        "tags": ["Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Il PNG riceve un bonus di +2 alla sua soglia di Reazione Positiva (più facile conquistarsene la fiducia). Cumulabile con altre aperture sociali."
+      },
+      {
+        "card_id": "VIT-RIS-T2-002",
+        "name": "Scintilla Elementale",
+        "approccio": "Risonanza",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Una piccola emissione di energia elementale (fuoco, ghiaccio, fulmine — scelta del PG) diretta al bersaglio.",
+        "tags": ["Magia", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Scegli l'elemento al momento del gioco. Infligge Status elementare lieve (es. Piccolo Fuoco: -1 carta Vitalità al prossimo tick; Piccolo Gelo: -1 al prossimo attacco; Piccolo Shock: perde il prossimo tick difensivo)."
+      },
+      {
+        "card_id": "VIT-RIS-T3-001",
+        "name": "Cura Profonda",
+        "approccio": "Risonanza",
+        "costo_tempo": "T3",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento", "Rituale"],
+        "descrizione": "Una corrente di energia vitale che scorre dalle mani del PG al corpo del compagno, rimarginando ferite e restaurando energie.",
+        "tags": ["Magia", "Abilità"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 6, "approccio_2": 8, "approccio_3": 12, "approccio_4": 14, "approccio_5": 17},
+        "effetto_tematico_extra": "Cura 1 ferita Approccio a un compagno + recupera 3 carte dalla Pila Scarti al suo Mazzo Vitalità. Più potente del Bacio Curativo."
+      },
+      {
+        "card_id": "VIT-RIS-T3-002",
+        "name": "Radici Avvolgenti",
+        "approccio": "Risonanza",
+        "costo_tempo": "T3",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Combattimento", "Rituale"],
+        "descrizione": "Le radici della terra emergono per afferrare i piedi del bersaglio, bloccandolo sul posto.",
+        "tags": ["Magia", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 5, "approccio_2": 7, "approccio_3": 10, "approccio_4": 12, "approccio_5": 14},
+        "tabella_potere_tematica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "effetto_tematico_extra": "Infligge Bloccato al bersaglio per 2 tick (non può muoversi dalla sua zona). Se il bersaglio è in procinto di fuggire, l'effetto si estende a 3 tick."
+      },
+      {
+        "card_id": "VIT-RIS-T4-001",
+        "name": "Evocazione Elementale",
+        "approccio": "Risonanza",
+        "costo_tempo": "T4",
+        "rarita": "Rara",
+        "contesto_tematico": ["Combattimento", "Rituale"],
+        "descrizione": "Il PG chiama a sé un elemento (fuoco, acqua, terra, aria) plasmandolo in una forma semovente che combatte al suo fianco.",
+        "tags": ["Magia", "Apertura", "Sviluppo"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 10, "approccio_2": 14, "approccio_3": 18, "approccio_4": 22, "approccio_5": 27},
+        "effetto_tematico_extra": "Evoca un Elementale (statblock: Potere letto come danno base, 1 Cuore, immunità al suo elemento) che agisce nel prossimo tick come alleato. L'Elementale svanisce dopo 3 tick o quando il suo Cuore è esaurito."
+      },
+      {
+        "card_id": "VIT-RIS-T4-002",
+        "name": "Benedizione del Bosco",
+        "approccio": "Risonanza",
+        "costo_tempo": "T4",
+        "rarita": "Non Comune",
+        "contesto_tematico": ["Rituale", "Esplorazione"],
+        "descrizione": "Il PG chiede la benedizione degli spiriti del luogo, che rispondono infondendo benedizione su tutto il gruppo.",
+        "tags": ["Magia", "Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 7, "approccio_2": 10, "approccio_3": 13, "approccio_4": 16, "approccio_5": 19},
+        "tabella_potere_tematica": {"approccio_1": 9, "approccio_2": 13, "approccio_3": 17, "approccio_4": 21, "approccio_5": 25},
+        "effetto_tematico_extra": "Tutti i compagni di squadra ottengono +1 a tutti i tiri di Approccio per 3 tick. Cumulabile con altre benedizioni."
+      },
+      {
+        "card_id": "VIT-RIS-T5-001",
+        "name": "Tempesta Primordiale",
+        "approccio": "Risonanza",
+        "costo_tempo": "T5",
+        "rarita": "Leggendaria",
+        "contesto_tematico": ["Combattimento", "Rituale"],
+        "descrizione": "L'incantesimo supremo dei Druidi Antichi: una tempesta di tutti e quattro gli elementi scatenata in una zona, che colpisce ogni nemico con fuoco, ghiaccio, fulmine e terra. Si dice che l'ultimo a usarla abbia raso al suolo una fortezza nemica in un solo rito.",
+        "tags": ["Magia", "Apertura", "Sviluppo", "Culmine", "Fulmineo"],
+        "tabella_potere_modificata": {"approccio_1": 12, "approccio_2": 16, "approccio_3": 22, "approccio_4": 28, "approccio_5": 35},
+        "tabella_potere_tematica": {"approccio_1": 14, "approccio_2": 19, "approccio_3": 26, "approccio_4": 33, "approccio_5": 42},
+        "effetto_tematico_extra": "Colpisce TUTTI i nemici in un'area di 2 zone con Tutti gli Status elementali (Sanguinamento, Gelo, Shock, Bloccato — ciascuno infligge il proprio effetto). I nemici con Cuore 1 subiscono automaticamente 1 ferita Approccio. L'incantesimo è così potente che lascia il PG esausto: salta il suo prossimo tick. Una delle magie più temute del Catalogo."
+      }
+    ]
+  },
+  "carte_cross_approccio": {
+    "name": "Carte Cross-Approccio (Universali)",
+    "principle": "Alcune carte nominated non appartengono a un singolo Approccio — rappresentano azioni universali che ogni PG può avere nel mazzo. Sono pochissime e sono tutte Comuni. La loro collocazione nel mazzo segue la firma temporale dell'Approccio a cui appartengono formalmente, ma il giocatore può scegliere se usare una carta cross-approccio o una carta specifica dell'Approccio.",
+    "cards": [
+      {
+        "card_id": "VIT-IMP-T2-003",
+        "name": "Grido di Battaglia",
+        "approccio": "Impeto",
+        "costo_tempo": "T2",
+        "rarita": "Comune",
+        "contesto_tematico": ["Combattimento"],
+        "descrizione": "Un urto che sprona i compagni e intimidisce i nemici.",
+        "tags": ["Abilità", "Apertura"],
+        "tabella_potere_generica": {"approccio_1": 3, "approccio_2": 4, "approccio_3": 5, "approccio_4": 6, "approccio_5": 7},
+        "tabella_potere_tematica": {"approccio_1": 4, "approccio_2": 6, "approccio_3": 7, "approccio_4": 8, "approccio_5": 10},
+        "effetto_tematico_extra": "Tutti i compagni ottengono +1 al prossimo attacco. I nemici con Potere base ≤ 4 subiscono Timore (primo attacco -1). Effetto cumulabile ma non stacking al +2."
+      }
+    ],
+    "note_on_cross_approccio": "Le carte cross-approccio sono PIÙ RARE nel Catalogo delle carte specifiche per Approccio. Si raccomanda che non superino il 10% del mazzo di un PG. Servono per dare flessibilità narrativa — un PG Risonanza può avere un Grido di Battaglia per partecipare all'attacco del gruppo, ma è una scelta tematica forte."
+  },
+  "acquisition_rules_summary": {
+    "name": "Riepilogo delle Regole di Acquisizione",
+    "creazione_pg": "Alla creazione, il PG riceve carte nominated COMUNI dal Catalogo per riempire i 60 slot del mazzo secondo la Distribuzione Asimmetrica per Livello. Il giocatore SCEGLIE quali carte comuni inserire (limitatamente a quelle disponibili nel Catalogo base).",
+    "loot_in_campagna": "I Boss possono droppare carte nominated Non Comuni/Rare/Leggendarie. Gli Swarm droppano carte Comuni. Il Master decide il drop in base alla narrativa.",
+    "quest_rewards": "Quest importanti possono premiare con carte nominated specifiche (anche Leggendarie, in caso di quest epiche).",
+    "crafting": "Un PG con Approccio Analisi elevato può usare 'Incidere Carta' (VIT-ANA-T5-001) per creare nuove carte nominated. I materiali rari sono decisi dal Master.",
+    "scambi": "In campagne cooperative, i PG possono scambiarsi carte nominated durante i momenti di riposo. La Riserva Comune funge da 'mercato interno' del gruppo.",
+    "death_legacy": "Alla morte o ritiro di un PG, le sue carte nominated vanno nella Riserva Comune. Possono essere riprese da altri PG come reliquie.",
+    "no_blind_buy": "NON ESISTE randomized blind-buy meccanico. Il flusso è sempre controllato narrativamente dal Master.",
+    "cross_reference": "Vedi 03_vitalita/01_mazzo_vitalita.json → deckbuilding_v3_2 per il dettaglio della composizione del mazzo e della gestione del Catalogo."
+  },
+  "rarity_distribution_in_catalog": {
+    "name": "Distribuzione Rarità nel Catalogo Base",
+    "summary": {
+      "total_cards": 33,
+      "comuni": 18,
+      "non_comuni": 9,
+      "rare": 5,
+      "leggendarie": 4
+    },
+    "note": "Questa è una prima versione del Catalogo — espandibile. La distribuzione target è ~60% Comuni / ~25% Non Comuni / ~12% Rare / ~3% Leggendarie. La prima versione è leggermente sovrappesata su Leggendarie (1 per Approccio) per validare il sistema, ma in campagne normali il Master dovrebbe distribuirle con parsimonia.",
+    "future_additions": "Espansioni future possono aggiungere nuove carte nominated al Catalogo in file separati (es. '06_catalogo_espansione_X.json'). Le carte dei cataloghi di espansione sono AGGIUNTE al catalogo base, non lo sostituiscono."
+  },
+  "design_evolution_notes": {
+    "v1_v3_1": "Le Carte Vitalità erano GENERICHE — solo Approccio + T + Tag + Tabella del Potere. Nessuna identità narrativa. La Riserva Comune era un'astrazione di colore anonima.",
+    "v1_0_v3_2": "ARCHITETTURA v3.2: CATALOGO delle Carte Vitalità Nominate introdotto. Ogni carta ha Nome + Descrizione + Rarità + Contesto Tematico + Tabella Generica + Tabella Tematica + (per Leggendarie) Tabella Modificata. Quattro Rarità: Comune / Non Comune / Rara / Leggendaria. Distribuzione target: 60/25/12/3. Primo catalogo base con 33 carte (8 per Approccio + 1 cross-approccio). Espandibile in file separati per espansioni future."
+  }
+}

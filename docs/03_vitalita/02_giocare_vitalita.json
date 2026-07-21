@@ -1,31 +1,66 @@
 {
   "section_id": "03-02",
-  "section_name": "Giocare le Carte Vitalità — Scoperta/Coperta, Tag-Chiave, Attivazione",
-  "version": "1.1",
-  "architecture_version": "v3",
+  "section_name": "Giocare le Carte Vitalità — Scoperta/Coperta, Modo Tematico/Modo Generico, Tag-Chiave, Attivazione",
+  "version": "2.2",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce COME si giocano le Carte Vitalità nella Cintura ATB e COME attivano i poteri. Le Vitalità si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). I TAG sono CHIAVI di attivazione che indicano quali poteri possono essere attivati. Questo file è la CASA UNICA per la regola di attivazione tramite Vitalità.",
+  "description": "Definisce COME si giocano le Carte Vitalità nominated nella Cintura ATB e COME attivano i poteri. Le Vitalità si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Le SCOPERTE possono essere giocate in DUE MODALITÀ: MODO TEMATICO (la carta è usata 'per quello che è', in contesto compatibile → leggi la Tabella Tematica potenziata + Effetto Extra) o MODO GENERICO (la carta è usata come 'pura energia con tag', fuori contesto → leggi la Tabella Generica standard + usi i Tag per attivare poteri nominated). Entrambe le modalità sono SEMPRE legittime. I TAG sono CHIAVI di attivazione che indicano quali poteri possono essere attivati. Questo file è la CASA UNICA per la regola di attivazione tramite Vitalità e per le due modalità di gioco v3.2.",
+  "v3_2_paradigm_shift": {
+    "name": "Svolta v3.2 — Due Modalità di Gioco per le Carte SCOPERTE",
+    "what_changes": "Quando il PG gioca una Carta Vitalità SCOPERTA, sceglie (esplicitamente o implicitamente dal contesto) tra DUE MODALITÀ: MODO TEMATICO (la carta è usata per la sua identità narrativa, in un contesto compatibile con il suo Contesto Tematico) o MODO GENERICO (la carta è usata come puro veicolo di tempo+tag, in qualsiasi contesto).",
+    "why_two_modes": "Il MODO TEMATICO premia il giocatore che usa la carta nel suo contesto naturale — legge una Tabella del Potere POTENZIATA (propria della carta) e attiva un Effetto Tematico Extra. Il MODO GENERICO garantisce che nessuna carta sia mai 'sprecata' — anche fuori contesto, la carta resta una legittima fonte di tempo e tag per attivare poteri nominated.",
+    "what_does_not_change": "La distinzione SCOPERTA/COPERTA resta. Le COPERTA pagano solo il Costo Tempo (nessuna modalità si applica). Le SCOPERTE attivano un potere tramite i TAG. Le regole di risoluzione (tick, Cintura ATB, Pila Scarti) sono invariate."
+  },
   "two_play_modes": {
     "name": "I Due Modi di Giocare una Vitalità",
     "scoperta": {
       "name": "SCOPERTA (Attiva un Potere)",
-      "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) un'abilità/magia ospitata su una Carta Approccio nominated, (2) un Equipaggiamento, (3) uno Strumento Rapido.",
-      "level_of_effect_v3_1": "Il T della Vitalità determina il LIVELLO DI EFFETTO del potere attivato (T1=1° livello, T5=5° livello). Il valore di Approccio del PG determina la RIGA DA LEGGERE nella Tabella del Potere stampata sulla carta (riga 1-5). NON esiste un CAP che vieta di giocare T sopra il proprio Approccio — il PG può giocare qualsiasi T che ha in mano, leggendo semplicemente la riga corrispondente al suo Approccio. Vedi 05_combattimento/01_tabella_potere.json",
+      "what_it_does": "La Vitalità attiva un potere compatibile tramite i TAG. Il potere può essere: (1) la propria identità tematica (Modo Tematico), (2) un'abilità/magia ospitata su una Carta Approccio nominated, (3) un Equipaggiamento, (4) uno Strumento Rapido.",
+      "level_of_effect_v3_1": "Il T della Vitalità determina il LIVELLO DI EFFETTO del potere attivato (T1=1° livello, T5=5° livello). Il valore di Approccio del PG determina la RIGA DA LEGGERE nella Tabella del Potere. NON esiste un CAP che vieta di giocare T sopra il proprio Approccio. Vedi 05_combattimento/01_tabella_potere.json",
       "placement_in_atb": "Posizionata nella Cintura ATB nello slot del suo Costo Tempo.",
       "resolution": "Si risolve al proprio tick (da sinistra a destra). Vedi 04_cintura_atb/02_risoluzione.json"
     },
     "coperta": {
       "name": "COPERTA (Puro Costo Tempo)",
-      "what_it_does": "La Vitalità paga solo il Costo Tempo. NON attiva nulla. È energia di sostenimento per permettere azioni successive più costose.",
+      "what_it_does": "La Vitalità paga solo il Costo Tempo. NON attiva nulla. È energia di sostenimento per permettere azioni successive più costose. Le modalità Tematico/Generico NON si applicano.",
       "placement_in_atb": "Posizionata NELLO STESSO SLOT della Vitalità scoperta che sta pagando (occupa lo slot del suo T).",
       "resolution": "Si risolve al proprio tick come puro costo — scartata senza effetto.",
-      "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione."
+      "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione. Il nome della carta nominated è visibile ma irrilevante (paga solo il T)."
     },
     "key_principle": "La scelta SCOPERTA vs COPERTA è la SCELTA TATTICA FONDAMENTALE di ogni turno. Scoperta = impatto immediato ma meno energie per azioni successive. Coperta = accumulare tempo per un'azione più potente."
   },
+  "two_thematic_modes_v3_2": {
+    "name": "Le Due Modalità delle Carte SCOPERTE (v3.2)",
+    "modo_tematico": {
+      "name": "MODO TEMATICO — La Carta per Quello Che È",
+      "principle": "Quando il PG gioca una Carta Vitalità SCOPERTA in un contesto COMPATIBILE con il suo Contesto Tematico (es. 'Fendente' in combattimento, 'Inchino' in sociale), la carta è usata PER QUELLO CHE È.",
+      "what_it_activates": "Leggi la TABELLA DEL POTERE TEMATICA della carta (valori POTENZIATI rispetto alla Generica) alla riga del tuo Approccio attuale + applichi l'EFFETTO TEMATICO EXTRA della carta.",
+      "context_check": "Il Contesto Tematico è stampato sulla carta (es. 'Combattimento', 'Sociale', 'Esplorazione', 'Rituale'). Il Master arbitra se il contesto attuale è compatibile. La compatibilità non richiede precisione assoluta — 'Fendente' può essere giocato in Modo Tematico in qualsiasi combattimento (non solo con spade). 'Inchino' può essere giocato in Modo Tematico in qualsiasi interazione sociale formale.",
+      "tags_still_active": "Anche in Modo Tematico, i TAG della carta restano attivi — il PG può ATTIVARE UN POTERE NOMINATED compatibile CON l'azione tematica della carta. Esempio: 'Fendente' (Impeto-T3, tag [Abilità][Apertura][Fisico]) giocato in Modo Tematico attiva la propria azione tematica (danno + Guardia Aperta) E può contemporaneamente attivare un'abilità nominated Impeto compatibile con [Abilità] o [Apertura].",
+      "narrative_emphasis": "Il Modo Tematico è incoraggiato quando il giocatore vuole che la sua azione 'dica qualcosa' narrativamente. Calare 'Fendente' in Modo Tematico dichiara: 'Io sto colpendo con un fendente'. Il Master può usare questa dichiarazione per arricchire la scena.",
+      "rarity_amplification": "L'Effetto Tematico Extra cresce con la rarità: Comune (+1 lieve), Non Comune (status minore/range extra), Rara (status maggiore/danno extra), Leggendaria (effetto devastante + Tabella Generica sostituita con Tabella Modificata)."
+    },
+    "modo_generico": {
+      "name": "MODO GENERICO — La Carta Come Energia+Tag",
+      "principle": "Quando il PG gioca una Carta Vitalità SCOPERTA FUORI CONTESTO rispetto al suo Contesto Tematico (es. 'Inchino' in combattimento, 'Fendente' in una negoziazione), la carta è usata come PURO VEICOLO DI TEMPO+TAG.",
+      "what_it_activates": "Leggi la TABELLA DEL POTERE GENERICA della carta (standard, identica per tutte le carte dello stesso T) alla riga del tuo Approccio attuale. NON applichi l'Effetto Tematico Extra.",
+      "use_case": "Il giocatore vuole attivare un'abilità nominated specifica tramite i TAG della carta, ma la carta nominated non è tematicamente compatibile con l'azione che sta facendo. Esempio: il PG sta negoziando con un nobile e vuole attivare un'abilità nominated Impeto [Abilità] che gli dà bonus di Intimidazione. Ha in mano 'Fendente' (Impeto-T3, tag [Abilità][Apertura][Fisico]). 'Fendente' è tematicamente un'azione di combattimento, ma in Modo Generico è una legittima fonte di T3 + tag [Abilità] per attivare l'abilità nominated di Intimidazione.",
+      "tags_full_activation": "I TAG attivano normalmente i poteri nominated compatibili. La Tabella Generica fornisce il Potere base (danno/soglia) come al solito.",
+      "narrative_loophole": "Il Master può richiedere una breve giustificazione narrativa per giocare una carta fuori contesto (es. 'Come usi Fendente in una negoziazione?' → 'La mia mano va istintivamente all'elsa della spada, facendo capire al nobile che faccio sul serio.'). La giustificazione non è un costo meccanico — è un'opportunità di roleplay.",
+      "no_penalty_principle": "Il Modo Generico NON applica penalità. Il PG paga il T, legge la Tabella Generica, usa i TAG. È un'azione pienamente legittima, semplicemente senza il boost tematico."
+    },
+    "player_choice_moment": {
+      "name": "Il Momento della Scelta",
+      "principle": "La scelta tra Modo Tematico e Modo Generico avviene AL MOMENTO DEL GIOCO. Il giocatore dichiara quale modalità sta usando (in genere è ovvio dal contesto, ma la dichiarazione esplicita previene ambiguità).",
+      "implicit_declaration": "Se il contesto è palesemente compatibile (es. 'Fendente' in un combattimento in corso), la modalità è implicitamente Tematica. Se il contesto è palesemente incompatibile (es. 'Inchino' in combattimento), la modalità è implicitamente Generica. In casi ambigui, il giocatore dichiara.",
+      "cannot_switch_mid_resolution": "Una volta dichiarata la modalità e posizionata la carta nella Cintura ATB, NON si può cambiare durante la risoluzione del tick.",
+      "master_arbitration": "Il Master arbitra contestazioni sulla compatibilità tematica. La regola d'oro: favorisci l'interpretazione del giocatore se ha una giustificazione narrativa ragionevole. Il Modo Tematico è un PREMIO per il roleplay, non un ostacolo."
+    },
+    "key_design_intent": "Le due modalità rendono OGNI carta nominated doppiamente utile: può essere giocata 'per quello che è' (Tematico, boost) o 'per quello che offre' (Generico, flessibile). Il giocatore non è mai penalizzato per aver pescato una carta 'fuori contesto' — paga il T, attiva i suoi poteri, va avanti."
+  },
   "tag_as_activation_keys": {
     "name": "I Tag come Chiavi di Attivazione",
-    "principle": "I TAG sulle Vitalità sono CHIAVI che indicano quali poteri il PG può attivare in quel turno. La Vitalità NON definisce l'azione: indica SOLO cosa si può attivare.",
+    "principle": "I TAG sulle Vitalità sono CHIAVI che indicano quali poteri il PG può attivare in quel turno. La Vitalità NON definisce l'azione: indica SOLO cosa si può attivare. Anche in Modo Tematico, i TAG restano attivi per attivare poteri nominated compatibili.",
     "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità.",
     "important_clarification": "La Vitalità NON deve essere della stessa Approccio del potere attivato. Basta che abbia i TAG giusti. Una Vitalità Impeto con tag [Magia] può attivare un incantesimo Risonanza da una nominated Risonanza.",
     "main_tags": {
@@ -40,42 +75,52 @@
       "[Culmine]": "Chiude una combo con effetto amplificato."
     }
   },
-  "activation_rule_full": {
-    "name": "Regola di Attivazione Completa",
-    "principle_v3_1": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità. Il POTERE BASE è letto dalla TABELLA DEL POTERE stampata sulla carta, alla riga = valore attuale di Approccio del PG. NON esiste un CAP che vieta di giocare T sopra il proprio Approccio.",
+  "activation_rule_full_v3_2": {
+    "name": "Regola di Attivazione Completa v3.2",
+    "principle_v3_2": "Per attivare un potere: la Vitalità deve avere TAG compatibili + essere giocabile in quel tick. Il LIVELLO DI EFFETTO è determinato dal T della Vitalità. Il POTERE BASE è letto dalla TABELLA DEL POTERE (Tematica se in Modo Tematico, Generica se in Modo Generico) alla riga = valore attuale di Approccio del PG. L'EFFETTO TEMATICO EXTRA si applica SOLO in Modo Tematico. NON esiste un CAP che vieta di giocare T sopra il proprio Approccio.",
     "requirements": [
-      "La Vitalità deve avere i TAG richiesti dal potere specifico",
+      "La Vitalità deve avere i TAG richiesti dal potere specifico (se attivi un potere nominated)",
       "La Vitalità deve essere giocabile in quel tick (T corretto per lo slot ATB disponibile)",
       "Il livello di effetto del potere attivato è determinato dal T della Vitalità (T1=1°, T5=5°)",
-      "Il Potere base è letto dalla Tabella del Potere alla riga = Approccio PG attuale (1-5). Se l'Approccio è ferito, si legge la riga inferiore",
-      "Se la Carta Approccio nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]"
+      "Il Potere base è letto dalla Tabella del Potere (Tematica o Generica, a seconda della modalità) alla riga = Approccio PG attuale (1-5). Se l'Approccio è ferito, si legge la riga inferiore",
+      "Se la Carta Approccio nominated è FERITA, le sue abilità sono disattivate — ECCETTO se la Vitalità ha tag [Ferita]",
+      "L'Effetto Tematico Extra si applica SOLO in Modo Tematico (contesto compatibile dichiarato)"
     ],
-    "formula_danno_v3_1": "DANNO TOTALE = Tabella del Potere della Vitalità giocata(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato(livello scelto) + Modificatori (tag [Ferita], ecc.)",
-    "no_cap_principle": "IMPORTANTE: il valore di Approccio NON vieta di giocare T sopra il proprio valore. Un PG con Impeto 1 PUÒ giocare una T5 — legge la riga 1 della tabella T5, ottenendo un Potere basso ma non zero. L'unica limitazione reale è AVERE la carta in mano (determinata dalla composizione del mazzo). Vedi 03_vitalita/01_mazzo_vitalita.json → no_cap_clarification",
-    "example_full": {
-      "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento] nella posizione 3 della Cintura ATB.",
-      "activation": "Attiva la sua Spada Lunga (Arma) al livello 3.",
-      "damage_calculation": "Tabella del Potere T3, riga 3 = 10 Potere base. La Spada Lunga ha +2 danno bonus = 10 + 2 = 12 danno totale.",
-      "ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita, legge la riga 2 (3-1=2). Tabella T3 riga 2 = 6 Potere. Danno = 6 + 2 = 8. Se la Vitalità ha anche [Ferita], il PG SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
-      "low_approccio_high_t_variant": "PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento]. Tabella T5 riga 1 = 8 Potere. Spada +2 = 10 danno. L'azione è LEGITTIMA — legge la riga 1 perché Approccio = 1."
+    "formula_danno_v3_2_tematico": "DANNO TOTALE (Modo Tematico) = Tabella del Potere Tematica della carta(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.) + Effetto Tematico Extra",
+    "formula_danno_v3_2_generico": "DANNO TOTALE (Modo Generico) = Tabella del Potere Generica della carta(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.)",
+    "no_cap_principle": "IMPORTANTE: il valore di Approccio NON vieta di giocare T sopra il proprio valore. Un PG con Impeto 1 PUÒ giocare una T5 — legge la riga 1 della tabella T5, ottenendo un Potere basso ma non zero. L'unica limitazione reale è AVERE la carta in mano. Vedi 03_vitalita/01_mazzo_vitalita.json → no_cap_clarification",
+    "example_full_tematico": {
+      "scenario": "PG con Impeto 3 gioca Vitalità 'Fendente' (Impeto-T3 Rara, tag [Abilità][Apertura][Fisico], Contesto: Combattimento) SCOPERTA in Modo Tematico (combattimento in corso) nella posizione 3 della Cintura ATB. 'Fendente' ha Effetto Tematico Extra: 'Infligge Guardia Aperta al bersaglio per 1 round.'",
+      "activation": "Legge la Tabella Tematica di 'Fendente' alla riga 3 (Impeto 3) = danno 6. Applica Effetto Tematico Extra: il bersaglio ha Guardia Aperta per 1 round. Può anche attivare un'abilità nominated Impeto compatibile con [Abilità] o [Apertura] (se desiderato).",
+      "damage_calculation": "Tabella Tematica T3 riga 3 = 6 danno. Se il PG attiva anche la Spada Lunga (Arma) con +2 danno al livello 3 = 6 + 2 = 8 danno totale + Guardia Aperta."
     },
-    "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la struttura completa delle 5 tabelle del Potere"
+    "example_full_generico": {
+      "scenario": "Stesso PG, stesso 'Fendente' in mano, ma sta NEGOSIANDO con un nobile. Vuole attivare un'abilità nominated Impeto 'Sguardo Torvo' (tag [Abilità]) per intimidire il nobile.",
+      "activation": "Gioca 'Fendente' SCOPERTA in Modo Generico (fuori contesto — Fendente è per combattimento, non negoziazione). Legge la Tabella Generica T3 riga 3 = 5 Potere. Attiva 'Sguardo Torvo' tramite il tag [Abilità]. L'Effetto Tematico Extra 'Guardia Aperta' NON si applica (siamo in Modo Generico).",
+      "damage_calculation": "Potere base = 5 (Tabella Generica T3 riga 3). Soglia di Intimidazione = 4 (fissata dal Master). 5 ≥ 4 → il nobile è intimidito. Il Master potrebbe chiedere una breve giustificazione narrativa ('la tua mano va istintivamente all'elsa — il nobile vede il gesto')."
+    },
+    "example_low_approccio_high_t": {
+      "scenario": "PG con Impeto 1 gioca 'Carica Furiosa' (Impeto-T5) SCOPERTA in Modo Tematico (combattimento).",
+      "activation": "Legge la Tabella Tematica T5 riga 1 = danno 9 (potenziato rispetto alla Generica che sarebbe 8). L'azione è LEGITTIMA — il PG ha la carta in mano, paga T5, legge la riga 1. L'Effetto Tematico Extra 'Sanguinamento' si applica (Modo Tematico)."
+    },
+    "cross_reference_full": "Vedi 05_combattimento/01_tabella_potere.json per la struttura completa della Tabella Generica (5 tabelle, una per T, uguali per tutti) e le Tabelle Tematiche (proprie di ciascuna carta nominated, elencate nel Catalogo 03_vitalita/05_catalogo_carte_vitalita.json)"
   },
   "perfect_block_via_vitality": {
     "name": "Attivazione di Abilità Difensive",
-    "principle": "Una Vitalità con il tag richiesto dall'Abilità Difensiva nominata può attivarla. Il Blocco Perfetto richiede che l'abilità sia attivata NELLO STESSO SLOT temporale del token nemico.",
+    "principle": "Una Vitalità con il tag richiesto dall'Abilità Difensiva nominata può attivarla. Il Blocco Perfetto richiede che l'abilità sia attivata NELLO STESSO SLOT temporale del token nemico. La modalità Tematica vs Generica si applica anche qui: alcune carte nominated hanno Contesto Tematico 'Difesa' o 'Reazione' — giocate in Modo Tematico in risposta a un attacco, leggono la Tabella Tematica e applicano l'Effetto Tematico Extra difensivo.",
     "cross_reference_full": "Vedi 05_combattimento/04_difesa.json"
   },
   "fatigue_vs_action": {
     "name": "Fatica vs Azione (Sintesi)",
-    "fatica": "Carta COPERTA = paga solo il Costo Tempo. Energia di sostenimento.",
-    "azione": "Carta SCOPERTA = attiva un potere compatibile tramite i TAG.",
-    "resolution": "Tutte le carte (coperte e scoperte) finiscono nella Pila Scarti alla risoluzione della colonna. Vedi 03_vitalita/03_pila_scarti.json"
+    "fatica": "Carta COPERTA = paga solo il Costo Tempo. Energia di sostenimento. Nessuna modalità si applica.",
+    "azione": "Carta SCOPERTA = attiva un potere compatibile tramite i TAG. Il giocatore sceglie Modo Tematico (contesto compatibile → Tabella Tematica + Effetto Extra) o Modo Generico (fuori contesto → Tabella Generica standard).",
+    "resolution": "Tutte le carte (coperte e scoperte, tematiche e generiche) finiscono nella Pila Scarti alla risoluzione della colonna. Vedi 03_vitalita/03_pila_scarti.json"
   },
   "design_evolution_notes": {
     "v1_v8": "Le Vitalità erano SIA costo SIA azione. Il tag indicava l'azione stessa.",
     "v9_v2": "Le Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE per Carte Lato Giocatore. Le SCOPERTE attivano Carte Lato Giocatore. Le COPERTE pagano solo il tempo.",
     "v10_v3": "Le Carte Vitalità SCOPERTE ora attivano poteri dalle CARTE CARATTERISTICA NOMINATED (abilità/magie) o dalle Carte Lato Giocatore fisiche (Equipaggiamento + Strumenti Rapidi). Le Carte Abilità e Carte Magia come oggetti fisici separati sono state RIMOSSE. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated.",
-    "v11_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): RIMOSSO il CAP di Approccio come limite. Il valore di Approccio è un SELETTORE DI RIGA nella Tabella del Potere stampata su ogni Carta Vitalità. Tutti i PG possono giocare qualsiasi T (se ce l'hanno in mano), leggendo la riga = proprio Approccio. Ferita Approccio = leggi riga inferiore. Vedi 05_combattimento/01_tabella_potere.json"
+    "v11_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): RIMOSSO il CAP di Approccio come limite. Il valore di Approccio è un SELETTORE DI RIGA nella Tabella del Potere stampata su ogni Carta Vitalità. Tutti i PG possono giocare qualsiasi T (se ce l'hanno in mano), leggendo la riga = proprio Approccio. Ferita Approccio = leggi riga inferiore.",
+    "v12_v3_2_due_modalita": "ARCHITETTURA v3.2: DUE MODALITÀ DI GIOCO per le SCOPERTE. MODO TEMATICO (contesto compatibile → Tabella Tematica potenziata + Effetto Extra) e MODO GENERICO (fuori contesto → Tabella Generica standard + Tag per poteri nominated). Ogni carta nominated ha DUE tabelle del potere. Le COPERTA restano puro costo (nessuna modalità). I TAG restano attivi in entrambe le modalità. Scelta esplicita al momento del gioco, dichiarazione chiara."
   }
 }

@@ -1,27 +1,44 @@
 {
   "section_id": "03-01",
-  "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica, Distribuzione Asimmetrica per Livello",
-  "version": "2.1",
-  "architecture_version": "v3.1",
+  "section_name": "Il Mazzo Vitalità — Riserva di Energia Dinamica, Carte Nominate, Distribuzione Asimmetrica per Livello",
+  "version": "3.2",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali (10 Punti Approccio × 6 carte per punto), proporzionali agli Approcci. Le carte forniscono TEMPO per la Cintura ATB e TAG DI ATTIVAZIONE per attivare poteri. Si giocano SCOPERTA (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. In v3.1 il mazzo è DINAMICO — la composizione T1-T5 muta quando gli Approcci vengono riallineati. La composizione è determinata dalla DISTRIBUZIONE ASIMMETRICA PER LIVELLO: 4 firme temporali uniche per i 4 Approcci. Questo file è la CASA UNICA per le proprietà strutturali del mazzo e per la tabella di composizione.",
-  "v3_1_paradigm_shift": {
-    "name": "Svolta v3.1 — Mazzo Dinamico",
+  "description": "Definisce il Mazzo Vitalità: la RISERVA DI ENERGIA del PG. 60 carte totali (10 Punti Approccio × 6 carte per punto), proporzionali agli Approcci. In v3.2 le Carte Vitalità sono NOMINATE: hanno un nome, una descrizione, una rarità, e DUE tabelle del potere (Generica standard + Tematica potenziata). Si giocano SCOPERTE (attivano un potere) o COPERTA (puro costo tempo). Il mazzo NON si rimescola: quando finisce, il PG collassa. La composizione è DINAMICA (muta coi riallineamenti) e segue la DISTRIBUZIONE ASIMMETRICA PER LIVELLO. La libertà del giocatore consiste nello SCEGLIERE quali carte nominated inserire negli slot fissi della firma temporale. Questo file è la CASA UNICA per le proprietà strutturali del mazzo e per la tabella di composizione.",
+  "v3_2_paradigm_shift": {
+    "name": "Svolta v3.2 — Mazzo Vitalità Collezionabile",
     "what_changes": [
-      "Il mazzo NON è più 'fisso alla creazione'. È DINAMICO: la composizione T1-T5 muta quando gli Approcci vengono riallineati (vedi 02_personaggio/06_riallineamento_approcci.json).",
-      "Le carte rimosse dal mazzo durante un riallineamento tornano nella RISERVA COMUNE — una collezione condivisa di carte Vitalità utilizzabili da altri PG della campagna.",
-      "Le nuove carte necessarie (per un Approccio alzato) vengono selezionate dal Catalogo seguendo la tabella di scalatura del NUOVO livello.",
-      "La DISTRIBUZIONE ASIMMETRICA PER LIVELLO è ora FORMALIZZATA in questo file: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli (1-5)."
+      "Le Carte Vitalità NON sono più 'bianche/generiche'. Sono NOMINATE: ogni carta ha un Nome, una Descrizione, una Rarità, e due tabelle del potere.",
+      "DOPPIA TABELLA DEL POTERE: ogni carta ha una Tabella Generica (standard, identica per tutte le carte dello stesso T — vedi 05_combattimento/01_tabella_potere.json) e una Tabella Tematica (valori POTENZIATI, propri della carta, sempre rapportati all'Approccio 1-5).",
+      "DUE MODALITÀ DI GIOCO: Modo Tematico (in contesto compatibile → leggi la Tabella Tematica + Effetto Tematico Extra) e Modo Generico (fuori contesto → leggi la Tabella Generica + usi i Tag per attivare poteri nominated). Entrambe le modalità sono SEMPRE legittime.",
+      "CATALOGO DELLE CARTE VITALITA: documento di campagna (vedi 03_vitalita/05_catalogo_carte_vitalita.json) con tutte le carte nominate esistenti. Si espande col tempo via loot, quest, crafting, eventi narrativi.",
+      "RARITÀ: 4 livelli (Comune, Non Comune, Rara, Leggendaria). Solo le Leggendarie hanno Tabella del Potere MODIFICATA (oltre alla Tematica).",
+      "RIALLINEAMENTO (Opzione 1): le carte nominated del colore ridotto tornano nella Riserva Comune CON IL LORO NOME. La storia della carta viaggia con la carta."
     ],
-    "why_dynamic": "Se gli Approcci possono riallinearsi (v3.1), il mazzo DEVE seguire il riallineamento — altrimenti il PG avrebbe carte di un Approccio che non ha più. Il mazzo dinàmico rende COERENTE la riserva di energia col mindset attuale del PG.",
-    "what_does_not_change_mechanically": "La dimensione del mazzo resta 60 carte (10 Punti × 6 carte/punto). La mano resta 5 carte. Le regole di gioco (SCOPERTA/COPERTA), di danno (Milling/Esaustione), di esaurimento (svenimento + ferita Cuore) — TUTTE invariate. Cambia solo la COMPOSIZIONE T1-T5 che ora muta dinamicamente."
+    "why_collectible": "Le carte nominate danno CARNE NARRATIVA al momento del gioco (calare 'Fendente' sul tavolo è un atto narrativo), rendono la RISERVA COMUNE un PATRIMONIO DI CAMPAGNA (reliquie di PG passati, drop da Boss, tecniche apprese), e aprono il DECKBUILDING senza distruggere il sistema di regole esistente.",
+    "what_does_not_change_mechanically": [
+      "La dimensione del mazzo resta 60 carte (10 Punti × 6 carte/punto).",
+      "La mano resta 5 carte, sempre piena.",
+      "La Distribuzione Asimmetrica per Livello (4 firme temporali per 4 Approcci × 5 livelli) resta IDENTICA.",
+      "Le regole di gioco SCOPERTA/COPERTA, di danno (Milling/Esaustione), di esaurimento (svenimento + ferita Cuore) — TUTTE invariate.",
+      "Il Mazzo Dinamico si aggiorna ancora coi riallineamenti; le carte rimosse vanno nella Riserva Comune.",
+      "I TAG restano chiavi di attivazione; la Regola d'Oro (T1=1 tag, T5=5 tag) resta.",
+      "La Tabella Generica (5 tabelle, una per T, uguali per tutti gli Approcci) resta il riferimento standard del sistema."
+    ],
+    "design_philosophy": "Il giocatore non sceglie *quali T ha nel mazzo* (questo è determinato dalla firma temporale del suo Approccio), ma sceglie *quali carte nominated concrete* vanno in quegli slot. Un PG con 10 slot T4 Impeto sceglie se riempirli con 10 'Fendente', 5 'Fendente' + 5 'Carica Furiosa', o qualsiasi altra combinazione offerta dal Catalogo. Le carte nominated diventano varianti tematiche di slot fissi — la struttura meccanica non si complica, lo spazio di gioco si arricchisce."
+  },
+  "v3_1_paradigm_shift_legacy": {
+    "name": "Svolta v3.1 — Mazzo Dinamico (mantenuta)",
+    "principle": "Il mazzo NON è 'fisso alla creazione'. È DINAMICO: la composizione T1-T5 muta quando gli Approcci vengono riallineati. Le carte rimosse dal mazzo tornano nella RISERVA COMUNE. La DISTRIBUZIONE ASIMMETRICA PER LIVELLO resta formalizzata in questo file.",
+    "note_v3_2_extension": "In v3.2 la Riserva Comune conserva anche il NOME delle carte (non solo il colore). Le carte nominate sono tracciate individualmente — quando tornano nella Riserva Comune, il Master sa esattamente quali sono.",
+    "cross_reference": "Vedi 02_personaggio/06_riallineamento_approcci.json → mazzo_vitalita_dynamic_update_full"
   },
   "deck_properties": {
     "name": "Proprietà Strutturali del Mazzo",
     "deck_size": "60 carte Vitalità totali.",
     "proportionality_rule": "Il mazzo è PROPORZIONALE agli Approcci del PG: 10 Punti Approccio × 6 carte per punto. Un PG con valori diversi ma somma 10 ha lo stesso mazzo di 60 carte totali — MA la COMPOSIZIONE T1-T5 di ciascun colore dipende dal VALORE di ciascun Approccio (Distribuzione Asimmetrica per Livello).",
-    "composition_v3_1": "Il mazzo ha una distribuzione di Costo Tempo (T1-T5) e Tag DETERMINATA dagli Approcci attuali del PG. Non è più 'fisso alla creazione' — muta coi riallineamenti. La tabella di scalatura (Approccio × Livello) è la Distribuzione Asimmetrica per Livello, formalizzata in questo file (sezione 'distribuzione_asimmetrica_per_livello').",
-    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. Non definiscono l'azione: i loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi).",
+    "composition_v3_2": "Il mazzo ha una distribuzione di Costo Tempo (T1-T5) DETERMINATA dagli Approcci attuali del PG (firma temporale). La SCELTA del giocatore è quali CARTE NOMINATE inserire in quegli slot. Esempio: il giocatore ha 10 slot T4 Impeto — sceglie quali 10 carte nominate Impeto-T4 (dal Catalogo) mettere in quegli slot.",
+    "v3_role": "Le Carte Vitalità sono la RISERVA DI ENERGIA. I loro TAG sono CHIAVI DI ATTIVAZIONE per i poteri (abilità/magie nominated, Equipaggiamento, Strumenti Rapidi). I loro NOMI e TABELLE TEMATICHE forniscono un BOOST aggiuntivo quando giocate in contesto compatibile.",
     "no_shuffle_rule": "Il mazzo NON si rimescola MAI. Le carte vengono pescate in ordine. Quando il mazzo finisce, si innesca l'Esaurimento (vedi 03_vitalita/04_esaurimento.json)."
   },
   "hand_mechanics": {
@@ -32,16 +49,30 @@
     "design_intent": "Il giocatore ha sempre opzioni. L'unico vero costo è lungo termine (Mazzo Vitalità che si assottiglia).",
     "hidden_from_opponents": "La mano è nascosta agli avversari (in PvP) ma VISIBILE ai compagni di squadra in co-op. La cooperazione richiede informazione condivisa."
   },
-  "card_anatomy_vitality": {
-    "name": "Anatomia di una Carta Vitalità",
+  "card_anatomy_v3_2": {
+    "name": "Anatomia di una Carta Vitalità Nominata v3.2",
     "components": [
-      "Costo Tempo (T1-T5): indica in quale slot della Cintura ATB la carta va posizionata e il livello di effetto dell'azione attivata.",
-      "Approccio di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione. I TAG indicano cosa si può attivare, non la Approccio della carta.",
+      "ID Catalogo: codice univoco (es. VIT-IMP-T3-001).",
+      "Nome: la carta ha un nome proprio (es. 'Fendente', 'Inchino', 'Sguardo Indagatore').",
+      "Approccio di appartenenza (Impeto/Analisi/Istinto/Risonanza): visiva, ma NON obbligatoria per l'attivazione dei poteri nominated. I TAG indicano cosa si può attivare, non la Approccio della carta.",
+      "Costo Tempo (T1-T5): indica in quale slot della Cintura ATB la carta va posizionata.",
       "Tag di Attivazione: chiavi che indicano quali poteri possono essere attivati. T=1 ha 1 tag, T=5 ha 5 tag (regola d'oro).",
-      "TABELLA DEL POTERE STAMPATA: 5 righe (Approccio 1-5) × 2 colonne (Approccio, Potere). Una per ogni T. Il PG legge la riga corrispondente al proprio valore di Approccio attuale. Vedi 05_combattimento/01_tabella_potere.json"
+      "Rarità: Comune / Non Comune / Rara / Leggendaria.",
+      "Contesto Tematico: in quali situazioni la carta può essere giocata in Modo Tematico (es. 'Combattimento', 'Sociale', 'Esplorazione', 'Rituale').",
+      "Descrizione: flavor text + indicazione narrativa di cosa rappresenta l'azione.",
+      "TABELLA DEL POTERE GENERICA: 5 righe (Approccio 1-5) × 2 colonne. IDENTICA per tutte le carte dello stesso T. Letta quando la carta è giocata in Modo Generico.",
+      "TABELLA DEL POTERE TEMATICA: 5 righe (Approccio 1-5) × 2 colonne. PROPRIA della carta. Valori POTENZIATI rispetto alla Generica. Letta quando la carta è giocata in Modo Tematico.",
+      "Effetto Tematico Extra (opzionale): un effetto speciale attivato SOLO in Modo Tematico (es. status inflitto, bonus di range, modifica narrativa).",
+      "TABELLA DEL POTERE MODIFICATA (solo Leggendarie): una terza tabella che SOSTITUISCE la Generica per le Leggendarie — riflette la potenza eccezionale della carta."
     ],
     "tag_golden_rule": "Max Tag su carta = Costo Tempo. T=1 ha 1 tag, T=5 ha 5 tag. I tag stanno SOLO sulle Vitalità (NON sulle Carte Approccio).",
-    "tabella_potere_golden_rule": "Ogni Carta Vitalità ha la sua TABELLA DEL POTERE stampata sopra, determinata dal suo T. Esistono 5 tabelle distinte (T1-T5), uguali per tutti gli Approcci. Il PG legge la riga = suo Approccio attuale (1-5). Se l'Approccio è ferito, legge una riga sotto. Vedi 05_combattimento/01_tabella_potere.json",
+    "dual_table_principle": "Ogni carta ha DUE tabelle del potere: Generica (standard, uguale per tutte le carte dello stesso T) e Tematica (potenziata, propria della carta). Il giocatore SCEGLIE quale leggere in base alla modalità di gioco.",
+    "rarity_meaning": {
+      "comune": "Tabella Generica standard + Effetto Tematico lieve (es. +1 al danno tematico, piccolo utility).",
+      "non_comune": "Tabella Generica standard + Effetto Tematico medio (es. status minore, range extra, modifica narrativa minore).",
+      "rara": "Tabella Generica standard + Effetto Tematico forte (es. status maggiore, danno extra, condizione inflitta).",
+      "leggendaria": "Tabella del Potere MODIFICATA (sostituisce la Generica) + Effetto Tematico devastante. Droppano solo da Boss o eventi narrativi rari. Max 1-2 per PG in campagna standard."
+    },
     "tag_examples": [
       "[Strumento]",
       "[Abilità]",
@@ -53,12 +84,21 @@
       "[Chiusura]",
       "[Culmine]"
     ],
-    "cross_reference_full": "Vedi 03_vitalita/02_giocare_vitalita.json per come si usano i tag"
+    "context_thematic_examples": [
+      "Combattimento — azioni di attacco, difesa, manovra militare.",
+      "Sociale — interazioni con PNG, negoziazioni, intrattenimento, diplomazia.",
+      "Esplorazione — movimento, perlustrazione, sopravvivenza, navigazione.",
+      "Rituale — incantesimi lunghi, riti magici, crafting magico, cerimonie.",
+      "Stealth — infiltrazione, furto, occultamento, aggiramento.",
+      "Investigazione — ricerca indizi, deduzione, analisi, intuizione."
+    ],
+    "cross_reference_full": "Vedi 03_vitalita/02_giocare_vitalita.json per come si usano le due modalità (Tematica vs Generica) e i tag. Vedi 03_vitalita/05_catalogo_carte_vitalita.json per il catalogo completo delle carte nominated."
   },
   "distribuzione_asimmetrica_per_livello": {
-    "name": "Distribuzione Asimmetrica per Livello — Le 4 Firme Temporali",
-    "principle": "Per ciascun Approccio con valore N, il mazzo contiene N×6 carte di quel colore. La COMPOSIZIONE T1-T5 di quelle N×6 carte NON è uniforme — segue una FIRMA TEMPORALE UNICA per ciascun Approccio. Le firme sono DIVERSIVISE tra loro e riflettono l'identità narrativa di ciascun Approccio.",
+    "name": "Distribuzione Asimmetrica per Livello — Le 4 Firme Temporali (INVARIATA dalla v3.1)",
+    "principle": "Per ciascun Approccio con valore N, il mazzo contiene N×6 carte di quel colore. La COMPOSIZIONE T1-T5 di quelle N×6 carte NON è uniforme — segue una FIRMA TEMPORALE UNICA per ciascun Approccio. Le firme sono DIVERSE tra loro e riflettono l'identità narrativa di ciascun Approccio.",
     "design_philosophy": "Ogni Approccio ha un 'profilo temporale' che ne riflette l'identità: Impeto (irruenza) ha molte carte T4-T5 (azioni devastanti); Analisi (utility/osservazione) ha molte carte T1-T2 (utility rapida); Istinto (riflessi) ha CARICATURA delle T1-T2 (azioni immediate); Risonanza (empatia elementale) ha una distribuzione bilanciata centrata su T3.",
+    "v3_2_clarification": "In v3.2, la firma temporale determina QUALI SLOT il PG deve riempire per ciascun Approccio (es. Impeto 3 ha 8 slot T4). La SCELTA del giocatore è QUALI carte nominated inserire in quegli slot (es. 8 carte diverse Impeto-T4 dal Catalogo, oppure 8 copie della stessa carta, se la campagna lo permette).",
     "structure_of_tables": "Per ciascun livello N (1-5), la tabella specifica QUANTE carte T1, T2, T3, T4, T5 sono presenti. La somma è SEMPRE N×6. A livello 1-2, tutti gli Approcci condividono la stessa distribuzione BASE COMUNE. Dal livello 3, ogni Approccio sviluppa il proprio profilo unico. T5 è accessibile dal livello 4 per tutti gli Approcci.",
     "firma_impeto": {
       "name": "Firma Temporale — IMPETO (Rosso, Irruenza)",
@@ -126,67 +166,83 @@
         "rationale": "Al picco, le firme sono massimamente differenziate. Impeto ha 20 carte T4-T5 (2/3 del suo arsenale è 'potenza'). Analisi ha 18 carte T1-T2 (3/5 del suo arsenale è 'utility rapida'). Istinto ha 20 carte T1-T2 (2/3 del suo arsenale è 'riflesso immediato'). Risonanza ha 13 carte T3-T4 (il 'centro' del suo arsenale)."
       },
       "table_summary_visualization": {
-        "note": "Per ciascun Approccio al livello N, il giocatore seleziona dal Catalogo delle Carte Vitalità la composizione esatta indicata nella tabella. Il totale per Approccio × 6 = N×6 carte. La somma di tutti gli Approcci = 60 carte (10 × 6).",
+        "note": "Per ciascun Approccio al livello N, il giocatore seleziona dal Catalogo delle Carte Vitalità la composizione esatta indicata nella tabella. Il totale per Approccio × 6 = N×6 carte. La somma di tutti gli Approcci = 60 carte (10 × 6). In v3.2 il giocatore SCEGLIE quali carte nominated inserire in ciascuno slot (es. per 8 slot T4 Impeto, sceglie 8 carte nominated Impeto-T4 dal Catalogo — possono essere tutte diverse, oppure ripetizioni se la campagna lo permette).",
         "example_pg_pure_warrior": {
           "approcci": "Impeto 5, Istinto 3, Analisi 1, Risonanza 1",
-          "impeto_5_composition": "T1×3, T2×3, T3×4, T4×10, T5×10 = 30 carte",
-          "istinto_3_composition": "T1×10, T2×5, T3×3, T4×0, T5×0 = 18 carte",
-          "analisi_1_composition": "T1×4, T2×2 = 6 carte",
-          "risonanza_1_composition": "T1×4, T2×2 = 6 carte",
+          "impeto_5_composition": "T1×3, T2×3, T3×4, T4×10, T5×10 = 30 carte nominated Impeto (dal Catalogo)",
+          "istinto_3_composition": "T1×10, T2×5, T3×3 = 18 carte nominated Istinto",
+          "analisi_1_composition": "T1×4, T2×2 = 6 carte nominated Analisi",
+          "risonanza_1_composition": "T1×4, T2×2 = 6 carte nominated Risonanza",
           "total_check": "30 + 18 + 6 + 6 = 60 carte ✓"
         },
         "example_pg_balanced": {
           "approcci": "Impeto 3, Istinto 3, Analisi 2, Risonanza 2",
-          "impeto_3_composition": "T1×3, T2×3, T3×4, T4×8 = 18 carte",
-          "istinto_3_composition": "T1×10, T2×5, T3×3 = 18 carte",
-          "analisi_2_composition": "T1×5, T2×4, T3×3 = 12 carte",
-          "risonanza_2_composition": "T1×5, T2×4, T3×3 = 12 carte",
+          "impeto_3_composition": "T1×3, T2×3, T3×4, T4×8 = 18 carte nominated Impeto",
+          "istinto_3_composition": "T1×10, T2×5, T3×3 = 18 carte nominated Istinto",
+          "analisi_2_composition": "T1×5, T2×4, T3×3 = 12 carte nominated Analisi",
+          "risonanza_2_composition": "T1×5, T2×4, T3×3 = 12 carte nominated Risonanza",
           "total_check": "18 + 18 + 12 + 12 = 60 carte ✓"
         },
         "example_pg_pure_mage": {
           "approcci": "Risonanza 5, Analisi 3, Impeto 1, Istinto 1",
-          "risonanza_5_composition": "T1×5, T2×5, T3×7, T4×7, T5×6 = 30 carte",
-          "analisi_3_composition": "T1×8, T2×6, T3×4 = 18 carte",
-          "impeto_1_composition": "T1×4, T2×2 = 6 carte",
-          "istinto_1_composition": "T1×4, T2×2 = 6 carte",
+          "risonanza_5_composition": "T1×5, T2×5, T3×7, T4×7, T5×6 = 30 carte nominated Risonanza",
+          "analisi_3_composition": "T1×8, T2×6, T3×4 = 18 carte nominated Analisi",
+          "impeto_1_composition": "T1×4, T2×2 = 6 carte nominated Impeto",
+          "istinto_1_composition": "T1×4, T2×2 = 6 carte nominated Istinto",
           "total_check": "30 + 18 + 6 + 6 = 60 carte ✓"
         }
       }
     },
-    "t5_accessibility_rule": "La firma temporale del mazzo NON include carte T5 sotto il livello 4 per NESSUN Approccio. Quindi un PG con Approccio 1-3 non ha T5 nel mazzo e di fatto non può giocarle (non le ha in mano). MA: se una T5 finisce in mano per qualsiasi motivo (es. presa dalla Riserva Comune durante un riallineamento, o scambiata con un compagno in campagne cooperative), il PG PUÒ giocarla legittimamente — legge la riga del suo Approccio attuale (es. riga 1 se Approccio 1). NON esiste un divieto di gioco basato sull'Approccio.",
+    "t5_accessibility_rule": "La firma temporale del mazzo NON include carte T5 sotto il livello 4 per NESSUN Approccio. Quindi un PG con Approccio 1-3 non ha T5 nel mazzo e di fatto non può giocarle (non le ha in mano). MA: se una T5 finisce in mano per qualsiasi motivo (es. presa dalla Riserva Comune durante un riallineamento, o scambiata con un compagno in campagne cooperative), il PG PUÒ giocarla legittimamente — legge la riga del suo Approccio attuale. NON esiste un divieto di gioco basato sull'Approccio.",
     "t4_accessibility_rule": "La firma temporale del mazzo NON include carte T4 sotto il livello 3 (eccetto Analisi e Istinto che non hanno T4 fino al livello 4 per la loro firma specifica). Come per T5, se una T4 finisce in mano, il PG PUÒ giocarla leggendo la riga del suo Approccio.",
     "no_cap_clarification": "IMPORTANTE: la composizione del mazzo (quali T hai a disposizione) è una cosa. La LEGGE DI GIOCO (quali T puoi giocare se le hai in mano) è un'altra. La composizione è limitata dalla firma temporale; la LEGGE DI GIOCO non ha limiti basati sull'Approccio. Vedi 05_combattimento/01_tabella_potere.json → no_cap_rule",
-    "cross_reference_tabella_potere": "Vedi 05_combattimento/01_tabella_potere.json per la corrispondenza T → Potere (danno base)."
+    "cross_reference_tabella_potere": "Vedi 05_combattimento/01_tabella_potere.json per la Tabella Generica (standard per T) e le Tabelle Tematiche (proprie di ciascuna carta)."
   },
-  "dynamic_deck_mechanic_v3_1": {
-    "name": "Meccanica del Mazzo Dinamico",
-    "principle": "Quando gli Approcci del PG vengono riallineati (vedi 02_personaggio/06_riallineamento_approcci.json), il mazzo Vitalità si AGGIORNA per riflettere i nuovi valori.",
+  "deckbuilding_v3_2": {
+    "name": "Deckbuilding v3.2 — La Scelta del Giocatore",
+    "principle": "La composizione T1-T5 del mazzo è FISSA dalla Distribuzione Asimmetrica per Livello. La libertà del giocatore consiste nello SCEGLIERE quali CARTE NOMINATE inserire in ciascuno slot.",
+    "slot_filling_rule": "Per ciascuno slot (es. T4 Impeto), il giocatore sceglie UNA carta nominated dal Catalogo Impeto-T4. Lo stesso nome di carta può essere ripetuto più volte (es. 8 'Fendente' in 8 slot T4) oppure il giocatore può diversificare (es. 4 'Fendente' + 4 'Carica Furiosa').",
+    "acquisition_lifecycle": {
+      "creazione_pg": "Alla creazione, il PG riceve un mazzo BASE composto da carte nominate COMUNI del Catalogo, secondo la Distribuzione Asimmetrica per Livello dei suoi Approcci iniziali. Il giocatore può scegliere quali carte comuni inserire (limitatamente alla disponibilità del Catalogo base).",
+      "loot_in_campagna": "Sconfiggendo nemici (specialmente Boss), completando quest, ricevendo insegnamenti da maestri PNG, o vivendo eventi narrativi significativi, il PG acquisisce NUOVE carte nominated dal Catalogo (anche Non Comuni, Rare, Leggendarie).",
+      "crafting_analisi": "Un PG con Approccio Analisi elevato può 'incidere' nuove carte nominated usando materiali rari e tempo di crafting. Questo dà un ruolo unico all'Approccio Analisi in campagna. Vedi 06_equipaggiamento e 11_lore per i dettagli del crafting.",
+      "scambi_tra_pg": "In campagne cooperative, i PG possono scambiarsi carte nominated liberamente durante i momenti di riposo. La Riserva Comune funge da 'mercato interno' del gruppo.",
+      "death_and_legacy": "Quando un PG muore o si ritira, le sue carte nominated vanno nella Riserva Comune. Possono essere riprese da altri PG come 'reliquie' del compagno caduto — un'eredità meccanica e narrativa."
+    },
+    "master_role_in_distribution": "Il Master è arbitro del flusso di carte. Decide quali carte sono disponibili come loot, quali PNG insegnano quali tecniche, e regola il crafting. Niente blind-buy o randomized commercial gatcha — il flusso è sempre controllato narrativamente.",
+    "future_expansions": "Espansioni e moduli LORE futuri possono aggiungere nuove carte nominated al Catalogo. Il sistema è progettato per espandersi senza rompere la struttura meccanica esistente.",
+    "cross_reference_catalogo": "Vedi 03_vitalita/05_catalogo_carte_vitalita.json per il Catalogo completo delle carte nominated disponibili nel gioco base."
+  },
+  "dynamic_deck_mechanic_v3_2": {
+    "name": "Meccanica del Mazzo Dinamico v3.2",
+    "principle": "Quando gli Approcci del PG vengono riallineati (vedi 02_personaggio/06_riallineamento_approcci.json), il mazzo Vitalità si AGGIORNA per riflettere i nuovi valori. Le carte nominated rimosse vanno nella RISERVA COMUNE CON IL LORO NOME (Opzione 1 — la storia della carta viaggia con la carta).",
     "trigger": "Solo ed esclusivamente durante un RIALLINEAMENTO (1 punto Approccio A → Approccio B, dopo fallimento/crisi narrativa). NON avviene spontaneamente, NON avviene durante il combattimento.",
     "procedure_step_by_step": [
       "Step 1: Il riallineamento riduce l'Approccio A di 1 e aumenta l'Approccio B di 1.",
-      "Step 2: Per l'Approccio A (scende di livello, es. da 3 a 2): si RIMUOVONO 6 carte Vitalità di colore A dal mazzo, scegliendo quelle che EXCEDONO la composizione del nuovo livello. Le carte rimosse tornano nella RISERVA COMUNE.",
-      "Step 3: Per l'Approccio B (sale di livello, es. da 2 a 3): si AGGIUNGONO 6 carte Vitalità di colore B al mazzo, selezionate dal Catalogo seguendo la composizione del nuovo livello.",
-      "Step 4: La mano viene mantenuta (nessuna carta scartata dalla mano per il riallineamento). Se la mano contiene carte di colore A che sono state rimosse dal mazzo, restano in mano — sono giocate normalmente, semplicemente non sono più 'sostituibili' pescandole.",
-      "Step 5: Il mazzo aggiornato è ora 60 carte (10×6) con la nuova composizione."
+      "Step 2: Per l'Approccio A (scende di livello, es. da 3 a 2): si RIMUOVONO 6 carte nominated di colore A dal mazzo, scegliendo quelle che EXCEDONO la composizione del nuovo livello. Le carte rimosse tornano nella RISERVA COMUNE CON IL LORO NOME — il Master le traccia individualmente.",
+      "Step 3: Per l'Approccio B (sale di livello, es. da 2 a 3): si AGGIUNGONO 6 carte nominated di colore B al mazzo, selezionate dal Catalogo seguendo la composizione del nuovo livello. Se carte nominated compatibili sono già presenti nella Riserva Comune (es. abbandonate da un altro PG), il giocatore PUÒ riprenderle da lì invece che crearle nuove dal Catalogo.",
+      "Step 4: La mano viene mantenuta (nessuna carta scartata dalla mano per il riallineamento). Se la mano contiene carte nominated di colore A che sono state rimosse dal mazzo, restano in mano — sono giocate normalmente, semplicemente non sono più 'sostituibili' pescandole.",
+      "Step 5: Il mazzo aggiornato è ora 60 carte (10×6) con la nuova composizione. Le carte nominated rimosse sono ora nella Riserva Comune, disponibili per altri PG o per futuri riallineamenti di ritorno."
     ],
-    "riserva_comune": {
-      "name": "La Riserva Comune",
-      "principle": "Una collezione condivisa di carte Vitalità a livello di CAMPAGNA (non di singolo PG). Quando un PG rimuove carte dal proprio mazzo (per riallineamento), queste carte vanno nella Riserva Comune. Quando un PG aggiunge carte al proprio mazzo, può pescarle dalla Riserva Comune (se disponibili) o crearle nuove dal Catalogo.",
-      "narrative_role": "Le carte Vitalità sono 'energia' — non sono legate al singolo PG. Passare dalla riserva comune al mazzo del PG rappresenta l'adattamento dell'energia del PG al nuovo mindset.",
-      "campaign_level": "La Riserva Comune è gestita dal Master. Tener traccia di quali carte sono disponibili (specialmente rare, con tag specifici) è una responsabilità del Master.",
-      "cross_reference": "Vedi 02_personaggio/06_riallineamento_approcci.json per il dettaglio della procedura di riallineamento"
+    "riserva_comune_v3_2": {
+      "name": "La Riserva Comune v3.2",
+      "principle": "Una collezione condivisa di CARTE NOMINATED Vitalità a livello di CAMPAGNA. Quando un PG rimuove carte dal proprio mazzo (per riallineamento), queste carte vanno nella Riserva Comune CON IL LORO NOME. Quando un PG aggiunge carte al proprio mazzo, può pescarle dalla Riserva Comune (se disponibili) o crearle nuove dal Catalogo.",
+      "narrative_role": "Le carte Vitalità nominated sono 'energia plasmata' — non sono legate al singolo PG, ma la loro storia sì. Passare dalla riserva comune al mazzo del PG rappresenta l'adattamento dell'energia del PG al nuovo mindset, mantenendo memoria delle tecniche apprese da chi è venuto prima.",
+      "legacy_dimension": "La Riserva Comune è la MEMORIA DELLA CAMPAGNA. Le carte nominated che hanno vissuto avventure con un PG portano con sé quella storia. Quando un altro PG le riprende, eredita non solo la meccanica ma anche il peso narrativo.",
+      "campaign_level": "La Riserva Comune è gestita dal Master. Tener traccia di quali carte nominated sono disponibili (con il loro nome, rarità, e storia) è una responsabilità del Master. Si raccomanda di tenere un REGISTRO DELLA RISERVA COMUNE aggiornato col progredire della campagna.",
+      "cross_reference": "Vedi 02_personaggio/06_riallineamento_approcci.json → mazzo_vitalita_dynamic_update_full per il dettaglio della procedura di riallineamento"
     },
-    "example_realignment": {
-      "scenario": "PG con Impeto 3, Istinto 3, Analisi 2, Risonanza 2 subisce una crisi narrativa e decide di riallineare: -1 Impeto (3 → 2), +1 Analisi (2 → 3).",
-      "step_1_remove_from_impeto": "Impeto scende da 3 a 2. La composizione Impeto 3 era T1×3, T2×3, T3×4, T4×8 (18 carte). La composizione Impeto 2 è T1×5, T2×4, T3×3 (12 carte). Si rimuovono 6 carte: scegliendo in modo da rispettare la nuova composizione, ad esempio rimuovendo 3 T4, 1 T3, 1 T1, 1 T2. Queste 6 carte tornano nella Riserva Comune.",
-      "step_2_add_to_analisi": "Analisi sale da 2 a 3. La composizione Analisi 2 era T1×5, T2×4, T3×3 (12 carte). La composizione Analisi 3 è T1×8, T2×6, T3×4 (18 carte). Si aggiungono 6 carte: 3 T1, 2 T2, 1 T3, selezionate dal Catalogo (o dalla Riserva Comune se disponibili).",
-      "step_3_result": "Il mazzo aggiornato ha ora 60 carte con la nuova composizione riflettente i valori Impeto 2, Istinto 3, Analisi 3, Risonanza 2."
+    "example_realignment_v3_2": {
+      "scenario": "PG con Impeto 3, Istinto 3, Analisi 2, Risonanza 2 subisce una crisi narrativa e decide di riallineare: -1 Impeto (3 → 2), +1 Analisi (2 → 3). Il mazzo del PG contiene, tra le altre, 8 carte nominated Impeto-T4 (tra cui 'Fendente Devastante' Rara e 7 'Fendente' Comuni).",
+      "step_1_remove_from_impeto": "Impeto scende da 3 a 2. La composizione Impeto 3 era T1×3, T2×3, T3×4, T4×8 (18 carte). La composizione Impeto 2 è T1×5, T2×4, T3×3 (12 carte). Si rimuovono 6 carte: scegliendo in modo da rispettare la nuova composizione, ad esempio rimuovendo 8 carte T4 (tutte quelle T4 Impeto) e aggiungendo 2 T1 + 1 T2 (per raggiungere la nuova composizione). La 'Fendente Devastante' Rara e le 7 'Fendente' Comuni tornano nella Riserva Comune CON IL LORO NOME.",
+      "step_2_add_to_analisi": "Analisi sale da 2 a 3. La composizione Analisi 2 era T1×5, T2×4, T3×3 (12 carte). La composizione Analisi 3 è T1×8, T2×6, T3×4 (18 carte). Si aggiungono 6 carte nominated Analisi: 3 T1, 2 T2, 1 T3. Il giocatore può pescarle dal Catalogo (carte nominate Analisi standard) OPPURE dalla Riserva Comune se un altro PG ha lasciato carte nominated Analisi disponibili.",
+      "step_3_result": "Il mazzo aggiornato ha ora 60 carte nominated con la nuova composizione riflettente i valori Impeto 2, Istinto 3, Analisi 3, Risonanza 2. La 'Fendente Devastante' Rara e le 7 'Fendente' Comuni sono ora nella Riserva Comune — se in futuro il PG (o un altro PG) riallinea verso Impeto, potranno essere riprese."
     }
   },
   "fatigue_mechanic": {
     "name": "Fatica (giocare carte COPERTE)",
-    "action_v3": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento.",
-    "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione.",
+    "action_v3_2": "Le Vitalità COPERTE nella Cintura ATB pagano il Costo Tempo. Non attivano nulla — sono solo energia di sostenimento. La modalità Tematica vs Generica NON si applica alle carte COPERTA (che non attivano poteri).",
+    "visual_meaning": "Le carte coperte sono visibili sul tavolo — mostrano che il PG sta 'caricando' un'azione. Il NOME della carta è visibile, ma irrilevante per la risoluzione (paga solo il T).",
     "difference_from_damage": "Fatica = scartare dalla MANO (scelta, per pagare il Costo Tempo). Danno = milling dalla CIMA del MAZZO VITALITÀ (imprevisto, inflitto dal nemico).",
     "cross_reference_damage": "Vedi 05_combattimento/02_danno.json"
   },
@@ -197,7 +253,7 @@
       "action": "Gli attacchi standard strappano carte dalla cima del Mazzo Vitalità e le spingono nella Pila Scarti.",
       "speed": "Veloce. Non si sceglie cosa perdere.",
       "recovery": "Le carte vanno nella Pila Scarti, recuperabili con riposo e pozioni rivitalizzanti. Vedi 09_riposo_cura/01_cure_asimmetriche.json",
-      "tension_element": "Non sai quale carta hai perso finché non peschi. Ansia palpabile.",
+      "tension_element": "Non sai quale carta nominated hai perso finché non peschi. Ansia palpabile — perdere 'Fendente Devastante' Rara al milling fa male narrativamente e meccanicamente.",
       "key_difference_from_fatigue": "Fatica = scartare dalla MANO (scelta). Danno = milling dalla CIMA del MAZZO (imprevisto)."
     },
     "danno_cronico_trauma": {
@@ -226,6 +282,7 @@
     "v9": "ARCHITETTURA v2: le Carte Vitalità diventano RISERVA DI ENERGIA. I TAG diventano CHIAVI DI ATTIVAZIONE. Ferita Approccio SEMPRE sull'Approccio.",
     "v10": "ARCHITETTURA v3: rinomini caratteristiche. Le Carte Vitalità ora attivano poteri dalle CARTE APPROCCIO NOMINATED o dalle Carte Lato Giocatore fisiche. Le Carte Abilità e Carte Magia fisiche separate sono state RIMOSSE. Rimosso sistema Materie FF7 ed Esper. Slot Strumenti Rapidi aumentati a 5.",
     "v11_v3_1": "ARCHITETTURA v3.1: Mazzo DINAMICO. La composizione T1-T5 muta coi riallineamenti degli Approcci. Distribuzione Asimmetrica per Livello FORMALIZZATA: 4 firme temporali uniche per i 4 Approcci (Impeto/Analisi/Istinto/Risonanza), ciascuna con 5 livelli. Carte rimosse tornano nella Riserva Comune. T5 accessibile dal livello 4.",
-    "v12_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): ogni Carta Vitalità ha la sua TABELLA DEL POTERE stampata sopra (5 righe × 2 colonne, una tabella per T, uguali per tutti gli Approcci). Le regole di accessibilità T4/T5 sono riformulate: la composizione del mazzo limita QUALI T sono nel mazzo, ma NON esiste un CAP che vieta di giocare T alte a PG con Approccio basso. Se hai la carta in mano, la giochi leggendo la riga del tuo Approccio."
+    "v12_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura): ogni Carta Vitalità ha la sua TABELLA DEL POTERE stampata sopra (5 righe × 2 colonne, una tabella per T, uguali per tutti gli Approcci). Le regole di accessibilità T4/T5 sono riformulate: la composizione del mazzo limita QUALI T sono nel mazzo, ma NON esiste un CAP che vieta di giocare T alte a PG con Approccio basso. Se hai la carta in mano, la giochi leggendo la riga del tuo Approccio.",
+    "v13_v3_2_mazzo_collezionabile": "ARCHITETTURA v3.2: MAZZO VITALITÀ COLLEZIONABILE. Le Carte Vitalità diventano NOMINATE (Nome + Descrizione + Rarità + Contesto Tematico + due Tabelle del Potere). DUE MODALITÀ DI GIOCO: Modo Tematico (contesto compatibile → Tabella Tematica + Effetto Extra) e Modo Generico (fuori contesto → Tabella Generica + Tag). Quattro Rarità: Comune / Non Comune / Rara / Leggendaria (solo Leggendaria ha Tabella MODIFICATA). Catalogo delle Carte Vitalità introdotto (03_vitalita/05_catalogo_carte_vitalita.json). Riallineamento v3.2 (Opzione 1): carte nominated rimosse tornano nella Riserva Comune CON IL LORO NOME — la storia viaggia con la carta. Acquisizione controllata dal Master (loot, quest, crafting, eventi, scambi). La composizione T1-T5 resta INVARIATA dalla v3.1 — la libertà del giocatore è SCEGLIERE quali carte nominated inserire negli slot fissi."
   }
 }

@@ -1,12 +1,32 @@
 {
   "section_id": "05-01",
-  "section_name": "La Tabella del Potere — 5 Tabelle per T, Lettura per Riga di Approccio",
-  "version": "2.0",
-  "architecture_version": "v3.1",
+  "section_name": "La Tabella del Potere — 5 Tabelle Generiche per T + Tabelle Tematiche per Carta Nominata",
+  "version": "3.0",
+  "architecture_version": "v3.2",
   "channel": "CANALE 1 — Manuale del Giocatore (Meccaniche Pure)",
-  "description": "Definisce la TABELLA DEL POTERE: il cuore matematico del sistema di danno e risoluzione azioni. Ogni Carta Vitalità ha una TABELLA DEL POTERE STAMPATA SOPRA. Esistono 5 tabelle distinte (una per ogni Costo Tempo T1-T5), ciascuna con 5 righe (Approccio 1-5) × 2 colonne (Approccio, Potere). Le 5 tabelle sono IDENTICHE per tutti gli Approcci (Impeto, Analisi, Istinto, Risonanza) — questo garantisce la neutralità tra Approcci: nessun Approccio è 'più forte' per costruzione. Il valore di Approccio del PG determina la RIGA DA LEGGERE nella tabella del T della carta giocata. Il Potere letto è di DEFAULT il DANNO BASE dell'azione (in combat) o il VALORE per superare una soglia (fuori dal combat); alcune abilità nominated specifiche possono leggerlo come POOL di punti da spendere in effetti alternativi.",
-  "v3_1_paradigm_shift": {
-    "name": "Svolta v3.1 — Da CAP a Selettore di Riga",
+  "description": "Definisce la TABELLA DEL POTERE: il cuore matematico del sistema di danno e risoluzione azioni. In v3.2 esistono DUE TIPI di tabelle del potere stampate su ogni Carta Vitalità NOMINATA: (1) la TABELLA GENERICA — 5 tabelle distinte (una per ogni Costo Tempo T1-T5), ciascuna con 5 righe (Approccio 1-5), IDENTICHE per tutti gli Approcci e per tutte le carte dello stesso T; e (2) la TABELLA TEMATICA — propria di ciascuna carta nominated, con valori POTENZIATI rispetto alla Generica. Le Leggendarie hanno anche una TABELLA MODIFICATA che sostituisce la Generica. Il valore di Approccio del PG determina la RIGA DA LEGGERE. Quale tabella leggere (Generica o Tematica) dipende dalla MODALITÀ DI GIOCO: Modo Tematico (contesto compatibile) → Tabella Tematica + Effetto Extra; Modo Generico (fuori contesto) → Tabella Generica. Il Potere letto è di DEFAULT il DANNO BASE dell'azione (in combat) o il VALORE per superare una soglia (fuori dal combat); alcune abilità nominated specifiche possono leggerlo come POOL di punti da spendere in effetti alternativi.",
+  "v3_2_paradigm_shift": {
+    "name": "Svolta v3.2 — Due Tabelle per Carta (Generica + Tematica)",
+    "what_changes": [
+      "Ogni Carta Vitalità NOMINATA ha DUE tabelle del potere stampate sopra: la TABELLA GENERICA (identica per tutte le carte dello stesso T, indipendentemente da Approccio e Rarità) e la TABELLA TEMATICA (propria della carta, con valori POTENZIATI rispetto alla Generica).",
+      "Il giocatore SCEGLIE quale tabella leggere in base alla MODALITÀ DI GIOCO: Modo Tematico (contesto compatibile col Contesto Tematico della carta) → Tabella Tematica + Effetto Tematico Extra. Modo Generico (fuori contesto) → Tabella Generica standard.",
+      "Le LEGGENDEARIE hanno anche una TABELLA MODIFICATA che SOSTITUISCE la Generica — riflette la potenza eccezionale della carta. Le Leggendarie leggono quindi: in Modo Generico → Tabella Modificata; in Modo Tematico → Tabella Tematica + Effetto Extra.",
+      "Il sistema di 5 Tabelle Generiche (una per T, uguali per tutti gli Approcci) RESTA intatto come riferimento standard del sistema. Le Tabelle Tematiche sono POTENZIAMENTI specifici per ciascuna carta nominated."
+    ],
+    "why_two_tables": [
+      "Il Modo Tematico PREMIA il giocatore che usa la carta nel suo contesto naturale: leggere una tabella potenziata e applicare un Effetto Extra rende la carta 'usata per quello che è' più forte della carta 'usata come puro veicolo di tag'.",
+      "Il Modo Generico GARANTISCE che nessuna carta sia mai sprecata: anche fuori contesto, la Tabella Generica fornisce un Potere base legittimo. Il giocatore non è mai penalizzato per aver pescato una carta 'fuori contesto'.",
+      "Le Leggendarie con Tabella Modificata sono LE CITAZIONI ESTREME del sistema: carte così potenti che anche giocate fuori contesto (Modo Generico) leggono valori più alti della norma."
+    ],
+    "what_does_not_change": [
+      "Il danno totale si calcola ancora: Tabella del Potere (Tematica o Generica) + Bonus Danno Potere attivato + Modificatori + (in Modo Tematico) Effetto Tematico Extra.",
+      "Il T della Vitalità determina ancora lo slot ATB e il POTENZIALE massimo della carta.",
+      "Il valore di Approccio resta un SELETTORE DI RIGA (non un CAP). La Ferita Approccio riduce ancora la riga di 1.",
+      "La composizione del mazzo (Distribuzione Asimmetrica per Livello) resta invariata."
+    ]
+  },
+  "v3_1_paradigm_shift_legacy": {
+    "name": "Svolta v3.1 — Da CAP a Selettore di Riga (mantenuta)",
     "principle": "Nella v3, il valore di Approccio era un CAP: vietava di selezionare livelli di effetto superiori al proprio valore. Nella v3.1, il valore di Approccio è un SELETTORE DI RIGA: il PG legge SEMPRE la riga corrispondente al proprio valore attuale. Tutti i PG possono giocare qualsiasi T (T1-T5) — il valore di Approccio determina solo QUALE riga leggere, non QUALE carta è permessa.",
     "what_changes_mechanically": [
       "RIMOSSO il concetto di 'CAP di Potere' come limite. Nessuna T è vietata in base all'Approccio.",
@@ -27,22 +47,46 @@
     ]
   },
   "core_rule": {
-    "name": "Regola Centrale della Tabella del Potere",
-    "principle": "Il danno base di un'azione è determinato dalla TABELLA DEL POTERE STAMPATA SULLA CARTA VITALITÀ GIOCATA, letta alla riga del valore di Approccio del PG. Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità.",
-    "formula_v3_1": "DANNO TOTALE = Tabella del Potere della Vitalità giocata(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.)",
-    "philosophy_v3_1": "La Tabella del Potere stampata su ogni Carta Vitalità resta la base numerica del danno. I poteri attivati (dalle nominated o dalle Carte Lato Giocatore fisiche) aggiungono personalità (effetti speciali) e potenza (bonus sommati). Questo mantiene le Vitalità come riferimento centrale."
+    "name": "Regola Centrale della Tabella del Potere v3.2",
+    "principle": "Il danno base di un'azione è determinato dalla TABELLA DEL POTERE STAMPATA SULLA CARTA VITALITÀ GIOCATA (Tematica se in Modo Tematico, Generica se in Modo Generico), letta alla riga del valore di Approccio del PG. Il potere attivato (abilità nominated, Magia nominated, Equipaggiamento o Strumento Rapido) fornisce: (1) ABILITÀ EXTRA ed effetti speciali del livello scelto, (2) eventuale BONUS DI DANNO che si SOMMA alla tabella della Vitalità. In Modo Tematico si aggiunge anche l'EFFETTO TEMATICO EXTRA della carta.",
+    "formula_v3_2_tematico": "DANNO TOTALE (Modo Tematico) = Tabella del Potere Tematica della carta(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.) + Effetto Tematico Extra",
+    "formula_v3_2_generico": "DANNO TOTALE (Modo Generico) = Tabella del Potere Generica della carta(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori (tag [Ferita], ecc.)",
+    "formula_v3_2_leggendaria_generico": "DANNO TOTALE (Leggendaria, Modo Generico) = Tabella del Potere MODIFICATA della carta(letta alla riga = Approccio PG attuale) + Bonus Danno Potere attivato + Modificatori",
+    "philosophy_v3_2": "Le 5 Tabelle Generiche restano la base numerica standard del sistema (una per T, uguali per tutti gli Approcci). Le Tabelle Tematiche sono POTENZIAMENTI specifici per ciascuna carta nominated — premiano il giocatore che usa la carta nel suo contesto naturale. Le Tabelle Modificate (solo Leggendarie) sono le eccezioni che confermano la regola: carte così forti da avere una loro versione potenziata della Generica."
   },
-  "table_structure": {
-    "name": "Struttura delle 5 Tabelle del Potere",
+  "table_structure_v3_2": {
+    "name": "Struttura delle Tabelle del Potere v3.2 — Generica, Tematica, Modificata",
+    "three_table_types": {
+      "tabella_generica": {
+        "name": "Tabella del Potere Generica",
+        "principle": "5 tabelle distinte (una per T1-T5), ciascuna con 5 righe (Approccio 1-5). IDENTICHE per tutti gli Approcci e per tutte le carte dello stesso T. Stampata su OGNI carta nominated.",
+        "read_when": "In Modo Generico (carta giocata fuori contesto tematico).",
+        "read_when_leggendaria": "Le Leggendarie NON leggono la Generica — leggono la Tabella Modificata (che sostituisce la Generica).",
+        "identity_across_approcci": "La Tabella T3 Generica è uguale per Impeto, Analisi, Istinto, Risonanza. Neutralità garantita.",
+        "identity_across_rarita": "La Tabella T3 Generica è uguale per una carta Comune, Non Comune, Rara. Solo le Leggendarie divergono (con la loro Tabella Modificata)."
+      },
+      "tabella_tematica": {
+        "name": "Tabella del Potere Tematica",
+        "principle": "Una tabella PROPIA di ciascuna carta nominated, con valori POTENZIATI rispetto alla Generica. Stampata su ogni carta nominated accanto alla Generica.",
+        "read_when": "In Modo Tematico (carta giocata in contesto compatibile col suo Contesto Tematico).",
+        "boost_principle": "La Tabella Tematica è POTENZIATA rispetto alla Generica di circa: +1/+2 per Comuni, +2/+3 per Non Comuni, +3/+5 per Rare, +5/+8 per Leggendarie (valori crescenti riga per riga). Il boost cresce con la rarità e con la riga (Approccio alto beneficia di più).",
+        "unique_per_card": "Ogni carta nominated ha la sua Tabella Tematica specifica. Due carte nominated diverse Impeto-T3 (es. 'Fendente' e 'Testata') possono avere Tabelle Tematiche diverse — purché rispettino il principio di boost."
+      },
+      "tabella_modificata": {
+        "name": "Tabella del Potere Modificata (solo Leggendarie)",
+        "principle": "Una tabella che SOSTITUISCE la Generica per le Leggendarie. Valori più alti della Generica standard, a riflettere la potenza eccezionale della carta Leggendaria.",
+        "read_when": "In Modo Generico per le Leggendarie. In Modo Tematico per le Leggendarie si legge invece la Tabella Tematica (potenzialmente ancora più alta).",
+        "rationale": "Le Leggendarie sono poche e memorabili. La loro Tabella Modificata garantisce che siano potenti ANCHE quando giocate fuori contesto — riflette il loro status di 'carta superiore' nel Catalogo."
+      }
+    },
     "axes": {
       "rows": "Valore Approccio del PG (1-5) — determina la RIGA DA LEGGERE",
       "columns": "2 colonne: (1) Valore Approccio, (2) Potere della carta"
     },
-    "five_tables_per_t": "Esistono 5 tabelle distinte, una per ogni Costo Tempo (T1, T2, T3, T4, T5). Ogni Carta Vitalità ha stampata la tabella del suo T. Una carta T3 mostra la tabella T3; una carta T5 mostra la tabella T5.",
-    "identity_across_approcci": "Le 5 tabelle sono IDENTICHE per tutti i 4 Approcci. La tabella T3 di Impeto = tabella T3 di Analisi = tabella T3 di Istinto = tabella T3 di Risonanza. Questo garantisce neutralità: nessun Approccio ha una tabella 'più forte'.",
+    "five_tables_per_t": "Esistono 5 Tabelle Generiche distinte, una per ogni Costo Tempo (T1-T5). Ogni Carta Vitalità ha stampata la Tabella Generica del suo T + la propria Tabella Tematica + (se Leggendaria) la Tabella Modificata.",
     "scaling_principle": "T1 scala poco (la Approccio influisce marginalmente). T5 scala MOLTO (la Approccio moltiplica il danno base). Questo crea il dilemma: azioni veloci ma deboli, oppure azioni lente ma devastanti.",
-    "table_values_note": "I valori precisi delle 5 tabelle sono in fase di playtest. Lo schema concettuale: una matrice 5×5 dove il valore cella(1,1) è basso (es. 2) e cella(5,5) è molto alto (es. 20-25). La crescita è NON lineare: cella(5,1) è poco più di cella(1,1), ma cella(1,5) è molto più di cella(5,1). Vedi sezione 'conceptual_table' sotto per lo schema.",
-    "open_question_table_values": "Da finalizzare i valori precisi delle 5 tabelle del Potere. Vedi 00_indice.json → OPEN_QUESTIONS_V3"
+    "table_values_note": "I valori precisi delle 5 Tabelle Generiche sono in fase di playtest. Lo schema concettuale: una matrice 5×5 dove il valore cella(1,1) è basso (es. 2) e cella(5,5) è molto alto (es. 20-25). La crescita è NON lineare. Per il Catalogo delle Carte Vitalità v3.2 (03_vitalita/05_catalogo_carte_vitalita.json) si usano valori PROVVISORI coerenti con lo schema.",
+    "open_question_table_values": "Da finalizzare i valori precisi delle 5 Tabelle Generiche del Potere. Vedi 00_indice.json → OPEN_QUESTIONS_V3. Le Tabelle Tematiche e Modificate sono invece definite nel Catalogo carta per carta."
   },
   "conceptual_table": {
     "name": "Schema Concettuale Unificato (5×5)",
@@ -60,11 +104,12 @@
       "(3,3)": "≈10 — PG con Approccio 3 gioca T3, Potere medio (punto di bilanciamento)"
     }
   },
-  "level_of_effect_rule": {
-    "name": "Regola del Livello di Effetto",
-    "principle": "Il T della Vitalità determina il livello di effetto del potere attivato. T1=1° livello, T5=5° livello. Il valore di Approccio del PG determina la RIGA DA LEGGERE nella tabella del T giocato, cioè il POTERE base dell'azione.",
+  "level_of_effect_rule_v3_2": {
+    "name": "Regola del Livello di Effetto v3.2",
+    "principle": "Il T della Vitalità determina il livello di effetto del potere attivato. T1=1° livello, T5=5° livello. Il valore di Approccio del PG determina la RIGA DA LEGGERE nella Tabella del Potere (Tematica in Modo Tematico, Generica in Modo Generico, Modificata per Leggendarie in Modo Generico). NON esiste un CAP che vieta di giocare T sopra il proprio Approccio.",
     "no_cap_rule": "NON esiste più un CAP che vieta di giocare T sopra il proprio Approccio. Il PG può giocare qualsiasi T che ha in mano. Tuttavia, leggere una riga bassa su una tabella alta (es. Approccio 1 su T5) produce un Potere ridotto rispetto a leggere la riga alta (es. Approccio 5 su T5).",
-    "example_no_cap": "PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento] per attivare la Spada. Legge la riga 1 della tabella T5. Il livello di effetto dell'abilità della Spada è 5 (determinato dal T della Vitalità), ma il Potere base letto dalla tabella è basso (riga 1). La somma del danno totale sarà quindi moderata: basso Potere base + bonus livellato dell'arma."
+    "example_no_cap_tematico": "PG con Impeto 1 gioca 'Carica Furiosa' (Impeto-T5 Non Comune) SCOPERTA in Modo Tematico (combattimento). Legge la Tabella Tematica T5 riga 1 = 9 (potenziato rispetto alla Generica che sarebbe 8). L'Effetto Tematico Extra 'Sanguinamento' si applica.",
+    "example_no_cap_generico": "PG con Impeto 1 gioca 'Carica Furiosa' SCOPERTA in Modo Generico (negoziazione — fuori contesto). Legge la Tabella Generica T5 riga 1 = 8 Potere. Nessun Effetto Extra."
   },
   "ferita_approcco_lectura_riga_inferiore": {
     "name": "Lettura con Approccio Ferito",
@@ -99,14 +144,27 @@
       "catalog_reference": "Le nominated che usano il modello pool saranno marcate esplicitamente nel catalogo. Vedi 02_personaggio/08_catalogo_nominated_libere.json"
     }
   },
-  "worked_example": {
-    "name": "Esempio Completo di Calcolo Danno",
-    "scenario": "PG con Impeto 3 gioca Vitalità Impeto T3 SCOPERTA con tag [Strumento].",
-    "step_1_base": "Tabella del Potere T3, riga 3 = 10 Potere (danno base).",
-    "step_2_weapon_bonus": "La Spada Lunga (Arma) ha +2 danno bonus al livello 3 = 10 + 2 = 12 danno totale.",
-    "step_3_ferita_variant": "Se il PG ha una Carta Approccio Impeto ferita, la riga di lettura scende a 2. Tabella T3 riga 2 = 6 Potere. Danno totale = 6 + 2 = 8. Se la Vitalità ha anche [Ferita], il PG SCEGLIE quale carta Impeto ferita riattivare per ottenere +1 ulteriore o un effetto specifico.",
-    "step_4_combo": "Se un compagno ha [Apertura] nella stessa posizione con Potere 5, e questo PG ha [Chiusura], combo = 12 + 5 = 17 danno. Vedi 05_combattimento/05_combo.json",
-    "step_5_low_approccio_high_t": "Variante: PG con Impeto 1 gioca Vitalità T5 SCOPERTA con [Strumento]. Tabella T5 riga 1 = 8 Potere. Spada +2 = 10 danno. L'azione è LEGITTIMA ma il Potere è basso perché il PG ha letto la riga 1 della tabella T5."
+  "worked_example_v3_2": {
+    "name": "Esempio Completo v3.2 — Modo Tematico vs Modo Generico",
+    "scenario_tematico": {
+      "scenario": "PG con Impeto 3 gioca 'Fendente' (Impeto-T3 Comune, tag [Strumento][Abilità][Apertura], Contesto: Combattimento) SCOPERTA in Modo Tematico (combattimento in corso).",
+      "step_1_base": "Tabella Tematica T3 riga 3 di 'Fendente' = 12 Potere (potenziata rispetto alla Generica T3 riga 3 = 10).",
+      "step_2_weapon_bonus": "La Spada Lunga (Arma) ha +2 danno bonus al livello 3 = 12 + 2 = 14 danno totale.",
+      "step_3_effetto_tematico_extra": "Applica Effetto Tematico Extra: 'Infligge Guardia Aperta al bersaglio per 1 round (prossimo attacco fisico contro di lui +2 danno).' Il bersaglio ha ora Guardia Aperta.",
+      "step_4_combo": "Se un compagno ha [Apertura] nella stessa posizione con Potere 5, e questo PG ha [Apertura] dalla carta, combo = 14 + 5 = 19 danno + Guardia Aperta."
+    },
+    "scenario_generico": {
+      "scenario": "Stesso PG con 'Fendente' in mano, ma sta NEGOSIANDO con un nobile. Vuole attivare l'abilità nominated 'Sguardo Torvo' (Impeto [Abilità]) per intimidire.",
+      "step_1_base": "Tabella Generica T3 riga 3 = 10 Potere (NON legge la Tematica — fuori contesto).",
+      "step_2_activation": "Attiva 'Sguardo Torvo' tramite il tag [Abilità]. Soglia di Intimidazione fissata dal Master = 8.",
+      "step_3_resolution": "10 ≥ 8 → il nobile è intimidito. NESSUN Effetto Tematico Extra (siamo in Modo Generico). Il Master può chiedere una breve giustificazione narrativa ('la tua mano va istintivamente all'elsa')."
+    },
+    "scenario_leggendaria": {
+      "scenario": "PG con Impeto 5 gioca 'Assalto Inarrestabile' (Impeto-T5 Leggendaria) in Modo Tematico (combattimento).",
+      "step_1_base": "Tabella Tematica T5 riga 5 = 42 Potere (valore Leggendario, altissimo).",
+      "step_2_effect": "Applica Effetto Tematico Extra: 'Colpisce TUTTI i nemici in una linea retta lunga 2 zone. Ogni nemico colpito subisce il danno pieno.'",
+      "step_3_alternativa_generico": "Se la stessa carta fosse giocata in Modo Generico (fuori contesto), leggerebbe la Tabella Modificata T5 riga 5 = 35 Potere (valore Leggendario base, comunque altissimo)."
+    }
   },
   "armor_and_damage_bonus_interaction": {
     "name": "Interazione con Armatura Nemica e Bonus Arma",
@@ -125,6 +183,7 @@
     "v13": "ARCHITETTURA v2.1: Danno Arma = Tabella Potere Vitalità (Caratteristica × T) + Bonus opzionale Arma.",
     "v14": "ARCHITETTURA v3: RIMOSSO sistema Materie FF7 ed Esper. Le Magie sono ospitate su Carte Caratteristica nominated. Le Abilità Difensive sono ospitate su Carte Caratteristica nominated.",
     "v15_v3_1": "ARCHITETTURA v3.1: rename Caratteristica → Approccio. Approcci come mindset modificabili.",
-    "v16_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura Tabella Potere): 5 tabelle distinte (una per T), uguali per tutti gli Approcci (neutralità garantita). Approccio = selettore di riga, NON CAP. Ferita Approccio = leggi riga inferiore. Modello ibrido: Potere = danno base di default, pool solo per nominated specifiche. Tutti i PG possono giocare qualsiasi T."
+    "v16_v3_1_tabella_potere": "ARCHITETTURA v3.1 (rifinitura Tabella Potere): 5 tabelle distinte (una per T), uguali per tutti gli Approcci (neutralità garantita). Approccio = selettore di riga, NON CAP. Ferita Approccio = leggi riga inferiore. Modello ibrido: Potere = danno base di default, pool solo per nominated specifiche. Tutti i PG possono giocare qualsiasi T.",
+    "v17_v3_2_due_tabelle": "ARCHITETTURA v3.2: DUE TABELLE per carta nominated. TABELLA GENERICA (5 tabelle, una per T, uguali per tutti gli Approcci e per tutte le carte dello stesso T) + TABELLA TEMATICA (propria della carta, valori potenziati). TABELLA MODIFICATA solo per le Leggendarie (sostituisce la Generica). Quale tabella leggere dipende dalla MODALITÀ DI GIOCO: Modo Tematico (contesto compatibile) → Tematica + Effetto Extra; Modo Generico (fuori contesto) → Generica (o Modificata per Leggendarie). Le 5 Tabelle Generiche RESTANO il riferimento standard del sistema. Le Tabelle Tematiche sono potenziamenti specifici per ciascuna carta nominated."
   }
 }
